@@ -1,0 +1,94 @@
+-- SMODS.Enhancement {
+--     key = 'acursed',
+--     pos = { x = 0, y = 0 },
+--     config = {
+--         extra = {
+--             x_mult = 0.75,
+--             x_chips = 0.75,
+--             dollars = 0
+--         }
+--     },
+--     loc_txt = {
+--         name = 'Acursed',
+--         text = {
+--         [1] = '{X:back,C:red}x0.75{} Chips and Mult when held in hand.',
+--         [2] = 'When scored, {C:red}destroy a random joker{}',
+--         [3] = 'and create an {C:red}Acursed Card{}',
+--         [4] = 'Discarding this card will create an {C:red}Acursed{} card,',
+--         [5] = 'and set money to 0.'
+--     }
+--     },
+--     atlas = 'CustomEnhancements',
+--     any_suit = false,
+--     replace_base_card = true,
+--     no_rank = true,
+--     no_suit = true,
+--     always_scores = true,
+--     unlocked = true,
+--     discovered = true,
+--     no_collection = true,
+--     calculate = function(self, card, context)
+--         if context.cardarea == G.hand and context.main_scoring then
+--             return { x_mult = card.ability.extra.x_mult, x_chips = card.ability.extra.x_chips }
+--         end
+--         if context.main_scoring and context.cardarea == G.play then
+--             local destructable_jokers = {}
+--                 for i, joker in ipairs(G.jokers.cards) do
+--                     if not joker.ability.eternal and not joker.getting_sliced then
+--                         table.insert(destructable_jokers, joker)
+--                     end
+--                 end
+--                 local target_joker = #destructable_jokers > 0 and pseudorandom_element(destructable_jokers, pseudoseed('destroy_joker_enhanced')) or nil
+                
+--                 if target_joker then
+--                     target_joker.getting_sliced = true
+--                     G.E_MANAGER:add_event(Event({
+--                         func = function()
+--                             target_joker:start_dissolve({G.C.RED}, nil, 1.6)
+--                             return true
+--                         end
+--                     }))
+--                 end
+--             local created_consumable = false
+--                 if #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
+--                     created_consumable = true
+--                     G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
+--                     G.E_MANAGER:add_event(Event({
+--                         func = function()
+--                             SMODS.add_card{set = 'acursed', key_append = 'enhanced_card_acursed'}
+--                             G.GAME.consumeable_buffer = 0
+--                             return true
+--                         end
+--                     }))
+--                 end
+--             card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = "Destroyed Joker!", colour = G.C.RED})
+--             card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = created_consumable and "+1 Consumable!" or nil, colour = G.C.PURPLE})
+--         end
+--         if context.discard and context.other_card == card then
+--             return { func = function()local created_consumable = false
+--                 if #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
+--                     created_consumable = true
+--                     G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
+--                     G.E_MANAGER:add_event(Event({
+--                         func = function()
+--                             SMODS.add_card{set = 'ruiners', key_append = 'enhanced_card_ruiners'}
+--                             G.GAME.consumeable_buffer = 0
+--                             return true
+--                         end
+--                     }))
+--                 end
+--                     if created_consumable then
+--                         card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = "+1 Consumable!", colour = G.C.PURPLE})
+--                     end
+--                     return true
+--                 end, func = function()
+--                     local target_amount = card.ability.extra.dollars
+--                     local current_amount = G.GAME.dollars
+--                     local difference = target_amount - current_amount
+--                     ease_dollars(difference)
+--                     card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = "Set to $"..tostring(card.ability.extra.dollars), colour = G.C.MONEY})
+--                     return true
+--                 end }
+--         end
+--     end
+-- }

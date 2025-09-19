@@ -1,0 +1,298 @@
+-- SMODS.Joker {
+--     key = "overpoweredgaming",
+--     atlas = 'agonizing',
+--     pos = {
+--         x = 0,
+--         y = 0
+--     },
+--     cost = 1e308,
+--     rarity = "ocstobal_whatthefuck",
+--     unlocked = false,
+--     discovered = true,
+--     soul_pos = {
+--         x = 1,
+--         y = 0
+--     },
+
+--     calculate = function(self, card, context)
+--         if context.joker_main then
+--             return {
+--                 message = '????////a!!!??',
+--                 sound = "ocstobal_weird",
+--                 hypermult_mod = { 100, 100 },
+--                 hyperchip_mod = { 100, 100 }
+--             }
+--         end
+--     end
+-- }
+
+-- SMODS.Joker {     --It happens or It Doesnt
+--     key = "ithappensoritdoesnt",
+--     config = {
+--         extra = {
+--             set_probability = 1,
+--             set_probability2 = 2,
+--             numerator = 0,
+--             denominator = 0
+--         }
+--     },
+--     loc_txt = {
+--         ['name'] = 'It happens or It Doesnt',
+--         ['text'] = {
+--             [1] = 'ANYTHING LUCK BASED is now',
+--             [2] = '{C:green}1 in 2{}'
+--         },
+--         ['unlock'] = {
+--             [1] = 'Unlocked by default.'
+--         }
+--     },
+--     pos = {
+--         x = 2,
+--         y = 0
+--     },
+--     display_size = {
+--         w = 71 * 1,
+--         h = 95 * 1
+--     },
+--     cost = 4,
+--     rarity = 1,
+--     blueprint_compat = true,
+--     eternal_compat = true,
+--     perishable_compat = true,
+--     unlocked = true,
+--     discovered = true,
+--     atlas = 'CustomJokers',
+
+--     calculate = function(self, card, context)
+--         if context.fix_probability then
+--             local numerator, denominator = context.numerator, context.denominator
+--             numerator = card.ability.extra.set_probability
+--             denominator = card.ability.extra.set_probability2
+--             return {
+--                 numerator = numerator,
+--                 denominator = denominator
+--             }
+--         end
+--     end
+-- }
+
+-- SMODS.Joker {     --Void
+--     key = "voidinstlose",
+--     config = {
+--         extra = {
+--             emult = 2
+--         }
+--     },
+--     loc_txt = {
+--         ['name'] = 'Void?',
+--         ['text'] = {
+--             [1] = '{X:tarot,C:white}(100)100{} Mult and Chips'
+--         },
+--         ['unlock'] = {
+--             [1] = 'Unlocked by default.'
+--         }
+--     },
+--     pos = {
+--         x = 9,
+--         y = 1
+--     },
+--     display_size = {
+--         w = 71 * 1,
+--         h = 95 * 1
+--     },
+--     cost = 100,
+--     rarity = "ocstobal_supercommon",
+--     blueprint_compat = true,
+--     eternal_compat = true,
+--     perishable_compat = true,
+--     unlocked = true,
+--     discovered = true,
+
+--     loc_vars = function(self, info_queue, center)
+--         return {
+--             vars = { localize('k_ocstobal_voidinstlose_varthingy') }
+--         }
+--     end,
+
+--     atlas = 'CustomJokers',
+--     soul_pos = {
+--         x = 0,
+--         y = 2
+--     },
+--     in_pool = function(self, args)
+--         return (
+--                 not args
+--                 or args.source ~= 'sho'
+--                 or args.source == 'buf' or args.source == 'jud' or args.source == 'rif' or args.source == 'rta' or args.source == 'sou' or args.source == 'uta' or args.source == 'wra'
+--             )
+--             and true
+--     end,
+
+--     set_ability = function(self, card, initial)
+--         card:set_edition("e_negative", true)
+--     end,
+
+--     calculate = function(self, card, context)
+--         if context.cardarea == G.jokers and context.joker_main then
+--             return {
+--                 AHHHH(),
+--                 G.E_MANAGER:add_event(Event({
+--                     trigger = "after",
+--                     delay = 1.25,
+--                     func = function()
+--                         forceGameover()
+--                         return true
+--                     end,
+--                 }))
+--             }
+--         end
+--     end
+-- }
+
+-- SMODS.Joker {     --Exponential Growth
+--     key = "exponentialgrowth",
+--     config = {
+--         extra = {
+--             expo = to_big(2)
+--         }
+--     },
+--     loc_txt = {
+--         ['name'] = 'Rapidly Accelerating Growth of XMult',
+--         ['text'] = {
+--             [1] = 'When a hand is played, applies {X:red,C:white}X#1#{} Mult.',
+--             [2] = 'Said {X:red,C:white}XMult{} will Multiply by itself (ex. {X:tarot,C:white}2x2{}, {X:tarot,C:white}4x4{}, {X:edition,C:white}16x16{}, {X:edition,C:white}256x256{}...)'
+--         },
+--         ['unlock'] = {
+--             [1] = 'Unlocked by default.'
+--         }
+--     },
+--     pos = {
+--         x = 2,
+--         y = 0
+--     },
+--     cost = 5,
+--     rarity = "ocstobal_whatthefuck",
+--     blueprint_compat = true,
+--     eternal_compat = true,
+--     perishable_compat = true,
+--     unlocked = true,
+--     discovered = true,
+--     atlas = 'CustomJokers',
+--     soul_pos = {
+--         x = 3,
+--         y = 0
+--     },
+
+--     loc_vars = function(self, info_queue, card)
+--         return { vars = { card.ability.extra.expo } }
+--     end,
+
+--     calculate = function(self, card, context)
+--         if context.cardarea == G.jokers and context.joker_main then
+--             local expo_value = card.ability.extra.expo
+--             card.ability.extra.expo = (card.ability.extra.expo) * card.ability.extra.expo
+--             if card.ability.extra.expo then
+--                 return {
+--                     Xmult = expo_value
+--                 }
+--             end
+--         end
+--     end
+-- }
+
+-- function AHHHH()
+--     local text = localize('fuckyou')
+--     attention_text({
+--         scale = 1.5,
+--         text = text,
+--         hold = 10,
+--         align = 'cm',
+--         offset = { x = 0, y = -2.7 },
+--         major = G.play,
+--         colour = HEX(
+--             'ff0000')
+--     })
+-- end
+
+-- local check_for_buy_space_ref = G.FUNCS.check_for_buy_space
+-- G.FUNCS.check_for_buy_space = function(card)
+--     if card.config.center.key == "j_ocstobal_void" then -- ignore slot limit when bought
+--         return true
+--     end
+--     return check_for_buy_space_ref(card)
+-- end
+
+-- -- SMODS.Joker {
+-- --     key = '1msph',
+-- --     cost = 1,
+-- --     rarity = 1,
+-- --     config = { repetitions = 1000000 },
+-- --     loc_txt = {
+-- --         name = 'instant 1m for seraph',
+-- --         text = { 'yeah' }
+-- --     },
+-- --     calculate = function(self, card, context)
+-- --         if context.repetition and context.cardarea == G.play and context.other_card:is_face() then
+-- --             return {
+-- --                 repetitions = card.ability.repetitions
+-- --             }
+-- --         end
+-- --     end
+-- -- }
+
+
+-- -- SMODS.Joker {
+-- --     key = '100ksph',
+-- --     cost = 1,
+-- --     rarity = 1,
+-- --     config = { repetitions = 100000 },
+-- --     loc_txt = {
+-- --         name = 'instant 100k for seraph',
+-- --         text = { 'yeah' }
+-- --     },
+-- --     calculate = function(self, card, context)
+-- --         if context.repetition and context.cardarea == G.play and context.other_card:is_face() then
+-- --             return {
+-- --                 repetitions = card.ability.repetitions
+-- --             }
+-- --         end
+-- --     end
+-- -- }
+
+
+-- -- SMODS.Joker {
+-- --     key = '10ksph',
+-- --     cost = 1,
+-- --     rarity = 1,
+-- --     config = { repetitions = 10000 },
+-- --     loc_txt = {
+-- --         name = 'instant 10k for seraph',
+-- --         text = { 'yeah' }
+-- --     },
+-- --     calculate = function(self, card, context)
+-- --         if context.repetition and context.cardarea == G.play and context.other_card:is_face() then
+-- --             return {
+-- --                 repetitions = card.ability.repetitions
+-- --             }
+-- --         end
+-- --     end
+-- -- }
+
+
+-- -- SMODS.Joker {
+-- --     key = '1ksph',
+-- --     cost = 1,
+-- --     rarity = 1,
+-- --     config = { repetitions = 1000 },
+-- --     loc_txt = {
+-- --         name = 'instant 1k for seraph',
+-- --         text = { 'yeah' }
+-- --     },
+-- --     calculate = function(self, card, context)
+-- --         if context.repetition and context.cardarea == G.play and context.other_card:is_face() then
+-- --             return {
+-- --                 repetitions = card.ability.repetitions
+-- --             }
+-- --         end
+-- --     end
+-- -- }

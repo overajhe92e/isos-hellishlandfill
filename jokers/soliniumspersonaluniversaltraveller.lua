@@ -1,0 +1,260 @@
+-- SMODS.Joker{ --Soliniums Personal Universal Traveller
+--     key = "soliniumspersonaluniversaltraveller",
+--     config = {
+--         extra = {
+--             hand_change = 1000,
+--             discard_change = 1000,
+--             slot_change = 20,
+--             reduction_value = 5,
+--             debt_amount = 1,
+--             reroll_amount = 1,
+--             insanity = 1e+308,
+--             chips = 999,
+--             xchips = 999,
+--             echips = 999,
+--             mult = 999,
+--             Xmult = 999,
+--             emult = 999,
+--             scale = 1,
+--             rotation = 1,
+--             blind_size = 1,
+--             onetime = 0
+--         }
+--     },
+--     loc_txt = {
+--         ['name'] = 'Soliniums Personal Universal Traveller',
+--         ['text'] = {
+--             [1] = 'So you know {C:spectral}Jen\'s Almanac{}, right?',
+--             [2] = 'You know how that has overpowered jokers...',
+--             [3] = 'And how scoring gets {C:dark_edition}ridiculously high{}?',
+--             [4] = 'Well... I think this\'ll revisit how batshit insane... {C:spectral}Almanac {}was.',
+--             [5] = '{C:inactive,s:1.3}( UNOBTAINABLE WITHOUT DEBUG PLUS ){}'
+--         },
+--         ['unlock'] = {
+--             [1] = 'Unlocked by default.'
+--         }
+--     },
+--     pos = {
+--         x = 1,
+--         y = 1
+--     },
+--     display_size = {
+--         w = 71 * 1, 
+--         h = 95 * 1
+--     },
+--     cost = 0,
+--     rarity = "ocstobal_the_absolute_unholy_and_living_fucking_insanity_that_is_jens_almanac_jokers",
+--     blueprint_compat = true,
+--     eternal_compat = true,
+--     perishable_compat = true,
+--     unlocked = true,
+--     discovered = true,
+--     atlas = 'CustomJokers',
+--     soul_pos = {
+--         x = 2,
+--         y = 1
+--     },
+--     in_pool = function(self, args)
+--           return (
+--           not args 
+--           or args.source ~= 'sho' and args.source ~= 'buf' and args.source ~= 'jud' 
+--           or args.source == 'rif' or args.source == 'rta' or args.source == 'sou' or args.source == 'uta' or args.source == 'wra'
+--           )
+--           and true
+--       end,
+
+--     set_ability = function(self, card, initial)
+--         card:set_eternal(true)
+--     end,
+
+--     calculate = function(self, card, context)
+--         if context.cardarea == G.jokers and context.joker_main  then
+--                 return {
+--                     chips = card.ability.extra.chips,
+--                     extra = {
+--                         x_chips = card.ability.extra.xchips,
+--                         colour = G.C.DARK_EDITION,
+--                         extra = {
+--                             e_chips = card.ability.extra.echips,
+--                             colour = G.C.DARK_EDITION,
+--                         extra = {
+--                             mult = card.ability.extra.mult,
+--                         extra = {
+--                             Xmult = card.ability.extra.Xmult,
+--                         extra = {
+--                             e_mult = card.ability.extra.emult,
+--                             colour = G.C.DARK_EDITION,
+--                         extra = {
+--                             balance = true,
+--                             colour = G.C.PURPLE
+--                         }
+--                         }
+--                         }
+--                         }
+--                         }
+--                         }
+--                 }
+--         end
+--         if context.setting_blind  then
+--                 local target_card = context.other_card
+--                 return {
+--                     func = function()
+--                       card:juice_up(card.ability.extra.scale, card.ability.extra.rotation)
+--                       return true
+--                     end,
+--                     extra = {
+--                         func = function()
+--                 card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = "ez", colour = G.C.GREEN})
+--                 G.GAME.blind.chips = card.ability.extra.blind_size
+--                 G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
+--                 G.HUD_blind:recalculate()
+--                 return true
+--             end,
+--                         colour = G.C.GREEN
+--                         }
+--                 }
+--         end
+        
+--     if G.GAME.blind and G.GAME.blind.boss and not G.GAME.blind.disabled then
+--         G.GAME.blind:disable()
+--         play_sound('timpani')
+--         SMODS.calculate_effect({ message = localize('ph_boss_disabled') }, card)
+--     end
+--     end,
+
+--     add_to_deck = function(self, card, from_debuff)
+--         card.ability.extra.original_hands = G.GAME.round_resets.hands
+--         G.GAME.round_resets.hands = card.ability.extra.hand_change
+--         card.ability.extra.original_discards = G.GAME.round_resets.discards
+--         G.GAME.round_resets.discards = card.ability.extra.discard_change
+--         card.ability.extra.original_hand_size = G.hand.config.card_limit
+--         local difference = 1000 - G.hand.config.card_limit
+--         G.hand:change_size(difference)
+--         card.ability.extra.original_play_size = G.GAME.starting_params.play_limit
+--         local difference = 1000 - G.GAME.starting_params.play_limit
+--         SMODS.change_play_limit(difference)
+--         card.ability.extra.original_play_size = G.GAME.starting_params.discard_limit
+--         local difference = 1000 - G.GAME.starting_params.discard_limit
+--         SMODS.change_discard_limit(difference)
+--         original_slots = G.consumeables.config.card_limit
+--         G.E_MANAGER:add_event(Event({func = function()
+--             G.consumeables.config.card_limit = card.ability.extra.slot_change
+--             return true
+--         end }))
+--         card.ability.extra.original_slot_size = G.GAME.modifiers.extra_vouchers or 0
+--         local difference = 5 - G.GAME.modifiers.extra_vouchers
+--         SMODS.change_discard_limit(difference)
+        
+--   if G.GAME.blind and G.GAME.blind.boss and not G.GAME.blind.disabled then
+--       G.GAME.blind:disable()
+--       play_sound('timpani')
+--       SMODS.calculate_effect({ message = localize('ph_boss_disabled') }, card)
+--   end
+  
+--         card.ability.extra.original_slot_size = G.GAME.modifiers.extra_boosters or 0
+--         local difference = 5 - G.GAME.modifiers.extra_boosters
+--         SMODS.change_discard_limit(difference)
+--         card.ability.extra.original_joker_slots = G.jokers.config.card_limit
+--         G.jokers.config.card_limit = 25
+--         -- Flush/Straight requirements reduced by 5
+--         -- Shortcut straights enabled
+--         -- Showman effect enabled (allow duplicate cards)
+--         G.GAME.bankrupt_at = G.GAME.bankrupt_at - (card.ability.extra.debt_amount)
+--         SMODS.change_free_rerolls(card.ability.extra.reroll_amount)
+--         G.E_MANAGER:add_event(Event({
+--     func = function()
+--         for k, v in pairs(G.I.CARD) do
+--             if v.set_cost then v:set_cost() end
+--         end
+--         return true
+--     end
+-- }))
+--     end,
+
+--     remove_from_deck = function(self, card, from_debuff)
+--         if card.ability.extra.original_hands then
+--             G.GAME.round_resets.hands = card.ability.extra.original_hands
+--         end
+--         if card.ability.extra.original_discards then
+--             G.GAME.round_resets.discards = card.ability.extra.original_discards
+--         end
+--         if card.ability.extra.original_hand_size then
+--             local difference = card.ability.extra.original_hand_size - G.hand.config.card_limit
+--             G.hand:change_size(difference)
+--         end
+--         if card.ability.extra.original_play_size then
+--             local difference = card.ability.extra.original_play_size - G.GAME.starting_params.play_limit
+--             SMODS.change_play_limit(difference)
+--         end
+--         if card.ability.extra.original_play_size then
+--             local difference = card.ability.extra.original_play_size - G.GAME.starting_params.discard_limit
+--             SMODS.change_discard_limit(difference)
+--         end
+--         if original_slots then
+--             G.E_MANAGER:add_event(Event({func = function()
+--                 G.consumeables.config.card_limit = original_slots
+--                 return true
+--             end }))
+--         end
+--         if card.ability.extra.original_slot_size then
+--             local difference = card.ability.extra.original_slot_size - G.GAME.modifiers.extra_vouchers
+--             SMODS.change_discard_limit(difference)
+--         end
+--         if card.ability.extra.original_slot_size then
+--             local difference = card.ability.extra.original_slot_size - G.GAME.modifiers.extra_boosters
+--             SMODS.change_discard_limit(difference)
+--         end
+--         if card.ability.extra.original_joker_slots then
+--             G.jokers.config.card_limit = card.ability.extra.original_joker_slots
+--         end
+--         -- Flush/Straight requirements restored
+--         -- Shortcut straights disabled
+--         -- Showman effect disabled
+--         G.GAME.bankrupt_at = G.GAME.bankrupt_at + (card.ability.extra.debt_amount)
+--         SMODS.change_free_rerolls(-(card.ability.extra.reroll_amount))
+--         G.E_MANAGER:add_event(Event({
+--     func = function()
+--         for k, v in pairs(G.I.CARD) do
+--             if v.set_cost then v:set_cost() end
+--         end
+--         return true
+--     end
+-- }))
+--     end
+-- }
+
+
+-- local card_set_cost_ref = Card.set_cost
+-- function Card:set_cost()
+--     card_set_cost_ref(self)
+    
+--     if next(SMODS.find_card("j_ocstobal_soliniumspersonaluniversaltraveller")) then
+--         if (self.ability.set == 'Joker' or self.ability.set == 'Tarot' or self.ability.set == 'Planet' or self.ability.set == 'Spectral' or self.ability.set == 'Enhanced' or self.ability.set == 'Booster' or self.ability.set == 'Voucher') then
+--             self.cost = 0
+--         end
+--     end
+    
+--     self.sell_cost = math.max(1, math.floor(self.cost / 2)) + (self.ability.extra_value or 0)
+--     self.sell_cost_label = self.facing == 'back' and '?' or self.sell_cost
+-- end
+-- local smods_four_fingers_ref = SMODS.four_fingers
+-- function SMODS.four_fingers()
+--     if next(SMODS.find_card("j_ocstobal_soliniumspersonaluniversaltraveller")) then
+--         return 0
+--     end
+--     return smods_four_fingers_ref()
+-- end
+-- local smods_shortcut_ref = SMODS.shortcut
+-- function SMODS.shortcut()
+--     if next(SMODS.find_card("j_ocstobal_soliniumspersonaluniversaltraveller")) then
+--         return true
+--     end
+--     return smods_shortcut_ref()
+-- end
+-- local smods_showman_ref = SMODS.showman
+-- function SMODS.showman(card_key)
+--     if next(SMODS.find_card("j_ocstobal_soliniumspersonaluniversaltraveller")) then
+--         return true
+--     end
+--     return smods_showman_ref(card_key)
+-- end

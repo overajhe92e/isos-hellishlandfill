@@ -1,0 +1,65 @@
+-- SMODS.Joker{ --Void
+--     key = "void",
+--     config = {
+--         extra = {
+--             emult = 2
+--         }
+--     },
+--     loc_txt = {
+--         ['name'] = 'Void',
+--         ['text'] = {
+--             [1] = '{X:tarot,C:white}^2{} Mult'
+--         },
+--         ['unlock'] = {
+--             [1] = 'Unlocked by default.'
+--         }
+--     },
+--     pos = {
+--         x = 9,
+--         y = 1
+--     },
+--     display_size = {
+--         w = 71 * 1, 
+--         h = 95 * 1
+--     },
+--     cost = 100,
+--     rarity = "ocstobal_legendary",
+--     blueprint_compat = true,
+--     eternal_compat = true,
+--     perishable_compat = true,
+--     unlocked = true,
+--     discovered = true,
+--     atlas = 'CustomJokers',
+--     soul_pos = {
+--         x = 0,
+--         y = 2
+--     },
+--     in_pool = function(self, args)
+--           return (
+--           not args 
+--           or args.source ~= 'sho' 
+--           or args.source == 'buf' or args.source == 'jud' or args.source == 'rif' or args.source == 'rta' or args.source == 'sou' or args.source == 'uta' or args.source == 'wra'
+--           )
+--           and true
+--       end,
+
+--     set_ability = function(self, card, initial)
+--         card:set_edition("e_negative", true)
+--     end,
+
+--     calculate = function(self, card, context)
+--         if context.cardarea == G.jokers and context.joker_main  then
+--                 return {
+--                     e_mult = card.ability.extra.emult
+--                 }
+--         end
+--     end
+-- }
+
+-- local check_for_buy_space_ref = G.FUNCS.check_for_buy_space
+-- G.FUNCS.check_for_buy_space = function(card)
+--     if card.config.center.key == "j_ocstobal_void" then -- ignore slot limit when bought
+--         return true
+--     end
+--     return check_for_buy_space_ref(card)
+-- end
