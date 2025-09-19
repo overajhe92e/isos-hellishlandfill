@@ -685,6 +685,21 @@ return {
 					'{C:inactive}Retriggers will also reduce XMult{}',
 					'{C:red}#2#{}'
 				}
+			},
+			j_ocstobal_oxyemp = {
+				name = '{C:ocstobal_sewh}Oxy{}',
+				text = {
+					'Copies the ability of {C:attention}two{}',
+					'{C:attention}jokers{} on the {C:blue}left{} and {C:red}right{} of this joker.',
+					'{C:ocstobal_ust}Quadruples Blind Size.{}'
+				}
+			},
+			j_ocstobal_oxywaterdroplet = {
+				name = 'Mysterious Symbol',
+				text = {
+					'{C:inactive}This may come in handy later...{}',
+					'{C:inactive}As you can\'t shake off the feeling it\'s important to someone.{}'
+				}
 			}
 		},
 		Other = {
@@ -867,7 +882,9 @@ return {
 				'YOU WILL DIE.',
 				'If you have an Isotypical\'s Junkyard Joker,',
 				'Upon playing a hand, die.'
-			}
+			},
+
+			k_ocstobal_veryunstable = 'Extremely Unstable'
 
 		},
 		high_scores = {},

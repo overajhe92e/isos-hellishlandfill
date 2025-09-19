@@ -70,42 +70,42 @@ SMODS.Blind {
 -- boss_colour = HEX('000000')
 -- }
 
--- SMODS.Blind {
--- 	key = 'unstable',
--- 	name = 'unstable',
--- 	atlas = 'unstable',
--- 	pos = { x = 0, y = 0 },
--- 	mult = 66,
--- 	dollars = 10,
--- 	boss = { min = 16 },
--- 	loc_txt = {
--- 		name = 'Instability',
--- 		text = {
--- 			'If you have an',
--- 			'Isotypical\'s Junkyard Joker,',
--- 			'Upon playing a hand, Die.'
--- 		}
--- 	},
--- 	boss_colour = HEX('101010'),
--- 	debuff = {
--- 		akyrs_cannot_be_skipped = true,
--- 		akyrs_cannot_be_disabled = true,
--- 		akyrs_cannot_be_rerolled = true,
--- 		akyrs_cannot_be_overridden = true
--- 	},
+SMODS.Blind {
+	key = 'unstable',
+	name = 'unstable',
+	atlas = 'unstable',
+	pos = { x = 0, y = 0 },
+	mult = 66,
+	dollars = 10,
+	boss = { min = 16 },
+	loc_txt = {
+		name = 'Instability',
+		text = {
+			'If you have an',
+			'Isotypical\'s Junkyard Joker,',
+			'Upon playing a hand, Die.'
+		}
+	},
+	boss_colour = HEX('101010'),
+	debuff = {
+		akyrs_cannot_be_skipped = true,
+		akyrs_cannot_be_disabled = true,
+		akyrs_cannot_be_rerolled = true,
+		akyrs_cannot_be_overridden = true
+	},
 
--- 	press_play = function(self)
--- 		if G.GAME.dollars < to_big(999999) then
--- 			forceGameover()
--- 		end
--- 	end,
+	press_play = function(self)
+		if G.GAME.dollars < to_big(999999) then
+			forceGameover()
+		end
+	end,
 
--- 	get_loc_debuff_text = function(self)
--- 		if G.GAME.dollars < to_big(999999) then
--- 			localize('k_ocstobal_deathinbound')
--- 		end
--- 	end
--- }
+	get_loc_debuff_text = function(self)
+		if G.GAME.dollars < to_big(999999) then
+			localize('k_ocstobal_deathinbound')
+		end
+	end
+}--todo: fix
 
 SMODS.Blind {
 	key = 'diansu',
@@ -162,103 +162,104 @@ SMODS.Sound {
 	end
 }
 
-SMODS.Blind {
-	key = 'lankyohfuckinghellbox',
-	name = 'lankyohfuckinghellbox',
-	atlas = 'burnteyes',
-	pos = { x = 0, y = 0 },
-	mult = 2,
-	dollars = 12,
-	in_pool = function(self)
-		return ifuckinghatelankybox()
-	end,
-	ignore_showdown_check = false,
-	boss_colour = HEX('ff0000'),
-	debuff = {
-		--akyrs_cannot_be_skipped = true,
-		akyrs_cannot_be_disabled = true,
-		akyrs_cannot_be_rerolled = true,
-		akyrs_blind_difficulty = "master",
-		--akyrs_cannot_be_overridden = true
-	},
+-- SMODS.Blind {
+-- 	key = 'lankyohfuckinghellbox',
+-- 	name = 'lankyohfuckinghellbox',
+-- 	atlas = 'burnteyes',
+-- 	pos = { x = 0, y = 0 },
+-- 	mult = 2,
+-- 	dollars = 12,
+-- 	in_pool = function(self)
+-- 		return ifuckinghatelankybox()
+-- 	end,
+-- 	ignore_showdown_check = false,
+-- 	boss_colour = HEX('ff0000'),
+-- 	debuff = {
+-- 		--akyrs_cannot_be_skipped = true,
+-- 		akyrs_cannot_be_disabled = true,
+-- 		akyrs_cannot_be_rerolled = true,
+-- 		akyrs_blind_difficulty = "master",
+-- 		--akyrs_cannot_be_overridden = true
+-- 	},
 
-	defeat = function(self)
-		imsorryforthis()
-		AHHHH()
-		G.FUNCS.overlay_menu {
-			definition = create_UIBox_custom_video4("sorry", "im sorry."),
-			config = { no_esc = true }
-		}
-	end
-}
+-- 	defeat = function(self)
+-- 		imsorryforthis()
+-- 		AHHHH()
+-- 		G.FUNCS.overlay_menu {
+-- 			definition = create_UIBox_custom_video4("sorry", "im sorry."),
+-- 			config = { no_esc = true }
+-- 		}
+-- 	end
+-- }
 
-SMODS.Blind {
-	key = 'cringeasf',
-	name = 'cringeasf',
-	atlas = 'HELPME',
-	pos = { x = 0, y = 0 },
-	mult = 0.75,
-	dollars = 10,
-	boss = { min = 1 },
-	boss_colour = HEX('7DF9FF'),
-	debuff = {
-		akyrs_blind_difficulty = "expert",
-		akyrs_cannot_be_disabled = true,
-		akyrs_cannot_be_rerolled = true
-	},
-	ignore_showdown_check = true,
-	in_pool = function(self)
-		return ifuckinghatelankybox()
-	end,
+-- SMODS.Blind { unused due to video
+-- 	key = 'cringeasf',
+-- 	name = 'cringeasf',
+-- 	atlas = 'HELPME',
+-- 	pos = { x = 0, y = 0 },
+-- 	mult = 0.75,
+-- 	dollars = 10,
+-- 	boss = { min = 1 },
+-- 	boss_colour = HEX('7DF9FF'),
+-- 	debuff = {
+-- 		akyrs_blind_difficulty = "expert",
+-- 		akyrs_cannot_be_disabled = true,
+-- 		akyrs_cannot_be_rerolled = true
+-- 	},
+-- 	ignore_showdown_check = true,
+-- 	in_pool = function(self)
+-- 		return ifuckinghatelankybox()
+-- 	end,
 
-	defeat = function(self)
-		if SMODS.last_hand_oneshot then
-			achievementlanky()
-			AHHHH()
-			G.FUNCS.overlay_menu {
-				definition = create_UIBox_custom_video2("suffer", "HATE. LET ME TELL YOU HOW MUCH I'VE COME TO HATE YOU SINCE I BEGAN TO LIVE."),
-				config = { no_esc = true }
-			}
-		end
-	end
-}
+-- 	defeat = function(self)
+-- 		if SMODS.last_hand_oneshot then
+-- 			achievementlanky()
+-- 			AHHHH()
+-- 			G.FUNCS.overlay_menu {
+-- 				definition = create_UIBox_custom_video2("suffer", "HATE. LET ME TELL YOU HOW MUCH I'VE COME TO HATE YOU SINCE I BEGAN TO LIVE."),
+-- 				config = { no_esc = true }
+-- 			}
+-- 		end
+-- 	end
+-- }
 
-function AHHHH()
-	local text = localize('fuckyou')
-	attention_text({
-		scale = 1,
-		text = text,
-		hold = 2,
-		align = 'cm',
-		offset = { x = 0, y = -2.7 },
-		major = G.play,
-		colour = HEX('ffffff')
-	})
-end
+--unused as it's too fucking annoying to compress the videos
+-- function AHHHH()
+-- 	local text = localize('fuckyou')
+-- 	attention_text({
+-- 		scale = 1,
+-- 		text = text,
+-- 		hold = 2,
+-- 		align = 'cm',
+-- 		offset = { x = 0, y = -2.7 },
+-- 		major = G.play,
+-- 		colour = HEX('ffffff')
+-- 	})
+-- end
 
-function achievementlanky()
-	G.E_MANAGER:add_event(Event({
-		trigger = 'immediate',
-		locking = false,
-		delay = 0,
-		func = function()
-			check_for_unlock({ type = "ach_lankyfuckoff" })
-			return true
-		end,
-	}))
-end
+-- function achievementlanky()
+-- 	G.E_MANAGER:add_event(Event({
+-- 		trigger = 'immediate',
+-- 		locking = false,
+-- 		delay = 0,
+-- 		func = function()
+-- 			check_for_unlock({ type = "ach_lankyfuckoff" })
+-- 			return true
+-- 		end,
+-- 	}))
+-- end
 
-function imsorryforthis()
-	G.E_MANAGER:add_event(Event({
-		trigger = 'immediate',
-		locking = false,
-		delay = 0,
-		func = function()
-			check_for_unlock({ type = "ach_sorry" })
-			return true
-		end,
-	}))
-end
+-- function imsorryforthis()
+-- 	G.E_MANAGER:add_event(Event({
+-- 		trigger = 'immediate',
+-- 		locking = false,
+-- 		delay = 0,
+-- 		func = function()
+-- 			check_for_unlock({ type = "ach_sorry" })
+-- 			return true
+-- 		end,
+-- 	}))
+-- end
 
 -- SMODS.Blind {
 -- key = 'yahermouse',
