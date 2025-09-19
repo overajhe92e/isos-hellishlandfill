@@ -33,7 +33,7 @@ SMODS.Back {
 	key = "aio",
 	pos = { x = 0, y = 0 },
 	atlas = "aioimg",
-	config = { joker_slot = 10, jokers = { 'j_ocstobal_sparkynt', 'j_ocstobal_sparky', 'j_ocstobal_seraph', 'j_ocstobal_solinium', 'j_ocstobal_brokenseraph', 'j_ocstobal_Oxy', 'j_ocstobal_recluse', 'j_ocstobal_tigersharksparky', 'j_ocstobal_shrimpo', 'j_ocstobal_ichor', 'j_ocstobal_crystal', 'j_ocstobal_eternaldagger' }, ante_scaling = 666666 },
+	config = { joker_slot = 20, jokers = { 'j_ocstobal_sparkynt', 'j_ocstobal_sparky', 'j_ocstobal_seraph', 'j_ocstobal_solinium', 'j_ocstobal_brokenseraph', 'j_ocstobal_Oxy', 'j_ocstobal_recluse', 'j_ocstobal_tigersharksparky', 'j_ocstobal_shrimpo', 'j_ocstobal_ichor', 'j_ocstobal_crystal', 'j_ocstobal_eternaldagger' }, ante_scaling = 666666 },
 	unlocked = false,
 	loc_vars = function(self, info_queue, back)
 		return { vars = { self.config.jokers[1], self.config.joker_slot, self.config.ante_scaling } }
@@ -109,7 +109,7 @@ SMODS.Back {
 	-- 	end
 	-- end,
 	apply = function(self, back)
-		if pseudorandom("avaritiajumpscare", 1, 6) == 1 and ocstobal.configbs.very_unbalanced_mode == true and ocstobal.configbs.unbalanced_mode == true then
+		if pseudorandom("avaritiajumpscare", 1, 6) == 1 and ocstobal.configbs.very_unbalanced_mode == true then
 			G.E_MANAGER:add_event(Event({
 				func = function()
 					SMODS.add_card { key = "j_ocstobal_jokertoendalljokers" }
