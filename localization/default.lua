@@ -697,8 +697,9 @@ return {
 			j_ocstobal_oxywaterdroplet = {
 				name = 'Mysterious Symbol',
 				text = {
-					'{C:inactive}This may come in handy later...{}',
-					'{C:inactive}As you can\'t shake off the feeling it\'s important to someone.{}'
+					'{C:inactive}It emits power.{} {X:red,C:white}X2{} {C:inactive}Mult...{}',
+					'{C:inactive}You can\'t shake off the feeling...{}',
+					'{C:inactive}That this is important to someone.{}'
 				}
 			}
 		},
