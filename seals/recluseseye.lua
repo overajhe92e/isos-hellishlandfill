@@ -3,7 +3,7 @@ SMODS.Seal {
     pos = { x = 0, y = 0 },
     config = {
         extra = {
-            retrigger_times = 3
+            retrigger_times = 2
         }
     },
     badge_colour = HEX('000000'),
