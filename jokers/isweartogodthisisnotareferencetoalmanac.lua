@@ -216,7 +216,16 @@ SMODS.Joker {
     rarity = 3,
     atlas = "symbol",
     pos = {x=0,y=0},
-    soul_pos = {x=1,y=0}
+    soul_pos = {x=1,y=0},
+    blueprint_compat = true,
+
+    calculate = function(self,card,context)
+        if context.joker_main then
+            return {
+                xmult = 2
+            }
+        end
+    end
 }
 
 -- SMODS.Joker {
