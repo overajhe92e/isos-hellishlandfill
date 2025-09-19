@@ -126,12 +126,12 @@ SMODS.current_mod.config_tab = function()
 								n = G.UIT.R,
 								config = { minw = 1, minh = 1, align = "tm", padding = 0.1, colour = G.C.CLEAR },
 								nodes = {
-									create_toggle({
-										active_colour = G.C.RED,
-										label = "Fuck you, Lankybox!",
-										ref_table = ocstobal.configbs,
-										ref_value = 'fuck_you_lankybox',
-									}),
+									-- create_toggle({
+									-- 	active_colour = G.C.RED,
+									-- 	label = "Lankyboxn't",
+									-- 	ref_table = ocstobal.configbs,
+									-- 	ref_value = 'fuck_you_lankybox',
+									-- }), --UNUSED AS THE BLINDS ARENT IN THE MOD RIGHT NOW
 									{
 										n = G.UIT.R,
 										config = { minw = 1, minh = 1, align = "tm", padding = 0.1, colour = G.C.CLEAR },

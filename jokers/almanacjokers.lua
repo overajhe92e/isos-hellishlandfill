@@ -101,3 +101,10 @@ SMODS.Joker { --UNUSED RIGHT NOW
     cost = 1e307,
     no_collection = true
 }
+
+SMODS.Joker { --IMPLEMENT LATER
+    key = 'amalgamation',
+    rarity = 'ocstobal_whatthefuck',
+    cost = 0,
+    no_collection = true
+}
