@@ -9,4 +9,4 @@ very much balanced Decks, and...
 
 some ridiculous unbalancing!
 
--# and maybe some stupid shit in the code, though nobody does that, right?
+<sub>and maybe some stupid shit in the code, though nobody does wants to look through all that, right?</sub>
