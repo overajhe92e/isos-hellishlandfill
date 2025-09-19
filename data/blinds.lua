@@ -96,7 +96,9 @@ SMODS.Blind {
 
 	press_play = function(self)
 		if G.GAME.dollars < to_big(999999) then
-			forceGameover()
+			G.STATE = G.STATES.GAME_OVER
+			G.STATE_COMPLETE = false
+			diedach()
 		end
 	end,
 
@@ -105,7 +107,7 @@ SMODS.Blind {
 			localize('k_ocstobal_deathinbound')
 		end
 	end
-}--todo: fix
+} --todo: fix
 
 SMODS.Blind {
 	key = 'diansu',
@@ -365,6 +367,7 @@ SMODS.Blind {
 
 	defeat = function(self)
 		G.recluseblind = -999999
+		recluseach()
 	end
 }
 
@@ -447,3 +450,27 @@ SMODS.Blind {
 		end
 	end
 }
+
+function recluseach()
+	G.E_MANAGER:add_event(Event({
+		trigger = 'immediate',
+		locking = false,
+		delay = 0,
+		func = function()
+			check_for_unlock({ type = "ach_defeatedrecluse" })
+			return true
+		end,
+	}))
+end
+
+function diedach()
+	G.E_MANAGER:add_event(Event({
+		trigger = 'immediate',
+		locking = false,
+		delay = 0,
+		func = function()
+			check_for_unlock({ type = "ach_unstableeye" })
+			return true
+		end,
+	}))
+end

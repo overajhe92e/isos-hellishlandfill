@@ -1,13 +1,12 @@
 # Isotypical's Junkyard
 "The Balatro Mod of all time"
 
-Adds 20 New Jokers,
+Adds 20+ New Jokers,
+
 Some wacky and totally not unoriginal boss blinds,
-Some completely and very much balanced Decks, and...
 
+very much balanced Decks, and...
 
+some ridiculous unbalancing!
 
-...some deep lore about...
-
-
-them?
+<sub>and maybe some stupid shit in the code, though nobody does wants to look through all that, right?</sub>

@@ -54,16 +54,15 @@ SMODS.Joker {
         end
     },
 
+    add_to_deck = function(self,card,from_debuff)
+        card:set_eternal(true)
+    end,
+
     loc_vars = function(self, info_queue, card) -- yeah this was buggy asf lmao
         -- info_queue[#info_queue + 1] = G.P_CENTERS.k_ocstobal_reclusedownside
         -- info_queue[#info_queue + 1] = G.P_CENTERS.k_ocstobal_sharkdownside
         -- -- info_queue[#info_queue + 1] = G.P_CENTERS.k_ocstobal_oxydownside
         -- info_queue[#info_queue + 1] = G.P_CENTERS.j_ocstobal_oxhatred
-    end,
-
-    set_ability = function(self, card, initial)
-        card:set_edition("e_ocstobal_hidden2", true)
-        card:set_eternal(true)
     end,
 
     calculate = function(self, card, context)
