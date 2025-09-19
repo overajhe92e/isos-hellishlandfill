@@ -6,7 +6,7 @@ SMODS.Joker {
     atlas = 'sugar',
     pos = {x=0,y=1},
     soul_pos = {x=0,y=0},
-    blueprint_compt = true,
+    blueprint_compat = true,
     
     loc_vars = function(self,info_queue,card)
         return { vars = { card.ability.hands_left }}
@@ -47,7 +47,7 @@ SMODS.Joker {
     atlas = 'sugar',
     pos = {x=1,y=1},
     soul_pos = {x=1,y=0},
-    blueprint_compt = true,
+    blueprint_compat = true,
 
     loc_vars = function(self,info_queue,card)
         return { vars = { card.ability.hands_left }}
@@ -88,7 +88,7 @@ SMODS.Joker {
     atlas = 'sugar',
     pos = {x=2,y=1},
     soul_pos = {x=2,y=0},
-    blueprint_compt = true,
+    blueprint_compat = true,
 
     loc_vars = function(self,info_queue,card)
         return { vars = { card.ability.hands_left }}
@@ -129,7 +129,7 @@ SMODS.Joker {
     rarity = "ocstobal_cursed",
     pos = {x=3,y=1},
     soul_pos = {x=3,y=0},
-    blueprint_compt = false,
+    blueprint_compat = false,
 
     loc_vars = function(self,info_queue,card)
         return { vars = { card.ability.hands_left }}
