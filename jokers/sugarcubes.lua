@@ -6,7 +6,7 @@ SMODS.Joker {
     atlas = 'sugar',
     pos = {x=0,y=1},
     soul_pos = {x=0,y=0},
-    blueprint_compt = false,
+    blueprint_compt = true,
     
     loc_vars = function(self,info_queue,card)
         return { vars = { card.ability.hands_left }}
@@ -47,7 +47,7 @@ SMODS.Joker {
     atlas = 'sugar',
     pos = {x=1,y=1},
     soul_pos = {x=1,y=0},
-    blueprint_compt = false,
+    blueprint_compt = true,
 
     loc_vars = function(self,info_queue,card)
         return { vars = { card.ability.hands_left }}
@@ -88,7 +88,7 @@ SMODS.Joker {
     atlas = 'sugar',
     pos = {x=2,y=1},
     soul_pos = {x=2,y=0},
-    blueprint_compt = false,
+    blueprint_compt = true,
 
     loc_vars = function(self,info_queue,card)
         return { vars = { card.ability.hands_left }}
@@ -136,7 +136,7 @@ SMODS.Joker {
     end,
 
     calculate = function(self,card,context)
-        if context.joker_main and context.cardarea == G.jokers then
+        if context.joker_main and context.cardarea == G.jokers and not context.blueprint then
             return {
                 xmult = 0.5,
                 xchips = 0.5
