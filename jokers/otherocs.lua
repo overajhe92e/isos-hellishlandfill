@@ -3,14 +3,14 @@ SMODS.Joker {
     cost = 10,
     rarity = 'ocstobal_epic',
     atlas = 'crystal',
-    pos = {x=0,y=0},
+    pos = { x = 0, y = 0 },
     blueprint_compat = true,
 
     set_badges = function(self, card, badges)
-        badges[#badges+1] = create_badge(localize('k_ocstobal_dangerous'), G.C.FILTER, G.C.WHITE, 1 )
+        badges[#badges + 1] = create_badge(localize('k_ocstobal_dangerous'), G.C.FILTER, G.C.WHITE, 1)
     end,
 
-    calculate = function(self,card,context)
+    calculate = function(self, card, context)
         if not G.jokers then return nil end
 
         local right_effect_1, right_effect_2, right_effect_3 = nil, nil, nil
@@ -46,6 +46,37 @@ SMODS.Joker {
             return merged_effect
         else
             return nil
+        end
+    end
+}
+
+SMODS.Joker {
+    key = 'astro',
+    cost = 20,
+    rarity = 'ocstobal_epic',
+    blueprint_compat = true,
+    -- atlas = 'johntetration',
+    -- pos = {x=0,y=0},
+    -- soul_pos = {x=1,y=0},
+    config = {
+        extra = {
+            eechips = 1,
+            suit = 'Spades'
+        }
+    },
+
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.eechips } }
+    end,
+
+    calculate = function(self, card, context)
+        if context.joker_main then
+            return {
+                eechips = card.ability.extra.eechips
+            }
+        end
+        if context.individual and context.cardarea == G.play and context.other_card:is_suit(card.ability.extra.suit) and not context.blueprint then
+            card.ability.extra.eechips = card.ability.extra.eechips + 1
         end
     end
 }

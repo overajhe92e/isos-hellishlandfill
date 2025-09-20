@@ -19,7 +19,7 @@ SMODS.Joker { --Broken Seraph
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
-    unlocked = false,
+    unlocked = true,
     discovered = false,
     atlas = 'CustomJokers',
     soul_pos = {
@@ -48,7 +48,7 @@ SMODS.Joker { --Broken Seraph
         if context.individual and context.cardarea == G.play then
             if (card.ability.extra.multchip or 0) >= 0.5 then
                 card.ability.extra.multchip = math.max(0, (card.ability.extra.multchip) - 0.1)
-            elseif (card.ability.extra.var1 or 0) == 0 then
+            elseif (card.ability.extra.var1 or 0) <= 0 then
                 return {
                     func = function()
                         card:start_dissolve()

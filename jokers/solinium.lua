@@ -47,10 +47,12 @@ SMODS.Joker { --Solinium
 
     loc_vars = function(self, info_queue, card)
         return {
-            vars = { card.ability.extra.multnchips,
+            vars = { 
+                card.ability.extra.multnchips,
                 localize('k_ocstobal_solinium_quote' .. pseudorandom("seed", 1, 3)),
                 localize('k_ocstobal_solinium_extra' .. pseudorandom("seed", 1, 2)),
-                localize('k_ocstobal_soliniumscared_quote' .. pseudorandom("seed", 1, 2)) 
+                localize('k_ocstobal_soliniumscared_quote' .. pseudorandom("seed", 1, 2)) ,
+                card.ability.extra.increaseme
             },
             key = G.GAME.solscare == 1 and "j_ocstobal_soliniumscared" or G.GAME.solscare == 0 and "j_ocstobal_solinium"
         }
@@ -58,22 +60,10 @@ SMODS.Joker { --Solinium
 
     calculate = function(self, card, context)
         if context.setting_blind then
+            card.ability.extra.increaseme = card.ability.extra.increaseme + 1
+            card.ability.extra.multnchips = (card.ability.extra.increaseme*(card.ability.extra.increaseme+1))/2
             return {
-                func = function()
-                    card.ability.extra.increaseme = (card.ability.extra.increaseme) + 1
-                    return true
-                end,
-                extra = {
-                    func = function()
-                        card.ability.extra.multnchips = (card.ability.extra.multnchips) + card.ability.extra.increaseme
-                        return true
-                    end,
-                    colour = G.C.GREEN,
-                    extra = {
-                        message = "Scaled!",
-                        colour = G.C.MULT
-                    }
-                }
+                message = "Scaled!"
             }
         end
         if context.cardarea == G.jokers and context.joker_main then

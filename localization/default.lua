@@ -389,10 +389,10 @@ return {
 			j_ocstobal_solinium = {
 				name = "Solinium",
 				text = {
-					'{X:mult,C:white}X#1#{} Mult, scales with the equation',
-					'{X:dark_edition,C:white,s:1.3}n(n+1)/2{}',
-					'when a blind is selected.',
-					'{C:inactive}(ex: +1, +2, +3, +4, +5...)',
+					'{X:mult,C:white}X#1#{} Mult, upon blind selection,',
+					'adds {C:attention}+#5# (+1){} {X:red,C:white}XMult{}',
+					'{X:red,C:white}+XMult{} increases by ',
+					'{C:attention}+1{} every blind select.',
 					'{C:blue,s:0.9}#2#{}',
 					'{C:dark_edition,s:0.9}#3#{}'
 
@@ -401,10 +401,10 @@ return {
 			j_ocstobal_soliniumscared = {
 				name = "Solinium",
 				text = {
-					'{X:mult,C:white}X#1#{} Mult, scales with the equation',
-					'{X:dark_edition,C:white,s:1.3}n(n+1)/2{}',
-					'when a blind is selected.',
-					'{C:inactive}(ex: +1, +2, +3, +4, +5...)',
+					'{X:mult,C:white}X#1#{} Mult, upon blind selection,',
+					'adds {C:attention}+#5# (+1){} {X:red,C:white}XMult{}',
+					'{X:red,C:white}+XMult{} increases by ',
+					'{C:attention}+1{} every blind select.',
 					'{C:red,s:0.9}#4#{}',
 					'{C:dark_edition,s:0.9}#3#{}'
 
@@ -708,6 +708,14 @@ return {
 					'{C:inactive}It emits power.{} {X:red,C:white}X2{} {C:inactive}Mult...{}',
 					'{C:inactive}You can\'t shake off the feeling...{}',
 					'{C:inactive}That this is important to someone.{}'
+				}
+			},
+			j_ocstobal_astro = {
+				name = 'Astro',
+				text = {
+					'Applies {X:blue,C:white}^^#1#{} Chips',
+					'{X:blue,C:white}^^Chips{} increases by +1 when',
+					'a {C:spades}Spade{} card is scored.'
 				}
 			}
 		},

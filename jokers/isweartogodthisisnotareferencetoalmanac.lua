@@ -144,9 +144,9 @@ SMODS.Joker {
             blind_size = 4
         }
     },
-    --atlas = "oxyemp",
-    --pos = {x=0,y=0},
-    --soul_pos = {x=1,y-0},
+    atlas = "oxyemp",
+    pos = {x=0,y=0},
+    soul_pos = {x=1,y=0},
 
     loc_vars = function(self,info_queue,center)
         return {
