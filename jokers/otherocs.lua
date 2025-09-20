@@ -64,7 +64,11 @@ SMODS.Joker {
             suit = 'Spades'
         }
     },
-    no_collection = true,
+    no_collection = false,
+
+    in_pool = function(self, args)
+        return unbalancedstuff()
+    end,
 
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.eechips } }
@@ -78,6 +82,9 @@ SMODS.Joker {
         end
         if context.individual and context.cardarea == G.play and context.other_card:is_suit(card.ability.extra.suit) and not context.blueprint then
             card.ability.extra.eechips = card.ability.extra.eechips + 1
+            return {
+                message = 'Upgraded!'
+            }
         end
     end
 }
