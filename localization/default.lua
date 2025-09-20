@@ -621,7 +621,8 @@ return {
 					'to the {C:attention}right of this Joker{}',
 					'{C:inactive}Copies joker 1, then 2, then 3{}',
 					'{C:dark_edition,E:1,s:0.8}Art by Astro{}',    --(@silly_goober_0nthewall)
-					'{C:dark_edition,E:1,s:0.8}Original Character by : Crystal{}' --(@crystal_the_autism)
+					'{C:dark_edition,E:1,s:0.8}Original Character by : Crystal{}', --(@crystal_the_autism)
+					'{C:dark_edition,E:1,s:0.8}Origin : Starspace{}' --go check out the mod it's peak
 				}
 			},
 			j_ocstobal_toomuch = {
@@ -715,7 +716,10 @@ return {
 				text = {
 					'Applies {X:blue,C:white}^^#1#{} Chips',
 					'{X:blue,C:white}^^Chips{} increases by +1 when',
-					'a {C:spades}Spade{} card is scored.'
+					'a {C:spades}Spade{} card is scored.',
+					'{C:blue}"meow"{}',
+					'{C:dark_edition,E:1,s:0.8}Original Character by : Astro',
+					'{C:dark_edition,E:1,s:0.8}Origin : Starspace{}' --go check out the mod it's peak
 				}
 			}
 		},
