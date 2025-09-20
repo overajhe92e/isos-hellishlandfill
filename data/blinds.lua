@@ -70,44 +70,38 @@ SMODS.Blind {
 -- boss_colour = HEX('000000')
 -- }
 
-SMODS.Blind {
-	key = 'unstable',
-	name = 'unstable',
-	atlas = 'unstable',
-	pos = { x = 0, y = 0 },
-	mult = 66,
-	dollars = 10,
-	boss = { min = 16 },
-	loc_txt = {
-		name = 'Instability',
-		text = {
-			'If you have an',
-			'Isotypical\'s Junkyard Joker,',
-			'Upon playing a hand, Die.'
-		}
-	},
-	boss_colour = HEX('101010'),
-	debuff = {
-		akyrs_cannot_be_skipped = true,
-		akyrs_cannot_be_disabled = true,
-		akyrs_cannot_be_rerolled = true,
-		akyrs_cannot_be_overridden = true
-	},
+-- SMODS.Blind {
+-- 	key = 'unstable',
+-- 	name = 'unstable',
+-- 	atlas = 'unstable',
+-- 	pos = { x = 0, y = 0 },
+-- 	mult = 66,
+-- 	dollars = 10,
+-- 	boss = { min = 16 },
+-- 	loc_txt = {
+-- 		name = 'Instability',
+-- 		text = {
+-- 			'If you have an',
+-- 			'Isotypical\'s Junkyard Joker,',
+-- 			'Upon playing a hand, Die.'
+-- 		}
+-- 	},
+-- 	boss_colour = HEX('101010'),
+-- 	debuff = {
+-- 		akyrs_cannot_be_skipped = true,
+-- 		akyrs_cannot_be_disabled = true,
+-- 		akyrs_cannot_be_rerolled = true,
+-- 		akyrs_cannot_be_overridden = true
+-- 	},
 
-	press_play = function(self)
-		if G.GAME.dollars < to_big(999999) then
-			G.STATE = G.STATES.GAME_OVER
-			G.STATE_COMPLETE = false
-			diedach()
-		end
-	end,
-
-	get_loc_debuff_text = function(self)
-		if G.GAME.dollars < to_big(999999) then
-			localize('k_ocstobal_deathinbound')
-		end
-	end
-} --todo: fix
+-- 	press_play = function(self)
+-- 		if G.GAME.dollars < to_big(999999) then
+-- 			G.STATE = G.STATES.GAME_OVER
+-- 			G.STATE_COMPLETE = false
+-- 			diedach()
+-- 		end
+-- 	end
+-- } --todo: fix
 
 SMODS.Blind {
 	key = 'diansu',
