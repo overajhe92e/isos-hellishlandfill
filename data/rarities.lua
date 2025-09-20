@@ -1,5 +1,3 @@
-local rgb = SMODS.Gradient{ocstobal_finalrgb}
-
 SMODS.Rarity {
     key = "legendary",
     pools = {
@@ -151,13 +149,25 @@ SMODS.Rarity {
     end
 }
 
+local the = SMODS.Gradient({
+    key = 'trasnc',
+    colours = {
+        HEX('49ff40'),
+        HEX('40b9ff'),
+        HEX('b357ff'),
+        HEX('fff875'),
+    },
+    interpolation = 'linear',
+    cycle = 7
+})
+
 SMODS.Rarity {
     key = "transc",
     pools = {
         ["Joker"] = true
     },
     default_weight = 0,
-    badge_colour = rgb,
+    badge_colour = the,
     loc_txt = {
         name = "Transcendant"
     },

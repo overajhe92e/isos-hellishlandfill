@@ -136,7 +136,7 @@ SMODS.Joker { --Oxy
 
 SMODS.Joker {
     key = "oxyemp",
-    rarity = "ocstobal_unique",
+    rarity = "ocstobal_transc",
     cost = 50,
     discovered = false,
     config = {

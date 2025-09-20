@@ -100,9 +100,16 @@ SMODS.current_mod.config_tab = function()
 								n = G.UIT.R,
 								config = { minh = 1, minw = 1, align = 'tm', padding = 0.05, colour = G.C.CLEAR },
 								nodes = {
-									{ n = G.UIT.T, config = { text = "ISO'S ALMANAC REQUIRES UNBALANCED MODE", colour = G.C.RED, scale = 0.35, align = "m" }, },
+									{ n = G.UIT.T, config = { text = "ISO'S ALMANAC REQUIRES UNBALANCED MODE", colour = G.C.RED, scale = 0.35, align = "tm" }, }
 								}
 							},
+							{
+								n = G.UIT.R,
+								config = { minh = 1, minw = 1, align = 'tm', padding = 0.1, colour = G.C.CLEAR },
+								nodes = {
+								{ n = G.UIT.T, config = { text = "Also, close enough, welcome back Almanac.", colour = G.C.WHITE, scale = 0.35, align = "tm" }, }
+								}
+							}
 						}
 					},
 				}
