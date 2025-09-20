@@ -9,7 +9,7 @@ SMODS.Seal {
     badge_colour = HEX('000000'),
     atlas = 'CustomSeals',
     unlocked = true,
-    discovered = true,
+    discovered = false,
     no_collection = false,
     calculate = function(self, card, context)
         if context.repetition then

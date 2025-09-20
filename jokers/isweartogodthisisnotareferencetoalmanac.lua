@@ -148,6 +148,12 @@ SMODS.Joker {
     --pos = {x=0,y=0},
     --soul_pos = {x=1,y-0},
 
+    loc_vars = function(self,info_queue,center)
+        return {
+            key = pseudorandom('seed',1,6) == 1 and "j_ocstobal_oxyemp_alt"
+        }
+    end,
+
     set_badges = function(self, card, badges)
         badges[#badges+1] = create_badge(localize('k_ocstobal_veryunstable'), G.C.BLACK, G.C.RED, 1 )
     end,

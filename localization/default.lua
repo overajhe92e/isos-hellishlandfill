@@ -694,6 +694,14 @@ return {
 					'{C:ocstobal_ust}Quadruples Blind Size.{}'
 				}
 			},
+			j_ocstobal_oxyemp_alt = {
+				name = '{C:ocstobal_sewh}ocksie{}',
+				text = {
+					'Copies the ability of {C:attention}two{}',
+					'{C:attention}jokers{} on the {C:blue}left{} and {C:red}right{} of this joker.',
+					'{C:ocstobal_ust}Quadruples Blind Size.{}'
+				}
+			},
 			j_ocstobal_oxywaterdroplet = {
 				name = 'Mysterious Symbol',
 				text = {
@@ -712,13 +720,6 @@ return {
 					'Chip count decrements instead.'
 				}
 			},
-			-- k_ocstobal_marshmallowdownside = {
-			-- 	name = "Marshmallow's Downside",
-			-- 	text = {
-			-- 		'Creates {C:ocstobal_ust}Oxy\'s Hatred{}',
-			-- 		'on blind select.'
-			-- 	}
-			-- },
 			k_ocstobal_sharkdownside = {
 				name = "TSHRK!Sparky's Downside",
 				text = {
@@ -731,6 +732,13 @@ return {
 				text = {
 					'{C:inactive}Don\'t... pick this up.{}',
 					'{C:inactive}Please.{}'
+				}
+			},
+			ocstobal_recluseseye = {
+				name = "Recluse's Eye",
+				text = {
+					'Retriggers this',
+					'card {C:attention}2{} times.'
 				}
 			}
 		},
