@@ -1,3 +1,5 @@
+local rgb = SMODS.Gradient{ocstobal_finalrgb}
+
 SMODS.Rarity {
     key = "legendary",
     pools = {
@@ -143,6 +145,21 @@ SMODS.Rarity {
     badge_colour = HEX('ffa200'),
     loc_txt = {
         name = "Challenge Exclusive"
+    },
+    get_weight = function(self, weight, object_type)
+        return weight
+    end
+}
+
+SMODS.Rarity {
+    key = "transc",
+    pools = {
+        ["Joker"] = true
+    },
+    default_weight = 0,
+    badge_colour = rgb,
+    loc_txt = {
+        name = "Transcendant"
     },
     get_weight = function(self, weight, object_type)
         return weight
