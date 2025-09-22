@@ -55,9 +55,9 @@ SMODS.Joker {
     cost = 20,
     rarity = 'ocstobal_epic',
     blueprint_compat = true,
-    -- atlas = 'johntetration',
-    -- pos = {x=0,y=0},
-    -- soul_pos = {x=1,y=0},
+    atlas = 'johntetration',
+    pos = {x=0,y=0},
+    soul_pos = {x=1,y=0},
     config = {
         extra = {
             eechips = 1,
@@ -65,6 +65,10 @@ SMODS.Joker {
         }
     },
     no_collection = false,
+
+    set_badges = function(self, card, badges)
+        badges[#badges + 1] = create_badge(localize('k_ocstobal_verybad'), G.C.BLACK, G.C.RED, 1)
+    end,
 
     in_pool = function(self, args)
         return unbalancedstuff()
@@ -84,6 +88,21 @@ SMODS.Joker {
             card.ability.extra.eechips = card.ability.extra.eechips + 1
             return {
                 message = 'Upgraded!'
+            }
+        end
+    end
+}
+
+SMODS.Joker {
+    key = 'candycane',
+    cost = 10,
+    rarity = 3,
+    blueprint_compat = true,
+    
+    calculate = function(self,card,context)
+        if context.joker_main then
+            return {
+                Xmult = 6
             }
         end
     end
