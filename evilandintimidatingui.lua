@@ -229,7 +229,7 @@ function thewarning(buttonname)
 	local lore = create_UIBox_generic_options({
 		back_delay = 1,
 		back_label = buttonname,
-		back_colour = G.C.BLACK,
+		back_colour = G.C.RED,
 		colour = G.C.BLACK,
 		padding = 0,
 		contents = {
@@ -241,7 +241,7 @@ function thewarning(buttonname)
 						n = G.UIT.R,
 						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 						nodes = {
-							{ n = G.UIT.T, config = { text = "..?", scale = 0.7, colour = G.C.WHITE, align = 'm' } }
+							{ n = G.UIT.T, config = { text = "12151920nil195181168", scale = 0.85, colour = G.C.WHITE, align = 'm' } }
 						}
 					},
 					{
@@ -262,7 +262,7 @@ function thewarning(buttonname)
 						n = G.UIT.R,
 						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 						nodes = {
-							{ n = G.UIT.T, config = { text = 'I... regret everything...', scale = 0.5, colour = G.C.WHITE, align = 'm' } }
+							{ n = G.UIT.T, config = { text = 'I... regret everything...', scale = 0.5, colour = G.C.RED, align = 'm' } }
 						}
 					},
 					{
@@ -290,7 +290,7 @@ function thewarning(buttonname)
 						n = G.UIT.R,
 						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 						nodes = {
-							{ n = G.UIT.T, config = { text = 'Was it... worth it? Removing them..?', scale = 0.4, colour = G.C.WHITE, align = 'm' } }
+							{ n = G.UIT.T, config = { text = 'Was it... worth it? Removing them..?', scale = 0.4, colour = G.C.RED, align = 'm' } }
 						}
 					},
 					{
@@ -304,7 +304,14 @@ function thewarning(buttonname)
 						n = G.UIT.R,
 						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 						nodes = {
-							{ n = G.UIT.T, config = { text = '[ Except for Seraph, Broken Seraph, and Recluse. ]', scale = 0.4, colour = G.C.UI.TEXT_INACTIVE, align = 'm' } }
+							{ n = G.UIT.T, config = { text = '[ Except for Seraph, Broken Seraph, and other lore-based jokers. ]', scale = 0.4, colour = G.C.UI.TEXT_INACTIVE, align = 'm' } }
+						}
+					},
+					{
+						n = G.UIT.R,
+						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
+						nodes = {
+							{ n = G.UIT.T, config = { text = '[ Do not play this mode if you haven\'t found any character lore yet! ]', scale = 0.3, colour = G.C.UI.TEXT_INACTIVE, align = 'm' } }
 						}
 					}
 				}
@@ -315,6 +322,10 @@ function thewarning(buttonname)
 end
 
 function G.FUNCS.supersecret()
+	G.FUNCS.overlay_menu {
+		definition = thewarning("No turning back now."),
+		config = { no_esc = true }
+	}
 	G.GAME.current_isomode = 666
 	play_sound('ocstobal_ominous', 0.8, 2)
 	G.SETTINGS.SOUND.music_volume = 0
@@ -325,10 +336,7 @@ function G.FUNCS.supersecret()
 		trigger = "after",
 		delay = 5,
 		func = function()
-			G.FUNCS.overlay_menu {
-				definition = thewarning("..."),
-				config = { no_esc = true }
-			}
+			G.SETTINGS.GAMESPEED = 4
 			eeriestuff()
 			return true
 		end

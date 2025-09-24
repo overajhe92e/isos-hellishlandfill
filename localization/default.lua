@@ -910,6 +910,7 @@ return {
 			sphlvlextreme = "An end never in sight, He grows more restless.",
 			sphlvlabsolutefinal = "All is done. The Absolute has been reached.",
 			sphwhy = "what the fuck dude go outside",
+			yeahokbro = "Death is immediate.",
 
 			k_ocstobal_oxy_quote1 = "\"I am NOT that Oxy from Almanac.\"",                     -- you are (/j)
 			k_ocstobal_oxy_quote2 = "\"What do you MEAN my ability isn't unique?!\"",

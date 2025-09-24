@@ -67,17 +67,21 @@ SMODS.Blind {
 		akyrs_cannot_be_overridden = true
 	},
 
-	press_play = function(self)
-		for i = 1, #G.jokers.cards do
-			if G.jokers.cards[i].config.center.original_mod == SMODS.Mods["ocstobal"] then
-				G.E_MANAGER:add_event({
-					func = function()
-						forceGameover()
-						return true
-					end
-				})
-				diedach()
-				--"Add a cheeseburger" -Grazy
+	calculate = function(self, card, context)
+		if context.modify_hand then
+			for i = 1, #G.jokers.cards do
+				if G.jokers.cards[i].config.center.original_mod == SMODS.Mods["ocstobalatro"] then
+						G.E_MANAGER:add_event({
+							func = function()
+								death()
+								diedach()
+								forceGameover()
+								return true
+							end
+						})
+					--"Add a cheeseburger" -Grazy
+					--TODO: add a 1 in 100 chance for a cheeseburger jumpscare
+				end
 			end
 		end
 	end
@@ -311,4 +315,17 @@ function diedach()
 			return true
 		end,
 	}))
+end
+
+function death()
+	local text = localize('yeahokbro')
+	attention_text({
+		scale = 1,
+		text = text,
+		hold = 8,
+		align = 'cm',
+		offset = { x = 0, y = -2.7 },
+		major = G.play,
+		colour = HEX('ff0000')
+	})
 end
