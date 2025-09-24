@@ -4,7 +4,7 @@ SMODS.Joker {
     rarity = 3,
     config = {
         extra = {
-            dollars = 10
+            dollars = 8
         }
     },
     atlas = 'ichor',
