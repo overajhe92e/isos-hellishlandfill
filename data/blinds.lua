@@ -51,57 +51,37 @@ SMODS.Blind {
 	boss_colour = HEX('0000ff')
 }
 
--- SMODS.Blind {
--- key = 'impossible',
--- name = 'impossible',
--- atlas = 'impossible',
--- pos = {x=0,y=0},
--- mult = 1e309,
--- dollars = 0,
--- boss = { min = 1e308 },
--- loc_txt = {
--- name = 'Literally Impossible',
--- text = {
--- 'You cant find this blind.',
--- 'Or even win it.',
--- 'Not like you\'d get past Ante 39.'
--- }
--- },
--- boss_colour = HEX('000000')
--- }
+SMODS.Blind {
+	key = 'unstable',
+	name = 'unstable',
+	atlas = 'unstable',
+	pos = { x = 0, y = 0 },
+	mult = 66,
+	dollars = 10,
+	boss = { min = 16 },
+	boss_colour = HEX('101010'),
+	debuff = {
+		akyrs_cannot_be_skipped = true,
+		akyrs_cannot_be_disabled = true,
+		akyrs_cannot_be_rerolled = true,
+		akyrs_cannot_be_overridden = true
+	},
 
--- SMODS.Blind {
--- 	key = 'unstable',
--- 	name = 'unstable',
--- 	atlas = 'unstable',
--- 	pos = { x = 0, y = 0 },
--- 	mult = 66,
--- 	dollars = 10,
--- 	boss = { min = 16 },
--- 	loc_txt = {
--- 		name = 'Instability',
--- 		text = {
--- 			'If you have an',
--- 			'Isotypical\'s Junkyard Joker,',
--- 			'Upon playing a hand, Die.'
--- 		}
--- 	},
--- 	boss_colour = HEX('101010'),
--- 	debuff = {
--- 		akyrs_cannot_be_skipped = true,
--- 		akyrs_cannot_be_disabled = true,
--- 		akyrs_cannot_be_rerolled = true,
--- 		akyrs_cannot_be_overridden = true
--- 	},
-
--- 	press_play = function(self)
--- 		if G.GAME.dollars < to_big(999999) then
--- 			G.STATE = G.STATES.GAME_OVER
--- 			G.STATE_COMPLETE = false
--- 			diedach()
--- 		end
--- 	end
--- } --todo: fix
+	press_play = function(self)
+		for i = 1, #G.jokers.cards do
+			if G.jokers.cards[i].config.center.original_mod == SMODS.Mods["ocstobal"] then
+				G.E_MANAGER:add_event({
+					func = function()
+						forceGameover()
+						return true
+					end
+				})
+				diedach()
+				--"Add a cheeseburger" -Grazy
+			end
+		end
+	end
+} --todo: fix
 
 SMODS.Blind {
 	key = 'diansu',
@@ -114,10 +94,8 @@ SMODS.Blind {
 	loc_txt = {
 		name = 'Diansu Vulkarch',
 		text = {
-			'MORYIA, I THOUGHT YOU WERE {C:dark_edition}ENLIGHTENED{}',
-			'I THOUGHT YOU WERE LIKE {C:green}WILL{}',
-			'BUT TURNS OUT YOUR LIKE THE {C:red}SCUM{} LIKE',
-			'{C:red,s:1.2}F U C K I N   E I G H T{}'
+			'Run, that\'s all you CAN do!',
+			'*clair de lune*'
 		}
 	},
 	boss_colour = HEX('078500'),
@@ -158,129 +136,6 @@ SMODS.Sound {
 	end
 }
 
--- SMODS.Blind {
--- 	key = 'lankyohfuckinghellbox',
--- 	name = 'lankyohfuckinghellbox',
--- 	atlas = 'burnteyes',
--- 	pos = { x = 0, y = 0 },
--- 	mult = 2,
--- 	dollars = 12,
--- 	in_pool = function(self)
--- 		return ifuckinghatelankybox()
--- 	end,
--- 	ignore_showdown_check = false,
--- 	boss_colour = HEX('ff0000'),
--- 	debuff = {
--- 		--akyrs_cannot_be_skipped = true,
--- 		akyrs_cannot_be_disabled = true,
--- 		akyrs_cannot_be_rerolled = true,
--- 		akyrs_blind_difficulty = "master",
--- 		--akyrs_cannot_be_overridden = true
--- 	},
-
--- 	defeat = function(self)
--- 		imsorryforthis()
--- 		AHHHH()
--- 		G.FUNCS.overlay_menu {
--- 			definition = create_UIBox_custom_video4("sorry", "im sorry."),
--- 			config = { no_esc = true }
--- 		}
--- 	end
--- }
-
--- SMODS.Blind { unused due to video
--- 	key = 'cringeasf',
--- 	name = 'cringeasf',
--- 	atlas = 'HELPME',
--- 	pos = { x = 0, y = 0 },
--- 	mult = 0.75,
--- 	dollars = 10,
--- 	boss = { min = 1 },
--- 	boss_colour = HEX('7DF9FF'),
--- 	debuff = {
--- 		akyrs_blind_difficulty = "expert",
--- 		akyrs_cannot_be_disabled = true,
--- 		akyrs_cannot_be_rerolled = true
--- 	},
--- 	ignore_showdown_check = true,
--- 	in_pool = function(self)
--- 		return ifuckinghatelankybox()
--- 	end,
-
--- 	defeat = function(self)
--- 		if SMODS.last_hand_oneshot then
--- 			achievementlanky()
--- 			AHHHH()
--- 			G.FUNCS.overlay_menu {
--- 				definition = create_UIBox_custom_video2("suffer", "HATE. LET ME TELL YOU HOW MUCH I'VE COME TO HATE YOU SINCE I BEGAN TO LIVE."),
--- 				config = { no_esc = true }
--- 			}
--- 		end
--- 	end
--- }
-
---unused as it's too fucking annoying to compress the videos
--- function AHHHH()
--- 	local text = localize('fuckyou')
--- 	attention_text({
--- 		scale = 1,
--- 		text = text,
--- 		hold = 2,
--- 		align = 'cm',
--- 		offset = { x = 0, y = -2.7 },
--- 		major = G.play,
--- 		colour = HEX('ffffff')
--- 	})
--- end
-
--- function achievementlanky()
--- 	G.E_MANAGER:add_event(Event({
--- 		trigger = 'immediate',
--- 		locking = false,
--- 		delay = 0,
--- 		func = function()
--- 			check_for_unlock({ type = "ach_lankyfuckoff" })
--- 			return true
--- 		end,
--- 	}))
--- end
-
--- function imsorryforthis()
--- 	G.E_MANAGER:add_event(Event({
--- 		trigger = 'immediate',
--- 		locking = false,
--- 		delay = 0,
--- 		func = function()
--- 			check_for_unlock({ type = "ach_sorry" })
--- 			return true
--- 		end,
--- 	}))
--- end
-
--- SMODS.Blind {
--- key = 'yahermouse',
--- name = 'yahermouse',
--- atlas = 'HELPME',
--- mult = 1,
--- dollars = 2,
--- boss = { min = 1},
--- loc_txt = {
--- name = 'Peak Blind',
--- text = {
--- 'Upon defeating blind,',
--- 'Watch a Yahiamice Video'
--- }
--- },
--- boss_colour = HEX('0000ff'),
-
--- defeat = function(self)
--- G.FUNCS.overlay_menu{
--- definition = create_UIBox_custom_video3("peak","Hell Yeah"),
--- config = {no_esc = true}
--- }
--- end
--- }
-
 function suffertime()
 	if G.reclusebs >= 1 then
 		return true
@@ -314,17 +169,6 @@ SMODS.Blind {
 		play_sound('ocstobal_ominous', 0.8, 1)
 	end
 }
-
--- SMODS.Blind {
--- key = 'THEWALLex',
--- name = 'THEWALLex',
--- atlas = 'rngatlas',
--- pos = {x=0,y=0},
--- mult = 100,
--- dollars = 8,
--- boss = { min = 16 },
--- boss_colour = HEX('ffffff')
--- }
 
 SMODS.Blind {
 	key = 'recluseblind',

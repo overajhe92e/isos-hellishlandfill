@@ -176,3 +176,18 @@ SMODS.Rarity {
     end
 }
 
+SMODS.Rarity {
+    key = "why",
+    pools = {
+        ["Joker"] = true
+    },
+    default_weight = 0,
+    badge_colour = HEX('000000'),
+    loc_txt = {
+        name = "Are you fucking serious"
+    },
+    get_weight = function(self, weight, object_type)
+        return weight
+    end
+}
+

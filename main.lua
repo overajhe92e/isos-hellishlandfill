@@ -134,3 +134,15 @@ local function grah()
 end
 
 grah()
+
+G.fearfactor = 0
+
+local function IHATEYOUSOMUCH()
+    if G.fearfactor < 1 then
+        return false
+    else
+        G.fearfactor = 1
+    end
+end
+
+IHATEYOUSOMUCH()

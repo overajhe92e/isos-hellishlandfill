@@ -109,7 +109,7 @@ SMODS.Back {
 	-- 	end
 	-- end,
 	apply = function(self, back)
-		if pseudorandom("avaritiajumpscare", 1, 6) == 1 and ocstobal.configbs.very_unbalanced_mode == true then
+		if pseudorandom("avaritiajumpscare", 1, 6) == 1 and G.current_isomode >= 2 then
 			G.E_MANAGER:add_event(Event({
 				func = function()
 					SMODS.add_card { key = "j_ocstobal_jokertoendalljokers" }

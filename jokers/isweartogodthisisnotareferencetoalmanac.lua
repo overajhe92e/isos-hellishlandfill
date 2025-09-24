@@ -136,7 +136,7 @@ SMODS.Joker { --Oxy
 
 SMODS.Joker {
     key = "oxyemp",
-    rarity = "ocstobal_transc",
+    rarity = "ocstobal_unique",
     cost = 50,
     discovered = false,
     config = {
@@ -147,10 +147,11 @@ SMODS.Joker {
     atlas = "oxyemp",
     pos = {x=0,y=0},
     soul_pos = {x=1,y=0},
+    blueprint_compat = true,
 
     loc_vars = function(self,info_queue,center)
         return {
-            key = pseudorandom('seed',1,6) == 1 and "j_ocstobal_oxyemp_alt"
+            key = pseudorandom('seed',1,10) == 1 and "j_ocstobal_oxyemp_alt" --fym oxy can also be another person
         }
     end,
 

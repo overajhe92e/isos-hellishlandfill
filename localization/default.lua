@@ -144,6 +144,14 @@ return {
 					'Watch half of a Lankybox video.',
 					'Video cannot be disabled.'
 				}
+			},
+			bl_ocstobal_unstable = {
+				name = 'Instability',
+				text = {
+					'If you play a hand with',
+					'an Isotypical\'s Junkyard joker,',
+					'Instantly die.'
+				}
 			}
 		},
 		Edition = {
@@ -253,6 +261,31 @@ return {
 					}
 				}
 			},
+			j_ocstobal_seraph_maxedrebalance = {
+				name = "{C:ocstobal_legendplus}Seraph{}",
+				text = {
+					{
+						'{C:red,s:0.9}#1#{}',
+						'{C:dark_edition,s:0.9}Origin: Fundamental Paper Education{}',
+						'{C:dark_edition,s:1.2}EXP: MAXED{}',
+						'{C:dark_edition,s:1.2}LV: 10{}',
+					},
+					{
+						'{s:1.5,C:dark_edition,E:1}Leveling System{}',
+						'You gain {C:ocstobal_sewh}EXP{} by {C:attention}triggering{} Seraph\'s Ability.',
+						'Once you reach {C:attention}10 triggers{}, Seraph will {C:ocstobal_sewh}"Level Up"{}.',
+						'{C:ocstobal_sewh,E:2}Special abilities{} may occur at certain LV.',
+						'{C:attention}General Levelling:{} Every LV upgrades {X:red,C:white}XMult{} by {X:red,C:white}X0.25{}',
+						'{C:blue}LV 5{} : Applies {C:chip}Chips{} for every scored card. Increases by +10 every LV.',
+						'{C:blue}LV 10{} : {X:mult,C:white}XMult{} is guaranteed, and the Ante 8 Debuff becomes {C:attention}inactive.{}',
+						'{C:inactive}LV 100 : Not obtainable in Rebalanced Mode{}',
+					},
+					{
+						'{C:dark_edition,E:1,s:1.2}Current Stats{}',
+						'{X:red,C:white}X#11#{} Mult, {C:blue}+#12#{} Chips, {X:blue,C:white}X#14#{} Chips',
+					}
+				}
+			},
 			j_ocstobal_seraph_maxedbalanced = {
 				name = "{C:ocstobal_legendplus}Voidgloom Seraph{}",
 				text = {
@@ -271,7 +304,7 @@ return {
 						'{C:blue}LV 5{} : Applies {C:chip}Chips{} for every scored card. Increases by +10 every LV.',
 						'{C:blue}LV 10{} : {X:mult,C:white}XMult{} is guaranteed, and the Ante 8 Debuff becomes {C:attention}inactive.{}',
 						'{C:green}LV 100{} : {X:blue,C:white}XChip{} is applied for every scored card. {X:blue,C:white}X#14#{} XChip',
-						'{C:inactive}LV 400 : Not possible to obtain in Balanced Mode{}'
+						'{C:inactive}LV 400 : Not possible to obtain in Normal Mode{}'
 					},
 					{
 						'{C:dark_edition,E:1,s:1.2}Current Stats{}',
@@ -330,7 +363,8 @@ return {
 						'{C:green}LV 100 Extra Perk{} : {X:blue,C:white}XChip{} is applied for every scored card. Increases by {X:blue,C:white}+X2{} for every level.',
 						'{C:ocstobal_ust}LV 400{} : {s:1.1,C:ocstobal_ust,E:1}Applies ^Mult. Grows by +^0.05 every LV.{}',
 						'{C:ocstobal_sewh,s:1.3,E:1}LV 1,000 : Applies ^^Mult for every scored card.{}',
-						'{C:ocstobal_finalrgb,E:1}Seraph has nothing else to learn, or destroy. He has reached the end of growth.{}'
+						'{C:ocstobal_finalrgb,E:1}Seraph has nothing else to learn, or destroy. He has reached the end of growth.{}',
+						'{C:inactive,s:0.65}LV 10,000..?{}'
 					},
 					{
 						'{C:dark_edition,E:1,s:1.2}Current Stats{}',
@@ -338,16 +372,53 @@ return {
 					}
 				}
 			},
+			j_ocstobal_seraph_lv10k = {
+				name = "{C:ocstobal_finalrgb}Collapse of the Multiverse{}",
+				text = {
+					{
+						'{C:dark_edition,s:1.35}EXP: #9# / 10{}',
+						'{C:dark_edition,s:1.35}LV: #10#{}'
+					},
+					{
+						'{C:dark_edition,E:1,s:1.2}???{}',
+						'{C:ocstobal_legendplus,s:2}LV 10,000 : EEEMult unlocked...{}',
+					},
+					{
+						'{C:dark_edition,E:1,s:1.2}???{}',
+						'{C:ocstobal_ust}Something\'s wrong. He wasn\'t supposed to learn something new.{}',
+					}
+				}
+			},
+			j_ocstobal_seraph_lv100k = {
+				name = "{C:ocstobal_finalrgb}Serafinentyhjyys{}",
+				text = {
+					{
+						'{C:dark_edition,s:1.35}EXP: #9# / 10{}',
+						'{C:dark_edition,s:1.35}LV: #10#{}'
+					},
+					{
+						'{C:dark_edition,E:1,s:1.2}???{}',
+						'{C:ocstobal_legendplus,s:1.5}LV 100,000 : Hypermult Unlocked. All previous scaling uses ^1.5 instead.{}',
+					},
+					{
+						'{C:dark_edition,E:1,s:1.2}MESSAGE{}',
+						'{C:ocstobal_ust}No. Nononono. NO. NO. STOP. I CAN\'T CONTROL HIM.{}',
+						'{C:ocstobal_ust}If he grows too powerful, I can\'t stop him.{}'
+					}
+				}
+			},
 			j_ocstobal_seraph_why = {
-				name = "why",
+				name = "okay bro",
 				text = {
 					'wtf dude why did you do this',
 					'and HOW the hell did you do this',
-					'like im pretty sure even almanac isn\'t that insane to the point',
+					'like im pretty sure even MAYHEM of all fuckin mods isn\'t that insane to the point',
 					'that you can get to THIS MANY RETRIGGERS IN 1 RUN',
 					'urgh, anyways here\'s your current level and xp i guess',
-					'{C:dark_edition,s:1.35}EXP: #8# / 10{}',
-					'{C:dark_edition,s:1.35}LV: #9#{}'
+					'{C:dark_edition,s:1.35}EXP: #9# / 10{}',
+					'{C:dark_edition,s:1.35}LV: #10#{}',
+					'oh and also for your reward, here\'s a cat laughing at you',
+					'{s:4,C:ocstobal_sewh}go outside.{}'
 				}
 			},
 			j_ocstobal_sparky = {
@@ -769,9 +840,9 @@ return {
 				name = "The Final Stake",
 				text = {
 					'{C:ocstobal_legendplus}Showdown blinds{} appear every {C:red}2 Antes{}',
-					'{C:edition}Win Requirement{} is {C:attention}Ante 11{}',
+					'{C:edition}Win Requirement{} is {C:attention}Ante 12{}',
 					'Previous stakes effects are {C:attention}Amplified{}',
-					'{s:0.7,C:inactive}Except Blue Stake because it\'s god fucking awful{}',
+					'{s:0.7,C:inactive}Except Blue Stake because it\'s god fucking awful, +1 discard.{}',
 					'{C:attention}Unbalanced Mode{} Jokers and {C:ocstobal_almanacblue}Iso\'s Almanac{} Jokers',
 					'Are {C:red}Permanently{} Debuffed'
 				}
@@ -896,6 +967,9 @@ return {
 			k_ocstobal_shrimpo_quote3 = "I HATE EVERYTHING!",
 
 			k_again_ex = 'Again!',
+
+			k_ocstobal_unbalanced = 'Unbalanced',
+			k_ocstobal_verybad = 'Extremely Unbalanced',
 
 			k_ocstobal_dangerous = 'Unstable Behaviour',
 

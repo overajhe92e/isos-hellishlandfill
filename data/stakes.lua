@@ -26,7 +26,7 @@ SMODS.Stake {
         G.GAME.modifiers.scaling = (G.GAME.modifiers.scaling or 1) + 5
         G.GAME.modifiers.no_blind_reward = G.GAME.modifiers.no_blind_reward or {}
         G.GAME.modifiers.no_blind_reward.Boss = true
-        G.GAME.win_ante = math.ceil(G.GAME.win_ante * 1.3)
+        G.GAME.win_ante = math.ceil(G.GAME.win_ante * 1.5)
     end,
     colour = G.C.WHITE,
     shiny = true

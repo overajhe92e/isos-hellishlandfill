@@ -9,7 +9,7 @@ function love.draw()
 	function FuckingImage(fn)
 		local full_path = (ocstobal.path
 			.. "image/" .. fn)
-		local file_data = assert(NFS.newFileData(full_path), ("ruh roh"))
+		local file_data = assert(NFS.newFileData(full_path), ("Missing Image! Are you sure you loaded it, or named it correctly?"))
 		local tempimagedata = assert(love.image.newImageData(file_data), ("ggez"))
 		return (assert(love.graphics.newImage(tempimagedata), ("ez noob")))
 	end
@@ -26,6 +26,14 @@ function love.draw()
 		love.graphics.setColor(1, 1, 1, 1)
 		love.graphics.draw(ocstobal.laugher, 0, 0, 0, 2.6, 1.65)
 	end
+
+	if G.silence and (G.silence > 0) then
+		if ocstobal.silence == nil then ocstobal.laugher = FuckingImage("blackscreen.png") end
+		love.graphics.setColor(1, 1, 1, 1)
+		love.graphics.draw(ocstobal.laugher, 0, 0, 0, 3, 3)
+	end
+
+	--It's that easy. -also Doctor4t
 end
 
 --is that yaha mouse
@@ -312,6 +320,22 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
+	key = 'johntetration',
+	px = 71,
+	py = 95,
+	path = 'astro.png',
+	atlas_table = 'ASSET_ATLAS'
+}
+
+-- SMODS.Atlas {
+-- 	key = 'tempjtetration',
+-- 	px = 71,
+-- 	py = 95,
+-- 	path = 'astrotemp.png',
+-- 	atlas_table = 'ASSET_ATLAS'
+-- }
+
+SMODS.Atlas {
 	key = 'deckofalltime',
 	px = 71,
 	py = 95,
@@ -329,14 +353,19 @@ SMODS.Sound {
 	path = "straddle.ogg"
 }
 
+SMODS.Sound {
+	key = 'music_ocean',
+	path = "music_ocean.ogg",
+	pitch = 0.85,
+	volume = 0.7,
+	select_music_track = function()
+		if G.fearfactor > 0 then return true else return false end
+	end
+}
+
 -- if G.GAME then
 -- 	ocstobal.should_do_this = next(SMODS.find_card("j_ocstobal_seraph"))
 -- end
-
---[[
-    remember almanac?
-    yeah well im bringing this song back have fun with ptsd
-]]
 
 -- --note to self: uncomment if the original creator of these songs allow these two songs to be used in this mod
 -- SMODS.Sound {
@@ -378,6 +407,7 @@ local function ex()
 	assert(SMODS.load_file("data/stakes.lua"))()
 	assert(SMODS.load_file("data/configchecks.lua"))()
 	assert(SMODS.load_file("data/reclusecheck.lua"))()
+	assert(SMODS.load_file("data/otherchecks.lua"))()
 	-- assert(SMODS.load_file("data/sleeve.lua"))() do not use
 end
 
@@ -405,6 +435,8 @@ function create_UIBox_custom_video1(name, buttonname)
 	})
 	return t
 end
+
+G.current_isomode = 0
 
 --lanky "i'll go fucking kill myself" box video
 -- function create_UIBox_custom_video2(name, buttonname)
@@ -756,6 +788,248 @@ G.recluseblind = 0
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 -- ok so maybe i lied about abbie doing nothing
 --credits to paradox for the hook 
 local abbornegative = G.P_CENTERS.e_negative.get_weight
@@ -766,3 +1040,4 @@ G.P_CENTERS.e_negative.get_weight = function(self)
 	end
 	return weight
 end
+--yeah.

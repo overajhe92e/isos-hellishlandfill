@@ -56,16 +56,16 @@ SMODS.Joker { --Seraph
     update = function(self, card, dt)
         if card.ability.extra.upgrade < 100 then
             card.children.floating_sprite:set_sprite_pos { x = 1, y = 0 }
-        elseif card.ability.extra.upgrade >= 100 and card.ability.extra.upgrade < 400 and ocstobal.configbs.unbalanced_mode == true then
+        elseif card.ability.extra.upgrade >= 100 and card.ability.extra.upgrade < 400 and G.current_isomode >= 1 then
             card.children.floating_sprite:set_sprite_pos { x = 2, y = 0 }
             card.children.center:set_sprite_pos { x = 0, y = 1 }
             card:set_cost(1000)
-        elseif card.ability.extra.upgrade >= 400 and card.ability.extra.upgrade < 1000 and ocstobal.configbs.unbalanced_mode == true then
+        elseif card.ability.extra.upgrade >= 400 and card.ability.extra.upgrade < 1000 and G.current_isomode >= 1 then
             G.GAME.ocstobal_ext = 50
             card.children.center:set_sprite_pos { x = 1, y = 1 }
             card.children.floating_sprite:set_sprite_pos { x = 3, y = 0 }
             card:set_cost(5000)
-        elseif card.ability.extra.upgrade >= 1000 and ocstobal.configbs.unbalanced_mode == true then
+        elseif card.ability.extra.upgrade >= 1000 and G.current_isomode >= 1 then
             G.GAME.ocstobal_ext = 100
             card.children.center:set_sprite_pos { x = 1, y = 1 }
             card.children.floating_sprite:set_sprite_pos { x = 4, y = 0 }
@@ -81,7 +81,7 @@ SMODS.Joker { --Seraph
                 card.ability.extra.chips = card.ability.extra.chips + 10
                 G.GAME.sphupg = card.ability.extra.upgrade
             until card.ability.extra.triggered < 10
-        elseif card.ability.extra.upgrade >= 100 and card.ability.extra.upgrade < 400 and card.ability.extra.triggered >= 10 and ocstobal.configbs.unbalanced_mode == true then
+        elseif card.ability.extra.upgrade >= 100 and card.ability.extra.upgrade < 400 and card.ability.extra.triggered >= 10 and G.current_isomode >= 1 then
             sphupmajor()
             play_sound('ocstobal_upg', 0.85, 1)
             repeat
@@ -92,7 +92,7 @@ SMODS.Joker { --Seraph
                 card.ability.extra.xchips = card.ability.extra.xchips + 2
                 G.GAME.sphupg = card.ability.extra.upgrade
             until card.ability.extra.triggered < 10
-        elseif card.ability.extra.upgrade >= 400 and card.ability.extra.upgrade < 1000 and card.ability.extra.triggered >= 10 and ocstobal.configbs.unbalanced_mode == true then
+        elseif card.ability.extra.upgrade >= 400 and card.ability.extra.upgrade < 1000 and card.ability.extra.triggered >= 10 and G.current_isomode >= 1 then
             sphupextreme()
             play_sound('ocstobal_upg', 0.75, 2)
             repeat
@@ -104,7 +104,7 @@ SMODS.Joker { --Seraph
                 card.ability.extra.emult = card.ability.extra.emult + 0.1
                 G.GAME.sphupg = card.ability.extra.upgrade
             until card.ability.extra.triggered < 10
-        elseif card.ability.extra.upgrade >= 1000 and card.ability.extra.triggered >= 10 and ocstobal.configbs.unbalanced_mode == true then
+        elseif card.ability.extra.upgrade >= 1000 and card.ability.extra.triggered >= 10 and card.ability.extra.upgrade < 1e7 and G.current_isomode >= 1 then
             sphupfinal()
             play_sound('ocstobal_upg', 0.65, 3)
             repeat
@@ -117,6 +117,10 @@ SMODS.Joker { --Seraph
                 card.ability.extra.eemult = card.ability.extra.eemult + 1
                 G.GAME.sphupg = card.ability.extra.upgrade
             until card.ability.extra.triggered < 10
+        elseif card.ability.extra.upgrade >= 10000000 and card.ability.extra.triggered >= 10 then
+            wtfdude()
+            play_sound('ocstobal_loser',1,100)
+            card.ability.extra.triggered = card.ability.extra.triggered - 1e300
         end
         if next(SMODS.find_card("j_ocstobal_recluse")) then
             card:set_eternal(true)
@@ -152,11 +156,14 @@ SMODS.Joker { --Seraph
                 card.ability.extra.xchips,
                 card.ability.extra.eemult
             },
-            key = card.ability.extra.upgrade >= 1000000 and "j_ocstobal_seraph_why"
-            or card.ability.extra.upgrade >= 100 and card.ability.extra.upgrade <= 399 and ocstobal.configbs.unbalanced_mode == true and "j_ocstobal_seraph_lv100" 
-            or card.ability.extra.upgrade >= 100 and card.ability.extra.upgrade < 1000000 and ocstobal.configbs.unbalanced_mode == false and "j_ocstobal_seraph_maxedbalanced" 
-            or card.ability.extra.upgrade >= 400 and card.ability.extra.upgrade and card.ability.extra.upgrade <= 999 and ocstobal.configbs.unbalanced_mode == true and "j_ocstobal_seraph_lv300" 
-            or card.ability.extra.upgrade >= 1000 and card.ability.extra.upgrade < 1000000 and ocstobal.configbs.unbalanced_mode == true and "j_ocstobal_seraph_lv1000" 
+            key = card.ability.extra.upgrade >= 10000000 and "j_ocstobal_seraph_why"
+            or G.current_isomode >= 1 and card.ability.extra.upgrade >= 100 and card.ability.extra.upgrade <= 399 and "j_ocstobal_seraph_lv100" 
+            or G.current_isomode == 0 and card.ability.extra.upgrade >= 100 and card.ability.extra.upgrade < 10000000 and "j_ocstobal_seraph_maxedbalanced" 
+            or G.current_isomode >= 1 and card.ability.extra.upgrade >= 400 and card.ability.extra.upgrade and card.ability.extra.upgrade <= 999 and "j_ocstobal_seraph_lv300" 
+            or G.current_isomode >= 1 and card.ability.extra.upgrade >= 1000 and card.ability.extra.upgrade < 100000 and "j_ocstobal_seraph_lv1000" 
+            or G.current_isomode >= 1 and card.ability.extra.upgrade >= 10000 and card.ability.extra.upgrade < 1000000 and "j_ocstobal_seraph_lv10k"
+            or G.current_isomode >= 1 and card.ability.extra.upgrade >= 100000 and card.ability.extra.upgrade < 10000000 and "j_ocstobal_seraph_lv100k"
+            
         }
     end,
 
@@ -194,7 +201,7 @@ SMODS.Joker { --Seraph
                         }, card)
                 end
             end
-            if context.individual and context.cardarea == G.play and card.ability.extra.upgrade >= 400 and card.ability.extra.upgrade < 999 then
+            if context.individual and context.cardarea == G.play and card.ability.extra.upgrade >= 400 and card.ability.extra.upgrade < 1000 then
                 if true then
                     card.ability.extra.triggered = card.ability.extra.triggered + 1
                     SMODS.calculate_effect(
@@ -295,7 +302,7 @@ SMODS.Joker { --Seraph
         --         until card.ability.extra.triggered < 10
         --     end
         -- end
-        -- if context.joker_main and card.ability.extra.upgrade >= 1000000 and not context.blueprint then
+        -- if context.joker_main and card.ability.extra.upgrade >= 10000000 and not context.blueprint then
         --     if card.ability.extra.triggered >= 10 then
         --         wtfdude()
         --         play_sound('ocstobal_loser', 1, 10)

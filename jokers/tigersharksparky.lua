@@ -48,23 +48,19 @@ SMODS.Joker { --Tiger Shark Sparky
         end
         if context.individual and context.cardarea == G.play then
             context.other_card.should_destroy = false
-            if true then
-                return {
-                    x_chips = card.ability.extra.chip,
-                    extra = {
-                        Xmult = card.ability.extra.mult
-                    }
-                    ,
-                    func = function()
-                        if SMODS.pseudorandom_probability(card, 'group_0_cdf6ff1d', 1, card.ability.extra.odds, 'j_ocstobal_tigersharksparky') then
-                            context.other_card.should_destroy = true
-                            card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil,
-                                { message = "Nom.", colour = G.C.RED })
-                        end
-                        return true
+            return {
+                xchips = card.ability.extra.chip,
+                xmult = card.ability.extra.mult,
+                func = function()
+                    if SMODS.pseudorandom_probability(card, 'group_0_cdf6ff1d', 1, card.ability.extra.odds, 'j_ocstobal_tigersharksparky') then
+                        context.other_card.should_destroy = true
+                        card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil,
+                            { message = "Nom.", colour = G.C.RED }
+                        )
                     end
-                }
-            end
+                    return true
+                end
+            }
         end
     end
 }

@@ -54,7 +54,7 @@ SMODS.Joker { --so you know polterwor
 
 SMODS.Joker { --don't use, please
     key = 'cpuoverload',
-    rarity = 'ocstobal_whatthefuck',
+    rarity = 'ocstobal_why',
     cost = 1e308,
     atlas = 'avaritia',
     soul_pos = {x=1,y=0},
@@ -64,12 +64,12 @@ SMODS.Joker { --don't use, please
     calculate = function(self,card,context)
         if context.joker_main then
             return {
-                hypermult = {1e66,1e66},
-                hyperchips = {1e66,1e66}
+                hypermult = {1e999,1e999},
+                hyperchips = {1e999,1e999}
             }
         end
         if context.retrigger_joker_check and context.other_card then
-            return { repetitions = 1e9 }
+            return { repetitions = 1e999 }
         end
     end
 }
@@ -102,7 +102,7 @@ SMODS.Joker { --UNUSED RIGHT NOW
     no_collection = true
 }
 
-SMODS.Joker { --IMPLEMENT LATER
+SMODS.Joker { --ACTUALLY DONT
     key = 'amalgamation',
     rarity = 'ocstobal_whatthefuck',
     cost = 0,
