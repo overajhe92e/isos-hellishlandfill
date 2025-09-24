@@ -177,7 +177,25 @@ return {
 				}
 			}
 		},
-		Enhanced = {},
+		Enhanced = {
+			m_ocstobal_du238 = {
+				name = "Depleted U238",
+				text = {
+					'{X:red,C:white}X2.5{} Mult and',
+					'{X:blue,C:white}X1.5{} Chips',
+					'when held in hand'
+				}
+			},
+			m_ocstobal_irradiated = {
+				name = "Irradiated",
+				text = {
+					'{X:black,C:white}X0.9{} Mult and Chips',
+					'when held in hand',
+					'Decays into Depleted U238 after',
+					'#1# hands when held in hand.'
+				}
+			}
+		},
 		Joker = {
 			j_ocstobal_Oxy = {
 				name = "Oxy",
@@ -817,7 +835,7 @@ return {
 					'{C:inactive}Please.{}'
 				}
 			},
-			ocstobal_recluseseye = {
+			ocstobal_recluses_eye_seal = {
 				name = "Recluse's Eye",
 				text = {
 					'Retriggers this',

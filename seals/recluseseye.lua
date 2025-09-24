@@ -1,5 +1,5 @@
 SMODS.Seal {
-    key = 'recluseseye',
+    key = 'recluses_eye',
     pos = { x = 0, y = 0 },
     config = {
         extra = {
