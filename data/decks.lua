@@ -33,7 +33,7 @@ SMODS.Back {
 	key = "aio",
 	pos = { x = 0, y = 0 },
 	atlas = "aioimg",
-	config = { joker_slot = 20, jokers = { 'j_ocstobal_sparkynt', 'j_ocstobal_sparky', 'j_ocstobal_seraph', 'j_ocstobal_solinium', 'j_ocstobal_brokenseraph', 'j_ocstobal_Oxy', 'j_ocstobal_recluse', 'j_ocstobal_tigersharksparky', 'j_ocstobal_shrimpo', 'j_ocstobal_ichor', 'j_ocstobal_crystal', 'j_ocstobal_eternaldagger', 'j_ocstobal_oxywaterdroplet','j_ocstobal_abbie','j_ocstobal_twistedshrimpo' }, ante_scaling = 100 },
+	config = { joker_slot = 20, jokers = { 'j_ocstobal_sparkynt', 'j_ocstobal_sparky', 'j_ocstobal_seraph', 'j_ocstobal_solinium', 'j_ocstobal_brokenseraph', 'j_ocstobal_Oxy', 'j_ocstobal_recluse', 'j_ocstobal_tigersharksparky', 'j_ocstobal_shrimpo', 'j_ocstobal_ichor', 'j_ocstobal_crystal', 'j_ocstobal_eternaldagger', 'j_ocstobal_oxywaterdroplet', 'j_ocstobal_abbie', 'j_ocstobal_twistedshrimpo' }, ante_scaling = 100 },
 	unlocked = false,
 	loc_vars = function(self, info_queue, back)
 		return { vars = { self.config.jokers[1], self.config.joker_slot, self.config.ante_scaling } }
@@ -128,5 +128,26 @@ SMODS.Back {
 	end,
 	check_for_unlock = function(self, args)
 		return args.type == 'win_stake' and get_deck_win_stake() >= 1
+	end
+}
+
+SMODS.Back {
+	key = 'psych_lore',
+	config = {
+		jokers = { 'j_ocstobal_seraphnt' }
+	},
+	loc_vars = function(self, info_queue, back)
+		return {
+			vars = { self.config.jokers[1] }
+		}
+	end,
+	unlocked = false,
+	bypass_all_unlocked = true,
+	check_for_unlock = function(self, args)
+		if args.type == 'regrets' then
+			return true
+		else
+			return false
+		end
 	end
 }
