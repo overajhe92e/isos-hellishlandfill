@@ -42,6 +42,17 @@ return {
 					'Win a run.'
 				}
 			},
+			b_ocstobal_psych_lore = {
+				name = "lost seraph",
+				text = {
+					'why did i do it...',
+					'i shouldn\'t have picked myself',
+					'over them.'
+				},
+				unlock = {
+					'{C:inactive,s:2}??????{}'
+				}
+			},
 			b_ocstobal_ocs = {
 				name = "The Trio",
 				text = {
@@ -382,7 +393,7 @@ return {
 						'{C:ocstobal_ust}LV 400{} : {s:1.1,C:ocstobal_ust,E:1}Applies ^Mult. Grows by +^0.05 every LV.{}',
 						'{C:ocstobal_sewh,s:1.3,E:1}LV 1,000 : Applies ^^Mult for every scored card.{}',
 						'{C:ocstobal_finalrgb,E:1}Seraph has nothing else to learn, or destroy. He has reached the end of growth.{}',
-						'{C:inactive,s:0.65}LV 10,000..?{}'
+						'{C:inactive,s:0.65}LV 10,000..? Why would he EVER go further?{}'
 					},
 					{
 						'{C:dark_edition,E:1,s:1.2}Current Stats{}',
@@ -391,19 +402,21 @@ return {
 				}
 			},
 			j_ocstobal_seraph_lv10k = {
-				name = "{C:ocstobal_finalrgb}Collapse of the Multiverse{}",
+				name = "{C:ocstobal_finalrgb}Seraph, the Collapse of Everything{}",
 				text = {
 					{
 						'{C:dark_edition,s:1.35}EXP: #9# / 10{}',
 						'{C:dark_edition,s:1.35}LV: #10#{}'
 					},
 					{
-						'{C:dark_edition,E:1,s:1.2}???{}',
+						'{C:dark_edition,E:1,s:1.2}Absurd Levelling{}',
 						'{C:ocstobal_legendplus,s:2}LV 10,000 : EEEMult unlocked...{}',
 					},
 					{
 						'{C:dark_edition,E:1,s:1.2}???{}',
 						'{C:ocstobal_ust}Something\'s wrong. He wasn\'t supposed to learn something new.{}',
+						'{X:red,C:white}X#11#{} Mult, {C:blue}+#12#{} Chips, {X:blue,C:white}X#14#{} Chips, {X:ocstobal_sewh,C:default,E:1}^#13#{} {C:ocstobal_sewh,E:1}EMult{}',
+						'{X:ocstobal_finalrgb,C:edition}^^#15#{} {C:ocstobal_finalrgb}EEMult{}, {X:ocstobal_ust}^^^#16#{}'
 					}
 				}
 			},
@@ -415,13 +428,15 @@ return {
 						'{C:dark_edition,s:1.35}LV: #10#{}'
 					},
 					{
-						'{C:dark_edition,E:1,s:1.2}???{}',
+						'{C:dark_edition,E:1,s:1.2}Absurd Levelling{}',
 						'{C:ocstobal_legendplus,s:1.5}LV 100,000 : Hypermult Unlocked. All previous scaling uses ^1.5 instead.{}',
 					},
 					{
 						'{C:dark_edition,E:1,s:1.2}MESSAGE{}',
 						'{C:ocstobal_ust}No. Nononono. NO. NO. STOP. I CAN\'T CONTROL HIM.{}',
-						'{C:ocstobal_ust}If he grows too powerful, I can\'t stop him.{}'
+						'{C:ocstobal_ust}If he grows too powerful, I can\'t stop him.{}',
+						'{X:red,C:white}X#11#{} Mult, {C:blue}+#12#{} Chips, {X:blue,C:white}X#14#{} Chips, {X:ocstobal_sewh,C:default,E:1}^#13#{} {C:ocstobal_sewh,E:1}EMult{}',
+						'{X:ocstobal_finalrgb,C:edition}^^#15#{} {C:ocstobal_finalrgb}EEMult{}, {X:ocstobal_ust}^^^#16#{}'
 					}
 				}
 			},
@@ -436,7 +451,7 @@ return {
 					'{C:dark_edition,s:1.35}EXP: #9# / 10{}',
 					'{C:dark_edition,s:1.35}LV: #10#{}',
 					'oh and also for your reward, here\'s a cat laughing at you',
-					'{s:4,C:ocstobal_sewh}go outside.{}'
+					'{s:3,C:ocstobal_sewh}go outside.{}'
 				}
 			},
 			j_ocstobal_sparky = {
@@ -618,6 +633,78 @@ return {
 					'{C:inactive,s:0.5}It may be related to an edition rate...{}'
 				}
 			},
+			j_ocstobal_seraphnt = {
+				name = '"Seraph"',
+				text = {
+					{
+						'What have I done.',
+						'I picked myself... over my friends.',
+						'...'
+					},
+					{
+						'What... is wrong with me?',
+						'Why did I let {C:ocstobal_ust}Recluse{} do this..?',
+						'I could have fought back but...',
+						'I... {C:red}didn\'t.{}'
+					}
+				}
+			},
+			j_ocstobal_seraphnt2 = {
+				name = '"Seraph"',
+				text = {
+					{
+						'What have I done.',
+						'I picked myself... over my friends.',
+						'...'
+					},
+					{
+						'I heard {C:green}her{} calling for help.',
+						'I was scared. I couldn\'t think straight.'
+					}
+				}
+			},
+			j_ocstobal_seraphnt3 = {
+				name = '"Seraph"',
+				text = {
+					{
+						'What have I done.',
+						'I picked myself... over my friends.',
+						'...'
+					},
+					{
+						'{C:legendary}He{} was yelling at me to not...',
+						'take that fucking {C:red}deal{}...'
+					}
+				}
+			},
+			j_ocstobal_seraphnt4 = {
+				name = '"Seraph"',
+				text = {
+					{
+						'What have I done.',
+						'I picked myself... over my friends.',
+						'...'
+					},
+					{
+						'...But I... took it anyways.',
+						'...exchanging both of their lives, so I...',
+						'...live on, {C:attention}becoming stronger.{}'
+					}
+				}
+			},
+			j_ocstobal_seraphntnomore = {
+				name = '"Seraph"',
+				text = {
+					{
+						'What have I done.',
+						'I picked myself... over my friends.',
+						'...'
+					},
+					{
+						'i\'m sorry to both of you.'
+					}
+				}
+			},
 			j_ocstobal_shrimpo = {
 				name = 'Shrimpo',
 				text = {
@@ -709,7 +796,7 @@ return {
 					'Copies the ability of {C:attention}3 jokers{}',
 					'to the {C:attention}right of this Joker{}',
 					'{C:inactive}Copies joker 1, then 2, then 3{}',
-					'{C:dark_edition,E:1,s:0.8}Art by Astro{}',    --(@silly_goober_0nthewall)
+					'{C:dark_edition,E:1,s:0.8}Art by Astro{}',     --(@silly_goober_0nthewall)
 					'{C:dark_edition,E:1,s:0.8}Original Character by : Crystal{}', --(@crystal_the_autism)
 					'{C:dark_edition,E:1,s:0.8}Origin : Starspace{}' --go check out the mod it's peak
 				}
@@ -762,14 +849,14 @@ return {
 			},
 			j_ocstobal_oxyold = {
 				name = 'Oxy {C:inactive}(Classic, Unbalanced)',
-				text = { 
+				text = {
 					'go read the {C:ocstobal_finalrgb}avaritia{} joker description im too lazy to put it here',
 					'but yeah imagine that but it\'s more sloppy'
 				}
 			},
 			j_ocstobal_brokenseraph = {
 				name = 'Broken Seraph',
-				text = { 
+				text = {
 					'Applies {X:red,C:white}X#1#{} Mult',
 					'Scored cards {C:red}Decrease{} {X:red,C:white}XMult{} by {X:red,C:white}X0.1{}',
 					'{C:inactive}Retriggers will also reduce XMult{}',
@@ -809,6 +896,41 @@ return {
 					'{C:blue}"meow"{}',
 					'{C:dark_edition,E:1,s:0.8}Original Character by : Astro',
 					'{C:dark_edition,E:1,s:0.8}Origin : Starspace{}' --go check out the mod it's peak
+				}
+			},
+			j_ocstobal_love = {
+				name = 'Torn love Letter',
+				text = {
+					'{C:inactive}You can\'t read what\'s on here.{}',
+					'{C:inactive}All you could read was "Love, Sparky"{}'
+				}
+			},
+			j_ocstobal_furnote = {
+				name = 'Encrypted Log',
+				text = {
+					'{C:inactive}It\'s best you leave this alone.{}'
+				}
+			},
+			j_ocstobal_letter = {
+				name = 'Crumbled up Paper',
+				text = {
+					'{C:inactive}...maybe you should leave this on the grave.{}',
+					'{C:inactive}...just, to respect the fallen.{}'
+				}
+			},
+			j_ocstobal_malicesyringe = {
+				name = 'Malice Syringe',
+				text = {
+					'{X:black,C:white}X0.85{} Mult and Chips, {C:red}but..?{}'
+				}
+			},
+			j_ocstobal_lifecryst = {
+				name = 'Life Crystal',
+				text = {
+					'{C:attention}Prevents{} Game Over,',
+					'{C:red}BUT{} has limited durability',
+					'{C:red}AND{} lose 10 dollars on save.',
+					'{C:inactive}Current Durability: #1#/3{}'
 				}
 			}
 		},
