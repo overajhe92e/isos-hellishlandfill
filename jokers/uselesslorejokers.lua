@@ -57,7 +57,7 @@ SMODS.Joker {
     rarity = 3,
     calculate = function(self,card,context)
         if context.joker_main then
-            return { xmult = 0.5 }
+            return { xmult = 5 }
         end
     end
 }
