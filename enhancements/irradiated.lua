@@ -5,6 +5,8 @@ SMODS.Enhancement {
         h_x_mult = 0.9,
         decayfactor = 5
     },
+    atlas = 'radiationset',
+    pos = {x=1,y=0},
 
 
     loc_vars = function(self, info_queue, card)
