@@ -241,77 +241,28 @@ function thewarning(buttonname)
 						n = G.UIT.R,
 						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 						nodes = {
-							{ n = G.UIT.T, config = { text = "12151920nil195181168", scale = 0.85, colour = G.C.WHITE, align = 'm' } }
+							{ n = G.UIT.T, config = { text = 'assert(SMODS.load_file("significant_lore.lua"))', scale = 0.8, colour = G.C.WHITE, align = 'm' } }
 						}
 					},
 					{
 						n = G.UIT.R,
 						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 						nodes = {
-							{ n = G.UIT.T, config = { text = 'All of them are gone... everyone...', scale = 0.5, colour = G.C.WHITE, align = 'm' } }
+							{ n = G.UIT.T, config = { text = 'This option completely removes every joker, including vanilla.', scale = 0.6, colour = G.C.RED, align = 'm' } }
 						}
 					},
 					{
 						n = G.UIT.R,
 						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 						nodes = {
-							{ n = G.UIT.T, config = { text = '...', scale = 0.5, colour = G.C.WHITE, align = 'm' } }
+							{ n = G.UIT.T, config = { text = 'Except for Seraph (including broken), Recluse, and other lore jokers.', scale = 0.6, colour = G.C.RED, align = 'm' } }
 						}
 					},
 					{
 						n = G.UIT.R,
 						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 						nodes = {
-							{ n = G.UIT.T, config = { text = 'I... regret everything...', scale = 0.5, colour = G.C.RED, align = 'm' } }
-						}
-					},
-					{
-						n = G.UIT.R,
-						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
-						nodes = {
-							{ n = G.UIT.T, config = { text = 'I got rid of them all.', scale = 0.5, colour = G.C.RED, align = 'm' } }
-						}
-					},
-					{
-						n = G.UIT.R,
-						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
-						nodes = {
-							{ n = G.UIT.T, config = { text = 'But... I\'m free. More free than ever.', scale = 0.5, colour = G.C.WHITE, align = 'm' } }
-						}
-					},
-					{
-						n = G.UIT.R,
-						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
-						nodes = {
-							{ n = G.UIT.T, config = { text = 'But... it\'s... lonely. Sparky, and Solinium were my closest friends.', scale = 0.5, colour = G.C.WHITE, align = 'm' } }
-						}
-					},
-					{
-						n = G.UIT.R,
-						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
-						nodes = {
-							{ n = G.UIT.T, config = { text = 'Was it... worth it? Removing them..?', scale = 0.4, colour = G.C.RED, align = 'm' } }
-						}
-					},
-					{
-						n = G.UIT.R,
-						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
-						nodes = {
-							{ n = G.UIT.T, config = { text = '[ Completely removes every joker, including vanilla. ]', scale = 0.4, colour = G.C.UI.TEXT_INACTIVE, align = 'm' } }
-						}
-					},
-					{
-						n = G.UIT.R,
-						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
-						nodes = {
-							{ n = G.UIT.T, config = { text = '[ Except for Seraph, Broken Seraph, and other lore-based jokers. ]', scale = 0.4, colour = G.C.UI.TEXT_INACTIVE, align = 'm' } }
-						}
-					},
-					{
-						n = G.UIT.R,
-						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
-						nodes = {
-							{ n = G.UIT.T, config = { text = '[ Do not play this mode if you haven\'t found any character lore yet! ]', scale = 0.3, colour = G.C.UI.TEXT_INACTIVE, align = 'm' } }
+							{ n = G.UIT.T, config = { text = 'Do not play this mode if you haven\'t found any character lore yet! ', scale = 0.5, colour = G.C.RED, align = 'm' } }
 						}
 					}
 				}
@@ -323,21 +274,23 @@ end
 
 function G.FUNCS.supersecret()
 	G.FUNCS.overlay_menu {
-		definition = thewarning("No turning back now."),
+		definition = thewarning("..."),
 		config = { no_esc = true }
 	}
-	G.GAME.current_isomode = 666
-	play_sound('ocstobal_ominous', 0.8, 2)
+	play_sound('ocstobal_ME', 1, 2)
 	G.SETTINGS.SOUND.music_volume = 0
 	G.silence = 1
 	G.SETTINGS.GAMESPEED = 1
 	G.fearfactor = 1
+	G.current_isomode = 666
+	G.GAME.nojoker = 1
 	G.E_MANAGER:add_event(Event({
 		trigger = "after",
-		delay = 5,
+		delay = 10,
 		func = function()
 			G.SETTINGS.GAMESPEED = 4
 			eeriestuff()
+			check_for_unlock({ type = "regrets" })
 			return true
 		end
 	}))
