@@ -924,13 +924,21 @@ return {
 					'{X:black,C:white}X0.85{} Mult and Chips, {C:red}but..?{}'
 				}
 			},
-			j_ocstobal_lifecryst = {
+			j_ocstobal_lifecrystal = {
 				name = 'Life Crystal',
 				text = {
 					'{C:attention}Prevents{} Game Over,',
 					'{C:red}BUT{} has limited durability',
 					'{C:red}AND{} lose 10 dollars on save.',
 					'{C:inactive}Current Durability: #1#/3{}'
+				}
+			},
+			j_ocstobal_steelgaming = {
+				name = 'Steel Gaming',
+				text = {
+					'Played steel cards',
+					'give {X:tarot,C:white}X1.5{} Chips and Mult.',
+					'{C:inactive}"Hey, I think I\'ve seen this one before!"{}'
 				}
 			}
 		},
