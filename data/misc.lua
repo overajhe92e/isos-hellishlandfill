@@ -359,6 +359,11 @@ SMODS.Sound {
 }
 
 SMODS.Sound {
+	key = 'ominouscancel',
+	path = "andrecluseisfuckingdead.ogg"
+}
+
+SMODS.Sound {
 	key = 'music_ocean',
 	path = "music_ocean.ogg",
 	pitch = 0.85,
