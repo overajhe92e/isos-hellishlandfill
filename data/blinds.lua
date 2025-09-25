@@ -208,7 +208,8 @@ SMODS.Blind {
 	end,
 
 	defeat = function(self)
-		G.recluseblind = -999999
+		G.recluseblind = 0
+		play_sound('ocstobal_ominouscancel',1,2)
 		recluseach()
 	end
 }
