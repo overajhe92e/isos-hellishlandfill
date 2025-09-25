@@ -354,6 +354,11 @@ SMODS.Sound {
 }
 
 SMODS.Sound {
+	key = 'ME',
+	path = "Me.ogg"
+}
+
+SMODS.Sound {
 	key = 'music_ocean',
 	path = "music_ocean.ogg",
 	pitch = 0.85,
