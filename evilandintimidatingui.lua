@@ -373,6 +373,7 @@ function G.FUNCS.turnback()
 		G.enabledsecret = false
 		play_sound('ocstobal_ominouscancel', 1, 1)
 		G.SETTINGS.SOUND.music_volume = 100
+		object:remove()
 	else
 		return false
 	end
