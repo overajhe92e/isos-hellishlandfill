@@ -832,6 +832,12 @@ return {
 					'{X:tarot,C:white}^666{} Mult and Chips'
 				}
 			},
+			j_ocstobal_sphawk = {
+				name = 'The Eternal Void, Seraph',
+				text = {
+					'teto pear'
+				}
+			},
 			j_ocstobal_solawkclassic = {
 				name = '{C:inactive}(Classic){} Solinium, the {C:ocstobal_ust}Omnipotent One{}',
 				text = {
@@ -840,11 +846,23 @@ return {
 					'{X:dark_edition,C:white}^^2{} Mult and Chips'
 				}
 			},
+			j_ocstobal_solawk = {
+				name = 'The Multiversal Threat, Solinium',
+				text = {
+					'teto pear'
+				}
+			},
 			j_ocstobal_spkawkclassic = {
 				name = '{C:inactive}(Classic){} Sparky, the {C:ocstobal_sewh}Eye of all Seeing{}',
 				text = {
 					'{X:no,C:red,s:1.3}^^^3{} Chips,',
 					'{X:dark,C:attention}^0.7{} Mult'
+				}
+			},
+			j_ocstobal_spkawk = {
+				name = 'The Master of Variation, Sparky',
+				text = {
+					'teto pear'
 				}
 			},
 			j_ocstobal_oxyold = {
@@ -931,6 +949,24 @@ return {
 					'{C:red}BUT{} has limited durability',
 					'{C:red}AND{} lose 10 dollars on save.',
 					'{C:inactive}Current Durability: #1#/3{}'
+				}
+			},
+			j_ocstobal_itsfuckingseptemberbro = {
+				name = 'It\'s Fucking September Bro',
+				text = {
+					'{X:red,C:white}X3{} Mult, but replaces',
+					'every song with a christmas song.',
+					'Even though it\'s fucking September.',
+					'{C:inactive}Will not play music on December{}'
+				}
+			},
+			j_ocstobal_crateinacrate = {
+				name = 'Crate in a Crate in a Crate in a Crate in a',
+				text = {
+					'{X:red,C:white}^1{} Mult,',
+					'increases by +1 when a blind is selected.',
+					'Operator increases at 10s.',
+					'{C:inactive}"The classic way of solving storage!"{}'
 				}
 			}
 		},
