@@ -113,8 +113,8 @@ SMODS.Joker { --Seraph
                 card.ability.extra.emult = card.ability.extra.emult + 8
                 card.ability.extra.eemult = card.ability.extra.eemult + 1
             until card.ability.extra.triggered < 10
-        elseif card.ability.extra.upgrade >= 1000 and card.ability.extra.triggered >= 10 and card.ability.extra.upgrade < 10000 and G.current_isomode >= 1 then
-            sphupfinal()
+        elseif card.ability.extra.upgrade >= 10000 and card.ability.extra.triggered >= 10 and card.ability.extra.upgrade < 100000 and G.current_isomode >= 1 then
+            ohgod()
             play_sound('ocstobal_upg', 0.6, 3)
             repeat
                 card.ability.extra.triggered = card.ability.extra.triggered - 10
@@ -368,7 +368,7 @@ function sphupextreme()
     })
 end
 
-function sphupfinal()
+function ohgod()
     local text = localize('sphlvlabsolutefinal')
     attention_text({
         scale = 0.7,
@@ -378,6 +378,19 @@ function sphupfinal()
         offset = { x = 0, y = -2.7 },
         major = G.play,
         colour = HEX('ffffff')
+    })
+end
+
+function sphupfinal()
+    local text = localize('sphbeyond')
+    attention_text({
+        scale = 0.7,
+        text = text,
+        hold = 8,
+        align = 'cm',
+        offset = { x = 0, y = -2.7 },
+        major = G.play,
+        colour = HEX('000000')
     })
 end
 
