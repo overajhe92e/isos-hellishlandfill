@@ -42,6 +42,7 @@ end
 
 function eeriestuff()
 	G.silence = 0
+	G.SETTINGS.GAMESPEED = 4
 	G.SETTINGS.SOUND.music_volume = 66
 end
 
@@ -166,7 +167,7 @@ function unbalancedmenu(buttonname)
 end
 
 function balancedmenu(buttonname)
-	local absurd = create_UIBox_generic_options({
+	local bal = create_UIBox_generic_options({
 		back_delay = 1,
 		back_label = buttonname,
 		back_colour = G.C.GREEN,
@@ -222,7 +223,7 @@ function balancedmenu(buttonname)
 			}
 		}
 	})
-	return absurd
+	return bal
 end
 
 function thewarning(buttonname)
@@ -283,9 +284,10 @@ function G.FUNCS.supersecret()
 	G.fearfactor = 1
 	G.current_isomode = 666
 	G.GAME.nojoker = 1
+	G.SETTINGS.GAMESPEED = 1
 	G.E_MANAGER:add_event(Event({
 		trigger = "after",
-		delay = 10 * G.SETTINGS.GAMESPEED,
+		delay = 10,
 		func = function()
 			eeriestuff()
 			check_for_unlock({ type = "regrets" })
