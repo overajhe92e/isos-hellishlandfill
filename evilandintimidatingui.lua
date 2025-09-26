@@ -1,11 +1,17 @@
+G.current_isomode = G.PROFILES[G.SETTINGS.profile].current_isomode
+G.fearfactor = G.PROFILES[G.SETTINGS.profile].fearfactor
+
 function G.FUNCS.yeah()
 	G.fearfactor = 0
+	G.PROFILES[G.SETTINGS.profile].fearfactor = 0
 	G.current_isomode = -1
 end
 
 function G.FUNCS.stable()
 	G.fearfactor = 0
-	G.current_isomode = 0
+	G.PROFILES[G.SETTINGS.profile].fearfactor = 0
+	G.PROFILES[G.SETTINGS.profile].current_isomode = 0
+	G:save_progress()
 end
 
 function G.FUNCS.unbalancedmenu()
@@ -24,7 +30,9 @@ end
 
 function G.FUNCS.unbalanced()
 	G.fearfactor = 0
-	G.current_isomode = 1
+	G.PROFILES[G.SETTINGS.profile].fearfactor = 0
+	G.PROFILES[G.SETTINGS.profile].current_isomode = 1
+	G:save_progress()
 end
 
 function G.FUNCS.ahabsurd()
@@ -36,7 +44,9 @@ end
 
 function G.FUNCS.verybad()
 	G.fearfactor = 0
-	G.current_isomode = 2
+	G.PROFILES[G.SETTINGS.profile].fearfactor = 0
+	G.PROFILES[G.SETTINGS.profile].current_isomode = 2
+	G:save_progress()
 	play_sound('ocstobal_straddle')
 end
 
@@ -44,6 +54,7 @@ function eeriestuff()
 	G.silence = 0
 	G.SETTINGS.GAMESPEED = 4
 	G.SETTINGS.SOUND.music_volume = 66
+	G:save_progress()
 end
 
 function absurdmenu(buttonname)
@@ -107,7 +118,7 @@ function absurdmenu(buttonname)
 end
 
 function unbalancedmenu(buttonname)
-	local unbalanced = create_UIBox_generic_options({
+	local the = create_UIBox_generic_options({
 		back_delay = 1,
 		back_label = buttonname,
 		back_colour = G.C.FILTER,
@@ -163,7 +174,7 @@ function unbalancedmenu(buttonname)
 			}
 		}
 	})
-	return unbalanced
+	return the
 end
 
 function balancedmenu(buttonname)
@@ -242,7 +253,7 @@ function thewarning(buttonname)
 						n = G.UIT.R,
 						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 						nodes = {
-							{ n = G.UIT.T, config = { text = 'assert(SMODS.load_file("significant_lore.lua"))', scale = 0.8, colour = G.C.WHITE, align = 'm' } }
+							{ n = G.UIT.T, config = { text = '???', scale = 0.8, colour = G.C.UI.TEXT_INACTIVE, align = 'm' } }
 						}
 					},
 					{
@@ -281,8 +292,8 @@ function G.FUNCS.supersecret()
 	play_sound('ocstobal_ME', 1, 2)
 	G.SETTINGS.SOUND.music_volume = 0
 	G.silence = 1
-	G.fearfactor = 1
-	G.current_isomode = 666
+	G.PROFILES[G.SETTINGS.profile].fearfactor = 1
+	G.PROFILES[G.SETTINGS.profile].current_isomode = 666
 	G.GAME.nojoker = 1
 	G.SETTINGS.GAMESPEED = 1
 	G.E_MANAGER:add_event(Event({
@@ -294,6 +305,7 @@ function G.FUNCS.supersecret()
 			return true
 		end
 	}))
+	G:save_progress()
 end
 
 SMODS.current_mod.config_tab = function()
@@ -314,6 +326,13 @@ SMODS.current_mod.config_tab = function()
 								config = { minh = 1, minw = 1, align = 'tm', padding = 0.05, colour = G.C.CLEAR },
 								nodes = {
 									{ n = G.UIT.T, config = { text = "Balancing Options", colour = G.C.EDITION, scale = 0.6, align = "m" }, },
+								}
+							},
+							{
+								n = G.UIT.R,
+								config = { minh = 1, minw = 1, align = 'tm', padding = 0.05, colour = G.C.CLEAR },
+								nodes = {
+									{ n = G.UIT.T, config = { text = "REQUIRES RESTART!", colour = G.C.RED, scale = 0.6, align = "m" }, },
 								}
 							},
 							{
@@ -352,7 +371,7 @@ SMODS.current_mod.config_tab = function()
 										n = G.UIT.R,
 										config = { minh = 1, minw = 1, align = 'tm', padding = 0.05, colour = G.C.CLEAR },
 										nodes = {
-											{ n = G.UIT.T, config = { text = "Eh... Close enough. Welcome back Jen's Almanac.", colour = G.C.RED, scale = 0.35, align = "tm" }, }
+											{ n = G.UIT.T, config = { text = "Eh... Close enough. Welcome back Jen's Almanac.", colour = G.C.UI.TEXT_INACTIVE, scale = 0.35, align = "tm" }, }
 										}
 									},
 									{
