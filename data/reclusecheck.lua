@@ -1,5 +1,5 @@
 function reclusecheck()
-    if G.recluseblind >= 1 then
+    if G.recluseblind >= 1 and G.GAME.round_resets.ante >= 8 then
         return true
     else
         return false
