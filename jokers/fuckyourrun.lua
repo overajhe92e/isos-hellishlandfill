@@ -1,6 +1,10 @@
 SMODS.Joker {
     key = "oxhatred",
-    config = {},
+    config = {
+        extra = {
+            h_size = 10
+        }
+    },
     atlas = 'agonizing',
     pos = {
         x = 0,
@@ -18,6 +22,12 @@ SMODS.Joker {
     add_to_deck = function(self, card, from_debuff)
         card:set_edition("e_ocstobal_hidden1", true)
         card:set_eternal(true)
+        G.GAME.round_resets.hands = 1
+        G.GAME.round_resets.discards = 0
+        G.hand:change_size(card.ability.extra.h_size)
+    end,
+    remove_from_deck = function(self, card, from_debuff)
+        G.hand:change_size(-card.ability.extra.h_size)
     end,
 
     calculate = function(self, card, context)
@@ -56,6 +66,13 @@ SMODS.Joker {
 
     add_to_deck = function(self,card,from_debuff)
         card:set_eternal(true)
+        G.GAME.round_resets.hands = 1
+        G.GAME.round_resets.discards = 0
+        G.hand:change_size(6)
+    end,
+
+    remove_from_deck = function(self, card, from_debuff)
+        G.hand:change_size(-6)
     end,
 
     loc_vars = function(self, info_queue, card) -- yeah this was buggy asf lmao

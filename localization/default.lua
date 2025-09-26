@@ -534,7 +534,7 @@ return {
 					'{X:dark_edition,C:red}^0.9{} Mult and Chips,',
 					'{C:inactive}1 random joker is debuffed every round,{}',
 					'{C:inactive}Hands set to 1, Discards set to 0',
-					'{C:green}Hand Size set to 23.{}'
+					'{C:attention}+10{} Hand Size'
 				}
 			},
 			j_ocstobal_oxhatred_alt = {
