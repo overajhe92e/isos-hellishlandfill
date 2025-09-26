@@ -81,11 +81,24 @@ SMODS.Joker { --UNUSED RIGHT NOW
     no_collection = true
 }
 
-SMODS.Joker { --UNUSED RIGHT NOW
+SMODS.Joker { --this is the easiest of the trio (unbalanced badly) to make wtf 
     key = 'spkawkclassic',
     rarity = 'ocstobal_whatthefuck',
     cost = 666666,
-    no_collection = true
+    discovered = false,
+    unlocked = false,
+    atlas = 'spkawk_classic',
+    pos = {x=0,y=0},
+    soul_pos = {x=1,y=0},
+
+    calculate = function(self,card,context)
+        if context.joker_main then
+            return {
+                eeechips = 3,
+                emult = 0.7
+            }
+        end
+    end
 }
 
 SMODS.Joker { --UNUSED RIGHT NOW
@@ -99,12 +112,5 @@ SMODS.Joker { --UNUSED RIGHT NOW
     key = 'oxyold',
     rarity = 'ocstobal_whatthefuck',
     cost = 1e307,
-    no_collection = true
-}
-
-SMODS.Joker { --ACTUALLY DONT
-    key = 'amalgamation',
-    rarity = 'ocstobal_whatthefuck',
-    cost = 0,
     no_collection = true
 }

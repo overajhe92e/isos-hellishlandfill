@@ -327,6 +327,14 @@ SMODS.Atlas {
 	atlas_table = 'ASSET_ATLAS'
 }
 
+SMODS.Atlas {
+	key = 'spkawk_classic',
+	px = 71,
+	py = 95,
+	path = 'clsspkawk.png',
+	atlas_table = 'ASSET_ATLAS'
+}
+
 -- SMODS.Atlas {
 -- 	key = 'tempjtetration',
 -- 	px = 71,
@@ -1049,7 +1057,9 @@ local abbornegative = G.P_CENTERS.e_negative.get_weight
 G.P_CENTERS.e_negative.get_weight = function(self)
 	local weight = abbornegative(self)
 	if next(SMODS.find_card("j_ocstobal_abbie")) then
-		weight = weight * ((3.124 + 112.424) / 2)
+		weight = weight * ((31.24 + 112.424) / 3)
+	elseif next(SMODS.find_card("j_ocstobal_abbie")) and next(SMODS.find_card("j_ocstobal_sparky")) then
+		weight = weight * (31.24 + 112.242) -- DOOMED COUPLE RAHHHHHHHHHHH
 	end
 	return weight
 end
