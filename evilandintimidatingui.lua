@@ -42,7 +42,7 @@ end
 
 function eeriestuff()
 	G.silence = 0
-	G.SETTINGS.SOUND.music_volume = 99
+	G.SETTINGS.SOUND.music_volume = 66
 end
 
 function absurdmenu(buttonname)
@@ -280,15 +280,13 @@ function G.FUNCS.supersecret()
 	play_sound('ocstobal_ME', 1, 2)
 	G.SETTINGS.SOUND.music_volume = 0
 	G.silence = 1
-	G.SETTINGS.GAMESPEED = 1
 	G.fearfactor = 1
 	G.current_isomode = 666
 	G.GAME.nojoker = 1
 	G.E_MANAGER:add_event(Event({
 		trigger = "after",
-		delay = 10,
+		delay = 10 * G.SETTINGS.GAMESPEED,
 		func = function()
-			G.SETTINGS.GAMESPEED = 4
 			eeriestuff()
 			check_for_unlock({ type = "regrets" })
 			return true
