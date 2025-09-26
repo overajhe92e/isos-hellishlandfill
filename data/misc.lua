@@ -462,8 +462,6 @@ function create_UIBox_custom_video1(name, buttonname)
 	return t
 end
 
-G.current_isomode = 0
-
 --lanky "i'll go fucking kill myself" box video
 -- function create_UIBox_custom_video2(name, buttonname)
 -- 	local file_path = SMODS.Mods["ocstobalatro"].path .. "/resources/" .. name .. ".ogv"
@@ -612,6 +610,8 @@ SMODS.Shader {
 }
 
 G.recluseblind = 0
+
+to_big = to_big or function(x) return x end
 
 -- local reclusethingy = Game.init_game_object
 -- function Game.init_game_object(self)
@@ -1064,7 +1064,7 @@ G.P_CENTERS.e_negative.get_weight = function(self)
 	if next(SMODS.find_card("j_ocstobal_abbie")) then
 		weight = weight * ((31.24 + 112.424) / 3)
 	elseif next(SMODS.find_card("j_ocstobal_abbie")) and next(SMODS.find_card("j_ocstobal_sparky")) then
-		weight = weight * (31.24 + 112.242) -- DOOMED COUPLE RAHHHHHHHHHHH
+		weight = weight * ((31.24 + 112.242)*3) -- DOOMED COUPLE RAHHHHHHHHHHH
 	end
 	return weight
 end

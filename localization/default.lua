@@ -532,11 +532,9 @@ return {
 				name = "{C:ocstobal_ust}Oxy's Hatred{}",
 				text = {
 					'{X:dark_edition,C:red}^0.9{} Mult and Chips,',
-					'{C:inactive}Adjacent jokers are debuffed,{}',
-					'{C:inactive}On blind select, destroy a random joker.{}',
+					'{C:inactive}1 random joker is debuffed every round,{}',
 					'{C:inactive}Hands set to 1, Discards set to 0',
-					'{C:red}Cannot be removed.{}',
-					"{C:red}\"AND YOU THOUGHT I'D LET HER ROAM AROUND?\"{}"
+					'{C:attention}+10{} Hand Size'
 				}
 			},
 			j_ocstobal_oxhatred_alt = {
@@ -555,14 +553,6 @@ return {
 					'FUCK YEAH WE LOVE ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^100'
 				}
 			},
-			j_ocstobal_sharkbait = {
-				name = 'Shark Bait',
-				text = {
-					'Modifies all probabilities to be',
-					'a 0 in 1000 chance.',
-					'Do note that this will affect other probabilities.'
-				}
-			},
 			j_ocstobal_recluse = {
 				name = 'Recluse',
 				text = {
@@ -577,7 +567,7 @@ return {
 				text = {
 					'Combines {C:red}ALL{} the {C:ocstobal_sewh}negative effects{}',
 					'of every joker in Isotypical\'s Junkyard',
-					'Amplifies {C:red}ALL{} {C:ocstobal_sewh,,E:1}negative effects.{}'
+					'Amplifies {C:red}ALL{} {C:ocstobal_sewh,E:1}negative effects.{}'
 				}
 			},
 			j_ocstobal_eternaldagger = {
@@ -596,11 +586,18 @@ return {
 					'over a moth?'
 				}
 			},
+			j_ocstobal_dearfuckinggod = {
+				name = 'No.',
+				text = {
+					'Shows an extremely important image',
+					'"I have NO idea what I\'m doing!"'
+				}
+			},
 			j_ocstobal_depression = {
 				name = 'Overused Joke',
 				text = {
 					'oh there\'s photochad, oh there\'s mimebaron',
-					'oh my gos streamer why did you reroll',
+					'oh my gos streamer why did you skip chad',
 					'streamer sell baron',
 					'all that and',
 					'{s:1.2,C:red}maybe i should just kill myself already{} {C:red}-Isotypical{}'
@@ -976,10 +973,22 @@ return {
 					'Operator increases at 10s.',
 					'{C:inactive}"The classic way of solving storage!"{}'
 				}
+			},
+			j_ocstobal_moddingchat = {
+				name = "modding-chat",
+				text = {
+					{
+					"{X:red,C:white}+X1{} Mult for...",
+					"Every day that Balato's modding-chat does NOT",
+					"enter a meltdown.",
+					"{C:inactive}Currently{} {X:red,C:white}X#1#{} {C:inactive}Mult.{}"
+					},
+					{"{C:inactive}Let's see how high this can get lmfao{}"}
+				}
 			}
 		},
 		Other = {
-			k_ocstobal_reclusedownside = {
+			ocstobal_reclusedownside = {
 				name = "Recluse's Downside",
 				text = {
 					'{C:red}Destroy{} a random joker',
@@ -987,14 +996,14 @@ return {
 					'Chip count decrements instead.'
 				}
 			},
-			k_ocstobal_sharkdownside = {
+			ocstobal_sharkdownside = {
 				name = "TSHRK!Sparky's Downside",
 				text = {
 					'{C:green}1 in 6{} chance for scored card',
 					'to get {C:red}eaten{} {C:inactive}(Destroyed){}'
 				}
 			},
-			k_ocstobal_scared = {
+			ocstobal_scared = {
 				name = "Please don't",
 				text = {
 					'{C:inactive}Don\'t... pick this up.{}',
@@ -1075,6 +1084,7 @@ return {
 			sphlvlmajor = "Seraph grows more powerful.",
 			sphlvlextreme = "An end never in sight, He grows more restless.",
 			sphlvlabsolutefinal = "All is done. The Absolute has been reached.",
+			sphbeyond = "...",
 			sphwhy = "what the fuck dude go outside",
 			yeahokbro = "Death is immediate.",
 

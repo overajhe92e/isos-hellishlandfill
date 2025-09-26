@@ -1,11 +1,18 @@
+G.current_isomode = G.PROFILES[G.SETTINGS.profile].current_isomode
+G.fearfactor = G.PROFILES[G.SETTINGS.profile].fearfactor
+G.enabledsecret = false
+
 function G.FUNCS.yeah()
 	G.fearfactor = 0
+	G.PROFILES[G.SETTINGS.profile].fearfactor = 0
 	G.current_isomode = -1
 end
 
 function G.FUNCS.stable()
 	G.fearfactor = 0
-	G.current_isomode = 0
+	G.PROFILES[G.SETTINGS.profile].fearfactor = 0
+	G.PROFILES[G.SETTINGS.profile].current_isomode = 0
+	G:save_progress()
 end
 
 function G.FUNCS.unbalancedmenu()
@@ -24,7 +31,9 @@ end
 
 function G.FUNCS.unbalanced()
 	G.fearfactor = 0
-	G.current_isomode = 1
+	G.PROFILES[G.SETTINGS.profile].fearfactor = 0
+	G.PROFILES[G.SETTINGS.profile].current_isomode = 1
+	G:save_progress()
 end
 
 function G.FUNCS.ahabsurd()
@@ -36,13 +45,15 @@ end
 
 function G.FUNCS.verybad()
 	G.fearfactor = 0
-	G.current_isomode = 2
+	G.PROFILES[G.SETTINGS.profile].fearfactor = 0
+	G.PROFILES[G.SETTINGS.profile].current_isomode = 2
+	G:save_progress()
 	play_sound('ocstobal_straddle')
 end
 
 function eeriestuff()
 	G.silence = 0
-	G.SETTINGS.SOUND.music_volume = 66
+	G.SETTINGS.GAMESPEED = 4
 end
 
 function absurdmenu(buttonname)
@@ -106,7 +117,7 @@ function absurdmenu(buttonname)
 end
 
 function unbalancedmenu(buttonname)
-	local unbalanced = create_UIBox_generic_options({
+	local the = create_UIBox_generic_options({
 		back_delay = 1,
 		back_label = buttonname,
 		back_colour = G.C.FILTER,
@@ -162,11 +173,11 @@ function unbalancedmenu(buttonname)
 			}
 		}
 	})
-	return unbalanced
+	return the
 end
 
 function balancedmenu(buttonname)
-	local absurd = create_UIBox_generic_options({
+	local bal = create_UIBox_generic_options({
 		back_delay = 1,
 		back_label = buttonname,
 		back_colour = G.C.GREEN,
@@ -222,14 +233,12 @@ function balancedmenu(buttonname)
 			}
 		}
 	})
-	return absurd
+	return bal
 end
 
 function thewarning(buttonname)
 	local lore = create_UIBox_generic_options({
-		back_delay = 1,
-		back_label = buttonname,
-		back_colour = G.C.RED,
+		no_back = true,
 		colour = G.C.BLACK,
 		padding = 0,
 		contents = {
@@ -241,28 +250,76 @@ function thewarning(buttonname)
 						n = G.UIT.R,
 						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 						nodes = {
-							{ n = G.UIT.T, config = { text = 'assert(SMODS.load_file("significant_lore.lua"))', scale = 0.8, colour = G.C.WHITE, align = 'm' } }
+							{ n = G.UIT.T, config = { text = '???', scale = 0.8, colour = G.C.UI.TEXT_INACTIVE, align = 'm' } }
 						}
 					},
 					{
 						n = G.UIT.R,
 						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 						nodes = {
-							{ n = G.UIT.T, config = { text = 'This option completely removes every joker, including vanilla.', scale = 0.6, colour = G.C.RED, align = 'm' } }
+							{ n = G.UIT.T, config = { text = 'This option completely removes every joker, including vanilla.', scale = 0.6, colour = G.C.WHITE, align = 'm' } }
 						}
 					},
 					{
 						n = G.UIT.R,
 						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 						nodes = {
-							{ n = G.UIT.T, config = { text = 'Except for Seraph (including broken), Recluse, and other lore jokers.', scale = 0.6, colour = G.C.RED, align = 'm' } }
+							{ n = G.UIT.T, config = { text = 'Except for Seraph (including broken), Recluse, and other lore jokers.', scale = 0.6, colour = G.C.WHITE, align = 'm' } }
 						}
 					},
 					{
 						n = G.UIT.R,
 						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 						nodes = {
-							{ n = G.UIT.T, config = { text = 'Do not play this mode if you haven\'t found any character lore yet! ', scale = 0.5, colour = G.C.RED, align = 'm' } }
+							{ n = G.UIT.T, config = { text = 'Do not play this mode if you are sensitive to...', scale = 0.7, colour = G.C.RED, align = 'm' } }
+						}
+					},
+					{
+						n = G.UIT.R,
+						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
+						nodes = {
+							{ n = G.UIT.T, config = { text = 'Character Trauma,', scale = 0.6, colour = G.C.FILTER, align = 'm' } }
+						}
+					},
+					{
+						n = G.UIT.R,
+						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
+						nodes = {
+							{ n = G.UIT.T, config = { text = 'Cartoony Gore', scale = 0.6, colour = G.C.RED, align = 'm' } }
+						}
+					},
+					{
+						n = G.UIT.R,
+						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
+						nodes = {
+							{ n = G.UIT.T, config = { text = '(Relating to Sparky\'s backstory, Abbie Death.) (This\'ll be shown as an IMAGE)', scale = 0.15, colour = G.C.UI.TEXT_INACTIVE, align = 'm' } }
+						}
+					},
+					{
+						n = G.UIT.R,
+						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
+						nodes = {
+							{ n = G.UIT.T, config = { text = 'and France', scale = 1, colour = G.C.RED, align = 'm' } }
+						}
+					},
+					{
+						n = G.UIT.R,
+						config = { minw = 3, minh = 1, align = "tm", padding = 0.05, colour = G.C.CLEAR },
+						nodes = {
+							{
+								n = G.UIT.R,
+								config = { minw = 2, minh = 1, align = "tm", padding = 0.1, colour = G.C.RED, button = "proceed", r = 0.1 },
+								nodes = {
+									{ n = G.UIT.T, config = { text = "Proceed", colour = G.C.WHITE, scale = 0.6, align = "m" }, },
+								},
+							},
+							{
+								n = G.UIT.R,
+								config = { minw = 1, minh = 1, align = "tm", padding = 0.1, colour = G.C.GREEN, button = "turnback", r = 0.1 },
+								nodes = {
+									{ n = G.UIT.T, config = { text = "Turn Back", colour = G.C.WHITE, scale = 0.6, align = "m" }, },
+								}
+							},
 						}
 					}
 				}
@@ -272,26 +329,54 @@ function thewarning(buttonname)
 	return lore
 end
 
+function G.FUNCS.enabling()
+	if G.enabledsecret == false then
+		G.enabledsecret = true
+		play_sound("ocstobal_ominous", 0.8, 3)
+	else
+		return false
+	end
+end
+
+function G.FUNCS.proceed()
+	G.PROFILES[G.SETTINGS.profile].fearfactor = 1
+	G.PROFILES[G.SETTINGS.profile].current_isomode = 666
+	G.SETTINGS.SOUND.music_volume = 100
+	check_for_unlock({ type = "regrets" })
+	G:save_progress()
+end
+
 function G.FUNCS.supersecret()
-	G.FUNCS.overlay_menu {
-		definition = thewarning("..."),
-		config = { no_esc = true }
-	}
-	play_sound('ocstobal_ME', 1, 2)
-	G.SETTINGS.SOUND.music_volume = 0
-	G.silence = 1
-	G.fearfactor = 1
-	G.current_isomode = 666
-	G.GAME.nojoker = 1
-	G.E_MANAGER:add_event(Event({
-		trigger = "after",
-		delay = 10 * G.SETTINGS.GAMESPEED,
-		func = function()
-			eeriestuff()
-			check_for_unlock({ type = "regrets" })
-			return true
-		end
-	}))
+	if G.enabledsecret == true then
+		G.FUNCS.overlay_menu {
+			definition = thewarning("Exit"),
+			config = { no_esc = true }
+		}
+		play_sound('ocstobal_ME', 1, 2)
+		G.SETTINGS.SOUND.music_volume = 0
+		G.silence = 1
+		G.SETTINGS.GAMESPEED = 1
+		G.E_MANAGER:add_event(Event({
+			trigger = "after",
+			delay = 10,
+			func = function()
+				eeriestuff()
+				return true
+			end
+		}))
+		G:save_progress()
+	end
+end
+
+function G.FUNCS.turnback()
+	if G.enabledsecret == true then
+		G.enabledsecret = false
+		play_sound('ocstobal_ominouscancel', 1, 1)
+		G.SETTINGS.SOUND.music_volume = 100
+		object:remove()
+	else
+		return false
+	end
 end
 
 SMODS.current_mod.config_tab = function()
@@ -312,6 +397,13 @@ SMODS.current_mod.config_tab = function()
 								config = { minh = 1, minw = 1, align = 'tm', padding = 0.05, colour = G.C.CLEAR },
 								nodes = {
 									{ n = G.UIT.T, config = { text = "Balancing Options", colour = G.C.EDITION, scale = 0.6, align = "m" }, },
+								}
+							},
+							{
+								n = G.UIT.R,
+								config = { minh = 1, minw = 1, align = 'tm', padding = 0.05, colour = G.C.CLEAR },
+								nodes = {
+									{ n = G.UIT.T, config = { text = "REQUIRES RESTART!", colour = G.C.RED, scale = 0.6, align = "m" }, },
 								}
 							},
 							{
@@ -350,14 +442,7 @@ SMODS.current_mod.config_tab = function()
 										n = G.UIT.R,
 										config = { minh = 1, minw = 1, align = 'tm', padding = 0.05, colour = G.C.CLEAR },
 										nodes = {
-											{ n = G.UIT.T, config = { text = "Eh... Close enough. Welcome back Jen's Almanac.", colour = G.C.RED, scale = 0.35, align = "tm" }, }
-										}
-									},
-									{
-										n = G.UIT.R,
-										config = { minw = 0, minh = 0, align = "tm", padding = 0.1, colour = G.C.BLACK, button = "supersecret", r = 0.1 },
-										nodes = {
-											{ n = G.UIT.T, config = { text = "???", colour = G.C.BLACK, scale = 0.2, align = "m" }, },
+											{ n = G.UIT.T, config = { text = "Eh... Close enough. Welcome back Jen's Almanac.", colour = G.C.UI.TEXT_INACTIVE, scale = 0.35, align = "tm" }, }
 										}
 									},
 								}
@@ -442,9 +527,92 @@ SMODS.current_mod.extra_tabs = function()
 							n = G.UIT.R,
 							config = { minw = 3, minh = 1, colour = G.C.CLEAR, padding = 0.01, align = 'tm' },
 							nodes = {
-								{ n = G.UIT.T, config = { text = 'Astro (@silly_goober_0nthewall), For drawing Crystal', colour = G.C.DARK_EDITION, scale = 0.6 } }
+								{ n = G.UIT.T, config = { text = 'Astro (@silly_goober_0nthewall), For drawing Crystal', colour = G.C.DARK_EDITION, scale = 0.5 } }
 							}
-						}
+						},
+						{
+							n = G.UIT.R,
+							config = { minw = 0, minh = 0, align = "tm", padding = 0.1, colour = G.C.BLACK, button = "enabling", r = 0.1 },
+							nodes = {
+								{ n = G.UIT.T, config = { text = "Release RECLUSE", colour = G.C.BLACK, scale = 0.2, align = "m" }, },
+							}
+						},
+					}
+				}
+			end,
+		},
+		{
+			label = 'OC Lore',
+			tab_definition_function = function()
+				return {
+					n = G.UIT.ROOT,
+					config = {
+						minw = 10, minh = 8, colour = G.C.BLACK, padding = 0.05, align = 'm', r = 0.1
+					},
+					nodes = {
+						{
+							n = G.UIT.R,
+							config = { minw = 3, minh = 1, colour = G.C.CLEAR, padding = 0.01, align = 'tm' },
+							nodes = {
+								{ n = G.UIT.T, config = { text = 'WORK IN PROGRESS', colour = G.C.RED, scale = 1 } },
+							}
+						},
+						{
+							n = G.UIT.R,
+							config = { minw = 1, minh = 1, maxw = 5, maxh = 2, align = "m", padding = 0.1, colour = G.C.RARITY[4], button = "seraph", r = 0.1 },
+							nodes = {
+								{ n = G.UIT.T, config = { text = "Seraph's Story", colour = G.C.WHITE, scale = 0.6, align = "m" }, },
+							}
+						},
+						{
+							n = G.UIT.R,
+							config = { minw = 1, minh = 1, maxw = 5, maxh = 2, align = "m", padding = 0.1, colour = G.C.GREEN, button = "sparky", r = 0.1 },
+							nodes = {
+								{ n = G.UIT.T, config = { text = "Sparky's Story", colour = G.C.WHITE, scale = 0.6, align = "m" }, },
+							}
+						},
+						{
+							n = G.UIT.R,
+							config = { minw = 1, minh = 1, maxw = 5, maxh = 2, align = "m", padding = 0.1, colour = G.C.BLUE, button = "solinium", r = 0.1 },
+							nodes = {
+								{ n = G.UIT.T, config = { text = "Solinium's Story", colour = G.C.WHITE, scale = 0.6, align = "m" }, },
+							}
+						},
+						{
+							n = G.UIT.R,
+							config = { minw = 1, minh = 1, maxw = 5, maxh = 2, align = "m", padding = 0.1, colour = G.C.DARK_EDITION, button = "solinium", r = 0.1 },
+							nodes = {
+								{ n = G.UIT.T, config = { text = "Recluse's Story", colour = G.C.WHITE, scale = 0.6, align = "m" }, },
+							}
+						},
+						{
+							n = G.UIT.R,
+							config = { minw = 3, minh = 1, colour = G.C.CLEAR, padding = 0.01, align = 'tm' },
+							nodes = {
+								{ n = G.UIT.T, config = { text = 'Other OCs', colour = G.C.WHITE, scale = 1 } },
+							}
+						},
+						{
+							n = G.UIT.R,
+							config = { minw = 1, minh = 1, maxw = 5, maxh = 2, align = "m", padding = 0.1, colour = G.C.BLUE, button = "solinium", r = 0.1 },
+							nodes = {
+								{ n = G.UIT.T, config = { text = "Crystal's Story", colour = G.C.WHITE, scale = 0.6, align = "m" }, },
+							}
+						},
+						{
+							n = G.UIT.R,
+							config = { minw = 3, minh = 1, colour = G.C.CLEAR, padding = 0.01, align = 'tm' },
+							nodes = {
+								{ n = G.UIT.T, config = { text = '???', colour = G.C.UI.TEXT_INACTIVE, scale = 0.8 } },
+							}
+						},
+						{
+							n = G.UIT.R,
+							config = { minw = 0.5, minh = 0.5, maxw = 3, maxh = 1, align = "m", padding = 0.1, colour = G.C.BLACK, button = "supersecret", r = 0.1 },
+							nodes = {
+								{ n = G.UIT.T, config = { text = "Don't... Please...", colour = G.C.BLACK, scale = 0.2, align = "m" }, },
+							}
+						},
 					}
 				}
 			end,
