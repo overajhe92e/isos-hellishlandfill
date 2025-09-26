@@ -3,7 +3,7 @@ SMODS.Joker {
     cost = 1,
     rarity = 1,
     no_collection = function(self,args)
-        return morelore()
+        return loregrahh()
     end,
     in_pool = function(self,args)
         return loregrahh()
@@ -20,7 +20,7 @@ SMODS.Joker {
     cost = 1,
     rarity = 1,
     no_collection = function(self,args)
-        return morelore()
+        return loregrahh()
     end,
     in_pool = function(self,args)
         return loregrahh()
@@ -54,7 +54,7 @@ SMODS.Joker {
     cost = 1,
     rarity = 'ocstobal_cursed',
     no_collection = function(self,args)
-        return morelore()
+        return loregrahh()
     end,
     calculate = function(self,card,context)
         if context.joker_main then
@@ -68,7 +68,7 @@ SMODS.Joker {
     cost = 1,
     rarity = 3,
     no_collection = function(self,args)
-        return morelore()
+        return loregrahh()
     end,
     calculate = function(self,card,context)
         if context.joker_main then
