@@ -307,6 +307,9 @@ SMODS.Joker {
     config = {
         re = 1
     },
+    no_collection = function(self,args)
+        return morelore()
+    end,
 
     loc_vars = function(self, info_queue, card)
         return {

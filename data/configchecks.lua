@@ -13,3 +13,11 @@ function loregrahh()
         return false
     end
 end
+
+function morelore()
+    if G.current_isomode > 665 then
+        return true
+    else
+        return false
+    end
+end
