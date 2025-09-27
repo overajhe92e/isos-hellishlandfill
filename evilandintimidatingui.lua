@@ -1,16 +1,12 @@
 G.current_isomode = G.PROFILES[G.SETTINGS.profile].current_isomode
-G.fearfactor = G.PROFILES[G.SETTINGS.profile].fearfactor
+
 G.enabledsecret = false
 
 function G.FUNCS.yeah()
-	G.fearfactor = 0
-	G.PROFILES[G.SETTINGS.profile].fearfactor = 0
 	G.current_isomode = -1
 end
 
 function G.FUNCS.stable()
-	G.fearfactor = 0
-	G.PROFILES[G.SETTINGS.profile].fearfactor = 0
 	G.PROFILES[G.SETTINGS.profile].current_isomode = 0
 	G:save_progress()
 end
@@ -30,8 +26,6 @@ function G.FUNCS.balancedmenu()
 end
 
 function G.FUNCS.unbalanced()
-	G.fearfactor = 0
-	G.PROFILES[G.SETTINGS.profile].fearfactor = 0
 	G.PROFILES[G.SETTINGS.profile].current_isomode = 1
 	G:save_progress()
 end
@@ -44,8 +38,6 @@ function G.FUNCS.ahabsurd()
 end
 
 function G.FUNCS.verybad()
-	G.fearfactor = 0
-	G.PROFILES[G.SETTINGS.profile].fearfactor = 0
 	G.PROFILES[G.SETTINGS.profile].current_isomode = 2
 	G:save_progress()
 	play_sound('ocstobal_straddle')
@@ -338,11 +330,25 @@ function G.FUNCS.enabling()
 	end
 end
 
+function proceedcrash()
+		error(
+			'You shouldn\'t have gone down this path.'
+		)
+		return true
+end
+
 function G.FUNCS.proceed()
-	G.PROFILES[G.SETTINGS.profile].fearfactor = 1
 	G.PROFILES[G.SETTINGS.profile].current_isomode = 666
-	G.SETTINGS.SOUND.music_volume = 100
-	check_for_unlock({ type = "regrets" })
+	G.silence = 1
+	play_sound('ocstobal_ominousworse', 1, 1)
+	G.E_MANAGER:add_event(Event({
+		trigger = "after",
+		delay = 10,
+		func = function()
+			G.SETTINGS.SOUND.music_volume = 100
+			proceedcrash()
+		end
+	}))
 	G:save_progress()
 end
 
@@ -373,7 +379,6 @@ function G.FUNCS.turnback()
 		G.enabledsecret = false
 		play_sound('ocstobal_ominouscancel', 1, 1)
 		G.SETTINGS.SOUND.music_volume = 100
-		object:remove()
 	else
 		return false
 	end

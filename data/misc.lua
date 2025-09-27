@@ -380,12 +380,17 @@ SMODS.Sound {
 }
 
 SMODS.Sound {
+	key = 'ominousworse',
+	path = "torture_a_fictional_deer.ogg"
+}
+
+SMODS.Sound {
 	key = 'music_ocean',
 	path = "music_ocean.ogg",
-	pitch = 0.85,
+	pitch = 1,
 	volume = 0.7,
 	select_music_track = function()
-		if G.fearfactor > 0 then return true else return false end
+		if G.current_isomode >= 666 then return true else return false end
 	end
 }
 
