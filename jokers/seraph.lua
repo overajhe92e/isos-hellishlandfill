@@ -12,16 +12,17 @@ SMODS.Joker { --Seraph
     config = {
         extra = {
             odds = 3,
-            chips = 0,
-            Xmult = 2,
-            xchips = 10,
+            chips = to_big(0),
+            Xmult = to_big(2),
+            xchips = to_big(10),
             odds2 = 20,
             upgrade = 0,
             triggered = 0,
-            emult = 1,
-            eemult = 1,
-            eeemult = 1,
-            hypmult = 1,
+            emult = to_big(1),
+            eemult = to_big(1),
+            eeemult = to_big(1),
+            hypmult = to_big(1),
+            hyperop = to_big(4),
             extra_cost = 1
         }
     },
@@ -59,17 +60,12 @@ SMODS.Joker { --Seraph
         elseif card.ability.extra.upgrade >= 100 and card.ability.extra.upgrade < 400 and G.current_isomode >= 1 then
             card.children.floating_sprite:set_sprite_pos { x = 2, y = 0 }
             card.children.center:set_sprite_pos { x = 0, y = 1 }
-            card:set_cost(1000)
         elseif card.ability.extra.upgrade >= 400 and card.ability.extra.upgrade < 1000 and G.current_isomode >= 1 then
-            G.GAME.ocstobal_ext = 50
             card.children.center:set_sprite_pos { x = 1, y = 1 }
             card.children.floating_sprite:set_sprite_pos { x = 3, y = 0 }
-            card:set_cost(5000)
         elseif card.ability.extra.upgrade >= 1000 and G.current_isomode >= 1 then
-            G.GAME.ocstobal_ext = 100
             card.children.center:set_sprite_pos { x = 1, y = 1 }
             card.children.floating_sprite:set_sprite_pos { x = 4, y = 0 }
-            card:set_cost(2000000)
         end
         if card.ability.extra.upgrade < 100 and card.ability.extra.triggered >= 10 then
             play_sound('ocstobal_upg')
@@ -171,13 +167,13 @@ SMODS.Joker { --Seraph
                 G.current_isomode >= 1 and card.ability.extra.upgrade >= 100 and card.ability.extra.upgrade <= 399 and
                 "j_ocstobal_seraph_lv100"
                 or
-                G.current_isomode == 0 and card.ability.extra.upgrade >= 100 and card.ability.extra.upgrade < 10000000 and
+                G.current_isomode <= 0 and card.ability.extra.upgrade >= 100 and card.ability.extra.upgrade < 10000000 and
                 "j_ocstobal_seraph_maxedbalanced"
                 or
                 G.current_isomode >= 1 and card.ability.extra.upgrade >= 400 and card.ability.extra.upgrade and
                 card.ability.extra.upgrade <= 999 and "j_ocstobal_seraph_lv300"
                 or
-                G.current_isomode >= 1 and card.ability.extra.upgrade >= 1000 and card.ability.extra.upgrade < 100000 and
+                G.current_isomode >= 1 and card.ability.extra.upgrade >= 1000 and card.ability.extra.upgrade < 10000 and
                 "j_ocstobal_seraph_lv1000"
                 or
                 G.current_isomode >= 1 and card.ability.extra.upgrade >= 10000 and card.ability.extra.upgrade < 1000000 and

@@ -13,3 +13,9 @@ function almanacstuff()
         return false
     end
 end
+
+-- function riskofhell()
+--     if --[[blind checking here]] then
+--         ease_background_colour_blind(G.STATES.PLANET_PACK)
+--     end
+-- end

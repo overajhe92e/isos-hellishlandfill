@@ -331,10 +331,10 @@ function G.FUNCS.enabling()
 end
 
 function proceedcrash()
-		error(
-			'You shouldn\'t have gone down this path.'
-		)
-		return true
+	error(
+		'You shouldn\'t have gone down this path.'
+	)
+	return true
 end
 
 function G.FUNCS.proceed()
@@ -492,7 +492,14 @@ SMODS.current_mod.config_tab = function()
 												ref_value = 'easier_cplusplus',
 											}),
 										}
-									}
+									},
+									{
+										n = G.UIT.R,
+										config = { minw = 0, minh = 0, align = "tm", padding = 0.1, colour = G.C.BLACK, button = "enabling", r = 0.1 },
+										nodes = {
+											{ n = G.UIT.T, config = { text = "???", colour = G.C.RED, scale = 0.3, align = "bm" }, },
+										}
+									},
 								}
 							},
 						}
@@ -534,14 +541,7 @@ SMODS.current_mod.extra_tabs = function()
 							nodes = {
 								{ n = G.UIT.T, config = { text = 'Astro (@silly_goober_0nthewall), For drawing Crystal', colour = G.C.DARK_EDITION, scale = 0.5 } }
 							}
-						},
-						{
-							n = G.UIT.R,
-							config = { minw = 0, minh = 0, align = "tm", padding = 0.1, colour = G.C.BLACK, button = "enabling", r = 0.1 },
-							nodes = {
-								{ n = G.UIT.T, config = { text = "Release RECLUSE", colour = G.C.BLACK, scale = 0.2, align = "m" }, },
-							}
-						},
+						}
 					}
 				}
 			end,
@@ -559,42 +559,42 @@ SMODS.current_mod.extra_tabs = function()
 							n = G.UIT.R,
 							config = { minw = 3, minh = 1, colour = G.C.CLEAR, padding = 0.01, align = 'tm' },
 							nodes = {
-								{ n = G.UIT.T, config = { text = 'WORK IN PROGRESS', colour = G.C.RED, scale = 1 } },
+								{ n = G.UIT.T, config = { text = 'WORK IN PROGRESS', colour = G.C.RED, scale = 0.8 } },
 							}
 						},
 						{
 							n = G.UIT.R,
 							config = { minw = 1, minh = 1, maxw = 5, maxh = 2, align = "m", padding = 0.1, colour = G.C.RARITY[4], button = "seraph", r = 0.1 },
 							nodes = {
-								{ n = G.UIT.T, config = { text = "Seraph's Story", colour = G.C.WHITE, scale = 0.6, align = "m" }, },
+								{ n = G.UIT.T, config = { text = "Seraph's Story", colour = G.C.WHITE, scale = 0.5, align = "m" }, },
 							}
 						},
 						{
 							n = G.UIT.R,
 							config = { minw = 1, minh = 1, maxw = 5, maxh = 2, align = "m", padding = 0.1, colour = G.C.GREEN, button = "sparky", r = 0.1 },
 							nodes = {
-								{ n = G.UIT.T, config = { text = "Sparky's Story", colour = G.C.WHITE, scale = 0.6, align = "m" }, },
+								{ n = G.UIT.T, config = { text = "Sparky's Story", colour = G.C.WHITE, scale = 0.5, align = "m" }, },
 							}
 						},
 						{
 							n = G.UIT.R,
 							config = { minw = 1, minh = 1, maxw = 5, maxh = 2, align = "m", padding = 0.1, colour = G.C.BLUE, button = "solinium", r = 0.1 },
 							nodes = {
-								{ n = G.UIT.T, config = { text = "Solinium's Story", colour = G.C.WHITE, scale = 0.6, align = "m" }, },
+								{ n = G.UIT.T, config = { text = "Solinium's Story", colour = G.C.WHITE, scale = 0.5, align = "m" }, },
 							}
 						},
 						{
 							n = G.UIT.R,
 							config = { minw = 1, minh = 1, maxw = 5, maxh = 2, align = "m", padding = 0.1, colour = G.C.DARK_EDITION, button = "solinium", r = 0.1 },
 							nodes = {
-								{ n = G.UIT.T, config = { text = "Recluse's Story", colour = G.C.WHITE, scale = 0.6, align = "m" }, },
+								{ n = G.UIT.T, config = { text = "Recluse's Story", colour = G.C.WHITE, scale = 0.5, align = "m" }, },
 							}
 						},
 						{
 							n = G.UIT.R,
 							config = { minw = 3, minh = 1, colour = G.C.CLEAR, padding = 0.01, align = 'tm' },
 							nodes = {
-								{ n = G.UIT.T, config = { text = 'Other OCs', colour = G.C.WHITE, scale = 1 } },
+								{ n = G.UIT.T, config = { text = 'Other OCs', colour = G.C.WHITE, scale = 0.6 } },
 							}
 						},
 						{
@@ -608,14 +608,14 @@ SMODS.current_mod.extra_tabs = function()
 							n = G.UIT.R,
 							config = { minw = 3, minh = 1, colour = G.C.CLEAR, padding = 0.01, align = 'tm' },
 							nodes = {
-								{ n = G.UIT.T, config = { text = '???', colour = G.C.UI.TEXT_INACTIVE, scale = 0.8 } },
+								{ n = G.UIT.T, config = { text = '???', colour = G.C.UI.TEXT_INACTIVE, scale = 0.4 } },
 							}
 						},
 						{
 							n = G.UIT.R,
 							config = { minw = 0.5, minh = 0.5, maxw = 3, maxh = 1, align = "m", padding = 0.1, colour = G.C.BLACK, button = "supersecret", r = 0.1 },
 							nodes = {
-								{ n = G.UIT.T, config = { text = "Don't... Please...", colour = G.C.BLACK, scale = 0.2, align = "m" }, },
+								{ n = G.UIT.T, config = { text = "DEEPER DIVE INTO THE MIND", colour = G.C.RED, scale = 0.2, align = "m" }, },
 							}
 						},
 					}

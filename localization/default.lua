@@ -365,7 +365,7 @@ return {
 					},
 					{
 						'{C:dark_edition,E:1,s:1.2}Current Stats{}',
-						'{X:red,C:white}X#11#{} Mult, {C:blue}+#12#{} Chips, {X:blue,C:white}X#14#{} Chips, {X:ocstobal_sewh,C:default,E:1}^#13#{} {C:ocstobal_sewh,E:1}EMult{}',
+						'{X:red,C:white}X#11#{} Mult, {C:blue}+#12#{} Chips, {X:blue,C:white}X#14#{} Chips, {X:dark_edition,C:default,E:1}^#13#{} {C:dark_edition,E:1}EMult{}',
 					}
 				}
 			},
@@ -397,7 +397,8 @@ return {
 					},
 					{
 						'{C:dark_edition,E:1,s:1.2}Current Stats{}',
-						'{X:red,C:white}X#11#{} Mult, {C:blue}+#12#{} Chips, {X:blue,C:white}X#14#{} Chips, {X:ocstobal_sewh,C:default,E:1}^#13#{} {C:ocstobal_sewh,E:1}EMult{}, {X:ocstobal_finalrgb,C:edition}^^#15#{} {C:ocstobal_finalrgb}EEMult{}',
+						'{X:red,C:white}X#11#{} Mult, {C:blue}+#12#{} Chips, {X:blue,C:white}X#14#{} Chips,',
+						'{X:dark_edition,C:white,E:1}^#13#{} EMult, {X:dark_edition,C:white}^^#15#{} EEMult'
 					}
 				}
 			},

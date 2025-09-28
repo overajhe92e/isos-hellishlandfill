@@ -9,7 +9,8 @@ function love.draw()
 	function FuckingImage(fn)
 		local full_path = (ocstobal.path
 			.. "image/" .. fn)
-		local file_data = assert(NFS.newFileData(full_path), ("Missing Image! Are you sure you loaded it, or named it correctly?"))
+		local file_data = assert(NFS.newFileData(full_path),
+			("Missing Image! Are you sure you loaded it, or named it correctly?"))
 		local tempimagedata = assert(love.image.newImageData(file_data), ("ggez"))
 		return (assert(love.graphics.newImage(tempimagedata), ("ez noob")))
 	end
@@ -359,6 +360,14 @@ SMODS.Atlas {
 	atlas_table = 'ASSET_ATLAS'
 }
 
+SMODS.Atlas {
+	key = 'moddingchat',
+	px = 71,
+	py = 95,
+	path = 'moddingchat.png',
+	atlas_table = 'ASSET_ATLAS'
+}
+
 SMODS.Sound {
 	key = "loser",
 	path = "catlaugh.ogg",
@@ -387,8 +396,8 @@ SMODS.Sound {
 SMODS.Sound {
 	key = 'music_ocean',
 	path = "music_ocean.ogg",
-	pitch = 1,
-	volume = 0.7,
+	pitch = 0.7,
+	volume = 1,
 	select_music_track = function()
 		if G.current_isomode >= 666 then return true else return false end
 	end
@@ -1062,14 +1071,14 @@ to_big = to_big or function(x) return x end
 
 
 -- ok so maybe i lied about abbie doing nothing
---credits to paradox for the hook 
+--credits to paradox for the hook
 local abbornegative = G.P_CENTERS.e_negative.get_weight
 G.P_CENTERS.e_negative.get_weight = function(self)
 	local weight = abbornegative(self)
 	if next(SMODS.find_card("j_ocstobal_abbie")) then
 		weight = weight * ((31.24 + 112.424) / 3)
 	elseif next(SMODS.find_card("j_ocstobal_abbie")) and next(SMODS.find_card("j_ocstobal_sparky")) then
-		weight = weight * ((31.24 + 112.242)*3) -- DOOMED COUPLE RAHHHHHHHHHHH
+		weight = weight * ((31.24 + 112.242) * 3) -- DOOMED COUPLE RAHHHHHHHHHHH
 	end
 	return weight
 end
