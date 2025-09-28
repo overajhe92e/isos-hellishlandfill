@@ -12,17 +12,17 @@ SMODS.Joker { --Seraph
     config = {
         extra = {
             odds = 3,
-            chips = to_big(0),
-            Xmult = to_big(2),
-            xchips = to_big(10),
+            chips = 0,
+            Xmult = 2,
+            xchips = 10,
             odds2 = 20,
             upgrade = 0,
             triggered = 0,
-            emult = to_big(1),
-            eemult = to_big(1),
-            eeemult = to_big(1),
-            hypmult = to_big(1),
-            hyperop = to_big(4),
+            emult = 1,
+            eemult = 1,
+            eeemult = 1,
+            hypmult = 1,
+            hyperop = 4,
             extra_cost = 1
         }
     },
