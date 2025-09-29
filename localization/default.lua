@@ -986,6 +986,22 @@ return {
 					},
 					{"{C:inactive}Let's see how high this can get lmfao{}"}
 				}
+			},
+			j_ocstobal_candycane = {
+				name = "Candycane",
+				text = {
+					"{X:red,C:white}+X1{} Mult for",
+					"every time Candycane asked {C:blue}Isotypical{}",
+					"for something."
+				}
+			},
+			j_ocstobal_mask = {
+				name = "Mask",
+				text = {
+					"On blind select,",
+					"{C:attention}+1{} Joker slot.",
+					"{C:inactive}I don't think you... are strong enough.{}"
+				}
 			}
 		},
 		Other = {

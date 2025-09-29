@@ -305,6 +305,14 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
+	key = 'masked',
+	px = 71,
+	py = 95,
+	path = 'themask.png',
+	atlas_table = 'ASSET_ATLAS'
+}
+
+SMODS.Atlas {
 	key = 'avaritia',
 	px = 71,
 	py = 95,
