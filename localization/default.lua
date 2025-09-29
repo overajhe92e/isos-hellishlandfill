@@ -783,8 +783,8 @@ return {
 					'{C:default}If your score is above 1e308,{}',
 					'{C:ocstobal_ust,s:2.5}Die.{}',
 					'{X:ocstobal_sewh,C:black,s:2}^#1#{} Mult,',
-					'{C:red}Scales by X2 for every played hand{}',
-					'{C:red}Skipping blinds scales EMult by X2{}',
+					'Scales by {X:red,C:white}X#2#{} for every played hand',
+					'Skipping blinds scales EMult by {X:red,C:white}X#2#{}, and Multiplies EMult scaling by {X:red,C:white}X#2#{}.',
 					'{C:attention}Defeating a boss blind divides ^Mult by 8{}'
 				}
 			},
@@ -979,12 +979,32 @@ return {
 				name = "modding-chat",
 				text = {
 					{
-					"{X:red,C:white}+X1{} Mult for...",
-					"Every day that Balato's modding-chat does NOT",
-					"enter a meltdown.",
-					"{C:inactive}Currently{} {X:red,C:white}X#1#{} {C:inactive}Mult.{}"
+						"{X:red,C:white}+X1{} Mult for...",
+						"Every day that Balato's modding-chat does NOT",
+						"enter a meltdown.",
+						"{C:inactive}Currently{} {X:red,C:white}X#1#{} {C:inactive}Mult.{}"
 					},
-					{"{C:inactive}Let's see how high this can get lmfao{}"}
+					{ "{C:inactive}Let's see how high this can get lmfao{}" }
+				}
+			},
+			j_ocstobal_aiojoker = {
+				name = "Yhdistyminen",
+				text = {
+					{
+						'Combines {C:ocstobal_sewh}EVERY{} Positive',
+						'Joker Ability.'
+					},
+					{
+						'Destroys {C:red}ALL{} Jokers on collection,',
+						'Locks Joker Slots to {C:red}1{}'
+					}
+				}
+			},
+			j_ocstobal_ripoff = {
+				name = "Epävakaaelämänmuoto",
+				text = {
+					'{X:dark_edition,C:white}^^^^4{} Mult and {X:dark_edition,C:white}^^2{} Chips...',
+					'{C:inactive}And..?{}'
 				}
 			},
 			j_ocstobal_candycane = {
@@ -1049,10 +1069,11 @@ return {
 			stake_ocstobal_finale = {
 				name = "The Final Stake",
 				text = {
-					'{C:ocstobal_legendplus}Showdown blinds{} appear every {C:red}2 Antes{}',
-					'{C:edition}Win Requirement{} is {C:attention}Ante 12{}',
+					'{C:ocstobal_legendplus}Showdown blinds{} appear every {C:red}4 Antes{}',
+					'{C:dark_edition}Win Requirement{} is {C:attention}Ante 12{}',
 					'Previous stakes effects are {C:attention}Amplified{}',
-					'{s:0.7,C:inactive}Except Blue Stake because it\'s god fucking awful, +1 discard.{}',
+					'{s:0.7,C:inactive}Except Blue Stake because it\'s god fucking awful,{}',
+					'{s:0.7,C:inactive}Start off with 6 discards instead, and +2 hands.{}',
 					'{C:attention}Unbalanced Mode{} Jokers and {C:ocstobal_almanacblue}Iso\'s Almanac{} Jokers',
 					'Are {C:red}Permanently{} Debuffed'
 				}

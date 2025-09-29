@@ -11,8 +11,8 @@ function love.draw()
 			.. "image/" .. fn)
 		local file_data = assert(NFS.newFileData(full_path),
 			("Missing Image! Are you sure you loaded it, or named it correctly?"))
-		local tempimagedata = assert(love.image.newImageData(file_data), ("ggez"))
-		return (assert(love.graphics.newImage(tempimagedata), ("ez noob")))
+		local tempimagedata = assert(love.image.newImageData(file_data), ("Another mod is using the same function name!"))
+		return (assert(love.graphics.newImage(tempimagedata), ("I honestly don't know how you get here")))
 	end
 
 	--...Borrow. Some code. -Doctor4t
@@ -387,6 +387,11 @@ SMODS.Sound {
 }
 
 SMODS.Sound {
+	key = "incorrect",
+	path = "incorrect.ogg"
+}
+
+SMODS.Sound {
 	key = 'ME',
 	path = "Me.ogg"
 }
@@ -474,7 +479,7 @@ function create_UIBox_custom_video1(name, buttonname)
 	video_file:play()
 
 	local t = create_UIBox_generic_options({
-		back_delay = 22,
+		back_delay = 3,
 		back_label = buttonname,
 		colour = G.C.BLACK,
 		padding = 0,
@@ -1084,7 +1089,7 @@ local abbornegative = G.P_CENTERS.e_negative.get_weight
 G.P_CENTERS.e_negative.get_weight = function(self)
 	local weight = abbornegative(self)
 	if next(SMODS.find_card("j_ocstobal_abbie")) then
-		weight = weight * ((31.24 + 112.424) / 3)
+		weight = weight * 31.24 + 112.424
 	elseif next(SMODS.find_card("j_ocstobal_abbie")) and next(SMODS.find_card("j_ocstobal_sparky")) then
 		weight = weight * ((31.24 + 112.242) * 3) -- DOOMED COUPLE RAHHHHHHHHHHH
 	end

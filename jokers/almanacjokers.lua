@@ -114,3 +114,38 @@ SMODS.Joker { --UNUSED RIGHT NOW
     cost = 1e307,
     no_collection = true
 }
+
+SMODS.Joker {
+    key = 'aiojoker',
+    rarity = 'ocstobal_whatthefuck',
+    cost = 999999999,
+
+    calculate = function(self,card,context)
+        if context.joker_main then
+            return {
+                chips = to_big(10^10^10^10^10)
+            }
+        end
+    end
+}
+
+SMODS.Joker {
+    key = 'ripoff',
+    rarity = 'ocstobal_whatthefuck',
+    cost = 2000,
+    atlas = 'CustomJokers',
+    pos = {x=9,y=1},
+    soul_pos = {
+        x=0,y=2
+    },
+    blueprint_compat = true,
+    
+    calculate = function(self,card,context)
+        if context.joker_main then
+            return {
+                hypermult = {4,2},
+                eechips = 2
+            }
+        end
+    end
+}

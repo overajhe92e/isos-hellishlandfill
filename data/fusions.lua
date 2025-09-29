@@ -48,7 +48,17 @@ FusionJokers.fusions:add_fusion(
 	"j_ocstobal_oxyemp",
 	25
 )
-
+FusionJokers.fusions:add_fusion(
+	"j_ocstobal_malicesyringe",
+	nil,
+	nil,
+	'j_ocstobal_lifecrystal',
+	nil,
+	nil,
+	'j_ocstobal_ripoff',
+	1000
+)
+--fusion jokers' table option does not work, yippee
 --[[FusionJokers.fusions:add_fusion(
   joker1,       --string, component joker's key
   carry_stat1,  --string, name of stat to carry into fusion

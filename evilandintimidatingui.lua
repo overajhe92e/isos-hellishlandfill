@@ -326,7 +326,7 @@ function G.FUNCS.enabling()
 		G.enabledsecret = true
 		play_sound("ocstobal_ominous", 0.8, 3)
 	else
-		return false
+		play_sound("ocstobal_incorrect",1,1)
 	end
 end
 
@@ -380,7 +380,7 @@ function G.FUNCS.turnback()
 		play_sound('ocstobal_ominouscancel', 1, 1)
 		G.SETTINGS.SOUND.music_volume = 100
 	else
-		return false
+		play_sound("ocstobal_incorrect",1,1)
 	end
 end
 
