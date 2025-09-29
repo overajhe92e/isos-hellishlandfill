@@ -6,7 +6,7 @@ SMODS.Stake {
     prefix_config = { applied_stakes = { mod = false } },
     above_stake = 'gold',
     modifiers = function()
-        G.GAME.modifiers.scaling = (G.GAME.modifiers.scaling or 1) + 3
+        G.GAME.modifiers.scaling = (G.GAME.modifiers.scaling or 1) + 2
         G.GAME.modifiers.no_blind_reward = G.GAME.modifiers.no_blind_reward or {}
         G.GAME.modifiers.no_blind_reward.Big = true
     end,
@@ -23,10 +23,11 @@ SMODS.Stake {
     applied_stakes = { "ocstobal_singularity" },
     prefix_config = { applied_stakes = { mod = false } },
     modifiers = function()
-        G.GAME.modifiers.scaling = (G.GAME.modifiers.scaling or 1) + 5
+        G.GAME.modifiers.scaling = (G.GAME.modifiers.scaling or 1) + 2
         G.GAME.modifiers.no_blind_reward = G.GAME.modifiers.no_blind_reward or {}
-        G.GAME.modifiers.no_blind_reward.Boss = true
         G.GAME.win_ante = math.ceil(G.GAME.win_ante * 1.5)
+        G.GAME.starting_params.discards = 6
+        G.GAME.starting_params.hands = G.GAME.starting_params.hands + 2
     end,
     colour = G.C.WHITE,
     shiny = true
