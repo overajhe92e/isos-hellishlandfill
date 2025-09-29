@@ -115,12 +115,12 @@ SMODS.Joker { --Seraph
             repeat
                 card.ability.extra.triggered = card.ability.extra.triggered - 10
                 card.ability.extra.upgrade = card.ability.extra.upgrade + 1
-                card.ability.extra.Xmult = card.ability.extra.Xmult ^ 1.1
-                card.ability.extra.chips = card.ability.extra.chips ^ 1.1
-                card.ability.extra.xchips = card.ability.extra.xchips ^ 1.1
-                card.ability.extra.emult = card.ability.extra.emult ^ 1.1
-                card.ability.extra.eemult = card.ability.extra.eemult ^ 1.1
-                card.ability.extra.eemult = card.ability.extra.eeemult * 2
+                card.ability.extra.Xmult = card.ability.extra.Xmult + 666
+                card.ability.extra.chips = card.ability.extra.chips + 50000
+                card.ability.extra.xchips = card.ability.extra.xchips + 16
+                card.ability.extra.emult = card.ability.extra.emult + 16
+                card.ability.extra.eemult = card.ability.extra.eemult + 16
+                card.ability.extra.eemult = card.ability.extra.eeemult + 5
             until card.ability.extra.triggered < 10
         elseif card.ability.extra.upgrade >= 10000000 and card.ability.extra.triggered >= 10 then
             wtfdude()

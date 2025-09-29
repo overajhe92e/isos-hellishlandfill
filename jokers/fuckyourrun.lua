@@ -68,11 +68,11 @@ SMODS.Joker {
         card:set_eternal(true)
         G.GAME.round_resets.hands = 1
         G.GAME.round_resets.discards = 0
-        G.hand:change_size(6)
+        G.hand:change_size(12)
     end,
 
     remove_from_deck = function(self, card, from_debuff)
-        G.hand:change_size(-6)
+        G.hand:change_size(-12)
     end,
 
     loc_vars = function(self, info_queue, card) -- yeah this was buggy asf lmao
@@ -83,7 +83,7 @@ SMODS.Joker {
     end,
 
     calculate = function(self, card, context)
-        if context.joker_main then
+        if context.joker_main and not context.blueprint then
             return {
                 message = 'evil',
                 Emult_mod = 0.7,
