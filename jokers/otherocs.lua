@@ -107,3 +107,28 @@ SMODS.Joker {
         end
     end
 }
+
+SMODS.Joker {
+    key = 'mask',
+    cost = 66,
+    rarity = 4,
+    config = {
+        jokerslots = 1
+    },
+    blueprint_compat = false,
+    atlas = 'masked',
+    pos = {x=0,y=0},
+    soul_pos = {x=1,y=0},
+
+    update = function(self,card,dt)
+    end,
+
+    calculate = function(self,card,context)
+        if context.setting_blind then
+            G.jokers:change_size(card.ability.jokerslots)
+            return {
+                message = ('+'..tostring(card.ability.jokerslots).. 'Slots')
+            }
+        end
+    end
+}
