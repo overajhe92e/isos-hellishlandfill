@@ -16,10 +16,8 @@ return {
 			b_ocstobal_copycat = {
 				name = "Copycat Deck",
 				text = {
-					'Start off with Blueprint,',
-					'Brainstorm, and Oxy.',
-					'Balances {C:chips}Chips{} and {C:mult}Mult{}',
-					'{C:red}x4{} Blind Size.'
+					'Start off with',
+					'{C:blue,T:j_ocstobal_crystal}Crystal{} and {C:attention,T:j_ocstobal_Oxy}Oxy{}'
 				},
 				unlock = {
 					'Win a run with any deck',
@@ -33,10 +31,7 @@ return {
 					'>looks inside',
 					'{C:red}>it\'s just unbalanced jokers using hypermult{}',
 					'>deletes mod',
-					'{C:inactive,s:0.7}>horse walks in{}',
-					'{C:inactive}Start off with Photograph and Hanging Chad,{}',
-					'{C:inactive}Yes the humor in the balatro community{}',
-					'{C:inactive}is ass.{}'
+					'{C:inactive,s:0.7}>horse walks in{}'
 				},
 				unlock = {
 					'Win a run.'
@@ -1012,7 +1007,8 @@ return {
 				text = {
 					"{X:red,C:white}+X1{} Mult for",
 					"every time Candycane asked {C:blue}Isotypical{}",
-					"for something."
+					"for something.",
+					"{C:inactive}Currently{} {X:red,C:white}X7{} {C:inactive}Mult{}"
 				}
 			},
 			j_ocstobal_mask = {
@@ -1021,6 +1017,14 @@ return {
 					"On blind select,",
 					"{C:attention}+1{} Joker slot.",
 					"{C:inactive}I don't think you... are strong enough.{}"
+				}
+			},
+			j_ocstobal_itsfuckingseptember = {
+				name = "It's FUCKING SEPTEMBER",
+				text = {
+					"Replaces ALL Blinds with",
+					"{C:red}Mariah Carey{}",
+					"Also occasionally shows christmas ads."
 				}
 			}
 		},
@@ -1206,12 +1210,6 @@ return {
 
 			k_ocstobal_dangerous = 'Unstable Behaviour',
 
-			k_ocstobal_deathinbound = {
-				'YOU WILL DIE.',
-				'If you have an Isotypical\'s Junkyard Joker,',
-				'Upon playing a hand, die.'
-			},
-
 			k_ocstobal_veryunstable = 'Extremely Unstable'
 
 		},
@@ -1224,7 +1222,12 @@ return {
 		suits_plural = {},
 		suits_singular = {},
 		tutorial = {},
-		v_dictionary = {},
+		v_dictionary = {
+			a_ocstobal_deathinbound = {
+				'If you have an Isotypical\'s Junkyard Joker,',
+				'Upon playing a hand, die.'
+			},
+		},
 		v_text = {},
 
 	}

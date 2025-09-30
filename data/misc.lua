@@ -46,6 +46,16 @@ end
 local mod_path = "" .. SMODS.current_mod.path
 ocstobal.path = mod_path
 
+function forceGameoverEvent()
+	G.E_MANAGER:add_event({
+		func = function()
+			G.STATE = G.STATES.GAME_OVER
+			G.STATE_COMPLETE = false
+			return true
+		end
+	})
+end
+
 function forceGameover()
 	G.STATE = G.STATES.GAME_OVER
 	G.STATE_COMPLETE = false
@@ -1091,7 +1101,7 @@ G.P_CENTERS.e_negative.get_weight = function(self)
 	if next(SMODS.find_card("j_ocstobal_abbie")) then
 		weight = weight * 31.24 + 112.424
 	elseif next(SMODS.find_card("j_ocstobal_abbie")) and next(SMODS.find_card("j_ocstobal_sparky")) then
-		weight = weight * ((31.24 + 112.242) * 3) -- DOOMED COUPLE RAHHHHHHHHHHH
+		weight = weight * (31.24 + 112.242) * 10 -- DOOMED COUPLE RAHHHHHHHHHHH
 	end
 	return weight
 end

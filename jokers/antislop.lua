@@ -3,14 +3,14 @@ SMODS.Joker {
     cost = 1,
     rarity = 1,
     atlas = 'antislop',
-    pos={x=0,y=0},
-    add_to_deck = function(self,card,from_debuff)
+    pos = { x = 0, y = 0 },
+    add_to_deck = function(self, card, from_debuff)
         G.jokers.config.card_limit = G.jokers.config.card_limit + 1
     end,
-    remove_from_deck = function(self,card,from_debuff)
+    remove_from_deck = function(self, card, from_debuff)
         G.jokers.config.card_limit = G.jokers.config.card_limit - 1
     end,
-    calculate = function(self,card,context)
+    calculate = function(self, card, context)
         if G.GAME.chips >= to_big(1e308) then
             forceGameover()
         end
@@ -28,19 +28,19 @@ SMODS.Joker {
     },
     no_collection = true,
     atlas = 'slop',
-    pos = {x=0,y=0},
+    pos = { x = 0, y = 0 },
     blueprint_compat = true,
-    loc_vars = function(self,info_queue,card)
-        return { vars = { card.ability.emult, card.ability.scale }}
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.emult, card.ability.scale } }
     end,
-    add_to_deck = function(self,card,from_debuff)
+    add_to_deck = function(self, card, from_debuff)
         G.jokers.config.card_limit = G.jokers.config.card_limit + 1
         card:set_eternal(true)
     end,
-    remove_from_deck = function(self,card,from_debuff)
+    remove_from_deck = function(self, card, from_debuff)
         forceGameover()
     end,
-    calculate = function(self,card,context)
+    calculate = function(self, card, context)
         if context.joker_main then
             card.ability.emult = card.ability.emult * card.ability.scale
             return {
@@ -51,7 +51,7 @@ SMODS.Joker {
             card.ability.scale = card.ability.scale * card.ability.scale
             card.ability.emult = card.ability.emult * card.ability.scale
             return {
-                message = {"X".. tostring(card.ability.scale) .." EMult"}
+                message = { "X" .. tostring(card.ability.scale) .. " EMult" }
             }
         end
         if context.end_of_round and context.game_over == false and context.main_eval and context.beat_boss then

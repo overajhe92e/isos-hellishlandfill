@@ -67,24 +67,28 @@ SMODS.Blind {
 		akyrs_cannot_be_overridden = true
 	},
 
+	get_loc_debuff_text = function(self)
+		return localize{type='variable',key='a_ocstobal_deathinbound'}
+	end,
+
 	calculate = function(self, card, context)
 		if context.modify_hand then
 			for i = 1, #G.jokers.cards do
 				if G.jokers.cards[i].config.center.original_mod == SMODS.Mods["ocstobalatro"] then
-						G.E_MANAGER:add_event({
-							func = function()
-								death()
-								diedach()
-								forceGameover()
-								return true
-							end
-						})
+					diedach()
+					forceGameover()
+					return true
 					--"Add a cheeseburger" -Grazy
 					--TODO: add a 1 in 100 chance for a cheeseburger jumpscare
 				end
 			end
 		end
+	end,
+
+	disable = function(self)
+		return nil
 	end
+
 } --todo: fix
 
 SMODS.Blind {
@@ -120,8 +124,6 @@ SMODS.Sound {
 	select_music_track = function()
 		if G.GAME.blind and not G.GAME.blind.disabled and G.GAME.blind.name == 'cringeasf' then
 			return true
-		elseif G.GAME.blind and not G.GAME.blind.disabled and G.GAME.blind.name == 'recluseblind' then
-			return true
 		elseif G.GAME.blind and not G.GAME.blind.disabled and G.GAME.blind.name == 'unstable' then
 			return true
 		end
@@ -135,6 +137,30 @@ SMODS.Sound {
 	volume = 1,
 	select_music_track = function()
 		if G.GAME.blind and not G.GAME.blind.disabled and G.GAME.blind.name == 'lankyohfuckinghellbox' then
+			return true
+		end
+	end
+}
+
+-- SMODS.Sound {
+-- 	key = "music_titanspawn",
+-- 	path = "titanspawn.ogg",
+-- 	pitch = 1,
+-- 	volume = 1,
+-- 	select_music_track = function()
+-- 		if G.GAME.blind and not G.GAME.blind.disabled and G.GAME.blind.name == 'recluseblind' then
+-- 			return true
+-- 		end
+-- 	end
+-- }
+
+SMODS.Sound {
+	key = "music_berdlysnowgrave",
+	path = "berdly.ogg",
+	pitch = 1,
+	volume = 1,
+	select_music_track = function()
+		if G.GAME.blind and not G.GAME.blind.disabled and G.GAME.blind.name == 'recluseblind' then
 			return true
 		end
 	end
@@ -188,7 +214,7 @@ SMODS.Blind {
 		akyrs_cannot_be_disabled = true,
 		akyrs_cannot_be_rerolled = true,
 		akyrs_cannot_be_overridden = true,
-		akyrs_blind_difficulty = "master",
+		akyrs_blind_difficulty = "expert",
 	},
 	ignore_showdown_check = true,
 
@@ -199,7 +225,9 @@ SMODS.Blind {
 	calculate = function(self, blind, context)
 		if not blind.disabled then
 			if context.modify_hand then
-				play_sound('timpani')
+				play_sound('tarot2')
+				SMODS.juice_up_blind()
+				blind:wiggle()
 				blind.triggered = true
 				G.GAME.blind.chips = math.floor(G.GAME.blind.chips * 3)
 				G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
@@ -209,7 +237,7 @@ SMODS.Blind {
 
 	defeat = function(self)
 		G.recluseblind = 0
-		play_sound('ocstobal_ominouscancel',1,2)
+		play_sound('ocstobal_ominouscancel', 1, 2)
 		recluseach()
 	end
 }

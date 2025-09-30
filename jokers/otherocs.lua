@@ -102,7 +102,7 @@ SMODS.Joker {
     calculate = function(self,card,context)
         if context.joker_main then
             return {
-                Xmult = 6
+                Xmult = 7
             }
         end
     end

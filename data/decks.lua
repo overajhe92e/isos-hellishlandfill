@@ -66,17 +66,10 @@ SMODS.Back {
 SMODS.Back {
 	key = "copycat",
 	pos = { x = 0, y = 0 },
-	config = { jokers = { 'j_ocstobal_Oxy', 'j_blueprint', 'j_brainstorm', 'j_ocstobal_crystal' }, ante_scaling = 4 },
+	config = { jokers = { 'j_ocstobal_Oxy', 'j_ocstobal_crystal' } },
 	unlocked = false,
 	loc_vars = function(self, info_queue, back)
-		return { vars = { self.config.jokers[1], self.config.ante_scaling } }
-	end,
-	calculate = function(self, back, context)
-		if context.final_scoring_step then
-			return {
-				balance = true
-			}
-		end
+		return { vars = { self.config.jokers[1] } }
 	end,
 	check_for_unlock = function(self, args)
 		return args.type == 'win_stake' and get_deck_win_stake() >= 8
@@ -128,26 +121,5 @@ SMODS.Back {
 	end,
 	check_for_unlock = function(self, args)
 		return args.type == 'win_stake' and get_deck_win_stake() >= 1
-	end
-}
-
-SMODS.Back {
-	key = 'psych_lore',
-	config = {
-		jokers = { 'j_ocstobal_seraphnt' }
-	},
-	loc_vars = function(self, info_queue, back)
-		return {
-			vars = { self.config.jokers[1] }
-		}
-	end,
-	unlocked = false,
-	bypass_all_unlocked = true,
-	check_for_unlock = function(self, args)
-		if args.type == 'regrets' then
-			return true
-		else
-			return false
-		end
 	end
 }
