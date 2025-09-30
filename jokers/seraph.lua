@@ -7,6 +7,44 @@ SMODS.Sound {
 
 --yes this is the malice sound effect from pwx
 
+local ocstobal_all_origins = {
+    'nil',
+    'Fundamental Paper Education', --what do you fucking think
+    'Poppy Playtime', --used to be a dragon
+    'Smiling Critters', -- read above
+    'Dog Man', --solinium
+    'ERROR',
+    'The Void', --yeah.
+    'Dandy\'s World', --fuck no
+    'it lies',
+    'Hypixel Skyblock', --voidgloom seraph
+    '[a nil value]',
+    'Changed', --NO.
+    'Project Moon', --awaken thy pm fans
+    'Lobotomy Corporation',
+    'Library of Ruina',
+    'Limbus Company',
+    ' '
+}
+
+local originquestion = {
+    'Origin?',
+    'Origin',
+    'Resides in',
+    'Came from',
+    'Taken over',
+    'Destroyed'
+}
+
+local operators = {
+    ":",
+    ";",
+    "?",
+    "!",
+    "-",
+    "+"
+}
+
 SMODS.Joker { --Seraph
     key = "seraph",
     config = {
@@ -137,13 +175,17 @@ SMODS.Joker { --Seraph
     set_ability = function(self, card, initial, delay_sprites)
     end,
 
-
     loc_vars = function(self, info_queue, card)
         local new_numerator, new_denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds,
             'j_ocstobal_seraph')
         local new_numerator2, new_denominator2 = SMODS.get_probability_vars(card, 1, card.ability.extra.odds2,
             'j_ocstobal_seraph')
         return {
+            main_end = {
+                { n = G.UIT.O, config = { object = DynaText({ string = originquestion, colours = {G.C.DARK_EDITION}, pop_in_rate = 999999, silent = true, random_element = true, pop_delay = 0.33, scale = 0.32, min_cycle_time = 0 }) } },
+                { n = G.UIT.O, config = { object = DynaText({ string = operators, colours = {G.C.DARK_EDITION}, pop_in_rate = 999999, silent = true, random_element = true, pop_delay = 1, scale = 0.32, min_cycle_time = 0 }) } },
+                { n = G.UIT.O, config = { object = DynaText({ string = ocstobal_all_origins, colours = { G.C.DARK_EDITION}, pop_in_rate = 9999999, silent = true, random_element = true, pop_delay = 0.30, scale = 0.32, min_cycle_time = 0 }) } },
+            },
             vars = {
                 localize('k_ocstobal_seraph_quote' .. pseudorandom("seed", 1, 5)),
                 localize('k_ocstobal_seraph_lv100_quote' .. pseudorandom("seed", 1, 5)),
@@ -180,8 +222,7 @@ SMODS.Joker { --Seraph
                 "j_ocstobal_seraph_lv10k"
                 or
                 G.current_isomode >= 1 and card.ability.extra.upgrade >= 100000 and card.ability.extra.upgrade < 10000000 and
-                "j_ocstobal_seraph_lv100k"
-
+                "j_ocstobal_seraph_lv100k",
         }
     end,
 
@@ -303,7 +344,7 @@ SMODS.Joker {
     config = {
         re = 1
     },
-    no_collection = function(self,args)
+    no_collection = function(self, args)
         return morelore()
     end,
 

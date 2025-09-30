@@ -36,17 +36,17 @@ SMODS.Joker { --Oxy
     },
 
     set_badges = function(self, card, badges)
-        badges[#badges+1] = create_badge(localize('k_ocstobal_dangerous'), G.C.FILTER, G.C.WHITE, 1 )
+        badges[#badges + 1] = create_badge(localize('k_ocstobal_dangerous'), G.C.FILTER, G.C.WHITE, 1)
     end,
 
     loc_vars = function(self, info_queue, center)
         return {
             vars = { localize('k_ocstobal_oxy_quote' .. pseudorandom("seed", 1, 11)) },
-            key = pseudorandom('seed',1,6) == 1 and "j_ocstobal_oxyrenamed"
+            key = pseudorandom('seed', 1, 6) == 1 and "j_ocstobal_oxyrenamed"
         }
     end,
 
-    update = function(self,card,dt)
+    update = function(self, card, dt)
         if next(SMODS.find_card("j_ocstobal_recluse")) then
             card:set_eternal(true)
         else
@@ -145,21 +145,21 @@ SMODS.Joker {
         }
     },
     atlas = "oxyemp",
-    pos = {x=0,y=0},
-    soul_pos = {x=1,y=0},
+    pos = { x = 0, y = 0 },
+    soul_pos = { x = 1, y = 0 },
     blueprint_compat = true,
 
-    loc_vars = function(self,info_queue,center)
+    loc_vars = function(self, info_queue, center)
         return {
-            key = pseudorandom('seed',1,10) == 1 and "j_ocstobal_oxyemp_alt" --fym oxy can also be another person
+            key = pseudorandom('seed', 1, 10) == 1 and "j_ocstobal_oxyemp_alt" --fym oxy can also be another person
         }
     end,
 
     set_badges = function(self, card, badges)
-        badges[#badges+1] = create_badge(localize('k_ocstobal_veryunstable'), G.C.BLACK, G.C.RED, 1 )
+        badges[#badges + 1] = create_badge(localize('k_ocstobal_veryunstable'), G.C.BLACK, G.C.RED, 1)
     end,
 
-    calculate = function(self,card,context)
+    calculate = function(self, card, context)
         if context.setting_blind then
             return {
                 func = function()
@@ -222,11 +222,11 @@ SMODS.Joker {
     cost = 15,
     rarity = 3,
     atlas = "symbol",
-    pos = {x=0,y=0},
-    soul_pos = {x=1,y=0},
+    pos = { x = 0, y = 0 },
+    soul_pos = { x = 1, y = 0 },
     blueprint_compat = true,
 
-    calculate = function(self,card,context)
+    calculate = function(self, card, context)
         if context.joker_main then
             return {
                 xmult = 2

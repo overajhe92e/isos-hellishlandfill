@@ -37,7 +37,7 @@ return {
 					'Win a run.'
 				}
 			},
-			b_ocstobal_psych_lore = {
+			b_ocstobal_psych_lore = { --lmao no
 				name = "lost seraph",
 				text = {
 					'why did i do it...',
@@ -233,7 +233,6 @@ return {
 						'for every scored card.',
 						'On Ante 8 and beyond, {C:green}#7# in #8#{} chance to replace self. {C:inactive}(Unless Disabled by LV 10 Ability){}',
 						'{C:blue,s:0.9}#1#{}',
-						'{C:dark_edition,s:0.9}Origin: Fundamental Paper Education{}',
 						'{C:dark_edition,s:1.2}EXP: #9# / 10{}',
 						'{C:dark_edition,s:1.2}LV: #10#{}',
 					},
@@ -263,7 +262,6 @@ return {
 				text = {
 					{
 						'{C:red,s:0.9}"#2#"{}',
-						'{C:dark_edition,s:0.9}Origin: Fundamental Paper Education [ Unbalanced OCs ]{}',
 						'{C:dark_edition,s:1.2}EXP: #9# / 10{}',
 						'{C:dark_edition,s:1.2}LV: #10#{}',
 					},
@@ -290,7 +288,6 @@ return {
 				text = {
 					{
 						'{C:red,s:0.9}#1#{}',
-						'{C:dark_edition,s:0.9}Origin: Fundamental Paper Education{}',
 						'{C:dark_edition,s:1.2}EXP: MAXED{}',
 						'{C:dark_edition,s:1.2}LV: 10{}',
 					},
@@ -315,7 +312,6 @@ return {
 				text = {
 					{
 						'{C:red,s:0.9}#1#{}',
-						'{C:dark_edition,s:0.9}Origin: Fundamental Paper Education{}',
 						'{C:dark_edition,s:1.2}EXP: MAXED{}',
 						'{C:dark_edition,s:1.2}LV: 100{}',
 					},
@@ -341,7 +337,6 @@ return {
 				text = {
 					{
 						'{C:ocstobal_ust,s:0.9}"#3#"{}',
-						'{C:dark_edition,s:0.9}Origin: Fundamental Paper Education [ Unbalanced OCs ]{}',
 						'{C:dark_edition,s:1.2}EXP: #9# / 10{}',
 						'{C:dark_edition,s:1.2}LV: #10#{}',
 					},
@@ -369,7 +364,6 @@ return {
 				text = {
 					{
 						'{C:ocstobal_finalrgb,s:0.9}"#4#"{}',
-						'{C:dark_edition,s:0.9}Origin: Fundamental Paper Education [ Unbalanced OCs ]{}',
 						'{C:dark_edition,s:1.2}EXP: #9# / 10{}',
 						'{C:dark_edition,s:1.2}LV: #10#{}',
 						'{C:inactive}"Jesus fucking christ how unbalanced is your oc"{}',
@@ -1026,6 +1020,26 @@ return {
 					"{C:red}Mariah Carey{}",
 					"Also occasionally shows christmas ads."
 				}
+			},
+			j_ocstobal_thatfuckingteacherthatihate = {
+				name = "Miss Circle",
+				text = {
+					"Gains {X:red,C:white}+X1{} Mult",
+					"for Every Student joker killed.",
+					"{C:attention}Instantly targets Abbie, and Lana.{}"
+				}
+			},
+			j_ocstobal_lana = {
+				name = "Lana",
+				text = {
+					"Do a fucking synergy here with abbie or smth idk what to put"
+				}
+			},
+			j_ocstobal_claire = {
+				name = "Claire",
+				text = {
+					"I DONT KNOW WHAT TO {C:red}FUCKING PUT HERE{}"
+				}
 			}
 		},
 		Other = {
@@ -1210,7 +1224,35 @@ return {
 
 			k_ocstobal_dangerous = 'Unstable Behaviour',
 
-			k_ocstobal_veryunstable = 'Extremely Unstable'
+			k_ocstobal_deathinbound = {
+				'YOU WILL DIE.',
+				'If you have an Isotypical\'s Junkyard Joker,',
+				'Upon playing a hand, die.'
+			},
+
+			k_ocstobal_veryunstable = 'Extremely Unstable',
+
+			k_ocsotbal_falseorigin = 'No Origin',
+
+			ocstobal_all_origins = {
+				'nil',
+				'Fundamental Paper Education',
+				'Poppy Playtime',
+				'Smiling Critters',
+				'Dog Man',
+				'ERROR',
+				'The Void',
+				'Dandy\'s World',
+				'it lies',
+				'Hypixel Skyblock',
+				'[a nil value]',
+				'Changed',
+				'Project Moon',
+				'Lobotomy Corporation',
+				'Library of Ruina',
+				'Limbus Company',
+				' '
+			}
 
 		},
 		high_scores = {},

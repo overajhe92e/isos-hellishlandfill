@@ -3,6 +3,7 @@ SMODS.Joker {
     cost = 10,
     rarity = 3,
     blueprint_compat = true,
+    no_collection = true,
 
     calculate = function(self,card,context)
         if context.individual and context.cardarea == G.play and SMODS.has_enhancement(context.other_card, 'm_steel') then
