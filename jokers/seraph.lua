@@ -8,21 +8,21 @@ SMODS.Sound {
 --yes this is the malice sound effect from pwx
 
 local ocstobal_all_origins = {
-    'Fundamental Paper Education', --what do you fucking think
-    'Poppy Playtime', --used to be a dragon
-    'Smiling Critters', -- read above
-    'Hypixel Skyblock', --"voidgloom seraph" boss lmfao
+    ' Fundamental Paper Education', --what do you fucking think
+    ' Poppy Playtime', --used to be a dragon
+    ' Smiling Critters', -- read above
+    ' Hypixel Skyblock', --"voidgloom seraph" boss lmfao
 }
 
 local originquestion = {
-    'Origin..?',
-    'Origin',
-    'Came from'
+    'Origin? ',
+    'Origin ',
+    ' '
 }
 
 local operators = {
     ":",
-    "is"
+    ";"
 }
 
 SMODS.Joker { --Seraph
