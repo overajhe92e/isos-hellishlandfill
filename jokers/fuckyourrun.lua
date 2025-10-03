@@ -48,7 +48,7 @@ SMODS.Joker {
         extra = {
             blind_size = 3,
             chips = 0,
-            mercymult = 0.85,
+            mercymult = 1,
             mmultgain = 0.15
         }
     },
