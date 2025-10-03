@@ -68,7 +68,7 @@ SMODS.Blind {
 	},
 
 	get_loc_debuff_text = function(self)
-		return localize{type='variable',key='a_ocstobal_deathinbound'}
+		return localize { type = 'variable', key = 'a_ocstobal_deathinbound' }
 	end,
 
 	calculate = function(self, card, context)
@@ -214,7 +214,7 @@ SMODS.Blind {
 		akyrs_cannot_be_disabled = true,
 		akyrs_cannot_be_rerolled = true,
 		akyrs_cannot_be_overridden = true,
-		akyrs_blind_difficulty = "expert",
+		akyrs_blind_difficulty = "master",
 	},
 	ignore_showdown_check = true,
 
@@ -224,12 +224,19 @@ SMODS.Blind {
 
 	calculate = function(self, blind, context)
 		if not blind.disabled then
+			if context.debuff_card and context.debuff_card.area == G.jokers then
+				for i = 1, #G.jokers.cards do
+					if G.jokers.cards[i].config.center.pools and G.jokers.cards[i].config.center.pools.copycats then
+						G.jokers.cards[i]:set_debuff(true)
+					end
+				end
+			end
 			if context.modify_hand then
 				play_sound('tarot2')
 				SMODS.juice_up_blind()
 				blind:wiggle()
 				blind.triggered = true
-				G.GAME.blind.chips = math.floor(G.GAME.blind.chips * 3)
+				G.GAME.blind.chips = math.floor((G.GAME.blind.chips + (G.GAME.blind.chips / 3)) * 3)
 				G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
 			end
 		end

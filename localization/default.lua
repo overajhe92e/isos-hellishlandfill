@@ -1077,7 +1077,7 @@ return {
 		Spectral = {},
 		Stake = {
 			stake_ocstobal_singularity = {
-				name = 'Singularity Stake',
+				name = 'Cruelty Stake',
 				text = {
 					'{C:attention}Big blind no longer gives money{}',
 					'Ante Scaling is {C:red}significantly faster{}',
@@ -1120,6 +1120,7 @@ return {
 		-- 		}
 		-- 	}
 		-- }
+		--perchance i add cardsleeves but i dont think i will
 	},
 	misc = {
 		achievement_descriptions = {},
@@ -1211,7 +1212,7 @@ return {
 			k_ocstobal_solinium_extra1 = "Origin: Dog Man",
 			k_ocstobal_solinium_extra2 = "Yes, you read that right.",
 
-			k_ocstobal_voidinstlose_varthingy = "{100}100", --used to prevent the {100} from being hidden
+			k_ocstobal_voidinstlose_varthingy = "{100}100", --used to prevent the {100} from being hidden, unused lmfao
 
 			k_ocstobal_shrimpo_quote1 = "I HATE THIS MOD!",
 			k_ocstobal_shrimpo_quote2 = "I HATE YOU!",
@@ -1223,12 +1224,6 @@ return {
 			k_ocstobal_verybad = 'Extremely Unbalanced',
 
 			k_ocstobal_dangerous = 'Unstable Behaviour',
-
-			k_ocstobal_deathinbound = {
-				'YOU WILL DIE.',
-				'If you have an Isotypical\'s Junkyard Joker,',
-				'Upon playing a hand, die.'
-			},
 
 			k_ocstobal_veryunstable = 'Extremely Unstable',
 

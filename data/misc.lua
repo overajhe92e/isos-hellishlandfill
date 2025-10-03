@@ -109,6 +109,17 @@ SMODS.ObjectType({
 	end,
 })
 
+SMODS.ObjectType({
+	key = "copycats",
+	default = "j_blueprint",
+	cards = {},
+	inject = function(self)
+		SMODS.ObjectType.inject(self)
+		-- insert base game food jokers
+		self:inject_card(G.P_CENTERS.j_lucky_cat)
+	end,
+})
+
 SMODS.Atlas {
 	key = 'aioimg',
 	px = 71,
@@ -657,6 +668,14 @@ to_big = to_big or function(x) return x end
 -- 	return ret
 -- end
 
+local check_for_buy_space_ref = G.FUNCS.check_for_buy_space
+G.FUNCS.check_for_buy_space = function(card)
+    if card.config.center.key == "j_ocstobal_antislopinator" then -- ignore slot limit when bought
+        return true
+    end
+    return check_for_buy_space_ref(card)
+end
+--oo oo bypass slots hook oo
 
 
 
