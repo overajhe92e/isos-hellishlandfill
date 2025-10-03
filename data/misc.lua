@@ -112,7 +112,11 @@ SMODS.ObjectType({
 SMODS.ObjectType({
 	key = "copycats",
 	default = "j_blueprint",
-	cards = {},
+	cards = {
+		j_ocstobal_Oxy = true,
+		j_ocstobal_oxyemp = true,
+		j_ocstobal_crystal = true
+	},
 	inject = function(self)
 		SMODS.ObjectType.inject(self)
 		-- insert base game food jokers
