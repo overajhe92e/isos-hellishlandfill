@@ -180,6 +180,25 @@ SMODS.Sound {
 }
 
 SMODS.Blind {
+	key = 'oxyblind',
+	mult = 1,
+	dollars = 5,
+	boss = { min = 4 },
+	boss_colour = HEX('fc6203'),
+	calculate = function(self, blind, context)
+		if not blind.disabled then
+			if context.debuff_card and context.debuff_card.area == G.jokers then
+				for i = 1, #G.jokers.cards do
+					if G.jokers.cards[i].config.center.pools and G.jokers.cards[i].config.center.pools.copycats then
+						G.jokers.cards[i]:set_debuff(true)
+					end
+				end
+			end
+		end
+	end
+}
+
+SMODS.Blind {
 	key = 'spkblind',
 	name = 'spkblind',
 	atlas = 'shyblind',
@@ -236,7 +255,7 @@ SMODS.Blind {
 				SMODS.juice_up_blind()
 				blind:wiggle()
 				blind.triggered = true
-				G.GAME.blind.chips = math.floor((G.GAME.blind.chips + (G.GAME.blind.chips / 3)) * 3)
+				G.GAME.blind.chips = math.floor((G.GAME.blind.chips + (G.GAME.blind.chips / 3)) * 1.5)
 				G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
 			end
 		end
