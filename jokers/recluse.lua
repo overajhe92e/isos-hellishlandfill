@@ -1,17 +1,17 @@
 local ocstobal_all_origins = {
     'nil',
     'Fundamental Paper Education', --what do you fucking think
-    'Poppy Playtime', --used to be a dragon
-    'Smiling Critters', -- read above
-    'Dog Man', --solinium
+    'Poppy Playtime',              --used to be a dragon
+    'Smiling Critters',            -- read above
+    'Dog Man',                     --solinium
     'ERROR',
-    'The Void', --yeah.
-    'Dandy\'s World', --fuck no
+    'The Void',                    --yeah.
+    'Dandy\'s World',              --fuck no
     'it lies',
-    'Hypixel Skyblock', --voidgloom seraph
+    'Hypixel Skyblock',            --voidgloom seraph
     '[a nil value]',
-    'Changed', --NO.
-    'Project Moon', --awaken thy pm fans
+    'Changed',                     --NO.
+    'Project Moon',                --awaken thy pm fans
     'Lobotomy Corporation',
     'Library of Ruina',
     'Limbus Company',
@@ -48,6 +48,57 @@ local ocstobal_all_origins = {
     'NUTDEALER',
     'joker poker balala'
     --wow that's a lotta games
+}
+
+local ocstobal_all_origins_inactive_text = {
+    'nil',
+    'Fundamental Paper Education', --what do you fucking think
+    'Poppy Playtime',              --used to be a dragon
+    'Smiling Critters',            -- read above
+    'Dog Man',                     --solinium
+    'ERROR',
+    'The Void',                    --yeah.
+    'Dandy\'s World',              --fuck no
+    'it lies',
+    'Hypixel Skyblock',            --voidgloom seraph
+    '[a nil value]',
+    'Changed',                     --NO.
+    'Project Moon',                --awaken thy pm fans
+    'Lobotomy Corporation',
+    'Library of Ruina',
+    'Limbus Company',
+    ' ',
+    'Discord',
+    'Cryptid',
+    'Polterworx',
+    'Almanac',
+    'FPE (Danger AU)',
+    'Everything',
+    'The Real World',
+    'GMod',
+    'ret',
+    'Loss',
+    'Chaos',
+    'Sonic',
+    'Sonic.EXE',
+    'Friday Night Funkin',
+    'Unstable SMP',
+    'Content SMP',
+    'help',
+    'The World\'s Collapse',
+    'Roblox',
+    'Minecraft',
+    'DOORS',
+    'Pressure',
+    'Something Evil Will Happen',
+    'DELTARUNE',
+    'UNDERTALE',
+    'Homestuck',
+    'Balatro',
+    'PAYDAY 2',
+    'Slay the Spire',
+    'NUTDEALER',
+    'joker poker balala'
 }
 
 local originquestion = {
@@ -114,7 +165,7 @@ SMODS.Joker { --Recluse
             main_end = {
                 { n = G.UIT.O, config = { object = DynaText({ string = originquestion, colours = { G.C.DARK_EDITION }, pop_in_rate = 999999, silent = true, random_element = true, pop_delay = 0.35, scale = 0.32, min_cycle_time = 0 }) } },
                 { n = G.UIT.O, config = { object = DynaText({ string = operators, colours = { G.C.DARK_EDITION }, pop_in_rate = 999999, silent = true, random_element = true, pop_delay = 1, scale = 0.32, min_cycle_time = 0 }) } },
-                { n = G.UIT.O, config = { object = DynaText({ string = ocstobal_all_origins, colours = { G.C.RED }, pop_in_rate = 9999999, silent = true, random_element = true, pop_delay = 0.225, scale = 0.32, min_cycle_time = 0 }) } },
+                { n = G.UIT.O, config = { object = DynaText({ string = ocstobal_all_origins, colours = { G.C.DARK_EDITION }, pop_in_rate = 9999999, silent = true, random_element = true, pop_delay = 0.205, scale = 0.32, min_cycle_time = 0 }) } },
             },
             vars = { localize('k_ocstobal_recluse_quote' .. pseudorandom("seed", 1, 8)), card.ability.extra.multnchip }
         }
@@ -136,7 +187,7 @@ SMODS.Joker { --Recluse
                         end
                     end
                     local target_joker = #destructable_jokers > 0 and
-                    pseudorandom_element(destructable_jokers, pseudoseed('destroy_joker')) or nil
+                        pseudorandom_element(destructable_jokers, pseudoseed('destroy_joker')) or nil
 
                     if target_joker then
                         local joker_sell_value = target_joker.sell_cost or 0

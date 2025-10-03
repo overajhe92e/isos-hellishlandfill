@@ -1043,6 +1043,13 @@ return {
 			}
 		},
 		Other = {
+			ocstobal_recluses_eye_seal = {
+				name = "Recluse's Eye",
+				text = {
+					'Retriggers this',
+					'card {C:attention}2{} times.'
+				}
+			},
 			ocstobal_reclusedownside = {
 				name = "Recluse's Downside",
 				text = {
@@ -1058,18 +1065,27 @@ return {
 					'to get {C:red}eaten{} {C:inactive}(Destroyed){}'
 				}
 			},
+			ocstobal_oxydownside = {
+				name = "Oxy's Downside",
+				text = {
+					'{X:red,C:white}X2{} Blind Size'
+				}
+			},
+			ocstobal_mercymult = {
+				name = "Mercy EMult",
+				text = {
+					"On blind select,",
+					"Gains {X:dark_edition,C:white}+^0.15{} EMult.",
+					"{C:red}Destroys{} a random joker.",
+					"{C:inactive}Currently{} {X:dark_edition,C:white}^#1#{} {C:inactive}EMult{}",
+					--"{C:inactive,s:0.75}If there are no jokers present, you'll still get the EMult.{}"
+				}
+			},
 			ocstobal_scared = {
 				name = "Please don't",
 				text = {
 					'{C:inactive}Don\'t... pick this up.{}',
 					'{C:inactive}Please.{}'
-				}
-			},
-			ocstobal_recluses_eye_seal = {
-				name = "Recluse's Eye",
-				text = {
-					'Retriggers this',
-					'card {C:attention}2{} times.'
 				}
 			}
 		},
