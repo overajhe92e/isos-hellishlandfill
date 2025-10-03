@@ -34,6 +34,9 @@ SMODS.Joker { --Oxy
         x = 4,
         y = 0
     },
+    pools = {
+        ["copycats"] = true
+    },
 
     set_badges = function(self, card, badges)
         badges[#badges + 1] = create_badge(localize('k_ocstobal_dangerous'), G.C.FILTER, G.C.WHITE, 1)
