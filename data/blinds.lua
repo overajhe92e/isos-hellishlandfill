@@ -181,9 +181,9 @@ SMODS.Sound {
 
 SMODS.Blind {
 	key = 'oxyblind',
-	mult = 1,
+	mult = 2,
 	dollars = 5,
-	boss = { min = 4 },
+	boss = { min = 1 },
 	boss_colour = HEX('fc6203'),
 	calculate = function(self, blind, context)
 		if not blind.disabled then
@@ -241,6 +241,10 @@ SMODS.Blind {
 		return reclusecheck()
 	end,
 
+	set_blind = function(self)
+		G.solscare = 1
+	end,
+
 	calculate = function(self, blind, context)
 		if not blind.disabled then
 			if context.debuff_card and context.debuff_card.area == G.jokers then
@@ -263,6 +267,7 @@ SMODS.Blind {
 
 	defeat = function(self)
 		G.recluseblind = 0
+		G.solscare = 0
 		play_sound('ocstobal_ominouscancel', 1, 2)
 		recluseach()
 	end
