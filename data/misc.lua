@@ -437,13 +437,9 @@ SMODS.Sound {
 	pitch = 0.7,
 	volume = 1,
 	select_music_track = function()
-		if G.current_isomode >= 666 then return true else return false end
+		if G.current_isomode == nil then return false elseif G.current_isomode >= 666 then return true end
 	end
 }
-
--- if G.GAME then
--- 	ocstobal.should_do_this = next(SMODS.find_card("j_ocstobal_seraph"))
--- end
 
 -- --note to self: uncomment if the original creator of these songs allow these two songs to be used in this mod
 -- SMODS.Sound {
@@ -663,7 +659,7 @@ SMODS.Shader {
 
 G.recluseblind = 0
 
-to_big = to_big or function(x) return x end
+to_big = to_big or function(x) return x end -- just in case talisman isn't installed
 
 -- local reclusethingy = Game.init_game_object
 -- function Game.init_game_object(self)
