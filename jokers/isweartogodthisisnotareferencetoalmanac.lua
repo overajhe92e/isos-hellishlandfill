@@ -238,9 +238,81 @@ SMODS.Joker {
     end
 }
 
--- SMODS.Joker {
---     key = 'oxydeceit',
---     rarity = "ocstobal_unique",
---     cost = 100,
+SMODS.Joker {
+    key = 'oxydeceit',
+    rarity = "ocstobal_deceptionlegendary",
+    cost = 100,
+    blueprint_compat = true,
+    config = {
+        extra = {
+            blind_size = 8
+        }
+    },
 
--- }
+    calculate = function(self, card, context)
+        if context.setting_blind then
+            return {
+                func = function()
+                    card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil,
+                        { message = "X" .. tostring(card.ability.extra.blind_size) .. " Blind Size", colour = G.C.GREEN })
+                    G.GAME.blind.chips = G.GAME.blind.chips * card.ability.extra.blind_size
+                    G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
+                    G.HUD_blind:recalculate()
+                    return true
+                end
+            }
+        end
+        local left_effect, right_effect, right_effect_ex, left_effect_ex, right_effect_ex2, left_effect_ex2 = nil, nil, nil, nil, nil, nil
+
+        for i = 1, #G.jokers.cards do
+            if G.jokers.cards[i] == card then
+                local left_joker = G.jokers.cards[i - 1]
+                local right_joker = G.jokers.cards[i + 1]
+                local left_joker_ex = G.jokers.cards[i - 2]
+                local right_joker_ex = G.jokers.cards[i + 2]
+                local right_joker_ex2 = G.jokers.cards[i + 3]
+                local left_joker_ex2 = G.jokers.cards[i - 3]
+
+                if left_joker and left_joker ~= card and left_joker.config.center.blueprint_compat then
+                    left_effect = SMODS.blueprint_effect(card, left_joker, context)
+                end
+
+                if right_joker and right_joker ~= card and right_joker.config.center.blueprint_compat then
+                    right_effect = SMODS.blueprint_effect(card, right_joker, context)
+                end
+
+                if left_joker_ex and left_joker_ex ~= card and left_joker_ex.config.center.blueprint_compat then
+                    left_effect_ex = SMODS.blueprint_effect(card, left_joker_ex, context)
+                end
+
+                if right_joker_ex and right_joker_ex ~= card and right_joker_ex.config.center.blueprint_compat then
+                    right_effect_ex = SMODS.blueprint_effect(card, right_joker_ex, context)
+                end
+
+                if left_joker_ex2 and left_joker_ex2 ~= card and left_joker_ex2.config.center.blueprint_compat then
+                    left_effect_ex2 = SMODS.blueprint_effect(card, left_joker_ex2, context)
+                end
+
+                if right_joker_ex2 and right_joker_ex2 ~= card and right_joker_ex2.config.center.blueprint_compat then
+                    right_effect_ex2 = SMODS.blueprint_effect(card, right_joker_ex2, context)
+                end
+                break
+            end
+        end
+
+        if left_effect or right_effect or left_effect_ex or right_effect_ex or left_effect_ex2 or right_effect_ex2 then
+            local merged_effect = SMODS.merge_effects(
+                { left_effect or {} },
+                { right_effect or {} },
+                { left_effect_ex or {} },
+                { right_effect_ex or {} },
+                { right_effect_ex2 or {} },
+                { left_effect_ex2 or {} }
+            )
+
+            return merged_effect
+        else
+            return nil
+        end
+    end
+}
