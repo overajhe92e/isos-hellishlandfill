@@ -25,3 +25,10 @@ SMODS.Gradient {
 	cycle = 6,
 	interpolation = 'linear'
 }
+
+SMODS.Gradient {
+    key = 'deceitful',
+    colours = { HEX('2272fb'), HEX('1ffef5') },
+    interpolation = 'linear',
+    cycle = '5'
+}
