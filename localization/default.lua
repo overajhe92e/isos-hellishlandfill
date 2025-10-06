@@ -158,6 +158,36 @@ return {
 					'an Isotypical\'s Junkyard joker,',
 					'Instantly die.'
 				}
+			},
+			bl_ocstobal_rng = {
+				name = 'SMODS.Blind(key=rng)',
+				text = {
+					'Mult and Money is randomized',
+					'when the game restarts.',
+				}
+			},
+			bl_ocstobal_bossrush = {
+				name = "Boss Rush",
+				text = {
+					'Defeat The Knife,',
+					'Oxidization,',
+					'and The Scalae'
+				}
+			},
+			bl_ocstobal_bossrushomega = {
+				name = "Vihamielinenkiire",
+				text = {
+					'Defeat ALL',
+					'Isotypical Junkyard',
+					'blinds, from',
+					'easiest to hardest.'
+				}
+			},
+			bl_ocstobal_bossrushend = {
+				name = "Boss Rush",
+				text = {
+					'Defeat this blind to win!'
+				}
 			}
 		},
 		Edition = {
@@ -403,10 +433,10 @@ return {
 						'{C:ocstobal_legendplus,s:2}LV 10,000 : EEEMult unlocked...{}',
 					},
 					{
-						'{C:dark_edition,E:1,s:1.2}???{}',
+						'{C:dark_edition,E:1,s:1.2}Stats{}',
 						'{C:ocstobal_ust}Something\'s wrong. He wasn\'t supposed to learn something new.{}',
-						'{X:red,C:white}X#11#{} Mult, {C:blue}+#12#{} Chips, {X:blue,C:white}X#14#{} Chips, {X:ocstobal_sewh,C:default,E:1}^#13#{} {C:ocstobal_sewh,E:1}EMult{}',
-						'{X:ocstobal_finalrgb,C:edition}^^#15#{} {C:ocstobal_finalrgb}EEMult{}, {X:ocstobal_ust}^^^#16#{}'
+						'{X:red,C:white}X#11#{} Mult, {C:blue}+#12#{} Chips, {X:blue,C:white}X#14#{} Chips, {X:dark_edition,C:white,E:1}^#13#{} {C:dark_edition,E:1}EMult{}',
+						'{X:dark_edition,C:white}^^#15#{} EEMult, {X:ocstobal_sewh,C:white}^^^#16#{} EEEMult'
 					}
 				}
 			},
@@ -422,21 +452,38 @@ return {
 						'{C:ocstobal_legendplus,s:1.5}LV 100,000 : Hypermult Unlocked. All previous scaling uses ^1.5 instead.{}',
 					},
 					{
-						'{C:dark_edition,E:1,s:1.2}MESSAGE{}',
-						'{C:ocstobal_ust}No. Nononono. NO. NO. STOP. I CAN\'T CONTROL HIM.{}',
-						'{C:ocstobal_ust}If he grows too powerful, I can\'t stop him.{}',
-						'{X:red,C:white}X#11#{} Mult, {C:blue}+#12#{} Chips, {X:blue,C:white}X#14#{} Chips, {X:ocstobal_sewh,C:default,E:1}^#13#{} {C:ocstobal_sewh,E:1}EMult{}',
-						'{X:ocstobal_finalrgb,C:edition}^^#15#{} {C:ocstobal_finalrgb}EEMult{}, {X:ocstobal_ust}^^^#16#{}'
+						'{C:dark_edition,E:1,s:1.2}Stats{}',
+						'{X:red,C:white}X#11#{} Mult, {C:blue}+#12#{} Chips, {X:blue,C:white}X#14#{} Chips, {X:dark_edition,C:white,E:1}^#13#{} EMult',
+						'{X:dark_edition,C:white}^^#15#{} EEMult, {X:dark_edition,C:white}^^^#16#{}, {X:ocstobal_sewh,C:white}^^^^#17#{} Hypermult'
+					}
+				}
+			},
+			j_ocstobal_seraph_lv1m = {
+				name = "{C:ocstobal_finalrgb}Serafinentyhjyys{}",
+				text = {
+					{
+						'{C:dark_edition,s:1.35}EXP: #9# / 10{}',
+						'{C:dark_edition,s:1.35}LV: #10#{}'
+					},
+					{
+						'{C:dark_edition,E:1,s:1.2}Absurd Levelling{}',
+						'{C:ocstobal_legendplus,s:1.5}LV 1,000,000 : Hyperoperator can now scale.{}',
+						'{C:inactive}"Honest to god I think you\'re using Cryptid to get here now"{}'
+					},
+					{
+						'{C:dark_edition,E:1,s:1.2}Stats{}',
+						'{X:red,C:white}X#11#{} Mult, {C:blue}+#12#{} Chips, {X:blue,C:white}X#14#{} Chips, {X:dark_edition,C:white,E:1}^#13#{} EMult',
+						'{X:dark_edition,C:white}^^#15#{} EEMult, {X:dark_edition,C:white}^^^#16#{}, {X:ocstobal_sewh}(#18#)#17#{} Hypermult',
 					}
 				}
 			},
 			j_ocstobal_seraph_why = {
 				name = "okay bro",
 				text = {
-					'wtf dude why did you do this',
-					'and HOW the hell did you do this',
-					'like im pretty sure even MAYHEM of all fuckin mods isn\'t that insane to the point',
-					'that you can get to THIS MANY RETRIGGERS IN 1 RUN',
+					'why are you like this',
+					'if you used cryptid to get this far then wow you\'re lazy',
+					'but if you didn\'t...',
+					'how and {s:1.3}why{} the fuck did you get here',
 					'urgh, anyways here\'s your current level and xp i guess',
 					'{C:dark_edition,s:1.35}EXP: #9# / 10{}',
 					'{C:dark_edition,s:1.35}LV: #10#{}',
@@ -1040,6 +1087,9 @@ return {
 				text = {
 					"I DONT KNOW WHAT TO {C:red}FUCKING PUT HERE{}"
 				}
+			},
+			j_ocstobal_oxydeceit = {
+				name = "{C:inactive}(Deceitful){} {C:ocstobal_deceitful}Oxy{}"
 			}
 		},
 		Other = {
@@ -1245,29 +1295,13 @@ return {
 
 			k_ocsotbal_falseorigin = 'No Origin',
 
-			ocstobal_all_origins = {
-				'nil',
-				'Fundamental Paper Education',
-				'Poppy Playtime',
-				'Smiling Critters',
-				'Dog Man',
-				'ERROR',
-				'The Void',
-				'Dandy\'s World',
-				'it lies',
-				'Hypixel Skyblock',
-				'[a nil value]',
-				'Changed',
-				'Project Moon',
-				'Lobotomy Corporation',
-				'Library of Ruina',
-				'Limbus Company',
-				' '
-			}
+			k_ocstobal_deceptionlegendary = 'Oxy\'s Legendary'
 
 		},
 		high_scores = {},
-		labels = {},
+		labels = {
+			ocstobal_deceptionlegendary = 'Oxy\'s Legendary'
+		},
 		poker_hand_descriptions = {},
 		poker_hands = {},
 		quips = {},

@@ -13,7 +13,7 @@ SMODS.Joker { --Sparky..?
         w = 71 * 1,
         h = 95 * 1
     },
-    cost = 6,
+    cost = 15,
     rarity = "ocstobal_unique",
     blueprint_compat = true,
     eternal_compat = true,

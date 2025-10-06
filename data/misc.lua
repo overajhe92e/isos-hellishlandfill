@@ -29,9 +29,15 @@ function love.draw()
 	end
 
 	if G.silence and (G.silence > 0) then
-		if ocstobal.silence == nil then ocstobal.laugher = FuckingImage("blackscreen.png") end
+		if ocstobal.silence == nil then ocstobal.silence = FuckingImage("blackscreen.png") end
 		love.graphics.setColor(1, 1, 1, 1)
-		love.graphics.draw(ocstobal.laugher, 0, 0, 0, 3, 3)
+		love.graphics.draw(ocstobal.silence, 0, 0, 0, 3, 3)
+	end
+
+	if G.burger and (G.burger > 0) then
+		if ocstobal.burger == nil then ocstobal.burger = FuckingImage("cheeseburger.png") end
+		love.graphics.setColor(1, 1, 1, 1)
+		love.graphics.draw(ocstobal.burger, 0, 0, 0, 7, 5)
 	end
 
 	--It's that easy. -also Doctor4t
@@ -112,7 +118,11 @@ SMODS.ObjectType({
 SMODS.ObjectType({
 	key = "copycats",
 	default = "j_blueprint",
-	cards = {},
+	cards = {
+		j_ocstobal_Oxy = true,
+		j_ocstobal_oxyemp = true,
+		j_ocstobal_crystal = true
+	},
 	inject = function(self)
 		SMODS.ObjectType.inject(self)
 		-- insert base game food jokers
@@ -309,6 +319,11 @@ SMODS.Sound {
 	pitch = 15
 }
 
+SMODS.Sound {
+	key = "jumpscare",
+	path = "jumpscare.ogg"
+}
+
 SMODS.Atlas {
 	key = 'looksinside',
 	px = 71,
@@ -433,13 +448,9 @@ SMODS.Sound {
 	pitch = 0.7,
 	volume = 1,
 	select_music_track = function()
-		if G.current_isomode >= 666 then return true else return false end
+		if G.current_isomode == nil then return false elseif G.current_isomode >= 666 then return true end
 	end
 }
-
--- if G.GAME then
--- 	ocstobal.should_do_this = next(SMODS.find_card("j_ocstobal_seraph"))
--- end
 
 -- --note to self: uncomment if the original creator of these songs allow these two songs to be used in this mod
 -- SMODS.Sound {
@@ -659,7 +670,7 @@ SMODS.Shader {
 
 G.recluseblind = 0
 
-to_big = to_big or function(x) return x end
+to_big = to_big or function(x) return x end -- just in case talisman isn't installed
 
 -- local reclusethingy = Game.init_game_object
 -- function Game.init_game_object(self)
@@ -676,6 +687,33 @@ G.FUNCS.check_for_buy_space = function(card)
     return check_for_buy_space_ref(card)
 end
 --oo oo bypass slots hook oo
+
+--copied from entropy since i have no fucking idea what im doing
+function ocstobal.nextboss()
+    G.STATE = 1
+    G.STATE_COMPLETE = false
+    local remove_temp = {}
+    for i, v in pairs({G.jokers, G.hand, G.consumeables, G.discard, G.deck}) do
+        for ind, card in pairs(v.cards) do
+            if card.ability then
+                if card.ability.temporary or card.ability.temporary2 then
+                    if card.area ~= G.hand and card.area ~= G.play and card.area ~= G.jokers and card.area ~= G.consumeables then card.states.visible = false end
+                    card:remove_from_deck()
+                    card:start_dissolve()
+                    if card.ability.temporary then remove_temp[#remove_temp+1]=card end
+                end
+            end
+        end
+    end
+    if #remove_temp > 0 then
+        SMODS.calculate_context({remove_playing_cards = true, removed=remove_temp})
+    end
+    G.deck:shuffle()
+    G.E_MANAGER:add_event(Event({func = function()
+        G.GAME.ChangingPhase = nil
+        return true
+    end}))
+end
 
 
 

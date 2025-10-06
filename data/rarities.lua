@@ -191,3 +191,21 @@ SMODS.Rarity {
     end
 }
 
+local deception = SMODS.Gradient {
+    key = 'deceit',
+    colours = { HEX('2272fb'), HEX('1ffef5') },
+    interpolation = 'linear',
+    cycle = '5'
+}
+
+SMODS.Rarity {
+    key = "deceptionlegendary",
+    pools = {
+        ["Joker"] = true
+    },
+    default_weight = 0,
+    badge_colour = deception,
+    get_weight = function(self, weight, object_type)
+        return weight
+    end
+}

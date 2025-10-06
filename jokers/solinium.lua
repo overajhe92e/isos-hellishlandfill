@@ -28,12 +28,17 @@ SMODS.Joker { --Solinium
     },
     update = function(self, card, dt)
         if next(SMODS.find_card("j_ocstobal_recluse")) then -- If player has Recluse
-            G.GAME.solscare = 1
+            G.solscare = 1
+        elseif G.GAME.blind and not G.GAME.blind.disabled and G.GAME.blind.name == 'recluseblind' then
+            G.solscare = 1
+        else
+            G.solscare = 0
+        end
+        if G.solscare == 1 then
             card.children.floating_sprite:set_sprite_pos { x = 2, y = 0 }
             card:juice_up() -- so you know polterwor
         else
             card.children.floating_sprite:set_sprite_pos { x = 1, y = 0 }
-            G.GAME.solscare = 0
         end
     end,
     in_pool = function(self, args)
@@ -47,21 +52,21 @@ SMODS.Joker { --Solinium
 
     loc_vars = function(self, info_queue, card)
         return {
-            vars = { 
+            vars = {
                 card.ability.extra.multnchips,
                 localize('k_ocstobal_solinium_quote' .. pseudorandom("seed", 1, 3)),
                 localize('k_ocstobal_solinium_extra' .. pseudorandom("seed", 1, 2)),
-                localize('k_ocstobal_soliniumscared_quote' .. pseudorandom("seed", 1, 2)) ,
+                localize('k_ocstobal_soliniumscared_quote' .. pseudorandom("seed", 1, 2)),
                 card.ability.extra.increaseme
             },
-            key = G.GAME.solscare == 1 and "j_ocstobal_soliniumscared" or G.GAME.solscare == 0 and "j_ocstobal_solinium"
+            key = G.solscare == 1 and "j_ocstobal_soliniumscared" or G.solscare == 0 and "j_ocstobal_solinium"
         }
     end,
 
     calculate = function(self, card, context)
         if context.setting_blind then
             card.ability.extra.increaseme = card.ability.extra.increaseme + 1
-            card.ability.extra.multnchips = (card.ability.extra.increaseme*(card.ability.extra.increaseme+1))/2
+            card.ability.extra.multnchips = (card.ability.extra.increaseme * (card.ability.extra.increaseme + 1)) / 2
             return {
                 message = "Scaled!"
             }

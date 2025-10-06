@@ -5,6 +5,9 @@ SMODS.Joker {
     atlas = 'crystal',
     pos = { x = 0, y = 0 },
     blueprint_compat = true,
+    pools = {
+        ["copycats"] = true
+    },
 
     set_badges = function(self, card, badges)
         badges[#badges + 1] = create_badge(localize('k_ocstobal_dangerous'), G.C.FILTER, G.C.WHITE, 1)

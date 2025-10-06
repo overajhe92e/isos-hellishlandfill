@@ -32,22 +32,13 @@ SMODS.Atlas {
 -- }
 
 SMODS.Blind {
-	key = 'experimentalrng',
-	name = 'experimentalrng',
+	key = 'rng',
+	name = 'rng',
 	atlas = 'rngatlas',
 	pos = { x = 0, y = 0 },
 	mult = math.random(0.1, 5),
 	dollars = math.random(1, 15),
 	boss = { min = 1 },
-	loc_txt = {
-		name = 'SMODS.Blind(loc_txt=(name=RNG))',
-		text = {
-			'Randomly Multiplies base Chips',
-			'From 0.1 to 5 when Balatro itself',
-			'is reset entirely. (closing and opening)',
-			'Blind award is random from 1 to 15.'
-		}
-	},
 	boss_colour = HEX('0000ff')
 }
 
@@ -75,9 +66,24 @@ SMODS.Blind {
 		if context.modify_hand then
 			for i = 1, #G.jokers.cards do
 				if G.jokers.cards[i].config.center.original_mod == SMODS.Mods["ocstobalatro"] then
-					diedach()
-					forceGameover()
-					return true
+					if pseudorandom("burger", 1, 100) ~= 1 then
+						diedach()
+						forceGameover()
+						return true
+					else
+						G.burger = 1
+						play_sound("ocstobal_jumpscare", 1, 1)
+						G.E_MANAGER:add_event(Event({
+							trigger = 'after',
+							delay = 3 * G.SETTINGS.GAMESPEED,
+							func = function()
+								G.burger = 0
+								forceGameover()
+								return true
+							end
+						}))
+						return true
+					end
 					--"Add a cheeseburger" -Grazy
 					--TODO: add a 1 in 100 chance for a cheeseburger jumpscare
 				end
@@ -124,7 +130,21 @@ SMODS.Sound {
 	select_music_track = function()
 		if G.GAME.blind and not G.GAME.blind.disabled and G.GAME.blind.name == 'cringeasf' then
 			return true
-		elseif G.GAME.blind and not G.GAME.blind.disabled and G.GAME.blind.name == 'unstable' then
+		elseif G.GAME.blind and not G.GAME.blind.disabled and G.GAME.blind.name == 'unstable' and G.omegarush < 1 then
+			return true
+		end
+	end
+}
+
+SMODS.Sound {
+	key = "music_in_the_final",
+	path = "inthefinal.ogg",
+	pitch = 1,
+	volume = 1,
+	select_music_track = function()
+		if G.omegarush == nil then
+			return false
+		elseif G.omegarush >= 1 then
 			return true
 		end
 	end
@@ -161,7 +181,11 @@ SMODS.Sound {
 	volume = 1,
 	select_music_track = function()
 		if G.GAME.blind and not G.GAME.blind.disabled and G.GAME.blind.name == 'recluseblind' then
-			return true
+			if G.omegarush == nil then
+				return false
+			elseif G.omegarush < 1 then
+				return true
+			end
 		end
 	end
 }
@@ -177,6 +201,49 @@ SMODS.Sound {
 	path = 'ominous.ogg',
 	pitch = 0.7,
 	volume = 1.2
+}
+
+SMODS.Blind {
+	key = 'oxyblind',
+	mult = 2,
+	dollars = 5,
+	boss = { min = 1 },
+	boss_colour = HEX('fc6203'),
+	setting_blind = function()
+		G.GAME.round_resets.lost = false
+	end,
+	calculate = function(self, blind, context)
+		if not blind.disabled then
+			if context.debuff_card and context.debuff_card.area == G.jokers then
+				for i = 1, #G.jokers.cards do
+					if G.jokers.cards[i].config.center.pools and G.jokers.cards[i].config.center.pools.copycats then
+						G.jokers.cards[i]:set_debuff(true)
+					end
+				end
+			end
+		end
+		if G.rushenabled == 1 then
+			if to_big(G.GAME.chips) > to_big(G.GAME.blind.chips) then
+				G.GAME.chips = 0
+				G.GAME.round_resets.lost = true
+				G.E_MANAGER:add_event(Event({
+					func = function()
+						G.rushenabled = 0
+						G.GAME.blind:set_blind(G.P_BLINDS["bl_ocstobal_solblind"])
+						ocstobal.nextboss()
+						G.GAME.blind:juice_up()
+						ease_hands_played(G.GAME.round_resets.hands - G.GAME.current_round.hands_left)
+						ease_discard(
+							math.max(0, G.GAME.round_resets.discards + G.GAME.round_bonus.discards) -
+							G.GAME.current_round.discards_left
+						)
+						G.FUNCS.draw_from_discard_to_deck()
+						return true
+					end
+				}))
+			end
+		end
+	end
 }
 
 SMODS.Blind {
@@ -222,6 +289,10 @@ SMODS.Blind {
 		return reclusecheck()
 	end,
 
+	set_blind = function(self)
+		G.solscare = 1
+	end,
+
 	calculate = function(self, blind, context)
 		if not blind.disabled then
 			if context.debuff_card and context.debuff_card.area == G.jokers then
@@ -236,7 +307,7 @@ SMODS.Blind {
 				SMODS.juice_up_blind()
 				blind:wiggle()
 				blind.triggered = true
-				G.GAME.blind.chips = math.floor((G.GAME.blind.chips + (G.GAME.blind.chips / 3)) * 3)
+				G.GAME.blind.chips = math.floor((G.GAME.blind.chips + (G.GAME.blind.chips / 3)) * 1.5)
 				G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
 			end
 		end
@@ -244,6 +315,7 @@ SMODS.Blind {
 
 	defeat = function(self)
 		G.recluseblind = 0
+		G.solscare = 0
 		play_sound('ocstobal_ominouscancel', 1, 2)
 		recluseach()
 	end
@@ -259,6 +331,9 @@ SMODS.Blind {
 	boss_colour = HEX('ffffff'),
 	boss = { min = 2 },
 
+	set_blind = function()
+		G.GAME.round_resets.lost = false
+	end,
 
 	calculate = function(self, blind, context)
 		if not blind.disabled then
@@ -267,6 +342,27 @@ SMODS.Blind {
 				blind.triggered = true
 				G.GAME.blind.chips = math.floor(G.GAME.blind.chips + G.GAME.blind.chips / 3)
 				G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
+			end
+		end
+		if G.rushenabled == 1 then
+			if to_big(G.GAME.chips) > to_big(G.GAME.blind.chips) then
+				G.GAME.chips = 0
+				G.GAME.round_resets.lost = true
+				G.E_MANAGER:add_event(Event({
+					func = function()
+						G.rushenabled = 1
+						G.GAME.blind:set_blind(G.P_BLINDS["bl_ocstobal_oxyblind"])
+						ocstobal.nextboss()
+						G.GAME.blind:juice_up()
+						ease_hands_played(G.GAME.round_resets.hands - G.GAME.current_round.hands_left)
+						ease_discard(
+							math.max(0, G.GAME.round_resets.discards + G.GAME.round_bonus.discards) -
+							G.GAME.current_round.discards_left
+						)
+						G.FUNCS.draw_from_discard_to_deck()
+						return true
+					end
+				}))
 			end
 		end
 	end
@@ -281,6 +377,10 @@ SMODS.Blind {
 	dollars = 8,
 	boss_colour = HEX('5fcde4'),
 	boss = { min = 3 },
+
+	set_blind = function()
+		G.GAME.round_resets.lost = false
+	end,
 
 	calculate = function(self, blind, context)
 		if not blind.disabled then
@@ -298,33 +398,95 @@ SMODS.Blind {
 				G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
 			end
 		end
+		if G.rushenabled == 1 then
+			if to_big(G.GAME.chips) > to_big(G.GAME.blind.chips) then
+				G.GAME.chips = 0
+				G.GAME.round_resets.lost = true
+				G.E_MANAGER:add_event(Event({
+					func = function()
+						G.rushenabled = 1
+						G.GAME.blind:set_blind(G.P_BLINDS["bl_ocstobal_bossrushend"])
+						ocstobal.nextboss()
+						G.GAME.blind:juice_up()
+						ease_hands_played(G.GAME.round_resets.hands - G.GAME.current_round.hands_left)
+						ease_discard(
+							math.max(0, G.GAME.round_resets.discards + G.GAME.round_bonus.discards) -
+							G.GAME.current_round.discards_left
+						)
+						G.FUNCS.draw_from_discard_to_deck()
+						return true
+					end
+				}))
+			end
+		end
 	end
 }
 
 SMODS.Blind {
-	key = 'solblindawk',
-	name = 'solblindawk',
-	atlas = 'rngatlas',
-	pos = { x = 0, y = 0 },
-	mult = 1,
-	dollars = 15,
-	boss_colour = HEX('00ff00'),
+	key = 'bossrush',
+	dollars = 0,
+	mult = 2,
+	boss = { min = 1, showdown = true },
+	boss_colour = HEX('ffffff'),
+	ignore_showdown_check = false,
 
-	in_pool = function()
-		if ocstobal.configbs.unbalanced_mode == true and ocstobal.configbs.very_unbalanced_mode == true then
-			return true
-		else
-			return false
+	calculate = function(self, card, context)
+		if to_big(G.GAME.chips) > to_big(G.GAME.blind.chips) then
+			G.GAME.chips = 0
+			G.GAME.round_resets.lost = true
+			G.E_MANAGER:add_event(Event({
+				func = function()
+					G.rushenabled = 1
+					G.GAME.blind:set_blind(G.P_BLINDS["bl_ocstobal_sphblind"])
+					ocstobal.nextboss()
+					G.GAME.blind:juice_up()
+					ease_hands_played(G.GAME.round_resets.hands - G.GAME.current_round.hands_left)
+					ease_discard(
+						math.max(0, G.GAME.round_resets.discards + G.GAME.round_bonus.discards) -
+						G.GAME.current_round.discards_left
+					)
+					G.FUNCS.draw_from_discard_to_deck()
+					return true
+				end
+			}))
 		end
+	end
+}
+
+SMODS.Blind {
+	key = 'bossrushomega',
+	dollars = 10,
+	mult = 66.6,
+	boss = { showdown = true },
+	boss_colour = HEX('000000'),
+	ignore_showdown_check = true,
+
+	set_blind = function(self)
+		G.omegarush = 1
 	end,
 
-	calculate = function(self, blind, context)
-		if not blind.disabled then
-			if context.modify_hand then
-				blind.triggered = true
-				G.GAME.blind.chips = math.floor(G.GAME.blind.chips + G.GAME.blind.chips ^ 1.5)
-				G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
-			end
+	in_pool = function()
+		return ante32spawn()
+	end,
+
+	calculate = function(self, card, context)
+		if to_big(G.GAME.chips) > to_big(G.GAME.blind.chips) then
+			G.GAME.chips = 0
+			G.GAME.round_resets.lost = true
+			G.E_MANAGER:add_event(Event({
+				func = function()
+					G.GAME.blind:set_blind(G.P_BLINDS["bl_ocstobal_recluseblind"])
+					ocstobal.nextboss()
+					G.GAME.blind:juice_up()
+					ease_hands_played(G.GAME.round_resets.hands - G.GAME.current_round.hands_left)
+					ease_discard(
+						math.max(0, G.GAME.round_resets.discards + G.GAME.round_bonus.discards) -
+						G.GAME.current_round.discards_left
+					)
+					G.FUNCS.draw_from_discard_to_deck()
+					return true
+				end
+			}))
 		end
 	end
 }
@@ -351,17 +513,4 @@ function diedach()
 			return true
 		end,
 	}))
-end
-
-function death()
-	local text = localize('yeahokbro')
-	attention_text({
-		scale = 1,
-		text = text,
-		hold = 8,
-		align = 'cm',
-		offset = { x = 0, y = -2.7 },
-		major = G.play,
-		colour = HEX('ff0000')
-	})
 end
