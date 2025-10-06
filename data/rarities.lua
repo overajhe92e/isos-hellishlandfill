@@ -209,3 +209,12 @@ SMODS.Rarity {
         return weight
     end
 }
+
+SMODS.Rarity {
+    key = "junk",
+    pools = {
+        ["Joker"] = true
+    },
+    default_weight = 0,
+    badge_colour = HEX('666666')
+}

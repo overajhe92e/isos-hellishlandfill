@@ -162,7 +162,7 @@ return {
 			bl_ocstobal_rng = {
 				name = 'SMODS.Blind(key=rng)',
 				text = {
-					'Mult and Money is randomized',
+					'Blind Size and Reward is randomized',
 					'when the game restarts.',
 				}
 			},
@@ -177,16 +177,31 @@ return {
 			bl_ocstobal_bossrushomega = {
 				name = "Kuolemankiire",
 				text = {
-					'Defeat ALL',
-					'Isotypical Junkyard',
-					'blinds, from',
-					'easiest to hardest.'
+					'Defeat ALL Iso. Junkyard',
+					'blinds. Includes special',
+					'blind variants.'
 				}
 			},
 			bl_ocstobal_bossrushend = {
 				name = "Boss Rush",
 				text = {
 					'Defeat this blind to win!'
+				}
+			},
+			bl_ocstobal_BLACKKNIFE = {
+				name = "THE BLACK KNIFE",
+				text = {
+					'Playing a hand modifies',
+					'Blind Requirement by',
+					'(x*(log(x^3)^2))*3'
+				}
+			},
+			bl_ocstobal_THESCALE = {
+				name = "THE SCALE OF INJUSTICE",
+				text = {
+					"Playing a hand modifies",
+					"Blind requirement by",
+					"x^1.25"
 				}
 			}
 		},
@@ -1079,17 +1094,23 @@ return {
 			j_ocstobal_lana = {
 				name = "Lana",
 				text = {
-					"Do a fucking synergy here with abbie or smth idk what to put"
+					"Gives {C:red}+11{} Mult,",
+					"But gives {X:red,C:white}X3.1{} Mult when",
+					"Abbie is present."
 				}
 			},
 			j_ocstobal_claire = {
 				name = "Claire",
 				text = {
-					"I DONT KNOW WHAT TO {C:red}FUCKING PUT HERE{}"
+					"{C:blue}+31{} Chips"
 				}
 			},
 			j_ocstobal_oxydeceit = {
-				name = "{C:inactive}(Deceitful){} {C:ocstobal_deceitful}Oxy{}"
+				name = "{C:inactive}(Deceitful){} {C:ocstobal_deceitful}Oxy{}",
+				text = {
+					"Copies {C:attention}3 jokers{} from",
+					"the left and right of this \"joker\"."
+				}
 			}
 		},
 		Other = {

@@ -15,7 +15,7 @@ SMODS.Joker { --Broken Seraph
         h = 95 * 1
     },
     cost = 6,
-    rarity = 3,
+    rarity = 'ocstobal_cursed',
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,

@@ -382,6 +382,15 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
+	key = 'omegarush',
+	px = 34,
+	py = 34,
+	path = 'omegarush.png',
+	atlas_table = 'ANIMATION_ATLAS',
+	frames = 35
+}
+
+SMODS.Atlas {
 	key = 'spkawk_classic',
 	px = 71,
 	py = 95,
@@ -677,16 +686,15 @@ SMODS.Shader {
 	path = 'fluorescent.fs'
 }
 
-G.recluseblind = 0
+G.recluseblind = 0 --prevents crashes sometimes
+G.omegarush = 0 --prevents crashes sometimes
 
-to_big = to_big or function(x) return x end -- just in case talisman isn't installed
-
--- local reclusethingy = Game.init_game_object
--- function Game.init_game_object(self)
--- 	local ret = reclusethingy
--- 		G.recluseblind = 0
--- 	return ret
--- end
+SMODS.current_mod.reset_game_globals = function(run_start)
+  if run_start then
+    G.omegarush = 0
+	G.recluseblind = 0
+  end
+end
 
 local check_for_buy_space_ref = G.FUNCS.check_for_buy_space
 G.FUNCS.check_for_buy_space = function(card)
@@ -723,6 +731,7 @@ function ocstobal.nextboss()
         return true
     end}))
 end
+
 
 
 
