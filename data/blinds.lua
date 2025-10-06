@@ -180,8 +180,12 @@ SMODS.Sound {
 	pitch = 1,
 	volume = 1,
 	select_music_track = function()
-		if G.GAME.blind and not G.GAME.blind.disabled and G.GAME.blind.name == 'recluseblind' and G.omegarush < 1 then
-			return true
+		if G.GAME.blind and not G.GAME.blind.disabled and G.GAME.blind.name == 'recluseblind' then
+			if G.omegarush == nil then
+				return false
+			elseif G.omegarush < 1 then
+				return true
+			end
 		end
 	end
 }
