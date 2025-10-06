@@ -32,22 +32,13 @@ SMODS.Atlas {
 -- }
 
 SMODS.Blind {
-	key = 'experimentalrng',
-	name = 'experimentalrng',
+	key = 'rng',
+	name = 'rng',
 	atlas = 'rngatlas',
 	pos = { x = 0, y = 0 },
 	mult = math.random(0.1, 5),
 	dollars = math.random(1, 15),
 	boss = { min = 1 },
-	loc_txt = {
-		name = 'SMODS.Blind(loc_txt=(name=RNG))',
-		text = {
-			'Randomly Multiplies base Chips',
-			'From 0.1 to 5 when Balatro itself',
-			'is reset entirely. (closing and opening)',
-			'Blind award is random from 1 to 15.'
-		}
-	},
 	boss_colour = HEX('0000ff')
 }
 
@@ -326,31 +317,12 @@ SMODS.Blind {
 }
 
 SMODS.Blind {
-	key = 'solblindawk',
-	name = 'solblindawk',
-	atlas = 'rngatlas',
-	pos = { x = 0, y = 0 },
-	mult = 1,
-	dollars = 15,
-	boss_colour = HEX('00ff00'),
+	key = 'boss_rush',
+	dollars = 8,
+	mult = 2,
+	boss = { min = 8, showdown = true },
 
-	in_pool = function()
-		if ocstobal.configbs.unbalanced_mode == true and ocstobal.configbs.very_unbalanced_mode == true then
-			return true
-		else
-			return false
-		end
-	end,
 
-	calculate = function(self, blind, context)
-		if not blind.disabled then
-			if context.modify_hand then
-				blind.triggered = true
-				G.GAME.blind.chips = math.floor(G.GAME.blind.chips + G.GAME.blind.chips ^ 1.5)
-				G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
-			end
-		end
-	end
 }
 
 function recluseach()
@@ -375,17 +347,4 @@ function diedach()
 			return true
 		end,
 	}))
-end
-
-function death()
-	local text = localize('yeahokbro')
-	attention_text({
-		scale = 1,
-		text = text,
-		hold = 8,
-		align = 'cm',
-		offset = { x = 0, y = -2.7 },
-		major = G.play,
-		colour = HEX('ff0000')
-	})
 end
