@@ -175,7 +175,7 @@ return {
 				}
 			},
 			bl_ocstobal_bossrushomega = {
-				name = "Vihamielinenkiire",
+				name = "Kuolemankiire",
 				text = {
 					'Defeat ALL',
 					'Isotypical Junkyard',
