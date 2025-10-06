@@ -148,6 +148,15 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
+	key = 'omegarush',
+	px = 34,
+	py = 34,
+	path = 'omegarush.png',
+	atlas_table = 'ANIMATION_ATLAS',
+	frames = 35
+}
+
+SMODS.Atlas {
 	key = 'HELPME',
 	px = 34,
 	py = 34,

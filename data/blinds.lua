@@ -460,6 +460,8 @@ SMODS.Blind {
 	boss = { showdown = true },
 	boss_colour = HEX('000000'),
 	ignore_showdown_check = true,
+	atlas = 'omegarush',
+	pos = {x=0,y=0},
 
 	set_blind = function(self)
 		G.omegarush = 1
