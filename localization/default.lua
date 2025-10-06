@@ -158,6 +158,36 @@ return {
 					'an Isotypical\'s Junkyard joker,',
 					'Instantly die.'
 				}
+			},
+			bl_ocstobal_rng = {
+				name = 'SMODS.Blind(key=rng)',
+				text = {
+					'Mult and Money is randomized',
+					'when the game restarts.',
+				}
+			},
+			bl_ocstobal_bossrush = {
+				name = "Boss Rush",
+				text = {
+					'Defeat The Knife,',
+					'Oxidization,',
+					'and The Scalae'
+				}
+			},
+			bl_ocstobal_bossrushomega = {
+				name = "Vihamielinenkiire",
+				text = {
+					'Defeat ALL',
+					'Isotypical Junkyard',
+					'blinds, from',
+					'easiest to hardest.'
+				}
+			},
+			bl_ocstobal_bossrushend = {
+				name = "Boss Rush",
+				text = {
+					'Defeat this blind to win!'
+				}
 			}
 		},
 		Edition = {
