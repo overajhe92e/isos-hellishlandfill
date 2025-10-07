@@ -208,8 +208,16 @@ return {
 				name = "Pisarakipua",
 				text = {
 					"All jokers are debuffed.",
-					"Blind Requirement is Square Rooted",
-					"on played hand."
+					"Blind Requirement is modified by",
+					"sqrt(x)^1.75"
+				}
+			},
+			bl_ocstobal_UNSHY = {
+				name = "Finnish Translation here",
+				text = {
+					"Chips and Mult are",
+					"multiplied by ^0.8",
+					"after scoring."
 				}
 			}
 		},

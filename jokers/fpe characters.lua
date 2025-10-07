@@ -1,4 +1,4 @@
-SMODS.Joker { -- did ya think he would silently give chips or mult? NO.
+SMODS.Joker { -- did ya think he would silently give chips or mult? no.
     key = 'abbie',
     rarity = 2,
     cost = 12,
@@ -21,11 +21,11 @@ SMODS.Joker { --what do you think
     pos = {x=2,y=0},
 
     calculate = function(self,card,context)
-        if context.joker_main and not next(SMODS.find_card('j_ocstobal_abbie')) then
+        if context.joker_main then
             return {
                 mult = 11
             }
-        else
+        elseif context.joker_main and next(SMODS.find_card("j_ocstobal_abbie")) then
             return {
                 xmult = 3.1
             }
