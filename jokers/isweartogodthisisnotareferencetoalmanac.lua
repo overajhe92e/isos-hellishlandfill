@@ -248,6 +248,7 @@ SMODS.Joker {
             blind_size = 8
         }
     },
+    no_collection = true,
 
     calculate = function(self, card, context)
         if context.setting_blind then
