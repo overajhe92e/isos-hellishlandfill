@@ -40,6 +40,7 @@ SMODS.Joker { --miss circle (dysfunctional)
     atlas = 'CustomJokers',
     pos = {x=2,y=0},
     no_collection = true,
+    in_pool = function() return false end,
 }
 
 SMODS.Joker {
