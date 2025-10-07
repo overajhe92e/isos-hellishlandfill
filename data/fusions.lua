@@ -58,6 +58,16 @@ FusionJokers.fusions:add_fusion(
 	'j_ocstobal_ripoff',
 	1000
 )
+FusionJokers.fusions:add_fusion(
+	"j_ocstobal_sparky",
+	nil,
+	nil,
+	'j_ocstobal_somethingevil',
+	nil,
+	nil,
+	'j_ocstobal_spkawkclassic',
+	1000
+)
 --fusion jokers' table option does not work, yippee
 --[[FusionJokers.fusions:add_fusion(
   joker1,       --string, component joker's key
