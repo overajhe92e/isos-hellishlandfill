@@ -90,9 +90,9 @@ SMODS.Atlas {
 	key = 'rngatlas',
 	px = 34,
 	py = 34,
-	path = 'questionmark.png',
+	path = 'rng.png',
 	atlas_table = 'ANIMATION_ATLAS',
-	frames = 1
+	frames = 12
 }
 
 SMODS.Atlas {
@@ -145,6 +145,33 @@ SMODS.Atlas {
 	path = 'MORIYA I THOUGHT YOU WERE ENLIGHTENED.png',
 	atlas_table = 'ANIMATION_ATLAS',
 	frames = 1
+}
+
+SMODS.Atlas {
+	key = 'omegarush',
+	px = 34,
+	py = 34,
+	path = 'omegarush.png',
+	atlas_table = 'ANIMATION_ATLAS',
+	frames = 35
+}
+
+SMODS.Atlas {
+	key = 'BLACKKNIFE',
+	px = 34,
+	py = 34,
+	path = 'corruptknife.png',
+	atlas_table = 'ANIMATION_ATLAS',
+	frames = 16
+}
+
+SMODS.Atlas {
+	key = 'UNFAIRSCALE',
+	px = 34,
+	py = 34,
+	path = 'unfairscale.png',
+	atlas_table = 'ANIMATION_ATLAS',
+	frames = 16
 }
 
 SMODS.Atlas {
@@ -379,6 +406,15 @@ SMODS.Atlas {
 	path = 'omegarush.png',
 	atlas_table = 'ANIMATION_ATLAS',
 	frames = 35
+}
+
+SMODS.Atlas {
+	key = 'THEDROPLET',
+	px = 34,
+	py = 34,
+	path = 'corruptoxyblind.png',
+	atlas_table = 'ANIMATION_ATLAS',
+	frames = 19
 }
 
 SMODS.Atlas {
@@ -678,486 +714,52 @@ SMODS.Shader {
 }
 
 G.recluseblind = 0 --prevents crashes sometimes
-G.omegarush = 0 --prevents crashes sometimes
+G.omegarush = 0    --prevents crashes sometimes
 
 SMODS.current_mod.reset_game_globals = function(run_start)
-  if run_start then
-    G.omegarush = 0
-	G.recluseblind = 0
-  end
+	if run_start then
+		G.omegarush = 0
+		G.recluseblind = 0
+	end
 end
 
 local check_for_buy_space_ref = G.FUNCS.check_for_buy_space
 G.FUNCS.check_for_buy_space = function(card)
-    if card.config.center.key == "j_ocstobal_antislopinator" then -- ignore slot limit when bought
-        return true
-    end
-    return check_for_buy_space_ref(card)
+	if card.config.center.key == "j_ocstobal_antislopinator" then -- ignore slot limit when bought
+		return true
+	end
+	return check_for_buy_space_ref(card)
 end
 --oo oo bypass slots hook oo
 
 --copied from entropy since i have no fucking idea what im doing
 function ocstobal.nextboss()
-    G.STATE = 1
-    G.STATE_COMPLETE = false
-    local remove_temp = {}
-    for i, v in pairs({G.jokers, G.hand, G.consumeables, G.discard, G.deck}) do
-        for ind, card in pairs(v.cards) do
-            if card.ability then
-                if card.ability.temporary or card.ability.temporary2 then
-                    if card.area ~= G.hand and card.area ~= G.play and card.area ~= G.jokers and card.area ~= G.consumeables then card.states.visible = false end
-                    card:remove_from_deck()
-                    card:start_dissolve()
-                    if card.ability.temporary then remove_temp[#remove_temp+1]=card end
-                end
-            end
-        end
-    end
-    if #remove_temp > 0 then
-        SMODS.calculate_context({remove_playing_cards = true, removed=remove_temp})
-    end
-    G.deck:shuffle()
-    G.E_MANAGER:add_event(Event({func = function()
-        G.GAME.ChangingPhase = nil
-        return true
-    end}))
+	G.STATE = 1
+	G.STATE_COMPLETE = false
+	local remove_temp = {}
+	for i, v in pairs({ G.jokers, G.hand, G.consumeables, G.discard, G.deck }) do
+		for ind, card in pairs(v.cards) do
+			if card.ability then
+				if card.ability.temporary or card.ability.temporary2 then
+					if card.area ~= G.hand and card.area ~= G.play and card.area ~= G.jokers and card.area ~= G.consumeables then card.states.visible = false end
+					card:remove_from_deck()
+					card:start_dissolve()
+					if card.ability.temporary then remove_temp[#remove_temp + 1] = card end
+				end
+			end
+		end
+	end
+	if #remove_temp > 0 then
+		SMODS.calculate_context({ remove_playing_cards = true, removed = remove_temp })
+	end
+	G.deck:shuffle()
+	G.E_MANAGER:add_event(Event({
+		func = function()
+			G.GAME.ChangingPhase = nil
+			return true
+		end
+	}))
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 -- ok so maybe i lied about abbie doing nothing
 --credits to paradox for the hook
