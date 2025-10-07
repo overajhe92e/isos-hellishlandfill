@@ -189,7 +189,7 @@ return {
 				}
 			},
 			bl_ocstobal_BLACKKNIFE = {
-				name = "THE BLACK KNIFE",
+				name = "Mustunutveitsi",
 				text = {
 					'Playing a hand modifies',
 					'Blind Requirement by',
@@ -197,11 +197,19 @@ return {
 				}
 			},
 			bl_ocstobal_THESCALE = {
-				name = "THE SCALE OF INJUSTICE",
+				name = "Vääryydenasteikko",
 				text = {
 					"Playing a hand modifies",
 					"Blind requirement by",
 					"x^1.25"
+				}
+			},
+			bl_ocstobal_THEDROPLET = {
+				name = "Pisarakipua",
+				text = {
+					"All jokers are debuffed.",
+					"Blind Requirement is Square Rooted",
+					"on played hand."
 				}
 			}
 		},

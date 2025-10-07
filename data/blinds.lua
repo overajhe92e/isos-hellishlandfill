@@ -36,17 +36,17 @@ SMODS.Blind {
 	name = 'rng',
 	atlas = 'rngatlas',
 	pos = { x = 0, y = 0 },
-	mult = math.random(0.1, 5),
-	dollars = math.random(1, 15),
+	mult = math.random(0.5, 4),
+	dollars = math.random(5, 8),
 	boss = { min = 1 },
-	boss_colour = HEX('0000ff'),
+	boss_colour = HEX('54758a'),
 
 	set_blind = function()
 		G.GAME.round_resets.lost = false
 	end,
 
 	calculate = function(self, card, context)
-		if G.omegarush and G.omegarush == 1 then
+		if G.GAME.omegarush and G.GAME.omegarush == 1 then
 			if to_big(G.GAME.chips) > to_big(G.GAME.blind.chips) then
 				G.GAME.chips = 0
 				G.GAME.round_resets.lost = true
@@ -120,7 +120,7 @@ SMODS.Blind {
 				end
 			end
 		end
-		if G.omegarush and G.omegarush == 1 then
+		if G.GAME.omegarush and G.GAME.omegarush == 1 then
 			if to_big(G.GAME.chips) > to_big(G.GAME.blind.chips) then
 				G.GAME.chips = 0
 				G.GAME.round_resets.lost = true
@@ -170,7 +170,12 @@ SMODS.Blind {
 	end,
 
 	defeat = function(self)
-		if G.omegarush < 1 then
+		if G.GAME.omegarush == nil then
+			G.FUNCS.overlay_menu {
+				definition = create_UIBox_custom_video1("diansumeme", "oceanan scum"),
+				config = { no_esc = true }
+			}
+		elseif G.GAME.omegarush < 1 then
 			G.FUNCS.overlay_menu {
 				definition = create_UIBox_custom_video1("diansumeme", "oceanan scum"),
 				config = { no_esc = true }
@@ -199,9 +204,9 @@ SMODS.Sound {
 	pitch = 1,
 	volume = 1,
 	select_music_track = function()
-		if G.omegarush == nil then
+		if G.GAME.omegarush == nil then
 			return false
-		elseif G.omegarush >= 1 then
+		elseif G.GAME.omegarush >= 1 then
 			return true
 		end
 	end
@@ -238,9 +243,9 @@ SMODS.Sound {
 	volume = 1,
 	select_music_track = function()
 		if G.GAME.blind and not G.GAME.blind.disabled and G.GAME.blind.name == 'recluseblind' then
-			if G.omegarush == nil then
+			if G.GAME.omegarush == nil then
 				return false
-			elseif G.omegarush < 1 then
+			elseif G.GAME.omegarush < 1 then
 				return true
 			end
 		end
@@ -294,7 +299,7 @@ SMODS.Blind {
 				}))
 			end
 		end
-		if G.omegarush and G.omegarush == 1 then
+		if G.GAME.omegarush and G.GAME.omegarush == 1 then
 			if to_big(G.GAME.chips) > to_big(G.GAME.blind.chips) then
 				G.GAME.chips = 0
 				G.GAME.round_resets.lost = true
@@ -333,7 +338,7 @@ SMODS.Blind {
 	end,
 
 	calculate = function(self, card, context)
-		if G.omegarush and G.omegarush == 1 then
+		if G.GAME.omegarush and G.GAME.omegarush == 1 then
 			if to_big(G.GAME.chips) > to_big(G.GAME.blind.chips) then
 				G.GAME.chips = 0
 				G.GAME.round_resets.lost = true
@@ -410,7 +415,7 @@ SMODS.Blind {
 				G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
 			end
 		end
-		if G.omegarush and G.omegarush == 1 then
+		if G.GAME.omegarush and G.GAME.omegarush == 1 then
 			if to_big(G.GAME.chips) > to_big(G.GAME.blind.chips) then
 				G.GAME.chips = 0
 				G.GAME.round_resets.lost = true
@@ -486,7 +491,7 @@ SMODS.Blind {
 				}))
 			end
 		end
-		if G.omegarush and G.omegarush == 1 then
+		if G.GAME.omegarush and G.GAME.omegarush == 1 then
 			if to_big(G.GAME.chips) > to_big(G.GAME.blind.chips) then
 				G.GAME.chips = 0
 				G.GAME.round_resets.lost = true
@@ -555,7 +560,7 @@ SMODS.Blind {
 				}))
 			end
 		end
-		if G.omegarush and G.omegarush == 1 then
+		if G.GAME.omegarush and G.GAME.omegarush == 1 then
 			if to_big(G.GAME.chips) > to_big(G.GAME.blind.chips) then
 				G.GAME.chips = 0
 				G.GAME.round_resets.lost = true
@@ -618,17 +623,15 @@ SMODS.Blind {
 	atlas = 'omegarush',
 	pos = { x = 0, y = 0 },
 	ignore_showdown_check = true,
-	atlas = 'omegarush',
-	pos = {x=0,y=0},
 
 	set_blind = function(self)
-		if G.omegarush == nil then
-			G.omegarush = 1
+		if G.GAME.omegarush == nil then
+			G.GAME.omegarush = 1
 			G.GAME.blind:set_blind(G.P_BLINDS["bl_ocstobal_spkblind"])
-		elseif G.omegarush < 1 then
-			G.omegarush = 1
+		elseif G.GAME.omegarush < 1 then
+			G.GAME.omegarush = 1
 			G.GAME.blind:set_blind(G.P_BLINDS["bl_ocstobal_spkblind"])
-		elseif G.omegarush == 1 then
+		elseif G.GAME.omegarush == 1 then
 			return false
 		end
 	end,
@@ -638,7 +641,7 @@ SMODS.Blind {
 	end,
 
 	defeat = function()
-		G.omegarush = 0
+		G.GAME.omegarush = 0
 	end
 }
 
@@ -648,7 +651,7 @@ SMODS.Blind { --Seraph Blind Special
 	mult = 5,
 	boss = { showdown = true },
 	boss_colour = HEX('000000'),
-	atlas = 'omegarush',
+	atlas = 'BLACKKNIFE',
 	pos = { x = 0, y = 0 },
 	ignore_showdown_check = true,
 
@@ -663,11 +666,11 @@ SMODS.Blind { --Seraph Blind Special
 				blind.triggered = true
 				SMODS.juice_up_blind()
 				blind:wiggle()
-				G.GAME.blind.chips = to_big((G.GAME.blind.chips * (math.log(G.GAME.blind.chips ^ 3)^2)) * 3)
+				G.GAME.blind.chips = to_big((G.GAME.blind.chips * (math.log(G.GAME.blind.chips ^ 3) ^ 2)) * 3)
 				G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
 			end
 		end
-		if G.omegarush and G.omegarush == 1 then
+		if G.GAME.omegarush and G.GAME.omegarush == 1 then
 			if to_big(G.GAME.chips) > to_big(G.GAME.blind.chips) then
 				G.GAME.chips = 0
 				G.GAME.round_resets.lost = true
@@ -696,7 +699,7 @@ SMODS.Blind { --Solinium Blind Special
 	mult = 8,
 	boss = { showdown = true },
 	boss_colour = HEX('000000'),
-	atlas = 'omegarush',
+	atlas = 'UNFAIRSCALE',
 	pos = { x = 0, y = 0 },
 	ignore_showdown_check = true,
 
@@ -715,7 +718,58 @@ SMODS.Blind { --Solinium Blind Special
 				G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
 			end
 		end
-		if G.omegarush and G.omegarush == 1 then
+		if G.GAME.omegarush and G.GAME.omegarush == 1 then
+			if to_big(G.GAME.chips) > to_big(G.GAME.blind.chips) then
+				G.GAME.chips = 0
+				G.GAME.round_resets.lost = true
+				G.E_MANAGER:add_event(Event({
+					func = function()
+						G.GAME.blind:set_blind(G.P_BLINDS["bl_ocstobal_THEDROPLET"])
+						ocstobal.nextboss()
+						G.GAME.blind:juice_up()
+						ease_hands_played(G.GAME.round_resets.hands - G.GAME.current_round.hands_left)
+						ease_discard(
+							math.max(0, G.GAME.round_resets.discards + G.GAME.round_bonus.discards) -
+							G.GAME.current_round.discards_left
+						)
+						G.FUNCS.draw_from_discard_to_deck()
+						return true
+					end
+				}))
+			end
+		end
+	end
+}
+
+SMODS.Blind { --Oxy Blind Special
+	key = 'THEDROPLET',
+	dollars = 0,
+	mult = 0.01,
+	boss = { showdown = true },
+	boss_colour = HEX('000000'),
+	atlas = 'THEDROPLET',
+	pos = { x = 0, y = 0 },
+	ignore_showdown_check = true,
+
+	in_pool = function()
+		return false
+	end,
+
+	calculate = function(self, blind, context)
+		if context.debuff_card and context.debuff_card.area == G.jokers then
+			return {
+				debuff = true
+			}
+		end
+		if context.modify_hand then
+				play_sound('timpani')
+				SMODS.juice_up_blind()
+				blind:wiggle()
+				blind.triggered = true
+				G.GAME.blind.chips = to_big(math.sqrt(G.GAME.blind.chips))
+				G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
+			end
+		if G.GAME.omegarush and G.GAME.omegarush == 1 then
 			if to_big(G.GAME.chips) > to_big(G.GAME.blind.chips) then
 				G.GAME.chips = 0
 				G.GAME.round_resets.lost = true
