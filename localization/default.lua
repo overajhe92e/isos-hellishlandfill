@@ -1080,7 +1080,7 @@ return {
 					"{X:red,C:white}+X1{} Mult for",
 					"every time Candycane asked {C:blue}Isotypical{}",
 					"for something.",
-					"{C:inactive}Currently{} {X:red,C:white}X7{} {C:inactive}Mult{}"
+					"{C:inactive}Currently{} {X:red,C:white}X#1#{} {C:inactive}Mult{}"
 				}
 			},
 			j_ocstobal_mask = {

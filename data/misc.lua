@@ -428,6 +428,14 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
+	key = 'candycane',
+	px = 71,
+	py = 95,
+	path = 'candycane.png',
+	atlas_table = 'ASSET_ATLAS'
+}
+
+SMODS.Atlas {
 	key = 'fpeatlas',
 	px = 71,
 	py = 95,
