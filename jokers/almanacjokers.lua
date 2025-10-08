@@ -151,3 +151,26 @@ SMODS.Joker {
         end
     end
 }
+
+SMODS.Joker { --unobtainable as of now
+    key = 'sphawk',
+    rarity = 'ocstobal_whatthefuck',
+    cost = 666666,
+    no_collection = true
+
+    
+}
+
+SMODS.Joker { --unused as of now
+    key = 'solawk',
+    rarity = 'ocstobal_whatthefuck',
+    cost = 666666,
+    no_collection = true
+}
+
+SMODS.Joker { --unused as of now
+    key = 'spkawk',
+    rarity = 'ocstobal_whatthefuck',
+    cost = 666666,
+    no_collection = true
+}
