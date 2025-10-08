@@ -4,7 +4,7 @@ SMODS.Joker {
     rarity = 1,
     config = {
         extra = {
-            dayswithoutissue = 2
+            dayswithoutissue = -999
         }
     },
     atlas = 'moddingchat',

@@ -119,6 +119,7 @@ SMODS.Joker {
     key = 'aiojoker',
     rarity = 'ocstobal_whatthefuck',
     cost = 999999999,
+    no_collection = true,
 
     calculate = function(self,card,context)
         if context.joker_main then
@@ -139,6 +140,7 @@ SMODS.Joker {
         x=0,y=2
     },
     blueprint_compat = true,
+    no_collection = true,
     
     calculate = function(self,card,context)
         if context.joker_main then

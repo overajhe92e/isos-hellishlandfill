@@ -766,7 +766,7 @@ SMODS.Blind { --Oxy Blind Special
 				SMODS.juice_up_blind()
 				blind:wiggle()
 				blind.triggered = true
-				G.GAME.blind.chips = to_big(math.sqrt(G.GAME.blind.chips))
+				G.GAME.blind.chips = to_big(math.sqrt(G.GAME.blind.chips)^1.75)
 				G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
 			end
 		if G.GAME.omegarush and G.GAME.omegarush == 1 then
