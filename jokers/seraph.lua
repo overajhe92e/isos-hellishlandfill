@@ -227,7 +227,7 @@ SMODS.Joker { --Seraph
                 G.current_isomode >= 1 and card.ability.extra.upgrade >= 1000 and card.ability.extra.upgrade < 10000 and
                 "j_ocstobal_seraph_lv1000"
                 or
-                G.current_isomode >= 1 and card.ability.extra.upgrade >= 10000 and card.ability.extra.upgrade < 1000000 and
+                G.current_isomode >= 1 and card.ability.extra.upgrade >= 10000 and card.ability.extra.upgrade < 100000 and
                 "j_ocstobal_seraph_lv10k"
                 or
                 G.current_isomode >= 1 and card.ability.extra.upgrade >= 100000 and card.ability.extra.upgrade < 1e6 and

@@ -126,7 +126,7 @@ SMODS.Blind {
 				G.GAME.round_resets.lost = true
 				G.E_MANAGER:add_event(Event({
 					func = function()
-						G.GAME.blind:set_blind(G.P_BLINDS["bl_ocstobal_BLACKKNIFE"])
+						G.GAME.blind:set_blind(G.P_BLINDS["bl_ocstobal_THEDROPLET"])
 						ocstobal.nextboss()
 						G.GAME.blind:juice_up()
 						ease_hands_played(G.GAME.round_resets.hands - G.GAME.current_round.hands_left)
@@ -278,13 +278,12 @@ SMODS.Blind {
 				end
 			end
 		end
-		if G.rushenabled == 1 then
+		if G.GAME.rushenabled == 1 then
 			if to_big(G.GAME.chips) > to_big(G.GAME.blind.chips) then
 				G.GAME.chips = 0
 				G.GAME.round_resets.lost = true
 				G.E_MANAGER:add_event(Event({
 					func = function()
-						G.rushenabled = 0
 						G.GAME.blind:set_blind(G.P_BLINDS["bl_ocstobal_solblind"])
 						ocstobal.nextboss()
 						G.GAME.blind:juice_up()
@@ -470,13 +469,12 @@ SMODS.Blind {
 				G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
 			end
 		end
-		if G.rushenabled == 1 then
+		if G.GAME.rushenabled == 1 then
 			if to_big(G.GAME.chips) > to_big(G.GAME.blind.chips) then
 				G.GAME.chips = 0
 				G.GAME.round_resets.lost = true
 				G.E_MANAGER:add_event(Event({
 					func = function()
-						G.rushenabled = 1
 						G.GAME.blind:set_blind(G.P_BLINDS["bl_ocstobal_oxyblind"])
 						ocstobal.nextboss()
 						G.GAME.blind:juice_up()
@@ -539,14 +537,13 @@ SMODS.Blind {
 				G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
 			end
 		end
-		if G.rushenabled == 1 then
+		if G.GAME.rushenabled == 1 then
 			if to_big(G.GAME.chips) > to_big(G.GAME.blind.chips) then
 				G.GAME.chips = 0
 				G.GAME.round_resets.lost = true
 				G.E_MANAGER:add_event(Event({
 					func = function()
-						G.rushenabled = 1
-						G.GAME.blind:set_blind(G.P_BLINDS["bl_ocstobal_bossrushend"])
+						G.GAME.blind:set_blind(G.P_BLINDS["bl_ocstobal_bossrush"])
 						ocstobal.nextboss()
 						G.GAME.blind:juice_up()
 						ease_hands_played(G.GAME.round_resets.hands - G.GAME.current_round.hands_left)
@@ -585,32 +582,28 @@ SMODS.Blind {
 
 SMODS.Blind {
 	key = 'bossrush',
-	dollars = 0,
+	dollars = 8,
 	mult = 2,
-	boss = { min = 1, showdown = true },
+	boss = { 
+		showdown = true 
+	},
 	boss_colour = HEX('ffffff'),
-	ignore_showdown_check = false,
+	ignore_showdown_check = true,
 
-	calculate = function(self, card, context)
-		if to_big(G.GAME.chips) > to_big(G.GAME.blind.chips) then
-			G.GAME.chips = 0
-			G.GAME.round_resets.lost = true
-			G.E_MANAGER:add_event(Event({
-				func = function()
-					G.rushenabled = 1
-					G.GAME.blind:set_blind(G.P_BLINDS["bl_ocstobal_sphblind"])
-					ocstobal.nextboss()
-					G.GAME.blind:juice_up()
-					ease_hands_played(G.GAME.round_resets.hands - G.GAME.current_round.hands_left)
-					ease_discard(
-						math.max(0, G.GAME.round_resets.discards + G.GAME.round_bonus.discards) -
-						G.GAME.current_round.discards_left
-					)
-					G.FUNCS.draw_from_discard_to_deck()
-					return true
-				end
-			}))
+	set_blind = function(self)
+		if G.GAME.rushenabled == nil then
+			G.GAME.rushenabled = 1
+			G.GAME.blind:set_blind(G.P_BLINDS["bl_ocstobal_sphblind"])
+		elseif G.GAME.rushenabled == 0 then
+			G.GAME.rushenabled = 1
+			G.GAME.blind:set_blind(G.P_BLINDS["bl_ocstobal_sphblind"])
+		elseif G.GAME.rushenabled == 1 then
+			return false
 		end
+	end,
+
+	defeat = function()
+		G.GAME.rushenabled = 0
 	end
 }
 
@@ -724,7 +717,7 @@ SMODS.Blind { --Solinium Blind Special
 				G.GAME.round_resets.lost = true
 				G.E_MANAGER:add_event(Event({
 					func = function()
-						G.GAME.blind:set_blind(G.P_BLINDS["bl_ocstobal_THEDROPLET"])
+						G.GAME.blind:set_blind(G.P_BLINDS["bl_ocstobal_UNSHY"])
 						ocstobal.nextboss()
 						G.GAME.blind:juice_up()
 						ease_hands_played(G.GAME.round_resets.hands - G.GAME.current_round.hands_left)
@@ -744,7 +737,7 @@ SMODS.Blind { --Solinium Blind Special
 SMODS.Blind { --Oxy Blind Special
 	key = 'THEDROPLET',
 	dollars = 0,
-	mult = 0.01,
+	mult = 0.05,
 	boss = { showdown = true },
 	boss_colour = HEX('000000'),
 	atlas = 'THEDROPLET',
@@ -762,13 +755,58 @@ SMODS.Blind { --Oxy Blind Special
 			}
 		end
 		if context.modify_hand then
-				play_sound('timpani')
-				SMODS.juice_up_blind()
-				blind:wiggle()
-				blind.triggered = true
-				G.GAME.blind.chips = to_big(math.sqrt(G.GAME.blind.chips)^1.75)
-				G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
+			play_sound('timpani')
+			SMODS.juice_up_blind()
+			blind:wiggle()
+			blind.triggered = true
+			G.GAME.blind.chips = to_big((math.log(G.GAME.blind.chips)*G.GAME.blind.chips)/(G.GAME.blind.chips^0.5))
+			G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
+		end
+		if G.GAME.omegarush and G.GAME.omegarush == 1 then
+			if to_big(G.GAME.chips) > to_big(G.GAME.blind.chips) then
+				G.GAME.chips = 0
+				G.GAME.round_resets.lost = true
+				G.E_MANAGER:add_event(Event({
+					func = function()
+						G.GAME.blind:set_blind(G.P_BLINDS["bl_ocstobal_BLACKKNIFE"])
+						ocstobal.nextboss()
+						G.GAME.blind:juice_up()
+						ease_hands_played(G.GAME.round_resets.hands - G.GAME.current_round.hands_left)
+						ease_discard(
+							math.max(0, G.GAME.round_resets.discards + G.GAME.round_bonus.discards) -
+							G.GAME.current_round.discards_left
+						)
+						G.FUNCS.draw_from_discard_to_deck()
+						return true
+					end
+				}))
 			end
+		end
+	end
+}
+
+SMODS.Blind { --Sparky Blind Special
+	key = 'UNSHY',
+	dollars = 0,
+	mult = 100,
+	boss = { showdown = true },
+	boss_colour = HEX('000000'),
+	atlas = 'omegarush',
+	pos = { x = 0, y = 0 },
+	ignore_showdown_check = true,
+
+	in_pool = function()
+		return false
+	end,
+
+	calculate = function(self, blind, context)
+		if context.final_scoring_step then
+			play_sound('timpani')
+			SMODS.juice_up_blind()
+			blind:wiggle()
+			mult = mod_mult(math.floor(mult ^ 0.7))
+			hand_chips = mod_chips(math.floor(hand_chips ^ 0.7))
+		end
 		if G.GAME.omegarush and G.GAME.omegarush == 1 then
 			if to_big(G.GAME.chips) > to_big(G.GAME.blind.chips) then
 				G.GAME.chips = 0
