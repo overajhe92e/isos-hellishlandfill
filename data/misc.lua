@@ -425,6 +425,14 @@ SMODS.Atlas {
 	atlas_table = 'ASSET_ATLAS'
 }
 
+SMODS.Atlas {
+	key = 'fpeatlas',
+	px = 71,
+	py = 95,
+	path = 'fpecharacters.png',
+	atlas_table = 'ASSET_ATLAS'
+}
+
 -- SMODS.Atlas {
 -- 	key = 'tempjtetration',
 -- 	px = 71,
