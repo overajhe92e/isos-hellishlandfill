@@ -2,9 +2,9 @@ SMODS.Joker { -- did ya think he would silently give chips or mult? no.
     key = 'abbie',
     rarity = 2,
     cost = 12,
-    atlas = 'abbiepng',
+    atlas = 'fpeatlas',
     pos = {x=0,y=0},
-    soul_pos = {x=1,y=0},
+    soul_pos = {x=2,y=1},
 
     loc_vars = function(self,info_queue,center)
         return {
@@ -17,8 +17,9 @@ SMODS.Joker { --what do you think
     key = 'lana',
     rarity = 2,
     cost = 8,
-    atlas = 'CustomJokers',
-    pos = {x=2,y=0},
+    atlas = 'fpeatlas',
+    pos = {x=0,y=0},
+    soul_pos = {x=1,y=1},
 
     calculate = function(self,card,context)
         if context.joker_main then
@@ -47,8 +48,9 @@ SMODS.Joker {
     key = "claire",
     rarity = 1,
     cost = 4,
-    atlas = 'CustomJokers',
-    pos = {x=2,y=0},
+    atlas = 'fpeatlas',
+    pos = {x=0,y=0},
+    soul_pos = {x=0,y=1},
 
     calculate = function(self,card,context)
         if context.joker_main then

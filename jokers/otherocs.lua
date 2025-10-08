@@ -100,12 +100,24 @@ SMODS.Joker {
     key = 'candycane',
     cost = 10,
     rarity = 3,
+    config = {
+        extra = {
+            xmult = 8
+        }
+    },
     blueprint_compat = true,
+    atlas = 'candycane',
+    pos = {x=0,y=0},
+    soul_pos = {x=1,y=0},
+
+    loc_vars = function(self, info_queue, card)
+        return { vars = {card.ability.extra.xmult} }
+    end,
     
     calculate = function(self,card,context)
         if context.joker_main then
             return {
-                Xmult = 7
+                Xmult = card.ability.extra.xmult
             }
         end
     end
