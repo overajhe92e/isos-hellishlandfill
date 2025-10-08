@@ -209,14 +209,14 @@ return {
 				text = {
 					"All jokers are debuffed.",
 					"Blind Requirement is modified by",
-					"sqrt(x)^1.75"
+					"(log(x)*x) / x^0.5"
 				}
 			},
 			bl_ocstobal_UNSHY = {
-				name = "Finnish Translation here",
+				name = "Särkynythiljaisuus",
 				text = {
 					"Chips and Mult are",
-					"multiplied by ^0.8",
+					"multiplied by ^0.7",
 					"after scoring."
 				}
 			}
@@ -531,6 +531,7 @@ return {
 					'{C:dark_edition,s:0.9}Origin: Fundamental Paper Education{}'
 				}
 			},
+
 			j_ocstobal_sparky_alt = {
 				name = "Close enough, welcome back FPE Abbie",
 				text = {
@@ -783,7 +784,7 @@ return {
 				name = 'Twisted Shrimpo',
 				text = {
 					'{C:red}Nearly murders a blind.{}',
-					'{C:inactive}Blind size is multiplied by ^0.75{}',
+					'{C:inactive}Blind Size is reduced by ^0.75{}',
 					'{C:dark_edition,s:0.8}Origin : Dandy\'s World{}'
 				}
 			},
