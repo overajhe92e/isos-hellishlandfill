@@ -1,6 +1,5 @@
 SMODS.Stake {
     key = 'singularity',
-    name = 'Singularity Stake',
     unlocked_stake = "finale" ,
     applied_stakes = { 'gold' },
     prefix_config = { applied_stakes = { mod = false } },
@@ -16,7 +15,6 @@ SMODS.Stake {
 
 SMODS.Stake {
     key = 'finale',
-    name = 'The Final Stake',
     atlas = 'finalstake',
     above_stake = 'singularity',
     pos = {x=0,y=0},

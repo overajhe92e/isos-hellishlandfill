@@ -139,5 +139,8 @@ SMODS.Back {
 				return true
 			end
 		}))
+	end,
+	check_for_unlock = function(self, args)
+		return args.type == 'defeated_omega'
 	end
 }

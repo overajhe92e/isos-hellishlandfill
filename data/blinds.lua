@@ -584,8 +584,8 @@ SMODS.Blind {
 	key = 'bossrush',
 	dollars = 8,
 	mult = 2,
-	boss = { 
-		showdown = true 
+	boss = {
+		showdown = true
 	},
 	boss_colour = HEX('ffffff'),
 	ignore_showdown_check = true,
@@ -635,6 +635,7 @@ SMODS.Blind {
 
 	defeat = function()
 		G.GAME.omegarush = 0
+		omegarushdefeat()
 	end
 }
 
@@ -759,7 +760,7 @@ SMODS.Blind { --Oxy Blind Special
 			SMODS.juice_up_blind()
 			blind:wiggle()
 			blind.triggered = true
-			G.GAME.blind.chips = to_big((math.log(G.GAME.blind.chips)*G.GAME.blind.chips)/(G.GAME.blind.chips^0.5))
+			G.GAME.blind.chips = to_big((math.log(G.GAME.blind.chips) * G.GAME.blind.chips) / (G.GAME.blind.chips ^ 0.5))
 			G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
 		end
 		if G.GAME.omegarush and G.GAME.omegarush == 1 then
@@ -837,6 +838,23 @@ function recluseach()
 		delay = 0,
 		func = function()
 			check_for_unlock({ type = "ach_defeatedrecluse" })
+			return true
+		end,
+	}))
+end
+
+function omegarushdefeat()
+	G.E_MANAGER:add_event(Event({
+		trigger = 'immediate',
+		locking = false,
+		delay = 0,
+		func = function()
+			print('omega defeated')
+			if SMODS.stake_from_index(G.GAME.stake) == "stake_ocstobal_finale" then
+				print('given deck access')
+				check_for_unlock({ type = "defeated_omega" })
+				return true
+			end
 			return true
 		end,
 	}))
