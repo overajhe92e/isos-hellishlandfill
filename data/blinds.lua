@@ -153,7 +153,7 @@ SMODS.Blind {
 	name = 'diansu',
 	atlas = 'diansuvulkarch',
 	pos = { x = 0, y = 0 },
-	mult = 0,
+	mult = 0.00001,
 	dollars = 1,
 	boss = { min = 1 },
 	loc_txt = {
