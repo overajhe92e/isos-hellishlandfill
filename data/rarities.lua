@@ -162,14 +162,14 @@ local the = SMODS.Gradient({
 })
 
 SMODS.Rarity {
-    key = "transc",
+    key = "beyondexotic",
     pools = {
         ["Joker"] = true
     },
     default_weight = 0,
     badge_colour = the,
     loc_txt = {
-        name = "Transcendant"
+        name = "Terminus"
     },
     get_weight = function(self, weight, object_type)
         return weight

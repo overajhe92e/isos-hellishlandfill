@@ -77,6 +77,17 @@ return {
 				text = {
 					'Wait, this is supposed to be a config option!"'
 				}
+			},
+			b_ocstobal_overpoweredjokers = {
+				name = "Trasncended Deck",
+				text = {
+					'Start off with a random',
+					'{C:ocstobal_sewh}Terminus{} Joker.'
+				},
+				unlock = {
+					'Defeat the {C:ocstobal_ust}Omega Boss Rush{}',
+					'on the {C:ocstobal_finalrgb}Final Stake{}'
+				}
 			}
 		},
 		Blind = {

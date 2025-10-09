@@ -123,7 +123,7 @@ SMODS.ObjectType({
 		j_ocstobal_oxyemp = true,
 		j_ocstobal_crystal = true,
 		j_blueprint = true,
-		j_brainstorm = true,
+		j_brainstorm = true
 	},
 	inject = function(self)
 		SMODS.ObjectType.inject(self)

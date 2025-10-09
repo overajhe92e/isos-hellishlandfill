@@ -74,17 +74,24 @@ SMODS.Joker { --don't use, please
     end
 }
 
-SMODS.Joker { --UNUSED RIGHT NOW
+SMODS.Joker { --also the second easiest as seraph is fucking ass at controlling his power
     key = 'sphawkclassic',
-    rarity = 'ocstobal_whatthefuck',
-    cost = 666666,
-    no_collection = true
+    rarity = 'ocstobal_beyondexotic',
+    cost = 12500,
+    calculate = function(self,card,context)
+        if context.joker_main then
+            return {
+                echips = 666,
+                emult = 666
+            }
+        end
+    end
 }
 
 SMODS.Joker { --this is the easiest of the trio (unbalanced badly) to make wtf 
     key = 'spkawkclassic',
-    rarity = 'ocstobal_whatthefuck',
-    cost = 666666,
+    rarity = 'ocstobal_beyondexotic',
+    cost = 10000,
     discovered = false,
     unlocked = false,
     atlas = 'spkawk_classic',
@@ -101,21 +108,40 @@ SMODS.Joker { --this is the easiest of the trio (unbalanced badly) to make wtf
     end
 }
 
-SMODS.Joker { --UNUSED RIGHT NOW
+SMODS.Joker { --oh my god two soul cards and a blackhole are you deranged
     key = 'solawkclassic',
-    rarity = 'ocstobal_whatthefuck',
-    cost = 666666,
-    no_collection = true
+    rarity = 'ocstobal_beyondexotic',
+    cost = 999999,
+    
+    calculate = function(self,card,context)
+        if context.setting_blind then
+            G.E_MANAGER:add_event(Event({
+                func = function()
+                    SMODS.add_card{ key = 'c_soul', edition = 'e_negative' }
+                    SMODS.add_card{ key = 'c_soul', edition = 'e_negative' }
+                    SMODS.add_card{ key = 'c_black_hole', edition = 'e_negative' }
+                    SMODS.add_card{ key = 'c_black_hole', edition = 'e_negative' }
+                    return true
+                end
+            }))
+        end
+        if context.joker_main then
+            return {
+                eemult = 2,
+                eechips = 2
+            }
+        end
+    end
 }
 
-SMODS.Joker { --UNUSED RIGHT NOW
+SMODS.Joker { --it's literally just the fucking avaritia joker but weaker
     key = 'oxyold',
     rarity = 'ocstobal_whatthefuck',
     cost = 1e307,
     no_collection = true
 }
 
-SMODS.Joker {
+SMODS.Joker { --todo: implement every effect
     key = 'aiojoker',
     rarity = 'ocstobal_whatthefuck',
     cost = 999999999,
@@ -130,7 +156,7 @@ SMODS.Joker {
     end
 }
 
-SMODS.Joker {
+SMODS.Joker { --right before getting aio joker
     key = 'ripoff',
     rarity = 'ocstobal_whatthefuck',
     cost = 2000,
@@ -158,7 +184,7 @@ SMODS.Joker { --unobtainable as of now
     cost = 666666,
     no_collection = true
 
-    
+
 }
 
 SMODS.Joker { --unused as of now

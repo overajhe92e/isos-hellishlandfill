@@ -123,3 +123,21 @@ SMODS.Back {
 		return args.type == 'win_stake' and get_deck_win_stake() >= 1
 	end
 }
+
+SMODS.Back {
+	key = 'overpoweredjokers',
+	atlas = 'looksinside',
+	pos = { x = 0, y = 0 },
+	unlocked = false,
+	apply = function(self, back)
+		G.E_MANAGER:add_event(Event({
+			func = function()
+				SMODS.add_card {
+					set = 'Joker',
+					rarity = 'ocstobal_beyondexotic',
+				}
+				return true
+			end
+		}))
+	end
+}
