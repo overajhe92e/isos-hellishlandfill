@@ -924,9 +924,10 @@ return {
 				}
 			},
 			j_ocstobal_solawk = {
-				name = 'The Multiversal Threat, Solinium',
+				name = 'The {C:ocstobal_ust}Multiversal Threat{}, Solinium',
 				text = {
-					'teto pear'
+					'{X:dark_edition,C:white}^^^^#1#{} Mult,',
+					'Mult is {C:red}multiplied{} by itself.'
 				}
 			},
 			j_ocstobal_spkawkclassic = {
