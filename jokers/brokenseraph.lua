@@ -46,7 +46,7 @@ SMODS.Joker { --Broken Seraph
             }
         end
         if context.individual and context.cardarea == G.play then
-            if (card.ability.extra.multchip or 0) >= 0.5 then
+            if (card.ability.extra.multchip or 0) >= 0.1 then
                 card.ability.extra.multchip = math.max(0, (card.ability.extra.multchip) - 0.1)
             elseif (card.ability.extra.var1 or 0) <= 0 then
                 return {

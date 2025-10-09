@@ -220,7 +220,8 @@ return {
 				text = {
 					"All jokers are debuffed.",
 					"Blind Requirement is modified by",
-					"(log(x)*x) / x^0.5"
+					"(log(x)*x) / x^0.5",
+					"upon playing a hand."
 				}
 			},
 			bl_ocstobal_UNSHY = {
@@ -286,7 +287,7 @@ return {
 					'{s:0.8,C:dark_edition}Character by Isotypical{}'
 				},
 			},
-			j_ocstobal_oxyrenamed = {
+			j_ocstobal_oxyrenamed = { --"STILL has a 1 in 6 chance to--"
 				name = "ocksie",
 				text = {
 					'Copies the Ability of the joker',
@@ -301,22 +302,13 @@ return {
 				name = "Seraph",
 				text = {
 					{
-						'#5# in #6# chance to apply {X:red,C:white}X#11#{} Mult',
+						'{C:green}#5# in #6#{} chance to apply {X:red,C:white}X#11#{} Mult',
 						'for every scored card.',
-						'On Ante 8 and beyond, {C:green}#7# in #8#{} chance to replace self. {C:inactive}(Unless Disabled by LV 10 Ability){}',
+						'On Ante 8 and beyond, {C:green}#7# in #8#{} chance to replace self.',
+						'{C:inactive}(Unless Disabled by LV 10 Ability){}',
 						'{C:blue,s:0.9}#1#{}',
 						'{C:dark_edition,s:1.2}EXP: #9# / 10{}',
 						'{C:dark_edition,s:1.2}LV: #10#{}',
-					},
-					{
-						'{s:1.5,C:dark_edition,E:1}Leveling System{}',
-						'You gain {C:ocstobal_sewh}EXP{} by {C:attention}triggering{} Seraph\'s Ability.',
-						'Once you reach {C:attention}10 triggers{}, Seraph will {C:ocstobal_sewh}"Level Up"{}.',
-						'{C:ocstobal_sewh,E:2}Special abilities{} may occur at certain LV.',
-						'{C:attention}General Levelling:{} Every LV upgrades {X:red,C:white}XMult{} by {X:red,C:white}X0.25{}',
-						'{C:blue}LV 5{} : Applies {C:chip}Chips{} for every scored card. Increases by +10 every LV.',
-						'{C:blue}LV 10{} : {X:mult,C:white}XMult{} is guaranteed, and the Ante 8 Debuff becomes {C:attention}inactive.{}',
-						'{C:green}LV 100{} : {C:attention}???{}',
 					},
 					{
 						-- '{s:1.5,C:dark_edition,E:1}Overflow XP{}',
@@ -338,18 +330,6 @@ return {
 						'{C:dark_edition,s:1.2}LV: #10#{}',
 					},
 					{
-						'{s:1.5,C:dark_edition,E:1}Leveling System{}',
-						'You gain {C:ocstobal_sewh}EXP{} by {C:attention}triggering{} Seraph\'s Ability.',
-						'Once you reach {C:attention}10 triggers{}, Seraph will {C:ocstobal_sewh}"Level Up"{}.',
-						'{C:ocstobal_sewh,E:2}Special abilities{} may occur at certain LV.',
-						'{C:attention}General Levelling:{} Every LV upgrades {X:red,C:white}XMult{} by {X:red,C:white}X0.25{}',
-						'{C:blue}LV 5{} : Applies {C:chip}Chips{} for every scored card. Increases by +10 every LV.',
-						'{C:blue}LV 10{} : {X:mult,C:white}XMult{} is guaranteed, and the Ante 8 Debuff becomes {C:attention}inactive.{}',
-						'{C:green}LV 100{} : {X:mult,C:white}XMult{} gain is increased to {X:mult,C:white}+X3{} and chip gain increases to {C:blue}+250{}',
-						'{C:green}LV 100 Extra Perk{} : {X:blue,C:white}XChip{} is applied for every scored card. Increases by {X:blue,C:white}+X2{} for every level.',
-						'{C:ocstobal_ust}LV 400{} : {s:2,C:ocstobal_ust,E:1}??????{}'
-					},
-					{
 						'{C:dark_edition,E:1,s:1.2}Current Stats{}',
 						'{X:red,C:white}X#11#{} Mult, {C:blue}+#12#{} Chips, {X:blue,C:white}X#14#{} Chips',
 					}
@@ -362,16 +342,6 @@ return {
 						'{C:red,s:0.9}#1#{}',
 						'{C:dark_edition,s:1.2}EXP: MAXED{}',
 						'{C:dark_edition,s:1.2}LV: 10{}',
-					},
-					{
-						'{s:1.5,C:dark_edition,E:1}Leveling System{}',
-						'You gain {C:ocstobal_sewh}EXP{} by {C:attention}triggering{} Seraph\'s Ability.',
-						'Once you reach {C:attention}10 triggers{}, Seraph will {C:ocstobal_sewh}"Level Up"{}.',
-						'{C:ocstobal_sewh,E:2}Special abilities{} may occur at certain LV.',
-						'{C:attention}General Levelling:{} Every LV upgrades {X:red,C:white}XMult{} by {X:red,C:white}X0.25{}',
-						'{C:blue}LV 5{} : Applies {C:chip}Chips{} for every scored card. Increases by +10 every LV.',
-						'{C:blue}LV 10{} : {X:mult,C:white}XMult{} is guaranteed, and the Ante 8 Debuff becomes {C:attention}inactive.{}',
-						'{C:inactive}LV 100 : Not obtainable in Rebalanced Mode{}',
 					},
 					{
 						'{C:dark_edition,E:1,s:1.2}Current Stats{}',
@@ -388,17 +358,6 @@ return {
 						'{C:dark_edition,s:1.2}LV: 100{}',
 					},
 					{
-						'{s:1.5,C:dark_edition,E:1}Leveling System{}',
-						'You gain {C:ocstobal_sewh}EXP{} by {C:attention}triggering{} Seraph\'s Ability.',
-						'Once you reach {C:attention}10 triggers{}, Seraph will {C:ocstobal_sewh}"Level Up"{}.',
-						'{C:ocstobal_sewh,E:2}Special abilities{} may occur at certain LV.',
-						'{C:attention}General Levelling:{} Every LV upgrades {X:red,C:white}XMult{} by {X:red,C:white}X0.25{}',
-						'{C:blue}LV 5{} : Applies {C:chip}Chips{} for every scored card. Increases by +10 every LV.',
-						'{C:blue}LV 10{} : {X:mult,C:white}XMult{} is guaranteed, and the Ante 8 Debuff becomes {C:attention}inactive.{}',
-						'{C:green}LV 100{} : {X:blue,C:white}XChip{} is applied for every scored card. {X:blue,C:white}X#14#{} XChip',
-						'{C:inactive}LV 400 : Not possible to obtain in Normal Mode{}'
-					},
-					{
 						'{C:dark_edition,E:1,s:1.2}Current Stats{}',
 						'{X:red,C:white}X#11#{} Mult, {C:blue}+#12#{} Chips, {X:blue,C:white}X#14#{} Chips',
 					}
@@ -408,22 +367,9 @@ return {
 				name = "{C:ocstobal_sewh,E:1}Seraph, The Angel of the Void{}",
 				text = {
 					{
-						'{C:ocstobal_ust,s:0.9}"#3#"{}',
+						'{C:ocstobal_ust,s:0.9}#3#{}',
 						'{C:dark_edition,s:1.2}EXP: #9# / 10{}',
 						'{C:dark_edition,s:1.2}LV: #10#{}',
-					},
-					{
-						'{s:1.5,C:dark_edition,E:1}Leveling System{}',
-						'You gain {C:ocstobal_sewh}EXP{} by {C:attention}triggering{} Seraph\'s Ability.',
-						'Once you reach {C:attention}10 triggers{}, Seraph will {C:ocstobal_sewh}"Level Up"{}.',
-						'{C:ocstobal_sewh,E:2}Special abilities{} may occur at certain LV.',
-						'{C:attention}General Levelling:{} Every LV upgrades {X:red,C:white}XMult{} by {X:red,C:white}X0.25{}',
-						'{C:blue}LV 5{} : Applies {C:chip}Chips{} for every scored card. Increases by +10 every LV.',
-						'{C:blue}LV 10{} : {X:mult,C:white}XMult{} is guaranteed, and the Ante 8 Debuff becomes {C:attention}inactive.{}',
-						'{C:green}LV 100{} : {X:mult,C:white}XMult{} gain is increased to {X:mult,C:white}+X3{} and chip gain increases to {C:blue}+250{}',
-						'{C:green}LV 100 Extra Perk{} : {X:blue,C:white}XChip{} is applied for every scored card. Increases by {X:blue,C:white}+X2{} for every level.',
-						'{C:ocstobal_ust}LV 400{} : {s:2,C:ocstobal_ust,E:1}Applies ^Mult. Grows by +^0.05 every LV.{}',
-						'{C:ocstobal_sewh,s:1.3,E:1}LV 1,000 : ???{}'
 					},
 					{
 						'{C:dark_edition,E:1,s:1.2}Current Stats{}',
@@ -435,26 +381,11 @@ return {
 				name = "{C:ocstobal_finalrgb}The Final Seraph{}",
 				text = {
 					{
-						'{C:ocstobal_finalrgb,s:0.9}"#4#"{}',
+						'{C:ocstobal_finalrgb,s:0.9}#4#{}',
 						'{C:dark_edition,s:1.2}EXP: #9# / 10{}',
 						'{C:dark_edition,s:1.2}LV: #10#{}',
 						'{C:inactive}"Jesus fucking christ how unbalanced is your oc"{}',
 						'{C:inactive}"Very." -Isotypical{}'
-					},
-					{
-						'{s:1.5,C:dark_edition,E:1}Leveling System{}',
-						'You gain {C:ocstobal_sewh}EXP{} by {C:attention}triggering{} Seraph\'s Ability.',
-						'Once you reach {C:attention}10 triggers{}, Seraph will {C:ocstobal_sewh}"Level Up"{}.',
-						'{C:ocstobal_sewh,E:2}Special abilities{} may occur at certain LV.',
-						'{C:attention}General Levelling:{} Every LV upgrades {X:red,C:white}XMult{} by {X:red,C:white}X0.25{}',
-						'{C:blue}LV 5{} : Applies {C:chip}Chips{} for every scored card. Increases by +10 every LV.',
-						'{C:blue}LV 10{} : {X:mult,C:white}XMult{} is guaranteed, and the Ante 8 Debuff becomes {C:attention}inactive.{}',
-						'{C:green}LV 100{} : {X:mult,C:white}XMult{} gain is increased to {X:mult,C:white}+X3{} and chip gain increases to {C:blue}+250{}',
-						'{C:green}LV 100 Extra Perk{} : {X:blue,C:white}XChip{} is applied for every scored card. Increases by {X:blue,C:white}+X2{} for every level.',
-						'{C:ocstobal_ust}LV 400{} : {s:1.1,C:ocstobal_ust,E:1}Applies ^Mult. Grows by +^0.05 every LV.{}',
-						'{C:ocstobal_sewh,s:1.3,E:1}LV 1,000 : Applies ^^Mult for every scored card.{}',
-						'{C:ocstobal_finalrgb,E:1}Seraph has nothing else to learn, or destroy. He has reached the end of growth.{}',
-						'{C:inactive,s:0.65}LV 10,000..? Why would he EVER go further?{}'
 					},
 					{
 						'{C:dark_edition,E:1,s:1.2}Current Stats{}',
@@ -471,12 +402,7 @@ return {
 						'{C:dark_edition,s:1.35}LV: #10#{}'
 					},
 					{
-						'{C:dark_edition,E:1,s:1.2}Absurd Levelling{}',
-						'{C:ocstobal_legendplus,s:2}LV 10,000 : EEEMult unlocked...{}',
-					},
-					{
 						'{C:dark_edition,E:1,s:1.2}Stats{}',
-						'{C:ocstobal_ust}Something\'s wrong. He wasn\'t supposed to learn something new.{}',
 						'{X:red,C:white}X#11#{} Mult, {C:blue}+#12#{} Chips, {X:blue,C:white}X#14#{} Chips, {X:dark_edition,C:white,E:1}^#13#{} {C:dark_edition,E:1}EMult{}',
 						'{X:dark_edition,C:white}^^#15#{} EEMult, {X:ocstobal_sewh,C:white}^^^#16#{} EEEMult'
 					}
@@ -488,10 +414,6 @@ return {
 					{
 						'{C:dark_edition,s:1.35}EXP: #9# / 10{}',
 						'{C:dark_edition,s:1.35}LV: #10#{}'
-					},
-					{
-						'{C:dark_edition,E:1,s:1.2}Absurd Levelling{}',
-						'{C:ocstobal_legendplus,s:1.5}LV 100,000 : Hypermult Unlocked. All previous scaling uses ^1.5 instead.{}',
 					},
 					{
 						'{C:dark_edition,E:1,s:1.2}Stats{}',
@@ -508,8 +430,6 @@ return {
 						'{C:dark_edition,s:1.35}LV: #10#{}'
 					},
 					{
-						'{C:dark_edition,E:1,s:1.2}Absurd Levelling{}',
-						'{C:ocstobal_legendplus,s:1.5}LV 1,000,000 : Hyperoperator can now scale.{}',
 						'{C:inactive}"Honest to god I think you\'re using Cryptid to get here now"{}'
 					},
 					{

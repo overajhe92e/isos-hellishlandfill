@@ -332,7 +332,7 @@ function G.FUNCS.enabling()
 		G.enabledsecret = true
 		play_sound("ocstobal_ominous", 0.8, 3)
 	else
-		play_sound("ocstobal_incorrect",1,1)
+		play_sound("ocstobal_incorrect", 1, 1)
 	end
 end
 
@@ -386,7 +386,7 @@ function G.FUNCS.turnback()
 		play_sound('ocstobal_ominouscancel', 1, 1)
 		G.SETTINGS.SOUND.music_volume = 100
 	else
-		play_sound("ocstobal_incorrect",1,1)
+		play_sound("ocstobal_incorrect", 1, 1)
 	end
 end
 
@@ -462,56 +462,6 @@ SMODS.current_mod.config_tab = function()
 					},
 				}
 			},
-			{
-				n = G.UIT.R,
-				config = { minw = 1, minh = 1, padding = 0.05, align = "tm", colour = G.C.CLEAR },
-				nodes = {
-					{
-						n = G.UIT.C,
-						config = { minw = 3, minh = 1, align = "tm", padding = 0.1, colour = G.C.CLEAR },
-						nodes = {
-							{
-								n = G.UIT.R,
-								config = { minw = 1, minh = 1, align = "tm", padding = 0.1, colour = G.C.CLEAR },
-								nodes = {
-									{ n = G.UIT.T, config = { text = "Gameplay Options", colour = G.C.EDITION, scale = 0.6, align = "m" }, },
-								}
-							},
-							{
-								n = G.UIT.R,
-								config = { minw = 1, minh = 1, align = "tm", padding = 0.1, colour = G.C.CLEAR },
-								nodes = {
-									-- create_toggle({
-									-- 	active_colour = G.C.RED,
-									-- 	label = "Lankyboxn't",
-									-- 	ref_table = ocstobal.configbs,
-									-- 	ref_value = 'fuck_you_lankybox',
-									-- }), --UNUSED AS THE BLINDS ARENT IN THE MOD RIGHT NOW
-									{
-										n = G.UIT.R,
-										config = { minw = 1, minh = 1, align = "tm", padding = 0.1, colour = G.C.CLEAR },
-										nodes = {
-											create_toggle({
-												active_colour = G.C.BLUE,
-												label = "Less Bullshit",
-												ref_table = ocstobal.configbs,
-												ref_value = 'easier_cplusplus',
-											}),
-										}
-									},
-									{
-										n = G.UIT.R,
-										config = { minw = 0, minh = 0, align = "tm", padding = 0.1, colour = G.C.BLACK, button = "enabling", r = 0.1 },
-										nodes = {
-											{ n = G.UIT.T, config = { text = "???", colour = G.C.RED, scale = 0.3, align = "bm" }, },
-										}
-									},
-								}
-							},
-						}
-					}
-				}
-			}
 		}
 	}
 end
@@ -621,7 +571,7 @@ SMODS.current_mod.extra_tabs = function()
 							n = G.UIT.R,
 							config = { minw = 0.5, minh = 0.5, maxw = 3, maxh = 1, align = "m", padding = 0.1, colour = G.C.BLACK, button = "supersecret", r = 0.1 },
 							nodes = {
-								{ n = G.UIT.T, config = { text = "DEEPER DIVE INTO THE MIND", colour = G.C.RED, scale = 0.2, align = "m" }, },
+								{ n = G.UIT.T, config = { text = "(dysfunctional feature, ignore)", colour = G.C.RED, scale = 0.2, align = "m" }, },
 							}
 						},
 					}
@@ -634,4 +584,182 @@ end
 
 if ocstobal.configbs.no_ocs == true then
 	return nil
+end
+
+function sphlvls(buttonname)
+	local sph = create_UIBox_generic_options({
+		back_delay = 0.1,
+		back_label = buttonname,
+		back_colour = G.C.DARK_EDITION,
+		padding = 0.1,
+		contents = {
+			{
+				n = G.UIT.R,
+				config = { minh = 1, minw = 18, align = 'cm', padding = 0.2, colour = G.C.CLEAR, r = 0.1 },
+				nodes = {
+					{
+						n = G.UIT.C,
+						config = { minw = 8, align = 'cm', padding = 0.175, colour = G.C.BLACK, r = 0.1 },
+						nodes = {
+							{
+								n = G.UIT.R,
+								config = { align = 'cm', padding = 0, colour = G.C.CLEAR, minw = 8 },
+								nodes = {
+									{ n = G.UIT.T, config = { text = "Seraph's Levelling System", scale = 0.6, colour = G.C.EDITION, align = 'cl', vert = true } },
+									{
+										n = G.UIT.R,
+										config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
+										nodes = {
+											{ n = G.UIT.T, config = { text = "The most SCUFFED system in it's code!", scale = 0.4, colour = G.C.UI.TEXT_INACTIVE, align = 'cm' } }
+										}
+									},
+									{
+										n = G.UIT.R,
+										config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
+										nodes = {
+											{ n = G.UIT.T, config = { text = "When Seraph is triggered, Seraph will gain XP.", scale = 0.4, colour = G.C.WHITE, align = 'cm' } }
+										}
+									},
+									{
+										n = G.UIT.R,
+										config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
+										nodes = {
+											{ n = G.UIT.T, config = { text = "At 10 XP, Seraph will \"Level Up\",", scale = 0.4, colour = G.C.WHITE, align = 'cm' } }
+										}
+									},
+									{
+										n = G.UIT.R,
+										config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
+										nodes = {
+											{ n = G.UIT.T, config = { text = "making him stronger.", scale = 0.4, colour = G.C.RED, align = 'cm' } }
+										}
+									},
+									{
+										n = G.UIT.R,
+										config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
+										nodes = {
+											{ n = G.UIT.T, config = { text = "Some Abilities are unlocked at certain levels.", scale = 0.4, colour = G.C.DARK_EDITION, align = 'cm' } }
+										}
+									},
+									{
+										n = G.UIT.R,
+										config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
+										nodes = {
+											{ n = G.UIT.T, config = { text = "And, Seraph's Sprite will change...", scale = 0.4, colour = G.C.DARK_EDITION, align = 'cm' } }
+										}
+									},
+									{
+										n = G.UIT.R,
+										config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
+										nodes = {
+											{ n = G.UIT.T, config = { text = "depending on his level!", scale = 0.4, colour = G.C.DARK_EDITION, align = 'cm' } }
+										}
+									},
+									-- { n = G.UIT.O, config = { object = Card({ card = 'j_ocstobal_seraph' }), align = 'cm', hover = true}}
+								},
+							},
+						}
+					},
+					{
+						n = G.UIT.C,
+						config = { minh = 1, minw = 4, align = 'cr', padding = 0.1, colour = G.C.BLACK, r = 0.1 },
+						nodes = {
+							{
+								n = G.UIT.R,
+								config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
+								nodes = {
+									{ n = G.UIT.T, config = { text = "ACTIVE ABILITIES", scale = 0.6, colour = G.C.EDITION, align = 'm' } }
+								}
+							},
+							{
+								n = G.UIT.R,
+								config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
+								nodes = {
+									{ n = G.UIT.T, config = { text = "LVL 5: Seraph will now score chips per scored cards.", scale = 0.3, colour = G.C.GREEN, align = 'm' } }
+								}
+							},
+							{
+								n = G.UIT.R,
+								config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
+								nodes = {
+									{ n = G.UIT.T, config = { text = "LVL 10: Seraph's 1 in 3 chance is guaranteed.", scale = 0.3, colour = G.C.GREEN, align = 'm' } }
+								}
+							},
+							{
+								n = G.UIT.R,
+								config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
+								nodes = {
+									{ n = G.UIT.T, config = { text = "Seraph will no longer have a chance to self-destruct beyond Ante 8.", scale = 0.3, colour = G.C.GREEN, align = 'm' } }
+								}
+							},
+							{
+								n = G.UIT.R,
+								config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
+								nodes = {
+									{ n = G.UIT.T, config = { text = "LV 100: XChips are applied per scored card.", scale = 0.3, colour = G.C.GREEN, align = 'm' } }
+								}
+							},
+							{
+								n = G.UIT.R,
+								config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
+								nodes = {
+									{ n = G.UIT.T, config = { text = "Everything beyond this requires Unbalanced Mode or higher!", scale = 0.4, colour = G.C.FILTER, align = 'm' } }
+								}
+							},
+							{
+								n = G.UIT.R,
+								config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
+								nodes = {
+									{ n = G.UIT.T, config = { text = "LV 400: EMult is applied per scored card.", scale = 0.3, colour = G.C.FILTER, align = 'm' } }
+								}
+							},
+							{
+								n = G.UIT.R,
+								config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
+								nodes = {
+									{ n = G.UIT.T, config = { text = "LV 1,000: EEMult is applied per scored card.", scale = 0.3, colour = G.C.FILTER, align = 'm' } }
+								}
+							},
+							{
+								n = G.UIT.R,
+								config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
+								nodes = {
+									{ n = G.UIT.T, config = { text = "If you're craving for more insanity... Absurd Mode is for YOU!", scale = 0.4, colour = G.C.DARK_EDITION, align = 'm' } }
+								}
+							},
+							{
+								n = G.UIT.R,
+								config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
+								nodes = {
+									{ n = G.UIT.T, config = { text = "LV: 10,000: EEEMult is applied per scored card.", scale = 0.3, colour = G.C.DARK_EDITION, align = 'm' } }
+								}
+							},
+							{
+								n = G.UIT.R,
+								config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
+								nodes = {
+									{ n = G.UIT.T, config = { text = "LV: 100,000: Hypermult and Hyperchips are applied per scored card.", scale = 0.3, colour = G.C.DARK_EDITION, align = 'm' } }
+								}
+							},
+							{
+								n = G.UIT.R,
+								config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
+								nodes = {
+									{ n = G.UIT.T, config = { text = "LV: 1,000,000: Hyperoperator scales on level up.", scale = 0.3, colour = G.C.DARK_EDITION, align = 'm' } }
+								}
+							},
+							{
+								n = G.UIT.R,
+								config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
+								nodes = {
+									{ n = G.UIT.T, config = { text = "LV: 1,000,000,000: cavenfish", scale = 0.25, colour = G.C.DARK_EDITION, align = 'm' } }
+								}
+							},
+						}
+					}
+				}
+			}
+		}
+	})
+	return sph
 end
