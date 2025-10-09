@@ -15,9 +15,15 @@ local ocstobal_all_origins = {
 }
 
 local originquestion = {
-    'Origin? ',
+    'ORIGIN ',
     'Origin ',
-    ' '
+    'OriGIN ',
+    'oRIGIN ',
+    'OrIgIn ',
+    'OriGIn ',
+    'orIGIN ',
+    'oRiGIn ',
+    'oRigiN '
 }
 
 local operators = {
@@ -189,7 +195,7 @@ SMODS.Joker { --Seraph
             'j_ocstobal_seraph')
         return {
             main_end = {
-                { n = G.UIT.O, config = { object = DynaText({ string = originquestion, colours = { G.C.DARK_EDITION }, pop_in_rate = 999999, silent = true, random_element = true, pop_delay = 0.1, scale = 0.32, min_cycle_time = 0 }) } },
+                { n = G.UIT.O, config = { object = DynaText({ string = originquestion, colours = { G.C.DARK_EDITION }, pop_in_rate = 999999, silent = true, random_element = true, pop_delay = 0.2, scale = 0.32, min_cycle_time = 0 }) } },
                 { n = G.UIT.O, config = { object = DynaText({ string = operators, colours = { G.C.DARK_EDITION }, pop_in_rate = 999999, silent = true, random_element = true, pop_delay = 1, scale = 0.32, min_cycle_time = 0 }) } },
                 { n = G.UIT.O, config = { object = DynaText({ string = ocstobal_all_origins, colours = { G.C.DARK_EDITION }, pop_in_rate = 9999999, silent = true, random_element = true, pop_delay = 0.25, scale = 0.32, min_cycle_time = 0 }) } },
             },

@@ -588,148 +588,171 @@ end
 
 function sphlvls(buttonname)
 	local sph = create_UIBox_generic_options({
-		back_delay = 1,
+		back_delay = 0.1,
 		back_label = buttonname,
 		back_colour = G.C.DARK_EDITION,
 		padding = 0.1,
 		contents = {
 			{
-				n = G.UIT.C,
-				config = { minh = 8, minw = 14, align = 'tm', padding = 0.1, colour = G.C.CLEAR, r = 0.1 },
+				n = G.UIT.R,
+				config = { minh = 1, minw = 18, align = 'cm', padding = 0.2, colour = G.C.CLEAR, r = 0.1 },
 				nodes = {
 					{
 						n = G.UIT.C,
-						config = { minh = 8, minw = 5, align = 'tm', padding = 0.1, colour = G.C.BLACK, r = 0.1 },
+						config = { minw = 8, align = 'cm', padding = 0.175, colour = G.C.BLACK, r = 0.1 },
 						nodes = {
 							{
 								n = G.UIT.R,
-								config = { align = 'l', padding = 0.1, colour = G.C.CLEAR },
+								config = { align = 'cm', padding = 0, colour = G.C.CLEAR, minw = 8 },
 								nodes = {
+									{ n = G.UIT.T, config = { text = "Seraph's Levelling System", scale = 0.6, colour = G.C.EDITION, align = 'cl', vert = true } },
 									{
 										n = G.UIT.R,
-										config = { align = 'm', padding = 0.2, colour = G.C.CLEAR },
+										config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 										nodes = {
-											{ n = G.UIT.T, config = { text = "Seraph's Levelling System", scale = 0.7, colour = G.C.EDITION, align = 'l', vert = true } },
-											{
-												n = G.UIT.R,
-												config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
-												nodes = {
-													{ n = G.UIT.T, config = { text = "The most SCUFFED system in it's code!", scale = 0.4, colour = G.C.UI.TEXT_INACTIVE, align = 'm' } }
-												}
-											},
-											{
-												n = G.UIT.R,
-												config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
-												nodes = {
-													{ n = G.UIT.T, config = { text = "When Seraph is triggered, Seraph will gain XP.", scale = 0.4, colour = G.C.WHITE, align = 'm' } }
-												}
-											},
-											{
-												n = G.UIT.R,
-												config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
-												nodes = {
-													{ n = G.UIT.T, config = { text = "At 10 XP, Seraph will \"Level Up\", making him ever so stronger.", scale = 0.4, colour = G.C.WHITE, align = 'm' } }
-												}
-											},
-											{
-												n = G.UIT.R,
-												config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
-												nodes = {
-													{ n = G.UIT.T, config = { text = "Some Abilities are unlocked at certain levels...", scale = 0.5, colour = G.C.DARK_EDITION, align = 'm' } }
-												}
-											},
+											{ n = G.UIT.T, config = { text = "The most SCUFFED system in it's code!", scale = 0.4, colour = G.C.UI.TEXT_INACTIVE, align = 'cm' } }
 										}
 									},
-								}
+									{
+										n = G.UIT.R,
+										config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
+										nodes = {
+											{ n = G.UIT.T, config = { text = "When Seraph is triggered, Seraph will gain XP.", scale = 0.4, colour = G.C.WHITE, align = 'cm' } }
+										}
+									},
+									{
+										n = G.UIT.R,
+										config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
+										nodes = {
+											{ n = G.UIT.T, config = { text = "At 10 XP, Seraph will \"Level Up\",", scale = 0.4, colour = G.C.WHITE, align = 'cm' } }
+										}
+									},
+									{
+										n = G.UIT.R,
+										config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
+										nodes = {
+											{ n = G.UIT.T, config = { text = "making him stronger.", scale = 0.4, colour = G.C.RED, align = 'cm' } }
+										}
+									},
+									{
+										n = G.UIT.R,
+										config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
+										nodes = {
+											{ n = G.UIT.T, config = { text = "Some Abilities are unlocked at certain levels.", scale = 0.4, colour = G.C.DARK_EDITION, align = 'cm' } }
+										}
+									},
+									{
+										n = G.UIT.R,
+										config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
+										nodes = {
+											{ n = G.UIT.T, config = { text = "And, Seraph's Sprite will change...", scale = 0.4, colour = G.C.DARK_EDITION, align = 'cm' } }
+										}
+									},
+									{
+										n = G.UIT.R,
+										config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
+										nodes = {
+											{ n = G.UIT.T, config = { text = "depending on his level!", scale = 0.4, colour = G.C.DARK_EDITION, align = 'cm' } }
+										}
+									},
+									-- { n = G.UIT.O, config = { object = Card({ card = 'j_ocstobal_seraph' }), align = 'cm', hover = true}}
+								},
 							},
 						}
 					},
 					{
 						n = G.UIT.C,
-						config = { minh = 8, minw = 7, align = 'r', padding = 0.1, colour = G.C.BLACK, r = 0.1 },
+						config = { minh = 1, minw = 4, align = 'cr', padding = 0.1, colour = G.C.BLACK, r = 0.1 },
 						nodes = {
 							{
 								n = G.UIT.R,
-								config = { align = 'm', padding = 0.3, colour = G.C.CLEAR },
+								config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 								nodes = {
-									{ n = G.UIT.T, config = { text = "LVL 5: Seraph will now score chips per scored cards.", scale = 0.25, colour = G.C.GREEN, align = 'm' } }
+									{ n = G.UIT.T, config = { text = "ACTIVE ABILITIES", scale = 0.6, colour = G.C.EDITION, align = 'm' } }
 								}
 							},
 							{
 								n = G.UIT.R,
 								config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 								nodes = {
-									{ n = G.UIT.T, config = { text = "LVL 10: Seraph's 1 in 3 chance is guaranteed.", scale = 0.25, colour = G.C.GREEN, align = 'm' } }
+									{ n = G.UIT.T, config = { text = "LVL 5: Seraph will now score chips per scored cards.", scale = 0.3, colour = G.C.GREEN, align = 'm' } }
 								}
 							},
 							{
 								n = G.UIT.R,
 								config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 								nodes = {
-									{ n = G.UIT.T, config = { text = "Seraph will no longer have a chance to self-destruct beyond Ante 8.", scale = 0.25, colour = G.C.GREEN, align = 'm' } }
+									{ n = G.UIT.T, config = { text = "LVL 10: Seraph's 1 in 3 chance is guaranteed.", scale = 0.3, colour = G.C.GREEN, align = 'm' } }
 								}
 							},
 							{
 								n = G.UIT.R,
 								config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 								nodes = {
-									{ n = G.UIT.T, config = { text = "LV 100: XChips are applied per scored card.", scale = 0.25, colour = G.C.GREEN, align = 'm' } }
+									{ n = G.UIT.T, config = { text = "Seraph will no longer have a chance to self-destruct beyond Ante 8.", scale = 0.3, colour = G.C.GREEN, align = 'm' } }
 								}
 							},
 							{
 								n = G.UIT.R,
 								config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 								nodes = {
-									{ n = G.UIT.T, config = { text = "Everything beyond this requires Unbalanced Mode or higher!", scale = 0.35, colour = G.C.FILTER, align = 'm' } }
+									{ n = G.UIT.T, config = { text = "LV 100: XChips are applied per scored card.", scale = 0.3, colour = G.C.GREEN, align = 'm' } }
 								}
 							},
 							{
 								n = G.UIT.R,
 								config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 								nodes = {
-									{ n = G.UIT.T, config = { text = "LV 400: EMult is applied per scored card.", scale = 0.25, colour = G.C.FILTER, align = 'm' } }
+									{ n = G.UIT.T, config = { text = "Everything beyond this requires Unbalanced Mode or higher!", scale = 0.4, colour = G.C.FILTER, align = 'm' } }
 								}
 							},
 							{
 								n = G.UIT.R,
 								config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 								nodes = {
-									{ n = G.UIT.T, config = { text = "LV 1,000: EEMult is applied per scored card.", scale = 0.25, colour = G.C.FILTER, align = 'm' } }
+									{ n = G.UIT.T, config = { text = "LV 400: EMult is applied per scored card.", scale = 0.3, colour = G.C.FILTER, align = 'm' } }
 								}
 							},
 							{
 								n = G.UIT.R,
 								config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 								nodes = {
-									{ n = G.UIT.T, config = { text = "If you're craving for more insanity... Absurd Mode is for YOU!", scale = 0.35, colour = G.C.DARK_EDITION, align = 'm' } }
+									{ n = G.UIT.T, config = { text = "LV 1,000: EEMult is applied per scored card.", scale = 0.3, colour = G.C.FILTER, align = 'm' } }
 								}
 							},
 							{
 								n = G.UIT.R,
 								config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 								nodes = {
-									{ n = G.UIT.T, config = { text = "LV: 10,000: EEEMult is applied per scored card.", scale = 0.25, colour = G.C.DARK_EDITION, align = 'm' } }
+									{ n = G.UIT.T, config = { text = "If you're craving for more insanity... Absurd Mode is for YOU!", scale = 0.4, colour = G.C.DARK_EDITION, align = 'm' } }
 								}
 							},
 							{
 								n = G.UIT.R,
 								config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 								nodes = {
-									{ n = G.UIT.T, config = { text = "LV: 100,000: Hypermult and Hyperchips are applied per scored card.", scale = 0.25, colour = G.C.DARK_EDITION, align = 'm' } }
+									{ n = G.UIT.T, config = { text = "LV: 10,000: EEEMult is applied per scored card.", scale = 0.3, colour = G.C.DARK_EDITION, align = 'm' } }
 								}
 							},
 							{
 								n = G.UIT.R,
 								config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 								nodes = {
-									{ n = G.UIT.T, config = { text = "LV: 1,000,000: Hyperoperator scales on level up.", scale = 0.25, colour = G.C.DARK_EDITION, align = 'm' } }
+									{ n = G.UIT.T, config = { text = "LV: 100,000: Hypermult and Hyperchips are applied per scored card.", scale = 0.3, colour = G.C.DARK_EDITION, align = 'm' } }
 								}
 							},
 							{
 								n = G.UIT.R,
 								config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 								nodes = {
-									{ n = G.UIT.T, config = { text = "LV: 1,000,000,000: gros michel", scale = 0.25, colour = G.C.DARK_EDITION, align = 'm' } }
+									{ n = G.UIT.T, config = { text = "LV: 1,000,000: Hyperoperator scales on level up.", scale = 0.3, colour = G.C.DARK_EDITION, align = 'm' } }
+								}
+							},
+							{
+								n = G.UIT.R,
+								config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
+								nodes = {
+									{ n = G.UIT.T, config = { text = "LV: 1,000,000,000: cavenfish", scale = 0.25, colour = G.C.DARK_EDITION, align = 'm' } }
 								}
 							},
 						}

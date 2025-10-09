@@ -220,7 +220,8 @@ return {
 				text = {
 					"All jokers are debuffed.",
 					"Blind Requirement is modified by",
-					"(log(x)*x) / x^0.5"
+					"(log(x)*x) / x^0.5",
+					"upon playing a hand."
 				}
 			},
 			bl_ocstobal_UNSHY = {
