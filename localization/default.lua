@@ -82,7 +82,8 @@ return {
 				name = "Trasncended Deck",
 				text = {
 					'Start off with a random',
-					'{C:ocstobal_sewh}Terminus{} Joker.'
+					'{C:ocstobal_sewh}Terminus{} Joker.',
+					'{C:attention}Win Ante{} is Ante {C:attention}16{}'
 				},
 				unlock = {
 					'Defeat the {C:ocstobal_ust}Omega Boss Rush{}',
@@ -830,9 +831,11 @@ return {
 				}
 			},
 			j_ocstobal_sphawk = {
-				name = 'The Eternal Void, Seraph',
+				name = '{C:dark_edition}The Eternal Void{}, Seraph',
 				text = {
-					'teto pear'
+					'{X:dark_edition}(#1#)#2#{} Hypermult,',
+					'{C:dark_edition}Hyperoperator{} increases at {C:red}1024{} Mult.',
+					'{C:dark_edition}Hyperoperator{} Requirement is {C:attention}doubled{} on increase.'
 				}
 			},
 			j_ocstobal_solawkclassic = {
@@ -847,7 +850,8 @@ return {
 				name = 'The {C:ocstobal_ust}Multiversal Threat{}, Solinium',
 				text = {
 					'{X:dark_edition,C:white}^^^^#1#{} Mult,',
-					'Mult is {C:red}multiplied{} by itself.'
+					'Mult is {C:attention}multiplied{} by {C:attention}X2{}.',
+					'Stops scaling at 1e300.'
 				}
 			},
 			j_ocstobal_spkawkclassic = {
@@ -858,9 +862,11 @@ return {
 				}
 			},
 			j_ocstobal_spkawk = {
-				name = 'The Master of Variation, Sparky',
+				name = 'Sparky, {C:ocstobal_legendplus}Shifting Soul{}',
 				text = {
-					'teto pear'
+					'Gives {C:attention}2 to 10{}',
+					'{C:dark_edition}Hypermult{} and {C:dark_edition}Hyperchips{}',
+					'{C:dark_edition}Hyperoperator{} is also random from 2-5.'
 				}
 			},
 			j_ocstobal_oxyold = {
@@ -1060,6 +1066,13 @@ return {
 					"Copies {C:attention}3 jokers{} from",
 					"the left and right of this \"joker\"."
 				}
+			},
+			j_ocstobal_patience = {
+				name = "1.",
+				text = {
+					'#1#',
+					'{C:inactive,s:0.5}Gains +1 Chip every frame.{}'
+				}
 			}
 		},
 		Other = {
@@ -1124,7 +1137,8 @@ return {
 				name = "The Final Stake",
 				text = {
 					'{C:ocstobal_legendplus}Showdown blinds{} appear every {C:red}4 Antes{}',
-					'{C:dark_edition}Win Requirement{} is {C:attention}Ante 12{}',
+					'{C:dark_edition}Win Requirement{} is {C:attention}multiplied by X1.5{}',
+					'{C:inactive,s:0.7}(Ante is rounded up){}',
 					'Previous stakes effects are {C:attention}Amplified{}',
 					'{s:0.7,C:inactive}Except Blue Stake because it\'s god fucking awful,{}',
 					'{s:0.7,C:inactive}Start off with 6 discards instead, and +2 hands.{}',
