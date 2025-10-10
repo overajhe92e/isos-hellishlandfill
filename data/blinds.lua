@@ -244,7 +244,7 @@ SMODS.Sound {
 	select_music_track = function()
 		if G.GAME.blind and not G.GAME.blind.disabled and G.GAME.blind.name == 'recluseblind' then
 			if G.GAME.omegarush == nil then
-				return false
+				return true
 			elseif G.GAME.omegarush < 1 then
 				return true
 			end

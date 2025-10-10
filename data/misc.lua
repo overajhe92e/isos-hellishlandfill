@@ -442,6 +442,14 @@ SMODS.Atlas {
 	atlas_table = 'ASSET_ATLAS'
 }
 
+SMODS.Atlas {
+	key = 'terminuses',
+	px = 71,
+	py = 95,
+	path = 'terminusjokers.png',
+	atlas_table = 'ASSET_ATLAS'
+}
+
 -- SMODS.Atlas {
 -- 	key = 'tempjtetration',
 -- 	px = 71,
@@ -789,5 +797,18 @@ G.P_CENTERS.e_negative.get_weight = function(self)
 		weight = weight * (31.24 + 112.242) * 10 -- DOOMED COUPLE RAHHHHHHHHHHH
 	end
 	return weight
+end
+
+if G.GAME then
+	local nodisable = G.GAME.Blind:disable()
+	function G.GAME.Blind:disable()
+		local ret = nodisable
+		if G.omegarush == nil then
+			return true
+		elseif G.omegarush == 1 then
+			return false
+		end
+		return ret
+	end
 end
 --yeah.

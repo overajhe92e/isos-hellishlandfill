@@ -180,23 +180,55 @@ SMODS.Joker { --right before getting aio joker
 
 SMODS.Joker { --unobtainable as of now
     key = 'sphawk',
-    rarity = 'ocstobal_whatthefuck',
+    rarity = 'ocstobal_beyondexotic',
     cost = 666666,
-    no_collection = true
-
+    atlas = 'terminuses',
+    pos = {x=2,y=0},
+    soul_pos = {
+        x=3,y=0
+    },
 
 }
 
-SMODS.Joker { --unused as of now
+SMODS.Joker { --oh no
     key = 'solawk',
-    rarity = 'ocstobal_whatthefuck',
+    rarity = 'ocstobal_beyondexotic',
+    config = {
+        extra = {
+            hypmult = 4
+        }
+    },
     cost = 666666,
-    no_collection = true
+    atlas = 'terminuses',
+    pos = {x=0,y=0},
+    soul_pos = {
+        x=1,y=0
+    },
+
+    loc_vars = function(self,info_queue,card)
+        return { vars = {card.ability.extra.hypmult}}
+    end,
+    
+    calculate = function(self,card,context)
+        if context.setting_blind and card.ability.extra.hypmult < 1e300 then
+            card:juice_up()
+            card.ability.extra.hypmult = lenient_bignum(card.ability.extra.hypmult) * 2
+        end
+        if context.joker_main then
+            return {
+                hypermult = {4,lenient_bignum(card.ability.extra.hypmult)}
+            }
+        end
+    end
 }
 
 SMODS.Joker { --unused as of now
     key = 'spkawk',
-    rarity = 'ocstobal_whatthefuck',
+    rarity = 'ocstobal_beyondexotic',
     cost = 666666,
-    no_collection = true
+    atlas = 'terminuses',
+    pos = {x=0,y=1},
+    soul_pos = {
+        x=1,y=1
+    },
 }

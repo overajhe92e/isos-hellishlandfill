@@ -136,6 +136,7 @@ SMODS.Back {
 					set = 'Joker',
 					rarity = 'ocstobal_beyondexotic',
 				}
+				G.GAME.win_ante = 16
 				return true
 			end
 		}))
