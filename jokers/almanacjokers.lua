@@ -198,5 +198,12 @@ SMODS.Joker { --unused as of now
     key = 'spkawk',
     rarity = 'ocstobal_whatthefuck',
     cost = 666666,
-    no_collection = true
+    calculate = function(self,card,context)
+        if context.joker_main then
+            return {
+                hypermult = {pseudorandom("spkhypmultop",2,5),pseudorandom("spkhypchip",2,10)},
+                hyperchips = {pseudorandom("spkhypchipop",2,5),pseudorandom("spkhypchip",2,10)}
+            }
+        end
+    end
 }
