@@ -1,48 +1,48 @@
 SMODS.Atlas({
-    key = "modicon", 
-    path = "ModIcon.png", 
+    key = "modicon",
+    path = "ModIcon.png",
     px = 34,
     py = 34,
     atlas_table = "ASSET_ATLAS"
 })
 
 SMODS.Atlas({
-    key = "CustomJokers", 
-    path = "CustomJokers.png", 
+    key = "CustomJokers",
+    path = "CustomJokers.png",
     px = 71,
-    py = 95, 
+    py = 95,
     atlas_table = "ASSET_ATLAS"
 })
 
 SMODS.Atlas({
-    key = "CustomConsumables", 
-    path = "CustomConsumables.png", 
+    key = "CustomConsumables",
+    path = "CustomConsumables.png",
     px = 71,
-    py = 95, 
+    py = 95,
     atlas_table = "ASSET_ATLAS"
 })
 
 SMODS.Atlas({
-    key = "CustomBoosters", 
-    path = "CustomBoosters.png", 
+    key = "CustomBoosters",
+    path = "CustomBoosters.png",
     px = 71,
-    py = 95, 
+    py = 95,
     atlas_table = "ASSET_ATLAS"
 })
 
 SMODS.Atlas({
-    key = "CustomEnhancements", 
-    path = "CustomEnhancements.png", 
+    key = "CustomEnhancements",
+    path = "CustomEnhancements.png",
     px = 71,
-    py = 95, 
+    py = 95,
     atlas_table = "ASSET_ATLAS"
 })
 
 SMODS.Atlas({
-    key = "CustomSeals", 
-    path = "CustomSeals.png", 
+    key = "CustomSeals",
+    path = "CustomSeals.png",
     px = 71,
-    py = 95, 
+    py = 95,
     atlas_table = "ASSET_ATLAS"
 })
 
@@ -72,8 +72,10 @@ SMODS.Atlas({
 -- end
 
 local NFS = require("nativefs")
-to_big = to_big or function(a) return a end
-lenient_bignum = lenient_bignum or function(a) return a end
+if not next(SMODS.find_mod("Talisman")) then
+    to_big = to_big or function(a) return a end
+    lenient_bignum = lenient_bignum or function(a) return a end
+end
 
 local function load_jokers_folder()
     local mod_path = SMODS.current_mod.path
@@ -128,8 +130,8 @@ load_enhancements_folder()
 load_seals_folder()
 
 local function grah()
-	local mod_path = SMODS.current_mod.path
-	assert(SMODS.load_file("data/misc.lua"))()
+    local mod_path = SMODS.current_mod.path
+    assert(SMODS.load_file("data/misc.lua"))()
     assert(SMODS.load_file("evilandintimidatingui.lua"))()
 end
 

@@ -299,6 +299,24 @@ return {
 					'{s:0.8,C:dark_edition}Character by Isotypical{}'
 				},
 			},
+			j_ocstobal_fakeseraph = {
+				name = "Seraph",
+				text = {
+					{
+						'{C:green}1 in 2{} chance to apply {X:red,C:white}2{} Mult',
+						'for every scored card.',
+						'On Ante 8 and beyond, {C:green}1 in 15{} chance to replace self.',
+						'{C:inactive}(Unless Disabled by LV 11 Ability){}',
+						'{C:blue,s:0.9}"It\'s so fun messing with Sparky..."{}',
+						'{C:dark_edition,s:1.2}XP: 0 / 10{}',
+						'{C:dark_edition,s:1.2}LVL: 0{}',
+					},
+					{
+						'{C:dark_edition,E:1,s:1.2}Current Stats{}',
+						'{X:red,C:white}X2{} Mult, {C:blue}+50{} Chips',
+					}
+				}
+			},
 			j_ocstobal_seraph = {
 				name = "Seraph",
 				text = {

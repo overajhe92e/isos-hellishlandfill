@@ -231,4 +231,12 @@ SMODS.Joker { --unused as of now
     soul_pos = {
         x=1,y=1
     },
+    calculate = function(self,card,context)
+        if context.joker_main then
+            return {
+                hypermult = {pseudorandom("spkhypmultop",2,5),pseudorandom("spkhypchip",2,10)},
+                hyperchips = {pseudorandom("spkhypchipop",2,5),pseudorandom("spkhypchip",2,10)}
+            }
+        end
+    end
 }
