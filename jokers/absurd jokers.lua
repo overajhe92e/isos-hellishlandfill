@@ -178,15 +178,15 @@ SMODS.Joker { --right before getting aio joker
     end
 }
 
-SMODS.Joker { --unobtainable as of now
+SMODS.Joker { --terminus go brr
     key = 'sphawk',
     rarity = 'ocstobal_beyondexotic',
-    cost = 666666,
+    cost = 50000,
     config = {
         extra = {
-            hypmult = 2,
+            mult = 2,
             req = 1024,
-            op = 4
+            op = 2
         }
     },
     atlas = 'terminuses',
@@ -195,25 +195,29 @@ SMODS.Joker { --unobtainable as of now
         x = 3, y = 0
     },
 
-    loc_vars = function(self, card, info_queue)
-        return { vars = { card.ability.extra.hypmult, card.ability.extra.req, card.ability.extra.op } }
+    loc_vars = function(self, info_queue, card)
+        return {
+            vars = {
+                card.ability.extra.mult, card.ability.extra.req, card.ability.extra.op
+            }
+        }
     end,
 
     update = function(self, card, dt)
-        if card.ability.extra.hypmult >= card.ability.extra.req then
+        if card.ability.extra.mult >= card.ability.extra.req then
             card.ability.extra.op = card.ability.extra.op + 1
-            card.ability.extra.hypmult = 2
+            card.ability.extra.mult = 2
             card.ability.extra.req = card.ability.extra.req * 2
         end
     end,
 
     calculate = function(self, card, context)
-        if context.setting_blind and card.ability.extra.hypmult < card.ability.extra.hypmultreq then
-            card.ability.extra.hypmult = card.ability.extra.hypmult * 2
+        if context.individual and context.cardarea == G.play and card.ability.extra.mult < card.ability.extra.req then
+            card.ability.extra.mult = card.ability.extra.mult * 2
         end
-        if context.joker_main then
+        if context.individual and context.cardarea == G.play then
             return {
-                hypermult = { card.ability.extra.operator, card.ability.extra.hypmult }
+                hypermult = { card.ability.extra.op, card.ability.extra.mult }
             }
         end
     end
@@ -227,7 +231,7 @@ SMODS.Joker { --oh no
             hypmult = 4
         }
     },
-    cost = 666666,
+    cost = 20000,
     atlas = 'terminuses',
     pos = { x = 0, y = 0 },
     soul_pos = {
@@ -242,6 +246,9 @@ SMODS.Joker { --oh no
         if context.setting_blind and card.ability.extra.hypmult < 1e300 then
             card:juice_up()
             card.ability.extra.hypmult = lenient_bignum(card.ability.extra.hypmult) * 2
+            return {
+                message = 'Scaled!'
+            }
         end
         if context.joker_main then
             return {
@@ -254,7 +261,7 @@ SMODS.Joker { --oh no
 SMODS.Joker { --unused as of now
     key = 'spkawk',
     rarity = 'ocstobal_beyondexotic',
-    cost = 666666,
+    cost = 12500,
     atlas = 'terminuses',
     pos = { x = 0, y = 1 },
     soul_pos = {

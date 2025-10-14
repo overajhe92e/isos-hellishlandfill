@@ -49,19 +49,18 @@ vec4 effect( vec4 colour, Image texture, vec2 texture_coords, vec2 screen_coords
     number fac2 = 0.5 + 0.5*sin(8.*uv.x+2.32*uv.y + hate.r*5. - cos(hate.r*2.3 + uv.x*8.2));
     number fac3 = 0.5 + 0.5*sin(10.*uv.x+5.32*uv.y + hate.r*6.111 + sin(hate.r*5.3 + uv.y*3.2));
     number fac4 = 0.5 + 0.5*sin(3.*uv.x+2.32*uv.y + hate.r*8.111 + sin(hate.r*1.3 + uv.y*11.2));
-    number fac5 = sin(0.9*16.*uv.x+5.32*uv.y + hate.r*12. + cos(hate.r*5.3 + uv.y*4.2 - uv.x*4.));
+    number fac5 = sin(0.6*16.*uv.x+5.32*uv.y + hate.r*12. + cos(hate.r*5.3 + uv.y*4.2 - uv.x*4.));
 
     number maxfac = 0.7*max(max(fac, max(fac2, max(fac3,0.0))) + (fac+fac2+fac3*fac4), 0.);
 
     // normally this would have both a tex.b and tex.r for this segement but
     // it made the card look rainbow
-    tex.g = tex.g-delta + delta*maxfac*(0.3 - fac5*0.4) - 0.1;
 
-    // make the red channel really bright and **SLIGHTLY** dependant on the rotation of the card
-    tex.r = tex.r*-0.3 + (0.025*hate.y);
-    // reduce the green channel and **SLIGHTLY** dependant on the rotation of the card
-    tex.g = tex.g*-0.5 + (0.005*hate.x);
-    // greatly reduce the blue channel
+    tex.r = tex.r-delta + delta*maxfac*(1.2 - fac*0.1) - 0.1;
+    tex.g = tex.g-delta + delta*maxfac*(0.3 - fac5*0.1) - 0.1;
+
+    tex.r = tex.r*-1 + (0.001*hate.y);
+    tex.g = tex.g*-0.5 + (0.025*hate.x);
     tex.b = tex.b*-0.5 + (0.002*hate.x);
 
     // required
