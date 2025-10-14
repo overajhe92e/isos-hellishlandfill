@@ -1091,6 +1091,27 @@ return {
 					'#1#',
 					'{C:inactive,s:0.5}Gains +1 Chip every frame.{}'
 				}
+			},
+			j_ocstobal_parappa = {
+				name = "Parappa",
+				text = {
+					'Gains {X:red,C:white}X1{} for',
+					'every {C:attention}Parappa The Rapper{} Joker'
+				}
+			},
+			j_ocstobal_beardburger = {
+				name = "Beard Burger Master",
+				text = {
+					"Player 2 has some rhythmic talent."
+				}
+			},
+			j_ocstobal_chinese = {
+				name = "Chinese",
+				text = {
+					"Every time {C:attention}Ramen{}",
+					"loses Mult, this joker",
+					"gains {X:red,C:White}X0.1{} Mult"
+				}
 			}
 		},
 		Other = {

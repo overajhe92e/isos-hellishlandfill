@@ -1,0 +1,28 @@
+[manifest]
+version = "0.0.1"
+dump_lua = true
+priority = 1000
+
+[[patches]]
+[patches.pattern]
+target = "globals.lua"
+pattern = "DARK_EDITION = {0,0,0,1},"
+position = "after"
+payload = """
+OMEGABLACK = HEX("000000"),
+OMEGARED = HEX("ff0000"),
+OMEGAWHITE = HEX("ffffff"),
+"""
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "functions/misc_functions.lua"
+pattern = "dark_edition = G.C.DARK_EDITION,"
+position = "after"
+payload = """
+ocstobal_omegablack = G.C.OMEGARED,
+ocstobal_omegared = G.C.OMEGARED,
+ocstobal_omegawhite = G.C.OMEGAWHITE,
+"""
+match_indent = true

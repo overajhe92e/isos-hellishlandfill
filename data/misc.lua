@@ -419,6 +419,15 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
+	key = 'UNSHY',
+	px = 34,
+	py = 34,
+	path = 'corruptspkblind.png',
+	atlas_table = 'ANIMATION_ATLAS',
+	frames = 36
+}
+
+SMODS.Atlas {
 	key = 'spkawk_classic',
 	px = 71,
 	py = 95,
@@ -542,6 +551,8 @@ SMODS.Sound {
 -- 		return (G.GAME and G.GAME.ocstobal_ext == 50) and 0 or false
 -- 	end
 -- }
+
+--how the fuck do i check who made the extraordinary song now
 
 loc_colour()
 G.ARGS.LOC_COLOURS.ocstobal_eyeshatteringblue = HEX('3df5ff')
@@ -738,14 +749,18 @@ SMODS.Shader {
 	path = 'fluorescent.fs'
 }
 
-G.recluseblind = 0 --prevents crashes sometimes
-G.omegarush = 0    --prevents crashes sometimes
+-- G.recluseblind = 0 --prevents crashes sometimes
+-- G.omegarush = 0    --prevents crashes sometimes
 
-SMODS.current_mod.reset_game_globals = function(run_start)
-	if run_start then
-		G.omegarush = 0
-		G.recluseblind = 0
-	end
+-- SMODS.current_mod.reset_game_globals = function(run_start)
+-- 	if run_start then
+-- 		G.omegarush = 0
+-- 		G.recluseblind = 0
+-- 	end
+-- end
+
+if G.GAME then
+	G.GAME.omegarush = 0 --prevents crash
 end
 
 local check_for_buy_space_ref = G.FUNCS.check_for_buy_space
@@ -797,18 +812,5 @@ G.P_CENTERS.e_negative.get_weight = function(self)
 		weight = weight * (31.24 + 112.242) * 10 -- DOOMED COUPLE RAHHHHHHHHHHH
 	end
 	return weight
-end
-
-if G.GAME then
-	local nodisable = G.GAME.Blind:disable()
-	function G.GAME.Blind:disable()
-		local ret = nodisable
-		if G.omegarush == nil then
-			return true
-		elseif G.omegarush == 1 then
-			return false
-		end
-		return ret
-	end
 end
 --yeah.
