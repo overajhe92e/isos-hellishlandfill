@@ -54,6 +54,73 @@ function eeriestuff()
 	G.SETTINGS.GAMESPEED = 4
 end
 
+function noisomode(buttonname)
+	local t = create_UIBox_generic_options({
+		back_delay = 1,
+		back_label = buttonname,
+		back_colour = G.C.DARK_EDITION,
+		padding = 0.1,
+		contents = {
+			{
+				n = G.UIT.C,
+				config = { minh = 4, minw = 7, align = 'tm', padding = 0.1, colour = G.C.BLACK, r = 0.1 },
+				nodes = {
+					{
+						n = G.UIT.R,
+						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
+						nodes = {
+							{ n = G.UIT.T, config = { text = "Welcome!", scale = 0.8, colour = G.C.EDITION, align = 'm' } }
+						}
+					},
+					{
+						n = G.UIT.R,
+						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
+						nodes = {
+							{ n = G.UIT.T, config = { text = "This menu box will ONLY appear once.", scale = 0.5, colour = G.C.UI.TEXT_INACTIVE, align = 'm' } }
+						}
+					},
+					{
+						n = G.UIT.R,
+						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
+						nodes = {
+							{ n = G.UIT.T, config = { text = "Please select a mode to continue!", scale = 0.5, colour = G.C.WHITE, align = 'm' } }
+						}
+					},
+					{
+						n = G.UIT.R,
+						config = { minw = 1, minh = 1, align = "tm", padding = 0.1, colour = G.C.GREEN, button = "stable", r = 0.1 },
+						nodes = {
+							{ n = G.UIT.T, config = { text = "Normal Mode", colour = G.C.WHITE, scale = 0.6, align = "m" }, },
+						}
+					},
+					{
+						n = G.UIT.R,
+						config = { minw = 1, minh = 1, align = "tm", padding = 0.1, colour = G.C.FILTER, button = "unbalanced", r = 0.1 },
+						nodes = {
+							{ n = G.UIT.T, config = { text = "Unbalanced Mode", colour = G.C.WHITE, scale = 0.6, align = "m" }, },
+						}
+					},
+					{
+						n = G.UIT.R,
+						config = { minw = 1, minh = 1, align = "tm", padding = 0.1, colour = G.C.DARK_EDITION, button = "verybad", r = 0.1 },
+						nodes = {
+							{ n = G.UIT.T, config = { text = "Absurd Gameplay", colour = G.C.WHITE, scale = 0.6, align = "m" }, },
+						}
+					},
+					{
+						n = G.UIT.R,
+						config = { minh = 1, minw = 1, align = 'tm', padding = 0.05, colour = G.C.CLEAR },
+						nodes = {
+							{ n = G.UIT.T, config = { text = "Eh... Close enough. Welcome back Jen's Almanac.", colour = G.C.UI.TEXT_INACTIVE, scale = 0.35, align = "tm" }, }
+						}
+					},
+				}
+			}
+		}
+	})
+	return t
+end
+
 function absurdmenu(buttonname)
 	local absurd = create_UIBox_generic_options({
 		back_delay = 1,
