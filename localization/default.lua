@@ -851,9 +851,10 @@ return {
 			j_ocstobal_sphawk = {
 				name = '{C:dark_edition}The Eternal Void{}, Seraph',
 				text = {
-					'{X:dark_edition}(#1#)#2#{} Hypermult,',
+					'{X:dark_edition}(#3#)#1#{} Hypermult,',
 					'{C:dark_edition}Hyperoperator{} increases at {C:red}1024{} Mult.',
-					'{C:dark_edition}Hyperoperator{} Requirement is {C:attention}doubled{} on increase.'
+					'{C:dark_edition}Hyperoperator{} Requirement is {C:attention}doubled{} on increase.',
+					'{C:inactive}Requirement is currently #2#{}'
 				}
 			},
 			j_ocstobal_solawkclassic = {
