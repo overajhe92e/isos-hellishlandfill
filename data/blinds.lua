@@ -192,7 +192,7 @@ SMODS.Sound {
 	select_music_track = function()
 		if G.GAME.blind and not G.GAME.blind.disabled and G.GAME.blind.name == 'cringeasf' then
 			return true
-		elseif G.GAME.blind and not G.GAME.blind.disabled and G.GAME.blind.name == 'unstable' and G.omegarush < 1 then
+		elseif G.GAME.blind and not G.GAME.blind.disabled and G.GAME.blind.name == 'unstable' and G.GAME.omegarush < 1 then
 			return true
 		end
 	end
@@ -244,7 +244,7 @@ SMODS.Sound {
 	select_music_track = function()
 		if G.GAME.blind and not G.GAME.blind.disabled and G.GAME.blind.name == 'recluseblind' then
 			if G.GAME.omegarush == nil then
-				return false
+				return true
 			elseif G.GAME.omegarush < 1 then
 				return true
 			end
@@ -364,7 +364,7 @@ SMODS.Blind {
 	end,
 
 	defeat = function(self)
-		G.recluseblind = 1
+		G.GAME.recluseblind = 1
 		play_sound('ocstobal_ominous', 0.8, 1)
 	end
 }
@@ -437,7 +437,7 @@ SMODS.Blind {
 	end,
 
 	defeat = function(self)
-		G.recluseblind = 0
+		G.GAME.recluseblind = 0
 		G.solscare = 0
 		play_sound('ocstobal_ominouscancel', 1, 2)
 		recluseach()

@@ -22,7 +22,7 @@ SMODS.Joker { --what do you think
     soul_pos = {x=1,y=1},
 
     calculate = function(self,card,context)
-        if context.joker_main then
+        if context.joker_main and not next(SMODS.find_card("j_ocstobal_abbie")) then
             return {
                 mult = 11
             }
