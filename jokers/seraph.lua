@@ -180,8 +180,6 @@ SMODS.Joker { --Seraph
         end
         if next(SMODS.find_card("j_ocstobal_recluse")) then
             card:set_eternal(true)
-        else
-            card:set_eternal(false)
         end
     end,
 
@@ -386,7 +384,7 @@ SMODS.Joker {
         re = 1
     },
     no_collection = function(self, args)
-        return morelore()
+        return true
     end,
 
     loc_vars = function(self, info_queue, card)

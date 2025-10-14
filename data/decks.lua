@@ -33,13 +33,36 @@ SMODS.Back {
 	key = "aio",
 	pos = { x = 0, y = 0 },
 	atlas = "aioimg",
-	config = { joker_slot = 20, jokers = { 'j_ocstobal_sparkynt', 'j_ocstobal_sparky', 'j_ocstobal_seraph', 'j_ocstobal_solinium', 'j_ocstobal_brokenseraph', 'j_ocstobal_Oxy', 'j_ocstobal_recluse', 'j_ocstobal_tigersharksparky', 'j_ocstobal_shrimpo', 'j_ocstobal_ichor', 'j_ocstobal_crystal', 'j_ocstobal_eternaldagger', 'j_ocstobal_oxywaterdroplet', 'j_ocstobal_abbie', 'j_ocstobal_twistedshrimpo' }, ante_scaling = 100 },
+	config = { joker_slot = 20, chanced = 4 },
 	unlocked = false,
 	loc_vars = function(self, info_queue, back)
-		return { vars = { self.config.jokers[1], self.config.joker_slot, self.config.ante_scaling } }
+		return { vars = { self.config.joker_slot } }
 	end,
 	check_for_unlock = function(self, args)
 		return args.type == 'win_stake' and get_deck_win_stake() >= 10
+	end,
+	calculate = function(self, back, context)
+		if context.end_of_round and context.game_over == false and context.main_eval and context.beat_boss then
+			if SMODS.pseudorandom_probability(back, 'ocstobal_aio', 1, 4) then
+				local jokers = {}
+				for k, v in pairs(G.P_CENTERS.Joker) do
+					if v.mod and v.mod.id == 'ocstobalatro' then
+						table.insert(jokers, k)
+					end
+				end
+				local blehh = pseudorandom_element(jokers, 'luckfactor2')
+				SMODS.add_card { key = blehh }
+			else
+				card_eval_status_text(
+					G.jokers,
+					"jokers",
+					nil,
+					nil,
+					nil,
+					{ message = 'Nope!', colour = G.C.RARITY[3] }
+				)
+			end
+		end
 	end
 }
 
@@ -102,7 +125,7 @@ SMODS.Back {
 	-- 	end
 	-- end,
 	apply = function(self, back)
-		if pseudorandom("avaritiajumpscare", 1, 6) == 1 and G.current_isomode >= 2 then
+		if pseudorandom("avaritiajumpscare", 1, 6) == 1 and G.GAME.current_isomode >= 2 then
 			G.E_MANAGER:add_event(Event({
 				func = function()
 					SMODS.add_card { key = "j_ocstobal_jokertoendalljokers" }

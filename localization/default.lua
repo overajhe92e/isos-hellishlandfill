@@ -63,10 +63,10 @@ return {
 			b_ocstobal_aio = {
 				name = "Singularity of the Junkyard",
 				text = {
-					'{C:attention}You get EVERY{}',
-					'single joker in the mod.',
-					'{C:attention}+20{} Joker slots,',
-					'{C:ocstobal_finalrgb}Have fun!{}'
+					'Upon defeating a {C:attention}Boss Blind{},',
+					'{C:green}1 in 4{} chance to give a random',
+					'{C:attention}Isotypical\'s Junkyard{} Joker.',
+					'{C:inactive,s:0.8}( Bypasses Joker slots ){}'
 				},
 				unlock = {
 					'Defeat the {C:ocstobal_finalrgb}Final Stake.{}'
