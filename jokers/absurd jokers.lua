@@ -3,12 +3,12 @@ SMODS.Joker { -- baller
     rarity = 'ocstobal_whatthefuck',
     cost = 100,
     no_collection = true,
-    
-    calculate = function(self,card,context)
+
+    calculate = function(self, card, context)
         if context.joker_main then
             return {
-                hypermult = {4,4},
-                hyperchips = {4,4}
+                hypermult = { 4, 4 },
+                hyperchips = { 4, 4 }
             }
         end
     end
@@ -21,8 +21,8 @@ SMODS.Joker { --so you know polterwor
     atlas = 'avaritia',
     no_collection = true,
     soul_pos = {
-        x=1,
-        y=0,
+        x = 1,
+        y = 0,
         draw = function(card, scale_mod, rotate_mod)
             card.hover_tilt = card.hover_tilt * 1.5
             card.children.floating_sprite:draw_shader('polychrome', nil, card.ARGS.send_to_shader, nil,
@@ -30,9 +30,9 @@ SMODS.Joker { --so you know polterwor
             card.hover_tilt = card.hover_tilt / 1.5
         end
     },
-    pos = {x=0,y=0},
-    
-    calculate = function(self,card,context)
+    pos = { x = 0, y = 0 },
+
+    calculate = function(self, card, context)
         if context.joker_main then
             return {
                 chips = 999999999999,
@@ -40,13 +40,13 @@ SMODS.Joker { --so you know polterwor
                 echips = 9999999999,
                 eechips = 999999999,
                 eeechips = 99999999,
-                hyperchips = {10,9999999},
+                hyperchips = { 10, 9999999 },
                 mult = 999999999999,
                 xmult = 99999999999,
                 emult = 9999999999,
                 eemult = 999999999,
                 eeemult = 99999999,
-                hypermult = {10,9999999}
+                hypermult = { 10, 9999999 }
             }
         end
     end
@@ -57,15 +57,15 @@ SMODS.Joker { --don't use, please
     rarity = 'ocstobal_why',
     cost = 1e308,
     atlas = 'avaritia',
-    soul_pos = {x=1,y=0},
-    pos = {x=0,y=0},
+    soul_pos = { x = 1, y = 0 },
+    pos = { x = 0, y = 0 },
     no_collection = true,
-    
-    calculate = function(self,card,context)
+
+    calculate = function(self, card, context)
         if context.joker_main then
             return {
-                hypermult = {1e999,1e999},
-                hyperchips = {1e999,1e999}
+                hypermult = { 1e999, 1e999 },
+                hyperchips = { 1e999, 1e999 }
             }
         end
         if context.retrigger_joker_check and context.other_card then
@@ -78,7 +78,7 @@ SMODS.Joker { --also the second easiest as seraph is fucking ass at controlling 
     key = 'sphawkclassic',
     rarity = 'ocstobal_beyondexotic',
     cost = 12500,
-    calculate = function(self,card,context)
+    calculate = function(self, card, context)
         if context.joker_main then
             return {
                 echips = 666,
@@ -88,17 +88,17 @@ SMODS.Joker { --also the second easiest as seraph is fucking ass at controlling 
     end
 }
 
-SMODS.Joker { --this is the easiest of the trio (unbalanced badly) to make wtf 
+SMODS.Joker { --this is the easiest of the trio (unbalanced badly) to make wtf
     key = 'spkawkclassic',
     rarity = 'ocstobal_beyondexotic',
     cost = 10000,
     discovered = false,
     unlocked = false,
     atlas = 'spkawk_classic',
-    pos = {x=0,y=0},
-    soul_pos = {x=1,y=0},
+    pos = { x = 0, y = 0 },
+    soul_pos = { x = 1, y = 0 },
 
-    calculate = function(self,card,context)
+    calculate = function(self, card, context)
         if context.joker_main then
             return {
                 eeechips = 3,
@@ -112,15 +112,15 @@ SMODS.Joker { --oh my god two soul cards and a blackhole are you deranged
     key = 'solawkclassic',
     rarity = 'ocstobal_beyondexotic',
     cost = 999999,
-    
-    calculate = function(self,card,context)
+
+    calculate = function(self, card, context)
         if context.setting_blind then
             G.E_MANAGER:add_event(Event({
                 func = function()
-                    SMODS.add_card{ key = 'c_soul', edition = 'e_negative' }
-                    SMODS.add_card{ key = 'c_soul', edition = 'e_negative' }
-                    SMODS.add_card{ key = 'c_black_hole', edition = 'e_negative' }
-                    SMODS.add_card{ key = 'c_black_hole', edition = 'e_negative' }
+                    SMODS.add_card { key = 'c_soul', edition = 'e_negative' }
+                    SMODS.add_card { key = 'c_soul', edition = 'e_negative' }
+                    SMODS.add_card { key = 'c_black_hole', edition = 'e_negative' }
+                    SMODS.add_card { key = 'c_black_hole', edition = 'e_negative' }
                     return true
                 end
             }))
@@ -147,10 +147,10 @@ SMODS.Joker { --todo: implement every effect
     cost = 999999999,
     no_collection = true,
 
-    calculate = function(self,card,context)
+    calculate = function(self, card, context)
         if context.joker_main then
             return {
-                chips = to_big(10^10^10^10^10)
+                chips = to_big(10 ^ 10 ^ 10 ^ 10 ^ 10)
             }
         end
     end
@@ -161,17 +161,17 @@ SMODS.Joker { --right before getting aio joker
     rarity = 'ocstobal_whatthefuck',
     cost = 2000,
     atlas = 'CustomJokers',
-    pos = {x=9,y=1},
+    pos = { x = 9, y = 1 },
     soul_pos = {
-        x=0,y=2
+        x = 0, y = 2
     },
     blueprint_compat = true,
     no_collection = true,
-    
-    calculate = function(self,card,context)
+
+    calculate = function(self, card, context)
         if context.joker_main then
             return {
-                hypermult = {4,2},
+                hypermult = { 4, 2 },
                 eechips = 2
             }
         end
@@ -182,12 +182,41 @@ SMODS.Joker { --unobtainable as of now
     key = 'sphawk',
     rarity = 'ocstobal_beyondexotic',
     cost = 666666,
+    config = {
+        extra = {
+            hypmult = 2,
+            req = 1024,
+            op = 4
+        }
+    },
     atlas = 'terminuses',
-    pos = {x=2,y=0},
+    pos = { x = 2, y = 0 },
     soul_pos = {
-        x=3,y=0
+        x = 3, y = 0
     },
 
+    loc_vars = function(self, card, info_queue)
+        return { vars = { card.ability.extra.hypmult, card.ability.extra.req, card.ability.extra.op } }
+    end,
+
+    update = function(self, card, dt)
+        if card.ability.extra.hypmult >= card.ability.extra.req then
+            card.ability.extra.op = card.ability.extra.op + 1
+            card.ability.extra.hypmult = 2
+            card.ability.extra.req = card.ability.extra.req * 2
+        end
+    end,
+
+    calculate = function(self, card, context)
+        if context.setting_blind and card.ability.extra.hypmult < card.ability.extra.hypmultreq then
+            card.ability.extra.hypmult = card.ability.extra.hypmult * 2
+        end
+        if context.joker_main then
+            return {
+                hypermult = { card.ability.extra.operator, card.ability.extra.hypmult }
+            }
+        end
+    end
 }
 
 SMODS.Joker { --oh no
@@ -200,23 +229,23 @@ SMODS.Joker { --oh no
     },
     cost = 666666,
     atlas = 'terminuses',
-    pos = {x=0,y=0},
+    pos = { x = 0, y = 0 },
     soul_pos = {
-        x=1,y=0
+        x = 1, y = 0
     },
 
-    loc_vars = function(self,info_queue,card)
-        return { vars = {card.ability.extra.hypmult}}
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.hypmult } }
     end,
-    
-    calculate = function(self,card,context)
+
+    calculate = function(self, card, context)
         if context.setting_blind and card.ability.extra.hypmult < 1e300 then
             card:juice_up()
             card.ability.extra.hypmult = lenient_bignum(card.ability.extra.hypmult) * 2
         end
         if context.joker_main then
             return {
-                hypermult = {4,lenient_bignum(card.ability.extra.hypmult)}
+                hypermult = { 4, lenient_bignum(card.ability.extra.hypmult) }
             }
         end
     end
@@ -227,15 +256,15 @@ SMODS.Joker { --unused as of now
     rarity = 'ocstobal_beyondexotic',
     cost = 666666,
     atlas = 'terminuses',
-    pos = {x=0,y=1},
+    pos = { x = 0, y = 1 },
     soul_pos = {
-        x=1,y=1
+        x = 1, y = 1
     },
-    calculate = function(self,card,context)
+    calculate = function(self, card, context)
         if context.joker_main then
             return {
-                hypermult = {pseudorandom("spkhypmultop",2,5),pseudorandom("spkhypchip",2,10)},
-                hyperchips = {pseudorandom("spkhypchipop",2,5),pseudorandom("spkhypchip",2,10)}
+                hypermult = { pseudorandom("spkhypmultop", 2, 5), pseudorandom("spkhypchip", 2, 10) },
+                hyperchips = { pseudorandom("spkhypchipop", 2, 5), pseudorandom("spkhypchip", 2, 10) }
             }
         end
     end
