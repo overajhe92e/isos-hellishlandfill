@@ -57,3 +57,15 @@ SMODS.Joker {
         end
     end
 }
+
+SMODS.Joker {
+    key = 'yatta',
+    rarity = 3,
+    cost = 8
+}
+
+SMODS.Joker {
+    key = 'gourdy',
+    rarity = 1,
+    cost = 2
+}
