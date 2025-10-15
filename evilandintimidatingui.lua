@@ -1,4 +1,10 @@
-G.current_isomode = G.PROFILES[G.SETTINGS.profile].current_isomode
+if G.PROFILES[G.SETTINGS.profile].current_isomode then
+	if G.PROFILES[G.SETTINGS.profile].current_isomode == nil then
+		G.current_isomode = 0
+	else
+		G.current_isomode = G.PROFILES[G.SETTINGS.profile].current_isomode
+	end
+end
 
 G.enabledsecret = false
 

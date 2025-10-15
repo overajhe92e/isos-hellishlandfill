@@ -86,7 +86,7 @@ return {
 					'{C:attention}Win Ante{} is Ante {C:attention}16{}'
 				},
 				unlock = {
-					'Defeat the {C:ocstobal_ust}Omega Boss Rush{}',
+					'Defeat {C:ocstobal_ust}Omega Boss Rush{}',
 					'on the {C:ocstobal_finalrgb}Final Stake{}'
 				}
 			}
@@ -300,10 +300,10 @@ return {
 				},
 			},
 			j_ocstobal_fakeseraph = {
-				name = "Seraph",
+				name = "Seraph?",
 				text = {
 					{
-						'{C:green}1 in 2{} chance to apply {X:red,C:white}2{} Mult',
+						'{C:green}1 in 2{} chance to apply {X:red,C:white}X1.5{} Mult',
 						'for every scored card.',
 						'On Ante 8 and beyond, {C:green}1 in 15{} chance to replace self.',
 						'{C:inactive}(Unless Disabled by LV 11 Ability){}',
@@ -968,8 +968,8 @@ return {
 				name = 'Life Crystal',
 				text = {
 					'{C:attention}Prevents{} Game Over,',
-					'{C:red}BUT{} has limited durability',
-					'{C:red}AND{} lose 10 dollars on save.',
+					'{C:red}BUT{} has limited durability,',
+					'and lose {C:money}10 dollars{} on prevention.',
 					'{C:inactive}Current Durability: #1#/3{}'
 				}
 			},
@@ -1045,7 +1045,7 @@ return {
 				text = {
 					"On blind select,",
 					"{C:attention}+1{} Joker slot.",
-					"{C:inactive}I don't think you... are strong enough.{}"
+					"{C:inactive}...{}"
 				}
 			},
 			j_ocstobal_itsfuckingseptember = {
@@ -1111,6 +1111,28 @@ return {
 					"Every time {C:attention}Ramen{}",
 					"loses Mult, this joker",
 					"gains {X:red,C:White}X0.1{} Mult"
+				}
+			},
+			j_ocstobal_yatta = {
+				name = 'Yatta',
+				text = {
+					"Creates 3 {C:dark_edition}Negative{}",
+					"{C:attention}Candy{} consumables when",
+					"{C:attention}Boss Blind{} is defeated.",
+					'{C:blue,s:0.8}"#1#"{}'
+				}
+			},
+			j_ocstobal_gourdy = {
+				name = 'Gourdy',
+				text = {
+					"{C:red}No ability as of now!{}"
+				}
+			},
+			j_ocstobal_horridopt = {
+				name = 'Roblox',
+				text = {
+					"{X:dark_edition,C:white}^2{} Mult,",
+					"{C:red}1 in 2{} chance to {C:red}crash the game.{}"
 				}
 			}
 		},
@@ -1307,7 +1329,12 @@ return {
 			k_ocstobal_shrimpo_quote2 = "I HATE YOU!",
 			k_ocstobal_shrimpo_quote3 = "I HATE EVERYTHING!",
 
-			k_again_ex = 'Again!',
+			k_ocstobal_yatta_quote1 = "I hide my candy in vents, and you won't find them!!!",
+			k_ocstobal_yatta_quote2 = "HAHAHAHAHA!!!",
+			k_ocstobal_yatta_quote3 = "HIIII!!!",
+			k_ocstobal_yatta_quote4 = "I LOVE CANDY!!!",
+
+			k_ocstobal_save = 'Saved by Life Crystal',
 
 			k_ocstobal_unbalanced = 'Unbalanced',
 			k_ocstobal_verybad = 'Extremely Unbalanced',

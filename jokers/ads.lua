@@ -1,6 +1,6 @@
 SMODS.Joker {
     key = 'itsfuckingseptember',
-    cost = 11.99,
+    cost = 12,
     rarity = 2,
     in_pool = function()
         return false
@@ -18,11 +18,11 @@ SMODS.Joker {
 
     calculate = function(self,card,context)
         if context.joker_main then
-            if pseudorandom_probability("crasher",1,6,"j_ocstobal_horridopt") then
-                error("Sorry, you can't have stable gameplay!")
+            if SMODS.pseudorandom_probability(card,"j_ocstobal_horridopt",1,2) then
+                error("AND THAT'S ROBLOX BRICKING YOUR WIFI!!!")
             else
                 return {
-                    xmult = 3
+                    emult = 2
                 }
             end
         end

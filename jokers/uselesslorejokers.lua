@@ -89,7 +89,7 @@ SMODS.Joker {
                 }))
                 return {
                     message = 'Last Save!',
-                    saved = 'ph_mr_bones',
+                    saved = 'Saved by Life Crystal',
                     colour = G.C.RED
                 }
             elseif card.ability.dura > 0 then
@@ -105,7 +105,7 @@ SMODS.Joker {
                 }))
                 return {
                     message = 'Saved!',
-                    saved = 'ph_mr_bones',
+                    saved = 'Saved by Life Crystal',
                     colour = G.C.RED
                 }
             end

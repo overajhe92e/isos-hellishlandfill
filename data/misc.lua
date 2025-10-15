@@ -277,6 +277,14 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
+	key = 'dw',
+	px = 71,
+	py = 95,
+	path = 'dandysworld.png',
+	atlas_table = 'ASSET_ATLAS'
+}
+
+SMODS.Atlas {
 	key = 'ichor',
 	px = 71,
 	py = 95,
