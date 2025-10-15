@@ -178,7 +178,7 @@ SMODS.Joker { --right before getting aio joker
     end
 }
 
-SMODS.Joker { --terminus go brr
+SMODS.Joker { --terminus go brrrrt
     key = 'sphawk',
     rarity = 'ocstobal_beyondexotic',
     cost = 50000,
