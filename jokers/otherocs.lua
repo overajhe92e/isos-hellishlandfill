@@ -8,6 +8,7 @@ SMODS.Joker {
     pools = {
         ["copycats"] = true
     },
+    pronouns = 'she_her',
 
     set_badges = function(self, card, badges)
         badges[#badges + 1] = create_badge(localize('k_ocstobal_dangerous'), G.C.FILTER, G.C.WHITE, 1)
@@ -109,6 +110,7 @@ SMODS.Joker {
     atlas = 'candycane',
     pos = {x=0,y=0},
     soul_pos = {x=1,y=0},
+    pronouns = 'he_him',
 
     loc_vars = function(self, info_queue, card)
         return { vars = {card.ability.extra.xmult} }
@@ -137,6 +139,8 @@ SMODS.Joker {
 
     update = function(self,card,dt)
     end,
+
+    pronouns = 'it_its',
 
     calculate = function(self,card,context)
         if context.setting_blind then

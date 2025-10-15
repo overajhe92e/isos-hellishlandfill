@@ -792,7 +792,7 @@ SMODS.Blind { --Sparky Blind Special
 	mult = 100,
 	boss = { showdown = true },
 	boss_colour = HEX('000000'),
-	atlas = 'omegarush',
+	atlas = 'UNSHY',
 	pos = { x = 0, y = 0 },
 	ignore_showdown_check = true,
 
