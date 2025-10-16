@@ -45,7 +45,7 @@ SMODS.Back {
 		if context.end_of_round and context.game_over == false and context.main_eval and context.beat_boss then
 			if SMODS.pseudorandom_probability(back, 'ocstobal_aio', 1, 2) then
 				local jokers = {}
-				for k, v in pairs(G.P_CENTERS.Joker) do
+				for k, v in pairs(G.P_CENTERS) do
 					if v.mod and v.mod.id == 'ocstobalatro' then
 						table.insert(jokers, k)
 					end
@@ -125,7 +125,7 @@ SMODS.Back {
 	-- 	end
 	-- end,
 	apply = function(self, back)
-		if pseudorandom("avaritiajumpscare", 1, 6) == 1 and G.current_isomode ~= nil and G.current_isomode >= 2 then
+		if SMODS.pseudorandom_probability(back, 'ocstobal_looksinside', 1, 6) and G.current_isomode ~= nil and G.current_isomode >= 2 then
 			G.E_MANAGER:add_event(Event({
 				func = function()
 					SMODS.add_card { key = "j_ocstobal_jokertoendalljokers" }

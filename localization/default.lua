@@ -1120,13 +1120,15 @@ return {
 					"Creates 3 {C:dark_edition}Negative{}",
 					"{C:attention}Candy{} consumables when",
 					"{C:attention}Boss Blind{} is defeated.",
-					'{C:blue,s:0.8}"#1#"{}'
+					'{C:blue,s:0.8}"#1#"{}',
+					'{C:dark_edition,s:0.8}Origin : Dandy\'s World{}'
 				}
 			},
 			j_ocstobal_gourdy = {
 				name = 'Gourdy',
 				text = {
-					"{C:red}No ability as of now!{}"
+					"{C:red}No ability as of now!{}",
+					"{C:dark_edition,s:0.8}Origin : Dandy\'s World{}"
 				}
 			},
 			j_ocstobal_horridopt = {
@@ -1142,11 +1144,13 @@ return {
 					{
 						"Adds {C:blue}X#2#{} of your current",
 						"{C:blue}Hands{} and {C:red}Discards{}",
-						"on blind selection.",
+						"when {C:attention}Blind{} is selected",
+						"{C:dark_edition,s:0.8}Origin : Dandy\'s World{}"
 					},
 					{
 						"Each unique {C:planet}Planet{} card used",
-						"this run Increases multiplier by +1"
+						"this run increases the multiplier",
+						"by {C:attention}+1{}"
 					}
 
 				}

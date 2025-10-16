@@ -60,8 +60,8 @@ SMODS.Joker {
     rarity = 'ocstobal_epic',
     blueprint_compat = true,
     atlas = 'johntetration',
-    pos = {x=0,y=0},
-    soul_pos = {x=1,y=0},
+    pos = { x = 0, y = 0 },
+    soul_pos = { x = 1, y = 0 },
     config = {
         extra = {
             eechips = 1,
@@ -94,6 +94,13 @@ SMODS.Joker {
                 message = 'Upgraded!'
             }
         end
+        if context.setting_blind and next(SMODS.find_card("j_ocstobal_dw_astro")) then
+            SMODS.destroy_cards(card, 'j_ocstobal_dw_astro')
+            card.ability.extra.eechips = card.ability.extra.eechips ^ 3 ^ 3
+            return {
+                message = "GET OUT!"
+            }
+        end
     end
 }
 
@@ -108,15 +115,15 @@ SMODS.Joker {
     },
     blueprint_compat = true,
     atlas = 'candycane',
-    pos = {x=0,y=0},
-    soul_pos = {x=1,y=0},
+    pos = { x = 0, y = 0 },
+    soul_pos = { x = 1, y = 0 },
     pronouns = 'he_him',
 
     loc_vars = function(self, info_queue, card)
-        return { vars = {card.ability.extra.xmult} }
+        return { vars = { card.ability.extra.xmult } }
     end,
-    
-    calculate = function(self,card,context)
+
+    calculate = function(self, card, context)
         if context.joker_main then
             return {
                 Xmult = card.ability.extra.xmult
@@ -134,19 +141,19 @@ SMODS.Joker {
     },
     blueprint_compat = false,
     atlas = 'masked',
-    pos = {x=0,y=0},
-    soul_pos = {x=1,y=0},
+    pos = { x = 0, y = 0 },
+    soul_pos = { x = 1, y = 0 },
 
-    update = function(self,card,dt)
+    update = function(self, card, dt)
     end,
 
     pronouns = 'it_its',
 
-    calculate = function(self,card,context)
+    calculate = function(self, card, context)
         if context.setting_blind then
             G.jokers:change_size(card.ability.jokerslots)
             return {
-                message = ('+'..tostring(card.ability.jokerslots).. 'Slots')
+                message = ('+' .. tostring(card.ability.jokerslots) .. 'Slots')
             }
         end
     end
