@@ -64,9 +64,10 @@ return {
 				name = "Singularity of the Junkyard",
 				text = {
 					'Upon defeating a {C:attention}Boss Blind{},',
-					'{C:green}1 in 4{} chance to give a random',
+					'{C:green}1 in 2{} chance to give a random',
 					'{C:attention}Isotypical\'s Junkyard{} Joker.',
-					'{C:inactive,s:0.8}( Bypasses Joker slots ){}'
+					'{C:inactive,s:0.8}( Bypasses Joker slots ){}',
+					'{C:inactive,s:0.8}C( an give Unbalanced+ Jokers ){}'
 				},
 				unlock = {
 					'Defeat the {C:ocstobal_finalrgb}Final Stake.{}'
@@ -1133,6 +1134,21 @@ return {
 				text = {
 					"{X:dark_edition,C:white}^2{} Mult,",
 					"{C:red}1 in 2{} chance to {C:red}crash the game.{}"
+				}
+			},
+			j_ocstobal_dw_astro = {
+				name = "Astro",
+				text = {
+					{
+						"Adds {C:blue}X#2#{} of your current",
+						"{C:blue}Hands{} and {C:red}Discards{}",
+						"on blind selection.",
+					},
+					{
+						"Each unique {C:planet}Planet{} card used",
+						"this run Increases multiplier by +1"
+					}
+
 				}
 			}
 		},

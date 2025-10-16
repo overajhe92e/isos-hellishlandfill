@@ -27,6 +27,6 @@ SMODS.Stake {
         G.GAME.starting_params.discards = 6
         G.GAME.starting_params.hands = G.GAME.starting_params.hands + 2
     end,
-    colour = G.C.WHITE,
+    colour = G.C.OMEGABLACK,
     shiny = true
 }

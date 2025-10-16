@@ -43,7 +43,7 @@ SMODS.Back {
 	end,
 	calculate = function(self, back, context)
 		if context.end_of_round and context.game_over == false and context.main_eval and context.beat_boss then
-			if SMODS.pseudorandom_probability(back, 'ocstobal_aio', 1, 4) then
+			if SMODS.pseudorandom_probability(back, 'ocstobal_aio', 1, 2) then
 				local jokers = {}
 				for k, v in pairs(G.P_CENTERS.Joker) do
 					if v.mod and v.mod.id == 'ocstobalatro' then

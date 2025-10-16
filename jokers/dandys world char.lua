@@ -63,7 +63,8 @@ SMODS.Joker {
     rarity = 3,
     cost = 8,
     atlas = 'dw',
-    pos = {x=0,y=0},
+    pos = { x = 0, y = 0 },
+    soul_pos = { x = 1, y = 0 },
     loc_vars = function(self, info_queue, card)
         return { vars = { localize('k_ocstobal_yatta_quote' .. pseudorandom("seed", 1, 4)) } }
     end,
@@ -106,6 +107,43 @@ SMODS.Joker {
     rarity = 1,
     cost = 2,
     atlas = 'dw',
-    pos = {x=0,y=1},
-    soul_pos = {x=1,y=1},
+    pos = { x = 0, y = 1 },
+    soul_pos = { x = 1, y = 1 },
+}
+
+SMODS.Joker {
+    key = 'dw_astro',
+    rarity = 4,
+    cost = 30,
+    atlas = 'dw',
+    pos = { x = 2, y = 1 },
+    soul_pos = { x = 3, y = 1 },
+    config = {
+        extra = {
+            multi = 1
+        }
+    },
+    loc_vars = function(self, info_queue, card)
+        local planets_used = 0
+        for k, v in pairs(G.GAME.consumeable_usage) do if v.set == 'Planet' then planets_used = planets_used + 1 end end
+        return { vars = { card.ability.extra.multi, planets_used * card.ability.extra.multi } }
+    end,
+    calculate = function(self, card, context)
+        if context.setting_blind then
+            G.E_MANAGER:add_event(Event({
+                func = function()
+                    local planets_used = 0
+                    for k, v in pairs(G.GAME.consumeable_usage) do
+                        if v.set == 'Planet' then planets_used = planets_used + 1 end
+                    end
+                    ease_discard(G.GAME.current_round.discards_left * (planets_used + 1))
+                    ease_hands_played(G.GAME.current_round.hands_left * (planets_used + 1))
+                    SMODS.calculate_effect(
+                        { message = localize { type = 'variable', key = 'a_hands', vars = { card.ability.extra.multi } } },
+                        context.blueprint_card or card)
+                    return true
+                end
+            }))
+        end
+    end
 }

@@ -1,12 +1,4 @@
 ---@diagnostic disable: undefined-global
-SMODS.Atlas {
-	key = 'fucker',
-	px = 34,
-	py = 34,
-	path = 'p.png',
-	frames = 1,
-	atlas_table = 'ANIMATION_ATLAS',
-}
 
 -- SMODS.Blind {
 -- key = 'final_xxl',
