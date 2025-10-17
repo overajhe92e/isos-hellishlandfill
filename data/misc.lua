@@ -582,6 +582,7 @@ local function ex()
 	assert(SMODS.load_file("data/configchecks.lua"))()
 	assert(SMODS.load_file("data/reclusecheck.lua"))()
 	assert(SMODS.load_file("data/otherchecks.lua"))()
+	assert(SMODS.load_file("data/consumables.lua"))()
 	-- assert(SMODS.load_file("data/sleeve.lua"))() do not use
 end
 

@@ -1231,6 +1231,14 @@ return {
 		Tag = {},
 		Tarot = {},
 		Voucher = {},
+		ocstobal_Aleph = {
+			c_ocstobal_thesoulex = {
+				name = 'Soul of Malice',
+				text = {
+					"{C:ocstobal_ust,s:2}??????{}"
+				}
+			}
+		},
 		-- Sleeve = {
 		-- 	sleeve_ocstobal_oxysleeve = {
 		--         name = "Oxy's Sleeve",
@@ -1266,6 +1274,9 @@ return {
 		},
 		collabs = {},
 		dictionary = {
+
+			k_ocstobal_Aleph_cards = "Aleph Cards",
+			k_ocstobal_Aleph = "Aleph",
 
 			fuckyou = "YOU KNOW WHAT, FUCK YOU.", --lankybox blind / fake void joker
 			sphlvl = "Seraph Level Increased",
@@ -1370,7 +1381,8 @@ return {
 		},
 		high_scores = {},
 		labels = {
-			ocstobal_deceptionlegendary = 'Oxy\'s Legendary'
+			ocstobal_deceptionlegendary = 'Oxy\'s Legendary',
+			ocstobal_Aleph = "Aleph"
 		},
 		poker_hand_descriptions = {},
 		poker_hands = {},
