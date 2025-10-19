@@ -95,7 +95,7 @@ SMODS.Joker {
             }
         end
         if context.setting_blind and next(SMODS.find_card("j_ocstobal_dw_astro")) then
-            SMODS.destroy_cards(card, 'j_ocstobal_dw_astro')
+            SMODS.destroy_cards(G.jokers.cards, 'j_ocstobal_dw_astro', nil, true)
             card.ability.extra.eechips = card.ability.extra.eechips ^ 3 ^ 3
             return {
                 message = "GET OUT!"
@@ -134,7 +134,7 @@ SMODS.Joker {
 
 SMODS.Joker {
     key = 'mask',
-    cost = 66,
+    cost = 30,
     rarity = 4,
     config = {
         jokerslots = 1

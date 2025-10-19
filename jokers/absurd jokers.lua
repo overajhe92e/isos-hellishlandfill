@@ -117,11 +117,16 @@ SMODS.Joker { --oh my god two soul cards and a blackhole are you deranged
         if context.setting_blind then
             G.E_MANAGER:add_event(Event({
                 func = function()
-                    SMODS.add_card { key = 'c_soul', edition = 'e_negative' }
-                    SMODS.add_card { key = 'c_soul', edition = 'e_negative' }
-                    SMODS.add_card { key = 'c_black_hole', edition = 'e_negative' }
-                    SMODS.add_card { key = 'c_black_hole', edition = 'e_negative' }
-                    return true
+                    if SMODS.pseudorandom_probability(card, "j_ocstobal_solawkclassic", 1, 20) then
+                        SMODS.add_card { key = 'c_ocstobal_thesoulex', edition = 'e_negative' }
+                        return true
+                    else
+                        SMODS.add_card { key = 'c_soul', edition = 'e_negative' }
+                        SMODS.add_card { key = 'c_soul', edition = 'e_negative' }
+                        SMODS.add_card { key = 'c_black_hole', edition = 'e_negative' }
+                        SMODS.add_card { key = 'c_black_hole', edition = 'e_negative' }
+                        return true
+                    end
                 end
             }))
         end
