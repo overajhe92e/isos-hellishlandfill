@@ -12,6 +12,7 @@
   "badge_colour": "000000",
   "badge_text_colour": "FF0000",
   "dependencies": [
-    "Steamodded (>=1.0.0~BETA-0711a)"
+    "Steamodded (>=1.0.0~BETA-0711a)",
+    "FusionJokers"
   ]
 }

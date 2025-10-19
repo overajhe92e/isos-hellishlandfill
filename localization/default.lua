@@ -1152,7 +1152,6 @@ return {
 						"this run increases the multiplier",
 						"by {C:attention}+1{}"
 					}
-
 				}
 			}
 		},
