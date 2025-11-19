@@ -235,11 +235,20 @@ return {
 				}
 			},
 			bl_ocstobal_giygas = {
-				name = "GIYGAS",
+				name = "Giygas",
 				text = {
 					"You cannot comprehend",
 					"the true grasp of Giygas's",
 					"ability!"
+				}
+			},
+			bl_ocstobal_starman_super = {
+				name = "Starman Super",
+				text = {
+					"Score is multiplied by X0.7",
+					"when scoring finishes.",
+					"1 in 128 chance to obtain",
+					"Sword of Kings"
 				}
 			}
 		},
@@ -827,7 +836,7 @@ return {
 				}
 			},
 			j_ocstobal_toomuch = {
-				name = '{C:ocstobal_sewh}jimbo{}',
+				name = '{C:ocstobal_sewh}jimbob{}',
 				text = {
 					"{X:ocstobal_finalrgb,C:ocstobal_ust}^^^^4{} Mult and Chips.",
 					"What did you expect from {C:ocstobal_almanacblue}Almanac mode{}, fuckin {C:red}nothing??{}"
@@ -1003,8 +1012,8 @@ return {
 				name = 'Crate in a Crate in a Crate in a Crate in a',
 				text = {
 					'{X:red,C:white}^1{} Mult,',
-					'increases by +1 when a blind is selected.',
-					'Operator increases at 10s.',
+					'Gains ^1 Mult when a {C:attention}Blind{} is selected.',
+					'Operator increases at 10s',
 					'{C:inactive}"The classic way of solving storage!"{}'
 				}
 			},
@@ -1160,6 +1169,40 @@ return {
 						"this run increases the multiplier",
 						"by {C:attention}+1{}"
 					}
+				}
+			},
+			j_ocstobal_xeno = {
+				name = "Xeno",
+				text = {
+					{
+						"This joker gains {X:blue,C:white}X0.25{} Chips",
+						'for every {C:spades}Spade{} scored'
+					},
+					{
+						"This joker gains {X:red,C:white}X0.25{} Mult",
+						"for every {C:hearts}Heart{} scored"
+					},
+					{
+						"{C:inactive}Currently{} {X:blue,C:white}X#1#{}",
+						"{C:inactive}Currently{} {X:red,C:white}X#2#{}"
+					}
+				}
+			},
+			j_ocstobal_sword_of_kings = {
+				name = "Sword of Kings",
+				text = {
+					"Fixed {C:green}1 in 5{} chance to instantly",
+					"{C:attention}Win Blind{} on {C:attention}Blind selection{}",
+					"Otherwise, {X:red,C:white}X3{} Mult"
+				}
+			},
+			j_ocstobal_divinedominance = {
+				name = "Divine Dominance",
+				text = {
+					"After x Rounds, {C:red}Destroys{} and",
+					"{C:red}Banishes{} up to {C:attention}4 Jokers{}",
+					"Every destroyed {C:attention}Joker{} from this",
+					"will give {X:dark_edition,C:white}^1.5{} Mult"
 				}
 			}
 		},

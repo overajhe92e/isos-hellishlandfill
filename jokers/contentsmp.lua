@@ -9,4 +9,8 @@ SMODS.Joker {
             emult = 0
         }
     },
+    no_collection = true,
+    in_pool = function()
+        return false
+    end
 }

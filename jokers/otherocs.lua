@@ -71,11 +71,13 @@ SMODS.Joker {
     no_collection = false,
 
     set_badges = function(self, card, badges)
-        badges[#badges + 1] = create_badge(localize('k_ocstobal_verybad'), G.C.BLACK, G.C.RED, 1)
+        if G.current_isomode >= 2 then
+            badges[#badges + 1] = create_badge(localize('k_ocstobal_verybad'), G.C.BLACK, G.C.RED, 1)
+        end
     end,
 
     in_pool = function(self, args)
-        return unbalancedstuff()
+        return true
     end,
 
     loc_vars = function(self, info_queue, card)
@@ -83,23 +85,26 @@ SMODS.Joker {
     end,
 
     calculate = function(self, card, context)
-        if context.joker_main then
-            return {
-                eechips = card.ability.extra.eechips
-            }
-        end
-        if context.individual and context.cardarea == G.play and context.other_card:is_suit(card.ability.extra.suit) and not context.blueprint then
-            card.ability.extra.eechips = card.ability.extra.eechips + 1
-            return {
-                message = 'Upgraded!'
-            }
-        end
-        if context.setting_blind and next(SMODS.find_card("j_ocstobal_dw_astro")) then
-            SMODS.destroy_cards(G.jokers.cards, 'j_ocstobal_dw_astro', nil, true)
-            card.ability.extra.eechips = card.ability.extra.eechips ^ 3 ^ 3
-            return {
-                message = "GET OUT!"
-            }
+        if G.current_isomode >= 2 then
+            if context.joker_main then
+                return {
+                    eechips = card.ability.extra.eechips
+                }
+            end
+            if context.individual and context.cardarea == G.play and context.other_card:is_suit(card.ability.extra.suit) and not context.blueprint then
+                card.ability.extra.eechips = card.ability.extra.eechips + 1
+                return {
+                    message = 'Upgraded!'
+                }
+            end
+            if context.setting_blind and next(SMODS.find_card("j_ocstobal_dw_astro")) then
+                SMODS.destroy_cards(SMODS.find_card('j_ocstobal_dw_astro'), nil, true)
+                card.ability.extra.eechips = card.ability.extra.eechips ^ 16
+                return {
+                    message = "GET OUT!"
+                }
+            end
+        elseif G.current_isomode < 2 then
         end
     end
 }
@@ -156,5 +161,28 @@ SMODS.Joker {
                 message = ('+' .. tostring(card.ability.jokerslots) .. 'Slots')
             }
         end
+    end
+}
+
+SMODS.Joker {
+    key = 'xeno',
+    cost = 25,
+    rarity = 'ocstobal_epic',
+    atlas = 'xeno',
+    pos = { x = 0, y = 0 },
+    soul_pos = { x = 1, y = 0 },
+    config = {
+        extra = {
+            chips = 1,
+            mult = 1
+        }
+    },
+    loc_vars = function(self, info_queue, card)
+        return {
+            vars = { card.ability.extra.chips, card.ability.extra.mult }
+        }
+    end,
+    calculate = function(self, card, context)
+        if h then return nil end
     end
 }

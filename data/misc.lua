@@ -503,6 +503,14 @@ SMODS.Atlas {
 	atlas_table = 'ASSET_ATLAS'
 }
 
+SMODS.Atlas {
+	key = 'xeno',
+	px = 71,
+	py = 95,
+	path = 'xenoo.png',
+	atlas_table = 'ASSET_ATLAS'
+}
+
 SMODS.Sound {
 	key = "loser",
 	path = "catlaugh.ogg",
