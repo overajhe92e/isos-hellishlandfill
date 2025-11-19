@@ -654,11 +654,6 @@ SMODS.current_mod.extra_tabs = function()
 	}
 end
 
-
-if ocstobal.configbs.no_ocs == true then
-	return nil
-end
-
 function sphlvls(buttonname)
 	local sph = create_UIBox_generic_options({
 		back_delay = 0.1,

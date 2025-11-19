@@ -233,6 +233,14 @@ return {
 					"multiplied by ^0.7",
 					"after scoring."
 				}
+			},
+			bl_ocstobal_giygas = {
+				name = "GIYGAS",
+				text = {
+					"You cannot comprehend",
+					"the true grasp of Giygas's",
+					"ability!"
+				}
 			}
 		},
 		Edition = {

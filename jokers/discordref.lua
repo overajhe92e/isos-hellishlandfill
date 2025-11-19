@@ -1,10 +1,10 @@
 SMODS.Joker {
     key = 'moddingchat',
     cost = 1,
-    rarity = 1,
+    rarity = 2,
     config = {
         extra = {
-            dayswithoutissue = -80085
+            dayswithoutissue = -1e100
         }
     },
     atlas = 'moddingchat',
@@ -13,7 +13,7 @@ SMODS.Joker {
     loc_vars = function(self,info_queue,card)
         return {
             vars = {
-                card.ability.extra.dayswithoutissue
+                lenient_bignum(card.ability.extra.dayswithoutissue)
             }
         }
     end,
@@ -21,7 +21,7 @@ SMODS.Joker {
     calculate = function(self,card,context)
         if context.joker_main then
             return {
-                Xmult = card.ability.extra.dayswithoutissue
+                Xmult = lenient_bignum(card.ability.extra.dayswithoutissue)
             }
         end
     end

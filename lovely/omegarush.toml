@@ -1,7 +1,7 @@
 [manifest]
 version = "0.0.1"
 dump_lua = true
-priority = 9998
+priority = 99999
 
 # fuck the gray bg bro
 [[patches]]
@@ -17,6 +17,8 @@ elseif G.GAME.won and G.GAME.omegarush == nil then
 ease_background_colour{new_colour = G.C.BLIND.won, contrast = 1}
 elseif G.GAME.won and G.GAME.omegarush < 1 then
 ease_background_colour{new_colour = G.C.BLIND.won, contrast = 1}
+elseif G.GAME.round_resets.blind_choices.Boss == 'bl_ocstobal_bossrushomega' then
+ease_background_colour{new_colour = G.C.OMEGARED, special_colour = G.C.OMEGABLACK, contrast = 2}
 '''
 match_indent = true
 

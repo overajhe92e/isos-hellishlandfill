@@ -74,3 +74,41 @@ SMODS.Achievement {
 		end
 	end
 }
+
+SMODS.Achievement {
+	key = 'ach_burgr',
+	loc_txt = {
+		name = 'jumpscar',
+		description = {
+			'Experience the 1 in 100 chance',
+			'for something to happen on',
+			'Instability'
+		}
+	},
+	bypass_all_unlocked = true,
+	hidden_name = true,
+	
+	unlock_condition = function(self, args)
+		if args.type == "ach_burgr" then
+			return true
+		end
+	end
+}
+
+SMODS.Achievement {
+	key = 'ach_horse',
+	loc_txt = {
+		name = 'house',
+		description = {
+			'neigh',
+		}
+	},
+	bypass_all_unlocked = true,
+	hidden_name = true,
+	
+	unlock_condition = function(self, args)
+		if args.type == "drhouse" then
+			return true
+		end
+	end
+}

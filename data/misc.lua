@@ -1,6 +1,10 @@
 SMODS.Sound({ key = "swoonstart", path = "swoonstart.ogg" })
 SMODS.Sound({ key = "swoonend", path = "swoonend.ogg" })
 
+
+local win_width = love.graphics.getWidth() / 1920
+local win_height = love.graphics.getHeight() / 1080
+
 local drawhook = love.draw
 function love.draw()
 	drawhook()
@@ -37,7 +41,7 @@ function love.draw()
 	if G.burger and (G.burger > 0) then
 		if ocstobal.burger == nil then ocstobal.burger = FuckingImage("cheeseburger.png") end
 		love.graphics.setColor(1, 1, 1, 1)
-		love.graphics.draw(ocstobal.burger, 0, 0, 0, 7, 5)
+		love.graphics.draw(ocstobal.burger, 0*win_width*2, 0*win_height*2, 0, win_width*2.5, win_height*2.4)
 	end
 
 	--It's that easy. -also Doctor4t

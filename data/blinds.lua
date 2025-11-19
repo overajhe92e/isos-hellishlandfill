@@ -23,6 +23,59 @@
 -- end
 -- }
 
+function recluseach()
+	G.E_MANAGER:add_event(Event({
+		trigger = 'immediate',
+		locking = false,
+		delay = 0,
+		func = function()
+			check_for_unlock({ type = "ach_defeatedrecluse" })
+			return true
+		end,
+	}))
+end
+
+function burger()
+	G.E_MANAGER:add_event(Event({
+		trigger = 'immediate',
+		locking = false,
+		delay = 0,
+		func = function()
+			check_for_unlock({ type = "ach_burgr" })
+			return true
+		end,
+	}))
+end
+
+function omegarushdefeat()
+	G.E_MANAGER:add_event(Event({
+		trigger = 'immediate',
+		locking = false,
+		delay = 0,
+		func = function()
+			print('omega defeated')
+			if SMODS.stake_from_index(G.GAME.stake) == "stake_ocstobal_finale" then
+				print('given deck access')
+				check_for_unlock({ type = "defeated_omega" })
+				return true
+			end
+			return true
+		end,
+	}))
+end
+
+function diedach()
+	G.E_MANAGER:add_event(Event({
+		trigger = 'immediate',
+		locking = false,
+		delay = 0,
+		func = function()
+			check_for_unlock({ type = "ach_unstableeye" })
+			return true
+		end,
+	}))
+end
+
 SMODS.Blind {
 	key = 'rng',
 	name = 'rng',
@@ -89,11 +142,7 @@ SMODS.Blind {
 		if context.modify_hand then
 			for i = 1, #G.jokers.cards do
 				if G.jokers.cards[i].config.center.original_mod == SMODS.Mods["ocstobalatro"] then
-					if pseudorandom("burger", 1, 100) ~= 1 then
-						diedach()
-						forceGameover()
-						return true
-					else
+					if SMODS.pseudorandom_probability(card, "ocstobal_unstable", 1, 100) then
 						G.burger = 1
 						play_sound("ocstobal_jumpscare", 1, 1)
 						G.E_MANAGER:add_event(Event({
@@ -102,9 +151,14 @@ SMODS.Blind {
 							func = function()
 								G.burger = 0
 								forceGameover()
+								burger()
 								return true
 							end
 						}))
+						return true
+					else
+						diedach()
+						forceGameover()
 						return true
 					end
 					--"Add a cheeseburger" -Grazy
@@ -182,9 +236,11 @@ SMODS.Sound {
 	pitch = 1,
 	volume = 1,
 	select_music_track = function()
-		if G.GAME.blind and not G.GAME.blind.disabled and G.GAME.blind.name == 'cringeasf' then
+		if G.GAME.blind and G.GAME.blind.name == 'cringeasf' then
 			return true
-		elseif G.GAME.blind and not G.GAME.blind.disabled and G.GAME.blind.name == 'unstable' and G.GAME.omegarush < 1 then
+		elseif G.GAME.blind and G.GAME.blind.name == 'unstable' and G.GAME.omegarush == nil then
+			return true
+		elseif G.GAME.blind and G.GAME.blind.name == 'unstable' and G.GAME.omegarush < 1 then
 			return true
 		end
 	end
@@ -240,6 +296,10 @@ SMODS.Sound {
 			elseif G.GAME.omegarush < 1 then
 				return true
 			end
+		end
+		if G.GAME.round_resets.blind_choices.Boss == 'bl_ocstobal_bossrushomega' then
+			G.GAME.omegarush_choice = true
+			return true
 		end
 	end
 }
@@ -627,6 +687,7 @@ SMODS.Blind {
 
 	defeat = function()
 		G.GAME.omegarush = 0
+		G.GAME.omegarush_choice = 0
 		omegarushdefeat()
 	end
 }
@@ -823,43 +884,32 @@ SMODS.Blind { --Sparky Blind Special
 	end
 }
 
-function recluseach()
-	G.E_MANAGER:add_event(Event({
-		trigger = 'immediate',
-		locking = false,
-		delay = 0,
-		func = function()
-			check_for_unlock({ type = "ach_defeatedrecluse" })
-			return true
-		end,
-	}))
-end
+SMODS.Blind {
+	key = 'giygas',
+	mult = 666,
+	money = 10,
+	boss_colour = HEX('ff0000'),
+	boss = { min = 32 },
 
-function omegarushdefeat()
-	G.E_MANAGER:add_event(Event({
-		trigger = 'immediate',
-		locking = false,
-		delay = 0,
-		func = function()
-			print('omega defeated')
-			if SMODS.stake_from_index(G.GAME.stake) == "stake_ocstobal_finale" then
-				print('given deck access')
-				check_for_unlock({ type = "defeated_omega" })
-				return true
-			end
-			return true
-		end,
-	}))
-end
-
-function diedach()
-	G.E_MANAGER:add_event(Event({
-		trigger = 'immediate',
-		locking = false,
-		delay = 0,
-		func = function()
-			check_for_unlock({ type = "ach_unstableeye" })
-			return true
-		end,
-	}))
-end
+	calculate = function(self, blind, context)
+		if to_big(G.GAME.chips) > to_big(G.GAME.blind.chips) and to_big(G.GAME.chips) < to_big(G.GAME.blind.chips) ^ 666 then
+			G.GAME.chips = 0
+			G.GAME.blind.chips = G.GAME.blind.chips * 10
+			G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
+			G.GAME.round_resets.lost = true
+			G.E_MANAGER:add_event(Event({
+				func = function()
+					ocstobal.nextboss()
+					G.GAME.blind:juice_up()
+					ease_hands_played(G.GAME.round_resets.hands - G.GAME.current_round.hands_left)
+					ease_discard(
+						math.max(0, G.GAME.round_resets.discards + G.GAME.round_bonus.discards) -
+						G.GAME.current_round.discards_left
+					)
+					G.FUNCS.draw_from_discard_to_deck()
+					return true
+				end
+			}))
+		end
+	end
+}
