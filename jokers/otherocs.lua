@@ -64,7 +64,7 @@ SMODS.Joker {
     soul_pos = { x = 1, y = 0 },
     config = {
         extra = {
-            eechips = 1,
+            chips = 1,
             suit = 'Spades'
         }
     },
@@ -81,30 +81,51 @@ SMODS.Joker {
     end,
 
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.eechips } }
+        return {
+            vars = { card.ability.extra.chips },
+            key = G.current_isomode < 2 and "j_ocstobal_astro_balance" or G.current_isomode >= 2 and "j_ocstobal_astro"
+        }
     end,
 
     calculate = function(self, card, context)
         if G.current_isomode >= 2 then
             if context.joker_main then
                 return {
-                    eechips = card.ability.extra.eechips
+                    eechips = card.ability.extra.chips
                 }
             end
             if context.individual and context.cardarea == G.play and context.other_card:is_suit(card.ability.extra.suit) and not context.blueprint then
-                card.ability.extra.eechips = card.ability.extra.eechips + 1
+                card.ability.extra.chips = card.ability.extra.chips + 1
                 return {
                     message = 'Upgraded!'
                 }
             end
             if context.setting_blind and next(SMODS.find_card("j_ocstobal_dw_astro")) then
-                SMODS.destroy_cards(SMODS.find_card('j_ocstobal_dw_astro'), nil, true)
-                card.ability.extra.eechips = card.ability.extra.eechips ^ 16
+                SMODS.destroy_cards(SMODS.find_card('j_ocstobal_dw_astro'), nil)
+                card.ability.extra.chips = card.ability.extra.chips ^ 16
                 return {
                     message = "GET OUT!"
                 }
             end
         elseif G.current_isomode < 2 then
+            if context.joker_main then
+                return {
+                    xchips = card.ability.extra.chips
+                }
+            end
+            if context.individual and context.cardarea == G.play and context.other_card:is_suit(card.ability.extra.suit) and not context.blueprint then
+                card.ability.extra.chips = card.ability.extra.chips + 1
+                return {
+                    message = 'Upgraded!'
+                }
+            end
+            if context.setting_blind and next(SMODS.find_card("j_ocstobal_dw_astro")) then
+                SMODS.destroy_cards(SMODS.find_card('j_ocstobal_dw_astro'), nil)
+                card.ability.extra.chips = card.ability.extra.chips * 16
+                return {
+                    message = "GET OUT!"
+                }
+            end
         end
     end
 }
@@ -115,7 +136,7 @@ SMODS.Joker {
     rarity = 3,
     config = {
         extra = {
-            xmult = 8
+            xmult = 1e300
         }
     },
     blueprint_compat = true,
@@ -123,6 +144,10 @@ SMODS.Joker {
     pos = { x = 0, y = 0 },
     soul_pos = { x = 1, y = 0 },
     pronouns = 'he_him',
+
+    update = function(self, card, dt)
+        card:set_debuff(true)
+    end,
 
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.xmult } }
