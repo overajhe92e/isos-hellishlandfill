@@ -956,6 +956,17 @@ return {
 					'{C:dark_edition,E:1,s:0.8}Origin : Starspace{}' --go check out the mod it's peak
 				}
 			},
+			j_ocstobal_astro_balance = {
+				name = 'Astro',
+				text = {
+					'Applies {X:blue,C:white}X#1#{} Chips',
+					'Gains {X:blue,C:white}X1{} Chips when a',
+					'{C:spades}Spade{} card is scored.',
+					'{C:blue}"meow"{}',
+					'{C:dark_edition,E:1,s:0.8}Original Character by : Astro',
+					'{C:dark_edition,E:1,s:0.8}Origin : Starspace{}' --go check out the mod it's peak
+				}
+			},
 			j_ocstobal_love = {
 				name = 'Torn love Letter',
 				text = {

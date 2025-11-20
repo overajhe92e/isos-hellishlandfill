@@ -18,6 +18,10 @@ SMODS.Joker {
         x = 1,
         y = 0
     },
+    no_collection = true,
+    in_pool = function()
+        return false
+    end,
 
     add_to_deck = function(self, card, from_debuff)
         card:set_edition("e_ocstobal_hidden1", true)

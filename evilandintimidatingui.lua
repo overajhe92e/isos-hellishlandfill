@@ -307,7 +307,7 @@ function balancedmenu(buttonname)
 	return bal
 end
 
-function thewarning(buttonname)
+function thewarning(buttonname) --unused
 	local lore = create_UIBox_generic_options({
 		no_back = true,
 		colour = G.C.BLACK,
@@ -494,13 +494,6 @@ SMODS.current_mod.config_tab = function()
 								n = G.UIT.R,
 								config = { minh = 1, minw = 2, align = "tm", padding = 0.05, colour = G.C.CLEAR },
 								nodes = {
-									{
-										n = G.UIT.R,
-										config = { minw = 1, minh = 1, align = "tm", padding = 0.1, colour = G.C.BLUE, button = "yeah", r = 0.1 },
-										nodes = {
-											{ n = G.UIT.T, config = { text = "Rebalanced Mode", colour = G.C.WHITE, scale = 0.6, align = "m" }, },
-										}
-									},
 									{
 										n = G.UIT.R,
 										config = { minw = 1, minh = 1, align = "tm", padding = 0.1, colour = G.C.GREEN, button = "balancedmenu", r = 0.1 },

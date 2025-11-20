@@ -135,6 +135,18 @@ SMODS.ObjectType({
 	end,
 })
 
+SMODS.ObjectType({
+	key = "bitch",
+	default = "j_ocstobal_candycane",
+	cards = {
+		j_ocstobal_candycane = true,
+	},
+	inject = function(self)
+		SMODS.ObjectType.inject(self)
+		self:inject_card(G.P_CENTERS.j_lucky_cat)
+	end,
+})
+
 SMODS.Atlas {
 	key = 'aioimg',
 	px = 71,
