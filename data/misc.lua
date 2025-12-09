@@ -859,4 +859,3 @@ G.P_CENTERS.e_negative.get_weight = function(self)
 	end
 	return weight
 end
---yeah.
