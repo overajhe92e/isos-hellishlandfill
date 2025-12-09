@@ -23,6 +23,9 @@
 -- end
 -- }
 
+if G.GAME then
+end
+
 function recluseach()
 	G.E_MANAGER:add_event(Event({
 		trigger = 'immediate',
@@ -130,14 +133,6 @@ SMODS.Blind {
 		akyrs_cannot_be_overridden = true
 	},
 
-	get_loc_debuff_text = function(self)
-		return localize { type = 'variable', key = 'a_ocstobal_deathinbound' }
-	end,
-
-	set_blind = function()
-		G.GAME.round_resets.lost = false
-	end,
-
 	calculate = function(self, card, context)
 		if context.modify_hand then
 			for i = 1, #G.jokers.cards do
@@ -155,10 +150,6 @@ SMODS.Blind {
 								return true
 							end
 						}))
-						return true
-					else
-						diedach()
-						forceGameover()
 						return true
 					end
 					--"Add a cheeseburger" -Grazy
@@ -186,6 +177,21 @@ SMODS.Blind {
 				}))
 			end
 		end
+	end,
+
+	set_blind = function(self)
+		local randomized = pseudorandom("ubc", 1, 4)
+		local unstable_blind_choice = nil
+		if randomized == 1 then
+			unstable_blind_choice = "bl_ocstobal_THESCALE"
+		elseif randomized == 2 then
+			unstable_blind_choice = "bl_ocstobal_BLACKKNIFE"
+		elseif randomized == 3 then
+			unstable_blind_choice = "bl_ocstobal_UNSHY"
+		elseif randomized == 4 then
+			unstable_blind_choice = "bl_ocstobal_THEDROPLET"
+		end
+		G.GAME.blind:set_blind(G.P_BLINDS[tostring(unstable_blind_choice)])
 	end,
 
 	disable = function(self)
@@ -472,7 +478,7 @@ SMODS.Blind {
 				G.GAME.round_resets.lost = true
 				G.E_MANAGER:add_event(Event({
 					func = function()
-						G.GAME.blind:set_blind(G.P_BLINDS["bl_ocstobal_unstable"])
+						G.GAME.blind:set_blind(G.P_BLINDS["bl_ocstobal_THEDROPLET"])
 						ocstobal.nextboss()
 						G.GAME.blind:juice_up()
 						ease_hands_played(G.GAME.round_resets.hands - G.GAME.current_round.hands_left)
@@ -910,6 +916,26 @@ SMODS.Blind {
 					return true
 				end
 			}))
+		end
+	end
+}
+
+SMODS.Blind {
+	key = 'starman_super',
+	mult = 1.5,
+	money = 7,
+	atlas = 'starman',
+	boss_colour = HEX('ccb046'),
+	boss = { min = 2 },
+	calculate = function(self, card, context)
+		if context.final_scoring_step and context.cardarea == G.play then
+			G.GAME.chips = G.GAME.chips * 0.7
+			G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
+		end
+	end,
+	defeat = function(self)
+		if SMODS.pseudorandom_probability(card, "SOK", 1, 128) then
+			SMODS.add_card { key = "j_ocstobal_sword_of_kings" }
 		end
 	end
 }
