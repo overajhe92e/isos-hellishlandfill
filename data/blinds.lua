@@ -882,7 +882,7 @@ SMODS.Blind {
 	boss = { min = 32 },
 
 	calculate = function(self, blind, context)
-		if to_big(G.GAME.chips) > to_big(G.GAME.blind.chips) and to_big(G.GAME.chips) < to_big(G.GAME.blind.chips) ^ 666 then
+		if to_big(G.GAME.chips) > to_big(G.GAME.blind.chips) and to_big(G.GAME.chips) < to_big(G.GAME.blind.chips) ^ 6.6 then
 			G.GAME.chips = 0
 			G.GAME.blind.chips = G.GAME.blind.chips * 10
 			G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
