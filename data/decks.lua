@@ -51,7 +51,7 @@ SMODS.Back {
 					end
 				end
 				local blehh = pseudorandom_element(jokers, 'luckfactor2')
-				SMODS.add_card { key = blehh }
+				SMODS.add_card { set = joker, key = blehh }
 			else
 				card_eval_status_text(
 					G.jokers,

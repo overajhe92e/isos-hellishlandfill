@@ -44,7 +44,7 @@ SMODS.Joker { --miss circle (dysfunctional)
     in_pool = function() return false end,
 }
 
-SMODS.Joker {
+SMODS.Joker { -- I HATE DRAWING YOU I HATE DRAWING YOU I HATE DRAWING YOU I HATE DRAWING YOU I HATE DRAWING YOU 
     key = "claire",
     rarity = 1,
     cost = 4,

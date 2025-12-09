@@ -199,7 +199,9 @@ SMODS.Joker {
     config = {
         extra = {
             chips = 1,
-            mult = 1
+            mult = 1,
+            suit_1 = "Spades",
+            suit_2 = "Hearts"
         }
     },
     loc_vars = function(self, info_queue, card)
@@ -208,6 +210,26 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        if h then return nil end
+        if context.individual and context.cardarea == G.play then
+            if context.other_card:is_suit(card.ability.extra.suit_1) and not context.blueprint then
+                card.ability.extra.chips = card.ability.extra.chips + 0.25
+                return {
+                    message = 'Upgraded!',
+                    colour = G.C.CHIPS,
+                }
+            elseif context.other_card:is_suit(card.ability.extra.suit_2) and not context.blueprint then
+                card.ability.extra.mult = card.ability.extra.mult + 0.25
+                return {
+                    message = 'Upgraded!',
+                    colour = G.C.MULT,
+                }
+            end
+        end
+        if context.joker_main then
+            return {
+                xchips = card.ability.extra.chips,
+                xmult = card.ability.extra.mult
+            }
+        end
     end
 }
