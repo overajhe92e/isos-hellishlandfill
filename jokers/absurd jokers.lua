@@ -281,3 +281,13 @@ SMODS.Joker { --unused as of now
         end
     end
 }
+
+SMODS.Joker {
+    key = 'obscene_joke',
+    rarity = 1,
+    cost = 1,
+    add_to_deck = function(self, card)
+        SMODS.add_card { key = 'j_ocstobal_oxhatred' }
+        SMODS.destroy_cards(card, nil, nil, true)
+    end
+}
