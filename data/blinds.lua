@@ -122,8 +122,8 @@ SMODS.Blind {
 	name = 'unstable',
 	atlas = 'unstable',
 	pos = { x = 0, y = 0 },
-	mult = 66,
-	dollars = 10,
+	mult = 0,
+	dollars = 0,
 	boss = { min = 16 },
 	boss_colour = HEX('101010'),
 	debuff = {
@@ -698,19 +698,15 @@ SMODS.Blind {
 	end
 }
 
-SMODS.Blind { --Seraph Blind Special
+SMODS.Blind { --Seraph_Omega
 	key = 'BLACKKNIFE',
-	dollars = 0,
+	dollars = 10,
 	mult = 5,
-	boss = { showdown = true },
+	boss = { min = 16 },
 	boss_colour = HEX('000000'),
 	atlas = 'BLACKKNIFE',
 	pos = { x = 0, y = 0 },
 	ignore_showdown_check = true,
-
-	in_pool = function()
-		return false
-	end,
 
 	calculate = function(self, blind, context)
 		if not blind.disabled then
@@ -746,19 +742,15 @@ SMODS.Blind { --Seraph Blind Special
 	end
 }
 
-SMODS.Blind { --Solinium Blind Special
+SMODS.Blind { --Solinium_Omega
 	key = 'THESCALE',
-	dollars = 0,
+	dollars = 10,
 	mult = 8,
-	boss = { showdown = true },
+	boss = { min = 16 },
 	boss_colour = HEX('000000'),
 	atlas = 'UNFAIRSCALE',
 	pos = { x = 0, y = 0 },
 	ignore_showdown_check = true,
-
-	in_pool = function()
-		return false
-	end,
 
 	calculate = function(self, blind, context)
 		if not blind.disabled then
@@ -794,19 +786,15 @@ SMODS.Blind { --Solinium Blind Special
 	end
 }
 
-SMODS.Blind { --Oxy Blind Special
+SMODS.Blind { --Oxy_Omega
 	key = 'THEDROPLET',
-	dollars = 0,
+	dollars = 10,
 	mult = 0.05,
-	boss = { showdown = true },
+	boss = { min = 16 },
 	boss_colour = HEX('000000'),
 	atlas = 'THEDROPLET',
 	pos = { x = 0, y = 0 },
 	ignore_showdown_check = true,
-
-	in_pool = function()
-		return false
-	end,
 
 	calculate = function(self, blind, context)
 		if context.debuff_card and context.debuff_card.area == G.jokers then
@@ -845,19 +833,15 @@ SMODS.Blind { --Oxy Blind Special
 	end
 }
 
-SMODS.Blind { --Sparky Blind Special
+SMODS.Blind { --Sparky_Omega
 	key = 'UNSHY',
-	dollars = 0,
+	dollars = 10,
 	mult = 100,
-	boss = { showdown = true },
+	boss = { min = 16 },
 	boss_colour = HEX('000000'),
 	atlas = 'UNSHY',
 	pos = { x = 0, y = 0 },
 	ignore_showdown_check = true,
-
-	in_pool = function()
-		return false
-	end,
 
 	calculate = function(self, blind, context)
 		if context.final_scoring_step then
