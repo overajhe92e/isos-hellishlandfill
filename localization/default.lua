@@ -830,7 +830,7 @@ return {
 					'Copies the ability of {C:attention}3 jokers{}',
 					'to the {C:attention}right of this Joker{}',
 					'{C:inactive}Copies joker 1, then 2, then 3{}',
-					'{C:dark_edition,E:1,s:0.8}Art by Astro{}',     --(@silly_goober_0nthewall)
+					--'{C:dark_edition,E:1,s:0.8}Art by Astro{}',     --(@silly_goober_0nthewall)
 					'{C:dark_edition,E:1,s:0.8}Original Character by : Crystal{}', --(@crystal_the_autism)
 					'{C:dark_edition,E:1,s:0.8}Origin : Starspace{}' --go check out the mod it's peak
 				}

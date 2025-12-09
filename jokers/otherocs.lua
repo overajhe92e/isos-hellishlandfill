@@ -4,6 +4,7 @@ SMODS.Joker {
     rarity = 'ocstobal_epic',
     atlas = 'crystal',
     pos = { x = 0, y = 0 },
+    soul_pos = {x=1,y=0},
     blueprint_compat = true,
     pools = {
         ["copycats"] = true
@@ -146,7 +147,7 @@ SMODS.Joker {
     pronouns = 'he_him',
 
     update = function(self, card, dt)
-        card:set_debuff(true)
+        card:set_debuff(false)
     end,
 
     loc_vars = function(self, info_queue, card)
@@ -202,6 +203,7 @@ SMODS.Joker {
             mult = 1
         }
     },
+    pronouns = "they_them",
     loc_vars = function(self, info_queue, card)
         return {
             vars = { card.ability.extra.chips, card.ability.extra.mult }
