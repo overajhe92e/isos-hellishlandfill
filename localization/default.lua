@@ -1061,12 +1061,11 @@ return {
 				}
 			},
 			j_ocstobal_candycane = {
-				name = "Candycane",
+				name = "Sappy",
 				text = {
-					"{X:red,C:white}+X1{} Mult for",
-					"every time Candycane asked {C:blue}Isotypical{}",
-					"for something.",
-					"{C:inactive}Currently{} {X:red,C:white}X#1#{} {C:inactive}Mult{}"
+					"Scored {C:diamonds}Diamonds{} permanently gain",
+					"{X:red,C:white}X0.1{} {C:attention}Held in hand{} Mult",
+					"{C:blue,s:0.8,E:1}Original Character by: Candycane{}"
 				}
 			},
 			j_ocstobal_mask = {

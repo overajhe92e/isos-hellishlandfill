@@ -136,7 +136,7 @@ SMODS.Joker {
     rarity = 3,
     config = {
         extra = {
-            i_made_fun_of_him_too_much = 9,
+            i_made_fun_of_him_too_much = 0.1,
             suit_1 = "Diamonds"
         }
     },
@@ -152,10 +152,10 @@ SMODS.Joker {
 
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play and context.other_card:is_suit(card.ability.extra.suit_1) and not context.blueprint then
-            context.other_card.ability.perma_bonus = context.other_card.ability.perma_bonus or 0
-            context.other_card.ability.perma_bonus = context.other_card.ability.perma_bonus + card.ability.extra
+            context.other_card.ability.perma_h_x_mult = context.other_card.ability.perma_h_x_mult or 0
+            context.other_card.ability.perma_h_x_mult = context.other_card.ability.perma_h_x_mult + card.ability.extra.i_made_fun_of_him_too_much
             return {
-                extra = { message = localize('k_upgrade_ex'), colour = G.C.CHIPS },
+                extra = { message = localize('k_upgrade_ex'), colour = G.C.MULT },
                 card = card
             }
         end
