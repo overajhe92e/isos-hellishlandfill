@@ -12,6 +12,7 @@ SMODS.Joker {
     key = 'horridopt',
     cost = 5,
     rarity = 2,
+    no_collection = true,
     in_pool = function ()
         return false
     end,

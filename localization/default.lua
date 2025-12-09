@@ -165,11 +165,11 @@ return {
 				}
 			},
 			bl_ocstobal_unstable = {
-				name = 'Instability',
+				name = 'Destabilization',
 				text = {
-					'If you play a hand with',
-					'an Isotypical\'s Junkyard joker,',
-					'Instantly die.'
+					'On blind select, defeat',
+					'an Omega version of',
+					'a blind.'
 				}
 			},
 			bl_ocstobal_rng = {
@@ -1061,12 +1061,11 @@ return {
 				}
 			},
 			j_ocstobal_candycane = {
-				name = "Candycane",
+				name = "Sappy",
 				text = {
-					"{X:red,C:white}+X1{} Mult for",
-					"every time Candycane asked {C:blue}Isotypical{}",
-					"for something.",
-					"{C:inactive}Currently{} {X:red,C:white}X#1#{} {C:inactive}Mult{}"
+					"Scored {C:diamonds}Diamonds{} permanently gain",
+					"{X:red,C:white}X0.1{} {C:attention}Held in hand{} Mult",
+					"{C:blue,s:0.8,E:1}Original Character by: Candycane{}"
 				}
 			},
 			j_ocstobal_mask = {
@@ -1202,7 +1201,7 @@ return {
 			j_ocstobal_sword_of_kings = {
 				name = "Sword of Kings",
 				text = {
-					"Fixed {C:green}1 in 5{} chance to instantly",
+					"Fixed {C:green}2 in 5{} chance to instantly",
 					"{C:attention}Win Blind{} on {C:attention}Blind selection{}",
 					"Otherwise, {X:red,C:white}X3{} Mult"
 				}
@@ -1210,10 +1209,31 @@ return {
 			j_ocstobal_divinedominance = {
 				name = "Divine Dominance",
 				text = {
-					"After x Rounds, {C:red}Destroys{} and",
+					"After 7 Rounds, {C:red}Destroys{} and",
 					"{C:red}Banishes{} up to {C:attention}4 Jokers{}",
 					"Every destroyed {C:attention}Joker{} from this",
 					"will give {X:dark_edition,C:white}^1.5{} Mult"
+				}
+			},
+			j_ocstobal_winsweep = {
+				name = "WinSweep",
+				text = {
+					"You can only have",
+					"{C:attention}One{} Discard",
+					"{C:inactive,s:0.75}Discarding a hand wins the blind.{}"
+				}
+			},
+			j_ocstobal_lesser_divinity = {
+				name = "Lesser Divinity",
+				text = {
+					"noxintrus.wmv"
+				}
+			},
+			j_ocstobal_obscene_joke = { -- these obscure jokes are gonna get me banned istg
+				name = "M---hm----w",
+				text = {
+					"I h--e n- id-- wh-- -'m do-n-!",
+					"{C:red,s:1.5}DO NOT PICK UP.{}"
 				}
 			}
 		},

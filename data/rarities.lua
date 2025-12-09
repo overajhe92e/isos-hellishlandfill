@@ -184,7 +184,7 @@ SMODS.Rarity {
     default_weight = 0,
     badge_colour = HEX('000000'),
     loc_txt = {
-        name = "Are you fucking serious"
+        name = "Game Crashing"
     },
     get_weight = function(self, weight, object_type)
         return weight

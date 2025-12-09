@@ -23,6 +23,9 @@
 -- end
 -- }
 
+if G.GAME then
+end
+
 function recluseach()
 	G.E_MANAGER:add_event(Event({
 		trigger = 'immediate',
@@ -119,8 +122,8 @@ SMODS.Blind {
 	name = 'unstable',
 	atlas = 'unstable',
 	pos = { x = 0, y = 0 },
-	mult = 66,
-	dollars = 10,
+	mult = 0,
+	dollars = 0,
 	boss = { min = 16 },
 	boss_colour = HEX('101010'),
 	debuff = {
@@ -129,14 +132,6 @@ SMODS.Blind {
 		akyrs_cannot_be_rerolled = true,
 		akyrs_cannot_be_overridden = true
 	},
-
-	get_loc_debuff_text = function(self)
-		return localize { type = 'variable', key = 'a_ocstobal_deathinbound' }
-	end,
-
-	set_blind = function()
-		G.GAME.round_resets.lost = false
-	end,
 
 	calculate = function(self, card, context)
 		if context.modify_hand then
@@ -155,10 +150,6 @@ SMODS.Blind {
 								return true
 							end
 						}))
-						return true
-					else
-						diedach()
-						forceGameover()
 						return true
 					end
 					--"Add a cheeseburger" -Grazy
@@ -186,6 +177,21 @@ SMODS.Blind {
 				}))
 			end
 		end
+	end,
+
+	set_blind = function(self)
+		local randomized = pseudorandom("ubc", 1, 4)
+		local unstable_blind_choice = nil
+		if randomized == 1 then
+			unstable_blind_choice = "bl_ocstobal_THESCALE"
+		elseif randomized == 2 then
+			unstable_blind_choice = "bl_ocstobal_BLACKKNIFE"
+		elseif randomized == 3 then
+			unstable_blind_choice = "bl_ocstobal_UNSHY"
+		elseif randomized == 4 then
+			unstable_blind_choice = "bl_ocstobal_THEDROPLET"
+		end
+		G.GAME.blind:set_blind(G.P_BLINDS[tostring(unstable_blind_choice)])
 	end,
 
 	disable = function(self)
@@ -472,7 +478,7 @@ SMODS.Blind {
 				G.GAME.round_resets.lost = true
 				G.E_MANAGER:add_event(Event({
 					func = function()
-						G.GAME.blind:set_blind(G.P_BLINDS["bl_ocstobal_unstable"])
+						G.GAME.blind:set_blind(G.P_BLINDS["bl_ocstobal_THEDROPLET"])
 						ocstobal.nextboss()
 						G.GAME.blind:juice_up()
 						ease_hands_played(G.GAME.round_resets.hands - G.GAME.current_round.hands_left)
@@ -692,19 +698,15 @@ SMODS.Blind {
 	end
 }
 
-SMODS.Blind { --Seraph Blind Special
+SMODS.Blind { --Seraph_Omega
 	key = 'BLACKKNIFE',
-	dollars = 0,
+	dollars = 10,
 	mult = 5,
-	boss = { showdown = true },
+	boss = { min = 16 },
 	boss_colour = HEX('000000'),
 	atlas = 'BLACKKNIFE',
 	pos = { x = 0, y = 0 },
 	ignore_showdown_check = true,
-
-	in_pool = function()
-		return false
-	end,
 
 	calculate = function(self, blind, context)
 		if not blind.disabled then
@@ -740,19 +742,15 @@ SMODS.Blind { --Seraph Blind Special
 	end
 }
 
-SMODS.Blind { --Solinium Blind Special
+SMODS.Blind { --Solinium_Omega
 	key = 'THESCALE',
-	dollars = 0,
+	dollars = 10,
 	mult = 8,
-	boss = { showdown = true },
+	boss = { min = 16 },
 	boss_colour = HEX('000000'),
 	atlas = 'UNFAIRSCALE',
 	pos = { x = 0, y = 0 },
 	ignore_showdown_check = true,
-
-	in_pool = function()
-		return false
-	end,
 
 	calculate = function(self, blind, context)
 		if not blind.disabled then
@@ -788,19 +786,15 @@ SMODS.Blind { --Solinium Blind Special
 	end
 }
 
-SMODS.Blind { --Oxy Blind Special
+SMODS.Blind { --Oxy_Omega
 	key = 'THEDROPLET',
-	dollars = 0,
+	dollars = 10,
 	mult = 0.05,
-	boss = { showdown = true },
+	boss = { min = 16 },
 	boss_colour = HEX('000000'),
 	atlas = 'THEDROPLET',
 	pos = { x = 0, y = 0 },
 	ignore_showdown_check = true,
-
-	in_pool = function()
-		return false
-	end,
 
 	calculate = function(self, blind, context)
 		if context.debuff_card and context.debuff_card.area == G.jokers then
@@ -839,19 +833,15 @@ SMODS.Blind { --Oxy Blind Special
 	end
 }
 
-SMODS.Blind { --Sparky Blind Special
+SMODS.Blind { --Sparky_Omega
 	key = 'UNSHY',
-	dollars = 0,
+	dollars = 10,
 	mult = 100,
-	boss = { showdown = true },
+	boss = { min = 16 },
 	boss_colour = HEX('000000'),
 	atlas = 'UNSHY',
 	pos = { x = 0, y = 0 },
 	ignore_showdown_check = true,
-
-	in_pool = function()
-		return false
-	end,
 
 	calculate = function(self, blind, context)
 		if context.final_scoring_step then
@@ -910,6 +900,26 @@ SMODS.Blind {
 					return true
 				end
 			}))
+		end
+	end
+}
+
+SMODS.Blind {
+	key = 'starman_super',
+	mult = 1.5,
+	money = 7,
+	atlas = 'starman',
+	boss_colour = HEX('ccb046'),
+	boss = { min = 2 },
+	calculate = function(self, card, context)
+		if context.final_scoring_step and context.cardarea == G.play then
+			G.GAME.chips = G.GAME.chips * 0.7
+			G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
+		end
+	end,
+	defeat = function(self)
+		if SMODS.pseudorandom_probability(card, "SOK", 1, 128) then
+			SMODS.add_card { key = "j_ocstobal_sword_of_kings" }
 		end
 	end
 }

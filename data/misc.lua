@@ -105,7 +105,7 @@ SMODS.Atlas {
 	py = 34,
 	path = 'PRAY.png',
 	atlas_table = 'ANIMATION_ATLAS',
-	frames = 32
+	frames = 24
 }
 
 SMODS.ObjectType({
@@ -523,6 +523,23 @@ SMODS.Atlas {
 	atlas_table = 'ASSET_ATLAS'
 }
 
+SMODS.Atlas {
+	key = 'starman',
+	px = 34,
+	py = 34,
+	path = 'starman.png',
+	atlas_table = 'ANIMATION_ATLAS',
+	frames = 24
+}
+
+SMODS.Atlas {
+	key = "placeholder",
+	px = 71,
+	py = 95,
+	path = "placeholder.png",
+	atlas_table = 'ASSET_ATLAS'
+}
+
 SMODS.Sound {
 	key = "loser",
 	path = "catlaugh.ogg",
@@ -774,7 +791,11 @@ end
 --dunno what to put here
 
 SMODS.current_mod.optional_features = {
-	retrigger_joker = true
+	retrigger_joker = true,
+	cardareas = {
+        discard = true,
+        deck = true
+    }
 }
 
 SMODS.Shader {
@@ -846,4 +867,3 @@ G.P_CENTERS.e_negative.get_weight = function(self)
 	end
 	return weight
 end
---yeah.

@@ -137,7 +137,8 @@ SMODS.Joker {
     rarity = 3,
     config = {
         extra = {
-            xmult = 1e300
+            i_made_fun_of_him_too_much = 0.1,
+            suit_1 = "Diamonds"
         }
     },
     blueprint_compat = true,
@@ -146,18 +147,17 @@ SMODS.Joker {
     soul_pos = { x = 1, y = 0 },
     pronouns = 'he_him',
 
-    update = function(self, card, dt)
-        card:set_debuff(false)
-    end,
-
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.xmult } }
     end,
 
     calculate = function(self, card, context)
-        if context.joker_main then
+        if context.individual and context.cardarea == G.play and context.other_card:is_suit(card.ability.extra.suit_1) and not context.blueprint then
+            context.other_card.ability.perma_h_x_mult = context.other_card.ability.perma_h_x_mult or 0
+            context.other_card.ability.perma_h_x_mult = context.other_card.ability.perma_h_x_mult + card.ability.extra.i_made_fun_of_him_too_much
             return {
-                Xmult = card.ability.extra.xmult
+                extra = { message = localize('k_upgrade_ex'), colour = G.C.MULT },
+                card = card
             }
         end
     end
@@ -200,7 +200,9 @@ SMODS.Joker {
     config = {
         extra = {
             chips = 1,
-            mult = 1
+            mult = 1,
+            suit_1 = "Spades",
+            suit_2 = "Hearts"
         }
     },
     pronouns = "they_them",
@@ -210,6 +212,26 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        if h then return nil end
+        if context.individual and context.cardarea == G.play then
+            if context.other_card:is_suit(card.ability.extra.suit_1) and not context.blueprint then
+                card.ability.extra.chips = card.ability.extra.chips + 0.25
+                return {
+                    message = 'Upgraded!',
+                    colour = G.C.CHIPS,
+                }
+            elseif context.other_card:is_suit(card.ability.extra.suit_2) and not context.blueprint then
+                card.ability.extra.mult = card.ability.extra.mult + 0.25
+                return {
+                    message = 'Upgraded!',
+                    colour = G.C.MULT,
+                }
+            end
+        end
+        if context.joker_main then
+            return {
+                xchips = card.ability.extra.chips,
+                xmult = card.ability.extra.mult
+            }
+        end
     end
 }
