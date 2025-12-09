@@ -136,7 +136,8 @@ SMODS.Joker {
     rarity = 3,
     config = {
         extra = {
-            xmult = 1e300
+            i_made_fun_of_him_too_much = 9,
+            suit_1 = "Diamonds"
         }
     },
     blueprint_compat = true,
@@ -145,18 +146,17 @@ SMODS.Joker {
     soul_pos = { x = 1, y = 0 },
     pronouns = 'he_him',
 
-    update = function(self, card, dt)
-        card:set_debuff(true)
-    end,
-
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.xmult } }
     end,
 
     calculate = function(self, card, context)
-        if context.joker_main then
+        if context.individual and context.cardarea == G.play and context.other_card:is_suit(card.ability.extra.suit_1) and not context.blueprint then
+            context.other_card.ability.perma_bonus = context.other_card.ability.perma_bonus or 0
+            context.other_card.ability.perma_bonus = context.other_card.ability.perma_bonus + card.ability.extra
             return {
-                Xmult = card.ability.extra.xmult
+                extra = { message = localize('k_upgrade_ex'), colour = G.C.CHIPS },
+                card = card
             }
         end
     end

@@ -53,6 +53,7 @@ SMODS.Joker {
     key = 'malicesyringe',
     cost = 1,
     rarity = 'ocstobal_cursed',
+    atlas = "placeholder",
     calculate = function(self, card, context)
         if context.joker_main then
             return { xmult = 0.5 }
@@ -67,6 +68,7 @@ SMODS.Joker {
     config = {
         dura = 3
     },
+    atlas = "placeholder",
 
     loc_vars = function(self,info_queue,card)
         return {

@@ -532,6 +532,14 @@ SMODS.Atlas {
 	frames = 24
 }
 
+SMODS.Atlas {
+	key = "placeholder",
+	px = 71,
+	py = 95,
+	path = "placeholder.png",
+	atlas_table = 'ASSET_ATLAS'
+}
+
 SMODS.Sound {
 	key = "loser",
 	path = "catlaugh.ogg",

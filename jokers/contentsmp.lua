@@ -18,6 +18,7 @@ SMODS.Joker {
 SMODS.Joker {
     key = 'winsweep',
     cost = 300,
+    atlas = 'placeholder',
     rarity = 'ocstobal_beyondexotic',
     calculate = function(self, card, context)
         if context.discard then

@@ -2,6 +2,7 @@ SMODS.Joker {
     key = 'sword_of_kings',
     rarity = 'ocstobal_unique',
     cost = 735,
+    atlas = 'placeholder',
     calculate = function(self, card, context)
         if context.setting_blind then
             if SMODS.pseudorandom_probability(card, "sok_win", 2, 5, true) then

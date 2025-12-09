@@ -77,6 +77,7 @@ SMODS.Joker { --don't use, please
 SMODS.Joker { --also the second easiest as seraph is fucking ass at controlling his power
     key = 'sphawkclassic',
     rarity = 'ocstobal_beyondexotic',
+    atlas = 'placeholder',
     cost = 12500,
     calculate = function(self, card, context)
         if context.joker_main then
@@ -112,6 +113,7 @@ SMODS.Joker { --oh my god two soul cards and a blackhole are you deranged
     key = 'solawkclassic',
     rarity = 'ocstobal_beyondexotic',
     cost = 999999,
+    atlas = 'placeholder',
 
     calculate = function(self, card, context)
         if context.setting_blind then
@@ -286,6 +288,7 @@ SMODS.Joker {
     key = 'obscene_joke',
     rarity = 1,
     cost = 1,
+    atlas = "placeholder",
     add_to_deck = function(self, card)
         SMODS.add_card { key = 'j_ocstobal_oxhatred' }
         SMODS.destroy_cards(card, nil, nil, true)
