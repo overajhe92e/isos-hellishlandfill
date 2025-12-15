@@ -1111,7 +1111,7 @@ return {
 				text = {
 					"Copies {C:attention}3 jokers{} from",
 					"the left and right of this \"joker\"."
-				}
+				} --very original idea, iso!
 			},
 			j_ocstobal_patience = {
 				name = "1.",
@@ -1152,7 +1152,7 @@ return {
 				}
 			},
 			j_ocstobal_gourdy = {
-				name = 'Gourdy',
+				name = 'Gourdy Holloway',
 				text = {
 					"{C:red}No ability as of now!{}",
 					"{C:dark_edition,s:0.8}Origin : Dandy\'s World{}"
@@ -1165,8 +1165,8 @@ return {
 					"{C:red}1 in 2{} chance to {C:red}crash the game.{}"
 				}
 			},
-			j_ocstobal_dw_astro = {
-				name = "Astro",
+			j_ocstobal_dw_astro = { --BEHAVE, STARSPACE ASTRO!
+				name = "Astro Novalite",
 				text = {
 					{
 						"Adds {C:blue}X#2#{} of your current",
@@ -1198,7 +1198,7 @@ return {
 					}
 				}
 			},
-			j_ocstobal_sword_of_kings = {
+			j_ocstobal_sword_of_kings = { -- ONE IN WHAT NOW
 				name = "Sword of Kings",
 				text = {
 					"Fixed {C:green}2 in 5{} chance to instantly",
@@ -1215,7 +1215,7 @@ return {
 					"will give {X:dark_edition,C:white}^1.5{} Mult"
 				}
 			},
-			j_ocstobal_winsweep = {
+			j_ocstobal_winsweep = { -- you can only have one wind charge
 				name = "WinSweep",
 				text = {
 					"You can only have",
@@ -1232,7 +1232,7 @@ return {
 			j_ocstobal_obscene_joke = { -- these obscure jokes are gonna get me banned istg
 				name = "M---hm----w",
 				text = {
-					"I h--e n- id-- wh-- -'m do-n-!",
+					"I h--e {s:1.2}N-{} id-- wh-- -'m do-n-!",
 					"{C:red,s:1.5}DO NOT PICK UP.{}"
 				}
 			}
