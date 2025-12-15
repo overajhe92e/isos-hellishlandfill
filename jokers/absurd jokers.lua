@@ -78,6 +78,7 @@ SMODS.Joker { --also the second easiest as seraph is fucking ass at controlling 
     key = 'sphawkclassic',
     rarity = 'ocstobal_beyondexotic',
     atlas = 'placeholder',
+    no_collection = true,
     cost = 12500,
     calculate = function(self, card, context)
         if context.joker_main then
@@ -96,6 +97,7 @@ SMODS.Joker { --this is the easiest of the trio (unbalanced badly) to make wtf
     discovered = false,
     unlocked = false,
     atlas = 'spkawk_classic',
+    no_collection = true,
     pos = { x = 0, y = 0 },
     soul_pos = { x = 1, y = 0 },
 
@@ -114,6 +116,7 @@ SMODS.Joker { --oh my god two soul cards and a blackhole are you deranged
     rarity = 'ocstobal_beyondexotic',
     cost = 999999,
     atlas = 'placeholder',
+    no_collection = true,
 
     calculate = function(self, card, context)
         if context.setting_blind then
@@ -189,6 +192,7 @@ SMODS.Joker { --terminus go brrrrt
     key = 'sphawk',
     rarity = 'ocstobal_beyondexotic',
     cost = 50000,
+    no_collection = true,
     config = {
         extra = {
             mult = 2,
@@ -238,6 +242,7 @@ SMODS.Joker { --oh no
             hypmult = 4
         }
     },
+    no_collection = true,
     cost = 20000,
     atlas = 'terminuses',
     pos = { x = 0, y = 0 },
@@ -274,6 +279,7 @@ SMODS.Joker { --unused as of now
     soul_pos = {
         x = 1, y = 1
     },
+    no_collection = true,
     calculate = function(self, card, context)
         if context.joker_main then
             return {
