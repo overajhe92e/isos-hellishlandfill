@@ -21,6 +21,7 @@ SMODS.Joker { --Broken Seraph
     perishable_compat = true,
     unlocked = true,
     discovered = false,
+    no_collection = true,
     atlas = 'CustomJokers',
     soul_pos = {
         x = 1,

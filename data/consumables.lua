@@ -28,9 +28,25 @@ SMODS.ConsumableType {
             },
         },
     }, --go my backup localization
-    text_colour = G.C.OMEGARED
+    text_colour = G.C.WHITE
 }
 
+SMODS.ConsumableType {
+    key = 'ocstobal_others',
+    primary_colour = HEX('62b6fe'),
+    secondary_colour = HEX('fdd965'),
+    loc_txt = {
+        name = 'Misc.',                   -- used on card type badges
+        collection = 'Other Consumables', -- label for the button to access the collection
+        undiscovered = {                  -- description for undiscovered cards in the collection
+            name = '???',
+            text = {
+                'These will randomly spawn.',
+            },
+        },
+    }, --go my backup localization
+    text_colour = G.C.WHITE
+}
 
 SMODS.Consumable {
     key = 'thesoulex',
@@ -58,6 +74,70 @@ SMODS.Consumable {
             end,
         }))
         delay(0.6)
+    end
+}
+
+SMODS.Consumable {
+    key = 'needle',
+    set = 'ocstobal_others',
+    hidden = true,
+    soul_set = 'Spectral',
+    soul_rate = 0.1,
+    can_use = function(self, card)
+        return true
+    end,
+    use = function(self, card, area, copier)
+        local lovecheck = nil
+        if not next(SMODS.find_card("j_ocstobal_pk_love_a")) then
+            G.E_MANAGER:add_event(Event({
+                trigger = "after",
+                delay = 0.4,
+                func = function()
+                    play_sound("timpani")
+                    SMODS.add_card({ key = 'j_ocstobal_pk_love_a' })
+                    card:juice_up(0.3, 0.5)
+                    return true
+                end,
+            }))
+        elseif next(SMODS.find_card("j_ocstobal_pk_love_a")) then
+            G.E_MANAGER:add_event(Event({
+                trigger = "after",
+                delay = 0.4,
+                func = function()
+                    play_sound("timpani")
+                    SMODS.destroy_cards(SMODS.find_card('j_ocstobal_pk_love_a'), nil)
+                    SMODS.add_card({ key = 'j_ocstobal_pk_love_b' })
+                    card:juice_up(0.3, 0.5)
+                    return true
+                end,
+            }))
+        elseif next(SMODS.find_card("j_ocstobal_pk_love_b")) then
+            G.E_MANAGER:add_event(Event({
+                trigger = "after",
+                delay = 0.4,
+                func = function()
+                    play_sound("timpani")
+                    SMODS.destroy_cards(SMODS.find_card('j_ocstobal_pk_love_b'), nil)
+                    SMODS.add_card({ key = 'j_ocstobal_pk_love_g' })
+                    card:juice_up(0.3, 0.5)
+                    return true
+                end,
+            }))
+        elseif next(SMODS.find_card("j_ocstobal_pk_love_g")) then
+            G.E_MANAGER:add_event(Event({
+                trigger = "after",
+                delay = 0.4,
+                func = function()
+                    play_sound("timpani")
+                    SMODS.destroy_cards(SMODS.find_card('j_ocstobal_pk_love_g'), nil)
+                    SMODS.add_card({ key = 'j_ocstobal_pk_love_o' })
+                    card:juice_up(0.3, 0.5)
+                    return true
+                end,
+            }))
+        elseif next(SMODS.find_card("j_ocstobal_pk_love_o")) then
+            forceGameover()
+        end
     end,
     draw = function(self, card, layer)
         if (layer == 'card' or layer == 'both') and card.sprite_facing == 'front' then

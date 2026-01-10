@@ -108,6 +108,16 @@ SMODS.Atlas {
 	frames = 24
 }
 
+SMODS.Atlas {
+	key = 'pklove',
+	px = 71,
+	py = 95,
+	path = 'PK_LOVE.png',
+	atlas_table = 'ANIMATION_ATLAS',
+	frames = 24,
+	fps = 16
+}
+
 SMODS.ObjectType({
 	key = "ocstob",
 	default = "j_ocstobal_solinium",
@@ -128,6 +138,35 @@ SMODS.ObjectType({
 		j_ocstobal_crystal = true,
 		j_blueprint = true,
 		j_brainstorm = true
+	},
+	inject = function(self)
+		SMODS.ObjectType.inject(self)
+		self:inject_card(G.P_CENTERS.j_lucky_cat)
+	end,
+})
+
+SMODS.ObjectType({
+	key = "unbalanced",
+	default = "j_ocstobal_oxyemp",
+	cards = {
+	},
+	inject = function(self)
+		SMODS.ObjectType.inject(self)
+		self:inject_card(G.P_CENTERS.j_lucky_cat)
+	end,
+})
+
+SMODS.ObjectType({
+	key = "fucking_absurd",
+	default = "j_ocstobal_jokertoendalljokers",
+	cards = {
+		j_ocstobal_spkawk = true,
+		j_ocstobal_sphawk = true,
+		j_ocstobal_solawk = true,
+		j_ocstobal_spkawkclassic = true,
+		j_ocstobal_solawkclassic = true,
+		j_ocstobal_sphawkclassic = true,
+		j_ocstobal_winsweep = true
 	},
 	inject = function(self)
 		SMODS.ObjectType.inject(self)
@@ -538,6 +577,24 @@ SMODS.Atlas {
 	py = 95,
 	path = "placeholder.png",
 	atlas_table = 'ASSET_ATLAS'
+}
+
+SMODS.Atlas {
+	key = 'giegueblind',
+	px = 34,
+	py = 34,
+	path = "Giygas Is Fucking Dying.png",
+	atlas_table = "ANIMATION_ATLAS",
+	frames = 16
+}
+
+SMODS.Atlas {
+	key = 'oxyblindatlas',
+	px = 34,
+	py = 34,
+	path = "oxyblind.png",
+	atlas_table = "ANIMATION_ATLAS",
+	frames = 24
 }
 
 SMODS.Sound {

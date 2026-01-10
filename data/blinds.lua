@@ -56,9 +56,9 @@ function omegarushdefeat()
 		locking = false,
 		delay = 0,
 		func = function()
-			print('omega defeated')
+			--print('omega defeated')
 			if SMODS.stake_from_index(G.GAME.stake) == "stake_ocstobal_finale" then
-				print('given deck access')
+				--print('given deck access')
 				check_for_unlock({ type = "defeated_omega" })
 				return true
 			end
@@ -322,6 +322,7 @@ SMODS.Blind {
 	mult = 2,
 	dollars = 5,
 	boss = { min = 1 },
+	atlas = 'oxyblindatlas',
 	boss_colour = HEX('fc6203'),
 	setting_blind = function()
 		G.GAME.round_resets.lost = false
@@ -878,6 +879,7 @@ SMODS.Blind {
 	key = 'giygas',
 	mult = 666,
 	money = 10,
+	atlas = 'giegueblind',
 	boss_colour = HEX('ff0000'),
 	boss = { min = 32 },
 

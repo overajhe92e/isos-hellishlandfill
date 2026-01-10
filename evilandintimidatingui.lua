@@ -1,4 +1,4 @@
-if G.PROFILES[G.SETTINGS.profile].current_isomode then
+if G.PROFILES[G.SETTINGS.profile] then
 	if G.PROFILES[G.SETTINGS.profile].current_isomode == nil then
 		G.current_isomode = 0
 	else
@@ -117,7 +117,7 @@ function noisomode(buttonname)
 						n = G.UIT.R,
 						config = { minh = 1, minw = 1, align = 'tm', padding = 0.05, colour = G.C.CLEAR },
 						nodes = {
-							{ n = G.UIT.T, config = { text = "Eh... Close enough. Welcome back Jen's Almanac.", colour = G.C.UI.TEXT_INACTIVE, scale = 0.35, align = "tm" }, }
+							{ n = G.UIT.T, config = { text = "polterworx is kil", colour = G.C.UI.TEXT_INACTIVE, scale = 0.35, align = "tm" }, }
 						}
 					},
 				}
@@ -142,7 +142,7 @@ function absurdmenu(buttonname)
 						n = G.UIT.R,
 						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 						nodes = {
-							{ n = G.UIT.T, config = { text = "Absurd Gameplay", scale = 0.8, colour = G.C.EDITION, align = 'm' } }
+							{ n = G.UIT.T, config = { text = "\"Slop\" Mode", scale = 0.8, colour = G.C.EDITION, align = 'm' } }
 						}
 					},
 					{
@@ -171,6 +171,13 @@ function absurdmenu(buttonname)
 						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 						nodes = {
 							{ n = G.UIT.T, config = { text = "It is HIGHLY suggested to play Normal/Rebalanced Mode first!", scale = 0.65, colour = G.C.RED, align = 'm' } }
+						}
+					},
+					{
+						n = G.UIT.R,
+						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
+						nodes = {
+							{ n = G.UIT.T, config = { text = "Also yes, it's called slop mode because some of you call very-big-number mods, \"Numberslop\". I'm looking at you.", scale = 0.3, colour = G.C.UI.TEXT_INACTIVE, align = 'm' } }
 						}
 					},
 					{
@@ -512,14 +519,14 @@ SMODS.current_mod.config_tab = function()
 										n = G.UIT.R,
 										config = { minw = 1, minh = 1, align = "tm", padding = 0.1, colour = G.C.DARK_EDITION, button = "ahabsurd", r = 0.1 },
 										nodes = {
-											{ n = G.UIT.T, config = { text = "Absurd Gameplay", colour = G.C.WHITE, scale = 0.6, align = "m" }, },
+											{ n = G.UIT.T, config = { text = "\"Slop\" Mode", colour = G.C.WHITE, scale = 0.6, align = "m" }, },
 										}
 									},
 									{
 										n = G.UIT.R,
 										config = { minh = 1, minw = 1, align = 'tm', padding = 0.05, colour = G.C.CLEAR },
 										nodes = {
-											{ n = G.UIT.T, config = { text = "Eh... Close enough. Welcome back Jen's Almanac.", colour = G.C.UI.TEXT_INACTIVE, scale = 0.35, align = "tm" }, }
+											{ n = G.UIT.T, config = { text = "polterworx is kil", colour = G.C.UI.TEXT_INACTIVE, scale = 0.35, align = "tm" }, }
 										}
 									},
 								}
@@ -790,7 +797,7 @@ function sphlvls(buttonname)
 								n = G.UIT.R,
 								config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 								nodes = {
-									{ n = G.UIT.T, config = { text = "If you're craving for more insanity... Absurd Mode is for YOU!", scale = 0.4, colour = G.C.DARK_EDITION, align = 'm' } }
+									{ n = G.UIT.T, config = { text = "If you're craving for more insanity... \"Slop\" Mode is for YOU!", scale = 0.4, colour = G.C.DARK_EDITION, align = 'm' } }
 								}
 							},
 							{

@@ -84,7 +84,7 @@ SMODS.Joker {
     end,
 
     remove_from_deck = function(self, card, from_debuff)
-        G.hand:change_size(-16)
+        G.hand:change_size(-8)
     end,
 
     loc_vars = function(self, info_queue, card) -- yeah this was buggy asf lmao
