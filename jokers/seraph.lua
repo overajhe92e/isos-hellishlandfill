@@ -376,35 +376,6 @@ SMODS.Joker { --Seraph
 
 }
 
-SMODS.Joker {
-    key = 'seraphnt',
-    cost = 1,
-    rarity = 'ocstobal_cursed',
-    config = {
-        re = 1
-    },
-    no_collection = function(self, args)
-        return true
-    end,
-
-    loc_vars = function(self, info_queue, card)
-        return {
-            key = card.ability.re == 1 and 'j_ocstobal_seraphnt' or
-                card.ability.re == 2 and 'j_ocstobal_seraphnt2' or
-                card.ability.re == 3 and 'j_ocstobal_seraphnt3' or
-                card.ability.re == 4 and 'j_ocstobal_seraphnt4' or
-                card.ability.re >= 5 and 'j_ocstobal_seraphntnomore'
-        }
-    end,
-
-    calculate = function(self, card, context)
-        if context.joker_main and not context.blueprint then
-            card.ability.re = card.ability.re + 1
-            return { chips = 666 }
-        end
-    end
-}
-
 function sphup()
     local text = localize('sphlvl')
     attention_text({
