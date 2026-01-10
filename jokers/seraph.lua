@@ -185,6 +185,9 @@ SMODS.Joker { --Seraph
 
     set_ability = function(self, card, initial, delay_sprites)
     end,
+    pools = {
+        ["unbalanced"] = true
+    },
 
     loc_vars = function(self, info_queue, card)
         local new_numerator, new_denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds,
@@ -374,6 +377,13 @@ SMODS.Joker { --Seraph
         end
     end
 
+}
+
+SMODS.Joker {
+    key = 'reclusivevessel',
+    cost = 666,
+    rarity = 4,
+    no_collection = true
 }
 
 function sphup()

@@ -20,6 +20,9 @@ SMODS.Joker { --so you know polterwor
     cost = 1e308,
     atlas = 'avaritia',
     no_collection = true,
+    pools = {
+        ["fucking_absurd"] = true
+    },
     soul_pos = {
         x = 1,
         y = 0,
@@ -60,6 +63,9 @@ SMODS.Joker { --don't use, please
     soul_pos = { x = 1, y = 0 },
     pos = { x = 0, y = 0 },
     no_collection = true,
+    pools = {
+        ["fucking_absurd"] = true
+    },
 
     calculate = function(self, card, context)
         if context.joker_main then
@@ -78,6 +84,9 @@ SMODS.Joker { --also the second easiest as seraph is fucking ass at controlling 
     key = 'sphawkclassic',
     rarity = 'ocstobal_beyondexotic',
     atlas = 'placeholder',
+    pools = {
+        ["fucking_absurd"] = true
+    },
     no_collection = true,
     cost = 12500,
     calculate = function(self, card, context)
@@ -97,6 +106,9 @@ SMODS.Joker { --this is the easiest of the trio (unbalanced badly) to make wtf
     discovered = false,
     unlocked = false,
     atlas = 'spkawk_classic',
+    pools = {
+        ["fucking_absurd"] = true
+    },
     no_collection = true,
     pos = { x = 0, y = 0 },
     soul_pos = { x = 1, y = 0 },
@@ -117,6 +129,9 @@ SMODS.Joker { --oh my god two soul cards and a blackhole are you deranged
     cost = 999999,
     atlas = 'placeholder',
     no_collection = true,
+    pools = {
+        ["fucking_absurd"] = true
+    },
 
     calculate = function(self, card, context)
         if context.setting_blind then
@@ -156,6 +171,9 @@ SMODS.Joker { --todo: implement every effect
     rarity = 'ocstobal_whatthefuck',
     cost = 999999999,
     no_collection = true,
+    pools = {
+        ["fucking_absurd"] = true
+    },
 
     calculate = function(self, card, context)
         if context.joker_main then
@@ -177,6 +195,9 @@ SMODS.Joker { --right before getting aio joker
     },
     blueprint_compat = true,
     no_collection = true,
+    pools = {
+        ["fucking_absurd"] = true
+    },
 
     calculate = function(self, card, context)
         if context.joker_main then
@@ -204,6 +225,9 @@ SMODS.Joker { --terminus go brrrrt
     pos = { x = 2, y = 0 },
     soul_pos = {
         x = 3, y = 0
+    },
+    pools = {
+        ["fucking_absurd"] = true
     },
 
     loc_vars = function(self, info_queue, card)
@@ -242,6 +266,9 @@ SMODS.Joker { --oh no
             hypmult = 4
         }
     },
+    pools = {
+        ["fucking_absurd"] = true
+    },
     no_collection = true,
     cost = 20000,
     atlas = 'terminuses',
@@ -279,6 +306,9 @@ SMODS.Joker { --unused as of now
     soul_pos = {
         x = 1, y = 1
     },
+    pools = {
+        ["fucking_absurd"] = true
+    },
     no_collection = true,
     calculate = function(self, card, context)
         if context.joker_main then
@@ -300,3 +330,24 @@ SMODS.Joker {
         SMODS.destroy_cards(card, nil, nil, true)
     end
 }
+
+-- SMODS.Joker {
+--     key = "exponenttest",
+--     rarity = "ocstobal_beyondexotic",
+--     cost = 69420,
+--     add_to_deck = function(self, card)
+--         SMODS.set_scoring_calculation('ocstobal_tetration')
+--     end,
+--     remove_from_deck = function(self,card)
+--         SMODS.set_scoring_calculation('multiply')
+--     end
+-- }
+
+SMODS.Scoring_Calculation({
+	key = 'tetration',
+	func = function(self, chips, mult, flames)
+		return chips ^ mult^(mult^mult)
+	end,
+	text = '^^', -- controls the UI symbol displayed between the chips and mult box
+	colour = G.C.DARK_EDITION
+})

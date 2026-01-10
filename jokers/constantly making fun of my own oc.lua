@@ -263,7 +263,14 @@ SMODS.Joker {
                 end
             }
         end
-        local left_effect, right_effect, right_effect_ex, left_effect_ex, right_effect_ex2, left_effect_ex2 = nil, nil, nil, nil, nil, nil
+
+        if context.retrigger_joker_check then
+            return { repetitions = 1 }
+        end
+
+
+        local left_effect, right_effect, right_effect_ex, left_effect_ex, right_effect_ex2, left_effect_ex2 = nil, nil,
+        nil, nil, nil, nil
 
         for i = 1, #G.jokers.cards do
             if G.jokers.cards[i] == card then

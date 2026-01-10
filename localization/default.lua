@@ -67,7 +67,7 @@ return {
 					'{C:green}1 in 2{} chance to give a random',
 					'{C:attention}Isotypical\'s Junkyard{} Joker.',
 					'{C:inactive,s:0.8}( Bypasses Joker slots ){}',
-					'{C:inactive,s:0.8}C( an give Unbalanced+ Jokers ){}'
+					'{C:inactive,s:0.8}( Can give Unbalanced+ Jokers ){}'
 				},
 				unlock = {
 					'Defeat the {C:ocstobal_finalrgb}Final Stake.{}'
@@ -816,12 +816,22 @@ return {
 			j_ocstobal_evilantislopinator = {
 				name = 'Fatal Exponentiation',
 				text = {
-					'{C:default}If your score is above 1e308,{}',
-					'{C:ocstobal_ust,s:2.5}Die.{}',
-					'{X:ocstobal_sewh,C:black,s:2}^#1#{} Mult,',
-					'Scales by {X:red,C:white}X#2#{} for every played hand',
-					'Skipping blinds scales EMult by {X:red,C:white}X#2#{}, and Multiplies EMult scaling by {X:red,C:white}X#2#{}.',
-					'{C:attention}Defeating a boss blind divides ^Mult by 8{}'
+					{
+						'{C:default}If your score is above 1e308,{}',
+						'{C:ocstobal_ust,s:2}Die.{}',
+						'{X:dark_edition,C:white}^#1#{} Mult',
+					},
+					{
+						'{C:red,s:1.5}Negatives{}',
+						'{X:dark_edition,C:white}EMult{} scales by {X:red,C:white}X#2#{} for every played hand',
+						'{C:attention}Skipping blinds{} scales EMult by {X:red,C:white}X#2#{}, and Multiplies EMult scaling by {X:red,C:white}X#2#{}',
+						'Not buying anything in shop will {C:red}multiply{} {X:dark_edition,C:white}EMult{}',
+						'Playing {C:attention}most played hand{} will {C:red}add +0.1{} to {X:dark_edition,C:white}EMult{}'
+					},
+					{
+						'{C:green,s:1.5}Positives{}',
+						'{C:attention,s1.2}Defeating a boss blind divides ^Mult by 8{}'
+					}
 				}
 			},
 			j_ocstobal_crystal = {
@@ -1107,10 +1117,12 @@ return {
 				}
 			},
 			j_ocstobal_oxydeceit = {
-				name = "{C:inactive}(Deceitful){} {C:ocstobal_deceitful}Oxy{}",
+				name = "{C:ocstobal_deceitful}Oxy{}",
 				text = {
 					"Copies {C:attention}3 jokers{} from",
-					"the left and right of this \"joker\"."
+					"the left and right of this \"joker\"",
+					"Retriggers {C:attention}all{} jokers once",
+					"{C:inactive,s:0.8}No, it will not retrigger itself!{}"
 				} --very original idea, iso!
 			},
 			j_ocstobal_patience = {
@@ -1230,10 +1242,106 @@ return {
 				}
 			},
 			j_ocstobal_obscene_joke = { -- these obscure jokes are gonna get me banned istg
-				name = "M---hm----w",
+				name = "Obscure Joke Here",
 				text = {
-					"I h--e {s:1.2}N-{} id-- wh-- -'m do-n-!",
+					"ok so i originally wanted to",
+					"hide an obscene joke here but if you",
+					"figured it out i could have gotten",
+					"absolutely obliterated off of the balatro modding community",
+					"also,",
 					"{C:red,s:1.5}DO NOT PICK UP.{}"
+				}
+			},
+			j_ocstobal_porky = {
+				name = "Porky",
+				text = {
+					"That monster had a name?"
+				}
+			},
+			j_ocstobal_giygas = {
+				name = "Giygas",
+				text = {
+					"Ness..."
+				}
+			},
+			j_ocstobal_fancy_purse = {
+				name = "Fancy Purse",
+				text = {
+					"Gives {C:money}$100{} at",
+					"the end of a round{C:inactive}..?{}"
+				}
+			},
+			j_ocstobal_exponenttest = {
+				name = "Operational Test",
+				text = {
+					"changes operation from mult to tetration when added to deck"
+				}
+			},
+			j_ocstobal_pk_love_a = {
+				name = "PK Love Alpha",
+				text = {
+					{
+						"Stores {X:defualt,C:white}X0.1{} of your current",
+						"chips and mult, then",
+						"{C:red}unleashes{} stored Chips and Mult on",
+						"last hand as {X:red,C:white}XMult{} and {X:blue,C:white}XChips{}"
+					},
+					{
+						"Stored Chips : {C:blue}#1#{}",
+						"Stored Mult : {C:red}#2#{}",
+						"Possible {X:legendary,C:white}XChip/XMult{} : {X:dark_edition,C:white}X#3#{}"
+					},
+				}
+			},
+			j_ocstobal_pk_love_b = {
+				name = "PK Love Beta",
+				text = {
+					{
+						"Stores {X:attention,C:white}X0.5{} of your current",
+						"chips and mult, then",
+						"{C:red}unleashes{} stored Chips and Mult on",
+						"last hand as {X:red,C:white}XMult{} and {X:blue,C:white}XChips{}"
+					},
+					{
+						"Stored Chips : {C:blue}#1#{}",
+						"Stored Mult : {C:red}#2#{}",
+						"Possible {X:legendary,C:white}XChip/XMult{} : {X:dark_edition,C:white}X#3#{}"
+					},
+				}
+			},
+			j_ocstobal_pk_love_g = {
+				name = "PK Love Gamma",
+				text = {
+					{
+						"Stores {X:legendary,C:white}X1{} of your current",
+						"chips and mult, then",
+						"{C:red}unleashes{} stored Chips and Mult on",
+						"last hand as {X:red,C:white}XMult{} and {X:blue,C:white}XChips{}"
+					},
+					{
+						"Stored Chips : {C:blue}#1#{}",
+						"Stored Mult : {C:red}#2#{}",
+						"Possible {X:legendary,C:white}XChip/XMult{} : {X:dark_edition,C:white}X#3#{}"
+					},
+				}
+			},
+			j_ocstobal_pk_love_o = {
+				name = "PK Love Omega",
+				text = {
+					{
+						"Stores {X:dark_edition,C:white}X2{} of your current",
+						"chips and mult, then",
+						"{C:red}unleashes{} stored Chips and Mult on",
+						"last hand as {X:red,C:white}XMult{} and {X:blue,C:white}XChips{}"
+					},
+					{
+						"Stored Chips : {C:blue}#1#{}",
+						"Stored Mult : {C:red}#2#{}",
+						"Possible {X:legendary,C:white}XChip/XMult{} : {X:dark_edition,C:white}X#3#{}"
+					},
+					{
+						"Do {C:red,s:1.5}NOT{} use another Needle at this point!"
+					}
 				}
 			}
 		},
@@ -1304,7 +1412,7 @@ return {
 					'Previous stakes effects are {C:attention}Amplified{}',
 					'{s:0.7,C:inactive}Except Blue Stake because it\'s god fucking awful,{}',
 					'{s:0.7,C:inactive}Start off with 6 discards instead, and +2 hands.{}',
-					'{C:attention}Unbalanced Mode{} Jokers and {C:ocstobal_almanacblue}Iso\'s Almanac{} Jokers',
+					'{C:attention}Unbalanced Mode{} Jokers and {C:ocstobal_almanacblue}Absurd{} Jokers',
 					'Are {C:red}Permanently{} Debuffed'
 				}
 			}

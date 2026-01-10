@@ -1,6 +1,6 @@
 SMODS.Stake {
     key = 'singularity',
-    unlocked_stake = "finale" ,
+    unlocked_stake = "finale",
     applied_stakes = { 'gold' },
     prefix_config = { applied_stakes = { mod = false } },
     above_stake = 'gold',
@@ -13,16 +13,31 @@ SMODS.Stake {
     shiny = true
 }
 
+local function debuff_check()
+    if SMODS.stake_from_index(G.GAME.stake) == "stake_ocstobal_finale" then
+        for i = 1, #G.jokers.cards do
+            if G.jokers.cards[i].config.center.pools and G.jokers.cards[i].config.center.pools.unbalanced then
+                G.jokers.cards[i]:set_debuff(true)
+            elseif G.jokers.cards[i].config.center.pools and G.jokers.cards[i].config.center.pools.fucking_absurd then
+                G.jokers.cards[i]:set_debuff(true)
+            end
+        end
+    end
+end
+
+if G.GAME then
+    debuff_check()
+end
+
 SMODS.Stake {
     key = 'finale',
     atlas = 'finalstake',
     above_stake = 'singularity',
-    pos = {x=0,y=0},
+    pos = { x = 0, y = 0 },
     applied_stakes = { "ocstobal_singularity" },
     prefix_config = { applied_stakes = { mod = false } },
     modifiers = function()
         G.GAME.modifiers.scaling = (G.GAME.modifiers.scaling or 1) + 2
-        G.GAME.modifiers.no_blind_reward = G.GAME.modifiers.no_blind_reward or {}
         G.GAME.win_ante = math.ceil(G.GAME.win_ante * 1.5)
         G.GAME.starting_params.discards = 6
         G.GAME.starting_params.hands = G.GAME.starting_params.hands + 2

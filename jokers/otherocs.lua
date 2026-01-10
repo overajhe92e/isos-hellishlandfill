@@ -7,7 +7,8 @@ SMODS.Joker {
     soul_pos = {x=1,y=0},
     blueprint_compat = true,
     pools = {
-        ["copycats"] = true
+        ["copycats"] = true,
+        ["unbalanced"] = true
     },
     pronouns = 'she_her',
 
@@ -81,6 +82,10 @@ SMODS.Joker {
         return true
     end,
 
+    pools = {
+        ["unbalanced"] = true
+    },
+
     loc_vars = function(self, info_queue, card)
         return {
             vars = { card.ability.extra.chips },
@@ -103,7 +108,9 @@ SMODS.Joker {
             end
             if context.setting_blind and next(SMODS.find_card("j_ocstobal_dw_astro")) then
                 SMODS.destroy_cards(SMODS.find_card('j_ocstobal_dw_astro'), nil)
-                card.ability.extra.chips = card.ability.extra.chips ^ 16
+                for i = 1, #(SMODS.find_card('j_ocstobal_dw_astro')) do
+                   card.ability.extra.chips = card.ability.extra.chips ^ 16 
+                end
                 return {
                     message = "GET OUT!"
                 }
@@ -149,6 +156,10 @@ SMODS.Joker {
 
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.xmult } }
+    end,
+
+    update = function(self,card,dt)
+        card:set_debuff(true) --...again.
     end,
 
     calculate = function(self, card, context)
