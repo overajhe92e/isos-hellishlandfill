@@ -59,7 +59,6 @@ SMODS.Joker {
             card.ability.extra.stored_chips = card.ability.extra.stored_chips + (hand_chips * 0.5)
             card.ability.extra.stored_mult = card.ability.extra.stored_mult + (mult * 0.5)
             return {
-                hand_chips = mod_chips(0),
                 mult = mod_mult(0)
             }
         end

@@ -74,6 +74,11 @@ SMODS.Consumable {
             end,
         }))
         delay(0.6)
+    end,
+    draw = function(self, card, layer)
+        if (layer == 'card' or layer == 'both') and card.sprite_facing == 'front' then
+            card.children.center:draw_shader('booster', nil, card.ARGS.send_to_shader)
+        end
     end
 }
 
@@ -82,13 +87,14 @@ SMODS.Consumable {
     set = 'ocstobal_others',
     hidden = true,
     soul_set = 'Spectral',
-    soul_rate = 0.1,
+    soul_rate = 0.01,
     can_use = function(self, card)
         return true
     end,
+    atlas = 'needle',
     use = function(self, card, area, copier)
         local lovecheck = nil
-        if not next(SMODS.find_card("j_ocstobal_pk_love_a")) then
+        if not next(SMODS.find_card("j_ocstobal_pk_love_a")) and not next(SMODS.find_card("j_ocstobal_pk_love_b")) and not next(SMODS.find_card("j_ocstobal_pk_love_g")) and not next(SMODS.find_card("j_ocstobal_pk_love_o")) then
             G.E_MANAGER:add_event(Event({
                 trigger = "after",
                 delay = 0.4,
@@ -99,7 +105,8 @@ SMODS.Consumable {
                     return true
                 end,
             }))
-        elseif next(SMODS.find_card("j_ocstobal_pk_love_a")) then
+        end
+        if next(SMODS.find_card("j_ocstobal_pk_love_a")) then
             G.E_MANAGER:add_event(Event({
                 trigger = "after",
                 delay = 0.4,
@@ -111,7 +118,8 @@ SMODS.Consumable {
                     return true
                 end,
             }))
-        elseif next(SMODS.find_card("j_ocstobal_pk_love_b")) then
+        end
+        if next(SMODS.find_card("j_ocstobal_pk_love_b")) and not next(SMODS.find_card("j_ocstobal_pk_love_a")) then
             G.E_MANAGER:add_event(Event({
                 trigger = "after",
                 delay = 0.4,
@@ -123,7 +131,8 @@ SMODS.Consumable {
                     return true
                 end,
             }))
-        elseif next(SMODS.find_card("j_ocstobal_pk_love_g")) then
+        end
+        if next(SMODS.find_card("j_ocstobal_pk_love_g")) and not next(SMODS.find_card("j_ocstobal_pk_love_b")) and not next(SMODS.find_card("j_ocstobal_pk_love_a")) then
             G.E_MANAGER:add_event(Event({
                 trigger = "after",
                 delay = 0.4,
@@ -135,7 +144,8 @@ SMODS.Consumable {
                     return true
                 end,
             }))
-        elseif next(SMODS.find_card("j_ocstobal_pk_love_o")) then
+        end
+        if next(SMODS.find_card("j_ocstobal_pk_love_o")) and not next(SMODS.find_card("j_ocstobal_pk_love_g")) and not next(SMODS.find_card("j_ocstobal_pk_love_b")) and not next(SMODS.find_card("j_ocstobal_pk_love_a")) then
             forceGameover()
         end
     end,

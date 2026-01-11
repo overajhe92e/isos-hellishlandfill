@@ -1343,7 +1343,14 @@ return {
 						"Do {C:red,s:1.5}NOT{} use another Needle at this point!"
 					}
 				}
-			}
+			},
+			j_ocstobal_absolutely_safe_capsule = {
+				name = "Absolutely Safe Capsule",
+				text = {
+					"Prevents Any sort of Gameovers",
+					"{C:inactive}But in turn, you can't win either.{}"
+				}
+			}, -- might not be used
 		},
 		Other = {
 			ocstobal_recluses_eye_seal = {
@@ -1428,6 +1435,15 @@ return {
 				}
 			}
 		},
+		ocstobal_others = {
+			c_ocstobal_needle = {
+				name = "Draconic Needle",
+				text = {
+					"Gives {C:attention}PK Love{}",
+					"Upgrades {C:attention}PK Love{} if you do have PK Love already"
+				}
+			}
+		}
 		-- Sleeve = {
 		-- 	sleeve_ocstobal_oxysleeve = {
 		--         name = "Oxy's Sleeve",

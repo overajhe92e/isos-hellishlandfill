@@ -118,6 +118,14 @@ SMODS.Atlas {
 	fps = 16
 }
 
+SMODS.Atlas {
+	key = 'needle',
+	px = 71,
+	py = 95,
+	path = "evil ass needle.png",
+	atlas_table = "ASSET_ATLAS"
+}
+
 SMODS.ObjectType({
 	key = "ocstob",
 	default = "j_ocstobal_solinium",
