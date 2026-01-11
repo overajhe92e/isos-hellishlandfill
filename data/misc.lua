@@ -423,6 +423,26 @@ SMODS.Sound {
 	path = "jumpscare.ogg"
 }
 
+SMODS.Sound {
+	key = "snd_pklove_a",
+	path = 'pklove_alpha.ogg'
+}
+
+SMODS.Sound {
+	key = "snd_pklove_b",
+	path = 'pklove_beta.ogg'
+}
+
+SMODS.Sound {
+	key = "snd_pklove_g",
+	path = 'pklove_gamma.ogg'
+}
+
+SMODS.Sound {
+	key = "snd_pklove_o",
+	path = 'pklove_omega.ogg'
+}
+
 SMODS.Atlas {
 	key = 'looksinside',
 	px = 71,
