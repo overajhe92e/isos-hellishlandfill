@@ -1,7 +1,7 @@
 SMODS.Joker {
     key = 'pk_love_a',
     cost = 10,
-    rarity = 4,
+    rarity = 'ocstobal_unique',
     atlas = 'pklove',
     pos = { x = 0, y = 0 },
     config = {
@@ -41,7 +41,7 @@ SMODS.Joker {
 
 SMODS.Joker {
     key = 'pk_love_b',
-    cost = 10,
+    cost = 30,
     rarity = 'ocstobal_unique',
     atlas = 'pklove',
     pos = { x = 0, y = 1 },
@@ -81,8 +81,8 @@ SMODS.Joker {
 
 SMODS.Joker {
     key = 'pk_love_g',
-    cost = 10,
-    rarity = 3,
+    cost = 50,
+    rarity = 'ocstobal_unique',
     atlas = 'pklove',
     pos = { x = 0, y = 2 },
     config = {
@@ -122,8 +122,8 @@ SMODS.Joker {
 
 SMODS.Joker {
     key = 'pk_love_o',
-    cost = 10,
-    rarity = 3,
+    cost = 100,
+    rarity = 'ocstobal_unique',
     atlas = 'pklove',
     pos = { x = 0, y = 3 },
     config = {
