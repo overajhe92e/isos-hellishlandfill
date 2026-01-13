@@ -12,6 +12,8 @@ payload = """
 OMEGABLACK = HEX("000000"),
 OMEGARED = HEX("ff0000"),
 OMEGAWHITE = HEX("ffffff"),
+NIGHTMARE_BLUE = HEX("0000ff"),
+NIGHTMARE_PURPLE = HEX("800080"),
 """
 match_indent = true
 
@@ -24,5 +26,7 @@ payload = """
 ocstobal_omegablack = G.C.OMEGARED,
 ocstobal_omegared = G.C.OMEGARED,
 ocstobal_omegawhite = G.C.OMEGAWHITE,
+ocstobal_nightmare_blue = G.C.NIGHTMARE_BLUE,
+ocstobal_nightmare_purple = G.C.NIGHTMARE_PURPLE,
 """
 match_indent = true
