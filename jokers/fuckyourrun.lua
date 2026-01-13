@@ -89,7 +89,7 @@ SMODS.Joker {
 
     loc_vars = function(self, info_queue, card) -- yeah this was buggy asf lmao
         info_queue[#info_queue + 1] = { set = "Other", key = "ocstobal_oxydownside" }
-        info_queue[#info_queue + 1] = { set = "Other", key = "ocstobal_reclusedownside" }
+        -- info_queue[#info_queue + 1] = { set = "Other", key = "ocstobal_reclusedownside" }
         info_queue[#info_queue + 1] = { set = "Other", key = "ocstobal_sharkdownside" }
         info_queue[#info_queue + 1] = { set = "Other", key = "ocstobal_mercymult", vars = { card.ability.extra.mercymult } }
         info_queue[#info_queue + 1] = G.P_CENTERS.j_ocstobal_oxhatred

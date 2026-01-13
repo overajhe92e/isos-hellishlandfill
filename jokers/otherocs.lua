@@ -159,7 +159,7 @@ SMODS.Joker {
     end,
 
     update = function(self,card,dt)
-        card:set_debuff(true) --...again.
+        --card:set_debuff(true) --...again.
     end,
 
     calculate = function(self, card, context)

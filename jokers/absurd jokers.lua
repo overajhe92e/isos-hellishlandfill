@@ -16,7 +16,7 @@ SMODS.Joker { -- baller
 
 SMODS.Joker { --so you know polterwor
     key = 'jokertoendalljokers',
-    rarity = 'ocstobal_whatthefuck',
+    rarity = 'ocstobal_beyondexotic',
     cost = 1e308,
     atlas = 'avaritia',
     no_collection = true,
@@ -159,16 +159,16 @@ SMODS.Joker { --oh my god two soul cards and a blackhole are you deranged
     end
 }
 
-SMODS.Joker { --it's literally just the fucking avaritia joker but weaker
-    key = 'oxyold',
-    rarity = 'ocstobal_whatthefuck',
-    cost = 1e307,
-    no_collection = true
-}
+-- SMODS.Joker { --it's literally just the fucking avaritia joker but weaker
+--     key = 'oxyold',
+--     rarity = 'ocstobal_whatthefuck',
+--     cost = 1e307,
+--     no_collection = true
+-- }
 
 SMODS.Joker { --todo: implement every effect
     key = 'aiojoker',
-    rarity = 'ocstobal_whatthefuck',
+    rarity = 'ocstobal_beyondexotic',
     cost = 999999999,
     no_collection = true,
     pools = {
@@ -186,7 +186,7 @@ SMODS.Joker { --todo: implement every effect
 
 SMODS.Joker { --right before getting aio joker
     key = 'ripoff',
-    rarity = 'ocstobal_whatthefuck',
+    rarity = 'ocstobal_beyondexotic',
     cost = 2000,
     atlas = 'CustomJokers',
     pos = { x = 9, y = 1 },
