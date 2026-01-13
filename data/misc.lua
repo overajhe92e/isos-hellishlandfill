@@ -41,7 +41,7 @@ function love.draw()
 	if G.burger and (G.burger > 0) then
 		if ocstobal.burger == nil then ocstobal.burger = FuckingImage("cheeseburger.png") end
 		love.graphics.setColor(1, 1, 1, 1)
-		love.graphics.draw(ocstobal.burger, 0*win_width*2, 0*win_height*2, 0, win_width*2.5, win_height*2.4)
+		love.graphics.draw(ocstobal.burger, 0 * win_width * 2, 0 * win_height * 2, 0, win_width * 2.5, win_height * 2.4)
 	end
 
 	--It's that easy. -also Doctor4t
@@ -115,7 +115,7 @@ SMODS.Atlas {
 	path = 'PK_LOVE.png',
 	atlas_table = 'ANIMATION_ATLAS',
 	frames = 24,
-	fps = 16
+	fps = 20
 }
 
 SMODS.Atlas {
@@ -123,6 +123,14 @@ SMODS.Atlas {
 	px = 71,
 	py = 95,
 	path = "evil ass needle.png",
+	atlas_table = "ASSET_ATLAS"
+}
+
+SMODS.Atlas {
+	key = 'rec_vessel',
+	px = 71,
+	py = 95,
+	path = 'reclusive vessel.png',
 	atlas_table = "ASSET_ATLAS"
 }
 
@@ -625,6 +633,16 @@ SMODS.Atlas {
 	frames = 24
 }
 
+SMODS.Atlas {
+	key = 'thevessel_blind',
+	px = 34,
+	py = 34,
+	path = 'THE VESSEL.png',
+	atlas_table = "ANIMATION_ATLAS",
+	frames = 21,
+	fps = 10
+}
+
 SMODS.Sound {
 	key = "loser",
 	path = "catlaugh.ogg",
@@ -662,6 +680,18 @@ SMODS.Sound {
 	volume = 1,
 	select_music_track = function()
 		if G.current_isomode == nil then return false elseif G.current_isomode >= 666 then return true end
+	end
+}
+
+SMODS.Sound {
+	key = 'music_maskedman',
+	path = "music_maskedman.ogg",
+	pitch = 1,
+	volume = 1,
+	select_music_track = function()
+		if G.GAME then
+			if G.GAME.reclusive_vessel == true then return true else return false end
+		end
 	end
 }
 
@@ -709,6 +739,7 @@ local function ex()
 	assert(SMODS.load_file("data/reclusecheck.lua"))()
 	assert(SMODS.load_file("data/otherchecks.lua"))()
 	assert(SMODS.load_file("data/consumables.lua"))()
+	assert(SMODS.load_file("data/quips.lua"))()
 	-- assert(SMODS.load_file("data/sleeve.lua"))() do not use
 end
 
@@ -878,9 +909,9 @@ end
 SMODS.current_mod.optional_features = {
 	retrigger_joker = true,
 	cardareas = {
-        discard = true,
-        deck = true
-    }
+		discard = true,
+		deck = true
+	}
 }
 
 SMODS.Shader {
@@ -939,6 +970,42 @@ function ocstobal.nextboss()
 		end
 	}))
 end
+
+-- local force_boss = get_new_boss
+-- function get_new_boss(self)
+-- 	if next(SMODS.find_card("j_ocstobal_reclusivevessel")) then
+-- 		local random = math.random(1, 4)
+-- 		if random == 1 then
+-- 			return "bl_ocstobal_UNSHY"
+-- 		elseif random == 2 then
+-- 			return "bl_ocstobal_BLACKKNIFE"
+-- 		elseif random == 3 then
+-- 			return "bl_ocstobal_recluseblind"
+-- 		elseif random == 4 then
+-- 			return "bl_ocstobal_thyvessel"
+-- 		end
+-- 	else
+-- 		return force_boss(self)
+-- 	end
+-- 	local ret = force_boss
+
+-- 	return ret
+-- end
+
+G.omega_blinds = function() --from megafluff (yoink)
+    local omega_pool = {}
+    for k, v in pairs(G.P_BLINDS) do
+      if v.debuff.omega_blind or v.debuff.akyrs_blind_difficulty == "expert" then
+        if k ~= "bl_akyrs_expert_inflation" then
+          omega_pool[k] = true
+        end
+      end
+    end
+
+    local _, boss = pseudorandom_element(omega_pool, pseudoseed('boss'))
+
+    return boss
+  end
 
 -- ok so maybe i lied about abbie doing nothing
 --credits to paradox for the hook

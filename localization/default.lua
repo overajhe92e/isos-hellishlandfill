@@ -250,6 +250,12 @@ return {
 					"1 in 128 chance to obtain",
 					"Sword of Kings"
 				}
+			},
+			bl_ocstobal_thyvessel = {
+				name = "Reclusive Vessel",
+				text = {
+					"..?"
+				}
 			}
 		},
 		Edition = {
@@ -1351,6 +1357,78 @@ return {
 					"{C:inactive}But in turn, you can't win either.{}"
 				}
 			}, -- might not be used
+			j_ocstobal_pk_flash = {
+				name = "PK Flash",
+				text = {
+					{
+						"Has a chance to do {C:red}nothing{} on Blind Select",
+						"{C:green}Small chance{} to {C:attention}disable{} {C:attention}Boos Blind{}",
+						"{C:green}Very small chance{} to {C:attention}reverse{} {C:attention}Boss Blind{}",
+						"{C:green}Very Tiny{} to {C:attention}instantly win blind{}"
+					}
+				}
+			},
+			j_ocstobal_pk_ground = {
+				name = "PK Ground",
+				text = {
+					{
+						"Adds {C:legendary}15%{} of {C:attention}score requirement{}",
+						"to {C:attention}Current Score{}",
+						"Chance to retrigger {C:attention}twice{}"
+					}
+				}
+			},
+			j_ocstobal_psi_hypnosis = {
+				name = "PSI Hypnosis",
+				text = {
+					{
+						"Disables every {C:attention}Boss Blind",
+						"{C:red}Destroyed{} after {C:attention}#1#{} triggers",
+					}
+				}
+			},
+			j_ocstobal_psi_paralysis = {
+				name = "PSI Paralysis",
+				text = {
+					{
+						"Temporarily disables {C:attention}Boss Blind{}",
+						"for {C:attention}#1#{} Hands"
+					}
+				}
+			},
+			j_ocstobal_psi_brainshock = {
+				name = "PSI Brainshock",
+				text = {
+					{
+						"Reverses most {C:attention}Boss Blind{} effects"
+					}
+				}
+			},
+			j_ocstobal_reclusivevessel = {
+				name = "{C:ocstobal_legendplus}Reclusive Vessel{}",
+				text = {
+					{
+						"Scoring a card causes {C:ocstobal_nightmare_purple}The Vessel{} gain {X:legendary,C:white}X1{} Mult and Chips",
+						"{C:ocstobal_nightmare_purple}The Vessel{} will also scale {X:ocstobal_legendplus,C:white}EMult+Chips{} by {X:dark_edition,C:white}^0.01{}",
+						"{C:ocstobal_nightmare_purple}The Vessel{} will {C:red}destroy{} a random joker on {C:attention}Blind Select{},",
+						"and then adds {X:money,C:white}X10{} times it's sell value to {X:legendary,C:white}XChip+Mult{}",
+						"and {X:money,C:white}X1{} times it's sell value to {X:legendary,C:white}EChip+Mult{}",
+						"{C:red}-2 Joker Slots{}, will always spawn an omega blind.",
+						"{C:red}Replaces{} {C:attention}Small{} and {C:attention}Big Blind{} with a {C:attention}Boss Blind{} when obtained"
+					},
+					{
+						"Currently {X:legendary,C:white}X#1#{} Chips & Mult",
+						"Currently {X:dark_edition,C:white}^#2#{} Chips & Mult"
+					}
+					-- {
+					-- 	"That thing had a {C:attention}NAME?!{}",
+					-- 	"Hah, HAHAHAHAA!!",
+					-- 	"It's such a shame, such SUCH a shame they {C:red}sold their soul{}",
+					-- 	"to little ol' {C:ocstobal_nightmare_purple}Recluse{}, just to save some stupid {C:blue}Cat's{} PITIFUL life!"
+					-- }
+
+				}
+			}
 		},
 		Other = {
 			ocstobal_recluses_eye_seal = {
@@ -1591,7 +1669,25 @@ return {
 		},
 		poker_hand_descriptions = {},
 		poker_hands = {},
-		quips = {},
+		quips = {
+			ocstobal_vessel_lose_1 = {
+				"Fucking...", 
+				"{C:red,s:1.5}HOW.{}"
+			},
+			ocstobal_vessel_lose_2 = {
+				"I'm giving you nearly {C:ocstobal_nightmare_purple}limitless{} power.",
+				"And you {C:red}STILL died{} with it.",
+				"{C:ocstobal_nightmare_purple,s:1.3}You disappoint me.{}"
+			},
+			ocstobal_vessel_lose_3 = {
+				"...",
+				"You're kidding, right?"
+			},
+			ocstobal_vessel_lose_4 = {
+				"You had the EASIEST shot to victory.",
+				"And you WASTED IT?!"
+			}
+		},
 		ranks = {},
 		suits_plural = {},
 		suits_singular = {},

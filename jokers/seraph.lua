@@ -383,7 +383,81 @@ SMODS.Joker {
     key = 'reclusivevessel',
     cost = 666,
     rarity = 4,
-    no_collection = true
+    config = {
+        extra = {
+            xstuff = 1,
+            estuff = 1
+        }
+    },
+    atlas = "rec_vessel",
+    soul_pos = { x = 1, y = 0 },
+    loc_vars = function(self,info_queue,card)
+        return { vars = { card.ability.extra.xstuff, card.ability.extra.estuff } }
+    end,
+    add_to_deck = function(self, card)
+        G.GAME.reclusive_vessel = true
+        G.GAME.round_resets.blind_choices.Small = G.omega_blinds()
+        G.GAME.round_resets.blind_choices.Big = G.omega_blinds()
+        G.GAME.round_resets.blind_choices.Boss = "bl_ocstobal_thyvessel"
+        G.jokers:change_size(-2)
+        card:set_eternal(true)
+        ease_background_colour{new_colour = G.C.OMEGABLACK, special_colour = G.C.OMEGABLACK, tertiary_colour = G.C.NIGHTMARE_PURPLE, contrast = 2}
+    end,
+    remove_from_deck = function(self, card)
+        if not next(SMODS.find_card("j_ocstobal_reclusivevessel")) then
+            G.GAME.reclusive_vessel = false
+        end
+    end,
+    calculate = function(self, card, context)
+        if context.joker_main then 
+            return {
+                message = "X"..tostring(card.ability.extra.xstuff).."Mult&Chips, ^"..tostring(card.ability.extra.estuff).."EMult&Chips",
+                Xmult_mod = card.ability.extra.xstuff,
+                Xchips_mod = card.ability.extra.xstuff,
+                Emult_mod = card.ability.extra.estuff,
+                Echip_mod = card.ability.extra.estuff
+            }
+        end
+        if context.individual and context.cardarea == G.play then
+            card.ability.extra.xstuff = card.ability.extra.xstuff + 1
+            card.ability.extra.estuff = card.ability.extra.estuff + 0.1
+            return {
+                message = "Scaled..."
+            }
+        end
+        if context.setting_blind then
+            return {
+                func = function()
+                    local destructable_jokers = {}
+                    for i, joker in ipairs(G.jokers.cards) do
+                        if joker ~= card and not joker.ability.eternal and not joker.getting_sliced then
+                            table.insert(destructable_jokers, joker)
+                        end
+                    end
+                    local target_joker = #destructable_jokers > 0 and
+                        pseudorandom_element(destructable_jokers, pseudoseed('destroy_joker')) or nil
+
+                    if target_joker then
+                        local joker_sell_value = target_joker.sell_cost or 0
+                        local sell_value_gain = joker_sell_value * 10
+                        local sell_value_gain_alt = joker_sell_value * 1
+                        card.ability.extra.xstuff = card.ability.extra.xstuff + sell_value_gain
+                        card.ability.extra.estuff = card.ability.extra.estuff + sell_value_gain_alt
+                        target_joker.getting_sliced = true
+                        G.E_MANAGER:add_event(Event({
+                            func = function()
+                                target_joker:start_dissolve({ G.C.RED }, nil, 1.6)
+                                return true
+                            end
+                        }))
+                        card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil,
+                            { message = "ERADICATED.", colour = G.C.RED })
+                    end
+                    return true
+                end
+            }
+        end
+    end
 }
 
 function sphup()
@@ -562,8 +636,8 @@ function G.UIDEF.use_and_sell_buttons(card)
 end
 
 function G.FUNCS.seraphmenu()
-	G.FUNCS.overlay_menu {
-		definition = sphlvls("Back"),
-		config = { no_esc = true }
-	}
+    G.FUNCS.overlay_menu {
+        definition = sphlvls("Back"),
+        config = { no_esc = true }
+    }
 end

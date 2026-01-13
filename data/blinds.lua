@@ -671,6 +671,9 @@ SMODS.Blind {
 	dollars = 12,
 	mult = 666,
 	boss = { showdown = true },
+	debuff = {
+		omega_blind = true
+	},
 	boss_colour = HEX('000000'),
 	atlas = 'omegarush',
 	pos = { x = 0, y = 0 },
@@ -704,6 +707,9 @@ SMODS.Blind { --Seraph_Omega
 	dollars = 10,
 	mult = 5,
 	boss = { min = 16 },
+	debuff = {
+		omega_blind = true
+	},
 	boss_colour = HEX('000000'),
 	atlas = 'BLACKKNIFE',
 	pos = { x = 0, y = 0 },
@@ -748,6 +754,9 @@ SMODS.Blind { --Solinium_Omega
 	dollars = 10,
 	mult = 8,
 	boss = { min = 16 },
+	debuff = {
+		omega_blind = true
+	},
 	boss_colour = HEX('000000'),
 	atlas = 'UNFAIRSCALE',
 	pos = { x = 0, y = 0 },
@@ -792,6 +801,9 @@ SMODS.Blind { --Oxy_Omega
 	dollars = 10,
 	mult = 0.05,
 	boss = { min = 16 },
+	debuff = {
+		omega_blind = true
+	},
 	boss_colour = HEX('000000'),
 	atlas = 'THEDROPLET',
 	pos = { x = 0, y = 0 },
@@ -839,6 +851,9 @@ SMODS.Blind { --Sparky_Omega
 	dollars = 10,
 	mult = 100,
 	boss = { min = 16 },
+	debuff = {
+		omega_blind = true
+	},
 	boss_colour = HEX('000000'),
 	atlas = 'UNSHY',
 	pos = { x = 0, y = 0 },
@@ -922,6 +937,22 @@ SMODS.Blind {
 	defeat = function(self)
 		if SMODS.pseudorandom_probability(card, "SOK", 1, 128) then
 			SMODS.add_card { key = "j_ocstobal_sword_of_kings" }
+		end
+	end
+}
+
+SMODS.Blind {
+	key = 'thyvessel',
+	mult = 32767,
+	money = 9,
+	atlas = 'thevessel_blind',
+	debuff = {
+		omega_blind = true
+	},
+	boss_colour = HEX('000000'),
+	boss = { min = 16 },
+	calculate = function(self,card,context)
+		if context.joker_main then
 		end
 	end
 }
