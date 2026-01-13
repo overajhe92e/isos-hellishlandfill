@@ -148,6 +148,7 @@ SMODS.Joker {
             card.ability.extra.stored_mult = card.ability.extra.stored_mult + (mult * 2)
             return {
                 message = "Stored!",
+                chips = mod_chips(0),
                 mult = mod_mult(0)
             }
         end
