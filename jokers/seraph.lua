@@ -70,9 +70,6 @@ SMODS.Joker { --Seraph
         x = 1,
         y = 0
     },
-    pools = {
-        ["ocstob"] = true
-    },
 
     set_badges = function(self, card, badges)
         badges[#badges + 1] = create_badge(localize('k_ocstobal_dangerous'), G.C.FILTER, G.C.WHITE, 1)
