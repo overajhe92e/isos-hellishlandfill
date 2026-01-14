@@ -19,7 +19,20 @@ SMODS.Joker {
 SMODS.Joker {
     key = 'pk_ground',
     cost = 1,
-    rarity = 'ocstobal_beyondexotic'
+    rarity = 'ocstobal_beyondexotic',
+    config = {
+        extra = {
+            probability = 4,
+            retriggers = 1
+        }
+    },
+    loc_vars = function(self,info_queue,card)
+    end,
+    calculate = function(self,card,context)
+        if context.joker_main then
+            G.GAME.chips = (G.GAME.blind.chips/10)
+        end
+    end
 }
 
 SMODS.Joker {

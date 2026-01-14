@@ -139,42 +139,6 @@ SMODS.Joker {
 }
 
 SMODS.Joker {
-    key = 'candycane',
-    cost = 10,
-    rarity = 3,
-    config = {
-        extra = {
-            i_made_fun_of_him_too_much = 0.1,
-            suit_1 = "Diamonds"
-        }
-    },
-    blueprint_compat = true,
-    atlas = 'candycane',
-    pos = { x = 0, y = 0 },
-    soul_pos = { x = 1, y = 0 },
-    pronouns = 'he_him',
-
-    loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.xmult } }
-    end,
-
-    update = function(self,card,dt)
-        --card:set_debuff(true) --...again.
-    end,
-
-    calculate = function(self, card, context)
-        if context.individual and context.cardarea == G.play and context.other_card:is_suit(card.ability.extra.suit_1) and not context.blueprint then
-            context.other_card.ability.perma_h_x_mult = context.other_card.ability.perma_h_x_mult or 0
-            context.other_card.ability.perma_h_x_mult = context.other_card.ability.perma_h_x_mult + card.ability.extra.i_made_fun_of_him_too_much
-            return {
-                extra = { message = localize('k_upgrade_ex'), colour = G.C.MULT },
-                card = card
-            }
-        end
-    end
-}
-
-SMODS.Joker {
     key = 'mask',
     cost = 30,
     rarity = 4,
