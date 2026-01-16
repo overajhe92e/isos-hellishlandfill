@@ -87,7 +87,7 @@ SMODS.Consumable {
     set = 'ocstobal_others',
     hidden = true,
     soul_set = 'Spectral',
-    soul_rate = 0.01,
+    soul_rate = 0.05,
     can_use = function(self, card)
         return true
     end,

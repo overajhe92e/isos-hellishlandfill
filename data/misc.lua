@@ -433,22 +433,26 @@ SMODS.Sound {
 
 SMODS.Sound {
 	key = "snd_pklove_a",
-	path = 'pklove_alpha.ogg'
+	path = 'pklove_alpha.ogg',
+	pitch = 1
 }
 
 SMODS.Sound {
 	key = "snd_pklove_b",
-	path = 'pklove_beta.ogg'
+	path = 'pklove_beta.ogg',
+	pitch = 1
 }
 
 SMODS.Sound {
 	key = "snd_pklove_g",
-	path = 'pklove_gamma.ogg'
+	path = 'pklove_gamma.ogg',
+	pitch = 1
 }
 
 SMODS.Sound {
 	key = "snd_pklove_o",
-	path = 'pklove_omega.ogg'
+	path = 'pklove_omega.ogg',
+	pitch = 1
 }
 
 SMODS.Atlas {
@@ -935,7 +939,7 @@ end
 
 local check_for_buy_space_ref = G.FUNCS.check_for_buy_space
 G.FUNCS.check_for_buy_space = function(card)
-	if card.config.center.key == "j_ocstobal_antislopinator" then -- ignore slot limit when bought
+	if card.config.center.key == "j_ocstobal_antislopinator" then
 		return true
 	end
 	return check_for_buy_space_ref(card)

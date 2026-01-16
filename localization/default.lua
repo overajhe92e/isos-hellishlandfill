@@ -1413,6 +1413,8 @@ return {
 						"{C:ocstobal_nightmare_purple}The Vessel{} will {C:red}destroy{} a random joker on {C:attention}Blind Select{},",
 						"and then adds {X:money,C:white}X10{} times it's sell value to {X:legendary,C:white}XChip+Mult{}",
 						"and {X:money,C:white}X1{} times it's sell value to {X:legendary,C:white}EChip+Mult{}",
+					},
+					{
 						"{C:red}-2 Joker Slots{}, will always spawn an omega blind.",
 						"{C:red}Replaces{} {C:attention}Small{} and {C:attention}Big Blind{} with a {C:attention}Boss Blind{} when obtained"
 					},
@@ -1560,6 +1562,7 @@ return {
 
 			k_ocstobal_Aleph_cards = "Aleph Cards",
 			k_ocstobal_Aleph = "Aleph",
+			k_ocstobal_omega = "Omega",
 
 			fuckyou = "YOU KNOW WHAT, FUCK YOU.", --lankybox blind / fake void joker
 			sphlvl = "Seraph Level Increased",
@@ -1665,13 +1668,14 @@ return {
 		high_scores = {},
 		labels = {
 			ocstobal_deceptionlegendary = 'Oxy\'s Legendary',
-			ocstobal_Aleph = "Aleph"
+			ocstobal_Aleph = "Aleph",
+			ocstobal_omega = "Omega"
 		},
 		poker_hand_descriptions = {},
 		poker_hands = {},
 		quips = {
 			ocstobal_vessel_lose_1 = {
-				"Fucking...", 
+				"Fucking...",
 				"{C:red,s:1.5}HOW.{}"
 			},
 			ocstobal_vessel_lose_2 = {

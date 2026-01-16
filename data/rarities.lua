@@ -195,7 +195,7 @@ local deception = SMODS.Gradient {
     key = 'deceit',
     colours = { HEX('2272fb'), HEX('1ffef5') },
     interpolation = 'linear',
-    cycle = '5'
+    cycle = 5
 }
 
 SMODS.Rarity {
@@ -210,6 +210,13 @@ SMODS.Rarity {
     end
 }
 
+local omega = SMODS.Gradient {
+    key = 'evilmanimani',
+    colours = { HEX('ff0000'), HEX('0000ff') },
+    interpolation = 'trig',
+    cycle = 6
+}
+
 SMODS.Rarity {
     key = "junk",
     pools = {
@@ -217,4 +224,13 @@ SMODS.Rarity {
     },
     default_weight = 0,
     badge_colour = HEX('666666')
+}
+
+SMODS.Rarity {
+    key = "omega",
+    pools = {
+        ["Joker"] = true
+    },
+    default_weight = 0,
+    badge_colour = omega
 }

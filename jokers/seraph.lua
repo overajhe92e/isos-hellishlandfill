@@ -379,7 +379,7 @@ SMODS.Joker { --Seraph
 SMODS.Joker {
     key = 'reclusivevessel',
     cost = 666,
-    rarity = 4,
+    rarity = 'ocstobal_omega',
     config = {
         extra = {
             xstuff = 1,
@@ -388,27 +388,37 @@ SMODS.Joker {
     },
     atlas = "rec_vessel",
     soul_pos = { x = 1, y = 0 },
-    loc_vars = function(self,info_queue,card)
+    loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.xstuff, card.ability.extra.estuff } }
     end,
     add_to_deck = function(self, card)
         G.GAME.reclusive_vessel = true
-        G.GAME.round_resets.blind_choices.Small = G.omega_blinds()
-        G.GAME.round_resets.blind_choices.Big = G.omega_blinds()
-        G.GAME.round_resets.blind_choices.Boss = "bl_ocstobal_thyvessel"
         G.jokers:change_size(-2)
         card:set_eternal(true)
-        ease_background_colour{new_colour = G.C.OMEGABLACK, special_colour = G.C.OMEGABLACK, tertiary_colour = G.C.NIGHTMARE_PURPLE, contrast = 2}
+        ease_background_colour { new_colour = G.C.OMEGABLACK, special_colour = G.C.OMEGABLACK, tertiary_colour = G.C.NIGHTMARE_PURPLE, contrast = 2 }
     end,
     remove_from_deck = function(self, card)
         if not next(SMODS.find_card("j_ocstobal_reclusivevessel")) then
             G.GAME.reclusive_vessel = false
+            G.jokers:change_size(2)
         end
     end,
     calculate = function(self, card, context)
-        if context.joker_main then 
+        if context.ending_shop then
+            G.GAME.round_resets.blind_choices.Small = G.omega_blinds()
+            G.GAME.round_resets.blind_choices.Big = G.omega_blinds()
+            G.GAME.round_resets.blind_choices.Boss = G.omega_blinds()
+        end
+        if context.debuff_card then
             return {
-                message = "X"..tostring(card.ability.extra.xstuff).."Mult&Chips, ^"..tostring(card.ability.extra.estuff).."EMult&Chips",
+                prevent_debuff = true
+            }
+        end
+        if context.joker_main then
+            return {
+                message = "X" ..
+                    tostring(card.ability.extra.xstuff) ..
+                    "Mult&Chips, ^" .. tostring(card.ability.extra.estuff) .. "EMult&Chips",
                 Xmult_mod = card.ability.extra.xstuff,
                 Xchips_mod = card.ability.extra.xstuff,
                 Emult_mod = card.ability.extra.estuff,

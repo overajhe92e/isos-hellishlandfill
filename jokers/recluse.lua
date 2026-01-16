@@ -64,14 +64,14 @@ local ocstobal_all_origins_inactive_text = {
     '[a nil value]',
     'Changed',                     --NO.
     'Project Moon',                --awaken thy pm fans
-    'Lobotomy Corporation',
-    'Library of Ruina',
-    'Limbus Company',
+    'Lobotomy Corporation',        --awaken thy pm fans
+    'Library of Ruina',            -- awaken thy-
+    'Limbus Company',              -- AWAKEN THY
     ' ',
-    'Discord',
-    'Cryptid',
-    'Polterworx',
-    'Almanac',
+    'Discord',                     --why
+    'Cryptid',                     --oh.
+    'Polterworx',                  --OH.
+    'Almanac',                     --O H N O
     'FPE (Danger AU)',
     'Everything',
     'The Real World',
