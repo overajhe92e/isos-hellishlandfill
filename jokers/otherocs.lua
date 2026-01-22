@@ -2,7 +2,7 @@ SMODS.Joker {
     key = 'crystal',
     cost = 10,
     rarity = 'ocstobal_epic',
-    atlas = 'crystal',
+    atlas = 'other_ocs',
     pos = { x = 0, y = 0 },
     soul_pos = {x=1,y=0},
     blueprint_compat = true,
@@ -61,9 +61,9 @@ SMODS.Joker {
     cost = 20,
     rarity = 'ocstobal_epic',
     blueprint_compat = true,
-    atlas = 'johntetration',
-    pos = { x = 0, y = 0 },
-    soul_pos = { x = 1, y = 0 },
+    atlas = 'other_ocs',
+    pos = { x = 0, y = 1 },
+    soul_pos = { x = 1, y = 1 },
     config = {
         extra = {
             chips = 1,
@@ -71,6 +71,7 @@ SMODS.Joker {
         }
     },
     no_collection = false,
+    pronouns = 'he_him',
 
     set_badges = function(self, card, badges)
         if G.current_isomode >= 2 then
@@ -146,9 +147,9 @@ SMODS.Joker {
         jokerslots = 1
     },
     blueprint_compat = false,
-    atlas = 'masked',
-    pos = { x = 0, y = 0 },
-    soul_pos = { x = 1, y = 0 },
+    atlas = 'other_ocs',
+    pos = { x = 2, y = 0 },
+    soul_pos = { x = 3, y = 0 },
 
     update = function(self, card, dt)
     end,
@@ -169,9 +170,9 @@ SMODS.Joker {
     key = 'xeno',
     cost = 25,
     rarity = 'ocstobal_epic',
-    atlas = 'xeno',
-    pos = { x = 0, y = 0 },
-    soul_pos = { x = 1, y = 0 },
+    atlas = 'other_ocs',
+    pos = { x = 0, y = 2 },
+    soul_pos = { x = 1, y = 2 },
     config = {
         extra = {
             chips = 1,

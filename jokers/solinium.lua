@@ -7,7 +7,7 @@ SMODS.Joker { --Solinium
         }
     },
     pos = {
-        x = 0,
+        x = 3,
         y = 0
     },
     display_size = {
@@ -16,14 +16,9 @@ SMODS.Joker { --Solinium
     },
     cost = 20,
     rarity = 4,
-    blueprint_compat = true,
-    eternal_compat = true,
-    perishable_compat = true,
-    unlocked = true,
-    discovered = false,
-    atlas = 'solini',
+    atlas = 'triple_s',
     soul_pos = {
-        x = 1,
+        x = 4,
         y = 0
     },
     update = function(self, card, dt)
@@ -35,10 +30,10 @@ SMODS.Joker { --Solinium
             G.solscare = 0
         end
         if G.solscare == 1 then
-            card.children.floating_sprite:set_sprite_pos { x = 2, y = 0 }
+            card.children.floating_sprite:set_sprite_pos { x = 5, y = 0 }
             card:juice_up() -- so you know polterwor
         else
-            card.children.floating_sprite:set_sprite_pos { x = 1, y = 0 }
+            card.children.floating_sprite:set_sprite_pos { x = 4, y = 0 }
         end
     end,
     in_pool = function(self, args)

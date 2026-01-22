@@ -14,7 +14,7 @@ SMODS.Joker {
         return { vars = { card.ability.extra.stored_chips, card.ability.extra.stored_mult, (card.ability.extra.stored_chips + card.ability.extra.stored_mult) } }
     end,
     calculate = function(self, card, context)
-        if context.joker_main and G.GAME.current_round.hands_left > 0 then
+        if context.joker_main and G.GAME.current_round.hands_left > 0 and not context.blueprint then
             card.ability.extra.stored_chips = card.ability.extra.stored_chips + math.floor((hand_chips ^ 0.3))
             card.ability.extra.stored_mult = card.ability.extra.stored_mult + math.floor((mult ^ 0.3))
             return {
@@ -29,6 +29,7 @@ SMODS.Joker {
                     message = "X" ..
                         tostring(card.ability.extra.stored_chips + card.ability.extra.stored_mult) .. " Chips & Mult",
                     sound = "ocstobal_snd_pklove_a",
+                    pitch = 1,
                     Xmult_mod = card.ability.extra.stored_chips + card.ability.extra.stored_mult,
                     Xchip_mod = card.ability.extra.stored_mult + card.ability.extra.stored_mult
                 }
@@ -62,8 +63,8 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         if context.joker_main and G.GAME.current_round.hands_left > 0 then
-            card.ability.extra.stored_chips = card.ability.extra.stored_chips + (hand_chips * 0.5)
-            card.ability.extra.stored_mult = card.ability.extra.stored_mult + (mult * 0.5)
+            card.ability.extra.stored_chips = card.ability.extra.stored_chips + math.floor((hand_chips ^ 0.7))
+            card.ability.extra.stored_mult = card.ability.extra.stored_mult + math.floor((mult ^ 0.7))
             return {
                 message = "Stored!",
                 chips = mod_chips(0),
@@ -76,6 +77,7 @@ SMODS.Joker {
                     message = "X" ..
                         tostring(card.ability.extra.stored_chips + card.ability.extra.stored_mult) .. " Chips & Mult",
                     sound = "ocstobal_snd_pklove_b",
+                    pitch = 1,
                     Xmult_mod = card.ability.extra.stored_chips + card.ability.extra.stored_mult,
                     Xchip_mod = card.ability.extra.stored_mult + card.ability.extra.stored_mult
                 }
@@ -109,8 +111,8 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         if context.joker_main and G.GAME.current_round.hands_left > 0 then
-            card.ability.extra.stored_chips = card.ability.extra.stored_chips + hand_chips
-            card.ability.extra.stored_mult = card.ability.extra.stored_mult + mult
+            card.ability.extra.stored_chips = card.ability.extra.stored_chips + math.floor((hand_chips^1.1))
+            card.ability.extra.stored_mult = card.ability.extra.stored_mult + math.floor((mult^1.1))
             return {
                 message = "Stored!",
                 chips = mod_chips(0),
@@ -123,6 +125,7 @@ SMODS.Joker {
                     message = "X" ..
                         tostring(card.ability.extra.stored_chips + card.ability.extra.stored_mult) .. " Chips & Mult",
                     sound = "ocstobal_snd_pklove_g",
+                    pitch = 1,
                     Xmult_mod = card.ability.extra.stored_chips + card.ability.extra.stored_mult,
                     Xchip_mod = card.ability.extra.stored_mult + card.ability.extra.stored_mult
                 }
@@ -170,6 +173,7 @@ SMODS.Joker {
                     message = "X" ..
                         tostring(card.ability.extra.stored_chips + card.ability.extra.stored_mult) .. " Chips & Mult",
                     sound = "ocstobal_snd_pklove_o",
+                    pitch = 1,
                     Xmult_mod = card.ability.extra.stored_chips + card.ability.extra.stored_mult,
                     Xchip_mod = card.ability.extra.stored_mult + card.ability.extra.stored_mult
                 }
@@ -181,6 +185,53 @@ SMODS.Joker {
             return {
                 message = "Reset!",
                 colour = G.C.RED
+            }
+        end
+    end
+}
+
+SMODS.Joker {
+    key = 'pk_love_test',
+    cost = 100,
+    rarity = 'ocstobal_omega',
+    atlas = 'pklove',
+    pos = { x = 0, y = 3 },
+    config = {
+        extra = {
+            stored_chips = 0,
+            stored_mult = 0,
+            option = "Inactive"
+        }
+    },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.stored_chips, card.ability.extra.stored_mult, (card.ability.extra.stored_chips + card.ability.extra.stored_mult), card.ability.extra.option } }
+    end,
+    calculate = function(self, card, context)
+        if context.joker_main and card.ability.extra.option == "Storing" then
+            card.ability.extra.stored_chips = card.ability.extra.stored_chips + (hand_chips ^ 1.75)
+            card.ability.extra.stored_mult = card.ability.extra.stored_mult + (mult ^ 1.75)
+            return {
+                message = "Stored!",
+                chips = mod_chips(0),
+                mult = mod_mult(0)
+            }
+        end
+        if context.joker_main and card.ability.extra.option == "Active" then
+                return {
+                    message = "X" ..
+                        tostring(card.ability.extra.stored_chips + card.ability.extra.stored_mult) .. " Chips & Mult",
+                    sound = "ocstobal_snd_pklove_o",
+                    pitch = 1,
+                    Xmult_mod = card.ability.extra.stored_chips + card.ability.extra.stored_mult,
+                    Xchip_mod = card.ability.extra.stored_mult + card.ability.extra.stored_mult
+                }
+        end
+        if context.after and card.ability.extra.option == "Active" then
+            card.ability.extra.stored_chips = 0
+            card.ability.extra.stored_mult = 0
+            return {
+                message = "Reset!",
+                color = G.C.RED
             }
         end
     end

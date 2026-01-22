@@ -1,4 +1,4 @@
-SMODS.Joker { --Tiger Shark Sparky
+SMODS.Joker { --Mommy? Sorry, Mommy? Sorry, Mommy? Sor-
     key = "tigersharksparky",
     config = {
         extra = {
@@ -8,25 +8,17 @@ SMODS.Joker { --Tiger Shark Sparky
         }
     },
     pos = {
-        x = 7,
-        y = 1
+        x = 2,
+        y = 0
     },
-    display_size = {
-        w = 71 * 1,
-        h = 95 * 1
-    },
-    cost = 25,
+    cost = 50,
     rarity = "ocstobal_unique",
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
     discovered = false,
-    atlas = 'CustomJokers',
-    soul_pos = {
-        x = 8,
-        y = 1
-    },
+    atlas = 'triple_s',
     in_pool = function(self, args)
         return (
                 not args

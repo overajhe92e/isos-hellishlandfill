@@ -53,6 +53,10 @@ if not ocstobal then
 	ocstobal = {}
 end
 
+if next(SMODS.find_mod("unik")) then
+	unik_detect = true
+end
+
 local mod_path = "" .. SMODS.current_mod.path
 ocstobal.path = mod_path
 
@@ -78,6 +82,14 @@ SMODS.Atlas {
 	px = 71,
 	py = 95,
 	path = 'thetriodeck.png',
+	atlas_table = 'ASSET_ATLAS'
+}
+
+SMODS.Atlas {
+	key = 'triple_s',
+	px = 71,
+	py = 95,
+	path = 'triple_s.png',
 	atlas_table = 'ASSET_ATLAS'
 }
 
@@ -116,6 +128,16 @@ SMODS.Atlas {
 	atlas_table = 'ANIMATION_ATLAS',
 	frames = 24,
 	fps = 20
+}
+
+SMODS.Atlas {
+	key = 'pkground',
+	px = 71,
+	py = 95,
+	path = 'pkground.png',
+	atlas_table = 'ANIMATION_ATLAS',
+	frames = 24,
+	fps = 30
 }
 
 SMODS.Atlas {
@@ -256,28 +278,12 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
-	key = 'solini',
-	px = 71,
-	py = 95,
-	path = 'soliniumdynamic.png',
-	atlas_table = 'ASSET_ATLAS',
-}
-
-SMODS.Atlas {
 	key = 'reclusebl',
 	px = 34,
 	py = 34,
 	path = 'fearx2.png',
 	atlas_table = 'ANIMATION_ATLAS',
 	frames = 1
-}
-
-SMODS.Atlas {
-	key = 'agonizing',
-	px = 71,
-	py = 95,
-	path = 'brewinghatred.png',
-	atlas_table = 'ASSET_ATLAS'
 }
 
 SMODS.Atlas {
@@ -324,26 +330,10 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
-	key = 'sphredo',
-	px = 71,
-	py = 95,
-	path = 'sphredo.png',
-	atlas_table = "ASSET_ATLAS"
-}
-
-SMODS.Atlas {
 	key = 'friedshrimp',
 	px = 71,
 	py = 95,
 	path = 'SHRIMPO.png',
-	atlas_table = 'ASSET_ATLAS'
-}
-
-SMODS.Atlas {
-	key = 'twistedshrimp',
-	px = 71,
-	py = 95,
-	path = 'twistedfriedshrimp.png',
 	atlas_table = 'ASSET_ATLAS'
 }
 
@@ -372,18 +362,10 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
-	key = 'crystal',
+	key = 'other_ocs',
 	px = 71,
 	py = 95,
-	path = 'crystal.png',
-	atlas_table = 'ASSET_ATLAS'
-}
-
-SMODS.Atlas {
-	key = 'abbiepng',
-	px = 71,
-	py = 95,
-	path = 'abbor.png',
+	path = 'other_ocs.png',
 	atlas_table = 'ASSET_ATLAS'
 }
 
@@ -472,38 +454,6 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
-	key = 'masked',
-	px = 71,
-	py = 95,
-	path = 'themask.png',
-	atlas_table = 'ASSET_ATLAS'
-}
-
-SMODS.Atlas {
-	key = 'avaritia',
-	px = 71,
-	py = 95,
-	path = 'AVARITIA.png',
-	atlas_table = 'ASSET_ATLAS'
-}
-
-SMODS.Atlas {
-	key = 'oxyemp',
-	px = 71,
-	py = 95,
-	path = 'empoweredoxy.png',
-	atlas_table = 'ASSET_ATLAS'
-}
-
-SMODS.Atlas {
-	key = 'johntetration',
-	px = 71,
-	py = 95,
-	path = 'astro.png',
-	atlas_table = 'ASSET_ATLAS'
-}
-
-SMODS.Atlas {
 	key = 'omegarush',
 	px = 34,
 	py = 34,
@@ -539,14 +489,6 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
-	key = 'candycane',
-	px = 71,
-	py = 95,
-	path = 'candycane.png',
-	atlas_table = 'ASSET_ATLAS'
-}
-
-SMODS.Atlas {
 	key = 'fpeatlas',
 	px = 71,
 	py = 95,
@@ -561,14 +503,6 @@ SMODS.Atlas {
 	path = 'terminusjokers.png',
 	atlas_table = 'ASSET_ATLAS'
 }
-
--- SMODS.Atlas {
--- 	key = 'tempjtetration',
--- 	px = 71,
--- 	py = 95,
--- 	path = 'astrotemp.png',
--- 	atlas_table = 'ASSET_ATLAS'
--- }
 
 SMODS.Atlas {
 	key = 'deckofalltime',
@@ -591,14 +525,6 @@ SMODS.Atlas {
 	px = 71,
 	py = 95,
 	path = 'moddingchat.png',
-	atlas_table = 'ASSET_ATLAS'
-}
-
-SMODS.Atlas {
-	key = 'xeno',
-	px = 71,
-	py = 95,
-	path = 'xenoo.png',
 	atlas_table = 'ASSET_ATLAS'
 }
 
@@ -1022,4 +948,110 @@ G.P_CENTERS.e_negative.get_weight = function(self)
 		weight = weight * (31.24 + 112.242) * 10 -- DOOMED COUPLE RAHHHHHHHHHHH
 	end
 	return weight
+end
+
+
+--"taken shamefully from unik's mod"
+--probably was from entropy too but whatever
+local G_UIDEF_use_and_sell_buttons_ref = G.UIDEF.use_and_sell_buttons
+function G.UIDEF.use_and_sell_buttons(card)
+    local tdc = G_UIDEF_use_and_sell_buttons_ref(card)
+    if (card.area == G.jokers) and card.config.center.key == "j_ocstobal_seraph" then
+        local sell = nil
+        local use = nil
+        local levels = nil
+
+        sell = {
+            n = G.UIT.C,
+            config = { align = "cr" },
+            nodes = {
+                {
+                    n = G.UIT.C,
+                    config = { ref_table = card, align = "cr", padding = 0.1, r = 0.08, minw = 1.25, hover = true, shadow = true, colour = G.C.UI.BACKGROUND_INACTIVE, one_press = true, button = 'sell_card', func = 'can_sell_card' },
+                    nodes = {
+                        { n = G.UIT.B, config = { w = 0.1, h = 0.6 } },
+                        {
+                            n = G.UIT.C,
+                            config = { align = "tm" },
+                            nodes = {
+                                {
+                                    n = G.UIT.R,
+                                    config = { align = "cm", maxw = 1.25 },
+                                    nodes = {
+                                        { n = G.UIT.T, config = { text = localize('b_sell'), colour = G.C.UI.TEXT_LIGHT, scale = 0.4, shadow = true } }
+                                    }
+                                },
+                                {
+                                    n = G.UIT.R,
+                                    config = { align = "cm" },
+                                    nodes = {
+                                        { n = G.UIT.T, config = { text = localize('$'), colour = G.C.WHITE, scale = 0.4, shadow = true } },
+                                        { n = G.UIT.T, config = { ref_table = card, ref_value = 'sell_cost_label', colour = G.C.WHITE, scale = 0.55, shadow = true } }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+            }
+        }
+        levels =
+        {
+            n = G.UIT.C,
+            config = { align = "cr" },
+            nodes = {
+
+                {
+                    n = G.UIT.C,
+                    config = { ref_table = card, align = "cr", maxw = 1.25, padding = 0.1, r = 0.08, minw = 1.25, minh = (card.area and card.area.config.type == 'joker') and 0 or 1, hover = true, shadow = true, colour = G.C.UI.BACKGROUND_INACTIVE, one_press = false, button = 'seraphmenu' },
+                    nodes = {
+                        { n = G.UIT.B, config = { w = 0.1, h = 0.6 } },
+                        { n = G.UIT.T, config = { text = 'Levels', colour = G.C.UI.TEXT_LIGHT, scale = 0.55, shadow = true } }
+                    }
+                }
+            }
+        }
+        --overwriting usual buttons
+        tdc = {
+            n = G.UIT.ROOT,
+            config = { padding = 0, colour = G.C.CLEAR },
+            nodes = {
+                {
+                    n = G.UIT.C,
+                    config = { padding = 0.15, align = 'cl' },
+                    nodes = {
+                        {
+                            n = G.UIT.R,
+                            config = { align = 'cl' },
+                            nodes = {
+                                sell
+                            }
+                        },
+                        {
+                            n = G.UIT.R,
+                            config = { align = 'cl' },
+                            nodes = {
+                                use
+                            }
+                        },
+                        {
+                            n = G.UIT.R,
+                            config = { align = 'cl' },
+                            nodes = {
+                                levels
+                            }
+                        },
+                    }
+                },
+            }
+        }
+    end
+    return tdc
+end
+
+function G.FUNCS.seraphmenu()
+    G.FUNCS.overlay_menu {
+        definition = sphlvls("Back"),
+        config = { no_esc = true }
+    }
 end

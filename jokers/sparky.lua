@@ -9,8 +9,8 @@ SMODS.Joker { --Sparky
         }
     },
     pos = {
-        x = 3,
-        y = 1
+        x = 0,
+        y = 0
     },
     display_size = {
         w = 71 * 1,
@@ -23,11 +23,7 @@ SMODS.Joker { --Sparky
     perishable_compat = true,
     unlocked = true,
     discovered = false,
-    atlas = 'CustomJokers',
-    soul_pos = {
-        x = 4,
-        y = 1
-    },
+    atlas = 'triple_s',
 
     loc_vars = function(self, info_queue, center)
         return {

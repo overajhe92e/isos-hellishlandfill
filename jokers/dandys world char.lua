@@ -1,6 +1,6 @@
 SMODS.Joker {
     key = 'shrimpo',
-    cost = '10',
+    cost = 10,
     rarity = 3,
     atlas = 'friedshrimp',
     pos = { x = 0, y = 0 },
@@ -27,9 +27,9 @@ SMODS.Joker {
     key = 'twistedshrimpo',
     cost = 30,
     rarity = 'ocstobal_unique',
-    atlas = 'twistedshrimp',
-    pos = { x = 0, y = 0 },
-    soul_pos = { x = 1, y = 0 },
+    atlas = 'friedshrimp',
+    pos = { x = 0, y = 1 },
+    soul_pos = { x = 1, y = 1 },
     blueprint_compat = true,
 
     loc_vars = function(self, info_queue, card)
@@ -58,50 +58,46 @@ SMODS.Joker {
     end
 }
 
--- SMODS.Joker {
---     key = 'yatta',
---     rarity = 3,
---     cost = 8,
---     atlas = 'dw',
---     pos = { x = 0, y = 0 },
---     soul_pos = { x = 1, y = 0 },
---     loc_vars = function(self, info_queue, card)
---         return { vars = { localize('k_ocstobal_yatta_quote' .. pseudorandom("seed", 1, 4)) } }
---     end,
---     blueprint_compat = true,
+SMODS.Joker {
+    key = 'yatta',
+    rarity = 3,
+    cost = 8,
+    atlas = 'dw',
+    pos = { x = 0, y = 0 },
+    soul_pos = { x = 1, y = 0 },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { localize('k_ocstobal_yatta_quote' .. pseudorandom("seed", 1, 4)) } }
+    end,
+    blueprint_compat = true,
 
---     calculate = function(self, card, context)
---         if context.end_of_round and context.game_over == false and context.main_eval and context.beat_boss then
---             G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
---             G.E_MANAGER:add_event(Event({
---                 func = (function()
---                     G.E_MANAGER:add_event(Event({
---                         func = function()
---                             SMODS.add_card {
---                                 set = 'Spectral',
---                                 edition = 'e_negative'
---                             }
---                             SMODS.add_card {
---                                 set = 'Spectral',
---                                 edition = 'e_negative'
---                             }
---                             SMODS.add_card {
---                                 set = 'Spectral',
---                                 edition = 'e_negative'
---                             }
---                             G.GAME.consumeable_buffer = 0
---                             return true
---                         end
---                     }))
---                     SMODS.calculate_effect({ message = localize('k_plus_tarot'), colour = G.C.PURPLE },
---                         context.blueprint_card or card)
---                     return true
---                 end)
---             }))
---             return nil, true -- This is for Joker retrigger purposes
---         end
---     end
--- }
+    calculate = function(self, card, context)
+        if context.end_of_round and context.game_over == false and context.main_eval and context.beat_boss then
+            G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
+            G.E_MANAGER:add_event(Event({
+                func = (function()
+                    G.E_MANAGER:add_event(Event({
+                        func = function()
+                            SMODS.add_card {
+                                set = 'Spectral',
+                                edition = 'e_negative'
+                            }
+                            SMODS.add_card {
+                                set = 'Spectral',
+                                edition = 'e_negative'
+                            }
+                            G.GAME.consumeable_buffer = 0
+                            return true
+                        end
+                    }))
+                    SMODS.calculate_effect({ message = localize('k_plus_tarot'), colour = G.C.PURPLE },
+                        context.blueprint_card or card)
+                    return true
+                end)
+            }))
+            return nil, true -- This is for Joker retrigger purposes
+        end
+    end
+}
 
 -- SMODS.Joker {
 --     key = 'gourdy',

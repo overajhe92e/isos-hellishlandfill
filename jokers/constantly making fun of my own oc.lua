@@ -15,24 +15,15 @@ SMODS.Joker { --Oxy
         }
     },
     pos = {
-        x = 3,
-        y = 0
-    },
-    display_size = {
-        w = 71 * 1,
-        h = 95 * 1
+        x = 2,
+        y = 1
     },
     cost = 16,
     rarity = "ocstobal_epic",
-    blueprint_compat = true,
-    eternal_compat = true,
-    perishable_compat = true,
-    unlocked = true,
-    discovered = false,
-    atlas = 'CustomJokers',
+    atlas = 'other_ocs',
     soul_pos = {
-        x = 4,
-        y = 0
+        x = 3,
+        y = 1
     },
     pools = {
         ["copycats"] = true
@@ -140,15 +131,14 @@ SMODS.Joker {
     key = "oxyemp",
     rarity = "ocstobal_unique",
     cost = 50,
-    discovered = false,
     config = {
         extra = {
             blind_size = 4
         }
     },
-    atlas = "oxyemp",
-    pos = { x = 0, y = 0 },
-    soul_pos = { x = 1, y = 0 },
+    atlas = "other_ocs",
+    pos = { x = 4, y = 1 },
+    soul_pos = { x = 5, y = 1 },
     blueprint_compat = true,
 
     loc_vars = function(self, info_queue, center)
