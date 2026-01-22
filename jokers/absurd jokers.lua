@@ -1,23 +1,23 @@
-SMODS.Joker { -- baller
-    key = 'toomuch',
-    rarity = 'ocstobal_whatthefuck',
-    cost = 100,
-    no_collection = true,
+-- SMODS.Joker { -- baller
+--     key = 'toomuch',
+--     rarity = 'ocstobal_whatthefuck',
+--     cost = 100,
+--     no_collection = true,
 
-    calculate = function(self, card, context)
-        if context.joker_main then
-            return {
-                hypermult = { 4, 4 },
-                hyperchips = { 4, 4 }
-            }
-        end
-    end
-}
+--     calculate = function(self, card, context)
+--         if context.joker_main then
+--             return {
+--                 hypermult = { 4, 4 },
+--                 hyperchips = { 4, 4 }
+--             }
+--         end
+--     end
+-- }
 
 SMODS.Joker { --so you know polterwor
     key = 'jokertoendalljokers',
     rarity = 'ocstobal_beyondexotic',
-    cost = 1e308,
+    cost = 1e200,
     atlas = 'avaritia',
     no_collection = true,
     pools = {
@@ -165,25 +165,6 @@ SMODS.Joker { --oh my god two soul cards and a blackhole are you deranged
 --     cost = 1e307,
 --     no_collection = true
 -- }
-
-SMODS.Joker { --todo: implement every effect
-    key = 'aiojoker',
-    rarity = 'ocstobal_beyondexotic',
-    cost = 999999999,
-    no_collection = true,
-    pools = {
-        ["fucking_absurd"] = true
-    },
-
-    calculate = function(self, card, context)
-        if context.joker_main then
-            return {
-                chips = to_big(10 ^ 10 ^ 10 ^ 10 ^ 10)
-            }
-        end
-    end
-}
-
 SMODS.Joker { --right before getting aio joker
     key = 'ripoff',
     rarity = 'ocstobal_beyondexotic',

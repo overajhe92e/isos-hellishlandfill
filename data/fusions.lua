@@ -45,7 +45,7 @@ FusionJokers.fusions:register_fusion {
 		{ name = "j_ocstobal_ichor" },
 	},
 	result_joker = "j_ocstobal_dw_astro",
-	cost = 1
+	cost = 10
 }
 FusionJokers.fusions:register_fusion {
 	jokers = {
@@ -61,7 +61,7 @@ FusionJokers.fusions:register_fusion {
 		{ name = "j_splash" },
 	},
 	result_joker = "j_ocstobal_tigersharksparky",
-	cost = 10
+	cost = 15
 }
 FusionJokers.fusions:register_fusion {
 	jokers = {

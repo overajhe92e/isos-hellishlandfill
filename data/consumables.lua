@@ -58,10 +58,8 @@ SMODS.Consumable {
     end,
     use = function(self, card, area, copier)
         local deletable_jokers = {}
-        for k, v in pairs(G.jokers.cards) do
-            if not SMODS.is_eternal(v) then
-                deletable_jokers[#deletable_jokers + 1] = v
-            end
+        for _, joker in pairs(G.jokers.cards) do
+            if not SMODS.is_eternal(joker, card) then deletable_jokers[#deletable_jokers + 1] = joker end
         end
         G.E_MANAGER:add_event(Event({
             trigger = "after",
