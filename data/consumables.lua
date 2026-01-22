@@ -13,23 +13,23 @@ SMODS.ConsumableType {
     text_colour = G.C.OMEGARED
 }
 
-SMODS.ConsumableType {
-    key = 'ocstobal_candy',
-    primary_colour = HEX('62b6fe'),
-    secondary_colour = HEX('fdd965'),
-    loc_txt = {
-        name = 'Candy',         -- used on card type badges
-        collection = 'Candies', -- label for the button to access the collection
-        undiscovered = {        -- description for undiscovered cards in the collection
-            name = 'Not Discovered',
-            text = {
-                'Yatta gives these,',
-                'Look out for her!'
-            },
-        },
-    }, --go my backup localization
-    text_colour = G.C.WHITE
-}
+-- SMODS.ConsumableType {
+--     key = 'ocstobal_candy',
+--     primary_colour = HEX('62b6fe'),
+--     secondary_colour = HEX('fdd965'),
+--     loc_txt = {
+--         name = 'Candy',         -- used on card type badges
+--         collection = 'Candies', -- label for the button to access the collection
+--         undiscovered = {        -- description for undiscovered cards in the collection
+--             name = 'Not Discovered',
+--             text = {
+--                 'Yatta gives these,',
+--                 'Look out for her!'
+--             },
+--         },
+--     }, --go my backup localization
+--     text_colour = G.C.WHITE
+-- }
 
 SMODS.ConsumableType {
     key = 'ocstobal_others',
