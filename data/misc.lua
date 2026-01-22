@@ -720,7 +720,7 @@ SMODS.Sound {
 -- 	end
 -- }
 
---how the fuck do i check who made the extraordinary song now
+--how the fuck do i check who made the extraordinary song now???
 
 loc_colour()
 G.ARGS.LOC_COLOURS.ocstobal_eyeshatteringblue = HEX('3df5ff')

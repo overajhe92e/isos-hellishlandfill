@@ -242,7 +242,7 @@ SMODS.Sound {
 	pitch = 1,
 	volume = 1,
 	select_music_track = function()
-		if G.GAME.blind and G.GAME.blind.name == 'cringeasf' then
+		if G.GAME.blind and G.GAME.blind.name == 'cringeasf' and not G.GAME.reclusive_vessel == true then
 			return true
 		elseif G.GAME.blind and G.GAME.blind.name == 'unstable' and G.GAME.omegarush == nil then
 			return true
@@ -260,7 +260,7 @@ SMODS.Sound {
 	select_music_track = function()
 		if G.GAME.omegarush == nil then
 			return false
-		elseif G.GAME.omegarush >= 1 then
+		elseif G.GAME.omegarush >= 1 and not G.GAME.reclusive_vessel == true then
 			return true
 		end
 	end
@@ -296,14 +296,14 @@ SMODS.Sound {
 	pitch = 1,
 	volume = 1,
 	select_music_track = function()
-		if G.GAME.blind and not G.GAME.blind.disabled and G.GAME.blind.name == 'recluseblind' then
+		if G.GAME.blind and not G.GAME.blind.disabled and G.GAME.blind.name == 'recluseblind' and not G.GAME.reclusive_vessel == true then
 			if G.GAME.omegarush == nil then
 				return true
 			elseif G.GAME.omegarush < 1 then
 				return true
 			end
 		end
-		if G.GAME.round_resets.blind_choices.Boss == 'bl_ocstobal_bossrushomega' then
+		if G.GAME.round_resets.blind_choices == 'bl_ocstobal_bossrushomega' and not G.GAME.reclusive_vessel == true then
 			G.GAME.omegarush_choice = true
 			return true
 		end

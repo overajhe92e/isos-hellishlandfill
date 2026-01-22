@@ -1,4 +1,4 @@
-FusionJokers.fusions:register_fusion{
+FusionJokers.fusions:register_fusion {
 	jokers = {
 		{ name = "j_ocstobal_sparky" },
 		{ name = "j_ocstobal_tigersharksparky" },
@@ -7,7 +7,7 @@ FusionJokers.fusions:register_fusion{
 	result_joker = "j_ocstobal_spkawk",
 	cost = 3200
 }
-FusionJokers.fusions:register_fusion{
+FusionJokers.fusions:register_fusion {
 	jokers = {
 		{ name = "j_ocstobal_malicesyringe" },
 		{ name = "j_ocstobal_lifecrystal" },
@@ -15,23 +15,23 @@ FusionJokers.fusions:register_fusion{
 	result_joker = "j_ocstobal_ripoff",
 	cost = 850
 }
-FusionJokers.fusions:register_fusion{
+FusionJokers.fusions:register_fusion {
 	jokers = {
-		{ name = "j_ocstobal_oxy" },
+		{ name = "j_ocstobal_Oxy" },
 		{ name = "j_ocstobal_oxywaterdroplet" },
 	},
 	result_joker = "j_ocstobal_oxyemp",
 	cost = 25
 }
-FusionJokers.fusions:register_fusion{
+FusionJokers.fusions:register_fusion {
 	jokers = {
-		{ name = "j_ocstobal_oxy" },
+		{ name = "j_ocstobal_Oxy" },
 		{ name = "j_ocstobal_oxhatred" },
 	},
-	result_joker = "j_ocstobal_oxy",
+	result_joker = "j_ocstobal_Oxy",
 	cost = 66
 }
-FusionJokers.fusions:register_fusion{
+FusionJokers.fusions:register_fusion {
 	jokers = {
 		{ name = "j_ocstobal_shrimpo" },
 		{ name = "j_ocstobal_ichor" },
@@ -39,7 +39,7 @@ FusionJokers.fusions:register_fusion{
 	result_joker = "j_ocstobal_twistedshrimpo",
 	cost = 30
 }
-FusionJokers.fusions:register_fusion{
+FusionJokers.fusions:register_fusion {
 	jokers = {
 		{ name = "j_ocstobal_astro" },
 		{ name = "j_ocstobal_ichor" },
@@ -47,7 +47,7 @@ FusionJokers.fusions:register_fusion{
 	result_joker = "j_ocstobal_dw_astro",
 	cost = 1
 }
-FusionJokers.fusions:register_fusion{
+FusionJokers.fusions:register_fusion {
 	jokers = {
 		{ name = "j_ocstobal_sparky" },
 		{ name = "j_ocstobal_recluse" },
@@ -55,7 +55,7 @@ FusionJokers.fusions:register_fusion{
 	result_joker = "j_ocstobal_sparkynt",
 	cost = 10
 }
-FusionJokers.fusions:register_fusion{
+FusionJokers.fusions:register_fusion {
 	jokers = {
 		{ name = "j_ocstobal_sparky" },
 		{ name = "j_splash" },
@@ -63,7 +63,7 @@ FusionJokers.fusions:register_fusion{
 	result_joker = "j_ocstobal_tigersharksparky",
 	cost = 10
 }
-FusionJokers.fusions:register_fusion{
+FusionJokers.fusions:register_fusion {
 	jokers = {
 		{ name = "j_ocstobal_recluse" },
 		{ name = "j_ocstobal_somethingevil" },
@@ -73,4 +73,3 @@ FusionJokers.fusions:register_fusion{
 	result_joker = "j_ocstobal_reclusivevessel",
 	cost = 250
 }
-
