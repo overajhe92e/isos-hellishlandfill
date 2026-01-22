@@ -29,42 +29,42 @@ SMODS.Back {
 	end
 }
 
-SMODS.Back {
-	key = "aio",
-	pos = { x = 0, y = 0 },
-	atlas = "aioimg",
-	config = { joker_slot = 20, chanced = 4 },
-	unlocked = false,
-	loc_vars = function(self, info_queue, back)
-		return { vars = { self.config.joker_slot } }
-	end,
-	check_for_unlock = function(self, args)
-		return args.type == 'win_stake' and get_deck_win_stake() >= 10
-	end,
-	calculate = function(self, back, context)
-		if context.end_of_round and context.game_over == false and context.main_eval and context.beat_boss then
-			if SMODS.pseudorandom_probability(back, 'ocstobal_aio', 1, 2) then
-				local jokers = {}
-				for k, v in pairs(G.P_CENTERS) do
-					if v.mod and v.mod.id == 'ocstobalatro' then
-						table.insert(jokers, k)
-					end
-				end
-				local blehh = pseudorandom_element(jokers, 'luckfactor2')
-				SMODS.add_card { set = joker, key = blehh }
-			else
-				card_eval_status_text(
-					G.jokers,
-					"jokers",
-					nil,
-					nil,
-					nil,
-					{ message = 'Nope!', colour = G.C.RARITY[3] }
-				)
-			end
-		end
-	end
-}
+-- SMODS.Back {
+-- 	key = "aio",
+-- 	pos = { x = 0, y = 0 },
+-- 	atlas = "aioimg",
+-- 	config = { joker_slot = 20, chanced = 4 },
+-- 	unlocked = false,
+-- 	loc_vars = function(self, info_queue, back)
+-- 		return { vars = { self.config.joker_slot } }
+-- 	end,
+-- 	check_for_unlock = function(self, args)
+-- 		return args.type == 'win_stake' and get_deck_win_stake() >= 10
+-- 	end,
+-- 	calculate = function(self, back, context)
+-- 		if context.end_of_round and context.game_over == false and context.main_eval and context.beat_boss then
+-- 			if SMODS.pseudorandom_probability(back, 'ocstobal_aio', 1, 2) then
+-- 				local jokers = {}
+-- 				for k, v in pairs(G.P_CENTERS) do
+-- 					if v.mod and v.mod.id == 'ocstobalatro' then
+-- 						table.insert(jokers, k)
+-- 					end
+-- 				end
+-- 				local blehh = pseudorandom_element(jokers, 'luckfactor2')
+-- 				SMODS.add_card { set = joker, key = blehh }
+-- 			else
+-- 				card_eval_status_text(
+-- 					G.jokers,
+-- 					"jokers",
+-- 					nil,
+-- 					nil,
+-- 					nil,
+-- 					{ message = 'Nope!', colour = G.C.RARITY[3] }
+-- 				)
+-- 			end
+-- 		end
+-- 	end
+-- }
 
 SMODS.Back {
 	key = "extremepain",

@@ -4,12 +4,12 @@ SMODS.Joker {
     rarity = 3,
     pos = {
         x = 0,
-        y = 0
+        y = 1
     },
-    atlas = 'sphredo',
+    atlas = 'triple_s',
     soul_pos = {
         x = 1,
-        y = 0
+        y = 1
     },
     no_collection = true,
     add_to_deck = function(self, card)
