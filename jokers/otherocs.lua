@@ -242,8 +242,7 @@ SMODS.Joker {
             end
         end
         if context.setting_blind then
-            card.ability.extra.n = card.ability.extra.n + 0.1
-            card.ability.extra.scale = ((card.ability.extra.n * (card.ability.extra.n + 1))/2)
+            card.ability.extra.scale = math.log(card.ability.extra.xchips)*(0.2*card.ability.extra.xchips)
             return {
                 message = "Scaled!",
                 colour = G.C.FILTER

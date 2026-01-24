@@ -555,8 +555,7 @@ return {
 				name = "{C:ocstobal_ust}Oxidyze's Hatred{}",
 				text = {
 					'{X:dark_edition,C:red}^0.9{} Mult and Chips,',
-					'{C:inactive}1 random joker is debuffed every round,{}',
-					'{C:inactive}Hands set to 1, Discards set to 0',
+					'{C:attention}Hands set to 1, Discards set to 0',
 					'{C:attention}+10{} Hand Size'
 				}
 			},

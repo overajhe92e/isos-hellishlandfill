@@ -890,8 +890,21 @@ SMODS.Blind { --Sparky_Omega
 	end
 }
 
+SMODS.Sound {
+	key = "music_giygas",
+	path = "mus_giygas.ogg",
+	pitch = 1,
+	volume = 1,
+	select_music_track = function()
+		if G.GAME.blind and G.GAME.blind.name == 'giygas' then
+			return true
+		end
+	end
+}
+
 SMODS.Blind {
 	key = 'giygas',
+	name = 'giygas',
 	mult = 666,
 	money = 10,
 	atlas = 'giegueblind',
