@@ -212,9 +212,9 @@ SMODS.Joker {
     key = 'oxywaterdroplet',
     cost = 15,
     rarity = 3,
-    atlas = "symbol",
-    pos = { x = 0, y = 0 },
-    soul_pos = { x = 1, y = 0 },
+    atlas = "other_jokers",
+    pos = { x = 2, y = 1 },
+    soul_pos = { x = 3, y = 1 },
     blueprint_compat = true,
 
     calculate = function(self, card, context)

@@ -5,17 +5,15 @@ SMODS.Joker {
             h_size = 10
         }
     },
-    atlas = 'agonizing',
+    atlas = 'other_ocs',
     pos = {
-        x = 0,
+        x = 4,
         y = 0
     },
     cost = 0,
     rarity = "ocstobal_absolute_curse",
-    unlocked = true,
-    discovered = true,
     soul_pos = {
-        x = 1,
+        x = 5,
         y = 0
     },
     no_collection = true,
@@ -56,9 +54,9 @@ SMODS.Joker {
             mmultgain = 0.15
         }
     },
-    atlas = 'starry',
+    atlas = 'other_jokers',
     pos = {
-        x = 0,
+        x = 4,
         y = 0
     },
     cost = 0,
@@ -66,7 +64,7 @@ SMODS.Joker {
     unlocked = true,
     discovered = false,
     soul_pos = {
-        x = 1,
+        x = 5,
         y = 0,
         draw = function(card, scale_mod, rotate_mod)
             card.hover_tilt = card.hover_tilt * 1.5

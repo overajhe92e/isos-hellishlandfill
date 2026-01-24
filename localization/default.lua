@@ -425,7 +425,7 @@ return {
 				}
 			},
 			j_ocstobal_seraph_lv10k = {
-				name = "{C:ocstobal_finalrgb}Seraph, the Collapse of Everything{}",
+				name = "{C:ocstobal_finalrgb}I can put anything here because I doubt you guys are that crazy{}",
 				text = {
 					{
 						'{C:dark_edition,s:1.35}EXP: #9# / 10{}',
@@ -453,7 +453,7 @@ return {
 				}
 			},
 			j_ocstobal_seraph_lv1m = {
-				name = "{C:ocstobal_finalrgb}Serafinentyhjyys{}",
+				name = "{C:ocstobal_finalrgb}calm the fuck down bro{}",
 				text = {
 					{
 						'{C:dark_edition,s:1.35}EXP: #9# / 10{}',
@@ -827,6 +827,22 @@ return {
 					'{C:blue}"meow"{}',
 					'{C:dark_edition,E:1,s:0.8}Original Character by : Astro',
 					'{C:dark_edition,E:1,s:0.8}Origin : Starspace{}' --go check out the mod it's peak
+				}
+			},
+			j_ocstobal_solstro = {
+				name = "Astronomical Duo",
+				text = {
+					{
+						"Gains {X:blue,C:white}X0.1{} Chips when a",
+						"{C:spades}Spade{} is scored",
+						"On {C:attention}Blind Select{} {X:blue,C:white}XChip{} gain is",
+						"increased with the equation of",
+						"{X:dark_edition,C:white}(XChip(XChip+1)/2)/10{}",
+						"{C:inactive}Currently{} {X:blue,C:white}X#1#{} {C:inactive}Chips{}"
+					},
+					{
+						"{C:inactive}ASTRO X SOLINIUM???{}"
+					}
 				}
 			},
 			j_ocstobal_astro_balance = {

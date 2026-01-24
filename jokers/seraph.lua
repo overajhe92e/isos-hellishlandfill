@@ -381,8 +381,9 @@ SMODS.Joker {
             estuff = 1
         }
     },
-    atlas = "rec_vessel",
-    soul_pos = { x = 1, y = 0 },
+    atlas = "triple_s",
+    pos = { x = 2, y = 2 },
+    soul_pos = { x = 3, y = 2 },
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.xstuff, card.ability.extra.estuff } }
     end,

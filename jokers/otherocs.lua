@@ -4,7 +4,7 @@ SMODS.Joker {
     rarity = 'ocstobal_epic',
     atlas = 'other_ocs',
     pos = { x = 0, y = 0 },
-    soul_pos = {x=1,y=0},
+    soul_pos = { x = 1, y = 0 },
     blueprint_compat = true,
     pools = {
         ["copycats"] = true,
@@ -110,7 +110,7 @@ SMODS.Joker {
             if context.setting_blind and next(SMODS.find_card("j_ocstobal_dw_astro")) then
                 SMODS.destroy_cards(SMODS.find_card('j_ocstobal_dw_astro'), nil)
                 for i = 1, #(SMODS.find_card('j_ocstobal_dw_astro')) do
-                   card.ability.extra.chips = card.ability.extra.chips ^ 16 
+                    card.ability.extra.chips = card.ability.extra.chips ^ 16
                 end
                 return {
                     message = "GET OUT!"
@@ -210,4 +210,12 @@ SMODS.Joker {
             }
         end
     end
+}
+
+SMODS.Joker {
+    key = 'solstro',
+    cost = 50,
+    rarity = "ocstobal_unique",
+    atlas = "other_jokers",
+    pos = { x = 0, y = 0 }
 }
