@@ -544,8 +544,6 @@ return {
 
 				}
 			},
-<<<<<<< HEAD
-=======
 			j_ocstobal_voidinstlose = {
 				name = "The Absolute Void",
 				text = {
@@ -553,7 +551,6 @@ return {
 					'And..?'
 				}
 			},
->>>>>>> dff15a9864a791480821a3363d1c0f9cf515556d
 			j_ocstobal_oxhatred = {
 				name = "{C:ocstobal_ust}Oxidyze's Hatred{}",
 				text = {
@@ -898,11 +895,7 @@ return {
 						"enter a meltdown.",
 						"{C:inactive}Currently{} {X:red,C:white}X#1#{} {C:inactive}Mult.{}"
 					},
-<<<<<<< HEAD
-					{ "{C:inactive}Oh my god you guys are deranged{}" }
-=======
 					{ "{C:inactive}i'm not surprised man{}" }
->>>>>>> dff15a9864a791480821a3363d1c0f9cf515556d
 				}
 			},
 			j_ocstobal_aiojoker = {
@@ -945,11 +938,7 @@ return {
 				name = "Claire",
 				text = {
 					"{C:blue}+31{} Chips",
-<<<<<<< HEAD
-					"{C:inactive}Arguably the worst joker in the entire mod.{}"
-=======
 					"{C:inactive,s:0.8}One of the worst jokers in the mod.{}"
->>>>>>> dff15a9864a791480821a3363d1c0f9cf515556d
 				}
 			},
 			j_ocstobal_oxydeceit = {
@@ -1043,16 +1032,10 @@ return {
 				}
 			},
 			j_ocstobal_obscene_joke = { -- these obscure jokes are gonna get me banned istg
-<<<<<<< HEAD
-				name = "Something Nxkoo would say",
-				text = {
-					"{C:inactive}please don't pick this up kthxbye{}"
-=======
 				name = "Something Something NSFW Joke here",
 				text = {
 					"{C:red}Don't pick up, please.{}",
 					"{C:inactive,s:0.7}You do not want to deal with Oxidyze's hate to you.{}"
->>>>>>> dff15a9864a791480821a3363d1c0f9cf515556d
 				}
 			},
 			j_ocstobal_porky = {
@@ -1180,12 +1163,8 @@ return {
 					{
 						"Adds {C:legendary}15%{} of {C:attention}score requirement{}",
 						"to {C:attention}Current Score{}",
-<<<<<<< HEAD
-						"{C:green}1 in 6{} chance to add {C:legendary}75%{} instead"
-=======
 						"{C:green}#1# in #2#{} chance to add {C:legendary}90%{} of",
 						"{C:attention}Score requirement{} to {C:attention}Current Score{}"
->>>>>>> dff15a9864a791480821a3363d1c0f9cf515556d
 					}
 				}
 			},
