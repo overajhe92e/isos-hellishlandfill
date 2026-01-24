@@ -58,7 +58,8 @@ SMODS.Joker {
         if context.joker_main then
             return { xmult = 0.5 }
         end
-    end
+    end,
+    no_collection = true
 }
 
 SMODS.Joker {
@@ -112,5 +113,6 @@ SMODS.Joker {
                 }
             end
         end
-    end
+    end,
+    no_collection = true
 }

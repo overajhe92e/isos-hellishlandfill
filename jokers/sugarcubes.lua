@@ -54,6 +54,21 @@ SMODS.Joker {
     end,
 
     calculate = function(self,card,context)
+        if context.setting_blind then
+             G.E_MANAGER:add_event(Event({
+                trigger = 'after',
+                delay = 0.06 * G.SETTINGS.GAMESPEED,
+                blockable = false,
+                blocking = false,
+                func = function()
+                    play_sound('tarot2', 0.76, 0.4)
+                    return true
+                end
+            }))
+            play_sound('tarot2', 1, 2)
+            G.GAME.blind.chips = math.floor(G.GAME.blind.chips * (1/2))
+            G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
+        end
         if context.joker_main and context.cardarea == G.jokers then
             return {
                 xmult = 3,
@@ -95,6 +110,21 @@ SMODS.Joker {
     end,
 
     calculate = function(self,card,context)
+        if context.setting_blind then
+             G.E_MANAGER:add_event(Event({
+                trigger = 'after',
+                delay = 0.06 * G.SETTINGS.GAMESPEED,
+                blockable = false,
+                blocking = false,
+                func = function()
+                    play_sound('tarot2', 0.76, 0.4)
+                    return true
+                end
+            }))
+            play_sound('tarot2', 1, 2)
+            G.GAME.blind.chips = math.floor(G.GAME.blind.chips * (1/8))
+            G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
+        end
         if context.joker_main and context.cardarea == G.jokers then
             return {
                 emult = 1.2,

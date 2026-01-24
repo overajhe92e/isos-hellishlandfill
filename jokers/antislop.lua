@@ -1,14 +1,14 @@
 SMODS.Joker {
     key = 'antislopinator',
     cost = 1,
-    rarity = "ocstobal_cursed",
+    rarity = 2,
     atlas = 'antislop',
     pos = { x = 0, y = 0 },
     add_to_deck = function(self, card, from_debuff)
-        G.jokers.config.card_limit = G.jokers.config.card_limit + 1
+        G.jokers.config.card_limit = G.jokers.config.card_limit + 3
     end,
     remove_from_deck = function(self, card, from_debuff)
-        G.jokers.config.card_limit = G.jokers.config.card_limit - 1
+        G.jokers.config.card_limit = G.jokers.config.card_limit - 3
     end,
     calculate = function(self, card, context)
         if G.GAME.chips >= to_big(1e308) then

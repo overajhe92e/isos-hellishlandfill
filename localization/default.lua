@@ -557,20 +557,6 @@ return {
 
 				}
 			},
-			j_ocstobal_voidinstlose = {
-				name = "The Absolute Void",
-				text = {
-					'{X:ocstobal_ust,C:ocstobal_eyeshatteringblue}#1#{} Mult and Chips...',
-					'And..?'
-				}
-			},
-			j_ocstobal_fakeFAKEoxy = {
-				name = "Marshmallow",
-				text = {
-					'{C:inactive}Shows an extremely important image{}',
-					'{C:blue,s:0.9}"I have NO idea what I\'m doing!{}'
-				}
-			},
 			j_ocstobal_oxhatred = {
 				name = "{C:ocstobal_ust}Oxy's Hatred{}",
 				text = {
@@ -578,17 +564,6 @@ return {
 					'{C:inactive}1 random joker is debuffed every round,{}',
 					'{C:inactive}Hands set to 1, Discards set to 0',
 					'{C:attention}+10{} Hand Size'
-				}
-			},
-			j_ocstobal_oxhatred_alt = {
-				name = "Oxy's Absolute Hatred",
-				text = {
-					'{X:dark_edition,C:red}^0.7{} Mult and Chips',
-					'Adjacent jokers are debuffed, Cards are debuffed.',
-					'{C:attention}On blind select,{} {C:red}Destroy a random joker.{}',
-					'Hands set to 1, Discards set to -666, Hand size locked to 1.',
-					'{C:red}Absolute. Cannot be removed.{}',
-					'"FUCK. YOU."'
 				}
 			},
 			j_ocstobal_overpoweredgaming = {
@@ -621,31 +596,6 @@ return {
 					'{C:ocstobal_sewh}Can bypass Eternal{}'
 				}
 			},
-			j_ocstobal_bee = {
-				name = 'A Bee',
-				text = {
-					'So what kind of bee',
-					'decides to obsess',
-					'over a moth?'
-				}
-			},
-			j_ocstobal_dearfuckinggod = {
-				name = 'No.',
-				text = {
-					'Shows an extremely important image',
-					'"I have NO idea what I\'m doing!"'
-				}
-			},
-			j_ocstobal_depression = {
-				name = 'Overused Joke',
-				text = {
-					'oh there\'s photochad, oh there\'s mimebaron',
-					'oh my gos streamer why did you skip chad',
-					'streamer sell baron',
-					'all that and',
-					'{s:1.2,C:red}maybe i should just kill myself already{} {C:red}-Isotypical{}'
-				}
-			},
 			j_ocstobal_tigersharksparky = {
 				name = 'Sparky {C:inactive}(Tiger Shark){}',
 				text = {
@@ -673,78 +623,6 @@ return {
 					'{C:inactive,s:0.5}It may be related to an edition rate...{}'
 				}
 			},
-			j_ocstobal_seraphnt = {
-				name = '"Seraph"',
-				text = {
-					{
-						'What have I done.',
-						'I picked myself... over my friends.',
-						'...'
-					},
-					{
-						'What... is wrong with me?',
-						'Why did I let {C:ocstobal_ust}Recluse{} do this..?',
-						'I could have fought back but...',
-						'I... {C:red}didn\'t.{}'
-					}
-				}
-			},
-			j_ocstobal_seraphnt2 = {
-				name = '"Seraph"',
-				text = {
-					{
-						'What have I done.',
-						'I picked myself... over my friends.',
-						'...'
-					},
-					{
-						'I heard {C:green}her{} calling for help.',
-						'I was scared. I couldn\'t think straight.'
-					}
-				}
-			},
-			j_ocstobal_seraphnt3 = {
-				name = '"Seraph"',
-				text = {
-					{
-						'What have I done.',
-						'I picked myself... over my friends.',
-						'...'
-					},
-					{
-						'{C:legendary}He{} was yelling at me to not...',
-						'take that fucking {C:red}deal{}...'
-					}
-				}
-			},
-			j_ocstobal_seraphnt4 = {
-				name = '"Seraph"',
-				text = {
-					{
-						'What have I done.',
-						'I picked myself... over my friends.',
-						'...'
-					},
-					{
-						'...But I... took it anyways.',
-						'...exchanging both of their lives, so I...',
-						'...live on, {C:attention}becoming stronger.{}'
-					}
-				}
-			},
-			j_ocstobal_seraphntnomore = {
-				name = '"Seraph"',
-				text = {
-					{
-						'What have I done.',
-						'I picked myself... over my friends.',
-						'...'
-					},
-					{
-						'i\'m sorry to both of you.'
-					}
-				}
-			},
 			j_ocstobal_shrimpo = {
 				name = 'Shrimpo',
 				text = {
@@ -760,13 +638,6 @@ return {
 					'{C:red}Nearly murders a blind.{}',
 					'{C:inactive}Blind Size is reduced by ^0.75{}',
 					'{C:dark_edition,s:0.8}Origin : Dandy\'s World{}'
-				}
-			},
-			j_ocstobal_overcomplicated = {
-				name = 'Non-Complicated Joker',
-				text = {
-					'Gives {C:red}((8*(sqrt(4)+(6/3)))/((6/3)*2))-(3*(6/3)))/(((log2(16))*(e^(ln(7))))/4){}',
-					'Mult.'
 				}
 			},
 			j_ocstobal_normalsugar = {
@@ -790,7 +661,7 @@ return {
 				name = 'Demonic Sugar Rush',
 				text = {
 					'{X:blue,C:white}^1.1{} Chips and {X:red,C:white}^1.2{} Mult.',
-					'Blind size {C:red}reduced heavily{} into 1/8th',
+					'Blind size {C:red}reduced heavily{} {C:inactive}1/8th original size{}',
 					'Playing 1 hand creates a {C:ocstobal_ust}Sugar Crash{}',
 					'{C:inactive}[ Currently #1# hands left ]{}',
 					'{C:inactive}Why did I put a counter here? Oh right, consistency.{}'
@@ -815,8 +686,9 @@ return {
 			j_ocstobal_antislopinator = {
 				name = 'Anti-Number Slop-inator',
 				text = {
-					'{C:default}If your score is above 1e308,{}',
-					'{C:ocstobal_ust,s:2.5}Die.{}'
+					'{C:attention}+3{} Joker slots',
+					'but if your score is above 1e308,',
+					'{C:red}instantly die{}'
 				}
 			},
 			j_ocstobal_evilantislopinator = {
@@ -1048,12 +920,12 @@ return {
 				name = "modding-chat",
 				text = {
 					{
-						"{X:red,C:white}+X1{} Mult for...",
+						"Gains {X:red,C:white}X1{} Mult for",
 						"Every day that Balato's modding-chat does NOT",
 						"enter a meltdown.",
 						"{C:inactive}Currently{} {X:red,C:white}X#1#{} {C:inactive}Mult.{}"
 					},
-					{ "{C:inactive}Let's see how high this can get lmfao{}" }
+					{ "{C:inactive}Oh my god you guys are deranged{}" }
 				}
 			},
 			j_ocstobal_aiojoker = {
@@ -1119,7 +991,8 @@ return {
 			j_ocstobal_claire = {
 				name = "Claire",
 				text = {
-					"{C:blue}+31{} Chips"
+					"{C:blue}+31{} Chips",
+					"{C:inactive}Arguably the worst joker in the entire mod.{}"
 				}
 			},
 			j_ocstobal_oxydeceit = {
@@ -1238,7 +1111,7 @@ return {
 				text = {
 					"You can only have",
 					"{C:attention}One{} Discard",
-					"{C:inactive,s:0.75}Discarding a hand wins the blind.{}"
+					"{C:inactive,s:0.75}Discarding a card sets score to Blind Requirement{}"
 				}
 			},
 			j_ocstobal_lesser_divinity = {
@@ -1248,14 +1121,9 @@ return {
 				}
 			},
 			j_ocstobal_obscene_joke = { -- these obscure jokes are gonna get me banned istg
-				name = "Obscure Joke Here",
+				name = "Something Nxkoo would say",
 				text = {
-					"ok so i originally wanted to",
-					"hide an obscene joke here but if you",
-					"figured it out i could have gotten",
-					"absolutely obliterated off of the balatro modding community",
-					"also,",
-					"{C:red,s:1.5}DO NOT PICK UP.{}"
+					"{C:inactive}please don't pick this up kthxbye{}"
 				}
 			},
 			j_ocstobal_porky = {
@@ -1374,7 +1242,7 @@ return {
 					{
 						"Adds {C:legendary}15%{} of {C:attention}score requirement{}",
 						"to {C:attention}Current Score{}",
-						"Chance to retrigger {C:attention}twice{}"
+						"{C:green}1 in 6{} chance to add {C:legendary}75%{} instead"
 					}
 				}
 			},

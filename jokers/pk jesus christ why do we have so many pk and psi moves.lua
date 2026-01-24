@@ -26,7 +26,7 @@ SMODS.Joker {
     config = {
         extra = {
             probability = 4,
-            retriggers = 1
+            retriggers = 2
         }
     },
     loc_vars = function(self,info_queue,card)
@@ -40,7 +40,7 @@ SMODS.Joker {
             }
         end
     end,
-    no_collection = true
+    no_collection = false
 }
 
 SMODS.Joker {

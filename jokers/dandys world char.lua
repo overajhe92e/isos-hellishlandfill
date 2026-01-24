@@ -1,6 +1,6 @@
 SMODS.Joker {
     key = 'shrimpo',
-    cost = '10',
+    cost = 10,
     rarity = 3,
     atlas = 'friedshrimp',
     pos = { x = 0, y = 0 },
@@ -69,6 +69,7 @@ SMODS.Joker {
         return { vars = { localize('k_ocstobal_yatta_quote' .. pseudorandom("seed", 1, 4)) } }
     end,
     blueprint_compat = true,
+    no_collection = true,
 
     calculate = function(self, card, context)
         if context.end_of_round and context.game_over == false and context.main_eval and context.beat_boss then
@@ -110,6 +111,7 @@ SMODS.Joker {
     atlas = 'dw',
     pos = { x = 0, y = 1 },
     soul_pos = { x = 1, y = 1 },
+    no_collection = true
 }
 
 SMODS.Joker {
