@@ -833,16 +833,13 @@ return {
 				name = "Astronomical Duo",
 				text = {
 					{
-						"Gains {X:blue,C:white}X0.1{} Chips when a",
-						"{C:spades}Spade{} is scored",
+						"Gains {X:blue,C:white}X#2#{} Chips when",
+						"a {C:spades}Spade{} card is scored",
 						"On {C:attention}Blind Select{} {X:blue,C:white}XChip{} gain is",
 						"increased with the equation of",
-						"{X:dark_edition,C:white}(XChip(XChip+1)/2)/10{}",
+						"{X:dark_edition,C:white,s:1.3}log(XCHIPS)*0.2(XCHIPS){}",
 						"{C:inactive}Currently{} {X:blue,C:white}X#1#{} {C:inactive}Chips{}"
 					},
-					{
-						"{C:inactive}ASTRO X SOLINIUM???{}"
-					}
 				}
 			},
 			j_ocstobal_astro_balance = {

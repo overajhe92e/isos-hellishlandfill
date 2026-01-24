@@ -217,5 +217,42 @@ SMODS.Joker {
     cost = 50,
     rarity = "ocstobal_unique",
     atlas = "other_jokers",
-    pos = { x = 0, y = 0 }
+    pos = { x = 0, y = 0 },
+    config = {
+        extra = {
+            xchips = 1,
+            scale = 0.1,
+            suit_1 = "Spades",
+            n = 0.1
+        }
+    },
+    loc_vars = function(self, info_queue, card)
+        return {
+            vars = { card.ability.extra.xchips, card.ability.extra.scale, card.ability.extra.suit_1, card.ability.extra.n }
+        }
+    end,
+    calculate = function(self, card, context)
+        if context.individual and context.cardarea == G.play then
+            if context.other_card:is_suit(card.ability.extra.suit_1) and not context.blueprint then
+                card.ability.extra.xchips = card.ability.extra.xchips + card.ability.extra.scale
+                return {
+                    message = 'Upgraded!',
+                    colour = G.C.CHIPS,
+                }
+            end
+        end
+        if context.setting_blind then
+            card.ability.extra.n = card.ability.extra.n + 0.1
+            card.ability.extra.scale = ((card.ability.extra.n * (card.ability.extra.n + 1))/2)
+            return {
+                message = "Scaled!",
+                colour = G.C.FILTER
+            }
+        end
+        if context.joker_main then
+            return {
+                xchips = card.ability.extra.xchips
+            }
+        end
+    end
 }
