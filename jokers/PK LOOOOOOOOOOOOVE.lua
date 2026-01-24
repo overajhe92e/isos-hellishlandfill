@@ -74,13 +74,11 @@ SMODS.Joker {
         if context.joker_main and G.GAME.current_round.hands_left == 0 then
             return {
                 message = "X" ..
-                tostring(card.ability.extra.stored_chips + card.ability.extra.stored_mult) .. " Chips & Mult",
+                    tostring(card.ability.extra.stored_chips + card.ability.extra.stored_mult) .. " Chips & Mult",
                 sound = "ocstobal_snd_pklove_b",
                 Xmult_mod = card.ability.extra.stored_chips + card.ability.extra.stored_mult,
-                    Xmult_mod = card.ability.extra.stored_chips + card.ability.extra.stored_mult,
-                    Xchip_mod = card.ability.extra.stored_mult + card.ability.extra.stored_mult
-                }
-            end
+                Xchip_mod = card.ability.extra.stored_mult + card.ability.extra.stored_mult
+            }
         end
         if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
             card.ability.extra.stored_chips = 0
@@ -109,8 +107,8 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         if context.joker_main and G.GAME.current_round.hands_left > 0 then
-            card.ability.extra.stored_chips = card.ability.extra.stored_chips + math.floor((hand_chips^1.1))
-            card.ability.extra.stored_mult = card.ability.extra.stored_mult + math.floor((mult^1.1))
+            card.ability.extra.stored_chips = card.ability.extra.stored_chips + math.floor((hand_chips ^ 1.1))
+            card.ability.extra.stored_mult = card.ability.extra.stored_mult + math.floor((mult ^ 1.1))
             return {
                 message = "Stored!",
                 chips = mod_chips(0),
@@ -118,16 +116,13 @@ SMODS.Joker {
             }
         end
         if context.joker_main and G.GAME.current_round.hands_left == 0 then
-
             return {
                 message = "X" ..
-                tostring(card.ability.extra.stored_chips + card.ability.extra.stored_mult) .. " Chips & Mult",
+                    tostring(card.ability.extra.stored_chips + card.ability.extra.stored_mult) .. " Chips & Mult",
                 sound = "ocstobal_snd_pklove_g",
                 Xmult_mod = card.ability.extra.stored_chips + card.ability.extra.stored_mult,
-                    Xmult_mod = card.ability.extra.stored_chips + card.ability.extra.stored_mult,
-                    Xchip_mod = card.ability.extra.stored_mult + card.ability.extra.stored_mult
-                }
-            end
+                Xchip_mod = card.ability.extra.stored_mult + card.ability.extra.stored_mult
+            }
         end
         if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
             card.ability.extra.stored_chips = 0
@@ -167,13 +162,12 @@ SMODS.Joker {
         if context.joker_main and G.GAME.current_round.hands_left == 0 then
             return {
                 message = "X" ..
-                tostring(card.ability.extra.stored_chips + card.ability.extra.stored_mult) .. " Chips & Mult",
+                    tostring(card.ability.extra.stored_chips + card.ability.extra.stored_mult) .. " Chips & Mult",
                 sound = "ocstobal_snd_pklove_o",
+                pitch = 1,
                 Xmult_mod = card.ability.extra.stored_chips + card.ability.extra.stored_mult,
-                    Xmult_mod = card.ability.extra.stored_chips + card.ability.extra.stored_mult,
-                    Xchip_mod = card.ability.extra.stored_mult + card.ability.extra.stored_mult
-                }
-            end
+                Xchip_mod = card.ability.extra.stored_mult + card.ability.extra.stored_mult
+            }
         end
         if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
             card.ability.extra.stored_chips = 0
