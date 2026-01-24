@@ -13,23 +13,23 @@ SMODS.ConsumableType {
     text_colour = G.C.OMEGARED
 }
 
-SMODS.ConsumableType {
-    key = 'ocstobal_candy',
-    primary_colour = HEX('62b6fe'),
-    secondary_colour = HEX('fdd965'),
-    loc_txt = {
-        name = 'Candy',         -- used on card type badges
-        collection = 'Candies', -- label for the button to access the collection
-        undiscovered = {        -- description for undiscovered cards in the collection
-            name = 'Not Discovered',
-            text = {
-                'Yatta gives these,',
-                'Look out for her!'
-            },
-        },
-    }, --go my backup localization
-    text_colour = G.C.WHITE
-}
+-- SMODS.ConsumableType {
+--     key = 'ocstobal_candy',
+--     primary_colour = HEX('62b6fe'),
+--     secondary_colour = HEX('fdd965'),
+--     loc_txt = {
+--         name = 'Candy',         -- used on card type badges
+--         collection = 'Candies', -- label for the button to access the collection
+--         undiscovered = {        -- description for undiscovered cards in the collection
+--             name = 'Not Discovered',
+--             text = {
+--                 'Yatta gives these,',
+--                 'Look out for her!'
+--             },
+--         },
+--     }, --go my backup localization
+--     text_colour = G.C.WHITE
+-- }
 
 SMODS.ConsumableType {
     key = 'ocstobal_others',
@@ -58,10 +58,8 @@ SMODS.Consumable {
     end,
     use = function(self, card, area, copier)
         local deletable_jokers = {}
-        for k, v in pairs(G.jokers.cards) do
-            if not SMODS.is_eternal(v) then
-                deletable_jokers[#deletable_jokers + 1] = v
-            end
+        for _, joker in pairs(G.jokers.cards) do
+            if not SMODS.is_eternal(joker, card) then deletable_jokers[#deletable_jokers + 1] = joker end
         end
         G.E_MANAGER:add_event(Event({
             trigger = "after",
@@ -87,7 +85,7 @@ SMODS.Consumable {
     set = 'ocstobal_others',
     hidden = true,
     soul_set = 'Spectral',
-    soul_rate = 0.05,
+    soul_rate = 0.1,
     can_use = function(self, card)
         return true
     end,

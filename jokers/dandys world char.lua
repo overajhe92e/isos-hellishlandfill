@@ -27,9 +27,9 @@ SMODS.Joker {
     key = 'twistedshrimpo',
     cost = 30,
     rarity = 'ocstobal_unique',
-    atlas = 'twistedshrimp',
-    pos = { x = 0, y = 0 },
-    soul_pos = { x = 1, y = 0 },
+    atlas = 'friedshrimp',
+    pos = { x = 0, y = 1 },
+    soul_pos = { x = 1, y = 1 },
     blueprint_compat = true,
 
     loc_vars = function(self, info_queue, card)
@@ -86,10 +86,6 @@ SMODS.Joker {
                                 set = 'Spectral',
                                 edition = 'e_negative'
                             }
-                            SMODS.add_card {
-                                set = 'Spectral',
-                                edition = 'e_negative'
-                            }
                             G.GAME.consumeable_buffer = 0
                             return true
                         end
@@ -104,15 +100,14 @@ SMODS.Joker {
     end
 }
 
-SMODS.Joker {
-    key = 'gourdy',
-    rarity = 1,
-    cost = 2,
-    atlas = 'dw',
-    pos = { x = 0, y = 1 },
-    soul_pos = { x = 1, y = 1 },
-    no_collection = true
-}
+-- SMODS.Joker {
+--     key = 'gourdy',
+--     rarity = 1,
+--     cost = 2,
+--     atlas = 'dw',
+--     pos = { x = 0, y = 1 },
+--     soul_pos = { x = 1, y = 1 },
+-- }
 
 SMODS.Joker {
     key = 'dw_astro',

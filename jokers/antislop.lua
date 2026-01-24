@@ -1,9 +1,9 @@
 SMODS.Joker {
     key = 'antislopinator',
     cost = 1,
-    rarity = 2,
-    atlas = 'antislop',
-    pos = { x = 0, y = 0 },
+    rarity = "ocstobal_cursed",
+    atlas = 'other_jokers',
+    pos = { x = 1, y = 0 },
     add_to_deck = function(self, card, from_debuff)
         G.jokers.config.card_limit = G.jokers.config.card_limit + 3
     end,
@@ -27,8 +27,8 @@ SMODS.Joker {
         reduce = 8
     },
     no_collection = true,
-    atlas = 'slop',
-    pos = { x = 0, y = 0 },
+    atlas = 'other_jokers',
+    pos = { x = 2, y = 0 },
     blueprint_compat = true,
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.emult, card.ability.scale } }

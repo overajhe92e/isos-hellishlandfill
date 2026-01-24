@@ -15,24 +15,15 @@ SMODS.Joker { --Oxy
         }
     },
     pos = {
-        x = 3,
-        y = 0
-    },
-    display_size = {
-        w = 71 * 1,
-        h = 95 * 1
+        x = 2,
+        y = 1
     },
     cost = 16,
     rarity = "ocstobal_epic",
-    blueprint_compat = true,
-    eternal_compat = true,
-    perishable_compat = true,
-    unlocked = true,
-    discovered = false,
-    atlas = 'CustomJokers',
+    atlas = 'other_ocs',
     soul_pos = {
-        x = 4,
-        y = 0
+        x = 3,
+        y = 1
     },
     pools = {
         ["copycats"] = true
@@ -45,7 +36,6 @@ SMODS.Joker { --Oxy
     loc_vars = function(self, info_queue, center)
         return {
             vars = { localize('k_ocstobal_oxy_quote' .. pseudorandom("seed", 1, 11)) },
-            key = pseudorandom('seed', 1, 6) == 1 and "j_ocstobal_oxyrenamed"
         }
     end,
 
@@ -141,20 +131,18 @@ SMODS.Joker {
     key = "oxyemp",
     rarity = "ocstobal_unique",
     cost = 50,
-    discovered = false,
     config = {
         extra = {
             blind_size = 4
         }
     },
-    atlas = "oxyemp",
-    pos = { x = 0, y = 0 },
-    soul_pos = { x = 1, y = 0 },
+    atlas = "other_ocs",
+    pos = { x = 4, y = 1 },
+    soul_pos = { x = 5, y = 1 },
     blueprint_compat = true,
 
     loc_vars = function(self, info_queue, center)
         return {
-            key = pseudorandom('seed', 1, 10) == 1 and "j_ocstobal_oxyemp_alt" --fym oxy can also be another person
         }
     end,
 
@@ -224,9 +212,9 @@ SMODS.Joker {
     key = 'oxywaterdroplet',
     cost = 15,
     rarity = 3,
-    atlas = "symbol",
-    pos = { x = 0, y = 0 },
-    soul_pos = { x = 1, y = 0 },
+    atlas = "other_jokers",
+    pos = { x = 2, y = 1 },
+    soul_pos = { x = 3, y = 1 },
     blueprint_compat = true,
 
     calculate = function(self, card, context)

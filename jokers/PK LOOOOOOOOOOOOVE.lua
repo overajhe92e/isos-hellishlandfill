@@ -15,21 +15,21 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         if context.joker_main and G.GAME.current_round.hands_left > 0 and not context.blueprint then
-            card.ability.extra.stored_chips = card.ability.extra.stored_chips + (hand_chips * 0.25)
-            card.ability.extra.stored_mult = card.ability.extra.stored_mult + (mult * 0.25)
+            card.ability.extra.stored_chips = card.ability.extra.stored_chips + math.floor((hand_chips ^ 0.3))
+            card.ability.extra.stored_mult = card.ability.extra.stored_mult + math.floor((mult ^ 0.3))
             return {
                 message = "Stored!",
+                chips = mod_chips(0),
                 mult = mod_mult(0)
             }
         end
         if context.joker_main and G.GAME.current_round.hands_left == 0 then
-            if card.ability.extra.stored_chips and card.ability.exta.stored_mult < 1 then
-                return false
-            else
+            if card.ability.extra.stored_chips > 0 then
                 return {
                     message = "X" ..
-                    tostring(card.ability.extra.stored_chips + card.ability.extra.stored_mult) .. " Chips & Mult",
+                        tostring(card.ability.extra.stored_chips + card.ability.extra.stored_mult) .. " Chips & Mult",
                     sound = "ocstobal_snd_pklove_a",
+                    pitch = 1,
                     Xmult_mod = card.ability.extra.stored_chips + card.ability.extra.stored_mult,
                     Xchip_mod = card.ability.extra.stored_mult + card.ability.extra.stored_mult
                 }
@@ -62,11 +62,12 @@ SMODS.Joker {
         return { vars = { card.ability.extra.stored_chips, card.ability.extra.stored_mult, (card.ability.extra.stored_chips + card.ability.extra.stored_mult) } }
     end,
     calculate = function(self, card, context)
-        if context.joker_main and G.GAME.current_round.hands_left > 0 and not context.blueprint then
-            card.ability.extra.stored_chips = card.ability.extra.stored_chips + (hand_chips * 0.5)
-            card.ability.extra.stored_mult = card.ability.extra.stored_mult + (mult * 0.5)
+        if context.joker_main and G.GAME.current_round.hands_left > 0 then
+            card.ability.extra.stored_chips = card.ability.extra.stored_chips + math.floor((hand_chips ^ 0.7))
+            card.ability.extra.stored_mult = card.ability.extra.stored_mult + math.floor((mult ^ 0.7))
             return {
                 message = "Stored!",
+                chips = mod_chips(0),
                 mult = mod_mult(0)
             }
         end
@@ -76,14 +77,15 @@ SMODS.Joker {
                 tostring(card.ability.extra.stored_chips + card.ability.extra.stored_mult) .. " Chips & Mult",
                 sound = "ocstobal_snd_pklove_b",
                 Xmult_mod = card.ability.extra.stored_chips + card.ability.extra.stored_mult,
-                Xchip_mod = card.ability.extra.stored_mult + card.ability.extra.stored_mult
-            }
+                    Xmult_mod = card.ability.extra.stored_chips + card.ability.extra.stored_mult,
+                    Xchip_mod = card.ability.extra.stored_mult + card.ability.extra.stored_mult
+                }
+            end
         end
         if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
             card.ability.extra.stored_chips = 0
             card.ability.extra.stored_mult = 0
             return {
-                message = "Reset!",
                 colour = G.C.RED
             }
         end
@@ -106,28 +108,31 @@ SMODS.Joker {
         return { vars = { card.ability.extra.stored_chips, card.ability.extra.stored_mult, (card.ability.extra.stored_chips + card.ability.extra.stored_mult) } }
     end,
     calculate = function(self, card, context)
-        if context.joker_main and G.GAME.current_round.hands_left > 0 and not context.blueprint then
-            card.ability.extra.stored_chips = card.ability.extra.stored_chips + hand_chips
-            card.ability.extra.stored_mult = card.ability.extra.stored_mult + mult
+        if context.joker_main and G.GAME.current_round.hands_left > 0 then
+            card.ability.extra.stored_chips = card.ability.extra.stored_chips + math.floor((hand_chips^1.1))
+            card.ability.extra.stored_mult = card.ability.extra.stored_mult + math.floor((mult^1.1))
             return {
                 message = "Stored!",
+                chips = mod_chips(0),
                 mult = mod_mult(0)
             }
         end
         if context.joker_main and G.GAME.current_round.hands_left == 0 then
+
             return {
                 message = "X" ..
                 tostring(card.ability.extra.stored_chips + card.ability.extra.stored_mult) .. " Chips & Mult",
                 sound = "ocstobal_snd_pklove_g",
                 Xmult_mod = card.ability.extra.stored_chips + card.ability.extra.stored_mult,
-                Xchip_mod = card.ability.extra.stored_mult + card.ability.extra.stored_mult
-            }
+                    Xmult_mod = card.ability.extra.stored_chips + card.ability.extra.stored_mult,
+                    Xchip_mod = card.ability.extra.stored_mult + card.ability.extra.stored_mult
+                }
+            end
         end
         if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
             card.ability.extra.stored_chips = 0
             card.ability.extra.stored_mult = 0
             return {
-                message = "Reset!",
                 colour = G.C.RED
             }
         end
@@ -150,9 +155,9 @@ SMODS.Joker {
         return { vars = { card.ability.extra.stored_chips, card.ability.extra.stored_mult, (card.ability.extra.stored_chips + card.ability.extra.stored_mult) } }
     end,
     calculate = function(self, card, context)
-        if context.joker_main and G.GAME.current_round.hands_left > 0 and not context.blueprint then
-            card.ability.extra.stored_chips = card.ability.extra.stored_chips + (hand_chips * 2)
-            card.ability.extra.stored_mult = card.ability.extra.stored_mult + (mult * 2)
+        if context.joker_main and G.GAME.current_round.hands_left > 0 then
+            card.ability.extra.stored_chips = card.ability.extra.stored_chips + (hand_chips ^ 1.75)
+            card.ability.extra.stored_mult = card.ability.extra.stored_mult + (mult ^ 1.75)
             return {
                 message = "Stored!",
                 chips = mod_chips(0),
@@ -165,14 +170,15 @@ SMODS.Joker {
                 tostring(card.ability.extra.stored_chips + card.ability.extra.stored_mult) .. " Chips & Mult",
                 sound = "ocstobal_snd_pklove_o",
                 Xmult_mod = card.ability.extra.stored_chips + card.ability.extra.stored_mult,
-                Xchip_mod = card.ability.extra.stored_mult + card.ability.extra.stored_mult
-            }
+                    Xmult_mod = card.ability.extra.stored_chips + card.ability.extra.stored_mult,
+                    Xchip_mod = card.ability.extra.stored_mult + card.ability.extra.stored_mult
+                }
+            end
         end
         if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
             card.ability.extra.stored_chips = 0
             card.ability.extra.stored_mult = 0
             return {
-                message = "Reset!",
                 colour = G.C.RED
             }
         end

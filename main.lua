@@ -15,14 +15,6 @@ SMODS.Atlas({
 })
 
 SMODS.Atlas({
-    key = "CustomConsumables",
-    path = "CustomConsumables.png",
-    px = 71,
-    py = 95,
-    atlas_table = "ASSET_ATLAS"
-})
-
-SMODS.Atlas({
     key = "CustomBoosters",
     path = "CustomBoosters.png",
     px = 71,

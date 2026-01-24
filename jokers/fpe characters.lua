@@ -34,16 +34,6 @@ SMODS.Joker { --what do you think
     end
 }
 
-SMODS.Joker { --miss circle (dysfunctional)
-    key = 'thatfuckingteacherthatihate',
-    rarity = 3,
-    cost = 16,
-    atlas = 'CustomJokers',
-    pos = {x=2,y=0},
-    no_collection = true,
-    in_pool = function() return false end,
-}
-
 SMODS.Joker { -- I HATE DRAWING YOU I HATE DRAWING YOU I HATE DRAWING YOU I HATE DRAWING YOU I HATE DRAWING YOU 
     key = "claire",
     rarity = 1,

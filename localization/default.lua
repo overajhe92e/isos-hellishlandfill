@@ -17,7 +17,7 @@ return {
 				name = "Copycat Deck",
 				text = {
 					'Start off with',
-					'{C:blue,T:j_ocstobal_crystal}Crystal{} and {C:attention,T:j_ocstobal_Oxy}Oxy{}'
+					'{C:blue,T:j_ocstobal_crystal}Crystal{} and {C:attention,T:j_ocstobal_Oxy}Oxidyze{}'
 				},
 				unlock = {
 					'Win a run with any deck',
@@ -35,17 +35,6 @@ return {
 				},
 				unlock = {
 					'Win a run.'
-				}
-			},
-			b_ocstobal_psych_lore = { --lmao no
-				name = "lost seraph",
-				text = {
-					'why did i do it...',
-					'i shouldn\'t have picked myself',
-					'over them.'
-				},
-				unlock = {
-					'{C:inactive,s:2}??????{}'
 				}
 			},
 			b_ocstobal_ocs = {
@@ -89,6 +78,15 @@ return {
 				unlock = {
 					'Defeat {C:ocstobal_ust}Omega Boss Rush{}',
 					'on the {C:ocstobal_finalrgb}Final Stake{}'
+				}
+			},
+			b_ocstobal_overpoweredjokers_unik = {
+				name = "Transcended Challenge",
+				text = {
+					'Start off with {C:attention}3{} random',
+					'{C:ocstobal_sewh}Terminus{} Jokers.',
+					'{C:attention}Win Ante{} is Ante {C:red}100{}',
+					"{C:ocstobal_nightmare_purple,s:1.5,E:1}Good luck!{}"
 				}
 			}
 		},
@@ -302,18 +300,7 @@ return {
 		},
 		Joker = {
 			j_ocstobal_Oxy = {
-				name = "Oxy",
-				text = {
-					'Copies the Ability of the joker',
-					'to the left and right of this character.',
-					'{C:red}Doubles blind size.{}',
-					'{C:blue,s:0.9}#1#{}',
-					'{C:dark_edition,s:0.9}Origin : No origin?{}',
-					'{s:0.8,C:dark_edition}Character by Isotypical{}'
-				},
-			},
-			j_ocstobal_oxyrenamed = { --"STILL has a 1 in 6 chance to--"
-				name = "ocksie",
+				name = "Oxidyze",
 				text = {
 					'Copies the Ability of the joker',
 					'to the left and right of this character.',
@@ -324,7 +311,7 @@ return {
 				},
 			},
 			j_ocstobal_fakeseraph = {
-				name = "Seraph?",
+				name = "Seraph..?",
 				text = {
 					{
 						'{C:green}1 in 2{} chance to apply {X:red,C:white}X1.5{} Mult',
@@ -365,7 +352,7 @@ return {
 				}
 			},
 			j_ocstobal_seraph_lv100 = {
-				name = "{C:ocstobal_legendplus}Seraph, Blinded by Dark{}",
+				name = "{C:ocstobal_legendplus}The Voidgloom Seraph{}",
 				text = {
 					{
 						'{C:red,s:0.9}"#2#"{}',
@@ -407,7 +394,7 @@ return {
 				}
 			},
 			j_ocstobal_seraph_lv300 = {
-				name = "{C:ocstobal_sewh,E:1}Seraph, The Angel of the Void{}",
+				name = "{C:ocstobal_sewh,E:1}Seraph Voidgloom, Harbringer of the Void{}",
 				text = {
 					{
 						'{C:ocstobal_ust,s:0.9}#3#{}',
@@ -438,7 +425,7 @@ return {
 				}
 			},
 			j_ocstobal_seraph_lv10k = {
-				name = "{C:ocstobal_finalrgb}Seraph, the Collapse of Everything{}",
+				name = "{C:ocstobal_finalrgb}I can put anything here because I doubt you guys are that crazy{}",
 				text = {
 					{
 						'{C:dark_edition,s:1.35}EXP: #9# / 10{}',
@@ -466,7 +453,7 @@ return {
 				}
 			},
 			j_ocstobal_seraph_lv1m = {
-				name = "{C:ocstobal_finalrgb}Serafinentyhjyys{}",
+				name = "{C:ocstobal_finalrgb}calm the fuck down bro{}",
 				text = {
 					{
 						'{C:dark_edition,s:1.35}EXP: #9# / 10{}',
@@ -557,8 +544,18 @@ return {
 
 				}
 			},
+<<<<<<< HEAD
+=======
+			j_ocstobal_voidinstlose = {
+				name = "The Absolute Void",
+				text = {
+					'{X:ocstobal_ust,C:ocstobal_eyeshatteringblue}#1#{} Mult and Chips...',
+					'And..?'
+				}
+			},
+>>>>>>> dff15a9864a791480821a3363d1c0f9cf515556d
 			j_ocstobal_oxhatred = {
-				name = "{C:ocstobal_ust}Oxy's Hatred{}",
+				name = "{C:ocstobal_ust}Oxidyze's Hatred{}",
 				text = {
 					'{X:dark_edition,C:red}^0.9{} Mult and Chips,',
 					'{C:inactive}1 random joker is debuffed every round,{}',
@@ -794,7 +791,7 @@ return {
 				}
 			},
 			j_ocstobal_oxyold = {
-				name = 'Oxy {C:inactive}(Classic, Unbalanced)',
+				name = 'Oxidyze {C:inactive}(Classic, Unbalanced)',
 				text = {
 					'go read the {C:ocstobal_finalrgb}avaritia{} joker description im too lazy to put it here',
 					'but yeah imagine that but it\'s more sloppy'
@@ -810,15 +807,7 @@ return {
 				}
 			},
 			j_ocstobal_oxyemp = {
-				name = '{C:ocstobal_sewh}Oxy{}',
-				text = {
-					'Copies the ability of {C:attention}two{}',
-					'{C:attention}jokers{} on the {C:blue}left{} and {C:red}right{} of this joker.',
-					'{C:ocstobal_ust}Quadruples Blind Size.{}'
-				}
-			},
-			j_ocstobal_oxyemp_alt = {
-				name = '{C:ocstobal_sewh}ocksie{}',
+				name = '{C:ocstobal_sewh}Oxidyzation{}',
 				text = {
 					'Copies the ability of {C:attention}two{}',
 					'{C:attention}jokers{} on the {C:blue}left{} and {C:red}right{} of this joker.',
@@ -844,6 +833,19 @@ return {
 					'{C:dark_edition,E:1,s:0.8}Origin : Starspace{}' --go check out the mod it's peak
 				}
 			},
+			j_ocstobal_solstro = {
+				name = "Astronomical Duo",
+				text = {
+					{
+						"Gains {X:blue,C:white}X#2#{} Chips when",
+						"a {C:spades}Spade{} card is scored",
+						"On {C:attention}Blind Select{} {X:blue,C:white}XChip{} gain is",
+						"increased with the equation of",
+						"{X:dark_edition,C:white,s:1.3}log(XCHIPS)*0.2(XCHIPS){}",
+						"{C:inactive}Currently{} {X:blue,C:white}X#1#{} {C:inactive}Chips{}"
+					},
+				}
+			},
 			j_ocstobal_astro_balance = {
 				name = 'Astro',
 				text = {
@@ -853,26 +855,6 @@ return {
 					'{C:blue}"meow"{}',
 					'{C:dark_edition,E:1,s:0.8}Original Character by : Astro',
 					'{C:dark_edition,E:1,s:0.8}Origin : Starspace{}' --go check out the mod it's peak
-				}
-			},
-			j_ocstobal_love = {
-				name = 'Torn love Letter',
-				text = {
-					'{C:inactive}You can\'t read what\'s on here.{}',
-					'{C:inactive}All you could read was "Love, Sparky"{}'
-				}
-			},
-			j_ocstobal_furnote = {
-				name = 'Encrypted Log',
-				text = {
-					'{C:inactive}It\'s best you leave this alone.{}'
-				}
-			},
-			j_ocstobal_letter = {
-				name = 'Crumbled up Paper',
-				text = {
-					'{C:inactive}...maybe you should leave this on the grave.{}',
-					'{C:inactive}...just, to respect the fallen.{}'
 				}
 			},
 			j_ocstobal_malicesyringe = {
@@ -898,15 +880,6 @@ return {
 					'{C:inactive}"Hey, I think I\'ve seen this one before!"{}'
 				}
 			},
-			j_ocstobal_itsfuckingseptemberbro = {
-				name = 'It\'s Fucking September Bro',
-				text = {
-					'{X:red,C:white}X3{} Mult, but replaces',
-					'every song with a christmas song.',
-					'Even though it\'s fucking September.',
-					'{C:inactive}Will not play music on December{}'
-				}
-			},
 			j_ocstobal_crateinacrate = {
 				name = 'Crate in a Crate in a Crate in a Crate in a',
 				text = {
@@ -925,7 +898,11 @@ return {
 						"enter a meltdown.",
 						"{C:inactive}Currently{} {X:red,C:white}X#1#{} {C:inactive}Mult.{}"
 					},
+<<<<<<< HEAD
 					{ "{C:inactive}Oh my god you guys are deranged{}" }
+=======
+					{ "{C:inactive}i'm not surprised man{}" }
+>>>>>>> dff15a9864a791480821a3363d1c0f9cf515556d
 				}
 			},
 			j_ocstobal_aiojoker = {
@@ -948,36 +925,12 @@ return {
 					'{C:inactive}And..?{}'
 				}
 			},
-			j_ocstobal_candycane = {
-				name = "Sappy",
-				text = {
-					"Scored {C:diamonds}Diamonds{} permanently gain",
-					"{X:red,C:white}X0.1{} {C:attention}Held in hand{} Mult",
-					"{C:blue,s:0.8,E:1}Original Character by: Candycane{}"
-				}
-			},
 			j_ocstobal_mask = {
 				name = "Mask",
 				text = {
 					"On blind select,",
 					"{C:attention}+1{} Joker slot.",
 					"{C:inactive}...{}"
-				}
-			},
-			j_ocstobal_itsfuckingseptember = {
-				name = "It's FUCKING SEPTEMBER",
-				text = {
-					"Replaces ALL Blinds with",
-					"{C:red}Mariah Carey{}",
-					"Also occasionally shows christmas ads."
-				}
-			},
-			j_ocstobal_thatfuckingteacherthatihate = {
-				name = "Miss Circle",
-				text = {
-					"Gains {X:red,C:white}+X1{} Mult",
-					"for Every Student joker killed.",
-					"{C:attention}Instantly targets Abbie, and Lana.{}"
 				}
 			},
 			j_ocstobal_lana = {
@@ -992,11 +945,15 @@ return {
 				name = "Claire",
 				text = {
 					"{C:blue}+31{} Chips",
+<<<<<<< HEAD
 					"{C:inactive}Arguably the worst joker in the entire mod.{}"
+=======
+					"{C:inactive,s:0.8}One of the worst jokers in the mod.{}"
+>>>>>>> dff15a9864a791480821a3363d1c0f9cf515556d
 				}
 			},
 			j_ocstobal_oxydeceit = {
-				name = "{C:ocstobal_deceitful}Oxy{}",
+				name = "{C:ocstobal_deceitful}Oxidyzation{}",
 				text = {
 					"Copies {C:attention}3 jokers{} from",
 					"the left and right of this \"joker\"",
@@ -1004,39 +961,11 @@ return {
 					"{C:inactive,s:0.8}No, it will not retrigger itself!{}"
 				} --very original idea, iso!
 			},
-			j_ocstobal_patience = {
-				name = "1.",
-				text = {
-					'#1#',
-					'{C:inactive,s:0.5}Gains +1 Chip every frame.{}'
-				}
-			},
-			j_ocstobal_parappa = {
-				name = "Parappa",
-				text = {
-					'Gains {X:red,C:white}X1{} for',
-					'every {C:attention}Parappa The Rapper{} Joker'
-				}
-			},
-			j_ocstobal_beardburger = {
-				name = "Beard Burger Master",
-				text = {
-					"Player 2 has some rhythmic talent."
-				}
-			},
-			j_ocstobal_chinese = {
-				name = "Chinese",
-				text = {
-					"Every time {C:attention}Ramen{}",
-					"loses Mult, this joker",
-					"gains {X:red,C:White}X0.1{} Mult"
-				}
-			},
 			j_ocstobal_yatta = {
 				name = 'Yatta',
 				text = {
-					"Creates 3 {C:dark_edition}Negative{}",
-					"{C:attention}Candy{} consumables when",
+					"Creates 2 {C:dark_edition}Negative{}",
+					"{C:spectral}Spectral{} cards when",
 					"{C:attention}Boss Blind{} is defeated.",
 					'{C:blue,s:0.8}"#1#"{}',
 					'{C:dark_edition,s:0.8}Origin : Dandy\'s World{}'
@@ -1047,13 +976,6 @@ return {
 				text = {
 					"{C:red}No ability as of now!{}",
 					"{C:dark_edition,s:0.8}Origin : Dandy\'s World{}"
-				}
-			},
-			j_ocstobal_horridopt = {
-				name = 'Roblox',
-				text = {
-					"{X:dark_edition,C:white}^2{} Mult,",
-					"{C:red}1 in 2{} chance to {C:red}crash the game.{}"
 				}
 			},
 			j_ocstobal_dw_astro = { --BEHAVE, STARSPACE ASTRO!
@@ -1121,9 +1043,16 @@ return {
 				}
 			},
 			j_ocstobal_obscene_joke = { -- these obscure jokes are gonna get me banned istg
+<<<<<<< HEAD
 				name = "Something Nxkoo would say",
 				text = {
 					"{C:inactive}please don't pick this up kthxbye{}"
+=======
+				name = "Something Something NSFW Joke here",
+				text = {
+					"{C:red}Don't pick up, please.{}",
+					"{C:inactive,s:0.7}You do not want to deal with Oxidyze's hate to you.{}"
+>>>>>>> dff15a9864a791480821a3363d1c0f9cf515556d
 				}
 			},
 			j_ocstobal_porky = {
@@ -1145,17 +1074,11 @@ return {
 					"the end of a round{C:inactive}..?{}"
 				}
 			},
-			j_ocstobal_exponenttest = {
-				name = "Operational Test",
-				text = {
-					"changes operation from mult to tetration when added to deck"
-				}
-			},
 			j_ocstobal_pk_love_a = {
 				name = "PK Love Alpha",
 				text = {
 					{
-						"Stores {X:defualt,C:white}X0.1{} of your current",
+						"Stores {X:defualt,C:white}^0.3{} of your current",
 						"chips and mult, then",
 						"{C:red}unleashes{} stored Chips and Mult on",
 						"last hand as {X:red,C:white}XMult{} and {X:blue,C:white}XChips{}"
@@ -1203,7 +1126,7 @@ return {
 				name = "PK Love Omega",
 				text = {
 					{
-						"Stores {X:dark_edition,C:white}X2{} of your current",
+						"Stores {X:dark_edition,C:white}^1.75{} of your current",
 						"chips and mult, then",
 						"{C:red}unleashes{} stored Chips and Mult on",
 						"last hand as {X:red,C:white}XMult{} and {X:blue,C:white}XChips{}"
@@ -1216,6 +1139,21 @@ return {
 					{
 						"Do {C:red,s:1.5}NOT{} use another Needle at this point!"
 					}
+				}
+			},
+			j_ocstobal_pk_love_test = {
+				name = "PK Love TEST",
+				text = {
+					{
+						"Behaves (almost) exactly like PK Love Omega",
+						"Testing with UI functions"
+					},
+					{
+						"Current Mode: {C:attention}#4#{}",
+						"Stored Chips : {C:blue}#1#{}",
+						"Stored Mult : {C:red}#2#{}",
+						"Possible {X:legendary,C:white}XChip/XMult{} : {X:dark_edition,C:white}X#3#{}"
+					},
 				}
 			},
 			j_ocstobal_absolutely_safe_capsule = {
@@ -1242,7 +1180,12 @@ return {
 					{
 						"Adds {C:legendary}15%{} of {C:attention}score requirement{}",
 						"to {C:attention}Current Score{}",
+<<<<<<< HEAD
 						"{C:green}1 in 6{} chance to add {C:legendary}75%{} instead"
+=======
+						"{C:green}#1# in #2#{} chance to add {C:legendary}90%{} of",
+						"{C:attention}Score requirement{} to {C:attention}Current Score{}"
+>>>>>>> dff15a9864a791480821a3363d1c0f9cf515556d
 					}
 				}
 			},
@@ -1324,7 +1267,7 @@ return {
 				}
 			},
 			ocstobal_oxydownside = {
-				name = "Oxy's Downside",
+				name = "Oxidyze's Downside",
 				text = {
 					'{X:red,C:white}X2{} Blind Size'
 				}
@@ -1392,27 +1335,6 @@ return {
 				}
 			}
 		}
-		-- Sleeve = {
-		-- 	sleeve_ocstobal_oxysleeve = {
-		--         name = "Oxy's Sleeve",
-		--         text = { "Retriggers hands 7 times." }
-		--     },
-		--     sleeve_ocstobal_oxysleeve_alt = {
-		--         name = "ERROR",
-		--         text = { "{C:white}Does... something interesting.{}" }
-		-- 	},
-		-- 	sleeve_ocstobal_evilsleeve = {
-		-- 		name = "Blank Sleeve",
-		-- 		text = { "Does nothing." }
-		-- 	},
-		-- 	sleeve_ocstobal_evilsleeve_alt = {
-		-- 		name = "Overpowered Sleeve",
-		-- 		text = {
-		-- 			"AND CHAOS ENSUES"
-		-- 		}
-		-- 	}
-		-- }
-		--perchance i add cardsleeves but i dont think i will
 	},
 	misc = {
 		achievement_descriptions = {},
@@ -1439,18 +1361,17 @@ return {
 			sphlvlabsolutefinal = "All is done. The Absolute has been reached.",
 			sphbeyond = "...",
 			sphwhy = "what the fuck dude go outside",
-			yeahokbro = "Death is immediate.",
 
 			k_ocstobal_oxy_quote1 = "\"I am NOT that Oxy from Almanac.\"",                     -- you are (/j)
 			k_ocstobal_oxy_quote2 = "\"What do you MEAN my ability isn't unique?!\"",
 			k_ocstobal_oxy_quote3 = "\"SERAPH FOR THE LAST TIME, STOP CALLING ME OCKSIE.\"",   --seraph loves pissing off oxy (because he's not part of the trio)
-			k_ocstobal_oxy_quote4 = "\"What's with Seraph being such an annoying piece of shit?\"",
+			k_ocstobal_oxy_quote4 = "\"Seraph. Fucking. Voidgloom. Most annoying person I've met!\"",
 			k_ocstobal_oxy_quote5 = "\"I'm gonna kill Seraph if he calls me 'ocksie' ONE MORE TIME.\"", --part of the "seraph pisses off oxy" trilogy
 			k_ocstobal_oxy_quote6 = "\"...Fundamental Paper Education? What are you talking about..?\"",
 			k_ocstobal_oxy_quote7 = "\"Do I have an origin? No. Does my creator know I'm self aware? Also no.\"",
-			k_ocstobal_oxy_quote8 = "\"Who is Solinium, and why is he so powerful in the eyes of Seraph?\"",
-			k_ocstobal_oxy_quote9 = "\"Sparky? What kind of name is that? An electrical issue??\"",
-			k_ocstobal_oxy_quote10 = "\"Recluse? Isn't that just Isolation? ...they're a universal threat??\"",
+			k_ocstobal_oxy_quote8 = "\"Who is Solinium, again?\"",
+			k_ocstobal_oxy_quote9 = "\"Sparky? What kind of name is that? An electrical issue?\"",
+			k_ocstobal_oxy_quote10 = "\"Recluse? Isn't that the word for Isolation? ...they're a universal threat??\"",
 			k_ocstobal_oxy_quote11 =
 			"\"I know how many quotes I have, I know what's happening internally. This is k_ocstobal_oxy_quote11.\"",
 
@@ -1465,45 +1386,47 @@ return {
 			k_ocstobal_sparky_quote2 = "\"W-What do you mean Abbie is dead?! A-AND LANA!?\"",
 			k_ocstobal_sparky_quote3 = "\"O-Oh, hi...\"",
 			k_ocstobal_sparky_quote4 =
-			"\"I LOVE ABBIE SO MUCH I LOVE ABBIE SO MUCH I LOVE ABBIE SO MUCH ASDGFHFHGFAHGHGSAHAHAHA\"", --i cant tell if she loves abbie
+			"\"I LOVE ABBIE SO MUCH I LOVE ABBIE SO MUCH I LOVE ABBIE SO MUCH\"", --i cant tell if she loves abbie
 
-			k_ocstobal_seraph_quote1 = "\"AND ANOTHER ONE GOES TO THE VOID!\"",                  -- AND THATS THE BALL GAME
+			k_ocstobal_seraph_quote1 = "\"INTO THE VOID YOU GO!!!\"",                  -- AND THATS THE BALL GAME
 			k_ocstobal_seraph_quote2 = "\"It's so fun messing with Sparky at times...\"",
-			k_ocstobal_seraph_quote3 = "\"What knife in my head? Are you insane?\"",
-			k_ocstobal_seraph_quote4 = "\"Psh, hey Oxy, your new name is... ocksie.\"", --"holy shit ocksie reference"
-			k_ocstobal_seraph_quote5 = "\"Solinium's a weird one, and a useful one at the same time.\"",
+			k_ocstobal_seraph_quote3 = "\"I don't have a knife in my head, what are you on?\"",
+			k_ocstobal_seraph_quote4 = "\"HEY 'OCKSIE'!!! LOOK OVER HERE!!!\"", --"holy shit ocksie reference"
+			k_ocstobal_seraph_quote5 = "\"Solinium likes being pet, but he doesn't like admitting it!\"",
 
-			k_ocstobal_seraph_lv100_quote1 = "\"I cannot stop now. It's neccessary to continue.\"",
-			k_ocstobal_seraph_lv100_quote2 = "\"It only grows. My power.\"",
-			k_ocstobal_seraph_lv100_quote3 = "\"They don't matter to me anymore. They're weak.\"",
-			k_ocstobal_seraph_lv100_quote4 = "\"Even if I am down, it only makes me stronger.\"",
-			k_ocstobal_seraph_lv100_quote5 = "\"A world, soon to be covered in void.\"",
+			k_ocstobal_seraph_lv100_quote1 = "\"Why do you THINK I would stop there?\"",
+			k_ocstobal_seraph_lv100_quote2 = "\"I just grow more and more powerful!\"",
+			k_ocstobal_seraph_lv100_quote3 = "\"Ha... HAHAHAHA!!!\"",
+			k_ocstobal_seraph_lv100_quote4 = "\"I CAN'T STOP NOW!!\"",
+			k_ocstobal_seraph_lv100_quote5 = "\"Destruction, that's what I crave...\"",
 
-			k_ocstobal_seraph_lv300_quote1 = "\"A world, covered in a void.\"",
+			k_ocstobal_seraph_lv300_quote1 = "\"HahahahAAAAAAA...\"",
 			k_ocstobal_seraph_lv300_quote2 = "\"DON'T EVEN TRY ME.\"",
-			k_ocstobal_seraph_lv300_quote3 = "\"There is no end in sight. It has only begun.\"",
-			k_ocstobal_seraph_lv300_quote4 = "\"Far surpassing Sol. Even he shall cower over my control.\"",
-			k_ocstobal_seraph_lv300_quote5 = "\"Nothing can stop me now.\"",
+			k_ocstobal_seraph_lv300_quote3 = "\"IT'S JUST STARTING NOW!\"",
+			k_ocstobal_seraph_lv300_quote4 = "\"OH HOW FUNNY IT IS, BEING STRONGER THAN ANYTHING!\"",
+			k_ocstobal_seraph_lv300_quote5 = "\"I can't be stopped. I CAN'T BE STOPPED!!\"",
 
-			k_ocstobal_seraph_final_quote1 = "this is it... the end.",
-			k_ocstobal_seraph_final_quote2 = "there is nothing beyond the omniverse...",
-			k_ocstobal_seraph_final_quote3 = "i have reached powers beyond anything.",
-			k_ocstobal_seraph_final_quote4 = "i miss them all.",
-			k_ocstobal_seraph_final_quote5 = "was this really worth it?",
+			k_ocstobal_seraph_final_quote1 = "...",
+			k_ocstobal_seraph_final_quote2 = "That's it..?",
+			k_ocstobal_seraph_final_quote3 = "There's nothing else to do.",
+			k_ocstobal_seraph_final_quote4 = "I'm bored.",
+			k_ocstobal_seraph_final_quote5 = "You really spent this much time getting me here?",
+			k_ocstobal_seraph_final_quote6 = "quit the dialogue bro",
 
-			k_ocstobal_seraphbroken_quote1 = "\"everything hurts...\"",
+			k_ocstobal_seraphbroken_quote1 = "\"kgh...\"",
 			k_ocstobal_seraphbroken_quote2 = "\"please help...\"",
-			k_ocstobal_seraphbroken_quote3 = "\"i can't hold onto reality much longer...\"",
-			k_ocstobal_seraphbroken_quote4 = "\"recluse... is my... only... hope...\"",
+			k_ocstobal_seraphbroken_quote3 = "\"what did i do wrong..?\"",
+			k_ocstobal_seraphbroken_quote4 = "\"...recluse...\"",
 
-			k_ocstobal_recluse_quote1 = "\"Can't believe I got sealed away just like that.\"",
+			k_ocstobal_recluse_quote1 = "\"There's no way those two can kill me.\"",
 			k_ocstobal_recluse_quote2 = "\"LET ME OUT OF THIS CARD!\"",                              --hey 4th wall breaker here get yo ass back into my joker slots
-			k_ocstobal_recluse_quote3 = "\"Solinium's a god damn rat, and I won't refute that.\"",
-			k_ocstobal_recluse_quote4 = "\"Sparky? Oh she's GREAT for... shall I say, being a vessel?\"", -- ok sukuna get back to being dead
-			k_ocstobal_recluse_quote5 = "\"Seraph, eugh. That knife headed bastard. Annoying 'voidlike' powers.\"",
-			k_ocstobal_recluse_quote6 = "\"If I were to be free, I'm gonna kill both Seraph and Solinium.\"", --lore accurate
+			k_ocstobal_recluse_quote3 = "\"I hate Solinium. There, I'm being blunt.\"",
+			k_ocstobal_recluse_quote4 = "\"Sparky? My old go-to vessel? Why are we talking about her?\"", -- ok sukuna get back to being dead
+			k_ocstobal_recluse_quote5 = "\"Seraph... yuck. Thinks he's so grand on everything.\"",
+			k_ocstobal_recluse_quote6 = "\"I want to watch the multiverse burn in a sub-zero flame.\"", --lore accurate
 			k_ocstobal_recluse_quote7 = "\"Seven...\"",
 			k_ocstobal_recluse_quote8 = "\"PLASMA DECKS STRONGEST UNIT YEAHHHHHH\"",
+			k_ocstobal_recluse_quote9 = "\"Seraph's next.\"",
 
 			k_ocstobal_solinium_extra1 = "Origin: Dog Man",
 			k_ocstobal_solinium_extra2 = "Yes, you read that right.",
@@ -1530,12 +1453,12 @@ return {
 
 			k_ocsotbal_falseorigin = 'No Origin',
 
-			k_ocstobal_deceptionlegendary = 'Oxy\'s Legendary'
+			k_ocstobal_deceptionlegendary = 'Oxidyze\'s Legendary'
 
 		},
 		high_scores = {},
 		labels = {
-			ocstobal_deceptionlegendary = 'Oxy\'s Legendary',
+			ocstobal_deceptionlegendary = 'Oxidyze\'s Legendary',
 			ocstobal_Aleph = "Aleph",
 			ocstobal_omega = "Omega"
 		},
@@ -1556,8 +1479,24 @@ return {
 				"You're kidding, right?"
 			},
 			ocstobal_vessel_lose_4 = {
-				"You had the EASIEST shot to victory.",
+				"You had the {C:red}EASIEST{} shot to victory.",
 				"And you WASTED IT?!"
+			},
+			ocstobal_recluse_lose_1 = {
+				"lmao skill issue"
+			},
+			ocstobal_solinium_win = {
+				"Congrats on winning!"
+			},
+			ocstobal_sparky_win = {
+				"W-wait... we won?"
+			},
+			ocstobal_seraph_win = {
+				"Could have won faster",
+				"with me."
+			},
+			ocstobal_oxidyze_win = {
+				"Alright... not bad."
 			}
 		},
 		ranks = {},

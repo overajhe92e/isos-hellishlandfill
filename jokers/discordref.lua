@@ -7,8 +7,8 @@ SMODS.Joker {
             dayswithoutissue = -1e200
         }
     },
-    atlas = 'moddingchat',
-    pos = {x=0,y=0},
+    atlas = 'other_jokers',
+    pos = {x=3,y=0},
 
     loc_vars = function(self,info_queue,card)
         return {

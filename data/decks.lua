@@ -152,17 +152,41 @@ SMODS.Back {
 	atlas = 'looksinside',
 	pos = { x = 0, y = 0 },
 	unlocked = false,
+	loc_vars = function(self, info_queue, back)
+		return { key = unik_detect == true and self.key.."_unik" or nil }
+	end,
 	apply = function(self, back)
-		G.E_MANAGER:add_event(Event({
-			func = function()
-				SMODS.add_card {
-					set = 'Joker',
-					rarity = 'ocstobal_beyondexotic',
-				}
-				G.GAME.win_ante = 16
-				return true
-			end
-		}))
+		if not unik_detect then
+			G.E_MANAGER:add_event(Event({
+				func = function()
+					SMODS.add_card {
+						set = 'Joker',
+						rarity = 'ocstobal_beyondexotic',
+					}
+					G.GAME.win_ante = 16
+					return true
+				end
+			}))
+		else
+			G.E_MANAGER:add_event(Event({
+				func = function()
+					SMODS.add_card {
+						set = 'Joker',
+						rarity = 'ocstobal_beyondexotic',
+					}
+					SMODS.add_card {
+						set = 'Joker',
+						rarity = 'ocstobal_beyondexotic',
+					}
+					SMODS.add_card {
+						set = 'Joker',
+						rarity = 'ocstobal_beyondexotic',
+					}
+					G.GAME.win_ante = 100
+					return true
+				end
+			}))
+		end
 	end,
 	check_for_unlock = function(self, args)
 		return args.type == 'defeated_omega'

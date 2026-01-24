@@ -7,8 +7,8 @@ SMODS.Joker {
             dollars = 8
         }
     },
-    atlas = 'ichor',
-    pos = {x=0,y=0},
+    atlas = 'dw',
+    pos = {x=0,y=2},
     calc_dollar_bonus = function(self, card)
         return card.ability.extra.dollars
     end

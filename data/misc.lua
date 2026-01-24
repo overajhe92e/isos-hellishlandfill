@@ -53,6 +53,10 @@ if not ocstobal then
 	ocstobal = {}
 end
 
+if next(SMODS.find_mod("unik")) then
+	unik_detect = true
+end
+
 local mod_path = "" .. SMODS.current_mod.path
 ocstobal.path = mod_path
 
@@ -78,6 +82,22 @@ SMODS.Atlas {
 	px = 71,
 	py = 95,
 	path = 'thetriodeck.png',
+	atlas_table = 'ASSET_ATLAS'
+}
+
+SMODS.Atlas {
+	key = 'triple_s',
+	px = 71,
+	py = 95,
+	path = 'triple_s.png',
+	atlas_table = 'ASSET_ATLAS'
+}
+
+SMODS.Atlas {
+	key = 'other_jokers',
+	px = 71,
+	py = 95,
+	path = 'other_jokers.png',
 	atlas_table = 'ASSET_ATLAS'
 }
 
@@ -119,18 +139,20 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
+	key = 'pkground',
+	px = 71,
+	py = 95,
+	path = 'pkground.png',
+	atlas_table = 'ANIMATION_ATLAS',
+	frames = 24,
+	fps = 30
+}
+
+SMODS.Atlas {
 	key = 'needle',
 	px = 71,
 	py = 95,
 	path = "evil ass needle.png",
-	atlas_table = "ASSET_ATLAS"
-}
-
-SMODS.Atlas {
-	key = 'rec_vessel',
-	px = 71,
-	py = 95,
-	path = 'reclusive vessel.png',
 	atlas_table = "ASSET_ATLAS"
 }
 
@@ -183,18 +205,6 @@ SMODS.ObjectType({
 		j_ocstobal_solawkclassic = true,
 		j_ocstobal_sphawkclassic = true,
 		j_ocstobal_winsweep = true
-	},
-	inject = function(self)
-		SMODS.ObjectType.inject(self)
-		self:inject_card(G.P_CENTERS.j_lucky_cat)
-	end,
-})
-
-SMODS.ObjectType({
-	key = "bitch",
-	default = "j_ocstobal_candycane",
-	cards = {
-		j_ocstobal_candycane = true,
 	},
 	inject = function(self)
 		SMODS.ObjectType.inject(self)
@@ -256,28 +266,12 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
-	key = 'solini',
-	px = 71,
-	py = 95,
-	path = 'soliniumdynamic.png',
-	atlas_table = 'ASSET_ATLAS',
-}
-
-SMODS.Atlas {
 	key = 'reclusebl',
 	px = 34,
 	py = 34,
 	path = 'fearx2.png',
 	atlas_table = 'ANIMATION_ATLAS',
 	frames = 1
-}
-
-SMODS.Atlas {
-	key = 'agonizing',
-	px = 71,
-	py = 95,
-	path = 'brewinghatred.png',
-	atlas_table = 'ASSET_ATLAS'
 }
 
 SMODS.Atlas {
@@ -299,14 +293,6 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
-	key = 'starry',
-	px = 71,
-	py = 95,
-	path = 'evilstar.png',
-	atlas_table = 'ASSET_ATLAS'
-}
-
-SMODS.Atlas {
 	key = 'burnteyes',
 	px = 34,
 	py = 34,
@@ -316,34 +302,10 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
-	key = 'edagger',
-	px = 71,
-	py = 95,
-	path = 'eternaldagger.png',
-	atlas_table = 'ASSET_ATLAS'
-}
-
-SMODS.Atlas {
-	key = 'sphredo',
-	px = 71,
-	py = 95,
-	path = 'sphredo.png',
-	atlas_table = "ASSET_ATLAS"
-}
-
-SMODS.Atlas {
 	key = 'friedshrimp',
 	px = 71,
 	py = 95,
 	path = 'SHRIMPO.png',
-	atlas_table = 'ASSET_ATLAS'
-}
-
-SMODS.Atlas {
-	key = 'twistedshrimp',
-	px = 71,
-	py = 95,
-	path = 'twistedfriedshrimp.png',
 	atlas_table = 'ASSET_ATLAS'
 }
 
@@ -356,14 +318,6 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
-	key = 'ichor',
-	px = 71,
-	py = 95,
-	path = 'ichor.png',
-	atlas_table = 'ASSET_ATLAS'
-}
-
-SMODS.Atlas {
 	key = 'sugar',
 	px = 71,
 	py = 95,
@@ -372,34 +326,10 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
-	key = 'crystal',
+	key = 'other_ocs',
 	px = 71,
 	py = 95,
-	path = 'crystal.png',
-	atlas_table = 'ASSET_ATLAS'
-}
-
-SMODS.Atlas {
-	key = 'abbiepng',
-	px = 71,
-	py = 95,
-	path = 'abbor.png',
-	atlas_table = 'ASSET_ATLAS'
-}
-
-SMODS.Atlas {
-	key = 'antislop',
-	px = 71,
-	py = 95,
-	path = 'antislopinator.png',
-	atlas_table = 'ASSET_ATLAS'
-}
-
-SMODS.Atlas {
-	key = 'slop',
-	px = 71,
-	py = 95,
-	path = 'slopinator.png',
+	path = 'other_ocs.png',
 	atlas_table = 'ASSET_ATLAS'
 }
 
@@ -464,46 +394,6 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
-	key = 'symbol',
-	px = 71,
-	py = 95,
-	path = 'symbol.png',
-	atlas_table = 'ASSET_ATLAS'
-}
-
-SMODS.Atlas {
-	key = 'masked',
-	px = 71,
-	py = 95,
-	path = 'themask.png',
-	atlas_table = 'ASSET_ATLAS'
-}
-
-SMODS.Atlas {
-	key = 'avaritia',
-	px = 71,
-	py = 95,
-	path = 'AVARITIA.png',
-	atlas_table = 'ASSET_ATLAS'
-}
-
-SMODS.Atlas {
-	key = 'oxyemp',
-	px = 71,
-	py = 95,
-	path = 'empoweredoxy.png',
-	atlas_table = 'ASSET_ATLAS'
-}
-
-SMODS.Atlas {
-	key = 'johntetration',
-	px = 71,
-	py = 95,
-	path = 'astro.png',
-	atlas_table = 'ASSET_ATLAS'
-}
-
-SMODS.Atlas {
 	key = 'omegarush',
 	px = 34,
 	py = 34,
@@ -539,14 +429,6 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
-	key = 'candycane',
-	px = 71,
-	py = 95,
-	path = 'candycane.png',
-	atlas_table = 'ASSET_ATLAS'
-}
-
-SMODS.Atlas {
 	key = 'fpeatlas',
 	px = 71,
 	py = 95,
@@ -562,14 +444,6 @@ SMODS.Atlas {
 	atlas_table = 'ASSET_ATLAS'
 }
 
--- SMODS.Atlas {
--- 	key = 'tempjtetration',
--- 	px = 71,
--- 	py = 95,
--- 	path = 'astrotemp.png',
--- 	atlas_table = 'ASSET_ATLAS'
--- }
-
 SMODS.Atlas {
 	key = 'deckofalltime',
 	px = 71,
@@ -583,22 +457,6 @@ SMODS.Atlas {
 	px = 71,
 	py = 95,
 	path = 'radiationset.png',
-	atlas_table = 'ASSET_ATLAS'
-}
-
-SMODS.Atlas {
-	key = 'moddingchat',
-	px = 71,
-	py = 95,
-	path = 'moddingchat.png',
-	atlas_table = 'ASSET_ATLAS'
-}
-
-SMODS.Atlas {
-	key = 'xeno',
-	px = 71,
-	py = 95,
-	path = 'xenoo.png',
 	atlas_table = 'ASSET_ATLAS'
 }
 
@@ -720,7 +578,7 @@ SMODS.Sound {
 -- 	end
 -- }
 
---how the fuck do i check who made the extraordinary song now
+--how the fuck do i check who made the extraordinary song now???
 
 loc_colour()
 G.ARGS.LOC_COLOURS.ocstobal_eyeshatteringblue = HEX('3df5ff')
@@ -772,76 +630,6 @@ function create_UIBox_custom_video1(name, buttonname)
 	return t
 end
 
---lanky "i'll go fucking kill myself" box video
--- function create_UIBox_custom_video2(name, buttonname)
--- 	local file_path = SMODS.Mods["ocstobalatro"].path .. "/resources/" .. name .. ".ogv"
--- 	local file = NFS.read(file_path)
--- 	love.filesystem.write("suffer.ogv", file)
--- 	local video_file = love.graphics.newVideo('suffer.ogv')
--- 	local vid_sprite = Sprite(0, 0, 11 * 16 / 9, 11, G.ASSET_ATLAS["ui_" .. (G.SETTINGS.colourblind_option and 2 or 1)],
--- 		{ x = 0, y = 0 })
--- 	video_file:getSource():setVolume(G.SETTINGS.SOUND.volume * G.SETTINGS.SOUND.game_sounds_volume / (100 * 10))
--- 	vid_sprite.video = video_file
--- 	video_file:play()
-
--- 	local n = create_UIBox_generic_options({
--- 		back_delay = 550,
--- 		back_label = buttonname,
--- 		colour = G.C.BLACK,
--- 		padding = 0,
--- 		contents = {
--- 			{ n = G.UIT.O, config = { object = vid_sprite } } }
--- 	})
--- 	return n
--- end
-
---studio goo d (LOUD INCORRECT BUZZER) FUCK - studio food (LOUD INCORRECT BUZZER) FUCK - studio ghibli food looks so good
---no officer im not drunk -LCdirects
--- function create_UIBox_custom_video3(name, buttonname)
--- 	local file_path = SMODS.Mods["ocstobalatro"].path .. "/resources/" .. name .. ".ogv"
--- 	local file = NFS.read(file_path)
--- 	love.filesystem.write("peak.ogv", file)
--- 	local video_file = love.graphics.newVideo('peak.ogv')
--- 	local vid_sprite = Sprite(0, 0, 11 * 16 / 9, 11, G.ASSET_ATLAS["ui_" .. (G.SETTINGS.colourblind_option and 2 or 1)],
--- 		{ x = 0, y = 0 })
--- 	video_file:getSource():setVolume(G.SETTINGS.SOUND.volume * G.SETTINGS.SOUND.game_sounds_volume / (100 * 10))
--- 	vid_sprite.video = video_file
--- 	video_file:play()
-
--- 	local a = create_UIBox_generic_options({
--- 		back_delay = 3,
--- 		back_label = buttonname,
--- 		colour = G.C.BLACK,
--- 		padding = 0,
--- 		contents = {
--- 			{ n = G.UIT.O, config = { object = vid_sprite } } }
--- 	})
--- 	return a
--- end
-
---oh no.
--- function create_UIBox_custom_video4(name, buttonname)
--- 	local file_path = SMODS.Mods["ocstobalatro"].path .. "/resources/" .. name .. ".ogv"
--- 	local file = NFS.read(file_path)
--- 	love.filesystem.write("sorry.ogv", file)
--- 	local video_file = love.graphics.newVideo('sorry.ogv')
--- 	local vid_sprite = Sprite(0, 0, 11 * 16 / 9, 11, G.ASSET_ATLAS["ui_" .. (G.SETTINGS.colourblind_option and 2 or 1)],
--- 		{ x = 0, y = 0 })
--- 	video_file:getSource():setVolume(G.SETTINGS.SOUND.volume * G.SETTINGS.SOUND.game_sounds_volume / (100 * 10))
--- 	vid_sprite.video = video_file
--- 	video_file:play()
-
--- 	local a = create_UIBox_generic_options({
--- 		back_delay = 2340,
--- 		back_label = buttonname,
--- 		colour = G.C.BLACK,
--- 		padding = 0,
--- 		contents = {
--- 			{ n = G.UIT.O, config = { object = vid_sprite } } }
--- 	})
--- 	return a
--- end
-
 -- SMODS.Keybind {
 -- 	key_pressed = "l",
 -- 	action = function(self)
@@ -874,42 +662,6 @@ end
 
 -- }
 
---THE CONDEMNED CONFIG MENU
-
--- SMODS.current_mod.config_tab = function()
--- 	return {n = G.UIT.ROOT, config = {r=.1, minw = 12, minh = 6, align = "tm", padding = 0.3, colour = G.C.BLACK}, nodes = {
--- 		{n = G.UIT.C, config = {minw=1, minh=1, align = "tl", colour = G.C.CLEAR, padding = 0.15}, nodes = {
--- 		create_toggle({
--- 			active_colour = G.C.RED,
---             label = "No OCs (But why?)",
---             ref_table = ocstobal.configbs,
---             ref_value = 'no_ocs',
---         }),
--- 		create_toggle({
--- 			active_colour = G.C.RED,
---             label = "Streamer Mode",
---             ref_table = ocstobal.configbs,
---             ref_value = 'less_nsfw',
---         }),	
---         create_toggle({
--- 			active_colour = G.C.RED,
---             label = "Unbalanced Mode (Requires Restart)",
---             ref_table = ocstobal.configbs,
---             ref_value = 'unbalanced_mode',
---         }),
--- 		create_toggle({
--- 			active_colour = G.C.BLACK,
---             label = "{C:red}Isotypical's Almanac (Requires Restart){}",
---             ref_table = ocstobal.configbs,
---             ref_value = 'very_unbalanced_mode',
---         }),
---         }}
--- 	}}
--- end
---moved
-
---dunno what to put here
-
 SMODS.current_mod.optional_features = {
 	retrigger_joker = true,
 	cardareas = {
@@ -922,16 +674,6 @@ SMODS.Shader {
 	key = 'fluorescent',
 	path = 'fluorescent.fs'
 }
-
--- G.recluseblind = 0 --prevents crashes sometimes
--- G.omegarush = 0    --prevents crashes sometimes
-
--- SMODS.current_mod.reset_game_globals = function(run_start)
--- 	if run_start then
--- 		G.omegarush = 0
--- 		G.recluseblind = 0
--- 	end
--- end
 
 if G.GAME then
 	G.GAME.omegarush = 0 --prevents crash
@@ -975,27 +717,6 @@ function ocstobal.nextboss()
 	}))
 end
 
--- local force_boss = get_new_boss
--- function get_new_boss(self)
--- 	if next(SMODS.find_card("j_ocstobal_reclusivevessel")) then
--- 		local random = math.random(1, 4)
--- 		if random == 1 then
--- 			return "bl_ocstobal_UNSHY"
--- 		elseif random == 2 then
--- 			return "bl_ocstobal_BLACKKNIFE"
--- 		elseif random == 3 then
--- 			return "bl_ocstobal_recluseblind"
--- 		elseif random == 4 then
--- 			return "bl_ocstobal_thyvessel"
--- 		end
--- 	else
--- 		return force_boss(self)
--- 	end
--- 	local ret = force_boss
-
--- 	return ret
--- end
-
 G.omega_blinds = function() --from megafluff (yoink)
     local omega_pool = {}
     for k, v in pairs(G.P_BLINDS) do
@@ -1022,4 +743,110 @@ G.P_CENTERS.e_negative.get_weight = function(self)
 		weight = weight * (31.24 + 112.242) * 10 -- DOOMED COUPLE RAHHHHHHHHHHH
 	end
 	return weight
+end
+
+
+--"taken shamefully from unik's mod"
+--probably was from entropy too but whatever
+local G_UIDEF_use_and_sell_buttons_ref = G.UIDEF.use_and_sell_buttons
+function G.UIDEF.use_and_sell_buttons(card)
+    local tdc = G_UIDEF_use_and_sell_buttons_ref(card)
+    if (card.area == G.jokers) and card.config.center.key == "j_ocstobal_seraph" then
+        local sell = nil
+        local use = nil
+        local levels = nil
+
+        sell = {
+            n = G.UIT.C,
+            config = { align = "cr" },
+            nodes = {
+                {
+                    n = G.UIT.C,
+                    config = { ref_table = card, align = "cr", padding = 0.1, r = 0.08, minw = 1.25, hover = true, shadow = true, colour = G.C.UI.BACKGROUND_INACTIVE, one_press = true, button = 'sell_card', func = 'can_sell_card' },
+                    nodes = {
+                        { n = G.UIT.B, config = { w = 0.1, h = 0.6 } },
+                        {
+                            n = G.UIT.C,
+                            config = { align = "tm" },
+                            nodes = {
+                                {
+                                    n = G.UIT.R,
+                                    config = { align = "cm", maxw = 1.25 },
+                                    nodes = {
+                                        { n = G.UIT.T, config = { text = localize('b_sell'), colour = G.C.UI.TEXT_LIGHT, scale = 0.4, shadow = true } }
+                                    }
+                                },
+                                {
+                                    n = G.UIT.R,
+                                    config = { align = "cm" },
+                                    nodes = {
+                                        { n = G.UIT.T, config = { text = localize('$'), colour = G.C.WHITE, scale = 0.4, shadow = true } },
+                                        { n = G.UIT.T, config = { ref_table = card, ref_value = 'sell_cost_label', colour = G.C.WHITE, scale = 0.55, shadow = true } }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+            }
+        }
+        levels =
+        {
+            n = G.UIT.C,
+            config = { align = "cr" },
+            nodes = {
+
+                {
+                    n = G.UIT.C,
+                    config = { ref_table = card, align = "cr", maxw = 1.25, padding = 0.1, r = 0.08, minw = 1.25, minh = (card.area and card.area.config.type == 'joker') and 0 or 1, hover = true, shadow = true, colour = G.C.UI.BACKGROUND_INACTIVE, one_press = false, button = 'seraphmenu' },
+                    nodes = {
+                        { n = G.UIT.B, config = { w = 0.1, h = 0.6 } },
+                        { n = G.UIT.T, config = { text = 'Levels', colour = G.C.UI.TEXT_LIGHT, scale = 0.55, shadow = true } }
+                    }
+                }
+            }
+        }
+        --overwriting usual buttons
+        tdc = {
+            n = G.UIT.ROOT,
+            config = { padding = 0, colour = G.C.CLEAR },
+            nodes = {
+                {
+                    n = G.UIT.C,
+                    config = { padding = 0.15, align = 'cl' },
+                    nodes = {
+                        {
+                            n = G.UIT.R,
+                            config = { align = 'cl' },
+                            nodes = {
+                                sell
+                            }
+                        },
+                        {
+                            n = G.UIT.R,
+                            config = { align = 'cl' },
+                            nodes = {
+                                use
+                            }
+                        },
+                        {
+                            n = G.UIT.R,
+                            config = { align = 'cl' },
+                            nodes = {
+                                levels
+                            }
+                        },
+                    }
+                },
+            }
+        }
+    end
+    return tdc
+end
+
+function G.FUNCS.seraphmenu()
+    G.FUNCS.overlay_menu {
+        definition = sphlvls("Back"),
+        config = { no_esc = true }
+    }
 end

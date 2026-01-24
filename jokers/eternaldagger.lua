@@ -3,7 +3,7 @@ SMODS.Joker { --Eternal Dagger
     config = {},
     pos = {
         x = 0,
-        y = 0
+        y = 1
     },
     cost = 8,
     rarity = 2,
@@ -12,10 +12,10 @@ SMODS.Joker { --Eternal Dagger
     perishable_compat = false,
     unlocked = true,
     discovered = false,
-    atlas = 'edagger',
+    atlas = 'other_jokers',
     soul_pos = {
         x = 1,
-        y = 0
+        y = 1
     },
 
     calculate = function(self, card, context)

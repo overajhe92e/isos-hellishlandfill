@@ -1,31 +1,31 @@
-SMODS.Joker { -- baller
-    key = 'toomuch',
-    rarity = 'ocstobal_whatthefuck',
-    cost = 100,
-    no_collection = true,
+-- SMODS.Joker { -- baller
+--     key = 'toomuch',
+--     rarity = 'ocstobal_whatthefuck',
+--     cost = 100,
+--     no_collection = true,
 
-    calculate = function(self, card, context)
-        if context.joker_main then
-            return {
-                hypermult = { 4, 4 },
-                hyperchips = { 4, 4 }
-            }
-        end
-    end
-}
+--     calculate = function(self, card, context)
+--         if context.joker_main then
+--             return {
+--                 hypermult = { 4, 4 },
+--                 hyperchips = { 4, 4 }
+--             }
+--         end
+--     end
+-- }
 
 SMODS.Joker { --so you know polterwor
     key = 'jokertoendalljokers',
     rarity = 'ocstobal_beyondexotic',
-    cost = 1e308,
-    atlas = 'avaritia',
+    cost = 1e200,
+    atlas = 'terminuses',
     no_collection = true,
     pools = {
         ["fucking_absurd"] = true
     },
     soul_pos = {
-        x = 1,
-        y = 0,
+        x = 3,
+        y = 1,
         draw = function(card, scale_mod, rotate_mod)
             card.hover_tilt = card.hover_tilt * 1.5
             card.children.floating_sprite:draw_shader('polychrome', nil, card.ARGS.send_to_shader, nil,
@@ -33,7 +33,7 @@ SMODS.Joker { --so you know polterwor
             card.hover_tilt = card.hover_tilt / 1.5
         end
     },
-    pos = { x = 0, y = 0 },
+    pos = { x = 2, y = 1 },
 
     calculate = function(self, card, context)
         if context.joker_main then
@@ -55,109 +55,84 @@ SMODS.Joker { --so you know polterwor
     end
 }
 
-SMODS.Joker { --don't use, please
-    key = 'cpuoverload',
-    rarity = 'ocstobal_why',
-    cost = 1e308,
-    atlas = 'avaritia',
-    soul_pos = { x = 1, y = 0 },
-    pos = { x = 0, y = 0 },
-    no_collection = true,
-    pools = {
-        ["fucking_absurd"] = true
-    },
+-- SMODS.Joker { --also the second easiest as seraph is fucking ass at controlling his power
+--     key = 'sphawkclassic',
+--     rarity = 'ocstobal_beyondexotic',
+--     atlas = 'placeholder',
+--     pools = {
+--         ["fucking_absurd"] = true
+--     },
+--     no_collection = true,
+--     cost = 12500,
+--     calculate = function(self, card, context)
+--         if context.joker_main then
+--             return {
+--                 echips = 666,
+--                 emult = 666
+--             }
+--         end
+--     end
+-- }
 
-    calculate = function(self, card, context)
-        if context.joker_main then
-            return {
-                hypermult = { 1e999, 1e999 },
-                hyperchips = { 1e999, 1e999 }
-            }
-        end
-        if context.retrigger_joker_check and context.other_card then
-            return { repetitions = 1e999 }
-        end
-    end
-}
+-- SMODS.Joker { --this is the easiest of the trio (unbalanced badly) to make wtf
+--     key = 'spkawkclassic',
+--     rarity = 'ocstobal_beyondexotic',
+--     cost = 10000,
+--     discovered = false,
+--     unlocked = false,
+--     atlas = 'spkawk_classic',
+--     pools = {
+--         ["fucking_absurd"] = true
+--     },
+--     no_collection = true,
+--     pos = { x = 0, y = 0 },
+--     soul_pos = { x = 1, y = 0 },
 
-SMODS.Joker { --also the second easiest as seraph is fucking ass at controlling his power
-    key = 'sphawkclassic',
-    rarity = 'ocstobal_beyondexotic',
-    atlas = 'placeholder',
-    pools = {
-        ["fucking_absurd"] = true
-    },
-    no_collection = true,
-    cost = 12500,
-    calculate = function(self, card, context)
-        if context.joker_main then
-            return {
-                echips = 666,
-                emult = 666
-            }
-        end
-    end
-}
+--     calculate = function(self, card, context)
+--         if context.joker_main then
+--             return {
+--                 eeechips = 3,
+--                 emult = 0.7
+--             }
+--         end
+--     end
+-- }
 
-SMODS.Joker { --this is the easiest of the trio (unbalanced badly) to make wtf
-    key = 'spkawkclassic',
-    rarity = 'ocstobal_beyondexotic',
-    cost = 10000,
-    discovered = false,
-    unlocked = false,
-    atlas = 'spkawk_classic',
-    pools = {
-        ["fucking_absurd"] = true
-    },
-    no_collection = true,
-    pos = { x = 0, y = 0 },
-    soul_pos = { x = 1, y = 0 },
+-- SMODS.Joker { --oh my god two soul cards and a blackhole are you deranged
+--     key = 'solawkclassic',
+--     rarity = 'ocstobal_beyondexotic',
+--     cost = 999999,
+--     atlas = 'placeholder',
+--     no_collection = true,
+--     pools = {
+--         ["fucking_absurd"] = true
+--     },
 
-    calculate = function(self, card, context)
-        if context.joker_main then
-            return {
-                eeechips = 3,
-                emult = 0.7
-            }
-        end
-    end
-}
-
-SMODS.Joker { --oh my god two soul cards and a blackhole are you deranged
-    key = 'solawkclassic',
-    rarity = 'ocstobal_beyondexotic',
-    cost = 999999,
-    atlas = 'placeholder',
-    no_collection = true,
-    pools = {
-        ["fucking_absurd"] = true
-    },
-
-    calculate = function(self, card, context)
-        if context.setting_blind then
-            G.E_MANAGER:add_event(Event({
-                func = function()
-                    if SMODS.pseudorandom_probability(card, "j_ocstobal_solawkclassic", 1, 20) then
-                        SMODS.add_card { key = 'c_ocstobal_thesoulex', edition = 'e_negative' }
-                        return true
-                    else
-                        SMODS.add_card { key = 'c_soul', edition = 'e_negative' }
-                        SMODS.add_card { key = 'c_soul', edition = 'e_negative' }
-                        SMODS.add_card { key = 'c_black_hole', edition = 'e_negative' }
-                        SMODS.add_card { key = 'c_black_hole', edition = 'e_negative' }
-                        return true
-                    end
-                end
-            }))
-        end
-        if context.joker_main then
-            return {
-                eemult = 2,
-                eechips = 2
-            }
-        end
-    end
-}
+--     calculate = function(self, card, context)
+--         if context.setting_blind then
+--             G.E_MANAGER:add_event(Event({
+--                 func = function()
+--                     if SMODS.pseudorandom_probability(card, "j_ocstobal_solawkclassic", 1, 20) then
+--                         SMODS.add_card { key = 'c_ocstobal_thesoulex', edition = 'e_negative' }
+--                         return true
+--                     else
+--                         SMODS.add_card { key = 'c_soul', edition = 'e_negative' }
+--                         SMODS.add_card { key = 'c_soul', edition = 'e_negative' }
+--                         SMODS.add_card { key = 'c_black_hole', edition = 'e_negative' }
+--                         SMODS.add_card { key = 'c_black_hole', edition = 'e_negative' }
+--                         return true
+--                     end
+--                 end
+--             }))
+--         end
+--         if context.joker_main then
+--             return {
+--                 eemult = 2,
+--                 eechips = 2
+--             }
+--         end
+--     end
+-- }
 
 -- SMODS.Joker { --it's literally just the fucking avaritia joker but weaker
 --     key = 'oxyold',
@@ -165,25 +140,6 @@ SMODS.Joker { --oh my god two soul cards and a blackhole are you deranged
 --     cost = 1e307,
 --     no_collection = true
 -- }
-
-SMODS.Joker { --todo: implement every effect
-    key = 'aiojoker',
-    rarity = 'ocstobal_beyondexotic',
-    cost = 999999999,
-    no_collection = true,
-    pools = {
-        ["fucking_absurd"] = true
-    },
-
-    calculate = function(self, card, context)
-        if context.joker_main then
-            return {
-                chips = to_big(10 ^ 10 ^ 10 ^ 10 ^ 10)
-            }
-        end
-    end
-}
-
 SMODS.Joker { --right before getting aio joker
     key = 'ripoff',
     rarity = 'ocstobal_beyondexotic',

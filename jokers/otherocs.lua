@@ -2,9 +2,9 @@ SMODS.Joker {
     key = 'crystal',
     cost = 10,
     rarity = 'ocstobal_epic',
-    atlas = 'crystal',
+    atlas = 'other_ocs',
     pos = { x = 0, y = 0 },
-    soul_pos = {x=1,y=0},
+    soul_pos = { x = 1, y = 0 },
     blueprint_compat = true,
     pools = {
         ["copycats"] = true,
@@ -61,9 +61,9 @@ SMODS.Joker {
     cost = 20,
     rarity = 'ocstobal_epic',
     blueprint_compat = true,
-    atlas = 'johntetration',
-    pos = { x = 0, y = 0 },
-    soul_pos = { x = 1, y = 0 },
+    atlas = 'other_ocs',
+    pos = { x = 0, y = 1 },
+    soul_pos = { x = 1, y = 1 },
     config = {
         extra = {
             chips = 1,
@@ -71,6 +71,7 @@ SMODS.Joker {
         }
     },
     no_collection = false,
+    pronouns = 'he_him',
 
     set_badges = function(self, card, badges)
         if G.current_isomode >= 2 then
@@ -109,7 +110,7 @@ SMODS.Joker {
             if context.setting_blind and next(SMODS.find_card("j_ocstobal_dw_astro")) then
                 SMODS.destroy_cards(SMODS.find_card('j_ocstobal_dw_astro'), nil)
                 for i = 1, #(SMODS.find_card('j_ocstobal_dw_astro')) do
-                   card.ability.extra.chips = card.ability.extra.chips ^ 16 
+                    card.ability.extra.chips = card.ability.extra.chips ^ 16
                 end
                 return {
                     message = "GET OUT!"
@@ -146,9 +147,9 @@ SMODS.Joker {
         jokerslots = 1
     },
     blueprint_compat = false,
-    atlas = 'masked',
-    pos = { x = 0, y = 0 },
-    soul_pos = { x = 1, y = 0 },
+    atlas = 'other_ocs',
+    pos = { x = 2, y = 0 },
+    soul_pos = { x = 3, y = 0 },
 
     update = function(self, card, dt)
     end,
@@ -169,9 +170,9 @@ SMODS.Joker {
     key = 'xeno',
     cost = 25,
     rarity = 'ocstobal_epic',
-    atlas = 'xeno',
-    pos = { x = 0, y = 0 },
-    soul_pos = { x = 1, y = 0 },
+    atlas = 'other_ocs',
+    pos = { x = 0, y = 2 },
+    soul_pos = { x = 1, y = 2 },
     config = {
         extra = {
             chips = 1,
@@ -206,6 +207,51 @@ SMODS.Joker {
             return {
                 xchips = card.ability.extra.chips,
                 xmult = card.ability.extra.mult
+            }
+        end
+    end
+}
+
+SMODS.Joker {
+    key = 'solstro',
+    cost = 50,
+    rarity = "ocstobal_unique",
+    atlas = "other_jokers",
+    pos = { x = 0, y = 0 },
+    config = {
+        extra = {
+            xchips = 1,
+            scale = 0.1,
+            suit_1 = "Spades",
+            n = 0.1
+        }
+    },
+    loc_vars = function(self, info_queue, card)
+        return {
+            vars = { card.ability.extra.xchips, card.ability.extra.scale, card.ability.extra.suit_1, card.ability.extra.n }
+        }
+    end,
+    calculate = function(self, card, context)
+        if context.individual and context.cardarea == G.play then
+            if context.other_card:is_suit(card.ability.extra.suit_1) and not context.blueprint then
+                card.ability.extra.xchips = card.ability.extra.xchips + card.ability.extra.scale
+                return {
+                    message = 'Upgraded!',
+                    colour = G.C.CHIPS,
+                }
+            end
+        end
+        if context.setting_blind then
+            card.ability.extra.n = card.ability.extra.n + 0.1
+            card.ability.extra.scale = ((card.ability.extra.n * (card.ability.extra.n + 1))/2)
+            return {
+                message = "Scaled!",
+                colour = G.C.FILTER
+            }
+        end
+        if context.joker_main then
+            return {
+                xchips = card.ability.extra.xchips
             }
         end
     end

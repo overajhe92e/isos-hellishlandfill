@@ -35,7 +35,7 @@ SMODS.Joker { --Seraph
     key = "seraph",
     config = {
         extra = {
-            odds = 3,
+            odds = 2,
             chips = 0,
             Xmult = 2,
             xchips = 10,
@@ -52,23 +52,18 @@ SMODS.Joker { --Seraph
     },
     pos = {
         x = 0,
-        y = 0
+        y = 1
     },
     display_size = {
         w = 71 * 1,
         h = 95 * 1
     },
     cost = 10,
-    rarity = 3,
-    blueprint_compat = true,
-    eternal_compat = true,
-    perishable_compat = true,
-    unlocked = true,
-    discovered = false,
-    atlas = 'sphredo',
+    rarity = 'ocstobal_epic',
+    atlas = 'triple_s',
     soul_pos = {
         x = 1,
-        y = 0
+        y = 1
     },
 
     set_badges = function(self, card, badges)
@@ -77,16 +72,16 @@ SMODS.Joker { --Seraph
 
     update = function(self, card, dt)
         if card.ability.extra.upgrade < 100 then
-            card.children.floating_sprite:set_sprite_pos { x = 1, y = 0 }
+            card.children.floating_sprite:set_sprite_pos { x = 1, y = 1 }
         elseif card.ability.extra.upgrade >= 100 and card.ability.extra.upgrade < 400 and G.current_isomode >= 1 then
-            card.children.floating_sprite:set_sprite_pos { x = 2, y = 0 }
-            card.children.center:set_sprite_pos { x = 0, y = 1 }
+            card.children.floating_sprite:set_sprite_pos { x = 2, y = 1 }
+            card.children.center:set_sprite_pos { x = 0, y = 2 }
         elseif card.ability.extra.upgrade >= 400 and card.ability.extra.upgrade < 1000 and G.current_isomode >= 1 then
-            card.children.center:set_sprite_pos { x = 1, y = 1 }
-            card.children.floating_sprite:set_sprite_pos { x = 3, y = 0 }
+            card.children.center:set_sprite_pos { x = 1, y = 2 }
+            card.children.floating_sprite:set_sprite_pos { x = 3, y = 1 }
         elseif card.ability.extra.upgrade >= 1000 and G.current_isomode >= 1 then
-            card.children.center:set_sprite_pos { x = 1, y = 1 }
-            card.children.floating_sprite:set_sprite_pos { x = 4, y = 0 }
+            card.children.center:set_sprite_pos { x = 1, y = 2 }
+            card.children.floating_sprite:set_sprite_pos { x = 4, y = 1 }
         end
         if card.ability.extra.upgrade < 100 and card.ability.extra.triggered >= 10 then
             play_sound('ocstobal_upg')
@@ -386,8 +381,9 @@ SMODS.Joker {
             estuff = 1
         }
     },
-    atlas = "rec_vessel",
-    soul_pos = { x = 1, y = 0 },
+    atlas = "triple_s",
+    pos = { x = 2, y = 2 },
+    soul_pos = { x = 3, y = 2 },
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.xstuff, card.ability.extra.estuff } }
     end,
@@ -543,108 +539,4 @@ function wtfdude()
         major = G.play,
         colour = HEX('ffffff')
     })
-end
-
---taken (shamefully) from unik's mod
-local G_UIDEF_use_and_sell_buttons_ref = G.UIDEF.use_and_sell_buttons
-function G.UIDEF.use_and_sell_buttons(card)
-    local tdc = G_UIDEF_use_and_sell_buttons_ref(card)
-    if (card.area == G.jokers) and card.config.center.key == "j_ocstobal_seraph" then
-        local sell = nil
-        local use = nil
-        local levels = nil
-
-        sell = {
-            n = G.UIT.C,
-            config = { align = "cr" },
-            nodes = {
-                {
-                    n = G.UIT.C,
-                    config = { ref_table = card, align = "cr", padding = 0.1, r = 0.08, minw = 1.25, hover = true, shadow = true, colour = G.C.UI.BACKGROUND_INACTIVE, one_press = true, button = 'sell_card', func = 'can_sell_card' },
-                    nodes = {
-                        { n = G.UIT.B, config = { w = 0.1, h = 0.6 } },
-                        {
-                            n = G.UIT.C,
-                            config = { align = "tm" },
-                            nodes = {
-                                {
-                                    n = G.UIT.R,
-                                    config = { align = "cm", maxw = 1.25 },
-                                    nodes = {
-                                        { n = G.UIT.T, config = { text = localize('b_sell'), colour = G.C.UI.TEXT_LIGHT, scale = 0.4, shadow = true } }
-                                    }
-                                },
-                                {
-                                    n = G.UIT.R,
-                                    config = { align = "cm" },
-                                    nodes = {
-                                        { n = G.UIT.T, config = { text = localize('$'), colour = G.C.WHITE, scale = 0.4, shadow = true } },
-                                        { n = G.UIT.T, config = { ref_table = card, ref_value = 'sell_cost_label', colour = G.C.WHITE, scale = 0.55, shadow = true } }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-            }
-        }
-        levels =
-        {
-            n = G.UIT.C,
-            config = { align = "cr" },
-            nodes = {
-
-                {
-                    n = G.UIT.C,
-                    config = { ref_table = card, align = "cr", maxw = 1.25, padding = 0.1, r = 0.08, minw = 1.25, minh = (card.area and card.area.config.type == 'joker') and 0 or 1, hover = true, shadow = true, colour = G.C.UI.BACKGROUND_INACTIVE, one_press = false, button = 'seraphmenu' },
-                    nodes = {
-                        { n = G.UIT.B, config = { w = 0.1, h = 0.6 } },
-                        { n = G.UIT.T, config = { text = 'Levels', colour = G.C.UI.TEXT_LIGHT, scale = 0.55, shadow = true } }
-                    }
-                }
-            }
-        }
-        --overwriting usual buttons
-        tdc = {
-            n = G.UIT.ROOT,
-            config = { padding = 0, colour = G.C.CLEAR },
-            nodes = {
-                {
-                    n = G.UIT.C,
-                    config = { padding = 0.15, align = 'cl' },
-                    nodes = {
-                        {
-                            n = G.UIT.R,
-                            config = { align = 'cl' },
-                            nodes = {
-                                sell
-                            }
-                        },
-                        {
-                            n = G.UIT.R,
-                            config = { align = 'cl' },
-                            nodes = {
-                                use
-                            }
-                        },
-                        {
-                            n = G.UIT.R,
-                            config = { align = 'cl' },
-                            nodes = {
-                                levels
-                            }
-                        },
-                    }
-                },
-            }
-        }
-    end
-    return tdc
-end
-
-function G.FUNCS.seraphmenu()
-    G.FUNCS.overlay_menu {
-        definition = sphlvls("Back"),
-        config = { no_esc = true }
-    }
 end
