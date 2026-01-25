@@ -890,11 +890,12 @@ return {
 				text = {
 					{
 						"Gains {X:red,C:white}X1{} Mult for",
-						"Every day that Balato's modding-chat does NOT",
-						"enter a meltdown.",
-						"{C:inactive}Currently{} {X:red,C:white}X#1#{} {C:inactive}Mult.{}"
+						"every {C:attention}Non-Isotypical{} OC",
+						"{C:inactive}Currently{} {X:red,C:white}X#1#{} {C:inactive}Mult{}"
 					},
-					{ "{C:inactive}i'm not surprised man{}" }
+					{ 
+						"{C:inactive}join my mod{}" 
+					}
 				}
 			},
 			j_ocstobal_aiojoker = {

@@ -4,7 +4,7 @@ SMODS.Joker {
     rarity = 2,
     config = {
         extra = {
-            dayswithoutissue = -1e200
+            other_ocs = 3
         }
     },
     atlas = 'other_jokers',
@@ -13,7 +13,7 @@ SMODS.Joker {
     loc_vars = function(self,info_queue,card)
         return {
             vars = {
-                lenient_bignum(card.ability.extra.dayswithoutissue)
+                card.ability.extra.other_ocs
             }
         }
     end,
@@ -21,7 +21,7 @@ SMODS.Joker {
     calculate = function(self,card,context)
         if context.joker_main then
             return {
-                Xmult = lenient_bignum(card.ability.extra.dayswithoutissue)
+                card.ability.extra.other_ocs
             }
         end
     end
