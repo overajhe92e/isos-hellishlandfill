@@ -73,3 +73,11 @@ FusionJokers.fusions:register_fusion {
 	result_joker = "j_ocstobal_reclusivevessel",
 	cost = 250
 }
+FusionJokers.fusions:register_fusion {
+	jokers = {
+		{ name = "j_ocstobal_solinium" },
+		{ name = "j_ocstobal_astro" },
+	},
+	result_joker = "j_ocstobal_solstro",
+	cost = 15
+}

@@ -241,8 +241,8 @@ SMODS.Joker {
                 }
             end
         end
-        if context.setting_blind then
-            card.ability.extra.scale = math.log(card.ability.extra.xchips)*(0.2*card.ability.extra.xchips)
+        if context.setting_blind and not context.blueprint then
+            card.ability.extra.scale = math.log(card.ability.extra.xchips+1)*((0.1*card.ability.extra.xchips)^0.3)
             return {
                 message = "Scaled!",
                 colour = G.C.FILTER

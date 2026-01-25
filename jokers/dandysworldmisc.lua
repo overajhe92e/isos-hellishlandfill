@@ -1,6 +1,6 @@
 SMODS.Joker {
     key = 'ichor',
-    cost = '12',
+    cost = 12,
     rarity = 3,
     config = {
         extra = {

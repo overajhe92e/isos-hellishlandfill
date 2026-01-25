@@ -14,6 +14,8 @@ OMEGARED = HEX("ff0000"),
 OMEGAWHITE = HEX("ffffff"),
 NIGHTMARE_BLUE = HEX("0000ff"),
 NIGHTMARE_PURPLE = HEX("800080"),
+PASTEL_YELLOW = HEX("FFFC75"),
+PINK = HEX("FFAAD9"),
 """
 match_indent = true
 
@@ -23,10 +25,12 @@ target = "functions/misc_functions.lua"
 pattern = "dark_edition = G.C.DARK_EDITION,"
 position = "after"
 payload = """
-ocstobal_omegablack = G.C.OMEGARED,
+ocstobal_omegablack = G.C.OMEGABLACK,
 ocstobal_omegared = G.C.OMEGARED,
 ocstobal_omegawhite = G.C.OMEGAWHITE,
 ocstobal_nightmare_blue = G.C.NIGHTMARE_BLUE,
 ocstobal_nightmare_purple = G.C.NIGHTMARE_PURPLE,
+ocstobal_technicallythisisalmanacs_pastel_yellow = G.C.PASTEL_YELLOW,
+ocstobal_technicallythisisalmanacs_pink = G.C.PINK,
 """
 match_indent = true

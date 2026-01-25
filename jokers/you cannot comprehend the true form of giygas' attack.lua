@@ -12,9 +12,12 @@ SMODS.Joker {
     no_collection = true
 }
 
--- SMODS.Joker {
---     key = "absolutely_safe_capsule",
---     rarity = 'ocstobal_epic',
---     cost = 25,
---     no_collection = true
--- }
+SMODS.Joker {
+    key = "absolutely_safe_capsule",
+    rarity = 1,
+    cost = 5,
+    add_to_deck = function(self,card)
+        card:set_eternal(true)
+        G.GAME.ASC_active = true
+    end
+}

@@ -1,0 +1,28 @@
+[manifest]
+version = "0.0.1"
+dump_lua = true
+priority = 1
+
+
+# prevents game_over trigger
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = '''if G.GAME.chips - G.GAME.blind.chips >= 0 then'''
+position = "at"
+payload = """
+if G.GAME.chips - G.GAME.blind.chips >= 0 or G.GAME.ASC_active == true then
+"""
+match_indent = true
+
+# for fucks sake porky
+
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = '''if not G.STATE_COMPLETE then'''
+position = "at"
+payload = """
+if not G.STATE_COMPLETE and not G.GAME.ASC_active then
+"""
+match_indent = true

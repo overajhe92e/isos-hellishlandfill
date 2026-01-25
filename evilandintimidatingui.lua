@@ -117,7 +117,7 @@ function noisomode(buttonname)
 						n = G.UIT.R,
 						config = { minh = 1, minw = 1, align = 'tm', padding = 0.05, colour = G.C.CLEAR },
 						nodes = {
-							{ n = G.UIT.T, config = { text = "polterworx is kil", colour = G.C.UI.TEXT_INACTIVE, scale = 0.35, align = "tm" }, }
+							{ n = G.UIT.T, config = { text = "THE FUCK YOU MEAN POLTERWORX ISN'T KILL", colour = G.C.UI.TEXT_INACTIVE, scale = 0.35, align = "tm" }, }
 						}
 					},
 				}

@@ -280,7 +280,8 @@ SMODS.Joker {
     key = 'obscene_joke',
     rarity = 1,
     cost = 1,
-    atlas = "placeholder",
+    atlas = "other_jokers",
+    pos = {x=4,y=1},
     add_to_deck = function(self, card)
         SMODS.add_card { key = 'j_ocstobal_oxhatred' }
         SMODS.destroy_cards(card, nil, nil, true)

@@ -102,7 +102,12 @@ SMODS.JimboQuip({
             G.C.BLUE,
             G.C.BLUE
         }
-    }
+    },
+    filter = function(self, type)
+        if type == 'win' then
+            return true, { weight = 15 }
+        end
+    end
 })
 
 SMODS.JimboQuip({
@@ -114,7 +119,12 @@ SMODS.JimboQuip({
             G.C.BLUE,
             G.C.BLUE
         }
-    }
+    },
+    filter = function(self, type)
+        if type == 'win' then
+            return true, { weight = 15 }
+        end
+    end
 })
 
 SMODS.JimboQuip({
@@ -126,17 +136,27 @@ SMODS.JimboQuip({
             G.C.BLUE,
             G.C.BLUE
         }
-    }
+    },
+    filter = function(self, type)
+        if type == 'win' then
+            return true, { weight = 15 }
+        end
+    end
 })
 
 SMODS.JimboQuip({
     key = 'oxidyze_win',
     extra = {
-        center = 'j_ocstobal_oxy',
+        center = 'j_ocstobal_Oxy',
         particle_colours = {
             G.C.BLUE,
             G.C.BLUE,
             G.C.BLUE
         }
-    }
+    },
+    filter = function(self, type)
+        if type == 'win' then
+            return true, { weight = 15 }
+        end
+    end
 })

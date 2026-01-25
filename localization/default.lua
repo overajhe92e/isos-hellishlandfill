@@ -837,7 +837,7 @@ return {
 						"a {C:spades}Spade{} card is scored",
 						"On {C:attention}Blind Select{} {X:blue,C:white}XChip{} gain is",
 						"increased with the equation of",
-						"{X:dark_edition,C:white,s:1.3}log(XCHIPS)*0.2(XCHIPS){}",
+						"{X:dark_edition,C:white,s:1.3}log(XCHIPS+1)*0.2(XCHIPS){}",
 						"{C:inactive}Currently{} {X:blue,C:white}X#1#{} {C:inactive}Chips{}"
 					},
 				}
@@ -1031,10 +1031,12 @@ return {
 				}
 			},
 			j_ocstobal_obscene_joke = { -- these obscure jokes are gonna get me banned istg
-				name = "Something Something NSFW Joke here",
+				name = "Absurd Joke",
 				text = {
 					"{C:red}Don't pick up, please.{}",
-					"{C:inactive,s:0.7}You do not want to deal with Oxidyze's hate to you.{}"
+					"{C:red}SERAPH. FUCKING. VOIDGLOOM.{}", 
+					"{C:red}STOP. CALLING. ME.{} {X:ocstobal_technicallythisisalmanacs_pastel_yellow,C:ocstobal_omegablack}OC{}{X:ocstobal_technicallythisisalmanacs_pink,C:ocstobal_omegablack}KS{}{X:ocstobal_nightmare_blue,C:white}IE{}.",
+					"{C:inactive}- Oxidyze{}"
 				}
 			},
 			j_ocstobal_porky = {
@@ -1141,7 +1143,7 @@ return {
 			j_ocstobal_absolutely_safe_capsule = {
 				name = "Absolutely Safe Capsule",
 				text = {
-					"Prevents Any sort of Gameovers",
+					"Prevents Gameovers",
 					"{C:inactive}But in turn, you can't win either.{}"
 				}
 			}, -- might not be used
