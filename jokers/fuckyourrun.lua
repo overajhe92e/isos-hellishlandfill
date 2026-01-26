@@ -2,27 +2,36 @@ SMODS.Joker {
     key = "oxhatred",
     config = {
         extra = {
-            h_size = 10
+            h_size = 10,
+            chipmult = 0.85
         }
     },
-    atlas = 'other_ocs',
+    atlas = 'oxidyzehate',
     pos = {
-        x = 4,
+        x = 0,
         y = 0
     },
     cost = 0,
     rarity = "ocstobal_absolute_curse",
     soul_pos = {
-        x = 5,
-        y = 0
+        x = 0,
+        y = 1
     },
     no_collection = true,
     in_pool = function()
         return false
     end,
+    loc_vars = function(self,info_queue,card)
+        return {
+            vars = {
+                card.ability.extra.chipmult,
+                card.ability.extra.h_size
+            }
+        }
+    end,
 
     add_to_deck = function(self, card, from_debuff)
-        card:set_edition("e_ocstobal_hidden1", true)
+        -- card:set_edition("e_ocstobal_hidden1", true)
         card:set_eternal(true)
         G.GAME.round_resets.hands = 1
         G.GAME.round_resets.discards = 0
@@ -31,14 +40,15 @@ SMODS.Joker {
     remove_from_deck = function(self, card, from_debuff)
         G.GAME.round_resets.hands = 10
         G.GAME.round_resets.discards = 10
+        G.hand:change_size(-10)
     end,
 
     calculate = function(self, card, context)
         if context.joker_main then
             return {
-                message = 'ENOUGH.',
-                Emult_mod = 0.85,
-                Echip_mod = 0.85
+                message = 'CEASE.',
+                Emult_mod = card.ability.extra.chipmult,
+                Echip_mod = card.ability.extra.chipmult
             }
         end
     end

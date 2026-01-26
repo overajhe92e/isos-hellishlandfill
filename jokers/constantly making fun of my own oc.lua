@@ -35,7 +35,8 @@ SMODS.Joker { --Oxy
 
     loc_vars = function(self, info_queue, center)
         return {
-            vars = { localize('k_ocstobal_oxy_quote' .. pseudorandom("seed", 1, 11)) },
+            vars = { localize('k_ocstobal_oxy_quote' .. pseudorandom("seed", 1, 11)), localize('k_ocstobal_oxy_quote_alt_'.. pseudorandom("couldn't hold back huh",1,15)) },
+            --key = h
         }
     end,
 

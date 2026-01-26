@@ -171,8 +171,8 @@ SMODS.Joker {
     cost = 25,
     rarity = 'ocstobal_epic',
     atlas = 'other_ocs',
-    pos = { x = 0, y = 2 },
-    soul_pos = { x = 1, y = 2 },
+    pos = { x = 4, y = 0 },
+    soul_pos = { x = 5, y = 0 },
     config = {
         extra = {
             chips = 1,
