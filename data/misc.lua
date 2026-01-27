@@ -149,6 +149,16 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
+	key = 'oxidyzehate',
+	px = 71,
+	py = 95,
+	path = 'oxidyzehatred.png',
+	atlas_table = 'ANIMATION_ATLAS',
+	frames = 9,
+	fps = 7
+}
+
+SMODS.Atlas {
 	key = 'needle',
 	px = 71,
 	py = 95,

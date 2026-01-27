@@ -23,7 +23,7 @@ SMODS.Joker {
                 mult = mod_mult(0)
             }
         end
-        if context.joker_main and G.GAME.current_round.hands_left == 0 then
+        if context.joker_main and G.GAME.current_round.hands_left <= 0 then
             if card.ability.extra.stored_chips > 0 then
                 return {
                     message = "X" ..
@@ -71,7 +71,7 @@ SMODS.Joker {
                 mult = mod_mult(0)
             }
         end
-        if context.joker_main and G.GAME.current_round.hands_left == 0 then
+        if context.joker_main and G.GAME.current_round.hands_left <= 0 then
             return {
                 message = "X" ..
                     tostring(card.ability.extra.stored_chips + card.ability.extra.stored_mult) .. " Chips & Mult",
@@ -115,7 +115,7 @@ SMODS.Joker {
                 mult = mod_mult(0)
             }
         end
-        if context.joker_main and G.GAME.current_round.hands_left == 0 then
+        if context.joker_main and G.GAME.current_round.hands_left <= 0 then
             return {
                 message = "X" ..
                     tostring(card.ability.extra.stored_chips + card.ability.extra.stored_mult) .. " Chips & Mult",
@@ -159,7 +159,7 @@ SMODS.Joker {
                 mult = mod_mult(0)
             }
         end
-        if context.joker_main and G.GAME.current_round.hands_left == 0 then
+        if context.joker_main and G.GAME.current_round.hands_left <= 0 then
             return {
                 message = "X" ..
                     tostring(card.ability.extra.stored_chips + card.ability.extra.stored_mult) .. " Chips & Mult",

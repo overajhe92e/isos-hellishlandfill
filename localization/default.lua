@@ -554,9 +554,16 @@ return {
 			j_ocstobal_oxhatred = {
 				name = "{C:ocstobal_ust}Oxidyze's Hatred{}",
 				text = {
-					'{X:dark_edition,C:red}^0.9{} Mult and Chips,',
-					'{C:attention}Hands set to 1, Discards set to 0',
-					'{C:attention}+10{} Hand Size'
+					{
+						'{X:ocstobal_omegablack,C:red}^#1#{} Mult and Chips',
+						'Sets {C:blue}Hands{} to {C:attention}1{} and {C:red}Discards{} to {C:attention}0{}',
+						'when this Joker is obtained',
+						'{C:attention}+10{} Hand Size'
+					},
+					{
+						'When this joker is {C;red}destroyed{}',
+						'Sets {C:blue}Hands{} and {C:red}Discards{} to {C:attention}10{}'
+					}
 				}
 			},
 			j_ocstobal_overpoweredgaming = {
@@ -893,8 +900,8 @@ return {
 						"every {C:attention}Non-Isotypical{} OC",
 						"{C:inactive}Currently{} {X:red,C:white}X#1#{} {C:inactive}Mult{}"
 					},
-					{ 
-						"{C:inactive}join my mod{}" 
+					{
+						"{C:inactive}join my mod{}"
 					}
 				}
 			},
@@ -1035,7 +1042,7 @@ return {
 				name = "Absurd Joke",
 				text = {
 					"{C:red}Don't pick up, please.{}",
-					"{C:red}SERAPH. FUCKING. VOIDGLOOM.{}", 
+					"{C:red}SERAPH. FUCKING. VOIDGLOOM.{}",
 					"{C:red}STOP. CALLING. ME.{} {X:ocstobal_technicallythisisalmanacs_pastel_yellow,C:ocstobal_omegablack}OC{}{X:ocstobal_technicallythisisalmanacs_pink,C:ocstobal_omegablack}KS{}{X:ocstobal_nightmare_blue,C:white}IE{}.",
 					"{C:inactive}- Oxidyze{}"
 				}
@@ -1343,12 +1350,12 @@ return {
 			sphbeyond = "...",
 			sphwhy = "what the fuck dude go outside",
 
-			k_ocstobal_oxy_quote1 = "\"I am NOT that Oxy from Almanac.\"",                     -- you are (/j)
+			k_ocstobal_oxy_quote1 = "\"New name, yay.\"",
 			k_ocstobal_oxy_quote2 = "\"What do you MEAN my ability isn't unique?!\"",
 			k_ocstobal_oxy_quote3 = "\"SERAPH FOR THE LAST TIME, STOP CALLING ME OCKSIE.\"",   --seraph loves pissing off oxy (because he's not part of the trio)
 			k_ocstobal_oxy_quote4 = "\"Seraph. Fucking. Voidgloom. Most annoying person I've met!\"",
 			k_ocstobal_oxy_quote5 = "\"I'm gonna kill Seraph if he calls me 'ocksie' ONE MORE TIME.\"", --part of the "seraph pisses off oxy" trilogy
-			k_ocstobal_oxy_quote6 = "\"...Fundamental Paper Education? What are you talking about..?\"",
+			k_ocstobal_oxy_quote6 = "\"...Fundamental Paper Education? What's so fundamental about paper?\"",
 			k_ocstobal_oxy_quote7 = "\"Do I have an origin? No. Does my creator know I'm self aware? Also no.\"",
 			k_ocstobal_oxy_quote8 = "\"Who is Solinium, again?\"",
 			k_ocstobal_oxy_quote9 = "\"Sparky? What kind of name is that? An electrical issue?\"",
@@ -1369,7 +1376,7 @@ return {
 			k_ocstobal_sparky_quote4 =
 			"\"I LOVE ABBIE SO MUCH I LOVE ABBIE SO MUCH I LOVE ABBIE SO MUCH\"", --i cant tell if she loves abbie
 
-			k_ocstobal_seraph_quote1 = "\"INTO THE VOID YOU GO!!!\"",                  -- AND THATS THE BALL GAME
+			k_ocstobal_seraph_quote1 = "\"INTO THE VOID YOU GO!!!\"",    -- AND THATS THE BALL GAME
 			k_ocstobal_seraph_quote2 = "\"It's so fun messing with Sparky at times...\"",
 			k_ocstobal_seraph_quote3 = "\"I don't have a knife in my head, what are you on?\"",
 			k_ocstobal_seraph_quote4 = "\"HEY 'OCKSIE'!!! LOOK OVER HERE!!!\"", --"holy shit ocksie reference"
@@ -1400,7 +1407,7 @@ return {
 			k_ocstobal_seraphbroken_quote4 = "\"...recluse...\"",
 
 			k_ocstobal_recluse_quote1 = "\"There's no way those two can kill me.\"",
-			k_ocstobal_recluse_quote2 = "\"LET ME OUT OF THIS CARD!\"",                              --hey 4th wall breaker here get yo ass back into my joker slots
+			k_ocstobal_recluse_quote2 = "\"LET ME OUT OF THIS CARD!\"",                          --hey 4th wall breaker here get yo ass back into my joker slots
 			k_ocstobal_recluse_quote3 = "\"I hate Solinium. There, I'm being blunt.\"",
 			k_ocstobal_recluse_quote4 = "\"Sparky? My old go-to vessel? Why are we talking about her?\"", -- ok sukuna get back to being dead
 			k_ocstobal_recluse_quote5 = "\"Seraph... yuck. Thinks he's so grand on everything.\"",
