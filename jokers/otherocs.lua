@@ -109,9 +109,19 @@ SMODS.Joker {
             end
             if context.setting_blind and next(SMODS.find_card("j_ocstobal_dw_astro")) then
                 SMODS.destroy_cards(SMODS.find_card('j_ocstobal_dw_astro'), nil)
-                for i = 1, #(SMODS.find_card('j_ocstobal_dw_astro')) do
-                    card.ability.extra.chips = card.ability.extra.chips ^ 16
-                end
+                card.ability.extra.chips = card.ability.extra.chips ^ 18
+                return {
+                    message = "GET OUT!"
+                }
+            elseif context.setting_blind and next(SMODS.find_card("j_dw_astro")) and not next(SMODS.find_mod("")) and not next(SMODS.find_mod("")) then
+                SMODS.destroy_cards(SMODS.find_card('j_dw_astro'), nil)
+                card.ability.extra.chips = card.ability.extra.chips ^ 9
+                return {
+                    message = "GET OUT!"
+                }
+            elseif context.setting_blind and next(SMODS.find_card("j_jen_astro")) then
+                SMODS.destroy_cards(SMODS.find_card('j_jen_astro'), nil)
+                card.ability.extra.chips = card.ability.extra.chips ^ 36
                 return {
                     message = "GET OUT!"
                 }
@@ -242,7 +252,7 @@ SMODS.Joker {
             end
         end
         if context.setting_blind and not context.blueprint then
-            card.ability.extra.scale = math.log(card.ability.extra.xchips+1)*((0.1*card.ability.extra.xchips)^0.3)
+            card.ability.extra.scale = math.log(card.ability.extra.xchips + 1) * ((0.1 * card.ability.extra.xchips) ^ 0.3)
             return {
                 message = "Scaled!",
                 colour = G.C.FILTER
