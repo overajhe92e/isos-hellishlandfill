@@ -30,7 +30,7 @@ ocstobal_omegared = G.C.OMEGARED,
 ocstobal_omegawhite = G.C.OMEGAWHITE,
 ocstobal_nightmare_blue = G.C.NIGHTMARE_BLUE,
 ocstobal_nightmare_purple = G.C.NIGHTMARE_PURPLE,
-ocstobal_technicallythisisalmanacs_pastel_yellow = G.C.PASTEL_YELLOW,
-ocstobal_technicallythisisalmanacs_pink = G.C.PINK,
+pastel_yellow = G.C.PASTEL_YELLOW,
+pink = G.C.PINK,
 """
 match_indent = true

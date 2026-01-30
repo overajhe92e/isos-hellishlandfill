@@ -546,6 +546,25 @@ SMODS.Sound {
 }
 
 SMODS.Sound {
+	key = 'ailment',
+	path = "ailment.ogg"
+}
+
+SMODS.Sound {
+	key = 'chimera_ping',
+	path = "why.ogg"
+}
+
+-- SMODS.Joker:take_ownership('joker',
+--     {
+-- 	atlas = 'pklove',
+-- 	pos = {x=0, y=3},
+--     },
+--     true
+-- )
+--only use when shader testing
+
+SMODS.Sound {
 	key = 'music_ocean',
 	path = "music_ocean.ogg",
 	pitch = 0.7,
@@ -567,28 +586,17 @@ SMODS.Sound {
 	end
 }
 
--- --note to self: uncomment if the original creator of these songs allow these two songs to be used in this mod
--- SMODS.Sound {
--- 	key = 'music_extraodinary',
--- 	path = 'music_Extraordinary.ogg',
--- 	pitch = 0.7,
--- 	select_music_track = function()
--- 		--return ocstobal.should_do_this
--- 		return (G.GAME and G.GAME.ocstobal_ext == 100) and 0 or false
--- 	end
--- }
-
--- SMODS.Sound {
--- 	key = 'music_wondrous',
--- 	path = 'music_Wondrous.ogg',
--- 	pitch = 0.7,
--- 	select_music_track = function()
--- 		--return ocstobal.should_do_this
--- 		return (G.GAME and G.GAME.ocstobal_ext == 50) and 0 or false
--- 	end
--- }
-
---how the fuck do i check who made the extraordinary song now???
+SMODS.Sound {
+	key = 'music_heartbeat',
+	path = "mus_hypnosis_boss.ogg",
+	pitch = 0.7,
+	volume = 1,
+	select_music_track = function()
+		if G.GAME then
+			if G.GAME.hypnosis == true then return true else return false end
+		end
+	end
+}
 
 loc_colour()
 G.ARGS.LOC_COLOURS.ocstobal_eyeshatteringblue = HEX('3df5ff')
@@ -679,6 +687,15 @@ SMODS.current_mod.optional_features = {
 		deck = true
 	}
 }
+-- how much morefluff
+function pk_love(joker)
+	if joker.config.center.pk_love == true then
+		return true
+	elseif type(joker.config.center.pk_love) == "function" then
+		return joker.config.center.pk_love(joker)
+	end
+	return false
+end
 
 SMODS.Shader {
 	key = 'fluorescent',
@@ -851,6 +868,70 @@ function G.UIDEF.use_and_sell_buttons(card)
 		}
 	end
 	return tdc
+end
+
+pkLOOOVE = Card.highlight
+function Card:highlight(is_highlighted)
+	pkLOOOVE(self, is_highlighted)
+	asc = {
+		n = G.UIT.ROOT,
+		config = { padding = 0, colour = G.C.CLEAR },
+		nodes = {
+			{
+				n = G.UIT.C,
+				config = { minw = 1, minh = 1, padding = 0.1, align = 'cm', colour = G.C.CLEAR },
+				nodes = {
+					{
+						n = G.UIT.R,
+						config = { minw = 1, minh = 0.5, padding = 0.01, align = 'cl', colour = G.C.CLEAR, button = 'store', r = 0.1 },
+						nodes = {
+							UIBox_button { label = { "Store" }, scale = 0.4, minw = 1.3, minh = 0.7, colour = G.C.BLUE, r = 0.1, button = 'store' }
+						}
+					},
+					{
+						n = G.UIT.R,
+						config = { minw = 1, minh = 0.5, padding = 0.01, align = 'cl', colour = G.C.CLEAR, button = 'donothing', r = 0.1 },
+						nodes = {
+							UIBox_button { label = { "Passive" }, scale = 0.4, minw = 1.3, minh = 0.7, colour = G.C.UI.BACKGROUND_INACTIVE, r = 0.1, button = 'donothing' }
+						}
+					},
+					{
+						n = G.UIT.R,
+						config = { minw = 1, minh = 0.5, padding = 0.01, align = 'cl', colour = G.C.CLEAR, button = 'release', r = 0.1 },
+						nodes = {
+							UIBox_button { label = { "Unleash" }, scale = 0.4, minw = 1.3, minh = 0.7, colour = G.C.RED, r = 0.1, button = 'release' }
+						}
+					},
+				}
+			},
+		}
+	}
+	if self.highlighted and self.config.center.pk_love == true and not self.ability.extra.to_copy then
+		self.children.love = UIBox({
+			definition = asc,
+			config = {
+				parent = self,
+				align = 'cm',
+				offset = { x = -1.5, y = 0 },
+				colour = G.C.CLEAR
+			}
+		})
+	elseif self.children.love and not self.highlighted and self.config.center.pk_love == true then
+		self.children.love:remove()
+		self.children.love = nil
+	end
+end
+
+function G.FUNCS.store()
+	G.GAME.pk_love_ability = "Storing"
+end
+
+function G.FUNCS.donothing()
+	G.GAME.pk_love_ability = "Passive"
+end
+
+function G.FUNCS.release()
+	G.GAME.pk_love_ability = "Unleashing"
 end
 
 function G.FUNCS.seraphmenu()

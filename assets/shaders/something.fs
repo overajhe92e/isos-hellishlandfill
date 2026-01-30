@@ -1,22 +1,14 @@
 #if defined(VERTEX) || __VERSION__ > 100 || defined(GL_FRAGMENT_PRECISION_HIGH)
-    #define PRECISION highp
+	#define PRECISION highp
 #else
-    #define PRECISION mediump
+	#define PRECISION mediump
 #endif
 
-// !! change this variable name to your Shader's name
-// YOU MUST USE THIS VARIABLE IN THE vec4 effect AT LEAST ONCE
-
-// Values of this variable:
-// self.ARGS.send_to_shader[1] = math.min(self.VT.r*3, 1) + (math.sin(G.TIMERS.REAL/28) + 1) + (self.juice and self.juice.r*20 or 0) + self.tilt_var.amt
-// self.ARGS.send_to_shader[2] = G.TIMERS.REAL
-extern PRECISION vec2 hate;
+// Look ionized.fs for explanation
+extern PRECISION vec2 anaglyphic;
 
 extern PRECISION number dissolve;
 extern PRECISION number time;
-// [Note] sprite_pos_x _y is not a pixel position!
-//        To get pixel position, you need to multiply  
-//        it by sprite_width _height (look flipped.fs)
 // (sprite_pos_x, sprite_pos_y, sprite_width, sprite_height) [not normalized]
 extern PRECISION vec4 texture_details;
 // (width, height) for atlas texture [not normalized]
@@ -25,6 +17,14 @@ extern bool shadow;
 extern PRECISION vec4 burn_colour_1;
 extern PRECISION vec4 burn_colour_2;
 
+// [Util]
+// Transform color from HSL to RGB 
+vec4 RGB(vec4 c);
+
+// [Util]
+// Transform color from RGB to HSL
+vec4 HSL(vec4 c);
+
 // [Required] 
 // Apply dissolve effect (when card is being "burnt", e.g. when consumable is used)
 vec4 dissolve_mask(vec4 tex, vec2 texture_coords, vec2 uv);
@@ -32,28 +32,102 @@ vec4 dissolve_mask(vec4 tex, vec2 texture_coords, vec2 uv);
 // This is what actually changes the look of card
 vec4 effect( vec4 colour, Image texture, vec2 texture_coords, vec2 screen_coords )
 {
+
+    float displacement_x = (0.1*cos(anaglyphic.g*0.3)+0.3)/texture_details.b;
+    float displacement_y = (0.03*sin(anaglyphic.r)+0.03)/texture_details.a;
+    
     // Take pixel color (rgba) from `texture` at `texture_coords`, equivalent of texture2D in GLSL
     vec4 tex = Texel(texture, texture_coords);
+    vec4 red_tex = Texel(texture, vec2(texture_coords.x + displacement_x, texture_coords.y + displacement_y));
+    vec4 blue_tex = Texel(texture, vec2(texture_coords.x - displacement_x, texture_coords.y - displacement_y));
     // Position of a pixel within the sprite
-	vec2 uv = (((texture_coords)*(image_details)) - texture_details.xy*texture_details.ba)/texture_details.ba;
-    vec2 uv2 = uv - vec2(0.5, 0.2);
-    float he = time * -0.05;
-
-    // For all vectors (vec2, vec3, vec4), .rgb is equivalent of .xyz, so uv.y == uv.g
-    // .a is last parameter for vec4 (usually the alpha channel - transparency)
-    number low = min(tex.r, min(tex.g, tex.b));
-    number high = max(tex.r, max(tex.g, tex.b));
-    number delta = high-low - 0.2;
-
-    tex.r = tex.r+delta;
-
-    tex.r = tex.r*(0.5*hate.y);
-    tex.g = tex.g*(-0.9/hate.y);
-    tex.b = tex.b*0.3*(0.1*hate.x);
+    vec2 uv = (((texture_coords)*(image_details)) - texture_details.xy*texture_details.ba)/texture_details.ba;
+    vec2 coords = uv.xy;
+    vec2 adjusted_uv = uv - vec2(0.5, 0.5);
+    adjusted_uv.x = adjusted_uv.x*texture_details.b/texture_details.a;
+    
+    
+    red_tex = HSL(red_tex);
+    blue_tex = HSL(blue_tex);
+    
+    
     
 
+    if(red_tex.z < 0.8) {
+        red_tex.x = 0;
+        red_tex.y = 3;
+    } else {
+        red_tex.a = 0;
+    }
+
+    if(blue_tex.z < 0.8){
+        blue_tex.x = 0.5;
+        blue_tex.y = 3;
+    } else {
+        blue_tex.a = 0;
+    }
+
+    if(tex.z < 0.8){
+        blue_tex.a = 0.2;
+        red_tex.a = 0.2;
+    }
+    if (tex.a == 0){
+        red_tex.a = 0;
+        blue_tex.a = 0;
+    }
+    if (anaglyphic.g > 0.0 || anaglyphic.g < 0.0) {
+        red_tex = RGB(red_tex);
+        blue_tex = RGB(blue_tex);
+    }
+
+    float ratio = 0.5;
+    tex = ratio*red_tex + ratio*blue_tex;// + (1-(2*ratio))*tex;
+
     // required
-    return dissolve_mask(tex*colour, texture_coords, uv);
+	return dissolve_mask(tex*colour, texture_coords, uv);
+}
+
+number hue(number s, number t, number h)
+{
+	number hs = mod(h, 1.)*6.;
+	if (hs < 1.) return (t-s) * hs + s;
+	if (hs < 3.) return t;
+	if (hs < 4.) return (t-s) * (4.-hs) + s;
+	return s;
+}
+
+vec4 RGB(vec4 c)
+{
+	if (c.y < 0.0001)
+		return vec4(vec3(c.z), c.a);
+
+	number t = (c.z < .5) ? c.y*c.z + c.z : -c.y*c.z + (c.y+c.z);
+	number s = 2.0 * c.z - t;
+	return vec4(hue(s,t,c.x + 1./3.), hue(s,t,c.x), hue(s,t,c.x - 1./3.), c.w);
+}
+
+vec4 HSL(vec4 c)
+{
+	number low = min(c.r, min(c.g, c.b));
+	number high = max(c.r, max(c.g, c.b));
+	number delta = high - low;
+	number sum = high+low;
+
+	vec4 hsl = vec4(.0, .0, .5 * sum, c.a);
+	if (delta == .0)
+		return hsl;
+
+	hsl.y = (hsl.z < .5) ? delta / sum : delta / (2.0 - sum);
+
+	if (high == c.r)
+		hsl.x = (c.g - c.b) / delta;
+	else if (high == c.g)
+		hsl.x = (c.b - c.r) / delta + 2.0;
+	else
+		hsl.x = (c.r - c.g) / delta + 4.0;
+
+	hsl.x = mod(hsl.x / 6., 1.);
+	return hsl;
 }
 
 vec4 dissolve_mask(vec4 tex, vec2 texture_coords, vec2 uv)

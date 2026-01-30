@@ -35,8 +35,8 @@ SMODS.Joker { --Oxy
 
     loc_vars = function(self, info_queue, center)
         return {
-            vars = { localize('k_ocstobal_oxy_quote' .. pseudorandom("seed", 1, 11)), localize('k_ocstobal_oxy_quote_alt_'.. pseudorandom("couldn't hold back huh",1,15)) },
-            --key = h
+            vars = { localize('k_ocstobal_oxy_quote' .. pseudorandom("seed", 1, 11)), localize('k_ocstobal_oxy_quote_alt_'.. pseudorandom("couldn't hold back huh",1,6)) },
+            key = next(SMODS.find_card("j_jen_oxy")) and "j_ocstobal_oxi_alt_quotes" or next(SMODS.find_card("j_ocstobal_DEBUG")) and "j_ocstobal_oxi_alt_quotes"
         }
     end,
 
@@ -126,6 +126,12 @@ SMODS.Joker { --Oxy
         --     SMODS.calculate_effect(ret, card)
         -- end
     end
+}
+
+SMODS.Joker {
+    key = "DEBUG",
+    cost = 1,
+    rarity = 'ocstobal_whatthefuck'
 }
 
 SMODS.Joker {

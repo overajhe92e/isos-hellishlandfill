@@ -31,7 +31,63 @@ SMODS.Joker {
     end,
 
     add_to_deck = function(self, card, from_debuff)
-        -- card:set_edition("e_ocstobal_hidden1", true)
+        card:set_edition("e_ocstobal_hidden1", true)
+        card:set_eternal(true)
+        G.GAME.round_resets.hands = 1
+        G.GAME.round_resets.discards = 0
+        G.hand:change_size(card.ability.extra.h_size)
+    end,
+    remove_from_deck = function(self, card, from_debuff)
+        G.GAME.round_resets.hands = 4
+        G.GAME.round_resets.discards = 4
+        G.hand:change_size(-12)
+    end,
+
+    calculate = function(self, card, context)
+        if context.joker_main then
+            return {
+                message = 'CEASE. THIS.',
+                Emult_mod = card.ability.extra.chipmult,
+                Echip_mod = card.ability.extra.chipmult
+            }
+        end
+    end
+}
+
+SMODS.Joker {
+    key = "sparkhatred",
+    config = {
+        extra = {
+            h_size = 12,
+            chipmult = 0.6
+        }
+    },
+    atlas = 'oxidyzehate',
+    pos = {
+        x = 0,
+        y = 0
+    },
+    cost = 0,
+    rarity = "ocstobal_absolute_curse",
+    soul_pos = {
+        x = 0,
+        y = 2
+    },
+    no_collection = true,
+    in_pool = function()
+        return false
+    end,
+    loc_vars = function(self,info_queue,card)
+        return {
+            vars = {
+                card.ability.extra.chipmult,
+                card.ability.extra.h_size
+            }
+        }
+    end,
+
+    add_to_deck = function(self, card, from_debuff)
+        card:set_edition("e_ocstobal_hidden1", true)
         card:set_eternal(true)
         G.GAME.round_resets.hands = 1
         G.GAME.round_resets.discards = 0
@@ -46,9 +102,63 @@ SMODS.Joker {
     calculate = function(self, card, context)
         if context.joker_main then
             return {
-                message = 'CEASE.',
+                message = 'STOP REMINDING ME OF THAT!!',
                 Emult_mod = card.ability.extra.chipmult,
                 Echip_mod = card.ability.extra.chipmult
+            }
+        end
+    end
+}
+
+SMODS.Joker {
+    key = "solhatred",
+    config = {
+        extra = {
+            h_size = 3,
+            blindsize = 1.8
+        }
+    },
+    atlas = 'oxidyzehate',
+    pos = {
+        x = 0,
+        y = 0
+    },
+    cost = 0,
+    rarity = "ocstobal_absolute_curse",
+    soul_pos = {
+        x = 0,
+        y = 3
+    },
+    no_collection = true,
+    in_pool = function()
+        return false
+    end,
+    loc_vars = function(self,info_queue,card)
+        return {
+            vars = {
+                card.ability.extra.blindsize,
+                card.ability.extra.h_size
+            }
+        }
+    end,
+
+    add_to_deck = function(self, card, from_debuff)
+        card:set_edition("e_ocstobal_hidden1", true)
+        card:set_eternal(true)
+        G.GAME.round_resets.hands = 1
+        G.GAME.round_resets.discards = 0
+        G.hand:change_size(card.ability.extra.h_size)
+    end,
+    remove_from_deck = function(self, card, from_debuff)
+        G.GAME.round_resets.hands = 10
+        G.GAME.round_resets.discards = 10
+        G.hand:change_size(-10)
+    end,
+
+    calculate = function(self, card, context)
+        if context.joker_main then
+            return {
+                message = 'Perish.'
             }
         end
     end

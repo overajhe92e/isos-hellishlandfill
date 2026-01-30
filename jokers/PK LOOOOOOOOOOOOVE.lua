@@ -10,11 +10,12 @@ SMODS.Joker {
             stored_mult = 0
         }
     },
+    pk_love = true,
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.stored_chips, card.ability.extra.stored_mult, (card.ability.extra.stored_chips + card.ability.extra.stored_mult) } }
+        return { vars = { card.ability.extra.stored_chips, card.ability.extra.stored_mult, (card.ability.extra.stored_chips + card.ability.extra.stored_mult), G.GAME.pk_love_ability } }
     end,
     calculate = function(self, card, context)
-        if context.joker_main and G.GAME.current_round.hands_left > 0 and not context.blueprint then
+        if context.joker_main and G.GAME.pk_love_ability == "Storing" and not context.blueprint then
             card.ability.extra.stored_chips = card.ability.extra.stored_chips + math.floor((hand_chips ^ 0.3))
             card.ability.extra.stored_mult = card.ability.extra.stored_mult + math.floor((mult ^ 0.3))
             return {
@@ -23,8 +24,8 @@ SMODS.Joker {
                 mult = mod_mult(0)
             }
         end
-        if context.joker_main and G.GAME.current_round.hands_left <= 0 then
-            if card.ability.extra.stored_chips > 0 then
+        if context.joker_main and G.GAME.pk_love_ability == "Unleashing" then
+            if to_big(card.ability.extra.stored_chips) > to_big(0) then
                 return {
                     message = "X" ..
                         tostring(card.ability.extra.stored_chips + card.ability.extra.stored_mult) .. " Chips & Mult",
@@ -35,7 +36,7 @@ SMODS.Joker {
                 }
             end
         end
-        if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
+        if context.after and G.GAME.pk_love_ability == "Unleashing" and not context.blueprint then
             card.ability.extra.stored_chips = 0
             card.ability.extra.stored_mult = 0
             return {
@@ -58,32 +59,37 @@ SMODS.Joker {
             stored_mult = 0
         }
     },
+    pk_love = true,
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.stored_chips, card.ability.extra.stored_mult, (card.ability.extra.stored_chips + card.ability.extra.stored_mult) } }
+        return { vars = { card.ability.extra.stored_chips, card.ability.extra.stored_mult, (card.ability.extra.stored_chips + card.ability.extra.stored_mult), G.GAME.pk_love_ability } }
     end,
     calculate = function(self, card, context)
-        if context.joker_main and G.GAME.current_round.hands_left > 0 then
-            card.ability.extra.stored_chips = card.ability.extra.stored_chips + math.floor((hand_chips ^ 0.7))
-            card.ability.extra.stored_mult = card.ability.extra.stored_mult + math.floor((mult ^ 0.7))
+        if context.joker_main and G.GAME.pk_love_ability == "Storing" and not context.blueprint then
+            card.ability.extra.stored_chips = card.ability.extra.stored_chips + math.floor((hand_chips * 0.5))
+            card.ability.extra.stored_mult = card.ability.extra.stored_mult + math.floor((mult * 0.5))
             return {
                 message = "Stored!",
                 chips = mod_chips(0),
                 mult = mod_mult(0)
             }
         end
-        if context.joker_main and G.GAME.current_round.hands_left <= 0 then
-            return {
-                message = "X" ..
-                    tostring(card.ability.extra.stored_chips + card.ability.extra.stored_mult) .. " Chips & Mult",
-                sound = "ocstobal_snd_pklove_b",
-                Xmult_mod = card.ability.extra.stored_chips + card.ability.extra.stored_mult,
-                Xchip_mod = card.ability.extra.stored_mult + card.ability.extra.stored_mult
-            }
+        if context.joker_main and G.GAME.pk_love_ability == "Unleashing" then
+            if to_big(card.ability.extra.stored_chips) > to_big(0) then
+                return {
+                    message = "X" ..
+                        tostring(card.ability.extra.stored_chips + card.ability.extra.stored_mult) .. " Chips & Mult",
+                    sound = "ocstobal_snd_pklove_b",
+                    pitch = 1,
+                    Xmult_mod = card.ability.extra.stored_chips + card.ability.extra.stored_mult,
+                    Xchip_mod = card.ability.extra.stored_mult + card.ability.extra.stored_mult
+                }
+            end
         end
-        if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
+        if context.after and G.GAME.pk_love_ability == "Unleashing" and not context.blueprint then
             card.ability.extra.stored_chips = 0
             card.ability.extra.stored_mult = 0
             return {
+                message = "Reset!",
                 colour = G.C.RED
             }
         end
@@ -102,32 +108,37 @@ SMODS.Joker {
             stored_mult = 0
         }
     },
+    pk_love = true,
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.stored_chips, card.ability.extra.stored_mult, (card.ability.extra.stored_chips + card.ability.extra.stored_mult) } }
+        return { vars = { card.ability.extra.stored_chips, card.ability.extra.stored_mult, (card.ability.extra.stored_chips + card.ability.extra.stored_mult), G.GAME.pk_love_ability } }
     end,
     calculate = function(self, card, context)
-        if context.joker_main and G.GAME.current_round.hands_left > 0 then
-            card.ability.extra.stored_chips = card.ability.extra.stored_chips + math.floor((hand_chips ^ 1.1))
-            card.ability.extra.stored_mult = card.ability.extra.stored_mult + math.floor((mult ^ 1.1))
+        if context.joker_main and G.GAME.pk_love_ability == "Storing" and not context.blueprint then
+            card.ability.extra.stored_chips = card.ability.extra.stored_chips + math.floor(hand_chips)
+            card.ability.extra.stored_mult = card.ability.extra.stored_mult + math.floor(mult)
             return {
                 message = "Stored!",
                 chips = mod_chips(0),
                 mult = mod_mult(0)
             }
         end
-        if context.joker_main and G.GAME.current_round.hands_left <= 0 then
-            return {
-                message = "X" ..
-                    tostring(card.ability.extra.stored_chips + card.ability.extra.stored_mult) .. " Chips & Mult",
-                sound = "ocstobal_snd_pklove_g",
-                Xmult_mod = card.ability.extra.stored_chips + card.ability.extra.stored_mult,
-                Xchip_mod = card.ability.extra.stored_mult + card.ability.extra.stored_mult
-            }
+        if context.joker_main and G.GAME.pk_love_ability == "Unleashing" then
+            if to_big(card.ability.extra.stored_chips) > to_big(0) then
+                return {
+                    message = "X" ..
+                        tostring(card.ability.extra.stored_chips + card.ability.extra.stored_mult) .. " Chips & Mult",
+                    sound = "ocstobal_snd_pklove_g",
+                    pitch = 1,
+                    Xmult_mod = card.ability.extra.stored_chips + card.ability.extra.stored_mult,
+                    Xchip_mod = card.ability.extra.stored_mult + card.ability.extra.stored_mult
+                }
+            end
         end
-        if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
+        if context.after and G.GAME.pk_love_ability == "Unleashing" and not context.blueprint then
             card.ability.extra.stored_chips = 0
             card.ability.extra.stored_mult = 0
             return {
+                message = "Reset!",
                 colour = G.C.RED
             }
         end
@@ -146,33 +157,37 @@ SMODS.Joker {
             stored_mult = 0
         }
     },
+    pk_love = true,
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.stored_chips, card.ability.extra.stored_mult, (card.ability.extra.stored_chips + card.ability.extra.stored_mult) } }
+        return { vars = { card.ability.extra.stored_chips, card.ability.extra.stored_mult, (card.ability.extra.stored_chips + card.ability.extra.stored_mult), G.GAME.pk_love_ability } }
     end,
     calculate = function(self, card, context)
-        if context.joker_main and G.GAME.current_round.hands_left > 0 then
-            card.ability.extra.stored_chips = card.ability.extra.stored_chips + (hand_chips ^ 1.75)
-            card.ability.extra.stored_mult = card.ability.extra.stored_mult + (mult ^ 1.75)
+        if context.joker_main and G.GAME.pk_love_ability == "Storing" and not context.blueprint then
+            card.ability.extra.stored_chips = card.ability.extra.stored_chips + math.floor((hand_chips ^ 1.75))
+            card.ability.extra.stored_mult = card.ability.extra.stored_mult + math.floor((mult ^ 1.75))
             return {
                 message = "Stored!",
                 chips = mod_chips(0),
                 mult = mod_mult(0)
             }
         end
-        if context.joker_main and G.GAME.current_round.hands_left <= 0 then
-            return {
-                message = "X" ..
-                    tostring(card.ability.extra.stored_chips + card.ability.extra.stored_mult) .. " Chips & Mult",
-                sound = "ocstobal_snd_pklove_o",
-                pitch = 1,
-                Xmult_mod = card.ability.extra.stored_chips + card.ability.extra.stored_mult,
-                Xchip_mod = card.ability.extra.stored_mult + card.ability.extra.stored_mult
-            }
+        if context.joker_main and G.GAME.pk_love_ability == "Unleashing" then
+            if to_big(card.ability.extra.stored_chips) > to_big(0) then
+                return {
+                    message = "X" ..
+                        tostring(card.ability.extra.stored_chips + card.ability.extra.stored_mult) .. " Chips & Mult",
+                    sound = "ocstobal_snd_pklove_o",
+                    pitch = 1,
+                    Xmult_mod = card.ability.extra.stored_chips + card.ability.extra.stored_mult,
+                    Xchip_mod = card.ability.extra.stored_mult + card.ability.extra.stored_mult
+                }
+            end
         end
-        if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
+        if context.after and G.GAME.pk_love_ability == "Unleashing" and not context.blueprint then
             card.ability.extra.stored_chips = 0
             card.ability.extra.stored_mult = 0
             return {
+                message = "Reset!",
                 colour = G.C.RED
             }
         end

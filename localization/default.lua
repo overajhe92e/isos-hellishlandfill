@@ -310,6 +310,17 @@ return {
 					'{s:0.8,C:dark_edition}Character by Isotypical{}'
 				},
 			},
+			j_ocstobal_oxi_alt_quotes = {
+				name = "{C:inactive}(Oxy){} Oxidyze",
+				text = {
+					'Copies the Ability of the joker',
+					'to the left and right of this character.',
+					'{C:red}Doubles blind size.{}',
+					'{C:red,s:0.9}#2#{}',
+					'{C:dark_edition,s:0.9}Origin : No origin?{}',
+					'{s:0.8,C:dark_edition}Character by Isotypical{}'
+				},
+			},
 			j_ocstobal_fakeseraph = {
 				name = "Seraph..?",
 				text = {
@@ -552,17 +563,44 @@ return {
 				}
 			},
 			j_ocstobal_oxhatred = {
-				name = "{C:ocstobal_ust}Oxidyze's Hatred{}",
+				name = "{C:ocstobal_ust}Oxidyze's Embodiment of Hatred{}",
+				text = {
+					{
+						'{C:red}Debuffs ALL Jokers{} on the right of this joker',
+						'{X:ocstobal_omegablack,C:red}^#1#{} Chips and Mult',
+						'{C:attention}+10{} Hand Size while owned'
+					},
+					{
+						'When this joker is {C:red}destroyed{}',
+						'Sets {C:blue}Hands{} and {C:red}Discards{} to {C:attention}4{}',
+						'and {C:attention}-2{} Hand Size'
+					}
+				}
+			},
+			j_ocstobal_sparkhatred = {
+				name = "{C:ocstobal_ust}Sparky's Embodiment of Hatred{}",
 				text = {
 					{
 						'{X:ocstobal_omegablack,C:red}^#1#{} Mult and Chips',
-						'Sets {C:blue}Hands{} to {C:attention}1{} and {C:red}Discards{} to {C:attention}0{}',
-						'when this Joker is obtained',
-						'{C:attention}+10{} Hand Size'
+						'{C:attention}+6{} Hand Size'
 					},
 					{
-						'When this joker is {C;red}destroyed{}',
+						'When this joker is {C:red}destroyed{}',
 						'Sets {C:blue}Hands{} and {C:red}Discards{} to {C:attention}10{}'
+					}
+				}
+			},
+			j_ocstobal_solhatred = {
+				name = "{C:ocstobal_ust}Solinium's Embodiment of Hatred{}",
+				text = {
+					{
+						'{X:ocstobal_omegablack,C:red}^#1#{} Blind Size',
+						'{C:attention}+2{} Hand Size',
+						'{C:inactive}Scalae...{}'
+					},
+					{
+						'When this joker is {C:red}destroyed{}',
+						'{C:redD}Destroys{} a random joker'
 					}
 				}
 			},
@@ -1038,13 +1076,73 @@ return {
 					"noxintrus.wmv"
 				}
 			},
-			j_ocstobal_obscene_joke = { -- these obscure jokes are gonna get me banned istg
-				name = "Absurd Joke",
+			j_ocstobal_obscene_joke = {
+				name = "Your Absurd Joke",
 				text = {
-					"{C:red}Don't pick up, please.{}",
-					"{C:red}SERAPH. FUCKING. VOIDGLOOM.{}",
-					"{C:red}STOP. CALLING. ME.{} {X:ocstobal_technicallythisisalmanacs_pastel_yellow,C:ocstobal_omegablack}OC{}{X:ocstobal_technicallythisisalmanacs_pink,C:ocstobal_omegablack}KS{}{X:ocstobal_nightmare_blue,C:white}IE{}.",
-					"{C:inactive}- Oxidyze{}"
+					{
+						"Just wastes your money.",
+						"{C:inactive}Don't pick up.{}"
+					},
+					{
+						"{C:inactive}So this just does nothing..?{}",
+						"{C:inactive,s:0.7}Character Hatred priority goes as followed:{}",
+						"{C:inactive,s:0.7}Oxidyze, Sparky, Solinium{}"
+					},
+
+				}
+			},
+			j_ocstobal_obscene_joke_oxidyze = {
+				name = "Oxidyze's Absurd Joke",
+				text = {
+					{
+						"{C:red}DO NOT pick up.{}"
+					},
+					{
+						"{C:red}SERAPH. FUCKING. VOIDGLOOM.{}",
+						"{C:red}STOP. CALLING. ME.{} {X:pastel_yellow}OC{}{X:pink}KS{}{X:black,C:white}IE{}",
+						"{C:ocstobal_nightmare_purple}hi{} {X:pastel_yellow,C:ocstobal_nightmare_purple}oc{}{X:pink,C:ocstobal_nightmare_purple}ks{}{X:default,C:white}ie{}"
+					},
+				}
+			},
+			j_ocstobal_obscene_joke_sparky = {
+				name = "Sparky's Absurd Joke",
+				text = {
+					{
+						"{C:red}Do not pick up.{}"
+					},
+					{
+						"{C:red}STOP MENTIONING HIS DEATH!!{}",
+						"{C:red}PLEASE, STOP MENTIONING ABBIE'S DEATH!!{}",
+						"{C:ocstobal_nightmare_purple}Abbie died? Pft, so did Lana.{}"
+					}
+				}
+			},
+			j_ocstobal_obscene_joke_solinium = {
+				name = "Solinium's Absurd Joke",
+				text = {
+					{
+						"{C:red}Do not pick up.{}",
+					},
+					{
+						"{C:red}Jesus christ Seraph... SHUT UP!{}",
+						"{C:red}YOU'RE NOT FUNNY FOR MOCKING ME LIKE THAT!{}",
+						"{C:ocstobal_nightmare_purple}Haha, \"Meow meow meow\".{}"
+					}
+				}
+			},
+			j_ocstobal_obscene_joke_oh_no = {
+				name = "Seraph's Backfired Joke",
+				text = {
+					{
+						"Creates {C:red}ALL{} {C:ocstobal_ust}Embodiments of Hatred{}",
+						"creates {C:ocstobal_sewh}Something Evil{},",
+						"and {C:red}Destroys{} Seraph",
+						"{C:red}Do not pick up.{}"
+					},
+					{
+						"{C:ocstobal_nightmare_purple}H-hey..! This was all a joke!{}",
+						"{C:ocstobal_nightmare_purple}W-wait! WAIT- I'M SORRY! I'M SORRY!{}"
+					}
 				}
 			},
 			j_ocstobal_porky = {
@@ -1070,10 +1168,19 @@ return {
 				name = "PK Love Alpha",
 				text = {
 					{
-						"Stores {X:defualt,C:white}^0.3{} of your current",
-						"chips and mult, then",
-						"{C:red}unleashes{} stored Chips and Mult on",
-						"last hand as {X:red,C:white}XMult{} and {X:blue,C:white}XChips{}"
+						"Choose between {C:attention}3 different abilities{} on this Joker",
+						"Currently: {C:attention}#4#{}"
+					},
+					{
+						"{C:attention}Store{} : Stores {X:default,C:white}^0.3{} of current",
+						"{C:blue}Chips{} and {C:red}Mult{} when this {C:attention}Joker triggers{}"
+					},
+					{
+						"{C:inactive}Passive{} : Lets you hold onto the currently stored {C:blue}Chips{} and {C:red}Mult{}",
+					},
+					{
+						"{C:red}Unleash{} : {C:attention}Unleashes{} all of your stored {C:blue}Chips{} and {C:red}Mult{} as {X:legendary,C:white}XChip+Mult{}",
+						"{C:attention}Resets{} stored {C:blue}Chips{} and {C:red}Mult{}"
 					},
 					{
 						"Stored Chips : {C:blue}#1#{}",
@@ -1086,10 +1193,19 @@ return {
 				name = "PK Love Beta",
 				text = {
 					{
-						"Stores {X:attention,C:white}X0.5{} of your current",
-						"chips and mult, then",
-						"{C:red}unleashes{} stored Chips and Mult on",
-						"last hand as {X:red,C:white}XMult{} and {X:blue,C:white}XChips{}"
+						"Choose between {C:attention}3 different abilities{} on this Joker",
+						"Currently: {C:attention}#4#{}"
+					},
+					{
+						"{C:attention}Store{} : Stores {X:attention,C:white}X0.5{} of current",
+						"{C:blue}Chips{} and {C:red}Mult{} when this {C:attention}Joker triggers{}"
+					},
+					{
+						"{C:inactive}Passive{} : Lets you hold onto the currently stored {C:blue}Chips{} and {C:red}Mult{}",
+					},
+					{
+						"{C:red}Unleash{} : {C:attention}Unleashes{} all of your stored {C:blue}Chips{} and {C:red}Mult{} as {X:legendary,C:white}XChip+Mult{}",
+						"{C:attention}Resets{} stored {C:blue}Chips{} and {C:red}Mult{}"
 					},
 					{
 						"Stored Chips : {C:blue}#1#{}",
@@ -1102,10 +1218,19 @@ return {
 				name = "PK Love Gamma",
 				text = {
 					{
-						"Stores {X:legendary,C:white}X1{} of your current",
-						"chips and mult, then",
-						"{C:red}unleashes{} stored Chips and Mult on",
-						"last hand as {X:red,C:white}XMult{} and {X:blue,C:white}XChips{}"
+						"Choose between {C:attention}3 different abilities{} on this Joker",
+						"Currently: {C:attention}#4#{}"
+					},
+					{
+						"{C:attention}Store{} : Stores {X:legendary,C:white}X1{} of current",
+						"{C:blue}Chips{} and {C:red}Mult{} when this {C:attention}Joker triggers{}"
+					},
+					{
+						"{C:inactive}Passive{} : Lets you hold onto the currently stored {C:blue}Chips{} and {C:red}Mult{}",
+					},
+					{
+						"{C:red}Unleash{} : {C:attention}Unleashes{} all of your stored {C:blue}Chips{} and {C:red}Mult{} as {X:legendary,C:white}XChip+Mult{}",
+						"{C:attention}Resets{} stored {C:blue}Chips{} and {C:red}Mult{}"
 					},
 					{
 						"Stored Chips : {C:blue}#1#{}",
@@ -1118,10 +1243,19 @@ return {
 				name = "PK Love Omega",
 				text = {
 					{
-						"Stores {X:dark_edition,C:white}^1.75{} of your current",
-						"chips and mult, then",
-						"{C:red}unleashes{} stored Chips and Mult on",
-						"last hand as {X:red,C:white}XMult{} and {X:blue,C:white}XChips{}"
+						"Choose between {C:attention}3 different abilities{} on this Joker",
+						"Currently: {C:attention}#4#{}"
+					},
+					{
+						"{C:attention}Store{} : Stores {X:dark_edition,C:white}^1.75{} of current",
+						"{C:blue}Chips{} and {C:red}Mult{} when this {C:attention}Joker triggers{}"
+					},
+					{
+						"{C:inactive}Passive{} : Lets you hold onto the currently stored {C:blue}Chips{} and {C:red}Mult{}",
+					},
+					{
+						"{C:red}Unleash{} : {C:attention}Unleashes{} all of your stored {C:blue}Chips{} and {C:red}Mult{} as {X:legendary,C:white}XChip+Mult{}",
+						"{C:attention}Resets{} stored {C:blue}Chips{} and {C:red}Mult{}"
 					},
 					{
 						"Stored Chips : {C:blue}#1#{}",
@@ -1229,7 +1363,15 @@ return {
 					-- }
 
 				}
-			}
+			},
+			j_ocstobal_candycane = { -- Welcome back, Candycane. PLease don't fuck up.
+				name = "Sappy",
+				text = {
+					"Scored {C:diamonds}Diamonds{} permanently gain",
+					"{X:red,C:white}X0.1{} {C:attention}Held in hand{} Mult",
+					"{C:blue,s:0.8,E:1}Original Character by: Candycane{}"
+				}
+			},
 		},
 		Other = {
 			ocstobal_recluses_eye_seal = {
@@ -1363,6 +1505,13 @@ return {
 			k_ocstobal_oxy_quote11 =
 			"\"I know how many quotes I have, I know what's happening internally. This is k_ocstobal_oxy_quote11.\"",
 
+			k_ocstobal_oxy_quote_alt_1 = "WHO ARE YOU?!",
+			k_ocstobal_oxy_quote_alt_2 = "YOU FRAUD!",
+			k_ocstobal_oxy_quote_alt_3 = "Iso, get her away from me!",
+			k_ocstobal_oxy_quote_alt_4 = "I'm the real Oxy- I MEAN Oxidyze, not her!",
+			k_ocstobal_oxy_quote_alt_5 = "I AM NOT A \"BNUUY\"!",
+			k_ocstobal_oxy_quote_alt_6 = "Seraph is probably laughing his ass off, and I'm actually gonna kill him.",
+
 			k_ocstobal_solinium_quote1 = "\"Meow!\"",
 			k_ocstobal_solinium_quote2 = "\"mrrp mrrowww :3\"", -- :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3
 			k_ocstobal_solinium_quote3 = "\"Petey the cat? Oh, nonono. I'm NOT associated with HIM.\"",
@@ -1381,6 +1530,11 @@ return {
 			k_ocstobal_seraph_quote3 = "\"I don't have a knife in my head, what are you on?\"",
 			k_ocstobal_seraph_quote4 = "\"HEY 'OCKSIE'!!! LOOK OVER HERE!!!\"", --"holy shit ocksie reference"
 			k_ocstobal_seraph_quote5 = "\"Solinium likes being pet, but he doesn't like admitting it!\"",
+
+			k_ocstobal_seraph_oxyoxidyze_1 = "LMFAOOOOOOOOOOO",
+			k_ocstobal_seraph_oxyoxidyze_2 = "HEY, HEY OXIDYZE, I THINK YOU GOT A TWIN!",
+			k_ocstobal_seraph_oxyoxidyze_3 = "THAT'S SO FUNNY, I CAN'T STOP LAUGHING!",
+			k_ocstobal_seraph_oxyoxidyze_4 = "YOU CAN'T DENY IT NOW!",
 
 			k_ocstobal_seraph_lv100_quote1 = "\"Why do you THINK I would stop there?\"",
 			k_ocstobal_seraph_lv100_quote2 = "\"I just grow more and more powerful!\"",

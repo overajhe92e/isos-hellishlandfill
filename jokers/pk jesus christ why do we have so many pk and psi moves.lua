@@ -1,9 +1,30 @@
--- SMODS.Joker {
---     key = 'psi_hypnosis',
---     cost = 1,
---     rarity = 3,
---     no_collection = true
--- }
+SMODS.Joker {
+    key = 'psi_hypnosis',
+    cost = 12,
+    rarity = 3,
+    calculate = function(self, card, context)
+        if context.setting_blind and not context.blueprint and context.blind.boss then
+            G.E_MANAGER:add_event(Event({
+                func = function()
+                    G.E_MANAGER:add_event(Event({
+                        func = function()
+                            play_sound('ocstobal_ailment')
+                            G.GAME.blind:disable()
+                            delay(0.4)
+                            return true
+                        end
+                    }))
+                    G.GAME.hypnosis = true
+                    return true
+                end
+            }))
+            return nil, true -- This is for Joker retrigger purposes
+        end
+        if context.end_of_round and context.main_eval then
+            G.GAME.hypnosis = false
+        end
+    end,
+}
 
 -- SMODS.Joker {
 --     key = 'psi_paralysis',

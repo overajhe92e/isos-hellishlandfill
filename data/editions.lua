@@ -8,7 +8,7 @@ SMODS.Edition {
     config = { card_limit = -1},
     weight = 0,
     in_shop = false,
-    sound = { sound = 'negative', vol = 1.5, per = 0.66 },
+    sound = { sound = 'ocstobal_chimera_ping', vol = 1.5, per = 0.7 },
     loc_vars = function(self, info_queue, card)
         return { vars = { card.edition.card_limit } }
     end,

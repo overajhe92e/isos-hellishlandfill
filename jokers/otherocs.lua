@@ -113,7 +113,7 @@ SMODS.Joker {
                 return {
                     message = "GET OUT!"
                 }
-            elseif context.setting_blind and next(SMODS.find_card("j_dw_astro")) and not next(SMODS.find_mod("")) and not next(SMODS.find_mod("")) then
+            elseif context.setting_blind and next(SMODS.find_card("j_dw_astro")) and not next(SMODS.find_mod("dw")) and not starspace_mod == true then
                 SMODS.destroy_cards(SMODS.find_card('j_dw_astro'), nil)
                 card.ability.extra.chips = card.ability.extra.chips ^ 9
                 return {
@@ -261,6 +261,41 @@ SMODS.Joker {
         if context.joker_main then
             return {
                 xchips = card.ability.extra.xchips
+            }
+        end
+    end
+}
+
+SMODS.Joker {
+    key = 'candycane',
+    cost = 10,
+    rarity = 3,
+    config = {
+        extra = {
+            i_made_fun_of_him_too_much = 0.1,
+            suit_1 = "Diamonds"
+        }
+    },
+    blueprint_compat = true,
+    atlas = 'other_ocs',
+    pos = { x = 0, y = 2 },
+    soul_pos = { x = 1, y = 2 },
+    pronouns = 'he_him',
+
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.xmult } }
+    end,
+
+    update = function(self,card,dt)
+    end,
+
+    calculate = function(self, card, context)
+        if context.individual and context.cardarea == G.play and context.other_card:is_suit(card.ability.extra.suit_1) and not context.blueprint then
+            context.other_card.ability.perma_h_x_mult = context.other_card.ability.perma_h_x_mult or 0
+            context.other_card.ability.perma_h_x_mult = context.other_card.ability.perma_h_x_mult + card.ability.extra.i_made_fun_of_him_too_much
+            return {
+                extra = { message = localize('k_upgrade_ex'), colour = G.C.MULT },
+                card = card
             }
         end
     end

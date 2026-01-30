@@ -281,11 +281,36 @@ SMODS.Joker {
     rarity = 1,
     cost = 1,
     atlas = "other_jokers",
-    pos = {x=4,y=1},
+    pos = { x = 4, y = 1 },
     add_to_deck = function(self, card)
-        SMODS.add_card { key = 'j_ocstobal_oxhatred' }
-        SMODS.destroy_cards(card, nil, nil, true)
-    end
+        if next(SMODS.find_card("j_ocstobal_Oxy")) and next(SMODS.find_card("j_ocstobal_solinium")) and next(SMODS.find_card("j_ocstobal_sparky")) then
+            SMODS.add_card { key = 'j_ocstobal_oxhatred' }
+            SMODS.add_card { key = 'j_ocstobal_sparkhatred' }
+            SMODS.add_card { key = 'j_ocstobal_solhatred' }
+            SMODS.add_card { key = 'j_ocstobal_somethingevil' }
+            SMODS.destroy_cards(card, nil, nil, true)
+            SMODS.destroy_cards(SMODS.find_card("j_ocstobal_seraph"), nil, nil, true)
+        elseif next(SMODS.find_card("j_ocstobal_Oxy")) then
+            SMODS.add_card { key = 'j_ocstobal_oxhatred' }
+            SMODS.destroy_cards(card, nil, nil, true)
+        elseif next(SMODS.find_card("j_ocstobal_sparky")) and not next(SMODS.find_card("j_ocstobal_Oxy")) then
+            SMODS.add_card { key = 'j_ocstobal_sparkhatred' }
+            SMODS.destroy_cards(card, nil, nil, true)
+        elseif next(SMODS.find_card("j_ocstobal_solinium")) and not next(SMODS.find_card("j_ocstobal_Oxy")) and not next(SMODS.find_card("j_ocstobal_sparky")) then
+            SMODS.add_card { key = 'j_ocstobal_solhatred' }
+            SMODS.destroy_cards(card, nil, nil, true)
+        end
+    end,
+    loc_vars = function(self, info_queue, card)
+        return {
+            key = 
+            next(SMODS.find_card("j_ocstobal_Oxy")) and next(SMODS.find_card("j_ocstobal_sparky")) and next(SMODS.find_card("j_ocstobal_solinium")) and "j_ocstobal_obscene_joke_oh_no"
+            or next(SMODS.find_card("j_ocstobal_Oxy")) and "j_ocstobal_obscene_joke_oxidyze"
+            or next(SMODS.find_card("j_ocstobal_solinium")) and "j_ocstobal_obscene_joke_solinium"
+            or next(SMODS.find_card("j_ocstobal_sparky")) and "j_ocstobal_obscene_joke_sparky"
+            
+        }
+    end,
 }
 
 -- SMODS.Joker {
@@ -301,10 +326,10 @@ SMODS.Joker {
 -- }
 
 SMODS.Scoring_Calculation({
-	key = 'tetration',
-	func = function(self, chips, mult, flames)
-		return chips ^ mult^(mult^mult)
-	end,
-	text = '^^', -- controls the UI symbol displayed between the chips and mult box
-	colour = G.C.DARK_EDITION
+    key = 'tetration',
+    func = function(self, chips, mult, flames)
+        return chips ^ mult ^ (mult ^ mult)
+    end,
+    text = '^^', -- controls the UI symbol displayed between the chips and mult box
+    colour = G.C.DARK_EDITION
 })
