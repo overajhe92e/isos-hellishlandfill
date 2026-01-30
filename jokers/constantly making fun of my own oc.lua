@@ -130,12 +130,6 @@ SMODS.Joker { --Oxy
 }
 
 SMODS.Joker {
-    key = "DEBUG",
-    cost = 1,
-    rarity = 'ocstobal_whatthefuck'
-}
-
-SMODS.Joker {
     key = "oxyemp",
     rarity = "ocstobal_unique",
     cost = 50,
