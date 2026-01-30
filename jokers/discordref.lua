@@ -22,7 +22,7 @@ SMODS.Joker {
     calculate = function(self,card,context)
         if context.joker_main then
             return {
-                card.ability.extra.other_ocs
+                xmult = card.ability.extra.other_ocs
             }
         end
     end
