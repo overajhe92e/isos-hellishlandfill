@@ -26,7 +26,8 @@ SMODS.Joker { --Oxy
         y = 1
     },
     pools = {
-        ["copycats"] = true
+        ["copycats"] = true,
+        ["ocstob"] = true
     },
 
     set_badges = function(self, card, badges)

@@ -24,6 +24,7 @@ SMODS.Joker { --Sparky
     unlocked = true,
     discovered = false,
     atlas = 'triple_s',
+    pools = {["ocstob"] = true},
 
     loc_vars = function(self, info_queue, center)
         return {

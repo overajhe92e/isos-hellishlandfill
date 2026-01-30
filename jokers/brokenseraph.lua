@@ -17,11 +17,6 @@ SMODS.Joker { --Broken Seraph
     cost = 6,
     rarity = 'ocstobal_cursed',
     blueprint_compat = true,
-    eternal_compat = true,
-    perishable_compat = true,
-    unlocked = true,
-    discovered = false,
-    no_collection = true,
     atlas = 'CustomJokers',
     soul_pos = {
         x = 1,

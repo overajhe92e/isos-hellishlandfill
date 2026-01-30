@@ -19,7 +19,7 @@ function love.draw()
 		return (assert(love.graphics.newImage(tempimagedata), ("I honestly don't know how you get here")))
 	end
 
-	--...Borrow. Some code. -Doctor4t
+	--...Borrow, Some code. -Doctor4t
 	if G.swoon and (G.swoon > 0) then
 		if ocstobal.swoon == nil then ocstobal.swoon = FuckingImage("SWOON.png") end
 		love.graphics.setColor(0, 0.5, 1, 1)

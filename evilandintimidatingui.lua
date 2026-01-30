@@ -776,7 +776,7 @@ function sphlvls(buttonname)
 								n = G.UIT.R,
 								config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 								nodes = {
-									{ n = G.UIT.T, config = { text = "Everything beyond this requires Unbalanced Mode or higher!", scale = 0.4, colour = G.C.FILTER, align = 'm' } }
+									{ n = G.UIT.T, config = { text = "------", scale = 0.4, colour = G.C.FILTER, align = 'm' } }
 								}
 							},
 							{
@@ -797,7 +797,7 @@ function sphlvls(buttonname)
 								n = G.UIT.R,
 								config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 								nodes = {
-									{ n = G.UIT.T, config = { text = "If you're craving for more insanity... \"Slop\" Mode is for YOU!", scale = 0.4, colour = G.C.DARK_EDITION, align = 'm' } }
+									{ n = G.UIT.T, config = { text = "------", scale = 0.4, colour = G.C.DARK_EDITION, align = 'm' } }
 								}
 							},
 							{

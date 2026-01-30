@@ -6,6 +6,7 @@ SMODS.Joker {
     pos = { x = 0, y = 0 },
     soul_pos = { x = 1, y = 0 },
     blueprint_compat = true,
+    pools = {["ocstob"] = true},
 
     loc_vars = function(self, info_queue, card)
         return { vars = { localize('k_ocstobal_shrimpo_quote' .. pseudorandom("seed", 1, 3)) } }
@@ -70,6 +71,7 @@ SMODS.Joker {
     end,
     blueprint_compat = true,
     no_collection = true,
+    pools = {["ocstob"] = true},
 
     calculate = function(self, card, context)
         if context.end_of_round and context.game_over == false and context.main_eval and context.beat_boss then
@@ -121,6 +123,7 @@ SMODS.Joker {
             multi = 1
         }
     },
+    pools = {["ocstob"] = true},
     blueprint_compat = true,
     loc_vars = function(self, info_queue, card)
         local planets_used = 0

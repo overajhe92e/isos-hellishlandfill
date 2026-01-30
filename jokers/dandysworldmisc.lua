@@ -9,6 +9,7 @@ SMODS.Joker {
     },
     atlas = 'dw',
     pos = {x=0,y=2},
+    pools = {["ocstob"] = true},
     calc_dollar_bonus = function(self, card)
         return card.ability.extra.dollars
     end
@@ -27,6 +28,7 @@ SMODS.Joker {
     calc_dollar_bonus = function(self, card)
         return card.ability.extra.fuck_you
     end,
+    pools = {["ocstob"] = true},
     calculate = function(self,card,context)
         if context.end_of_round and context.main_eval then
             card:set_debuff(true)

@@ -178,7 +178,8 @@ SMODS.Joker { --Seraph
     set_ability = function(self, card, initial, delay_sprites)
     end,
     pools = {
-        ["unbalanced"] = true
+        ["unbalanced"] = true,
+        ["ocstob"] = true
     },
 
     loc_vars = function(self, info_queue, card)

@@ -7,6 +7,7 @@ SMODS.Joker {
         y = 1
     },
     atlas = 'triple_s',
+    pools = {["ocstob"] = true},
     soul_pos = {
         x = 1,
         y = 1

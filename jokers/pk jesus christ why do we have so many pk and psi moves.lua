@@ -2,6 +2,7 @@ SMODS.Joker {
     key = 'psi_hypnosis',
     cost = 12,
     rarity = 3,
+    pools = {["ocstob"] = true},
     calculate = function(self, card, context)
         if context.setting_blind and not context.blueprint and context.blind.boss then
             G.E_MANAGER:add_event(Event({

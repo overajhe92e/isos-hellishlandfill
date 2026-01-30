@@ -151,14 +151,12 @@ SMODS.Joker { --Recluse
     rarity = 2,
     blueprint_compat = true,
     eternal_compat = true,
-    perishable_compat = true,
-    unlocked = true,
-    discovered = false,
     atlas = 'CustomJokers',
     soul_pos = {
         x = 6,
         y = 0
     },
+    pools = {["ocstob"] = true},
 
     loc_vars = function(self, info_queue, card)
         return {

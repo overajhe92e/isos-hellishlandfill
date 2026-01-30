@@ -17,6 +17,7 @@ SMODS.Joker { --Solinium
     cost = 20,
     rarity = 4,
     atlas = 'triple_s',
+    pools = {["ocstob"] = true},
     soul_pos = {
         x = 4,
         y = 0

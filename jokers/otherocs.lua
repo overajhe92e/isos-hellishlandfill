@@ -8,7 +8,8 @@ SMODS.Joker {
     blueprint_compat = true,
     pools = {
         ["copycats"] = true,
-        ["unbalanced"] = true
+        ["unbalanced"] = true,
+        ["ocstob"] = true
     },
     pronouns = 'she_her',
 
@@ -82,6 +83,7 @@ SMODS.Joker {
     in_pool = function(self, args)
         return true
     end,
+    pools = {["ocstob"] = true},
 
     pools = {
         ["unbalanced"] = true
@@ -156,6 +158,7 @@ SMODS.Joker {
     config = {
         jokerslots = 1
     },
+    pools = {["ocstob"] = true},
     blueprint_compat = false,
     atlas = 'other_ocs',
     pos = { x = 2, y = 0 },
@@ -191,6 +194,7 @@ SMODS.Joker {
             suit_2 = "Hearts"
         }
     },
+    pools = {["ocstob"] = true},
     pronouns = "they_them",
     loc_vars = function(self, info_queue, card)
         return {
@@ -276,6 +280,7 @@ SMODS.Joker {
             suit_1 = "Diamonds"
         }
     },
+    pools = {["ocstob"] = true},
     blueprint_compat = true,
     atlas = 'other_ocs',
     pos = { x = 0, y = 2 },
