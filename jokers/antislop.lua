@@ -1,7 +1,7 @@
 SMODS.Joker {
     key = 'antislopinator',
     cost = 1,
-    rarity = "ocstobal_cursed",
+    rarity = 1,
     atlas = 'other_jokers',
     pos = { x = 1, y = 0 },
     add_to_deck = function(self, card, from_debuff)

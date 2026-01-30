@@ -4,7 +4,7 @@ SMODS.Booster {
         name = "Junkyard Pack",
         text = {
             "Choose {C:attention}1{} of {C:attention}3{} Iso. Junkyard Jokers",
-            "Does not include {C:ocstobal_finalrgb}Terminus{} or {C:ocstobal_ust}Cursed{} Jokers",
+            "Does not include {C:ocstobal_finalrgb}Terminus{}, {C:ocstobal_ust}Cursed{}, or {C:attention}Unique{} Jokers",
         },
         group_name = "Junk..."
     },

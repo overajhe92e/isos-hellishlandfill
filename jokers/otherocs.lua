@@ -83,10 +83,10 @@ SMODS.Joker {
     in_pool = function(self, args)
         return true
     end,
-    pools = {["ocstob"] = true},
 
     pools = {
-        ["unbalanced"] = true
+        ["unbalanced"] = true,
+        ["ocstob"] = true
     },
 
     loc_vars = function(self, info_queue, card)
