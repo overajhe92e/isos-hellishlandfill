@@ -166,6 +166,14 @@ SMODS.Atlas {
 	atlas_table = "ASSET_ATLAS"
 }
 
+SMODS.Atlas {
+	key = 'junkyard_tags',
+	px = 71,
+	py = 95,
+	path = 'tags.png',
+	atlas_table = "ASSET_ATLAS"
+}
+
 SMODS.ObjectType({
 	key = "ocstob",
 	default = "j_ocstobal_solinium",
@@ -620,6 +628,7 @@ local function ex()
 	assert(SMODS.load_file("data/otherchecks.lua"))()
 	assert(SMODS.load_file("data/consumables.lua"))()
 	assert(SMODS.load_file("data/quips.lua"))()
+	assert(SMODS.load_file("data/tags.lua"))()
 	-- assert(SMODS.load_file("data/sleeve.lua"))() do not use
 end
 

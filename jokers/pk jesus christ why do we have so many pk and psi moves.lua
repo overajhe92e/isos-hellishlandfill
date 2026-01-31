@@ -2,6 +2,11 @@ SMODS.Joker {
     key = 'psi_hypnosis',
     cost = 12,
     rarity = 3,
+    config = {
+        extra = {
+            dura = 3
+        }
+    },
     atlas = 'placeholder',
     pools = {["ocstob"] = true},
     calculate = function(self, card, context)
@@ -24,6 +29,9 @@ SMODS.Joker {
         end
         if context.end_of_round and context.main_eval then
             G.GAME.hypnosis = false
+            if card.ability.extra.dura <= 0 then
+                --destroys self
+            end
         end
     end,
 }

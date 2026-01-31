@@ -300,12 +300,34 @@ return {
 		},
 		Joker = {
 			j_ocstobal_Oxy = {
-				name = "Oxidyze",
+				name = "{C:ocstobal_oxi_gradient}Oxidyze{}",
 				text = {
 					'Copies the Ability of the joker',
 					'to the left and right of this character.',
 					'{C:red}Doubles blind size.{}',
 					'{C:blue,s:0.9}#1#{}',
+					'{C:dark_edition,s:0.9}Origin : No origin?{}',
+					'{s:0.8,C:dark_edition}Character by Isotypical{}'
+				},
+			},
+			j_ocstobal_oxi_oldname = {
+				name = "{C:ocstobal_oxi_gradient}Oxy{}",
+				text = {
+					'Copies the Ability of the joker',
+					'to the left and right of this character.',
+					'{C:red}Doubles blind size.{}',
+					'{C:blue,s:0.9}#1#{}',
+					'{C:dark_edition,s:0.9}Origin : No origin?{}',
+					'{s:0.8,C:dark_edition}Character by Isotypical{}'
+				},
+			},
+			j_ocstobal_oxi_get_trolled_lmfao = {
+				name = "\"{C:pastel_yellow}oc{}{C:pink}ks{}ie\"",
+				text = {
+					'Copies the Ability of the joker',
+					'to the left and right of this character.',
+					'{C:red}Doubles blind size.{}',
+					'{C:red,s:0.9}ISOTYPICAL FUCK OFF ALREADY{}',
 					'{C:dark_edition,s:0.9}Origin : No origin?{}',
 					'{s:0.8,C:dark_edition}Character by Isotypical{}'
 				},
@@ -1197,7 +1219,7 @@ return {
 						"Currently: {C:attention}#4#{}"
 					},
 					{
-						"{C:attention}Store{} : Stores {X:attention,C:white}X0.5{} of current",
+						"{C:attention}Store{} : Stores {X:attention,C:white}^0.6{} of current",
 						"{C:blue}Chips{} and {C:red}Mult{} when this {C:attention}Joker triggers{}"
 					},
 					{
@@ -1222,7 +1244,7 @@ return {
 						"Currently: {C:attention}#4#{}"
 					},
 					{
-						"{C:attention}Store{} : Stores {X:legendary,C:white}X1{} of current",
+						"{C:attention}Store{} : Stores {X:legendary,C:white}X0.1{} of current",
 						"{C:blue}Chips{} and {C:red}Mult{} when this {C:attention}Joker triggers{}"
 					},
 					{
@@ -1247,7 +1269,7 @@ return {
 						"Currently: {C:attention}#4#{}"
 					},
 					{
-						"{C:attention}Store{} : Stores {X:dark_edition,C:white}^1.75{} of current",
+						"{C:attention}Store{} : Stores {X:dark_edition,C:white}^1.5{} of current",
 						"{C:blue}Chips{} and {C:red}Mult{} when this {C:attention}Joker triggers{}"
 					},
 					{
@@ -1445,7 +1467,15 @@ return {
 				}
 			}
 		},
-		Tag = {},
+		Tag = {
+			tag_ocstobal_junktag = {
+				name = "Junk Tag",
+				text = {
+					"Gives a free",
+					"{C:attention}Junkyard Pack{}"
+				}
+			}
+		},
 		Tarot = {},
 		Voucher = {},
 		ocstobal_Aleph = {

@@ -32,7 +32,7 @@ SMODS.Joker {
                     sound = "ocstobal_snd_pklove_a",
                     pitch = 1,
                     Xmult_mod = card.ability.extra.stored_chips + card.ability.extra.stored_mult,
-                    Xchip_mod = card.ability.extra.stored_mult + card.ability.extra.stored_mult
+                    Xchip_mod = card.ability.extra.stored_chips + card.ability.extra.stored_mult
                 }
             end
         end
@@ -65,8 +65,8 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         if context.joker_main and G.GAME.pk_love_ability == "Storing" and not context.blueprint then
-            card.ability.extra.stored_chips = card.ability.extra.stored_chips + math.floor((hand_chips * 0.5))
-            card.ability.extra.stored_mult = card.ability.extra.stored_mult + math.floor((mult * 0.5))
+            card.ability.extra.stored_chips = card.ability.extra.stored_chips + math.floor((hand_chips ^ 0.6))
+            card.ability.extra.stored_mult = card.ability.extra.stored_mult + math.floor((mult ^ 0.6))
             return {
                 message = "Stored!",
                 chips = mod_chips(0),
@@ -81,7 +81,7 @@ SMODS.Joker {
                     sound = "ocstobal_snd_pklove_b",
                     pitch = 1,
                     Xmult_mod = card.ability.extra.stored_chips + card.ability.extra.stored_mult,
-                    Xchip_mod = card.ability.extra.stored_mult + card.ability.extra.stored_mult
+                    Xchip_mod = card.ability.extra.stored_chips + card.ability.extra.stored_mult
                 }
             end
         end
@@ -114,8 +114,8 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         if context.joker_main and G.GAME.pk_love_ability == "Storing" and not context.blueprint then
-            card.ability.extra.stored_chips = card.ability.extra.stored_chips + math.floor(hand_chips)
-            card.ability.extra.stored_mult = card.ability.extra.stored_mult + math.floor(mult)
+            card.ability.extra.stored_chips = card.ability.extra.stored_chips + math.floor(hand_chips*0.1)
+            card.ability.extra.stored_mult = card.ability.extra.stored_mult + math.floor(mult*0.1)
             return {
                 message = "Stored!",
                 chips = mod_chips(0),
@@ -130,7 +130,7 @@ SMODS.Joker {
                     sound = "ocstobal_snd_pklove_g",
                     pitch = 1,
                     Xmult_mod = card.ability.extra.stored_chips + card.ability.extra.stored_mult,
-                    Xchip_mod = card.ability.extra.stored_mult + card.ability.extra.stored_mult
+                    Xchip_mod = card.ability.extra.stored_chips + card.ability.extra.stored_mult
                 }
             end
         end
@@ -163,8 +163,8 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         if context.joker_main and G.GAME.pk_love_ability == "Storing" and not context.blueprint then
-            card.ability.extra.stored_chips = card.ability.extra.stored_chips + math.floor((hand_chips ^ 1.75))
-            card.ability.extra.stored_mult = card.ability.extra.stored_mult + math.floor((mult ^ 1.75))
+            card.ability.extra.stored_chips = card.ability.extra.stored_chips + math.floor((hand_chips ^ 1.5))
+            card.ability.extra.stored_mult = card.ability.extra.stored_mult + math.floor((mult ^ 1.5))
             return {
                 message = "Stored!",
                 chips = mod_chips(0),
@@ -179,7 +179,7 @@ SMODS.Joker {
                     sound = "ocstobal_snd_pklove_o",
                     pitch = 1,
                     Xmult_mod = card.ability.extra.stored_chips + card.ability.extra.stored_mult,
-                    Xchip_mod = card.ability.extra.stored_mult + card.ability.extra.stored_mult
+                    Xchip_mod = card.ability.extra.stored_chips + card.ability.extra.stored_mult
                 }
             end
         end

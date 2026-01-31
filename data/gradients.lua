@@ -32,3 +32,10 @@ SMODS.Gradient {
     interpolation = 'linear',
     cycle = '5'
 }
+
+SMODS.Gradient {
+	key = 'oxi_gradient',
+	colours = { HEX('ff822f'), HEX('ff4b4b'), HEX('99fff6') },
+	interpolation = 'trig',
+	cycle = 4
+}
