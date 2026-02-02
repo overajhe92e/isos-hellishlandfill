@@ -149,28 +149,28 @@ function absurdmenu(buttonname)
 						n = G.UIT.R,
 						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 						nodes = {
-							{ n = G.UIT.T, config = { text = "Ever wanted to do numberslop?", scale = 0.5, colour = G.C.EDITION, align = 'm' } }
+							{ n = G.UIT.T, config = { text = "IT'S TOO MUCH!!!", scale = 0.5, colour = G.C.EDITION, align = 'm' } }
 						}
 					},
 					{
 						n = G.UIT.R,
 						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 						nodes = {
-							{ n = G.UIT.T, config = { text = "Adds absolutely insane jokers, and some decks are superbuffed.", scale = 0.5, colour = G.C.WHITE, align = 'm' } }
+							{ n = G.UIT.T, config = { text = "Astro can apply Tetrational Chips", scale = 0.4, colour = G.C.WHITE, align = 'm' } }
 						}
 					},
 					{
 						n = G.UIT.R,
 						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 						nodes = {
-							{ n = G.UIT.T, config = { text = "And also adds even MORE levels to Seraph's Levelling system!", scale = 0.4, colour = G.C.WHITE, align = 'm' } }
+							{ n = G.UIT.T, config = { text = "Seraph's max level cap is removed entirely", scale = 0.4, colour = G.C.WHITE, align = 'm' } }
 						}
 					},
 					{
 						n = G.UIT.R,
 						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 						nodes = {
-							{ n = G.UIT.T, config = { text = "It is HIGHLY suggested to play Normal/Rebalanced Mode first!", scale = 0.65, colour = G.C.RED, align = 'm' } }
+							{ n = G.UIT.T, config = { text = "Applies Unbalanced Mode", scale = 0.65, colour = G.C.RED, align = 'm' } }
 						}
 					},
 					{
@@ -216,28 +216,28 @@ function unbalancedmenu(buttonname)
 						n = G.UIT.R,
 						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 						nodes = {
-							{ n = G.UIT.T, config = { text = "The Cryptid-wanna be Mode!", scale = 0.5, colour = G.C.EDITION, align = 'm' } }
+							{ n = G.UIT.T, config = { text = "How did I not add anything for this?!", scale = 0.5, colour = G.C.EDITION, align = 'm' } }
 						}
 					},
 					{
 						n = G.UIT.R,
 						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 						nodes = {
-							{ n = G.UIT.T, config = { text = "Adds some jokers that are considerably too strong for normal mode.", scale = 0.5, colour = G.C.WHITE, align = 'm' } }
+							{ n = G.UIT.T, config = { text = "Seraph's Max level is now 1,000", scale = 0.5, colour = G.C.WHITE, align = 'm' } }
 						}
 					},
 					{
 						n = G.UIT.R,
 						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 						nodes = {
-							{ n = G.UIT.T, config = { text = "And also allows Seraph's levels to go past LV 100!", scale = 0.4, colour = G.C.WHITE, align = 'm' } }
+							{ n = G.UIT.T, config = { text = "Yeah, that's it.", scale = 0.4, colour = G.C.WHITE, align = 'm' } }
 						}
 					},
 					{
 						n = G.UIT.R,
 						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 						nodes = {
-							{ n = G.UIT.T, config = { text = "It is suggested to play Normal/Rebalanced Mode first!", scale = 0.65, colour = G.C.FILTER, align = 'm' } }
+							{ n = G.UIT.T, config = { text = "It is suggested to play Normal first!", scale = 0.65, colour = G.C.FILTER, align = 'm' } }
 						}
 					},
 					{
@@ -276,28 +276,28 @@ function balancedmenu(buttonname)
 						n = G.UIT.R,
 						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 						nodes = {
-							{ n = G.UIT.T, config = { text = "The way the mod is supposed to be experienced!", scale = 0.5, colour = G.C.GREEN, align = 'm' } }
+							{ n = G.UIT.T, config = { text = "Standard, picked when mod is started up for the first time.", scale = 0.5, colour = G.C.GREEN, align = 'm' } }
 						}
 					},
 					{
 						n = G.UIT.R,
 						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 						nodes = {
-							{ n = G.UIT.T, config = { text = "The standard mode, no unbalanced jokers, and standard progression.", scale = 0.5, colour = G.C.WHITE, align = 'm' } }
+							{ n = G.UIT.T, config = { text = "Blepp.", scale = 0.5, colour = G.C.WHITE, align = 'm' } }
 						}
 					},
 					{
 						n = G.UIT.R,
 						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 						nodes = {
-							{ n = G.UIT.T, config = { text = "Some limitations are put in place for this mode...", scale = 0.4, colour = G.C.WHITE, align = 'm' } }
+							{ n = G.UIT.T, config = { text = "Seraph's max Level is 100.", scale = 0.4, colour = G.C.WHITE, align = 'm' } }
 						}
 					},
 					{
 						n = G.UIT.R,
 						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 						nodes = {
-							{ n = G.UIT.T, config = { text = "It is recommended to play this mode!", scale = 0.65, colour = G.C.GREEN, align = 'm' } }
+							{ n = G.UIT.T, config = { text = "It is recommended to play this mode!", scale = 0.5, colour = G.C.GREEN, align = 'm' } }
 						}
 					},
 					{
@@ -312,99 +312,6 @@ function balancedmenu(buttonname)
 		}
 	})
 	return bal
-end
-
-function thewarning(buttonname) --unused
-	local lore = create_UIBox_generic_options({
-		no_back = true,
-		colour = G.C.BLACK,
-		padding = 0,
-		contents = {
-			{
-				n = G.UIT.C,
-				config = { minh = 5, minw = 3, align = 'tm', padding = 0.1, colour = G.C.BLACK },
-				nodes = {
-					{
-						n = G.UIT.R,
-						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
-						nodes = {
-							{ n = G.UIT.T, config = { text = '???', scale = 0.8, colour = G.C.UI.TEXT_INACTIVE, align = 'm' } }
-						}
-					},
-					{
-						n = G.UIT.R,
-						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
-						nodes = {
-							{ n = G.UIT.T, config = { text = 'This option completely removes every joker, including vanilla.', scale = 0.6, colour = G.C.WHITE, align = 'm' } }
-						}
-					},
-					{
-						n = G.UIT.R,
-						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
-						nodes = {
-							{ n = G.UIT.T, config = { text = 'Except for Seraph (including broken), Recluse, and other lore jokers.', scale = 0.6, colour = G.C.WHITE, align = 'm' } }
-						}
-					},
-					{
-						n = G.UIT.R,
-						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
-						nodes = {
-							{ n = G.UIT.T, config = { text = 'Do not play this mode if you are sensitive to...', scale = 0.7, colour = G.C.RED, align = 'm' } }
-						}
-					},
-					{
-						n = G.UIT.R,
-						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
-						nodes = {
-							{ n = G.UIT.T, config = { text = 'Character Trauma,', scale = 0.6, colour = G.C.FILTER, align = 'm' } }
-						}
-					},
-					{
-						n = G.UIT.R,
-						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
-						nodes = {
-							{ n = G.UIT.T, config = { text = 'Cartoony Gore', scale = 0.6, colour = G.C.RED, align = 'm' } }
-						}
-					},
-					{
-						n = G.UIT.R,
-						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
-						nodes = {
-							{ n = G.UIT.T, config = { text = '(Relating to Sparky\'s backstory, Abbie Death.) (This\'ll be shown as an IMAGE)', scale = 0.15, colour = G.C.UI.TEXT_INACTIVE, align = 'm' } }
-						}
-					},
-					{
-						n = G.UIT.R,
-						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
-						nodes = {
-							{ n = G.UIT.T, config = { text = 'and France', scale = 1, colour = G.C.RED, align = 'm' } }
-						}
-					},
-					{
-						n = G.UIT.R,
-						config = { minw = 3, minh = 1, align = "tm", padding = 0.05, colour = G.C.CLEAR },
-						nodes = {
-							{
-								n = G.UIT.R,
-								config = { minw = 2, minh = 1, align = "tm", padding = 0.1, colour = G.C.RED, button = "proceed", r = 0.1 },
-								nodes = {
-									{ n = G.UIT.T, config = { text = "Proceed", colour = G.C.WHITE, scale = 0.6, align = "m" }, },
-								},
-							},
-							{
-								n = G.UIT.R,
-								config = { minw = 1, minh = 1, align = "tm", padding = 0.1, colour = G.C.GREEN, button = "turnback", r = 0.1 },
-								nodes = {
-									{ n = G.UIT.T, config = { text = "Turn Back", colour = G.C.WHITE, scale = 0.6, align = "m" }, },
-								}
-							},
-						}
-					}
-				}
-			}
-		}
-	})
-	return lore
 end
 
 function G.FUNCS.enabling()

@@ -145,21 +145,27 @@ SMODS.Joker {
     add_to_deck = function(self, card, from_debuff)
         card:set_edition("e_ocstobal_hidden1", true)
         card:set_eternal(true)
-        G.GAME.round_resets.hands = 1
-        G.GAME.round_resets.discards = 0
         G.hand:change_size(card.ability.extra.h_size)
     end,
     remove_from_deck = function(self, card, from_debuff)
-        G.GAME.round_resets.hands = 10
-        G.GAME.round_resets.discards = 10
-        G.hand:change_size(-10)
+        SMODS.destroy_cards(card)
+        G.hand:change_size(-card.ability.extra.h_size)
     end,
 
     calculate = function(self, card, context)
-        if context.joker_main then
-            return {
-                message = 'Perish.'
-            }
+        if context.setting_blind then
+            G.E_MANAGER:add_event(Event({
+                trigger = 'after',
+                delay = 0.06 * G.SETTINGS.GAMESPEED,
+                blockable = false,
+                blocking = false,
+                func = function()
+                    play_sound('ocstobal_stat_down', 1, 1)
+                    return true
+                end
+            }))
+            G.GAME.blind.chips = G.GAME.blind.chips ^ card.ability.extra.blindsize
+            G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
         end
     end
 }

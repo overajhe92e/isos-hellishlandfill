@@ -38,18 +38,6 @@ function recluseach()
 	}))
 end
 
-function burger()
-	G.E_MANAGER:add_event(Event({
-		trigger = 'immediate',
-		locking = false,
-		delay = 0,
-		func = function()
-			check_for_unlock({ type = "ach_burgr" })
-			return true
-		end,
-	}))
-end
-
 function omegarushdefeat()
 	G.E_MANAGER:add_event(Event({
 		trigger = 'immediate',
@@ -57,7 +45,7 @@ function omegarushdefeat()
 		delay = 0,
 		func = function()
 			--print('omega defeated')
-			if SMODS.stake_from_index(G.GAME.stake) == "stake_ocstobal_finale" then
+			if SMODS.stake_from_index(G.GAME.stake) == "stake_ocstobal_singularity" then
 				--print('given deck access')
 				check_for_unlock({ type = "defeated_omega" })
 				return true
@@ -145,7 +133,6 @@ SMODS.Blind {
 							delay = 3 * G.SETTINGS.GAMESPEED,
 							func = function()
 								G.burger = 0
-								forceGameover()
 								burger()
 								return true
 							end

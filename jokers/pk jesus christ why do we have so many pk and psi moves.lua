@@ -53,7 +53,7 @@ SMODS.Joker {
 
 SMODS.Joker {
     key = 'pk_ground',
-    cost = 1,
+    cost = 250,
     rarity = 'ocstobal_beyondexotic',
     atlas = 'pkground',
     config = {

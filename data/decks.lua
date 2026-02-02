@@ -1,24 +1,7 @@
-SMODS.Atlas {
-	key = 'baller',
-	px = 71,
-	py = 95,
-	path = 'thetriodeck.png',
-	atlas_table = 'ANIMATION_ATLAS',
-	frames = 1
-}
-
 SMODS.Back {
 	key = "ocs",
 	pos = { x = 0, y = 0 },
-	-- loc_txt = {
-	-- 	name = 'The Trio',
-	-- 	text = {
-	-- 		'Start off with {C:common}Sparky{},' ,
-	-- 		'{C:rare}Seraph{}, and {C:legendary}Solinium{}',
-	-- 		'{X:ocstobal_legendplus,C:white,s:1.2}50x{} Blind Size'
-	-- 		},
-	-- 	},
-	atlas = "baller",
+	atlas = "decks",
 	config = { spectral_rate = 1, jokers = { 'j_ocstobal_sparky', 'j_ocstobal_seraph', 'j_ocstobal_solinium' }, ante_scaling = 50 },
 	unlocked = false,
 	loc_vars = function(self, info_queue, back)
@@ -68,8 +51,8 @@ SMODS.Back {
 
 SMODS.Back {
 	key = "extremepain",
-	pos = { x = 0, y = 0 },
-	atlas = 'deckofalltime',
+	atlas = 'decks',
+	pos = { x = 4, y = 0 },
 	config = { jokers = { 'j_ocstobal_somethingevil' }, ante_scaling = 0.25, joker_slot = 1 },
 	unlocked = false,
 	loc_vars = function(self, info_queue, back)
@@ -88,7 +71,8 @@ SMODS.Back {
 
 SMODS.Back {
 	key = "copycat",
-	pos = { x = 0, y = 0 },
+	atlas = "decks",
+	pos = { x = 3, y = 0 },
 	config = { jokers = { 'j_ocstobal_Oxy', 'j_ocstobal_crystal' } },
 	unlocked = false,
 	loc_vars = function(self, info_queue, back)
@@ -106,8 +90,8 @@ SMODS.Back {
 
 SMODS.Back {
 	key = 'looksinside',
-	atlas = 'looksinside',
-	pos = { x = 0, y = 0 },
+	atlas = 'decks',
+	pos = { x = 1, y = 0 },
 	-- config = {
 	-- 	jokers = { 'j_photograph', 'j_hanging_chad' },
 	-- 	jokersalt = { 'j_ocstobal_jokertoendalljokers' }
@@ -149,8 +133,8 @@ SMODS.Back {
 
 SMODS.Back {
 	key = 'overpoweredjokers',
-	atlas = 'looksinside',
-	pos = { x = 0, y = 0 },
+	atlas = 'decks',
+	pos = { x = 5, y = 0 },
 	unlocked = false,
 	loc_vars = function(self, info_queue, back)
 		return { key = unik_detect == true and self.key.."_unik" or nil }

@@ -75,7 +75,15 @@ SMODS.Joker { --Solinium
     end
 }
 
-
+SMODS.Joker {
+    key = "solinium_PWX",
+    cost = 1,
+    rarity = 4,
+    update = function(self,card,dt)
+        if garbl == true then
+        end
+    end
+}
 
 -- for i = 1, #G.jokers.cards do
 --     if G.jokers.cards[i].config.center.key == "j_ocstobal_recluse" then

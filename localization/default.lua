@@ -77,7 +77,7 @@ return {
 				},
 				unlock = {
 					'Defeat {C:ocstobal_ust}Omega Boss Rush{}',
-					'on the {C:ocstobal_finalrgb}Final Stake{}'
+					'on {C:ocstobal_nightmare_purple}Cruelty Stake{}'
 				}
 			},
 			b_ocstobal_overpoweredjokers_unik = {
@@ -577,6 +577,13 @@ return {
 
 				}
 			},
+			j_ocstobal_burgr = {
+				name = "The Burger",
+				text = {
+					"A {C:red,s:1.1}STRONG{} aura emanates from",
+					"the {C:attention}Burger{}"
+				}
+			},
 			j_ocstobal_voidinstlose = {
 				name = "The Absolute Void",
 				text = {
@@ -1067,6 +1074,19 @@ return {
 					}
 				}
 			},
+			j_ocstobal_xeno_gmarble = {
+				name = "Xeno",
+				text = {
+					{
+						"This joker gains {X:legendary,C:white}X0.25{} Chips & Mult",
+						'for every {C:attention}card{} scored'
+					},
+					{
+						"{C:inactive}Currently{} {X:blue,C:white}X#1#{}",
+						"{C:inactive}Currently{} {X:red,C:white}X#2#{}"
+					}
+				}
+			},
 			j_ocstobal_sword_of_kings = { -- ONE IN WHAT NOW
 				name = "Sword of Kings",
 				text = {
@@ -1304,6 +1324,13 @@ return {
 					},
 				}
 			},
+			j_ocstobal_solinium_PWX = {
+				name = "Solinium (PWX)",
+				text = {
+					"poor cat's gonna go through hell",
+					"Sprite changes when \"the garbl\" is near"
+				}
+			},
 			j_ocstobal_absolutely_safe_capsule = {
 				name = "Absolutely Safe Capsule",
 				text = {
@@ -1394,6 +1421,28 @@ return {
 					"{C:blue,s:0.8,E:1}Original Character by: Candycane{}"
 				}
 			},
+			j_ocstobal_reroll_abuse = {
+				name = "Reroll Abuse",
+				text = {
+					"Shop rerolls are {C:attention}free{}",
+					"Every reroll makes {C:red}ALL{} items",
+					"more {C:attention}Expensive{} to buy",
+					"{C:inactive}+1$ per reroll{}"
+				}
+			},
+			j_ocstobal_garble_of_doom_and_despair = {
+				name = "the garbl",
+				text = {
+					"{C:attention}Certain Jokers{} will have",
+					"their {C:attention}Abilities{} modified",
+					"{C:inactive}Get a load of this thing!{}",
+					"{C:inactive}Oxidyze took mortal damage! Oxidyze took mortal damage!{}",
+					"{C:inactive}Oxidyze took mortal damage! Oxidyze took mortal damage!{}",
+					"{C:inactive}Oxidyze took mortal damage! Oxidyze took mortal damage!{}",
+					"{C:inactive}Oxidyze took mortal damage! Oxidyze took mortal damage!{}",
+					"{C:inactive}Oxidyze took mortal damage! Oxidyze took mortal damage!{}"
+				}
+			}
 		},
 		Other = {
 			ocstobal_recluses_eye_seal = {
@@ -1465,7 +1514,7 @@ return {
 					'{C:attention}Unbalanced Mode{} Jokers and {C:ocstobal_almanacblue}Absurd{} Jokers',
 					'Are {C:red}Permanently{} Debuffed'
 				}
-			}
+			} -- unused
 		},
 		Tag = {
 			tag_ocstobal_junktag = {

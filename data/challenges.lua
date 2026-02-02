@@ -108,7 +108,10 @@ SMODS.Challenge {
 	rules = {
 		custom = {
 			--{ id = 'balance' }
-		}
+		},
+		modifiers = {
+            { id = 'joker_slots', value = 2 }
+        }
 	},
 	restrictions = {
 		banned_other = {

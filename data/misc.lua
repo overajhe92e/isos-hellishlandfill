@@ -78,10 +78,10 @@ end
 -- misc atlas stuff
 
 SMODS.Atlas {
-	key = 'baller',
+	key = 'decks',
 	px = 71,
 	py = 95,
-	path = 'thetriodeck.png',
+	path = 'decks.png',
 	atlas_table = 'ASSET_ATLAS'
 }
 
@@ -168,8 +168,8 @@ SMODS.Atlas {
 
 SMODS.Atlas {
 	key = 'junkyard_tags',
-	px = 71,
-	py = 95,
+	px = 34,
+	py = 34,
 	path = 'tags.png',
 	atlas_table = "ASSET_ATLAS"
 }
@@ -229,14 +229,6 @@ SMODS.ObjectType({
 		self:inject_card(G.P_CENTERS.j_lucky_cat)
 	end,
 })
-
-SMODS.Atlas {
-	key = 'aioimg',
-	px = 71,
-	py = 95,
-	path = 'aio.png',
-	atlas_table = 'ASSET_ATLAS'
-}
 
 SMODS.Atlas {
 	key = 'diansuvulkarch',
@@ -361,10 +353,10 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
-	key = 'finalstake',
+	key = 'stakes',
 	px = 29,
 	py = 29,
-	path = 'finalstakere.png',
+	path = 'stakes.png',
 	atlas_table = 'ASSET_ATLAS'
 }
 
@@ -372,6 +364,12 @@ SMODS.Sound {
 	key = "weird",
 	path = "superweirdsound.ogg",
 	pitch = 15
+}
+
+SMODS.Sound {
+	key = "stat_down",
+	path = "reduced.ogg",
+	pitch = 1
 }
 
 SMODS.Sound {
@@ -401,14 +399,6 @@ SMODS.Sound {
 	key = "snd_pklove_o",
 	path = 'pklove_omega.ogg',
 	pitch = 1
-}
-
-SMODS.Atlas {
-	key = 'looksinside',
-	px = 71,
-	py = 95,
-	path = 'looksinside.png',
-	atlas_table = 'ASSET_ATLAS'
 }
 
 SMODS.Atlas {
@@ -459,14 +449,6 @@ SMODS.Atlas {
 	px = 71,
 	py = 95,
 	path = 'terminusjokers.png',
-	atlas_table = 'ASSET_ATLAS'
-}
-
-SMODS.Atlas {
-	key = 'deckofalltime',
-	px = 71,
-	py = 95,
-	path = 'trolldeck.png',
 	atlas_table = 'ASSET_ATLAS'
 }
 
@@ -689,6 +671,20 @@ end
 
 -- }
 
+function burger()
+	G.E_MANAGER:add_event(Event({
+		trigger = 'immediate',
+		locking = false,
+		delay = 0,
+		func = function()
+			check_for_unlock({ type = "ach_burgr" })
+			return true
+		end,
+	}))
+end
+
+--burg
+
 SMODS.current_mod.optional_features = {
 	retrigger_joker = true,
 	cardareas = {
@@ -714,7 +710,7 @@ SMODS.Shader {
 if G.GAME then
 	G.GAME.omegarush = 0 --prevents crash
 end
-
+--------hooks n shit
 local check_for_buy_space_ref = G.FUNCS.check_for_buy_space
 G.FUNCS.check_for_buy_space = function(card)
 	if card.config.center.key == "j_ocstobal_antislopinator" then
