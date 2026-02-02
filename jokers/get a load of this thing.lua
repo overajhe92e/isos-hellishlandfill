@@ -3,5 +3,5 @@ SMODS.Joker {
     cost = 10,
     rarity = 4,
     atlas = "other_jokers",
-    pos = {x=1,y=2}
+    pos = {x=1,y=2},
 }
