@@ -81,6 +81,22 @@ local function load_jokers_folder()
     end
 end
 
+-- local function if_jen_NOT_loaded()
+--     print("POLTERWORX not loaded, loading Jokers normally.")
+--     --load path to NORMAL
+-- end
+
+-- local function if_jen_loaded()
+--     print("POLTERWORX Detected, nerfing some jokers!")
+--     --load path to PWX
+-- end
+
+-- if next(SMODS.find_mod("jen")) then
+--     if_jen_loaded()
+-- else
+--     if_jen_NOT_loaded()
+-- end
+
 local function load_enhancements_folder()
     local mod_path = SMODS.current_mod.path
     local enhancements_path = mod_path .. "/enhancements"

@@ -156,7 +156,7 @@ SMODS.Joker { --Recluse
         x = 6,
         y = 0
     },
-    pools = {["ocstob"] = true},
+    pools = {["ocstob"] = true,["all_junk"] = true},
 
     loc_vars = function(self, info_queue, card)
         return {

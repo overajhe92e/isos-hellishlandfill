@@ -3,9 +3,12 @@ SMODS.Joker {
     cost = 1,
     rarity = 'ocstobal_cursed',
     atlas = "placeholder",
+    pools = {
+        ["all_junk"] = true
+    },
     calculate = function(self, card, context)
         if context.joker_main then
-            return { xmult = 0.5 }
+            return { xmult = 0.5, xchips = 0.5 }
         end
     end,
     no_collection = true
@@ -19,7 +22,7 @@ SMODS.Joker {
         dura = 3
     },
     atlas = "placeholder",
-    pools = {["ocstob"] = true},
+    pools = {["ocstob"] = true,["all_junk"] = true},
 
     loc_vars = function(self,info_queue,card)
         return {

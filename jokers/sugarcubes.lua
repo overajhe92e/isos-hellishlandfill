@@ -7,7 +7,7 @@ SMODS.Joker {
     pos = {x=0,y=1},
     soul_pos = {x=0,y=0},
     blueprint_compat = true,
-    pools = {["ocstob"] = true},
+    pools = {["ocstob"] = true,["all_junk"] = true},
     
     loc_vars = function(self,info_queue,card)
         return { vars = { card.ability.hands_left }}
@@ -49,7 +49,7 @@ SMODS.Joker {
     pos = {x=1,y=1},
     soul_pos = {x=1,y=0},
     blueprint_compat = true,
-    pools = {["ocstob"] = true},
+    pools = {["ocstob"] = true,["all_junk"] = true},
 
     loc_vars = function(self,info_queue,card)
         return { vars = { card.ability.hands_left }}
@@ -106,7 +106,7 @@ SMODS.Joker {
     pos = {x=2,y=1},
     soul_pos = {x=2,y=0},
     blueprint_compat = true,
-    pools = {["ocstob"] = true},
+    pools = {["ocstob"] = true,["all_junk"] = true},
 
     loc_vars = function(self,info_queue,card)
         return { vars = { card.ability.hands_left }}
@@ -163,6 +163,9 @@ SMODS.Joker {
     pos = {x=3,y=1},
     soul_pos = {x=3,y=0},
     blueprint_compat = false,
+    pools = {
+        ["all_junk"] = true
+    },
 
     loc_vars = function(self,info_queue,card)
         return { vars = { card.ability.hands_left }}

@@ -4,4 +4,7 @@ SMODS.Joker {
     rarity = 3,
     atlas = "other_jokers",
     pos = {x=0,y=2},
+    pools = {
+        ["ocstob"] = true
+    }
 }

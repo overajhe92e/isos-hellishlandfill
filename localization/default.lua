@@ -1521,7 +1521,7 @@ return {
 				name = "Junk Tag",
 				text = {
 					"Gives a free",
-					"{C:attention}Junkyard Pack{}"
+					"{C:attention}Junkyard Pack Beta{}"
 				}
 			}
 		},

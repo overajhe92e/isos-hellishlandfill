@@ -11,7 +11,7 @@ SMODS.Tag {
             local lock = tag.ID
             G.CONTROLLER.locks[lock] = true
             tag:yep('+', G.C.SECONDARY_SET.Spectral, function()
-                local booster = SMODS.create_card { key = 'p_ocstobal_junkpack', area = G.play }
+                local booster = SMODS.create_card { key = 'p_ocstobal_junkpack_b', area = G.play }
                 booster.T.x = G.play.T.x + G.play.T.w / 2 - G.CARD_W * 1.27 / 2
                 booster.T.y = G.play.T.y + G.play.T.h / 2 - G.CARD_H * 1.27 / 2
                 booster.T.w = G.CARD_W * 1.27

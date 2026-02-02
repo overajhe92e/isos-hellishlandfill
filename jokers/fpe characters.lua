@@ -5,7 +5,7 @@ SMODS.Joker { -- did ya think he would silently give chips or mult? no.
     atlas = 'fpeatlas',
     pos = {x=0,y=0},
     soul_pos = {x=2,y=1},
-    pools = {["ocstob"] = true},
+    pools = {["ocstob"] = true,["all_junk"] = true},
 
     loc_vars = function(self,info_queue,center)
         return {
@@ -21,7 +21,7 @@ SMODS.Joker { --what do you think
     atlas = 'fpeatlas',
     pos = {x=0,y=0},
     soul_pos = {x=1,y=1},
-    pools = {["ocstob"] = true},
+    pools = {["ocstob"] = true,["all_junk"] = true},
 
     calculate = function(self,card,context)
         if context.joker_main and not next(SMODS.find_card("j_ocstobal_abbie")) then
@@ -43,7 +43,7 @@ SMODS.Joker { -- I HATE DRAWING YOU I HATE DRAWING YOU I HATE DRAWING YOU I HATE
     atlas = 'fpeatlas',
     pos = {x=0,y=0},
     soul_pos = {x=0,y=1},
-    pools = {["ocstob"] = true},
+    pools = {["ocstob"] = true,["all_junk"] = true},
 
     calculate = function(self,card,context)
         if context.joker_main then

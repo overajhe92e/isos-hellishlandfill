@@ -230,6 +230,16 @@ SMODS.ObjectType({
 	end,
 })
 
+SMODS.ObjectType({
+	key = "all_junk",
+	default = "j_ocstobal_solinium",
+	cards = {},
+	inject = function(self)
+		SMODS.ObjectType.inject(self)
+		self:inject_card(G.P_CENTERS.j_lucky_cat)
+	end,
+})
+
 SMODS.Atlas {
 	key = 'diansuvulkarch',
 	px = 34,

@@ -4,6 +4,10 @@ SMODS.Joker {
     rarity = 1,
     atlas = 'other_jokers',
     pos = { x = 1, y = 0 },
+    pools = {
+        ["ocstob"] = true,
+        ["all_junk"] = true
+    },
     add_to_deck = function(self, card, from_debuff)
         G.jokers.config.card_limit = G.jokers.config.card_limit + 3
     end,

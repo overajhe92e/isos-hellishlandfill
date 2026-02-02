@@ -16,12 +16,12 @@
 
 SMODS.Joker { --so you know polterwor
     key = 'jokertoendalljokers',
-    rarity = 'ocstobal_beyondexotic',
+    rarity = 'ocstobal_omega',
     cost = 1e200,
     atlas = 'terminuses',
     no_collection = true,
     pools = {
-        ["fucking_absurd"] = true
+        ["fucking_absurd"] = true,
     },
     soul_pos = {
         x = 3,
@@ -152,7 +152,8 @@ SMODS.Joker { --right before getting aio joker
     blueprint_compat = true,
     no_collection = true,
     pools = {
-        ["fucking_absurd"] = true
+        ["fucking_absurd"] = true,
+        ["all_junk"] = true
     },
 
     calculate = function(self, card, context)
@@ -183,7 +184,8 @@ SMODS.Joker { --terminus go brrrrt
         x = 3, y = 0
     },
     pools = {
-        ["fucking_absurd"] = true
+        ["fucking_absurd"] = true,
+        ["all_junk"] = true
     },
 
     loc_vars = function(self, info_queue, card)
@@ -223,7 +225,8 @@ SMODS.Joker { --oh no
         }
     },
     pools = {
-        ["fucking_absurd"] = true
+        ["fucking_absurd"] = true,
+        ["all_junk"] = true
     },
     no_collection = true,
     cost = 20000,
@@ -263,7 +266,8 @@ SMODS.Joker { --unused as of now
         x = 1, y = 1
     },
     pools = {
-        ["fucking_absurd"] = true
+        ["fucking_absurd"] = true,
+        ["all_junk"] = true
     },
     no_collection = true,
     calculate = function(self, card, context)
@@ -281,6 +285,9 @@ SMODS.Joker {
     rarity = 1,
     cost = 1,
     atlas = "other_jokers",
+    pools = {
+        ["all_junk"] = true
+    },
     pos = { x = 4, y = 1 },
     add_to_deck = function(self, card)
         if next(SMODS.find_card("j_ocstobal_Oxy")) and next(SMODS.find_card("j_ocstobal_solinium")) and next(SMODS.find_card("j_ocstobal_sparky")) then

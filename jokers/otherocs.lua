@@ -9,7 +9,8 @@ SMODS.Joker {
     pools = {
         ["copycats"] = true,
         ["unbalanced"] = true,
-        ["ocstob"] = true
+        ["ocstob"] = true,
+        ["all_junk"] = true
     },
     pronouns = 'she_her',
 
@@ -86,7 +87,8 @@ SMODS.Joker {
 
     pools = {
         ["unbalanced"] = true,
-        ["ocstob"] = true
+        ["ocstob"] = true,
+        ["all_junk"] = true
     },
 
     loc_vars = function(self, info_queue, card)
@@ -158,7 +160,7 @@ SMODS.Joker {
     config = {
         jokerslots = 1
     },
-    pools = {["ocstob"] = true},
+    pools = {["ocstob"] = true,["all_junk"] = true},
     blueprint_compat = false,
     atlas = 'other_ocs',
     pos = { x = 2, y = 0 },
@@ -194,7 +196,7 @@ SMODS.Joker {
             suit_2 = "Hearts"
         }
     },
-    pools = {["ocstob"] = true},
+    pools = {["ocstob"] = true,["all_junk"] = true},
     pronouns = "they_them",
     loc_vars = function(self, info_queue, card)
         return {
@@ -245,6 +247,9 @@ SMODS.Joker {
             vars = { card.ability.extra.xchips, card.ability.extra.scale, card.ability.extra.suit_1, card.ability.extra.n }
         }
     end,
+    pools = {
+        ["all_junk"] = true
+    },
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play then
             if context.other_card:is_suit(card.ability.extra.suit_1) and not context.blueprint then
@@ -280,7 +285,7 @@ SMODS.Joker {
             suit_1 = "Diamonds"
         }
     },
-    pools = {["ocstob"] = true},
+    pools = {["ocstob"] = true,["all_junk"] = true},
     blueprint_compat = true,
     atlas = 'other_ocs',
     pos = { x = 0, y = 2 },

@@ -179,7 +179,8 @@ SMODS.Joker { --Seraph
     end,
     pools = {
         ["unbalanced"] = true,
-        ["ocstob"] = true
+        ["ocstob"] = true,
+        ["all_junk"] = true
     },
 
     loc_vars = function(self, info_queue, card)
@@ -388,6 +389,9 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.xstuff, card.ability.extra.estuff } }
     end,
+    pools = {
+        ["all_junk"] = true
+    },
     add_to_deck = function(self, card)
         G.GAME.reclusive_vessel = true
         G.jokers:change_size(-2)

@@ -34,6 +34,10 @@ SMODS.Joker { --Mommy? Sorry, Mommy? Sorry, Mommy? Sor-
         return { vars = { card.ability.extra.chip, card.ability.extra.mult, new_numerator, new_denominator } }
     end,
 
+    pools = {
+        ["all_junk"] = true
+    },
+
     calculate = function(self, card, context)
         if context.destroy_card and context.destroy_card.should_destroy then
             return { remove = true }

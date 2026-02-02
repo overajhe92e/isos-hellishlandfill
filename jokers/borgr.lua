@@ -3,6 +3,9 @@ SMODS.Joker {
     cost = 10,
     rarity = 3,
     atlas = 'other_jokers',
+    pools = {
+        ["ocstob"] = true
+    },
     pos = {x=5,y=1},
     calculate = function(self, card, context)
         if context.setting_blind then

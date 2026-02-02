@@ -8,7 +8,7 @@ SMODS.Joker {
         }
     },
     atlas = 'placeholder',
-    pools = {["ocstob"] = true},
+    pools = {["ocstob"] = true,["all_junk"] = true},
     calculate = function(self, card, context)
         if context.setting_blind and not context.blueprint and context.blind.boss then
             G.E_MANAGER:add_event(Event({
@@ -60,6 +60,9 @@ SMODS.Joker {
         extra = {
             probability = 4,
         }
+    },
+    pools = {
+        ["all_junk"] = true
     },
     loc_vars = function(self, info_queue, card)
         local numerator_1, denominator_1 = SMODS.get_probability_vars(card, 1, card.ability.extra.probability,'j_ocstobal_pk_ground')

@@ -30,6 +30,9 @@ SMODS.Joker { --Broken Seraph
             )
             and true
     end,
+    pools = {
+        ["all_junk"] = true
+    },
 
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.multchip, localize('k_ocstobal_seraphbroken_quote' .. pseudorandom("seed", 1, 4)) } }

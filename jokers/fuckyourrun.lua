@@ -21,6 +21,9 @@ SMODS.Joker {
     in_pool = function()
         return false
     end,
+    pools = {
+        ["all_junk"] = true
+    },
     loc_vars = function(self,info_queue,card)
         return {
             vars = {
@@ -77,6 +80,9 @@ SMODS.Joker {
     in_pool = function()
         return false
     end,
+    pools = {
+        ["all_junk"] = true
+    },
     loc_vars = function(self,info_queue,card)
         return {
             vars = {
@@ -117,6 +123,9 @@ SMODS.Joker {
             h_size = 3,
             blindsize = 1.8
         }
+    },
+    pools = {
+        ["all_junk"] = true
     },
     atlas = 'oxidyzehate',
     pos = {
@@ -198,6 +207,9 @@ SMODS.Joker {
                 card.children.center, 2 * scale_mod, 2 * rotate_mod)
             card.hover_tilt = card.hover_tilt / 1.5
         end
+    },
+    pools = {
+        ["all_junk"] = true
     },
 
     add_to_deck = function(self, card, from_debuff)

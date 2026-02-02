@@ -17,7 +17,7 @@ SMODS.Joker { --Solinium
     cost = 20,
     rarity = 4,
     atlas = 'triple_s',
-    pools = {["ocstob"] = true},
+    pools = {["ocstob"] = true,["all_junk"] = true},
     soul_pos = {
         x = 4,
         y = 0
@@ -79,8 +79,15 @@ SMODS.Joker {
     key = "solinium_PWX",
     cost = 1,
     rarity = 4,
+    atlas = "triple_s",
+    pos = {x=0,y=3},
+    soul_pos = {x=1,y=3},
     update = function(self,card,dt)
-        if garbl == true then
+        if G.GAME.garbl == true then
+            card.children.floating_sprite:set_sprite_pos { x = 2, y = 3 }
+            card:juice_up(0,0.1)
+        else
+            card.children.floating_sprite:set_sprite_pos { x = 1, y = 3 }
         end
     end
 }

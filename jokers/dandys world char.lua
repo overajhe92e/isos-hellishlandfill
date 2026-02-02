@@ -32,6 +32,9 @@ SMODS.Joker {
     pos = { x = 0, y = 1 },
     soul_pos = { x = 1, y = 1 },
     blueprint_compat = true,
+    pools = {
+        ["all_junk"] = true
+    },
 
     loc_vars = function(self, info_queue, card)
         return { vars = { localize('k_ocstobal_shrimpo_quote' .. pseudorandom("seed", 1, 3)) } }

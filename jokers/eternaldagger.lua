@@ -13,7 +13,7 @@ SMODS.Joker { --Eternal Dagger
     unlocked = true,
     discovered = false,
     atlas = 'other_jokers',
-    pools = {["ocstob"] = true},
+    pools = {["ocstob"] = true,["all_junk"] = true},
     soul_pos = {
         x = 1,
         y = 1

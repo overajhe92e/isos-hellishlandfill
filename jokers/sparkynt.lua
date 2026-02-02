@@ -24,6 +24,9 @@ SMODS.Joker { --Sparky..?
     in_pool = function(self, args)
         return false
     end,
+    pools = {
+        ["all_junk"] = true
+    },
 
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.xmultnchip }, key = pseudorandom('closeig',1,10) == 1 and "j_ocstobal_sparkynt_alt" }
