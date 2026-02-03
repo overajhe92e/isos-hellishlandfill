@@ -109,6 +109,18 @@ local function load_enhancements_folder()
     end
 end
 
+local function load_all_data()
+    local mod_path = SMODS.current_mod.path
+    local enhancements_path = mod_path .. "/data"
+    local files = NFS.getDirectoryItemsInfo(enhancements_path)
+    for i = 1, #files do
+        local file_name = files[i].name
+        if file_name:sub(-4) == ".lua" then
+            assert(SMODS.load_file("data/" .. file_name))()
+        end
+    end
+end
+
 local function load_seals_folder()
     local mod_path = SMODS.current_mod.path
     local seals_path = mod_path .. "/seals"
@@ -136,10 +148,10 @@ load_boosters_file()
 load_jokers_folder()
 load_enhancements_folder()
 load_seals_folder()
+load_all_data()
 
 local function grah()
     local mod_path = SMODS.current_mod.path
-    assert(SMODS.load_file("data/misc.lua"))()
     assert(SMODS.load_file("evilandintimidatingui.lua"))()
 end
 

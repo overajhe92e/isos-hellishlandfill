@@ -1324,6 +1324,33 @@ return {
 					},
 				}
 			},
+			j_ocstobal_psi_lifeup = {
+				name = "PSI Lifeup",
+				text = {
+					{
+						"Depending on what level of Lifeup you use,",
+						"recovers {C:blue}Hands{} or {C:red}Discards{}",
+						"{C:tarot}#1# / 300 PP{}",
+						"Currently Recovering {C:attention}#2{}"
+					},
+					{
+						"{C:attention}Lifeup Alpha{}",
+						"Restores {C:attention}+1{} Hand or Discard"
+					},
+					{
+						"{C:attention}Lifeup Beta{}",
+						"Restores {C:attention}+3{} Hands or Discards"
+					},
+					{
+						"{C:attention}Lifeup Gamma{}",
+						"Restores {C:attention}ALL{} Hands or Discards"
+					},
+					{
+						"{C:attention}Lifeup Omega{}",
+						"Restores {C:attention}+4{} Hands {C:attention}AND{} Discards"
+					}
+				}
+			},
 			j_ocstobal_solinium_PWX = {
 				name = "Solinium (PWX)",
 				text = {
@@ -1441,6 +1468,22 @@ return {
 					"{C:inactive}Oxidyze took mortal damage! Oxidyze took mortal damage!{}",
 					"{C:inactive}Oxidyze took mortal damage! Oxidyze took mortal damage!{}",
 					"{C:inactive}Oxidyze took mortal damage! Oxidyze took mortal damage!{}"
+				}
+			},
+			j_ocstobal_debug = {
+				name = "Bad Practice",
+				text = {
+					"This is a description that is entirely in one single line. Notice how it's making the Joker box really long? Yeah, this isn't good practice as it makes jokers extremely clunky and cluttered. It's not pleasant to look at and it sucks to use.",
+					""
+				}
+			},
+			j_ocstobal_debug_2 = {
+				name = "Good Practice",
+				text = {
+					"This is a joker description",
+					"that has GOOD practice!",
+					"It's not cluttered, and it can",
+					"cleanly fit into a single box."
 				}
 			}
 		},
