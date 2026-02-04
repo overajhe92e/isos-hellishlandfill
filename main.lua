@@ -157,8 +157,9 @@ end
 
 grah()
 
+
 local function pwx_check()
-    if SMODS.find_mod("jen") then
+    if next(SMODS.find_mod("jen")) then
         pwx_detected = true
     end
 end

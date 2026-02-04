@@ -99,43 +99,43 @@ SMODS.Joker {
 -- }
 --dont forget this later
 
-SMODS.Joker {
-    key = 'psi_lifeup',
-    cost = 10,
-    rarity = 3,
-    config = {
-        extra = {
-            pp = 300,
-            recovering = "Hands"
-        }
-    },
-    atlas = 'other_jokers',
-    pos = {x=2,y=2},
-    immutable = true,
-    loc_vars = function(self,info_queue,card)
-        return {
-            vars = {
-                card.ability.extra.pp
-            }
-        }
-    end,
-    psi_lifeup = true,
-    calculate = function(self,card,context)
-        if context.setting_blind then
-            if card.ability.extra.pp <= 300 then
-                card.ability.extra.pp = card.ability.extra.pp + 10
-                return {
-                    message = "+10 PP!",
-                    colour = G.C.LEGENDARY
-                }
-            end
-            if card.ability.extra.pp >= 300 then
-                repeat card.ability.extra.pp = card.ability.extra.pp - 1
-                until card.ability.extra.pp == 300
-            end
-        end
-    end
-}
+-- SMODS.Joker {
+--     key = 'psi_lifeup',
+--     cost = 10,
+--     rarity = 3,
+--     config = {
+--         extra = {
+--             pp = 300,
+--             recovering = "Hands"
+--         }
+--     },
+--     atlas = 'other_jokers',
+--     pos = {x=2,y=2},
+--     immutable = true,
+--     loc_vars = function(self,info_queue,card)
+--         return {
+--             vars = {
+--                 card.ability.extra.pp
+--             }
+--         }
+--     end,
+--     psi_lifeup = true,
+--     calculate = function(self,card,context)
+--         if context.setting_blind then
+--             if card.ability.extra.pp <= 300 then
+--                 card.ability.extra.pp = card.ability.extra.pp + 10
+--                 return {
+--                     message = "+10 PP!",
+--                     colour = G.C.LEGENDARY
+--                 }
+--             end
+--             if card.ability.extra.pp >= 300 then
+--                 repeat card.ability.extra.pp = card.ability.extra.pp - 1
+--                 until card.ability.extra.pp == 300
+--             end
+--         end
+--     end
+-- }
 
 SMODS.DrawStep {
     key = 'lifeup_button',
@@ -155,6 +155,29 @@ SMODS.DrawStep {
             else
                 self.children.lifeup:remove() 
                 self.children.lifeup = nil
+            end
+        end
+    end,
+}
+
+SMODS.DrawStep {
+    key = 'love_button',
+    order = -30,
+    func = function(self)
+        if self.children.love then
+            if self.highlighted then
+                self.children.love:draw() 
+            else
+                self.children.love:remove() 
+                self.children.love = nil
+            end
+        end
+       if self.children.love then
+            if self.highlighted then
+                self.children.love:draw() 
+            else
+                self.children.love:remove() 
+                self.children.love = nil
             end
         end
     end,

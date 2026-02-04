@@ -75,22 +75,22 @@ SMODS.Joker { --Solinium
     end
 }
 
-SMODS.Joker {
-    key = "solinium_PWX",
-    cost = 1,
-    rarity = 4,
-    atlas = "triple_s",
-    pos = {x=0,y=3},
-    soul_pos = {x=1,y=3},
-    update = function(self,card,dt)
-        if G.GAME.garbl == true then
-            card.children.floating_sprite:set_sprite_pos { x = 2, y = 3 }
-            card:juice_up(0,0.1)
-        else
-            card.children.floating_sprite:set_sprite_pos { x = 1, y = 3 }
-        end
-    end
-}
+-- SMODS.Joker {
+--     key = "solinium_PWX",
+--     cost = 1,
+--     rarity = 4,
+--     atlas = "triple_s",
+--     pos = {x=0,y=3},
+--     soul_pos = {x=1,y=3},
+--     update = function(self,card,dt)
+--         if G.GAME.garbl == true then
+--             card.children.floating_sprite:set_sprite_pos { x = 2, y = 3 }
+--             card:juice_up(0,0.1)
+--         else
+--             card.children.floating_sprite:set_sprite_pos { x = 1, y = 3 }
+--         end
+--     end
+-- }
 
 -- for i = 1, #G.jokers.cards do
 --     if G.jokers.cards[i].config.center.key == "j_ocstobal_recluse" then

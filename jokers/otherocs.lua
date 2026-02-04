@@ -325,7 +325,7 @@ SMODS.Joker {
         }
     end,
     calculate = function(self,card,context)
-        if context.before then
+        if context.initial_scoring_step then
             return {
                 remove_default_message = true,
                 message = "^^^1.02 Mult&Chips",
@@ -351,6 +351,15 @@ SMODS.Joker {
             return {
                 repetitions = retrigger_amount,
                 card = card
+            }
+        end
+        if context.repetition and context.cardarea == G.play then
+            local retrig = 0
+            for i = 1, #G.jokers.cards do
+                retrig = retrig + 1
+            end
+            return {
+                repetitions = retrig
             }
         end
         if context.setting_blind then
