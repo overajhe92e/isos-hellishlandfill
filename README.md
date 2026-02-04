@@ -14,5 +14,5 @@ And some ridiculous unbalancing!
 <sub>and maybe some stupid shit in the code, though nobody does wants to look through all that, right?</sub>
 
 ## Requirements
-https://github.com/wingedcatgirl/Fusion-Jokers for the fusion part.
-Amulet / Talisman
+Fusion Jokers - https://github.com/wingedcatgirl/Fusion-Jokers
+Amulet (Or Talisman, but Amulet is recommended) - (link here)
