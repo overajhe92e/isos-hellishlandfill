@@ -16,6 +16,8 @@ NIGHTMARE_BLUE = HEX("0000ff"),
 NIGHTMARE_PURPLE = HEX("800080"),
 PASTEL_YELLOW = HEX("FFFC75"),
 PINK = HEX("FFAAD9"),
+ISO_LIGHT_PURPLE = HEX("df9aff"),
+ISO_DARK_PURPLE = HEX("cf69ff"),
 """
 match_indent = true
 
@@ -32,5 +34,7 @@ ocstobal_nightmare_blue = G.C.NIGHTMARE_BLUE,
 ocstobal_nightmare_purple = G.C.NIGHTMARE_PURPLE,
 pastel_yellow = G.C.PASTEL_YELLOW,
 pink = G.C.PINK,
+iso_light_purple = G.C.ISO_LIGHT_PURPLE,
+iso_dark_purple = G.C.ISO_DARK_PURPLE,
 """
 match_indent = true

@@ -69,15 +69,3 @@ SMODS.Joker {
     end,
     no_collection = true
 }
-
-SMODS.Joker {
-    key = "debug",
-    cost = 1,
-    rarity = 1
-}
-
-SMODS.Joker {
-    key = "debug_2",
-    cost = 1,
-    rarity = 1
-}

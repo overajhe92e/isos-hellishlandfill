@@ -39,3 +39,10 @@ SMODS.Gradient {
 	interpolation = 'trig',
 	cycle = 4
 }
+
+SMODS.Gradient {
+	key = "iso_grad",
+	colours = { HEX("df9aff"), HEX("cf69ff") },
+	interpolation = 'trig',
+	cycle = 2
+}

@@ -310,6 +310,19 @@ return {
 					'{s:0.8,C:dark_edition}Character by Isotypical{}'
 				},
 			},
+			j_ocstobal_oxi_pwx = {
+				name = "Oxidyze",
+				text = {
+					'Copies the Ability of the joker',
+					'to the left and right of this character.',
+					'{C:red}Doubles blind size.{}',
+					'{C:blue,s:0.9}#1#{}',
+					'{X:red,C:white}Dissonance:{} Steel cards held in hand',
+					'are {C:red}debuffed{} during scoring if {C:pastel_yellow,X:default}O{}{C:pink,X:default}x{}{X:default,C:white}y{} is {C:attention}present{}',
+					'{C:dark_edition,s:0.9}Origin : No origin?{}',
+					'{s:0.8,C:dark_edition}Character by Isotypical{}'
+				}
+			},
 			j_ocstobal_oxi_oldname = {
 				name = "{C:ocstobal_oxi_gradient}Oxy{}",
 				text = {
@@ -339,6 +352,8 @@ return {
 					'to the left and right of this character.',
 					'{C:red}Doubles blind size.{}',
 					'{C:red,s:0.9}#2#{}',
+					'{X:red,C:white}Dissonance:{} Steel cards are debuffed in hand',
+					'during scoring if {C:pastel_yellow}O{}{C:pink}x{}y is present',
 					'{C:dark_edition,s:0.9}Origin : No origin?{}',
 					'{s:0.8,C:dark_edition}Character by Isotypical{}'
 				},
@@ -554,7 +569,7 @@ return {
 				}
 			},
 			j_ocstobal_solinium = {
-				name = "Solinium",
+				name = {"Solinium","{s:0.7}The Curious Cat{}"},
 				text = {
 					'{X:mult,C:white}X#1#{} Mult, upon blind selection,',
 					'adds {C:attention}+#5# (+1){} {X:red,C:white}XMult{}',
@@ -639,7 +654,7 @@ return {
 				}
 			},
 			j_ocstobal_recluse = {
-				name = 'Recluse',
+				name = {'Recluse','{s:0.7,C:red}Destroyer of Universes{}'},
 				text = {
 					'On blind select, {C:red}destroys a random joker{},',
 					'then add {X:money,C:white}X100{} of it\'s sell value to {C:blue}+Chips{}',
@@ -648,11 +663,12 @@ return {
 				}
 			},
 			j_ocstobal_somethingevil = {
-				name = '{C:ocstobal_sewh}Something Evil{}',
+				name = {'{C:ocstobal_sewh}Something Evil{}','{C:inactive,s:0.6}...will happen.{}'},
 				text = {
 					'Combines {C:red}ALL{} the {C:ocstobal_sewh}negative effects{}',
 					'of every joker in Isotypical\'s Junkyard',
-					'Amplifies {C:red}ALL{} {C:ocstobal_sewh,E:1}negative effects.{}'
+					'Amplifies {C:red}ALL{} {C:ocstobal_sewh,E:1}negative effects.{}',
+					'{C:inactive,s:0.8}Does not include crossmod content{}'
 				}
 			},
 			j_ocstobal_eternaldagger = {
@@ -664,7 +680,7 @@ return {
 				}
 			},
 			j_ocstobal_tigersharksparky = {
-				name = 'Sparky {C:inactive}(Tiger Shark){}',
+				name = {'Sparky','{s:0.7}The Tiger Shark{}'},
 				text = {
 					'Scored Cards apply',
 					'{X:blue,C:white}X#1#{} Chips and {X:red,C:white}X#2#{} Mult',
@@ -683,7 +699,7 @@ return {
 				}
 			},
 			j_ocstobal_abbie_alt = {
-				name = 'Math Failure & Miss Circle Victim',
+				name = {'Math Failure & Miss Circle Victim','{s:0.45}fuckin loser lmfaooo{}'},
 				text = {
 					'{C:inactive}Does Something.{}',
 					'{C:dark_edition,s:0.8}Origin : Fundamental Paper Education{}',
@@ -696,7 +712,9 @@ return {
 					'{C:red}Aggressively Beats up a blind{}',
 					'{C:inactive}Blind Size reduced to 1/4th of it\'s original size.{}',
 					'{C:red,s:0.8}#1#{}',
-					'{C:dark_edition,s:0.8}Origin : Dandy\'s World{}'
+					'{C:dark_edition,s:0.8}Origin : Dandy\'s World{}',
+					'{C:inactive,s:0.4}If he dies here, I\'m killing everyone then myself.{}',
+					'{C:inactive,s:0.4}- Isotypical{}'
 				}
 			},
 			j_ocstobal_twistedshrimpo = {
@@ -904,7 +922,7 @@ return {
 				}
 			},
 			j_ocstobal_solstro = {
-				name = "Astronomical Duo",
+				name = {"Astronomical Duo","{s:0.7,C:blue}\"Solstro\"{}"},
 				text = {
 					{
 						"Gains {X:blue,C:white}X#2#{} Chips when",
@@ -1058,7 +1076,7 @@ return {
 				}
 			},
 			j_ocstobal_xeno = {
-				name = "Xeno",
+				name = {"Xeno","{C:blue,s:0.7}Friend of Solinium{}"},
 				text = {
 					{
 						"This joker gains {X:blue,C:white}X0.25{} Chips",
@@ -1173,7 +1191,7 @@ return {
 				}
 			},
 			j_ocstobal_obscene_joke_oh_no = {
-				name = "Seraph's Backfired Joke",
+				name = {"Seraph's Backfired Joke","{s:0.6}Blunder reaction.{}"},
 				text = {
 					{
 						"Creates {C:red}ALL{} {C:ocstobal_ust}Embodiments of Hatred{}",
@@ -1470,20 +1488,19 @@ return {
 					"{C:inactive}Oxidyze took mortal damage! Oxidyze took mortal damage!{}"
 				}
 			},
-			j_ocstobal_debug = {
-				name = "Bad Practice",
+			j_ocstobal_myself = {
+				name = {
+					"{C:ocstobal_iso_grad}Isotypical{}",
+					"{s:0.65,C:ocstobal_iso_grad,E:1}The Creator of the Mod!{}"
+				},
 				text = {
-					"This is a description that is entirely in one single line. Notice how it's making the Joker box really long? Yeah, this isn't good practice as it makes jokers extremely clunky and cluttered. It's not pleasant to look at and it sucks to use.",
-					""
-				}
-			},
-			j_ocstobal_debug_2 = {
-				name = "Good Practice",
-				text = {
-					"This is a joker description",
-					"that has GOOD practice!",
-					"It's not cluttered, and it can",
-					"cleanly fit into a single box."
+						"{C:attention}Retriggers{} all {C:attention}Cards and Jokers{}",
+						"once for every {C:attention}Joker currently held{}",
+						"Reduces {C:attention}Blind requirement{} by {X:dark_edition,C:white}(Req^0.6)/2{}",
+						"All cards are {C:attention}immune{} to {C:red}debuffs{}",
+						"{X:ocstobal_iso_grad,C:white}^^^1.02{} Chips and Mult {C:attention}before and during{} scoring",
+						"{C:iso_dark_purple,E:1}The Gal who made the mod herself, now in joker form!{}",
+						"{C:iso_light_purple,s:0.85}\"#1#\"{}"
 				}
 			}
 		},
@@ -1531,6 +1548,24 @@ return {
 				text = {
 					'{C:inactive}Don\'t... pick this up.{}',
 					'{C:inactive}Please.{}'
+				}
+			},
+			ocstobal_evil = {
+				name = "Evil Spawns",
+				text = {
+					"All shop jokers are now {C:red}EVIL{}"
+				}
+			},
+			ocstobal_omega_blinds = {
+				name = "Omega Rushin",
+				text = {
+					"Boss blinds are always {C:red}Omega{}"
+				}
+			},
+			ocstobal_good_luck = {
+				name = "???",
+				text = {
+					"Evil."
 				}
 			}
 		},
@@ -1620,7 +1655,7 @@ return {
 			k_ocstobal_oxy_quote4 = "\"Seraph. Fucking. Voidgloom. Most annoying person I've met!\"",
 			k_ocstobal_oxy_quote5 = "\"I'm gonna kill Seraph if he calls me 'ocksie' ONE MORE TIME.\"", --part of the "seraph pisses off oxy" trilogy
 			k_ocstobal_oxy_quote6 = "\"...Fundamental Paper Education? What's so fundamental about paper?\"",
-			k_ocstobal_oxy_quote7 = "\"Do I have an origin? No. Does my creator know I'm self aware? Also no.\"",
+			k_ocstobal_oxy_quote7 = "\"Do I have an origin? No. Does my creator know I'm self aware? Uh, ISOO.\"",
 			k_ocstobal_oxy_quote8 = "\"Who is Solinium, again?\"",
 			k_ocstobal_oxy_quote9 = "\"Sparky? What kind of name is that? An electrical issue?\"",
 			k_ocstobal_oxy_quote10 = "\"Recluse? Isn't that the word for Isolation? ...they're a universal threat??\"",
@@ -1705,6 +1740,20 @@ return {
 			k_ocstobal_yatta_quote2 = "HAHAHAHAHA!!!",
 			k_ocstobal_yatta_quote3 = "HIIII!!!",
 			k_ocstobal_yatta_quote4 = "I LOVE CANDY!!!",
+
+			k_ocstobal_me_1 = "oh, hi...",
+			k_ocstobal_me_2 = "i'm so sleepy, i want to sleep...",
+			k_ocstobal_me_3 = "making this mod is fun and unfun at the same time",
+			k_ocstobal_me_4 = "i am the eeper",
+			k_ocstobal_me_5 = "MEOWWWWWWWWWWW",
+			k_ocstobal_me_6 = "most un-subtle self insert ever",
+			k_ocstobal_me_7 = "no.1 freak, not really.",
+			k_ocstobal_me_8 = "play my mod!!!",
+			k_ocstobal_me_9 = "polterworx is NOT kill???",
+			k_ocstobal_me_10 = "fireice, astro, gud, crystal, all my friends are cool!",
+			k_ocstobal_me_11 = "pisstro incident 2025",
+			k_ocstobal_me_12 = "i am indirectly responsible for solstro being a thing.",
+			k_ocstobal_me_13 = "uhhh... nyaaa~",
 
 			k_ocstobal_save = 'Saved by Life Crystal',
 

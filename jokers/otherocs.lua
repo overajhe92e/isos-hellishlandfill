@@ -310,3 +310,71 @@ SMODS.Joker {
         end
     end
 }
+
+SMODS.Joker {
+    key = "myself",
+    name = "isotypical",
+    cost = 2000,
+    rarity = "ocstobal_beyondexotic",
+    atlas = 'other_ocs',
+    pos = {x=2,y=2},
+    soul_pos = {x=3,y=2},
+    loc_vars = function(self,info_queue,card)
+        return {
+            vars = { localize("k_ocstobal_me_"..pseudorandom("myself",1,13)), }
+        }
+    end,
+    calculate = function(self,card,context)
+        if context.before then
+            return {
+                remove_default_message = true,
+                message = "^^^1.02 Mult&Chips",
+                colour = G.C.ISO_LIGHT_PURPLE,
+                eeechips = 1.02,
+                eeemult = 1.02
+            }
+        end
+        if context.joker_main then
+            return {
+                remove_default_message = true,
+                message = "^^^1.02 Mult&Chips",
+                colour = G.C.ISO_LIGHT_PURPLE,
+                eeechips = 1.02,
+                eeemult = 1.02
+            }
+        end
+        if context.retrigger_joker_check and not context.joker_retrigger and not (context.other_card.ability and context.other_card.ability.name == "isotypical") then
+            local retrigger_amount = 0
+            for i = 1, #G.jokers.cards do
+                retrigger_amount = retrigger_amount + 1
+            end
+            return {
+                repetitions = retrigger_amount,
+                card = card
+            }
+        end
+        if context.setting_blind then
+            G.E_MANAGER:add_event(Event({
+                trigger = 'after',
+                delay = 0.06 * G.SETTINGS.GAMESPEED,
+                blockable = false,
+                blocking = false,
+                func = function()
+                    play_sound('tarot2', 0.76, 0.4)
+                    return true
+                end
+            }))
+            play_sound('tarot2', 1, 2)
+            G.GAME.blind.chips = math.floor(G.GAME.blind.chips ^ 0.75)
+            G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
+            return {
+                message = 'Bonk!'
+            }
+        end
+        if context.debuff_card and not context.blueprint then
+            return {
+                prevent_debuff = true
+            }
+        end
+    end
+}
