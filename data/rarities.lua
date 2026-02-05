@@ -176,6 +176,31 @@ SMODS.Rarity {
     end
 }
 
+local the = SMODS.Gradient({
+    key = 'trasnc',
+    colours = {
+        HEX("df9aff"),
+        HEX("cf69ff"),
+    },
+    interpolation = 'linear',
+    cycle = 10
+})
+
+SMODS.Rarity {
+    key = "ultimate",
+    pools = {
+        ["Joker"] = true
+    },
+    default_weight = 0,
+    badge_colour = the,
+    loc_txt = {
+        name = "Isotypical"
+    },
+    get_weight = function(self, weight, object_type)
+        return weight
+    end
+}
+
 SMODS.Rarity {
     key = "why",
     pools = {

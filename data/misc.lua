@@ -528,6 +528,11 @@ SMODS.Sound {
 }
 
 SMODS.Sound {
+	key = "franklin",
+	path = "franklin.ogg"
+}
+
+SMODS.Sound {
 	key = 'ME',
 	path = "Me.ogg"
 }
@@ -578,7 +583,7 @@ SMODS.Sound {
 	volume = 1,
 	select_music_track = function()
 		if G.GAME then
-			if G.GAME.reclusive_vessel == true then return true else return false end
+			if G.GAME.reclusive_vessel == true and not copyright_free == true then return true else return false end
 		end
 	end
 }

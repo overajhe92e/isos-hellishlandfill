@@ -53,6 +53,8 @@ SMODS.Consumable {
     set = 'ocstobal_Aleph',
     hidden = true,
     soul_set = 'Spectral',
+    atlas = "needle",
+    pos = {x=1,y=0},
     can_use = function(self, card)
         return true
     end,
@@ -61,11 +63,23 @@ SMODS.Consumable {
         for _, joker in pairs(G.jokers.cards) do
             if not SMODS.is_eternal(joker, card) then deletable_jokers[#deletable_jokers + 1] = joker end
         end
+        local _first_dissolve = nil
+        G.E_MANAGER:add_event(Event({
+            trigger = 'before',
+            delay = 0.75,
+            func = function()
+                for _, joker in pairs(deletable_jokers) do
+                    joker:start_dissolve(nil, _first_dissolve)
+                    _first_dissolve = true
+                end
+                return true
+            end
+        }))
         G.E_MANAGER:add_event(Event({
             trigger = "after",
             delay = 0.4,
             func = function()
-                play_sound("timpani")
+                play_sound("ocstobal_chimera_ping")
                 SMODS.add_card({ set = 'Joker', rarity = 'ocstobal_beyondexotic' })
                 card:juice_up(0.3, 0.5)
                 return true
@@ -75,7 +89,53 @@ SMODS.Consumable {
     end,
     draw = function(self, card, layer)
         if (layer == 'card' or layer == 'both') and card.sprite_facing == 'front' then
-            card.children.center:draw_shader('ocstobal_hate', nil, card.ARGS.send_to_shader)
+            card.children.center:draw_shader('ocstobal_fluorescent', nil, card.ARGS.send_to_shader)
+        end
+    end
+}
+
+SMODS.Consumable {
+    key = 'isocalls',
+    set = 'ocstobal_Aleph',
+    hidden = true,
+    soul_set = 'Spectral',
+    atlas = "needle",
+    pos = {x=2,y=0},
+    can_use = function(self, card)
+        return true
+    end,
+    use = function(self, card, area, copier)
+        local deletable_jokers = {}
+        for _, joker in pairs(G.jokers.cards) do
+            if not SMODS.is_eternal(joker, card) then deletable_jokers[#deletable_jokers + 1] = joker end
+        end
+        local _first_dissolve = nil
+        G.E_MANAGER:add_event(Event({
+            trigger = 'before',
+            delay = 0.75,
+            func = function()
+                for _, joker in pairs(deletable_jokers) do
+                    joker:start_dissolve(nil, _first_dissolve)
+                    _first_dissolve = true
+                end
+                return true
+            end
+        }))
+        G.E_MANAGER:add_event(Event({
+            trigger = "after",
+            delay = 0.4,
+            func = function()
+                play_sound("ocstobal_franklin")
+                SMODS.add_card({ key = 'j_ocstobal_myself' })
+                card:juice_up(0.3, 0.5)
+                return true
+            end,
+        }))
+        delay(0.6)
+    end,
+    draw = function(self, card, layer)
+        if (layer == 'card' or layer == 'both') and card.sprite_facing == 'front' then
+            card.children.center:draw_shader('booster', nil, card.ARGS.send_to_shader)
         end
     end
 }

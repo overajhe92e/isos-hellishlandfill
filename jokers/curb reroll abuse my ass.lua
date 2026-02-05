@@ -1,10 +1,10 @@
-SMODS.Joker {
-    key = 'reroll_abuse',
-    cost = 10,
-    rarity = 3,
-    atlas = "other_jokers",
-    pos = {x=0,y=2},
-    pools = {
-        ["ocstob"] = true
-    }
-}
+-- SMODS.Joker {
+--     key = 'reroll_abuse',
+--     cost = 10,
+--     rarity = 3,
+--     atlas = "other_jokers",
+--     pos = {x=0,y=2},
+--     pools = {
+--         ["ocstob"] = true
+--     }
+-- }

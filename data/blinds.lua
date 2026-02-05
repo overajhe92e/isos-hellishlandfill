@@ -247,7 +247,7 @@ SMODS.Sound {
 	select_music_track = function()
 		if G.GAME.omegarush == nil then
 			return false
-		elseif G.GAME.omegarush >= 1 and not G.GAME.reclusive_vessel == true then
+		elseif G.GAME.omegarush >= 1 and not G.GAME.reclusive_vessel == true and not copyright_free == true then
 			return true
 		end
 	end

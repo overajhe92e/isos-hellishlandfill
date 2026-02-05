@@ -315,13 +315,13 @@ SMODS.Joker {
     key = "myself",
     name = "isotypical",
     cost = 2000,
-    rarity = "ocstobal_beyondexotic",
+    rarity = "ocstobal_ultimate",
     atlas = 'other_ocs',
     pos = {x=2,y=2},
     soul_pos = {x=3,y=2},
     loc_vars = function(self,info_queue,card)
         return {
-            vars = { localize("k_ocstobal_me_"..pseudorandom("myself",1,13)), }
+            vars = { localize("k_ocstobal_me_"..pseudorandom("myself",1,16)), }
         }
     end,
     calculate = function(self,card,context)
