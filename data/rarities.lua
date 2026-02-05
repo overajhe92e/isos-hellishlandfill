@@ -176,14 +176,14 @@ SMODS.Rarity {
     end
 }
 
-local the = SMODS.Gradient({
-    key = 'trasnc',
+local e = SMODS.Gradient({
+    key = 'cro',
     colours = {
         HEX("df9aff"),
         HEX("cf69ff"),
     },
-    interpolation = 'linear',
-    cycle = 10
+    interpolation = 'trig',
+    cycle = 3
 })
 
 SMODS.Rarity {
@@ -192,7 +192,7 @@ SMODS.Rarity {
         ["Joker"] = true
     },
     default_weight = 0,
-    badge_colour = the,
+    badge_colour = e,
     loc_txt = {
         name = "Isotypical"
     },
