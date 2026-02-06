@@ -832,6 +832,7 @@ return {
 					'{X:dark_edition,C:white}(#3#)#1#{} Hypermult,',
 					'{C:dark_edition}Hyperoperator{} increases at {C:attention}#2#{} Mult.',
 					'{C:dark_edition}Hyperoperator{} Requirement is {C:attention}doubled{} on increase.',
+					'{C:dark_edition,s:2.5,E:1}:3{}'
 				}
 			},
 			j_ocstobal_solawkclassic = {
@@ -1486,8 +1487,25 @@ return {
 						"Reduces {C:attention}Blind requirement{} by {X:dark_edition,C:white}(Req^0.6)/2{}",
 						"All cards are {C:attention}immune{} to {C:red}debuffs{}",
 						"{X:ocstobal_iso_grad,C:white}^^^1.02{} Chips and Mult {C:attention}before and during{} scoring",
+						"Some {c:attention}loaded mods{} may buff {C:ocstobal_iso_grad}Isotypical...{}",
 						"{C:iso_dark_purple,E:1}The Gal who made the mod herself, now in joker form!{}",
 						"{C:iso_light_purple,s:0.85}\"#1#\"{}"
+				}
+			},
+			j_ocstobal_myself_overscored = {
+				name = {
+					"{C:ocstobal_iso_grad}Isotypical{}",
+					"{s:0.65,C:ocstobal_iso_grad,E:1}The Creator of the Mod!{}"
+				},
+				text = {
+						"{C:attention}Retriggers{} all {C:attention}Cards and Jokers{}",
+						"once for every {C:attention}Joker currently held{}",
+						"Reduces {C:attention}Blind requirement{} by {X:dark_edition,C:white}(Req^0.6)/2{}",
+						"All cards are {C:attention}immune{} to {C:red}debuffs{}",
+						"{X:ocstobal_iso_grad,C:white}^^^1.02{} Chips and Mult {C:attention}before and during{} scoring",
+						"Some {c:attention}loaded mods{} may buff {C:ocstobal_iso_grad}Isotypical...{}",
+						"{C:iso_dark_purple,E:1}The Gal who made the mod herself, now in joker form!{}",
+						"{C:iso_light_purple,s:0.85}\"#2#\"{}"
 				}
 			}
 		},
@@ -1554,7 +1572,44 @@ return {
 				text = {
 					"Evil."
 				}
-			}
+			},
+			ocstobal_pwx = {
+				name = "{C:ocstobal_almanacblue}POLTERWORX's{} Modification",
+				text = {
+					"{X:ocstobal_iso_grad,C:white}#1#{} Chips and Mult",
+					"{C:attention}N{} = {C:attention}Current number{} of {C:attention}Jokers{}"
+				}
+			},
+			ocstobal_crypt = {
+				name = "Cryptid's Modification",
+				text = {
+					"{X:legendary,C:white}X2{} {C:attention}Hand Size{} and {C:attention}Card Selection Limit{}"
+				}
+			},
+			ocstobal_starspace = {
+				name = "Starspace's Modification",
+				text = {
+					"TETRATIO"
+				}
+			},
+			ocstobal_baladash = {
+				name = "Balatro Dash's Modification",
+				text = {
+					"Soon!"
+				}
+			},
+			ocstobal_degen = {
+				name = "Balatro Dash's Modification",
+				text = {
+					"Soon!"
+				}
+			},
+			ocstobal_neonflame = {
+				name = "Balatro Dash's Modification",
+				text = {
+					"Soon!"
+				}
+			},
 		},
 		Planet = {},
 		Spectral = {},
@@ -1611,7 +1666,8 @@ return {
 				name = "Draconic Needle",
 				text = {
 					"Gives {C:attention}PK Love{}",
-					"Upgrades {C:attention}PK Love{} if you do have PK Love already"
+					"Upgrades {C:attention}PK Love{} if you do have PK Love already",
+					"{C:inactive}Does not require room, can overflow{}"
 				}
 			}
 		}
@@ -1719,11 +1775,13 @@ return {
 			k_ocstobal_recluse_quote7 = "\"Seven...\"",
 			k_ocstobal_recluse_quote8 = "\"PLASMA DECKS STRONGEST UNIT YEAHHHHHH\"",
 			k_ocstobal_recluse_quote9 = "\"Seraph's next.\"",
+			k_ocstobal_recluse_quote10 = "\"CAN GUD STOP SELLING ME FOR ONCE??\"",
 
 			k_ocstobal_solinium_extra1 = "Origin: Dog Man",
 			k_ocstobal_solinium_extra2 = "Yes, you read that right.",
 
 			k_ocstobal_voidinstlose_varthingy = "{100}100", --used to prevent the {100} from being hidden, unused lmfao
+			k_ocstobal_pwx_N = "{N}N",
 
 			k_ocstobal_shrimpo_quote1 = "I HATE THIS MOD!",
 			k_ocstobal_shrimpo_quote2 = "I HATE YOU!",
@@ -1750,6 +1808,12 @@ return {
 			k_ocstobal_me_14 = "i guess i can help out..?",
 			k_ocstobal_me_15 = "are the other terminus' not good enough?",
 			k_ocstobal_me_16 = "500 e's in your score",
+
+			k_ocstobal_me_overscore_1 = "what the fuck",
+			k_ocstobal_me_overscore_2 = "alright that's enough hashtags.",
+			k_ocstobal_me_overscore_3 = "calm down.",
+			k_ocstobal_me_overscore_4 = "you won already, holy.",
+			k_ocstobal_me_overscore_5 = "oh so you're just balling",
 
 			k_ocstobal_save = 'Saved by Life Crystal',
 

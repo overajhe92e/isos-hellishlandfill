@@ -60,10 +60,8 @@ end
 local abbornegative = G.P_CENTERS.e_negative.get_weight
 G.P_CENTERS.e_negative.get_weight = function(self)
     local weight = abbornegative(self)
-    if next(SMODS.find_card("j_ocstobal_abbie")) then
-        weight = weight * 31.24 + 112.424
-    elseif next(SMODS.find_card("j_ocstobal_abbie")) and next(SMODS.find_card("j_ocstobal_sparky")) then
-        weight = weight * (31.24 + 112.242) * 10 -- DOOMED COUPLE RAHHHHHHHHHHH
+    for i = 1, #G.jokers.cards do
+        weight = weight * (31.24 + 112.424)
     end
     return weight
 end

@@ -9,6 +9,7 @@ SMODS.Booster {
         group_name = "Garbage."
     },
     config = { extra = 3, choose = 1 },
+    cost = 9,
     weight = 0.5,
     atlas = "CustomBoosters",
     pos = { x = 0, y = 0 },
@@ -58,6 +59,7 @@ SMODS.Booster {
         group_name = "Junk."
     },
     config = { extra = 5, choose = 1 },
+    cost = 12,
     weight = 0.25,
     atlas = "CustomBoosters",
     pos = { x = 0, y = 0 },
@@ -107,6 +109,7 @@ SMODS.Booster {
         group_name = "Junk."
     },
     config = { extra = 5, choose = 2 },
+    cost = 15,
     weight = 0.12,
     atlas = "CustomBoosters",
     pos = { x = 0, y = 0 },
@@ -156,6 +159,7 @@ SMODS.Booster {
         group_name = "Even more junk."
     },
     config = { extra = 7, choose = 2 },
+    cost = 35,
     weight = 0.1,
     atlas = "CustomBoosters",
     pos = { x = 0, y = 0 },
@@ -205,6 +209,7 @@ SMODS.Booster {
         group_name = "Ultimate Pack"
     },
     config = { extra = 10, choose = 1 },
+    cost = 50,
     weight = 0.0025,
     atlas = "CustomBoosters",
     pos = { x = 0, y = 0 },

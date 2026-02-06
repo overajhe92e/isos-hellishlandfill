@@ -16,7 +16,7 @@
 
 SMODS.Joker { --so you know polterwor
     key = 'jokertoendalljokers',
-    rarity = 'ocstobal_omega',
+    rarity = 'ocstobal_secret',
     cost = 1e200,
     atlas = 'terminuses',
     no_collection = true,
