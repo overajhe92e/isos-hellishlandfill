@@ -1477,7 +1477,7 @@ return {
 			},
 			j_ocstobal_myself = {
 				name = {
-					"{C:ocstobal_iso_grad}Isotypical{}",
+					"{C:ocstobal_iso_grad,E:1}Isotypical{}",
 					"{s:0.65,C:ocstobal_iso_grad,E:1}The Creator of the Mod!{}"
 				},
 				text = {
@@ -1487,7 +1487,7 @@ return {
 						"All cards are {C:attention}immune{} to {C:red}debuffs{}",
 						"{X:ocstobal_iso_grad,C:white}^^^1.02{} Chips and Mult {C:attention}before and during{} scoring",
 						"{C:iso_dark_purple,E:1}The Gal who made the mod herself, now in joker form!{}",
-						"{C:iso_light_purple,s:0.85}\"#1#\"{}"
+						"{C:iso_light_purple,s:0.85,E:1}\"#1#\"{}"
 				}
 			}
 		},
