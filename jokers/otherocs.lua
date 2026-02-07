@@ -320,11 +320,17 @@ SMODS.Joker {
     pos = {x=2,y=2},
     soul_pos = {x=3,y=2},
     loc_vars = function(self,info_queue,card)
-        if mod_loaded then
-            --infoqueue
+        if POLTERWORX == true then
+            info_queue[#info_queue+1] = {set = "Other", key = "ocstobal_pwx", vars = {localize("k_ocstobal_pwx_N")} }
+        end
+        if starspace == true then
+            info_queue[#info_queue+1] = {set = "Other", key = "ocstobal_starspace"}
+        end
+        if cryptshit == true then
+            info_queue[#info_queue+1] = {set = "Other", key = "ocstobal_crypt"}
         end
         return {
-            vars = { localize("k_ocstobal_me_"..pseudorandom("myself",1,16)), }
+            vars = { localize("k_ocstobal_me_"..pseudorandom("myself",1,16)), localize("k_ocstobal_me_overscore_"..pseudorandom("myself",1,6)) },
         }
     end,
     calculate = function(self,card,context)

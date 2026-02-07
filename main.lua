@@ -158,10 +158,16 @@ end
 grah()
 
 
-local function pwx_check()
+local function all_checks()
     if next(SMODS.find_mod("jen")) then
-        pwx_detected = true
+        POLTERWORX = true
+    end
+    if next(SMODS.find_mod("Cryptid")) then
+        cryptshit = true
+    end
+    if next(SMODS.find_mod("starspace")) then
+        starspace = true
     end
 end
 
-pwx_check()
+all_checks()

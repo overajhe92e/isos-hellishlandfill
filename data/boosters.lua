@@ -9,6 +9,7 @@ SMODS.Booster {
         group_name = "Garbage."
     },
     config = { extra = 3, choose = 1 },
+    cost = 9,
     weight = 0.5,
     cost = 10,
     atlas = "CustomBoosters",

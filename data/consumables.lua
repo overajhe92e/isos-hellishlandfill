@@ -53,6 +53,7 @@ SMODS.Consumable {
     set = 'ocstobal_Aleph',
     hidden = true,
     soul_set = 'Spectral',
+    soul_rate = 0.01,
     atlas = "needle",
     pos = {x=1,y=0},
     can_use = function(self, card)
@@ -99,6 +100,7 @@ SMODS.Consumable {
     set = 'ocstobal_Aleph',
     hidden = true,
     soul_set = 'Spectral',
+    soul_rate = 0.002,
     atlas = "needle",
     pos = {x=2,y=0},
     can_use = function(self, card)
@@ -145,7 +147,7 @@ SMODS.Consumable {
     set = 'ocstobal_others',
     hidden = true,
     soul_set = 'Spectral',
-    soul_rate = 0.1,
+    soul_rate = 0.01,
     can_use = function(self, card)
         return true
     end,
