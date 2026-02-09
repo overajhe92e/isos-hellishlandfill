@@ -334,7 +334,7 @@ SMODS.Joker {
         }
     end,
     calculate = function(self,card,context)
-        if context.initial_scoring_step then
+        if context.initial_scoring_step and not context.joker_retrigger then
             return {
                 remove_default_message = true,
                 message = "^^^1.02 Mult&Chips",
@@ -343,7 +343,7 @@ SMODS.Joker {
                 eeemult = 1.02
             }
         end
-        if context.joker_main then
+        if context.joker_main and not context.joker_retrigger then
             return {
                 remove_default_message = true,
                 message = "^^^1.02 Mult&Chips",
@@ -362,7 +362,7 @@ SMODS.Joker {
                 card = card
             }
         end
-        if context.repetition and context.cardarea == G.play then
+        if context.repetition and context.cardarea == G.play and not context.joker_retrigger then
             local retrig = 0
             for i = 1, #G.jokers.cards do
                 retrig = retrig + 1

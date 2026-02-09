@@ -60,8 +60,8 @@ end
 local abbornegative = G.P_CENTERS.e_negative.get_weight
 G.P_CENTERS.e_negative.get_weight = function(self)
     local weight = abbornegative(self)
-    for i = 1, #G.jokers.cards do
-        weight = weight * (31.24 + 112.424)
+    for _, abbie in ipairs(SMODS.find_card("j_ocstobal_abbie")) do
+        weight = weight * (3.124*3)
     end
     return weight
 end

@@ -8,8 +8,7 @@ SMODS.Booster {
         },
         group_name = "Garbage."
     },
-    config = { extra = 3, choose = 1 },
-    cost = 9,
+    config = { extra = 2, choose = 1 },
     weight = 0.5,
     cost = 10,
     atlas = "CustomBoosters",
@@ -21,6 +20,9 @@ SMODS.Booster {
             vars = { card.ability.choose, card.ability.extra }
         }
     end,
+    ease_background_colour = function(self)
+		ease_background_colour { new_colour = HEX('2d58ff'), special_colour = HEX('6585ff'), contrast = 5 }
+	end,
     create_card = function(self, card)
         local junk = SMODS.create_card {
                 set = "ocstob",
@@ -59,7 +61,7 @@ SMODS.Booster {
         },
         group_name = "Junk."
     },
-    config = { extra = 5, choose = 1 },
+    config = { extra = 3, choose = 1 },
     cost = 15,
     weight = 0.25,
     atlas = "CustomBoosters",
@@ -71,6 +73,9 @@ SMODS.Booster {
             vars = { card.ability.choose, card.ability.extra }
         }
     end,
+    ease_background_colour = function(self)
+		ease_background_colour { new_colour = HEX('5247ff'), special_colour = HEX('b57dff'), contrast = 1 }
+	end,
     create_card = function(self, card)
         local junk = SMODS.create_card {
                 set = "ocstob",
@@ -121,6 +126,9 @@ SMODS.Booster {
             vars = { card.ability.choose, card.ability.extra }
         }
     end,
+    ease_background_colour = function(self)
+		ease_background_colour { new_colour = HEX('000000'), special_colour = HEX('ff0000'), contrast = 5 }
+	end,
     create_card = function(self, card)
         local junk = SMODS.create_card {
                 set = "ocstob",
@@ -171,6 +179,9 @@ SMODS.Booster {
             vars = { card.ability.choose, card.ability.extra }
         }
     end,
+    ease_background_colour = function(self)
+		ease_background_colour { new_colour = HEX('000000'), special_colour = HEX('ff0000'), contrast = 5 }
+	end,
     create_card = function(self, card)
         local junk = SMODS.create_card {
                 set = "ocstob",
@@ -207,7 +218,7 @@ SMODS.Booster {
             "Choose {C:attention}#1#{} of {C:attention}#2#{} Iso. Junkyard Jokers",
             "{C:attention}Include{} {C:ocstobal_finalrgb}Terminus{}, {C:ocstobal_ust}Cursed{}, and/or {C:attention}Unique{} Jokers",
         },
-        group_name = "Ultimate Pack"
+        group_name = "THE Junkyard Pack"
     },
     config = { extra = 10, choose = 1 },
     cost = 100,
@@ -221,6 +232,9 @@ SMODS.Booster {
             vars = { card.ability.choose, card.ability.extra }
         }
     end,
+    ease_background_colour = function(self)
+		ease_background_colour { new_colour = HEX('000000'), special_colour = HEX('ff0000'), contrast = 5 }
+	end,
     create_card = function(self, card)
         local junk = SMODS.create_card {
                 set = "all_junk",

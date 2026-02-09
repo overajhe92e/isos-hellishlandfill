@@ -820,13 +820,13 @@ return {
 					'{C:ocstobal_ust,s:6}Don\'t use this.{}'
 				}
 			},
-			j_ocstobal_sphawkclassic = {
+			j_ocstobal_sphawkclassic_slop = {
 				name = '{C:inactive}(Classic){} Seraph, the {C:ocstobal_legendplus}Angel of the Void{}',
 				text = {
 					'{X:tarot,C:white}^666{} Mult and Chips'
 				}
 			},
-			j_ocstobal_sphawk = {
+			j_ocstobal_sphawk_slop = {
 				name = {'Seraph','{C:dark_edition,s:0.8}The Eternal Void{}'},
 				text = {
 					'{X:dark_edition,C:white}(#3#)#1#{} Hypermult,',
@@ -835,7 +835,16 @@ return {
 					'{C:dark_edition,s:2.5,E:1}:3{}'
 				}
 			},
-			j_ocstobal_solawkclassic = {
+			j_ocstobal_sphawk = {
+				name = {'Seraph','{C:dark_edition,s:0.8}The Eternal Void{}'},
+				text = {
+					'{X:dark_edition,C:white}^^#1#{} Mult,',
+					'Every Scored card multiplies Mult by',
+					'{X:dark_edition,C:white}Card_Rank/100+1{}',
+					'{C:dark_edition,s:2.5,E:1}:3{}'
+				}
+			},
+			j_ocstobal_solawkclassic_slop = {
 				name = '{C:inactive}(Classic){} Solinium, the {C:ocstobal_ust}Omnipotent One{}',
 				text = {
 					'Gives two {C:dark_edition}Negative Soul and Black Hole{}',
@@ -843,12 +852,20 @@ return {
 					'{X:dark_edition,C:white}^^2{} Mult and Chips'
 				}
 			},
-			j_ocstobal_solawk = {
+			j_ocstobal_solawk_slop = {
 				name = {'Solinium','{C:red,s:0.7,E:1}The Absolute Threat{}'},
 				text = {
 					'{X:dark_edition,C:white}^^^^#1#{} Mult,',
 					'Mult is {C:attention}multiplied{} by {C:attention}X2{}.',
 					'Stops scaling at 1e300.'
+				}
+			},
+			j_ocstobal_solawk = {
+				name = {'Solinium','{C:red,s:0.7,E:1}The Absolute Threat{}'},
+				text = {
+					'{X:dark_edition,C:white}^^#1#{} Mult,',
+					'Mult is {C:attention}scaled{} by the equation of',
+					'{X:dark_edition,C:white}(log(Mult)/10)+0.1{}',
 				}
 			},
 			j_ocstobal_spkawkclassic = {
@@ -858,7 +875,7 @@ return {
 					'{X:dark,C:attention}^0.7{} Mult'
 				}
 			},
-			j_ocstobal_spkawk = {
+			j_ocstobal_spkawk_slop = {
 				name = {'Sparky','{C:ocstobal_legendplus,s:0.7}The Ever Changing Soul{}'},
 				text = {
 					'Gives {C:attention}2 to 10{}',
@@ -866,11 +883,11 @@ return {
 					'{C:dark_edition}Hyperoperator{} is also random from 2-5.'
 				}
 			},
-			j_ocstobal_oxyold = {
-				name = 'Oxidyze {C:inactive}(Classic, Unbalanced)',
+			j_ocstobal_spkawk = {
+				name = {'Sparky','{C:ocstobal_legendplus,s:0.7}The Ever Changing Soul{}'},
 				text = {
-					'go read the {C:ocstobal_finalrgb}avaritia{} joker description im too lazy to put it here',
-					'but yeah imagine that but it\'s more sloppy'
+					"Randomly gives between {C:attention}1.1 to 4{} {X:legendary,C:white}EEMult&Chips{}",
+					"{C:green}1 in 2{} chance to apply {X:dark_edition,C:white}EEMult&Chips{} instead"
 				}
 			},
 			j_ocstobal_brokenseraph = {
@@ -978,19 +995,6 @@ return {
 					}
 				}
 			},
-			j_ocstobal_aiojoker = {
-				name = "Yhdistyminen",
-				text = {
-					{
-						'Combines {C:ocstobal_sewh}EVERY{} Positive',
-						'Joker Ability.'
-					},
-					{
-						'Destroys {C:red}ALL{} Jokers on collection,',
-						'Locks Joker Slots to {C:red}1{}'
-					}
-				}
-			},
 			j_ocstobal_ripoff = {
 				name = "Epävakaaelämänmuoto",
 				text = {
@@ -1077,6 +1081,11 @@ return {
 					{
 						"{C:inactive}Currently{} {X:blue,C:white}X#1#{}",
 						"{C:inactive}Currently{} {X:red,C:white}X#2#{}"
+					},
+					{
+						"{X:green,C:white}Synergy:{} If you have {C:attention}Solinium{}",
+						"All {C:spades}Dark{} Suits and {C:hearts}Light{} Suits will count to",
+						"{X:red,C:white}XMult{} and {X:blue,C:white}XChip{} gain"
 					}
 				}
 			},
