@@ -7,7 +7,7 @@ SMODS.Joker { -- did ya think he would silently give chips or mult? no.
     soul_pos = {x=2,y=1},
     pools = {["ocstob"] = true,["all_junk"] = true},
 
-    loc_vars = function(self,info_queue,center)
+    loc_vars = function(self,info_queue,card)
         return {
             key = pseudorandom('seed',1,10) == 1 and "j_ocstobal_abbie_alt"
         }   

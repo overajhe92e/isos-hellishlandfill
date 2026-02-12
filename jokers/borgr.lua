@@ -6,9 +6,24 @@ SMODS.Joker {
     pools = {
         ["ocstob"] = true
     },
-    pos = {x=5,y=1},
+    pos = { x = 5, y = 1 },
+    config = {
+        extra = {
+            thej = 1,
+            theh = 8
+        }
+    },
+    blueprint_compat = false,
+    loc_vars = function(self, info_queue, card)
+        local numerator, denominator = SMODS.get_probability_vars(card, card.ability.extra.thej, card.ability.extra.theh, 'j_ocstobal_burgr')
+        return {
+            vars = {
+                numerator, denominator
+            }
+        }
+    end,
     calculate = function(self, card, context)
-        if context.setting_blind then
+        if context.setting_blind and not context.blueprint then
             if SMODS.pseudorandom_probability(card, "ocstobal_unstable", 1, 8) then
                 G.burger = 1
                 G.GAME.chips = G.GAME.blind.chips - 1

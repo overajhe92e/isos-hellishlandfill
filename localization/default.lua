@@ -582,8 +582,10 @@ return {
 			j_ocstobal_burgr = {
 				name = "The Burger",
 				text = {
-					"A {C:red,s:1.1}STRONG{} aura emanates from",
-					"the {C:attention}Burger{}"
+					"An {C:red,s:1.1}EVIL{} aura emanates from",
+					"the {C:attention}Burger{}",
+					"{C:inactive,s:0.7}#1# in #2# chance to set Score to (Score Req - 1){}",
+					"{C:inactive,s:0.7}on Blind select{}"
 				}
 			},
 			j_ocstobal_voidinstlose = {
@@ -820,10 +822,10 @@ return {
 					'{C:ocstobal_ust,s:6}Don\'t use this.{}'
 				}
 			},
-			j_ocstobal_sphawkclassic_slop = {
+			j_ocstobal_sphawkclassic = {
 				name = '{C:inactive}(Classic){} Seraph, the {C:ocstobal_legendplus}Angel of the Void{}',
 				text = {
-					'{X:tarot,C:white}^666{} Mult and Chips'
+					'{X:tarot,C:white}^666{} Mult and Chips' --LMFAOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
 				}
 			},
 			j_ocstobal_sphawk_slop = {
@@ -840,11 +842,12 @@ return {
 				text = {
 					'{X:dark_edition,C:white}^^#1#{} Mult,',
 					'Every Scored card multiplies Mult by',
-					'{X:dark_edition,C:white}Card_Rank/100+1{}',
+					'{X:dark_edition,C:white}(R/100)+1{}',
+					'{C:attention}R{} = Rank of {C:attention}scored card{}',
 					'{C:dark_edition,s:2.5,E:1}:3{}'
 				}
 			},
-			j_ocstobal_solawkclassic_slop = {
+			j_ocstobal_solawkclassic = {
 				name = '{C:inactive}(Classic){} Solinium, the {C:ocstobal_ust}Omnipotent One{}',
 				text = {
 					'Gives two {C:dark_edition}Negative Soul and Black Hole{}',
@@ -856,7 +859,8 @@ return {
 				name = {'Solinium','{C:red,s:0.7,E:1}The Absolute Threat{}'},
 				text = {
 					'{X:dark_edition,C:white}^^^^#1#{} Mult,',
-					'Mult is {C:attention}multiplied{} by {C:attention}X2{}.',
+					'Mult is {C:attention}multiplied{} by {C:attention}X2{}',
+					'on {C:attention}Blind Select{}',
 					'Stops scaling at 1e300.'
 				}
 			},
@@ -866,6 +870,7 @@ return {
 					'{X:dark_edition,C:white}^^#1#{} Mult,',
 					'Mult is {C:attention}scaled{} by the equation of',
 					'{X:dark_edition,C:white}(log(Mult)/10)+0.1{}',
+					'on {C:attention}Blind Select{}'
 				}
 			},
 			j_ocstobal_spkawkclassic = {
@@ -886,8 +891,8 @@ return {
 			j_ocstobal_spkawk = {
 				name = {'Sparky','{C:ocstobal_legendplus,s:0.7}The Ever Changing Soul{}'},
 				text = {
-					"Randomly gives between {C:attention}1.1 to 4{} {X:legendary,C:white}EEMult&Chips{}",
-					"{C:green}1 in 2{} chance to apply {X:dark_edition,C:white}EEMult&Chips{} instead"
+					"Randomly gives between {C:attention}1.1 to 4{} {X:legendary,C:white}^Mult&Chips{}",
+					"{C:green}1 in 2{} chance to apply {X:dark_edition,C:white}^^Mult&Chips{} instead"
 				}
 			},
 			j_ocstobal_brokenseraph = {
@@ -1455,7 +1460,7 @@ return {
 
 				}
 			},
-			j_ocstobal_candycane = { -- Welcome back, Candycane. PLease don't fuck up.
+			j_ocstobal_candycane = { -- for fucks sake
 				name = "Sappy",
 				text = {
 					"Scored {C:diamonds}Diamonds{} permanently gain",
@@ -1501,22 +1506,74 @@ return {
 						"{C:iso_light_purple,s:0.85,E:1}\"#1#\"{}"
 				}
 			},
-			j_ocstobal_myself_overscored = {
-				name = {
-					"{C:ocstobal_iso_grad}Isotypical{}",
-					"{s:0.65,C:ocstobal_iso_grad,E:1}The Creator of the Mod!{}"
-				},
+			j_ocstobal_steelwire_stage_1 = {
+				name = "Steelwire",
 				text = {
-						"{C:attention}Retriggers{} all {C:attention}Cards and Jokers{}",
-						"once for every {C:attention}Joker currently held{}",
-						"Reduces {C:attention}Blind requirement{} by {X:dark_edition,C:white}(Req^0.6)/2{}",
-						"All cards are {C:attention}immune{} to {C:red}debuffs{}",
-						"{X:ocstobal_iso_grad,C:white}^^^1.02{} Chips and Mult {C:attention}before and during{} scoring",
-						"Some {c:attention}loaded mods{} may buff {C:ocstobal_iso_grad}Isotypical...{}",
-						"{C:iso_dark_purple,E:1}The Gal who made the mod herself, now in joker form!{}",
-						"{C:iso_light_purple,s:0.85}\"#2#\"{}"
+					"{C:inactive}A strong aura emits from the Steelwire.{}",
+					"{C:inactive,s:0.8}It seems useless.{}",
+					"{C:inactive,s:0.8}There's #1# of them now.{}"
 				}
-			}
+			},
+			j_ocstobal_steelwire_stage_2 = {
+				name = "Steelwire",
+				text = {
+					"{C:inactive}A strong aura emits from the Steelwire.{}",
+					"{C:inactive,s:0.8}Your joker slots feel heavy.{}",
+					"{C:inactive,s:0.8}There's #1# of them now.{}"
+				}
+			},
+			j_ocstobal_steelwire_stage_3 = {
+				name = "Steelwire",
+				text = {
+					"{C:inactive}A strong aura emits from the Steelwire.{}",
+					"{C:inactive,s:0.8}You've definetely seen this before.{}",
+					"{C:inactive,s:0.8}You think.{}",
+					"{C:inactive,s:0.8}There's #1# of them now.{}"
+				}
+			},
+			j_ocstobal_steelwire_stage_4 = {
+				name = "Steelwire",
+				text = {
+					"{C:inactive}A strong aura emits from the Steelwire.{}",
+					"{C:inactive,s:0.8}This feels unusually strong.{}",
+					"{C:inactive,s:0.8}...could just be you.{}",
+					"{C:inactive,s:0.8}There's #1# of them now.{}"
+				}
+			},
+			j_ocstobal_steelwire_stage_5 = {
+				name = "Steelwire",
+				text = {
+					"{C:inactive}A strong aura emits from the Steelwire.{}",
+					"{C:inactive,s:0.8}You definetely think this is strong now.{}",
+					"{C:inactive,s:0.8}There's #1# of them now.{}"
+				}
+			},
+			j_ocstobal_steelwire_stage_6 = {
+				name = "Steelwire",
+				text = {
+					"{C:inactive}A strong aura emits from the Steelwire.{}",
+					"{C:inactive,s:0.8}You need more of these.{}",
+					"{C:inactive,s:0.8}Well, that's what you think you should do.{}",
+					"{C:inactive,s:0.8}There's #1# of them now.{}"
+				}
+			},
+			j_ocstobal_steelwire_stage_7 = {
+				name = "Steelwire",
+				text = {
+					"{C:inactive}A strong aura emits from the Steelwire.{}",
+					"{C:inactive,s:0.8}It's starting to become extremely heavy.{}",
+					"{C:inactive,s:0.8}Probably because you have a lot of these now.{}",
+					"{C:inactive,s:0.8}There's #1# of them now.{}"
+				}
+			},
+			j_ocstobal_steelwire_stage_8 = {
+				name = "{C:dark_edition}Steelwire{}",
+				text = {
+					"{C:dark_edition,E:1}An extremely strong aura emits from the Steelwire.{}",
+					"{C:dark_edition,s:0.8,E:1}It's extremely powerful now.{}",
+					"{C:inactive,s:0.8}There's #1# of them now.{}"
+				}
+			},
 		},
 		Other = {
 			ocstobal_recluses_eye_seal = {
@@ -1619,6 +1676,22 @@ return {
 					"Soon!"
 				}
 			},
+			ocstobal_aeternal = {
+				name = "Alphaeternal",
+				text = {
+					"Cannot be sold",
+					"or Destroyed normally",
+					"Can be destroyed by {C:ocstobal_sewh}Eternal Dagger{}"
+				} --cant be stopped by stuff like lockpick
+			},
+			ocstobal_oeternal = {
+				name = "Omegaeternal",
+				text = {
+					"Cannot be sold",
+					"or Destroyed",
+					"{C:red}No, really. It's impossible to destroy.{}"
+				}
+			}
 		},
 		Planet = {},
 		Spectral = {},
@@ -1660,13 +1733,15 @@ return {
 			c_ocstobal_thesoulex = {
 				name = 'Soul of Malice',
 				text = {
-					"{C:ocstobal_ust,s:3,E:1}??????{}"
+					"{C:ocstobal_ust,s:3,E:1}??????{}",
+					"{C:inactive,s:0.7}Destroys all jokers, including Eternals. Does not destroy Omegaeternals.{}"
 				}
 			},
 			c_ocstobal_isocalls = {
 				name = "The Calling",
 				text = {
-					"Summons {C:ocstobal_iso_grad}Isotypical{} Herself."
+					"Summons {C:ocstobal_iso_grad}Isotypical{} Herself.",
+					"{C:red}Destroys ALL Jokers, Including Eternal AND Omegaeternal!{}"
 				}
 			}
 		},
@@ -1819,10 +1894,13 @@ return {
 			k_ocstobal_me_16 = "500 e's in your score",
 
 			k_ocstobal_me_overscore_1 = "what the fuck",
-			k_ocstobal_me_overscore_2 = "alright that's enough hashtags.",
+			k_ocstobal_me_overscore_2 = "alright that's enough E's.",
 			k_ocstobal_me_overscore_3 = "calm down.",
 			k_ocstobal_me_overscore_4 = "you won already, holy.",
-			k_ocstobal_me_overscore_5 = "oh so you're just balling",
+			k_ocstobal_me_overscore_5 = "oh.",
+
+			k_ocstobal_me_pwx_hyperop_above25000_1 = "calm the fuck down holy shit",
+			k_ocstobal_me_pwx_hyperop_above25000_2 = "THAT'S ENOUGH ARROWS !!!!",
 
 			k_ocstobal_save = 'Saved by Life Crystal',
 

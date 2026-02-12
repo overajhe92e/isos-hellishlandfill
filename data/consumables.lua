@@ -62,7 +62,8 @@ SMODS.Consumable {
     use = function(self, card, area, copier)
         local deletable_jokers = {}
         for _, joker in pairs(G.jokers.cards) do
-            if not SMODS.is_eternal(joker, card) then deletable_jokers[#deletable_jokers + 1] = joker end
+            if SMODS.is_eternal(joker,card) then card.ability.eternal = nil end
+            deletable_jokers[#deletable_jokers + 1] = joker
         end
         local _first_dissolve = nil
         G.E_MANAGER:add_event(Event({
@@ -109,7 +110,8 @@ SMODS.Consumable {
     use = function(self, card, area, copier)
         local deletable_jokers = {}
         for _, joker in pairs(G.jokers.cards) do
-            if not SMODS.is_eternal(joker, card) then deletable_jokers[#deletable_jokers + 1] = joker end
+            if SMODS.is_eternal(joker,card) then card.ability.eternal = nil end
+            deletable_jokers[#deletable_jokers + 1] = joker
         end
         local _first_dissolve = nil
         G.E_MANAGER:add_event(Event({

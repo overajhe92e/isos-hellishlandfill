@@ -15,8 +15,10 @@ SMODS.Joker {
         G.jokers.config.card_limit = G.jokers.config.card_limit - 3
     end,
     calculate = function(self, card, context)
-        if G.GAME.chips >= to_big(1e308) then
-            forceGameover()
+        if context.after and not context.blueprint then
+            if G.GAME.chips >= to_big(1e308) then
+                forceGameover()
+            end
         end
     end
 }
@@ -55,17 +57,19 @@ SMODS.Joker {
             card.ability.scale = card.ability.scale * card.ability.scale
             card.ability.emult = card.ability.emult * card.ability.scale
             return {
-                message = { "X" .. tostring(card.ability.scale) .. " EMult" }
+                message = { "X" .. tostring(card.ability.scale) .. " EMult, fuck you." }
             }
         end
         if context.end_of_round and context.game_over == false and context.main_eval and context.beat_boss then
-            card.ability.emult = card.ability.emult / 8
+            card.ability.emult = card.ability.emult / card.ability.reduce
             return {
                 message = 'Scaled Down!'
             }
         end
-        if SMODS.last_hand_oneshot and G.GAME.chips >= to_big(1e308) then
-            forceGameover()
+        if context.after and not context.blueprint then
+            if G.GAME.chips >= to_big(1e308) then
+                forceGameover()
+            end
         end
     end
 }

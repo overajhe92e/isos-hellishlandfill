@@ -13,7 +13,6 @@ SMODS.Booster {
     cost = 10,
     atlas = "CustomBoosters",
     pos = { x = 0, y = 0 },
-    draw_hand = true,
     discovered = true,
     loc_vars = function(self, info_queue, card)
         return {
@@ -43,7 +42,7 @@ SMODS.Booster {
             speed = 0.2,
             padding = -1,
             attach = G.ROOM_ATTACH,
-            colours = { G.C.BLACK, G.C.RED },
+            colours = { G.C.BLUE, G.C.BLACK },
             fill = true
         })
         G.booster_pack_sparkles.fade_alpha = 1
@@ -65,8 +64,7 @@ SMODS.Booster {
     cost = 15,
     weight = 0.25,
     atlas = "CustomBoosters",
-    pos = { x = 0, y = 0 },
-    draw_hand = true,
+    pos = { x = 1, y = 0 },
     discovered = true,
     loc_vars = function(self, info_queue, card)
         return {
@@ -96,7 +94,7 @@ SMODS.Booster {
             speed = 0.2,
             padding = -1,
             attach = G.ROOM_ATTACH,
-            colours = { G.C.BLACK, G.C.RED },
+            colours = { G.C.BLUE, G.C.BLUE },
             fill = true
         })
         G.booster_pack_sparkles.fade_alpha = 1
@@ -118,8 +116,7 @@ SMODS.Booster {
     cost = 20,
     weight = 0.12,
     atlas = "CustomBoosters",
-    pos = { x = 0, y = 0 },
-    draw_hand = true,
+    pos = { x = 2, y = 0 },
     discovered = true,
     loc_vars = function(self, info_queue, card)
         return {
@@ -127,7 +124,7 @@ SMODS.Booster {
         }
     end,
     ease_background_colour = function(self)
-		ease_background_colour { new_colour = HEX('000000'), special_colour = HEX('ff0000'), contrast = 5 }
+		ease_background_colour { new_colour = HEX('ffb300'), special_colour = HEX('ffe700'), contrast = 5 }
 	end,
     create_card = function(self, card)
         local junk = SMODS.create_card {
@@ -149,7 +146,7 @@ SMODS.Booster {
             speed = 0.2,
             padding = -1,
             attach = G.ROOM_ATTACH,
-            colours = { G.C.BLACK, G.C.RED },
+            colours = { G.C.PASTEL_YELLOW },
             fill = true
         })
         G.booster_pack_sparkles.fade_alpha = 1
@@ -171,8 +168,7 @@ SMODS.Booster {
     cost = 30,
     weight = 0.1,
     atlas = "CustomBoosters",
-    pos = { x = 0, y = 0 },
-    draw_hand = true,
+    pos = { x = 3, y = 0 },
     discovered = true,
     loc_vars = function(self, info_queue, card)
         return {
@@ -180,7 +176,7 @@ SMODS.Booster {
         }
     end,
     ease_background_colour = function(self)
-		ease_background_colour { new_colour = HEX('000000'), special_colour = HEX('ff0000'), contrast = 5 }
+		ease_background_colour { new_colour = HEX('1fff1f'), special_colour = HEX('82ff82'), contrast = 5 }
 	end,
     create_card = function(self, card)
         local junk = SMODS.create_card {
@@ -202,7 +198,7 @@ SMODS.Booster {
             speed = 0.2,
             padding = -1,
             attach = G.ROOM_ATTACH,
-            colours = { G.C.BLACK, G.C.RED },
+            colours = { G.C.GREEN, G.C.GREEN },
             fill = true
         })
         G.booster_pack_sparkles.fade_alpha = 1
@@ -222,10 +218,9 @@ SMODS.Booster {
     },
     config = { extra = 10, choose = 1 },
     cost = 100,
-    weight = 0.0025,
+    weight = 0.005,
     atlas = "CustomBoosters",
-    pos = { x = 0, y = 0 },
-    draw_hand = true,
+    pos = { x = 4, y = 0 },
     discovered = true,
     loc_vars = function(self, info_queue, card)
         return {
@@ -260,5 +255,42 @@ SMODS.Booster {
         })
         G.booster_pack_sparkles.fade_alpha = 1
         G.booster_pack_sparkles:fade(1, 0)
+    end,
+}
+
+SMODS.Booster {
+    key = 'misc',
+    loc_txt = {
+        name = "Junkyard Pack Omega",
+        text = {
+            "Choose {C:attention}#1#{} of {C:attention}#2#{} Iso. Junkyard Jokers",
+            "{C:attention}Include{} {C:ocstobal_finalrgb}Terminus{}, {C:ocstobal_ust}Cursed{}, and/or {C:attention}Unique{} Jokers",
+        },
+        group_name = "THE Junkyard Pack"
+    },
+    config = { extra = 10, choose = 1 },
+    cost = 100,
+    weight = 0.005,
+    atlas = "CustomBoosters",
+    pos = { x = 4, y = 0 },
+    discovered = true,
+    loc_vars = function(self, info_queue, card)
+        return {
+            vars = { card.ability.choose, card.ability.extra }
+        }
+    end,
+    ease_background_colour = function(self)
+		ease_background_colour { new_colour = HEX('000000'), special_colour = HEX('ff0000'), contrast = 5 }
+	end,
+    create_card = function(self, card)
+        local junk = SMODS.create_card {
+                set = "all_junk",
+                legendary = true,
+                rarity = 1,
+                area = G.pack_cards,
+                skip_materialize = true,
+                soulable = true,
+            }
+        return junk
     end,
 }

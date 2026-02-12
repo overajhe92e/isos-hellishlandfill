@@ -197,21 +197,32 @@ SMODS.Joker { --terminus go brrrrt
     end,
 
     update = function(self, card, dt)
-        if card.ability.extra.mult >= card.ability.extra.req then
-            card.ability.extra.op = card.ability.extra.op + 1
-            card.ability.extra.mult = 2
-            card.ability.extra.req = card.ability.extra.req * 2
+        if G.current_isomode >= 3 then
+            if card.ability.extra.mult >= card.ability.extra.req then
+                card.ability.extra.op = card.ability.extra.op + 1
+                card.ability.extra.mult = 2
+                card.ability.extra.req = card.ability.extra.req * 2
+            end
         end
     end,
 
     calculate = function(self, card, context)
-        if context.individual and context.cardarea == G.play and card.ability.extra.mult < card.ability.extra.req then
-            card.ability.extra.mult = card.ability.extra.mult * 2
-        end
-        if context.individual and context.cardarea == G.play then
-            return {
-                hypermult = { card.ability.extra.op, card.ability.extra.mult }
-            }
+        if G.current_isomode >= 3 then
+            if context.individual and context.cardarea == G.play and card.ability.extra.mult < card.ability.extra.req then
+                card.ability.extra.mult = card.ability.extra.mult * 2
+            end
+            if context.individual and context.cardarea == G.play then
+                return {
+                    hypermult = { card.ability.extra.op, card.ability.extra.mult }
+                }
+            end
+        elseif G.current_isomode < 3 then
+            if context.individual and context.cardarea == G.play then
+                card.ability.extra.mult = math.ceil(card.ability.extra.mult * ((context.other_card:get_id() / 20) + 1))
+                return {
+                    eemult = card.ability.extra.mult
+                }
+            end
         end
     end
 }
@@ -310,12 +321,13 @@ SMODS.Joker {
     end,
     loc_vars = function(self, info_queue, card)
         return {
-            key = 
-            next(SMODS.find_card("j_ocstobal_Oxy")) and next(SMODS.find_card("j_ocstobal_sparky")) and next(SMODS.find_card("j_ocstobal_solinium")) and "j_ocstobal_obscene_joke_oh_no"
-            or next(SMODS.find_card("j_ocstobal_Oxy")) and "j_ocstobal_obscene_joke_oxidyze"
-            or next(SMODS.find_card("j_ocstobal_solinium")) and "j_ocstobal_obscene_joke_solinium"
-            or next(SMODS.find_card("j_ocstobal_sparky")) and "j_ocstobal_obscene_joke_sparky"
-            
+            key =
+                next(SMODS.find_card("j_ocstobal_Oxy")) and next(SMODS.find_card("j_ocstobal_sparky")) and
+                next(SMODS.find_card("j_ocstobal_solinium")) and "j_ocstobal_obscene_joke_oh_no"
+                or next(SMODS.find_card("j_ocstobal_Oxy")) and "j_ocstobal_obscene_joke_oxidyze"
+                or next(SMODS.find_card("j_ocstobal_solinium")) and "j_ocstobal_obscene_joke_solinium"
+                or next(SMODS.find_card("j_ocstobal_sparky")) and "j_ocstobal_obscene_joke_sparky"
+
         }
     end,
 }
