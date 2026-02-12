@@ -237,6 +237,17 @@ SMODS.ObjectType({
 	end,
 })
 
+SMODS.ObjectType({
+	key = "wire",
+	default = "j_ocstobal_steelwire",
+	cards = {
+	},
+	inject = function(self)
+		SMODS.ObjectType.inject(self)
+		self:inject_card(G.P_CENTERS.j_lucky_cat)
+	end,
+})
+
 SMODS.Atlas {
 	key = 'diansuvulkarch',
 	px = 34,
@@ -582,8 +593,18 @@ SMODS.Sound {
 	pitch = 1,
 	volume = 1,
 	select_music_track = function()
+		local steel = 0
+		for _, steelwirecount in ipairs(SMODS.find_card("j_ocstobal_steelwire")) do
+			steel = steel + 1
+		end
 		if G.GAME then
-			if G.GAME.reclusive_vessel == true and not copyright_free == true then return true else return false end
+			if G.GAME.reclusive_vessel == true and not copyright_free == true then 
+				return true 
+			elseif steel >= 200 then
+				return G.GAME.evil_steel == true and 1e99
+			else 
+				return false
+			end
 		end
 	end
 }

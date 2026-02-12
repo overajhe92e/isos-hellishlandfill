@@ -46,3 +46,15 @@ elseif G.GAME.reclusive_vessel == true then
     ease_background_colour{new_colour = G.C.OMEGABLACK, special_colour = G.C.OMEGABLACK, tertiary_colour = G.C.NIGHTMARE_PURPLE, contrast = 2}
 '''
 match_indent = true
+
+# reclusive bg
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+pattern = '''elseif blindname == 'Small Blind' or blindname == 'Big Blind' or blindname == '' then'''
+position = "before"
+payload = '''
+elseif G.GAME.evil_steel == true then
+    ease_background_colour{new_colour = G.C.OMEGABLACK, special_colour = G.C.ISO_CRIMSON, tertiary_colour = G.C.RED, contrast = 2}
+'''
+match_indent = true

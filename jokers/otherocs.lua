@@ -160,7 +160,7 @@ SMODS.Joker {
     config = {
         jokerslots = 1
     },
-    pools = {["ocstob"] = true,["all_junk"] = true},
+    pools = { ["ocstob"] = true, ["all_junk"] = true },
     blueprint_compat = false,
     atlas = 'other_ocs',
     pos = { x = 2, y = 0 },
@@ -193,10 +193,12 @@ SMODS.Joker {
             chips = 1,
             mult = 1,
             suit_1 = "Spades",
-            suit_2 = "Hearts"
+            suit_2 = "Hearts",
+            suit_3 = "Clubs",
+            suit_4 = "Diamonds"
         }
     },
-    pools = {["ocstob"] = true,["all_junk"] = true},
+    pools = { ["ocstob"] = true, ["all_junk"] = true },
     pronouns = "they_them",
     loc_vars = function(self, info_queue, card)
         return {
@@ -205,18 +207,46 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play then
-            if context.other_card:is_suit(card.ability.extra.suit_1) and not context.blueprint then
-                card.ability.extra.chips = card.ability.extra.chips + 0.25
-                return {
-                    message = 'Upgraded!',
-                    colour = G.C.CHIPS,
-                }
-            elseif context.other_card:is_suit(card.ability.extra.suit_2) and not context.blueprint then
-                card.ability.extra.mult = card.ability.extra.mult + 0.25
-                return {
-                    message = 'Upgraded!',
-                    colour = G.C.MULT,
-                }
+            if next(SMODS.find_card("j_ocstobal_solinium")) then
+                if context.other_card:is_suit(card.ability.extra.suit_1) and not context.blueprint then
+                    card.ability.extra.chips = card.ability.extra.chips + 0.25
+                    return {
+                        message = 'Upgraded!',
+                        colour = G.C.CHIPS,
+                    }
+                elseif context.other_card:is_suit(card.ability.extra.suit_2) and not context.blueprint then
+                    card.ability.extra.mult = card.ability.extra.mult + 0.25
+                    return {
+                        message = 'Upgraded!',
+                        colour = G.C.MULT,
+                    }
+                elseif context.other_card:is_suit(card.ability.extra.suit_3) and not context.blueprint then
+                    card.ability.extra.chips = card.ability.extra.chips + 0.25
+                    return {
+                        message = 'Upgraded!',
+                        colour = G.C.CHIPS,
+                    }
+                elseif context.other_card:is_suit(card.ability.extra.suit_4) and not context.blueprint then
+                    card.ability.extra.mult = card.ability.extra.mult + 0.25
+                    return {
+                        message = 'Upgraded!',
+                        colour = G.C.MULT,
+                    }
+                end
+            else
+                if context.other_card:is_suit(card.ability.extra.suit_1) and not context.blueprint then
+                    card.ability.extra.chips = card.ability.extra.chips + 0.25
+                    return {
+                        message = 'Upgraded!',
+                        colour = G.C.CHIPS,
+                    }
+                elseif context.other_card:is_suit(card.ability.extra.suit_2) and not context.blueprint then
+                    card.ability.extra.mult = card.ability.extra.mult + 0.25
+                    return {
+                        message = 'Upgraded!',
+                        colour = G.C.MULT,
+                    }
+                end
             end
         end
         if context.joker_main then
@@ -261,7 +291,8 @@ SMODS.Joker {
             end
         end
         if context.setting_blind and not context.blueprint then
-            card.ability.extra.scale = math.log(card.ability.extra.xchips + 1) * ((0.1 * card.ability.extra.xchips) ^ 0.3)
+            card.ability.extra.scale = math.log(card.ability.extra.xchips + 1) *
+            ((0.1 * card.ability.extra.xchips) ^ 0.3)
             return {
                 message = "Scaled!",
                 colour = G.C.FILTER
@@ -285,7 +316,7 @@ SMODS.Joker {
             suit_1 = "Diamonds"
         }
     },
-    pools = {["ocstob"] = true,["all_junk"] = true},
+    pools = { ["ocstob"] = true, ["all_junk"] = true },
     blueprint_compat = true,
     atlas = 'other_ocs',
     pos = { x = 0, y = 2 },
@@ -296,13 +327,14 @@ SMODS.Joker {
         return { vars = { card.ability.extra.xmult } }
     end,
 
-    update = function(self,card,dt)
+    update = function(self, card, dt)
     end,
 
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play and context.other_card:is_suit(card.ability.extra.suit_1) and not context.blueprint then
             context.other_card.ability.perma_h_x_mult = context.other_card.ability.perma_h_x_mult or 0
-            context.other_card.ability.perma_h_x_mult = context.other_card.ability.perma_h_x_mult + card.ability.extra.i_made_fun_of_him_too_much
+            context.other_card.ability.perma_h_x_mult = context.other_card.ability.perma_h_x_mult +
+            card.ability.extra.i_made_fun_of_him_too_much
             return {
                 extra = { message = localize('k_upgrade_ex'), colour = G.C.MULT },
                 card = card
@@ -317,23 +349,23 @@ SMODS.Joker {
     cost = 1234567890,
     rarity = "ocstobal_ultimate",
     atlas = 'other_ocs',
-    pos = {x=2,y=2},
-    soul_pos = {x=3,y=2},
-    loc_vars = function(self,info_queue,card)
+    pos = { x = 2, y = 2 },
+    soul_pos = { x = 3, y = 2 },
+    loc_vars = function(self, info_queue, card)
         if POLTERWORX == true then
-            info_queue[#info_queue+1] = {set = "Other", key = "ocstobal_pwx", vars = {localize("k_ocstobal_pwx_N")} }
+            info_queue[#info_queue + 1] = { set = "Other", key = "ocstobal_pwx", vars = { localize("k_ocstobal_pwx_N") } }
         end
         if starspace == true then
-            info_queue[#info_queue+1] = {set = "Other", key = "ocstobal_starspace"}
+            info_queue[#info_queue + 1] = { set = "Other", key = "ocstobal_starspace" }
         end
         if cryptshit == true then
-            info_queue[#info_queue+1] = {set = "Other", key = "ocstobal_crypt"}
+            info_queue[#info_queue + 1] = { set = "Other", key = "ocstobal_crypt" }
         end
         return {
-            vars = { localize("k_ocstobal_me_"..pseudorandom("myself",1,16)), localize("k_ocstobal_me_overscore_"..pseudorandom("myself",1,6)) },
+            vars = { localize("k_ocstobal_me_" .. pseudorandom("myself", 1, 16)), localize("k_ocstobal_me_overscore_" .. pseudorandom("myself", 1, 6)) },
         }
     end,
-    calculate = function(self,card,context)
+    calculate = function(self, card, context)
         if context.initial_scoring_step and not context.joker_retrigger then
             return {
                 remove_default_message = true,

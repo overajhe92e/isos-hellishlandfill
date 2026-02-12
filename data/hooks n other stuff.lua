@@ -2,6 +2,24 @@ if not ocstobal then
     ocstobal = {}
 end
 
+local upd = Game.update
+function Game:update(dt)
+    upd(self,dt)
+    local fucking_hell_mate = 0
+    for _, steelwirecount in ipairs(SMODS.find_card("j_ocstobal_steelwire")) do
+        fucking_hell_mate = fucking_hell_mate + 1
+    end
+    if G.GAME then
+        if fucking_hell_mate >= 200 then
+            G.GAME.evil_steel = true
+            ease_background_colour{new_colour = G.C.OMEGABLACK, special_colour = G.C.ISO_CRIMSON, contrast = 2}
+        else
+            G.GAME.evil_steel = false
+            ease_background_colour{}
+        end
+    end
+end
+
 local check_for_buy_space_ref = G.FUNCS.check_for_buy_space
 G.FUNCS.check_for_buy_space = function(card)
     if card.config.center.key == "j_ocstobal_antislopinator" then
@@ -61,7 +79,7 @@ local abbornegative = G.P_CENTERS.e_negative.get_weight
 G.P_CENTERS.e_negative.get_weight = function(self)
     local weight = abbornegative(self)
     for _, abbie in ipairs(SMODS.find_card("j_ocstobal_abbie")) do
-        weight = weight * (3.124*3)
+        weight = weight * (3.124 * 3)
     end
     return weight
 end
@@ -303,7 +321,7 @@ function G.FUNCS.seraphmenu()
 end
 
 local et = SMODS.is_eternal
-function SMODS.is_eternal(card,trigger)
+function SMODS.is_eternal(card, trigger)
     if card and type(card) == "table" then
         if card.ability.ocstobal_aeternal or card.ability.ocstobal_s_aeternal then
             return true
@@ -312,5 +330,5 @@ function SMODS.is_eternal(card,trigger)
             return true
         end
     end
-    return et(card,trigger)
+    return et(card, trigger)
 end

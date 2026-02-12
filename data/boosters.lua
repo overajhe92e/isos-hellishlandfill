@@ -259,20 +259,19 @@ SMODS.Booster {
 }
 
 SMODS.Booster {
-    key = 'misc',
+    key = 'steel_wires',
     loc_txt = {
-        name = "Junkyard Pack Omega",
+        name = "Steel Wires",
         text = {
-            "Choose {C:attention}#1#{} of {C:attention}#2#{} Iso. Junkyard Jokers",
-            "{C:attention}Include{} {C:ocstobal_finalrgb}Terminus{}, {C:ocstobal_ust}Cursed{}, and/or {C:attention}Unique{} Jokers",
+            "Don't ask.",
         },
-        group_name = "THE Junkyard Pack"
+        group_name = "Steel Wires"
     },
-    config = { extra = 10, choose = 1 },
-    cost = 100,
-    weight = 0.005,
+    config = { extra = 3, choose = 3 },
+    cost = 10,
+    weight = 0.05,
     atlas = "CustomBoosters",
-    pos = { x = 4, y = 0 },
+    pos = { x = 5, y = 0 },
     discovered = true,
     loc_vars = function(self, info_queue, card)
         return {
@@ -280,17 +279,12 @@ SMODS.Booster {
         }
     end,
     ease_background_colour = function(self)
-		ease_background_colour { new_colour = HEX('000000'), special_colour = HEX('ff0000'), contrast = 5 }
+		ease_background_colour { new_colour = HEX('ffffff'), special_colour = HEX('ffffff'), contrast = 5 }
 	end,
     create_card = function(self, card)
-        local junk = SMODS.create_card {
-                set = "all_junk",
-                legendary = true,
-                rarity = 1,
-                area = G.pack_cards,
-                skip_materialize = true,
-                soulable = true,
+        local wire = SMODS.create_card {
+                set = "wire"
             }
-        return junk
+        return wire
     end,
 }

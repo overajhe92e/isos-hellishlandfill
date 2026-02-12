@@ -18,6 +18,7 @@ PASTEL_YELLOW = HEX("FFFC75"),
 PINK = HEX("FFAAD9"),
 ISO_LIGHT_PURPLE = HEX("df9aff"),
 ISO_DARK_PURPLE = HEX("cf69ff"),
+ISO_CRIMSON = HEX("870000"),
 """
 match_indent = true
 
@@ -36,5 +37,6 @@ pastel_yellow = G.C.PASTEL_YELLOW,
 pink = G.C.PINK,
 iso_light_purple = G.C.ISO_LIGHT_PURPLE,
 iso_dark_purple = G.C.ISO_DARK_PURPLE,
+iso_crimson = G.C.ISO_CRIMSON,
 """
 match_indent = true

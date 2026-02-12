@@ -1089,7 +1089,7 @@ return {
 					},
 					{
 						"{X:green,C:white}Synergy:{} If you have {C:attention}Solinium{}",
-						"All {C:spades}Dark{} Suits and {C:hearts}Light{} Suits will count to",
+						"{C:diamonds}Diamonds{} and {C:clubs}Clubs{} will count to",
 						"{X:red,C:white}XMult{} and {X:blue,C:white}XChip{} gain"
 					}
 				}
@@ -1574,6 +1574,16 @@ return {
 					"{C:inactive,s:0.8}There's #1# of them now.{}"
 				}
 			},
+			j_ocstobal_steelwire_stage_final = {
+				name = "{C:ocstobal_ust}Steelwire{}",
+				text = {
+					"{C:inactive,s:0.8}There's #1# of them now.{}",
+					"{C:iso_crimson,s:2,E:1}You've gone too far.{}",
+					"{C:iso_crimson,s:2,E:1}Good luck to your PC.{}",
+					"{X:ocstobal_ust,C:white}(#2#)#1#{} Mult",
+					"{C:attention}Retriggers{} self {C:attention}#3#{} times"
+				}
+			},
 		},
 		Other = {
 			ocstobal_recluses_eye_seal = {
@@ -1897,10 +1907,11 @@ return {
 			k_ocstobal_me_overscore_2 = "alright that's enough E's.",
 			k_ocstobal_me_overscore_3 = "calm down.",
 			k_ocstobal_me_overscore_4 = "you won already, holy.",
-			k_ocstobal_me_overscore_5 = "oh.",
+			k_ocstobal_me_overscore_5 = "okay",
 
 			k_ocstobal_me_pwx_hyperop_above25000_1 = "calm the fuck down holy shit",
-			k_ocstobal_me_pwx_hyperop_above25000_2 = "THAT'S ENOUGH ARROWS !!!!",
+			k_ocstobal_me_pwx_hyperop_above25000_2 = "THAT'S ENOUGH ARROWS!!!!",
+			k_ocstobal_me_pwx_hyperop_above25000_3 = "IS YOUR PC OKAY???",
 
 			k_ocstobal_save = 'Saved by Life Crystal',
 
