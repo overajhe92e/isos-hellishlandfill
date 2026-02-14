@@ -36,7 +36,6 @@ end
 function G.FUNCS.unbalanced()
 	G.PROFILES[G.SETTINGS.profile].current_isomode = 1
 	G.current_isomode = 1
-	G:save_progress()
 	G:save_settings()
 end
 
@@ -50,7 +49,6 @@ end
 function G.FUNCS.verybad()
 	G.PROFILES[G.SETTINGS.profile].current_isomode = 2
 	G.current_isomode = 2
-	G:save_progress()
 	G:save_settings()
 	play_sound('ocstobal_straddle')
 end

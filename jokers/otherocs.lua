@@ -292,7 +292,7 @@ SMODS.Joker {
         end
         if context.setting_blind and not context.blueprint then
             card.ability.extra.scale = math.log(card.ability.extra.xchips + 1) *
-            ((0.1 * card.ability.extra.xchips) ^ 0.3)
+                ((0.1 * card.ability.extra.xchips) ^ 0.3)
             return {
                 message = "Scaled!",
                 colour = G.C.FILTER
@@ -334,7 +334,7 @@ SMODS.Joker {
         if context.individual and context.cardarea == G.play and context.other_card:is_suit(card.ability.extra.suit_1) and not context.blueprint then
             context.other_card.ability.perma_h_x_mult = context.other_card.ability.perma_h_x_mult or 0
             context.other_card.ability.perma_h_x_mult = context.other_card.ability.perma_h_x_mult +
-            card.ability.extra.i_made_fun_of_him_too_much
+                card.ability.extra.i_made_fun_of_him_too_much
             return {
                 extra = { message = localize('k_upgrade_ex'), colour = G.C.MULT },
                 card = card
@@ -355,11 +355,17 @@ SMODS.Joker {
         if POLTERWORX == true then
             info_queue[#info_queue + 1] = { set = "Other", key = "ocstobal_pwx", vars = { localize("k_ocstobal_pwx_N") } }
         end
-        if starspace == true then
+        if Starspace == true then
             info_queue[#info_queue + 1] = { set = "Other", key = "ocstobal_starspace" }
         end
-        if cryptshit == true then
+        if Cryptshit == true then
             info_queue[#info_queue + 1] = { set = "Other", key = "ocstobal_crypt" }
+        end
+        if Yahamouse == true then
+            info_queue[#info_queue + 1] = { set = "Other", key = "ocstobal_yahimod" }
+        end
+        if BDash == true then
+            info_queue[#info_queue + 1] = { set = "Other", key = "ocstobal_baladash" }
         end
         return {
             vars = { localize("k_ocstobal_me_" .. pseudorandom("myself", 1, 16)), localize("k_ocstobal_me_overscore_" .. pseudorandom("myself", 1, 6)) },
@@ -376,6 +382,13 @@ SMODS.Joker {
             }
         end
         if context.joker_main and not context.joker_retrigger then
+            if Yahamouse == true then
+                for i = 1, #G.play.cards do
+                    G.play.cards[i]:set_seal("yahimod_horse_seal", true, true)
+                    play_sound("yahimod_horse", 1, 10)
+                    delay(0.3)
+                end
+            end
             return {
                 remove_default_message = true,
                 message = "^^^1.02 Mult&Chips",

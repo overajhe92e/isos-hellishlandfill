@@ -6,10 +6,10 @@ SMODS.Booster {
             "Choose {C:attention}#1#{} of {C:attention}#2#{} Iso. Junkyard Jokers",
             "Does not include {C:ocstobal_finalrgb}Terminus{}, {C:ocstobal_ust}Cursed{}, or {C:attention}Unique{} Jokers",
         },
-        group_name = "Garbage."
+        group_name = "Garbage"
     },
     config = { extra = 2, choose = 1 },
-    weight = 0.5,
+    weight = 0.6,
     cost = 10,
     atlas = "CustomBoosters",
     pos = { x = 0, y = 0 },
@@ -58,7 +58,7 @@ SMODS.Booster {
             "Choose {C:attention}#1#{} of {C:attention}#2#{} Iso. Junkyard Jokers",
             "Does not include {C:ocstobal_finalrgb}Terminus{}, {C:ocstobal_ust}Cursed{}, or {C:attention}Unique{} Jokers",
         },
-        group_name = "Junk."
+        group_name = "Junk"
     },
     config = { extra = 3, choose = 1 },
     cost = 15,
@@ -110,11 +110,11 @@ SMODS.Booster {
             "Choose {C:attention}#1#{} of {C:attention}#2#{} Iso. Junkyard Jokers",
             "Does not include {C:ocstobal_finalrgb}Terminus{}, {C:ocstobal_ust}Cursed{}, or {C:attention}Unique{} Jokers",
         },
-        group_name = "Junk."
+        group_name = "Junk"
     },
     config = { extra = 5, choose = 2 },
     cost = 20,
-    weight = 0.12,
+    weight = 0.17,
     atlas = "CustomBoosters",
     pos = { x = 2, y = 0 },
     discovered = true,
@@ -162,7 +162,7 @@ SMODS.Booster {
             "Choose {C:attention}#1#{} of {C:attention}#2#{} Iso. Junkyard Jokers",
             "Does not include {C:ocstobal_finalrgb}Terminus{}, {C:ocstobal_ust}Cursed{}, or {C:attention}Unique{} Jokers",
         },
-        group_name = "Even more junk."
+        group_name = "Even more junk"
     },
     config = { extra = 7, choose = 2 },
     cost = 30,
@@ -214,11 +214,11 @@ SMODS.Booster {
             "Choose {C:attention}#1#{} of {C:attention}#2#{} Iso. Junkyard Jokers",
             "{C:attention}Include{} {C:ocstobal_finalrgb}Terminus{}, {C:ocstobal_ust}Cursed{}, and/or {C:attention}Unique{} Jokers",
         },
-        group_name = "THE Junkyard Pack"
+        group_name = "Junkyard Pack"
     },
     config = { extra = 10, choose = 1 },
     cost = 100,
-    weight = 0.005,
+    weight = 0.05,
     atlas = "CustomBoosters",
     pos = { x = 4, y = 0 },
     discovered = true,
@@ -265,11 +265,11 @@ SMODS.Booster {
         text = {
             "Don't ask.",
         },
-        group_name = "Steel Wires"
+        group_name = "go on, pick it up."
     },
-    config = { extra = 3, choose = 3 },
+    config = { extra = 2, choose = 2 },
     cost = 10,
-    weight = 0.05,
+    weight = 0.4,
     atlas = "CustomBoosters",
     pos = { x = 5, y = 0 },
     discovered = true,

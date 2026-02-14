@@ -4,7 +4,7 @@ end
 
 local upd = Game.update
 function Game:update(dt)
-    upd(self,dt)
+    upd(self, dt)
     local fucking_hell_mate = 0
     for _, steelwirecount in ipairs(SMODS.find_card("j_ocstobal_steelwire")) do
         fucking_hell_mate = fucking_hell_mate + 1
@@ -12,10 +12,10 @@ function Game:update(dt)
     if G.GAME then
         if fucking_hell_mate >= 200 then
             G.GAME.evil_steel = true
-            ease_background_colour{new_colour = G.C.OMEGABLACK, special_colour = G.C.ISO_CRIMSON, contrast = 2}
+            ease_background_colour { new_colour = G.C.OMEGABLACK, special_colour = G.C.ISO_CRIMSON, contrast = 2 }
         else
             G.GAME.evil_steel = false
-            ease_background_colour{}
+            ease_background_colour {}
         end
     end
 end
@@ -23,6 +23,8 @@ end
 local check_for_buy_space_ref = G.FUNCS.check_for_buy_space
 G.FUNCS.check_for_buy_space = function(card)
     if card.config.center.key == "j_ocstobal_antislopinator" then
+        return true
+    elseif card.config.center.key == "j_ocstobal_steelwire" then
         return true
     end
     return check_for_buy_space_ref(card)
@@ -228,9 +230,9 @@ function Card:highlight(is_highlighted)
                 nodes = {
                     {
                         n = G.UIT.R,
-                        config = { minw = 1, minh = 0.5, padding = 0.01, align = 'cl', colour = G.C.CLEAR, button = 'lf_alpha', r = 0.1 },
+                        config = { minw = 1, minh = 0.5, padding = 0.01, align = 'cl', colour = G.C.CLEAR, button = 'iso_lf_alpha', r = 0.1 },
                         nodes = {
-                            UIBox_button { label = { "Alpha" }, scale = 0.3, minw = 1.3, minh = 0.7, colour = G.C.GREEN, r = 0.1, button = 'lf_alpha' }
+                            UIBox_button { label = { "Alpha" }, scale = 0.3, minw = 1.3, minh = 0.7, colour = G.C.GREEN, r = 0.1, button = 'iso_lf_alpha' }
                         }
                     },
                     {
@@ -252,6 +254,13 @@ function Card:highlight(is_highlighted)
                         config = { minw = 1, minh = 0.5, padding = 0.01, align = 'cl', colour = G.C.CLEAR, button = 'lf_omega', r = 0.1 },
                         nodes = {
                             UIBox_button { label = { "Omega" }, scale = 0.3, minw = 1.3, minh = 0.7, colour = G.C.GREEN, r = 0.1, button = 'lf_omega' }
+                        }
+                    },
+                    {
+                        n = G.UIT.R,
+                        config = { minw = 1, minh = 0.5, padding = 0.01, align = 'cl', colour = G.C.CLEAR, button = 'iso_swap', r = 0.1 },
+                        nodes = {
+                            UIBox_button { label = { "Swap" }, scale = 0.3, minw = 1.3, minh = 0.7, colour = G.C.GREEN, r = 0.1, button = 'iso_swap' }
                         }
                     },
                 }
@@ -300,17 +309,24 @@ function G.FUNCS.release()
     G.GAME.pk_love_ability = "Unleashing"
 end
 
-function G.FUNCS.swap()
-    if G.GAME.recovering == "Discards" then
+G.FUNCS.iso_swap = function(e)
+    local card = e.config.ref_table
+    if card.ability.extra.recovering == "Discards" then
         G.GAME.recovering = "Hands"
-    elseif G.GAME.recovering == "Hands" then
+    elseif card.ability.extra.recovering == "Hands" then
         G.GAME.recovering = "Discards"
     end
 end
 
-function G.FUNCS.lf_alpha()
-    G.GAME.current_pp = G.GAME.current_pp - 5
-    --hands
+G.FUNCS.iso_lf_alpha = function(e)
+    local card = e.config.ref_table
+    if e.ability.extra.recovering == "Hands" then
+        e.ability.extra.pp = e.ability.extra.pp - 5
+        SMODS.calculate_effect({ message = "restore hands" }, card)
+    elseif card.ability.extra.recovering == "Discards" then
+        e.ability.extra.pp = e.ability.extra.pp - 5
+        SMODS.calculate_effect({ message = "restore hands" }, card)
+    end
 end
 
 function G.FUNCS.seraphmenu()

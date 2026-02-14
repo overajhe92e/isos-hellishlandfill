@@ -192,12 +192,13 @@ SMODS.Joker { --terminus go brrrrt
         return {
             vars = {
                 card.ability.extra.mult, card.ability.extra.req, card.ability.extra.op
-            }
+            },
+            key = G.current_isomode < 2 and "j_ocstobal_sphawk" or G.current_isomode >= 2 and "j_ocstobal_sphawk_slop"
         }
     end,
 
     update = function(self, card, dt)
-        if G.current_isomode >= 3 then
+        if G.current_isomode >= 2 then
             if card.ability.extra.mult >= card.ability.extra.req then
                 card.ability.extra.op = card.ability.extra.op + 1
                 card.ability.extra.mult = 2
@@ -207,7 +208,7 @@ SMODS.Joker { --terminus go brrrrt
     end,
 
     calculate = function(self, card, context)
-        if G.current_isomode >= 3 then
+        if G.current_isomode >= 2 then
             if context.individual and context.cardarea == G.play and card.ability.extra.mult < card.ability.extra.req then
                 card.ability.extra.mult = card.ability.extra.mult * 2
             end
@@ -216,7 +217,7 @@ SMODS.Joker { --terminus go brrrrt
                     hypermult = { card.ability.extra.op, card.ability.extra.mult }
                 }
             end
-        elseif G.current_isomode < 3 then
+        elseif G.current_isomode < 2 then
             if context.individual and context.cardarea == G.play then
                 card.ability.extra.mult = math.ceil(card.ability.extra.mult * ((context.other_card:get_id() / 20) + 1))
                 return {
@@ -267,7 +268,7 @@ SMODS.Joker { --oh no
     end
 }
 
-SMODS.Joker { --unused as of now
+SMODS.Joker {
     key = 'spkawk',
     rarity = 'ocstobal_beyondexotic',
     cost = 12500,
@@ -299,6 +300,7 @@ SMODS.Joker {
     pools = {
         ["all_junk"] = true
     },
+    eternal_compat = false,
     pos = { x = 4, y = 1 },
     add_to_deck = function(self, card)
         if next(SMODS.find_card("j_ocstobal_Oxy")) and next(SMODS.find_card("j_ocstobal_solinium")) and next(SMODS.find_card("j_ocstobal_sparky")) then

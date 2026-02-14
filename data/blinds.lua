@@ -211,12 +211,12 @@ SMODS.Blind {
 	defeat = function(self)
 		if G.GAME.omegarush == nil then
 			G.FUNCS.overlay_menu {
-				definition = create_UIBox_custom_video1("diansumeme", "oceanan scum"),
+				definition = ocstobal_custom_video("diansumeme", "oceanan scum"),
 				config = { no_esc = true }
 			}
 		elseif G.GAME.omegarush < 1 then
 			G.FUNCS.overlay_menu {
-				definition = create_UIBox_custom_video1("diansumeme", "oceanan scum"),
+				definition = ocstobal_custom_video("diansumeme", "oceanan scum"),
 				config = { no_esc = true }
 			}
 		end

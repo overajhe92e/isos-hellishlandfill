@@ -25,14 +25,6 @@ FusionJokers.fusions:register_fusion {
 }
 FusionJokers.fusions:register_fusion {
 	jokers = {
-		{ name = "j_ocstobal_Oxy" },
-		{ name = "j_ocstobal_oxhatred" },
-	},
-	result_joker = "j_ocstobal_Oxy",
-	cost = 66
-}
-FusionJokers.fusions:register_fusion {
-	jokers = {
 		{ name = "j_ocstobal_shrimpo" },
 		{ name = "j_ocstobal_ichor" },
 	},

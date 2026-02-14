@@ -563,7 +563,8 @@ return {
 					'{X:red,C:white}+XMult{} increases by ',
 					'{C:attention}+1{} every blind select.',
 					'{C:blue,s:0.9}#2#{}',
-					'{C:dark_edition,s:0.9}#3#{}'
+					'{C:dark_edition,s:0.9}Origin: Dog Man{}',
+					'{C:inactive,s:0.7}...yes, you\'re reading that correctly.{}'
 
 				}
 			},
@@ -1175,7 +1176,7 @@ return {
 					{
 						"{C:red}STOP MENTIONING HIS DEATH!!{}",
 						"{C:red}PLEASE, STOP MENTIONING ABBIE'S DEATH!!{}",
-						"{C:ocstobal_nightmare_purple}Abbie died? Pft, so did Lana.{}"
+						"{C:ocstobal_nightmare_purple}abbie died on march 1st, 2024.{}"
 					}
 				}
 			},
@@ -1186,14 +1187,13 @@ return {
 						"{C:red}Do not pick up.{}",
 					},
 					{
-						"{C:red}Jesus christ Seraph... SHUT UP!{}",
-						"{C:red}YOU'RE NOT FUNNY FOR MOCKING ME LIKE THAT!{}",
-						"{C:ocstobal_nightmare_purple}Haha, \"Meow meow meow\".{}"
+						"{C:red}If I hear you say that one more ti-{}",
+						"{C:ocstobal_nightmare_purple}SOLINIUM LIKES BEING PET!!!!!!{}"
 					}
 				}
 			},
 			j_ocstobal_obscene_joke_oh_no = {
-				name = {"Seraph's Backfired Joke","{s:0.6}Blunder reaction.{}"},
+				name = {"Seraph's Backfired Joke","{s:0.6,C:red}Blunder reaction.{}"},
 				text = {
 					{
 						"Creates {C:red}ALL{} {C:ocstobal_ust}Embodiments of Hatred{}",
@@ -1578,12 +1578,32 @@ return {
 				name = "{C:ocstobal_ust}Steelwire{}",
 				text = {
 					"{C:inactive,s:0.8}There's #1# of them now.{}",
-					"{C:iso_crimson,s:2,E:1}You've gone too far.{}",
-					"{C:iso_crimson,s:2,E:1}Good luck to your PC.{}",
+					"{C:iso_crimson,s:0.7,E:1}The Steelwire grows ever more powerful.{}",
+					"{C:iso_crimson,s:0.7,E:1}It's clearly strong.{}",
 					"{X:ocstobal_ust,C:white}(#2#)#1#{} Mult",
 					"{C:attention}Retriggers{} self {C:attention}#3#{} times"
 				}
 			},
+			j_ocstobal_dogman = {
+				name = "Dog Man",
+				text = {
+					"{C:legendary}+#2#{} Chips and Mult",
+					"{X:legendary,C:white}X#3#{} Chips and Mult",
+					"Gain {C:money}$#1#{} dollars when a hand is played",
+					"{C:dark_edition,E:1,s:0.7}Origin: Dog Man{}",
+					"{C:dark_edition,E:1,s:0.6}Yeah, revolutionary I know.{}"
+				}
+			},
+			j_ocstobal_baneofhate = {
+				name = "Banished Hatreds",
+				text = {
+					{
+					"Applies buffs for each {C:iso_crimson}Hatred{}",
+					"that has been {C:red}destroyed{} by",
+					"the {C:ocstobal_sewh}Eternal Dagger{}"
+					}
+				}
+			}
 		},
 		Other = {
 			ocstobal_recluses_eye_seal = {
@@ -1654,36 +1674,56 @@ return {
 				text = {
 					"{X:ocstobal_iso_grad,C:white}#1#{} Chips and Mult",
 					"{C:attention}N{} = {C:attention}Current number{} of {C:attention}Jokers{}"
-				}
+				} --What did you expect?
 			},
 			ocstobal_crypt = {
 				name = "Cryptid's Modification",
 				text = {
 					"{X:legendary,C:white}X2{} {C:attention}Hand Size{} and {C:attention}Card Selection Limit{}"
-				}
+				} --idk
 			},
 			ocstobal_starspace = {
 				name = "Starspace's Modification",
 				text = {
-					"TETRATIO"
-				}
+					"{C:green}1 in 6{} chance to create a {C:blue}Galactic{} Joker on",
+					"blind select",
+					"Creates a {C:tarot}Cosmic{} instead if chance fails.",
+					"Every {C:tarot}Cosmic{} multiplies Retrigger count by {X:tarot,C:white}X1.1{}",
+					"{C:inactive,s:0.8}(Rounds down to nearest int.){}",
+					"Every {C:blue}Galactic Joker{} applies {X:dark_edition,C:white}^^1.009{} Chips before scoring",
+					"{C:red,s:1.5}NOT IMPLEMENTED!{}"
+				} --tetratio
 			},
 			ocstobal_baladash = {
 				name = "Balatro Dash's Modification",
 				text = {
-					"Soon!"
-				}
+					"Saves you from death when",
+					"a level is present",
+					"On death, {C:red}Destroys{} a random level"
+				} --attempt 2
 			},
 			ocstobal_degen = {
-				name = "Balatro Dash's Modification",
+				name = "Degeneracy's Modification",
 				text = {
 					"Soon!"
 				}
 			},
 			ocstobal_neonflame = {
-				name = "Balatro Dash's Modification",
+				name = "Neonflame's Modification",
 				text = {
 					"Soon!"
+				}
+			},
+			ocstobal_yahimod = {
+				name = "Yahimod's Modification",
+				text = {
+					"{C:red,E:1,s:1.5}HORSES EVERYWHERE!!!{}"
+				}
+			},
+			ocstobal_busted_buffoons = {
+				name = "Busted Buffoon's Modification",
+				text = {
+					"A lot of fucking Joker Slots"
 				}
 			},
 			ocstobal_aeternal = {
@@ -1699,7 +1739,8 @@ return {
 				text = {
 					"Cannot be sold",
 					"or Destroyed",
-					"{C:red}No, really. It's impossible to destroy.{}"
+					"{C:red}No, really. It's impossible to destroy.{}",
+					"{C:inactive,s:0.7}shut up about debugplus{}"
 				}
 			}
 		},

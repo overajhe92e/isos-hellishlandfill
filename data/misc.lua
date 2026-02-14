@@ -241,11 +241,8 @@ SMODS.ObjectType({
 	key = "wire",
 	default = "j_ocstobal_steelwire",
 	cards = {
+		j_ocstobal_steelwire = true
 	},
-	inject = function(self)
-		SMODS.ObjectType.inject(self)
-		self:inject_card(G.P_CENTERS.j_lucky_cat)
-	end,
 })
 
 SMODS.Atlas {
@@ -628,7 +625,7 @@ G.ARGS.LOC_COLOURS.ocstobal_almanacblue = HEX('0000ff')
 ocstobal.configbs = SMODS.current_mod.config
 
 --diansu video
-function create_UIBox_custom_video1(name, buttonname)
+function ocstobal_custom_video(name, buttonname)
 	local file_path = SMODS.Mods["ocstobalatro"].path .. "/resources/" .. name .. ".ogv"
 	local file = NFS.read(file_path)
 	love.filesystem.write("diansumeme.ogv", file)
