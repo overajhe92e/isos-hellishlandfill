@@ -35,7 +35,7 @@ SMODS.Joker {
 
     add_to_deck = function(self, card, from_debuff)
         card:set_edition("e_ocstobal_hidden1", true)
-        card:set_eternal(true)
+        card.ability.ocstobal_aeternal = true
         G.GAME.round_resets.hands = 1
         G.GAME.round_resets.discards = 0
         G.hand:change_size(card.ability.extra.h_size)
@@ -94,7 +94,7 @@ SMODS.Joker {
 
     add_to_deck = function(self, card, from_debuff)
         card:set_edition("e_ocstobal_hidden1", true)
-        card:set_eternal(true)
+        card.ability.ocstobal_aeternal = true
         G.GAME.round_resets.hands = 1
         G.GAME.round_resets.discards = 0
         G.hand:change_size(card.ability.extra.h_size)
@@ -153,7 +153,7 @@ SMODS.Joker {
 
     add_to_deck = function(self, card, from_debuff)
         card:set_edition("e_ocstobal_hidden1", true)
-        card:set_eternal(true)
+        card.ability.ocstobal_aeternal = true
         G.hand:change_size(card.ability.extra.h_size)
     end,
     remove_from_deck = function(self, card, from_debuff)
@@ -213,7 +213,7 @@ SMODS.Joker {
     },
 
     add_to_deck = function(self, card, from_debuff)
-        card:set_eternal(true)
+        card.ability.ocstobal_fuck_no = true
         G.GAME.round_resets.hands = 1
         G.GAME.round_resets.discards = 0
         G.hand:change_size(16)

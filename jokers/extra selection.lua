@@ -1,0 +1,15 @@
+SMODS.Joker {
+    key = "extra_selection",
+    rarity = 2,
+    cost = 8,
+    add_to_deck = function(self, card, from_debuff)
+        G.GAME.starting_params.play_limit = G.GAME.starting_params.play_limit + 1
+        G.GAME.starting_params.discard_limit = G.GAME.starting_params.discard_limit + 1
+        G.hand.config.highlighted_limit = G.hand.config.highlighted_limit + 1
+    end,
+    remove_from_deck = function(self, card, from_debuff)
+        G.GAME.starting_params.play_limit = G.GAME.starting_params.play_limit - 1
+        G.GAME.starting_params.discard_limit = G.GAME.starting_params.discard_limit - 1
+        G.hand.config.highlighted_limit = G.hand.config.highlighted_limit - 1
+    end
+}

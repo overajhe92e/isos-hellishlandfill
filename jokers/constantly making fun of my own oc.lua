@@ -1,13 +1,4 @@
--- local quote = {
--- normal = {
---   k_ocstobal_oxy_quote1,
---   k_ocstobal_oxy_quote2,
---   k_ocstobal_oxy_quote3,
---   k_ocstobal_oxy_quote4
---}
---}
-
-SMODS.Joker { --Oxy
+SMODS.Joker { --Oxy (Oxidyze)
     key = "Oxy",
     config = {
         extra = {
@@ -36,15 +27,11 @@ SMODS.Joker { --Oxy
 
     loc_vars = function(self, info_queue, center)
         return {
-            vars = { localize('k_ocstobal_oxy_quote' .. pseudorandom("seed", 1, 11)), localize('k_ocstobal_oxy_quote_alt_'.. pseudorandom("couldn't hold back huh",1,6)) },
+            vars = { localize('k_ocstobal_oxy_quote' .. pseudorandom("seed", 1, 13)), localize('k_ocstobal_oxy_quote_alt_'.. pseudorandom("couldn't hold back huh",1,6)) },
             key = pwx_detected == true and "j_ocstobal_oxi_pwx" or
             next(SMODS.find_card("j_jen_oxy")) and "j_ocstobal_oxi_alt_quotes" 
             or pseudorandom("h",1,6) == 1 and "j_ocstobal_oxi_oldname"  --here we go again
             or pseudorandom("b",1,12) == 1 and "j_ocstobal_oxi_get_trolled_lmfao" --1 in 12 chance to be named to "ocksie"
-            --[[ISOTYPICAL. STOP. DOING THIS. YOU ALREADY DID THIS BEFORE.]]
-            -- it's funny though
-            --[[NO IT'S NOT! IT'S GETTING ANNOYING!]]
-            -- im still keeping it
         }
     end,
 

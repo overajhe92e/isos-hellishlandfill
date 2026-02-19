@@ -249,7 +249,8 @@ SMODS.Joker { --oh no
     },
 
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.hypmult } }
+        return { vars = { card.ability.extra.hypmult }, key = G.current_isomode < 2 and "j_ocstobal_solawk" or
+        G.current_isomode >= 2 and "j_ocstobal_solawk_slop" }
     end,
 
     calculate = function(self, card, context)
@@ -281,13 +282,36 @@ SMODS.Joker {
         ["fucking_absurd"] = true,
         ["all_junk"] = true
     },
+    config = {
+        extra = {
+            one = 1,
+            probably = 4
+        }
+    },
     no_collection = true,
+    loc_vars = function(self, info_queue, card)
+        local numerator_1, denominator_1 = SMODS.get_probability_vars(card, 1, card.ability.extra.probably,'j_ocstobal_pk_ground')
+        return { vars = { numerator_1, denominator_1 }, key = G.current_isomode < 2 and "j_ocstobal_spkawk" or
+        G.current_isomode >= 2 and "j_ocstobal_spkawk_slop" }
+    end,
     calculate = function(self, card, context)
-        if context.joker_main then
+        if context.joker_main and G.current_isomode >= 3 then
             return {
                 hypermult = { pseudorandom("spkhypmultop", 2, 5), pseudorandom("spkhypchip", 2, 10) },
                 hyperchips = { pseudorandom("spkhypchipop", 2, 5), pseudorandom("spkhypchip", 2, 10) }
             }
+        elseif context.joker_main and G.current_isomode < 2 then
+            if SMODS.pseudorandom_probability(card, 'spark', 1, card.ability.extra.probably, 'j_ocstobal_spkawk') then
+                return {
+                    eemult = pseudorandom("spkhypchip", 1.1, 4),
+                    eechips = pseudorandom("spkhypchip", 1.1, 4)
+                }
+            else
+                return {
+                    emult = pseudorandom("spkhypchip", 1.1, 4),
+                    echips = pseudorandom("spkhypchip", 1.1, 4)
+                }
+            end
         end
     end
 }
@@ -327,8 +351,8 @@ SMODS.Joker {
                 next(SMODS.find_card("j_ocstobal_Oxy")) and next(SMODS.find_card("j_ocstobal_sparky")) and
                 next(SMODS.find_card("j_ocstobal_solinium")) and "j_ocstobal_obscene_joke_oh_no"
                 or next(SMODS.find_card("j_ocstobal_Oxy")) and "j_ocstobal_obscene_joke_oxidyze"
-                or next(SMODS.find_card("j_ocstobal_solinium")) and "j_ocstobal_obscene_joke_solinium"
-                or next(SMODS.find_card("j_ocstobal_sparky")) and "j_ocstobal_obscene_joke_sparky"
+                or next(SMODS.find_card("j_ocstobal_solinium")) and not next(SMODS.find_card("j_ocstobal_Oxy")) and not next(SMODS.find_card("j_ocstobal_sparky")) "j_ocstobal_obscene_joke_solinium"
+                or next(SMODS.find_card("j_ocstobal_sparky")) and not next(SMODS.find_card("j_ocstobal_Oxy")) and "j_ocstobal_obscene_joke_sparky"
 
         }
     end,
