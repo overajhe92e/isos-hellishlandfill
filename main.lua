@@ -38,6 +38,10 @@ SMODS.Atlas({
     atlas_table = "ASSET_ATLAS"
 })
 
+if not ISO_EXT then
+    ISO_EXT = {}
+end
+
 -- G.C.DARKENED = HEX("000000")
 -- G.C.LIGHT = HEX("ffffff")
 -- G.C.mid_flash = 0.1
@@ -111,12 +115,24 @@ end
 
 local function load_all_data()
     local mod_path = SMODS.current_mod.path
-    local enhancements_path = mod_path .. "/data"
-    local files = NFS.getDirectoryItemsInfo(enhancements_path)
+    local data = mod_path .. "/data"
+    local files = NFS.getDirectoryItemsInfo(data)
     for i = 1, #files do
         local file_name = files[i].name
         if file_name:sub(-4) == ".lua" then
             assert(SMODS.load_file("data/" .. file_name))()
+        end
+    end
+end
+
+local function load_quips_in_particular()
+    local mod_path = SMODS.current_mod.path
+    local quip = mod_path .. "/data/quips"
+    local files = NFS.getDirectoryItemsInfo(quip)
+    for i = 1, #files do
+        local file_name = files[i].name
+        if file_name:sub(-4) == ".lua" then
+            assert(SMODS.load_file("data/quips/" .. file_name))()
         end
     end
 end
@@ -133,22 +149,11 @@ local function load_seals_folder()
     end
 end
 
-local function load_rarities_file()
-    local mod_path = SMODS.current_mod.path
-    assert(SMODS.load_file("data/rarities.lua"))()
-end
-
-load_rarities_file()
-local function load_boosters_file()
-    local mod_path = SMODS.current_mod.path
-    assert(SMODS.load_file("data/boosters.lua"))()
-end
-
-load_boosters_file()
 load_jokers_folder()
 load_enhancements_folder()
 load_seals_folder()
 load_all_data()
+load_quips_in_particular()
 
 local function grah()
     local mod_path = SMODS.current_mod.path

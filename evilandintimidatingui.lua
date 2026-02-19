@@ -168,7 +168,7 @@ function absurdmenu(buttonname)
 						n = G.UIT.R,
 						config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 						nodes = {
-							{ n = G.UIT.T, config = { text = "Applies Unbalanced Mode", scale = 0.65, colour = G.C.RED, align = 'm' } }
+							{ n = G.UIT.T, config = { text = "Terminus Jokers are superbuffed.", scale = 0.65, colour = G.C.RED, align = 'm' } }
 						}
 					},
 					{

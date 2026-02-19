@@ -27,3 +27,44 @@ SMODS.Joker {
         end
     end
 }
+
+SMODS.Joker {
+    key = 'starspacechat',
+    cost = 5000,
+    rarity = "ocstobal_omega",
+    config = {
+        extra = {
+            retrig = 1000,
+            mult = 2,
+            hyperop = 2
+        }
+    },
+    atlas = 'other_jokers',
+    pools = {["ocstob"] = true, ["all_junk"] = true},
+    pos = {x=0,y=3},
+
+    loc_vars = function(self,info_queue,card)
+        info_queue[#info_queue + 1] = { set = "Other", key = "ocstobal_98percent", vars = { card.ability.extra.retrig, card.ability.extra.hyperop, card.ability.extra.mult, "{", "}" } }
+        return {
+            vars = {
+                card.ability.extra.mult, card.ability.extra.hyperop, card.ability.extra.retrig, "{", "}", "#",
+            }
+        }
+    end,
+
+    calculate = function(self,card,context)
+        if context.joker_main then
+            card.ability.extra.hyperop = card.ability.extra.hyperop + 1
+            card.ability.extra.mult = card.ability.extra.mult + 1
+            return {
+                hypermult = {card.ability.extra.hyperop, card.ability.extra.mult}
+            }
+        end
+        if context.retrigger_joker_check and context.other_card == card then
+            return {
+                remove_default_message = true,
+                repetitions = card.ability.extra.retrig
+            }
+        end
+    end
+}

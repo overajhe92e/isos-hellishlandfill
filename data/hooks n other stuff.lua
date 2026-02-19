@@ -348,3 +348,8 @@ function SMODS.is_eternal(card, trigger)
     end
     return et(card, trigger)
 end
+
+function TERMINUS_GIVER_9000()
+    print("cheaty hehehehehe")
+    SMODS.add_card{ set = "Joker", rarity = 'ocstobal_beyondexotic' }
+end

@@ -907,7 +907,7 @@ return {
 				name = { 'Sparky', '{C:ocstobal_legendplus,s:0.7}The Ever Changing Soul{}' },
 				text = {
 					"Randomly gives between {C:attention}1.1 to 4{} {X:legendary,C:white}^Mult&Chips{}",
-					"{C:green}1 in 2{} chance to apply {X:dark_edition,C:white}^^Mult&Chips{} instead"
+					"{C:green}#1# in #2#{} chance to apply {X:dark_edition,C:white}^^Mult&Chips{} instead"
 				}
 			},
 			j_ocstobal_brokenseraph = {
@@ -1012,6 +1012,22 @@ return {
 					},
 					{
 						"{C:inactive}join my mod{}"
+					}
+				}
+			},
+			j_ocstobal_starspacechat = {
+				name = { "Starspace VC", "{s:0.7,C:red}Uh oh.{}" },
+				text = {
+					{
+						"{C:legendary}if{} {C:blue}context{}.{C:green}joker_main{} {C:legendary}then{}",
+						"{C:blue}card{}.{C:green}ability{}.{C:green}extra{}.{C:green}hyperop{} + {C:green}1{}",
+						"{C:blue}card{}.{C:green}ability{}.{C:green}extra{}.{C:green}mult{} + {C:green}1{}",
+						"{C:legendary}return #4#{} {C:green}hypermult{} = {C:blue}#4#{} {C:blue}card{}.{C:green}ability{}.{C:green}extra{}.{C:green}hyperop{}, {C:blue}card{}.{C:green}ability{}.{C:green}extra{}.{C:green}mult{} {C:blue}#5#{} {C:legendary}#5# end end{}",
+					},
+					{
+						"{C:legendary}if {C:blue}context{}.{C:green}retrigger_joker_check{} and {C:blue}context{}.{C:green}other_joker{} == {C:blue}card{} {C:legendary}then{}",
+						"{C:blue}local holy_shit{} = #6#{C:blue}DISCORD{}.{C:green}SERVERS{}.{C:green}STARSPACE{}.{C:green}VC{}.{C:green}rule_2_breaks{}",
+						"{C:legendary}return #4#{} {C:green}repetitions{} = {C:blue}holy_shit{} {C:legendary}#5# end{}",
 					}
 				}
 			},
@@ -1756,6 +1772,14 @@ return {
 					"{C:red}No, really. It's impossible to destroy.{}",
 					"{C:inactive,s:0.7}shut up about debugplus{}"
 				}
+			},
+			ocstobal_98percent = {
+				name = "I cant read code",
+				text = {
+					"{C:attention}Retriggers{} self {C:attention}#1#{} times",
+					"Joker gains {C:attention}+1{} Mult and Operator when {C:attention}triggered{}",
+					"Currently {X:ocstobal_finalrgb,C:white}#4##2##5##3#{} Mult"
+				}
 			}
 		},
 		Planet = {},
@@ -1882,12 +1906,14 @@ return {
 			k_ocstobal_oxy_quote4 = "\"Seraph. Fucking. Voidgloom. Most annoying person I've met!\"",
 			k_ocstobal_oxy_quote5 = "\"I'm gonna kill Seraph if he calls me 'ocksie' ONE MORE TIME.\"", --part of the "seraph pisses off oxy" trilogy
 			k_ocstobal_oxy_quote6 = "\"...Fundamental Paper Education? What's so fundamental about paper?\"",
-			k_ocstobal_oxy_quote7 = "\"Do I have an origin? No. Does my creator know I'm self aware? Uh, ISOO.\"",
+			k_ocstobal_oxy_quote7 = "\"Do I have an origin? No.\"",
 			k_ocstobal_oxy_quote8 = "\"Who is Solinium, again?\"",
 			k_ocstobal_oxy_quote9 = "\"Sparky? What kind of name is that? An electrical issue?\"",
-			k_ocstobal_oxy_quote10 = "\"Recluse? Isn't that the word for Isolation? ...they're a universal threat??\"",
+			k_ocstobal_oxy_quote10 = "\"Recluse? Isn't that the word for Isolation? ...they're a threat??\"",
 			k_ocstobal_oxy_quote11 =
 			"\"I know how many quotes I have, I know what's happening internally. This is k_ocstobal_oxy_quote11.\"",
+			k_ocstobal_oxy_quote_12 = "I'll say it, Isotypical is a moron.",
+			k_ocstobal_oxy_quote_13 = "I dislike Isotypical a LOT.",
 
 			k_ocstobal_oxy_quote_alt_1 = "WHO ARE YOU?!",
 			k_ocstobal_oxy_quote_alt_2 = "YOU FRAUD!",
@@ -2027,39 +2053,58 @@ return {
 		poker_hand_descriptions = {},
 		poker_hands = {},
 		quips = {
-			ocstobal_vessel_lose_1 = {
-				"Fucking...",
-				"{C:red,s:1.5}HOW.{}"
-			},
-			ocstobal_vessel_lose_2 = {
-				"I'm giving you nearly {C:ocstobal_nightmare_purple}limitless{} power.",
-				"And you {C:red}STILL died{} with it.",
-				"{C:ocstobal_nightmare_purple,s:1.3}You disappoint me.{}"
-			},
-			ocstobal_vessel_lose_3 = {
-				"...",
-				"You're kidding, right?"
-			},
-			ocstobal_vessel_lose_4 = {
-				"You had the {C:red}EASIEST{} shot to victory.",
-				"And you WASTED IT?!"
-			},
-			ocstobal_recluse_lose_1 = {
-				"lmao skill issue"
-			},
-			ocstobal_solinium_win = {
-				"Congrats on winning!"
-			},
-			ocstobal_sparky_win = {
-				"W-wait... we won?"
-			},
-			ocstobal_seraph_win = {
-				"Could have won faster",
-				"with me."
-			},
-			ocstobal_oxidyze_win = {
-				"Alright... not bad."
-			}
+
+			--Reclusive Vessel
+			ocstobal_sphrecl_loss_1 = { "Fucking...", "{C:red,s:1.5}HOW.{}" },
+			ocstobal_sphrecl_loss_2 = { "HOW DID YOU EVEN {C:red}DIE???{}" },
+			ocstobal_sphrecl_loss_3 = { "Recluse is right,", "You {C:red}DO{} have a {C:red}skill issue!{}" },
+			ocstobal_sphrecl_loss_4 = { "I gave you {C:red}so much power,{}", "Just to watch you fail horribly.", "{C:iso_dark_purple}You disappoint me, a lot.{}" },
+
+			--Seraph V.Glm
+			ocstobal_sph_wins_1 = { "Could have won faster with me." },
+			ocstobal_sph_wins_2 = { "Pff, you can do better than that." },
+			ocstobal_sph_wins_3 = { "Nice, I guess." },
+			ocstobal_sph_wins_4 = { "Neat, you won." },
+
+			ocstobal_sph_losses_1 = { "Get good, lmao." },
+			ocstobal_sph_losses_2 = { "Amazing loss, buddy!" },
+			ocstobal_sph_losses_3 = { "WOWWW. Skill issue." },
+			ocstobal_sph_losses_4 = { "Could have won if you got me." },
+
+			--Sparky Elle
+			ocstobal_spk_wins_1 = { "WE WON?!!" },
+			ocstobal_spk_wins_2 = { "YIPEE!!!" },
+			ocstobal_spk_wins_3 = { "YAYY!!! WE WON!!!" },
+
+			ocstobal_spk_losses_1 = { "I-I... huh..?!" },
+			ocstobal_spk_losses_2 = { "O-oh... I guess next time...", },
+			ocstobal_spk_losses_3 = { "A-aw..." },
+
+			--Solinium Isotope
+			ocstobal_sol_wins_1 = { "Congrats on winning!" },
+			ocstobal_sol_wins_2 = { "Niceee! Keep it up!" },
+			ocstobal_sol_wins_3 = { "A successful experiment, if I were to say!" },
+
+			ocstobal_sol_losses_1 = { "...oh." },
+			ocstobal_sol_losses_2 = { "IT'S GONE WRONG!!!" },
+			ocstobal_sol_losses_3 = { "Yikes, YIKES!" },
+
+			--fuck you recluse
+			ocstobal_recl_wins_1 = { "damn, was hoping you'd lose." },
+
+			ocstobal_recl_losses_1 = { "git gud lmao" },
+			ocstobal_recl_losses_2 = { "skill issue" },
+			ocstobal_recl_losses_3 = { "L" },
+
+			--ocksie- i mean oxidyze
+			ocstobal_oxi_wins_1 = { "Not bad, not bad." },
+			ocstobal_oxi_wins_2 = { "Nicely done. Almost perfect, even." },
+			ocstobal_oxi_wins_3 = { "Yet another win to the player." },
+
+			ocstobal_oxi_losses_1 = { "blame isotypical." },
+			ocstobal_oxi_losses_2 = { "Bruh." },
+			ocstobal_oxi_losses_3 = { "Isotypical caused this to happen!" }
+
 		},
 		ranks = {},
 		suits_plural = {},
