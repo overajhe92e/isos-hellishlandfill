@@ -334,23 +334,12 @@ SMODS.Joker {
     end,
 }
 
--- SMODS.Joker {
---     key = "exponenttest",
---     rarity = "ocstobal_beyondexotic",
---     cost = 69420,
---     add_to_deck = function(self, card)
---         SMODS.set_scoring_calculation('ocstobal_tetration')
---     end,
---     remove_from_deck = function(self,card)
---         SMODS.set_scoring_calculation('multiply')
---     end
--- }
-
-SMODS.Scoring_Calculation({
-    key = 'tetration',
-    func = function(self, chips, mult, flames)
-        return chips ^ mult ^ (mult ^ mult)
+SMODS.Joker {
+    key = "hatred_hunter",
+    cost = 10,
+    rarity = 3,
+    loc_vars = function(self,info_queue,card)
     end,
-    text = '^^', -- controls the UI symbol displayed between the chips and mult box
-    colour = G.C.DARK_EDITION
-})
+    calculate = function(self,card,context)
+    end
+}

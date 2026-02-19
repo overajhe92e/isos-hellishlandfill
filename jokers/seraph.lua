@@ -85,7 +85,7 @@ SMODS.Joker { --Seraph
         end
         if card.ability.extra.upgrade < 100 and card.ability.extra.triggered >= 10 then
             play_sound('ocstobal_upg')
-            sphup()
+            SMODS.calculate_effect({ message = "+" }, card)
             repeat
                 card.ability.extra.triggered = card.ability.extra.triggered - 10
                 card.ability.extra.upgrade = card.ability.extra.upgrade + 1
@@ -93,7 +93,7 @@ SMODS.Joker { --Seraph
                 card.ability.extra.chips = card.ability.extra.chips + 10
             until card.ability.extra.triggered < 10
         elseif card.ability.extra.upgrade >= 100 and card.ability.extra.upgrade < 400 and card.ability.extra.triggered >= 10 and G.current_isomode >= 1 then
-            sphupmajor()
+            SMODS.calculate_effect({ message = "++" }, card)
             play_sound('ocstobal_upg', 0.85, 1)
             repeat
                 card.ability.extra.triggered = card.ability.extra.triggered - 10
@@ -103,7 +103,7 @@ SMODS.Joker { --Seraph
                 card.ability.extra.xchips = card.ability.extra.xchips + 2
             until card.ability.extra.triggered < 10
         elseif card.ability.extra.upgrade >= 400 and card.ability.extra.upgrade < 1000 and card.ability.extra.triggered >= 10 and G.current_isomode >= 1 then
-            sphupextreme()
+            SMODS.calculate_effect({ message = "+++" }, card)
             play_sound('ocstobal_upg', 0.75, 2)
             repeat
                 card.ability.extra.triggered = card.ability.extra.triggered - 10
@@ -114,7 +114,7 @@ SMODS.Joker { --Seraph
                 card.ability.extra.emult = card.ability.extra.emult + 0.1
             until card.ability.extra.triggered < 10
         elseif card.ability.extra.upgrade >= 1000 and card.ability.extra.triggered >= 10 and card.ability.extra.upgrade < 10000 and G.current_isomode >= 1 then
-            sphupextreme()
+            SMODS.calculate_effect({ message = "++++" }, card)
             play_sound('ocstobal_upg', 0.65, 3)
             repeat
                 card.ability.extra.triggered = card.ability.extra.triggered - 10
@@ -126,7 +126,7 @@ SMODS.Joker { --Seraph
                 card.ability.extra.eemult = card.ability.extra.eemult + 1
             until card.ability.extra.triggered < 10
         elseif card.ability.extra.upgrade >= 10000 and card.ability.extra.triggered >= 10 and card.ability.extra.upgrade < 100000 and G.current_isomode >= 1 then
-            ohgod()
+            SMODS.calculate_effect({ message = "+++++" }, card)
             play_sound('ocstobal_upg', 0.6, 3)
             repeat
                 card.ability.extra.triggered = card.ability.extra.triggered - 10
@@ -139,7 +139,7 @@ SMODS.Joker { --Seraph
                 card.ability.extra.eeemult = card.ability.extra.eeemult + 5
             until card.ability.extra.triggered < 10
         elseif card.ability.extra.upgrade >= 100000 and card.ability.extra.triggered >= 10 and card.ability.extra.upgrade < 1000000 then
-            ohgod()
+            SMODS.calculate_effect({ message = "+++++" }, card)
             repeat
                 card.ability.extra.triggered = card.ability.extra.triggered - 10
                 card.ability.extra.upgrade = card.ability.extra.upgrade + 1
@@ -152,7 +152,7 @@ SMODS.Joker { --Seraph
                 card.ability.extra.hypmult = card.ability.extra.hypmult + 1
             until card.ability.extra.triggered < 10
         elseif card.ability.extra.upgrade >= 1000000 and card.ability.extra.triggered >= 10 and card.ability.extra.upgrade <= 1000000 then
-            ohgod()
+            SMODS.calculate_effect({ message = "+++++" }, card)
             repeat
                 card.ability.extra.triggered = card.ability.extra.triggered - 10
                 card.ability.extra.upgrade = card.ability.extra.upgrade + 1
@@ -467,72 +467,6 @@ SMODS.Joker {
         end
     end
 }
-
-function sphup()
-    local text = localize('sphlvl')
-    attention_text({
-        scale = 1,
-        text = text,
-        hold = 5,
-        align = 'cm',
-        offset = { x = 0, y = -2.7 },
-        major = G.play,
-        colour = HEX('E6E6FA')
-    })
-end
-
-function sphupmajor()
-    local text = localize('sphlvlmajor')
-    attention_text({
-        scale = 1,
-        text = text,
-        hold = 8,
-        align = 'cm',
-        offset = { x = 0, y = -2.7 },
-        major = G.play,
-        colour = HEX('FF0000')
-    })
-end
-
-function sphupextreme()
-    local text = localize('sphlvlextreme')
-    attention_text({
-        scale = 0.7,
-        text = text,
-        hold = 8,
-        align = 'cm',
-        offset = { x = 0, y = -2.7 },
-        major = G.play,
-        colour = HEX('301934')
-    })
-end
-
-function ohgod()
-    local text = localize('sphlvlabsolutefinal')
-    attention_text({
-        scale = 0.7,
-        text = text,
-        hold = 8,
-        align = 'cm',
-        offset = { x = 0, y = -2.7 },
-        major = G.play,
-        colour = HEX('ffffff')
-    })
-end
-
-function sphupfinal()
-    local text = localize('sphbeyond')
-    attention_text({
-        scale = 0.7,
-        text = text,
-        hold = 8,
-        align = 'cm',
-        offset = { x = 0, y = -2.7 },
-        major = G.play,
-        colour = HEX('000000')
-    })
-end
-
 function wtfdude()
     local text = localize('sphwhy')
     attention_text({

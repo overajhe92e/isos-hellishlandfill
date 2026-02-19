@@ -9,8 +9,16 @@ SMODS.Joker {
     },
     atlas = 'placeholder',
     pools = {["ocstob"] = true,["all_junk"] = true},
+    loc_vars = function(self,info_queue,card)
+        return {
+            vars = {
+                card.ability.extra.dura
+            }
+        }
+    end,
     calculate = function(self, card, context)
         if context.setting_blind and not context.blueprint and context.blind.boss then
+            card.ability.extra.dura = card.ability.extra.dura - 1
             G.E_MANAGER:add_event(Event({
                 func = function()
                     G.E_MANAGER:add_event(Event({
@@ -53,7 +61,7 @@ SMODS.Joker {
 
 SMODS.Joker {
     key = 'pk_ground',
-    cost = 250,
+    cost = 5000,
     rarity = 'ocstobal_beyondexotic',
     atlas = 'pkground',
     config = {

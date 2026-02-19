@@ -17,22 +17,20 @@ SMODS.Joker { --Solinium
     cost = 20,
     rarity = 4,
     atlas = 'triple_s',
-    pools = {["ocstob"] = true,["all_junk"] = true},
+    pools = { ["ocstob"] = true, ["all_junk"] = true },
     soul_pos = {
         x = 4,
         y = 0
     },
     update = function(self, card, dt)
-        if next(SMODS.find_card("j_ocstobal_recluse")) then -- If player has Recluse
-            G.solscare = 1
-        elseif G.GAME.blind and not G.GAME.blind.disabled and G.GAME.blind.name == 'recluseblind' then
-            G.solscare = 1
-        else
-            G.solscare = 0
-        end
-        if G.solscare == 1 then
+        local recluse_check = next(SMODS.find_card("j_ocstobal_recluse")) or
+            G.GAME.blind and not G.GAME.blind.disabled and G.GAME.blind.name == 'recluseblind'
+        local dogman_check = next(SMODS.find_card("j_ocstobal_dogman"))
+        if dogman_check and not recluse_check then
+            card.children.floating_sprite:set_sprite_pos { x = 6, y = 0 }
+        elseif recluse_check then
             card.children.floating_sprite:set_sprite_pos { x = 5, y = 0 }
-            card:juice_up() -- so you know polterwor
+            card:juice_up(0, 0.1) -- so you know polterwor
         else
             card.children.floating_sprite:set_sprite_pos { x = 4, y = 0 }
         end
@@ -47,15 +45,19 @@ SMODS.Joker { --Solinium
     end,
 
     loc_vars = function(self, info_queue, card)
+        local recluse_check = next(SMODS.find_card("j_ocstobal_recluse")) or
+            G.GAME.blind and not G.GAME.blind.disabled and G.GAME.blind.name == 'recluseblind'
+        local dogman_check = next(SMODS.find_card("j_ocstobal_dogman"))
         return {
             vars = {
                 card.ability.extra.multnchips,
                 localize('k_ocstobal_solinium_quote' .. pseudorandom("seed", 1, 3)),
                 localize('k_ocstobal_solinium_extra' .. pseudorandom("seed", 1, 2)),
                 localize('k_ocstobal_soliniumscared_quote' .. pseudorandom("seed", 1, 2)),
+                localize('k_ocstobal_soliniumangy_quote_' .. pseudorandom("aha", 1, 6)),
                 card.ability.extra.increaseme
             },
-            key = G.solscare == 1 and "j_ocstobal_soliniumscared" or G.solscare == 0 and "j_ocstobal_solinium"
+            key = dogman_check and not recluse_check and "j_ocstobal_soliniumangy" or recluse_check and "j_ocstobal_soliniumscared" or nil
         }
     end,
 

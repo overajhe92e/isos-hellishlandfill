@@ -28,3 +28,108 @@ SMODS.Tag {
         end
     end
 }
+
+SMODS.Tag {
+    key = "terminus_tag",
+    atlas = 'junkyard_tags',
+    pos = { x = 1, y = 0 },
+    apply = function(self, tag, context)
+        if context.type == 'store_joker_create' then
+            local term = { 0 }
+            for _, joker in ipairs(G.jokers.cards) do
+                if joker.config.center.rarity == "ocstobal_beyondexotic" and not term[joker.config.center.key] then
+                    term[1] = term[1] + 1
+                    term[joker.config.center.key] = true
+                end
+            end
+            if #G.P_JOKER_RARITY_POOLS["ocstobal_beyondexotic"] > term[1] then
+                local card = SMODS.create_card {
+                    set = "Joker",
+                    rarity = "ocstobal_beyondexotic",
+                    area = context.area,
+                }
+                create_shop_card_ui(card, 'Joker', context.area)
+                card.states.visible = false
+                tag:yep('+', G.C.RED, function()
+                    card:start_materialize()
+                    card:set_cost()
+                    return true
+                end)
+                tag.triggered = true
+                return card
+            else
+                tag:nope()
+            end
+        end
+    end,
+}
+
+SMODS.Tag {
+    key = "exrare_tag",
+    atlas = 'junkyard_tags',
+    pos = { x = 2, y = 0 },
+    apply = function(self, tag, context)
+        if context.type == 'store_joker_create' then
+            local ep = { 0 }
+            for _, joker in ipairs(G.jokers.cards) do
+                if joker.config.center.rarity == "ocstobal_beyondexotic" and not ep[joker.config.center.key] then
+                    ep[1] = ep[1] + 1
+                    ep[joker.config.center.key] = true
+                end
+            end
+            if #G.P_JOKER_RARITY_POOLS["ocstobal_beyondexotic"] > ep[1] then
+                local card = SMODS.create_card {
+                    set = "Joker",
+                    rarity = "ocstobal_epic",
+                    area = context.area,
+                }
+                create_shop_card_ui(card, 'Joker', context.area)
+                card.states.visible = false
+                tag:yep('+', G.C.RED, function()
+                    card:start_materialize()
+                    card:set_cost()
+                    return true
+                end)
+                tag.triggered = true
+                return card
+            else
+                tag:nope()
+            end
+        end
+    end,
+}
+
+SMODS.Tag {
+    key = "legend_tag",
+    atlas = 'junkyard_tags',
+    pos = { x = 3, y = 0 },
+    apply = function(self, tag, context)
+        if context.type == 'store_joker_create' then
+            local lgn = { 0 }
+            for _, joker in ipairs(G.jokers.cards) do
+                if joker.config.center.rarity == 4 and not lgn[joker.config.center.key] then
+                    lgn[1] = lgn[1] + 1
+                    lgn[joker.config.center.key] = true
+                end
+            end
+            if #G.P_JOKER_RARITY_POOLS[4] > lgn[1] then
+                local card = SMODS.create_card {
+                    set = "Joker",
+                    rarity = "Legendary",
+                    area = context.area,
+                }
+                create_shop_card_ui(card, 'Joker', context.area)
+                card.states.visible = false
+                tag:yep('+', G.C.RED, function()
+                    card:start_materialize()
+                    card:set_cost()
+                    return true
+                end)
+                tag.triggered = true
+                return card
+            else
+                tag:nope()
+            end
+        end
+    end,
+}

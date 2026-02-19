@@ -300,7 +300,7 @@ return {
 		},
 		Joker = {
 			j_ocstobal_Oxy = {
-				name = {"{C:ocstobal_oxi_gradient}Oxidyze{}","{s:0.7,C:money}The Perfectionist{}"},
+				name = { "{C:ocstobal_oxi_gradient}Oxidyze{}", "{s:0.7,C:money}The Perfectionist{}" },
 				text = {
 					'Copies the Ability of the joker',
 					'to the left and right of this character.',
@@ -324,7 +324,7 @@ return {
 				}
 			},
 			j_ocstobal_oxi_oldname = {
-				name = {"{C:ocstobal_oxi_gradient}Oxy{}","{s:0.7,C:money}The Perfectionist{}"},
+				name = { "{C:ocstobal_oxi_gradient}Oxy{}", "{s:0.7,C:money}The Perfectionist{}" },
 				text = {
 					'Copies the Ability of the joker',
 					'to the left and right of this character.',
@@ -335,7 +335,7 @@ return {
 				},
 			},
 			j_ocstobal_oxi_get_trolled_lmfao = {
-				name = {"\"{C:pastel_yellow}oc{}{C:pink}ks{}ie\"","{C:pastel_yellow,s:0.7}trolled,{} {C:pink,s:0.7}lmfao{}"},
+				name = { "\"{C:pastel_yellow}oc{}{C:pink}ks{}ie\"", "{C:pastel_yellow,s:0.7}trolled,{} {C:pink,s:0.7}lmfao{}" },
 				text = {
 					'Copies the Ability of the joker',
 					'to the left and right of this character.',
@@ -346,7 +346,7 @@ return {
 				},
 			},
 			j_ocstobal_oxi_alt_quotes = {
-				name = "{C:inactive}(Oxy){} Oxidyze",
+				name = "Oxidyze",
 				text = {
 					'Copies the Ability of the joker',
 					'to the left and right of this character.',
@@ -378,7 +378,7 @@ return {
 				}
 			},
 			j_ocstobal_seraph = {
-				name = {"Seraph","{s:0.7,C:green}To Gamble or Not{}"},
+				name = { "Seraph", "{s:0.7,C:green}To Gamble or Not{}" },
 				text = {
 					{
 						'{C:green}#5# in #6#{} chance to apply {X:red,C:white}X#11#{} Mult',
@@ -401,7 +401,7 @@ return {
 				}
 			},
 			j_ocstobal_seraph_lv100 = {
-				name = {"{C:ocstobal_legendplus}The Voidgloom Seraph{}","{s:0.7,C:legendary}Extensive Power{}"},
+				name = { "{C:ocstobal_legendplus}The Voidgloom Seraph{}", "{s:0.7,C:legendary}Extensive Power{}" },
 				text = {
 					{
 						'{C:red,s:0.9}"#2#"{}',
@@ -415,7 +415,7 @@ return {
 				}
 			},
 			j_ocstobal_seraph_maxedbalanced = {
-				name = {"{C:ocstobal_legendplus}Voidgloom Seraph{}","{s:0.7,E:1,C:green}Maximum Power{}"},
+				name = { "{C:ocstobal_legendplus}Voidgloom Seraph{}", "{s:0.7,E:1,C:green}Maximum Power{}" },
 				text = {
 					{
 						'{C:red,s:0.9}#1#{}',
@@ -429,7 +429,7 @@ return {
 				}
 			},
 			j_ocstobal_seraph_lv300 = {
-				name = {"{C:ocstobal_sewh,E:1}Seraph Voidgloom{}","{C:dark_edition,s:0.7}Harbringer of the Void{}"},
+				name = { "{C:ocstobal_sewh,E:1}Seraph Voidgloom{}", "{C:dark_edition,s:0.7}Harbringer of the Void{}" },
 				text = {
 					{
 						'{C:ocstobal_ust,s:0.9}#3#{}',
@@ -443,7 +443,7 @@ return {
 				}
 			},
 			j_ocstobal_seraph_lv1000 = {
-				name = {"{C:ocstobal_finalrgb}The Final Seraph{}","{s:0.7,E:1}An End Never in Sight{}"},
+				name = { "{C:ocstobal_finalrgb}The Final Seraph{}", "{s:0.7,E:1}An End Never in Sight{}" },
 				text = {
 					{
 						'{C:ocstobal_finalrgb,s:0.9}#4#{}',
@@ -519,7 +519,7 @@ return {
 				}
 			},
 			j_ocstobal_sparky = {
-				name = {"Sparky","{s:0.7,C:blue}Too Timid and Shy{}"},
+				name = { "Sparky", "{s:0.7,C:blue}Too Timid and Shy{}" },
 				text = {
 					'Randomly gives between {C:blue}+1 and +111{} Chips,',
 					'and randomly gives between {C:red}+1 and +111{} mult.',
@@ -538,7 +538,7 @@ return {
 				}
 			},
 			j_ocstobal_sparkynt = {
-				name = {"Sparky","{s:0.7,C:red}\"Sacrifices must be made.\"{}"},
+				name = { "Sparky", "{s:0.7,C:red}\"Sacrifices must be made.\"{}" },
 				text = {
 					'On blind select, {C:attention}destroys a random joker{}',
 					'then adds {X:money,C:white}X4{} of the destroyed joker\'s',
@@ -556,10 +556,10 @@ return {
 				}
 			},
 			j_ocstobal_solinium = {
-				name = {"Solinium","{s:0.7,C:blue}The Curious Cat{}"},
+				name = { "Solinium", "{s:0.7,C:blue}The Curious Cat{}" },
 				text = {
 					'{X:mult,C:white}X#1#{} Mult, upon blind selection,',
-					'adds {C:attention}+#5# (+1){} {X:red,C:white}XMult{}',
+					'adds {C:attention}+#6# (+1){} {X:red,C:white}XMult{}',
 					'{X:red,C:white}+XMult{} increases by ',
 					'{C:attention}+1{} every blind select.',
 					'{C:blue,s:0.9}#2#{}',
@@ -569,14 +569,28 @@ return {
 				}
 			},
 			j_ocstobal_soliniumscared = {
-				name = {"Solinium","{s:0.7,C:red}Petrified by Fear{}"},
+				name = { "Solinium", "{s:0.7,C:red}Petrified by Fear{}" },
 				text = {
 					'{X:mult,C:white}X#1#{} Mult, upon blind selection,',
-					'adds {C:attention}+#5# (+1){} {X:red,C:white}XMult{}',
+					'adds {C:attention}+#6# (+1){} {X:red,C:white}XMult{}',
 					'{X:red,C:white}+XMult{} increases by ',
 					'{C:attention}+1{} every blind select.',
 					'{C:red,s:0.9}#4#{}',
-					'{C:dark_edition,s:0.9}#3#{}'
+					'{C:dark_edition,s:0.9}Origin: Dog Man{}',
+					'{C:inactive,s:0.7}...yes, you\'re reading that correctly.{}'
+
+				}
+			},
+			j_ocstobal_soliniumangy = {
+				name = { "Solinium", "{s:0.7,C:red}Unhappy Reunion{}" },
+				text = {
+					'{X:mult,C:white}X#1#{} Mult, upon blind selection,',
+					'adds {C:attention}+#6# (+1){} {X:red,C:white}XMult{}',
+					'{X:red,C:white}+XMult{} increases by ',
+					'{C:attention}+1{} every blind select.',
+					'{C:red,s:0.9}#5#{}',
+					'{C:dark_edition,s:0.9}Origin: Dog Man{}',
+					'{C:inactive,s:0.7}...yes, you\'re reading that correctly.{}'
 
 				}
 			},
@@ -644,7 +658,7 @@ return {
 				}
 			},
 			j_ocstobal_recluse = {
-				name = {'Recluse','{s:0.7,C:red}Destroyer of Universes{}'},
+				name = { 'Recluse', '{s:0.7,C:red}Destroyer of Universes{}' },
 				text = {
 					'On blind select, {C:red}destroys a random joker{},',
 					'then add {X:money,C:white}X100{} of it\'s sell value to {C:blue}+Chips{}',
@@ -653,7 +667,7 @@ return {
 				}
 			},
 			j_ocstobal_somethingevil = {
-				name = {'{C:ocstobal_sewh}Something Evil{}','{C:inactive,s:0.7}...will happen.{}'},
+				name = { '{C:ocstobal_sewh}Something Evil{}', '{C:inactive,s:0.7}...will happen.{}' },
 				text = {
 					'Combines {C:red}ALL{} the {C:ocstobal_sewh}negative effects{}',
 					'of every joker in Isotypical\'s Junkyard',
@@ -662,7 +676,7 @@ return {
 				}
 			},
 			j_ocstobal_eternaldagger = {
-				name = {'The Eternal Dagger',"{s:0.6,C:red}Eternal Joker's worst nightmare{}"},
+				name = { 'The Eternal Dagger', "{s:0.6,C:red}Eternal Joker's worst nightmare{}" },
 				text = {
 					'Destroys the joker on the right',
 					'of this joker.',
@@ -670,7 +684,7 @@ return {
 				}
 			},
 			j_ocstobal_tigersharksparky = {
-				name = {'Sparky','{s:0.7}The Tiger Shark{}'},
+				name = { 'Sparky', '{s:0.7}The Tiger Shark{}' },
 				text = {
 					'Scored Cards apply',
 					'{X:blue,C:white}X#1#{} Chips and {X:red,C:white}X#2#{} Mult',
@@ -689,7 +703,7 @@ return {
 				}
 			},
 			j_ocstobal_abbie_alt = {
-				name = {'Math Failure & Miss Circle Victim','{s:0.45}fuckin loser lmfaooo{}'},
+				name = { 'Math Failure & Miss Circle Victim', '{s:0.45}fuckin loser lmfaooo{}' },
 				text = {
 					'{C:inactive}Does Something.{}',
 					'{C:dark_edition,s:0.8}Origin : Fundamental Paper Education{}',
@@ -759,7 +773,7 @@ return {
 				}
 			},
 			j_ocstobal_antislopinator = {
-				name = {'Anti-Number Slop-inator','{s:0.6,C:red}"I HATE NUMBERSLOP!!!"{}'},
+				name = { 'Anti-Number Slop-inator', '{s:0.6,C:red}"I HATE NUMBERSLOP!!!"{}' },
 				text = {
 					'{C:attention}+3{} Joker slots',
 					'but if your score is above 1e308,',
@@ -788,7 +802,7 @@ return {
 				}
 			},
 			j_ocstobal_crystal = {
-				name = {'Crystal','{C:blue,s:0.7}The Inventor Cat{}'},
+				name = { 'Crystal', '{C:blue,s:0.7}The Inventor Cat{}' },
 				text = {
 					'Copies the ability of {C:attention}3 jokers{}',
 					'to the {C:attention}right of this Joker{}',
@@ -806,7 +820,7 @@ return {
 				}
 			},
 			j_ocstobal_jokertoendalljokers = {
-				name = {'{C:ocstobal_finalrgb}Avaritia{}','{C:ocstobal_finalrgb,s:0.7}The Ultimate Joker.{}'},
+				name = { '{C:ocstobal_finalrgb}Avaritia{}', '{C:ocstobal_finalrgb,s:0.7}The Ultimate Joker.{}' },
 				text = {
 					'{C:ocstobal_finalrgb}The Joker to end all Jokers...{}',
 					'{C:blue}+999,999{}{C:red},999,999{} Mult and Chips',
@@ -830,7 +844,7 @@ return {
 				}
 			},
 			j_ocstobal_sphawk_slop = {
-				name = {'Seraph','{C:dark_edition,s:0.8}The Eternal Void{}'},
+				name = { 'Seraph', '{C:dark_edition,s:0.8}The Eternal Void{}' },
 				text = {
 					'{X:dark_edition,C:white}(#3#)#1#{} Hypermult,',
 					'{C:dark_edition}Hyperoperator{} increases at {C:attention}#2#{} Mult.',
@@ -839,7 +853,7 @@ return {
 				}
 			},
 			j_ocstobal_sphawk = {
-				name = {'Seraph','{C:dark_edition,s:0.8}The Eternal Void{}'},
+				name = { 'Seraph', '{C:dark_edition,s:0.8}The Eternal Void{}' },
 				text = {
 					'{X:dark_edition,C:white}^^#1#{} Mult,',
 					'Every Scored card multiplies Mult by',
@@ -857,7 +871,7 @@ return {
 				}
 			},
 			j_ocstobal_solawk_slop = {
-				name = {'Solinium','{C:red,s:0.7,E:1}The Absolute Threat{}'},
+				name = { 'Solinium', '{C:red,s:0.7,E:1}The Absolute Threat{}' },
 				text = {
 					'{X:dark_edition,C:white}^^^^#1#{} Mult,',
 					'Mult is {C:attention}multiplied{} by {C:attention}X2{}',
@@ -866,7 +880,7 @@ return {
 				}
 			},
 			j_ocstobal_solawk = {
-				name = {'Solinium','{C:red,s:0.7,E:1}The Absolute Threat{}'},
+				name = { 'Solinium', '{C:red,s:0.7,E:1}The Absolute Threat{}' },
 				text = {
 					'{X:dark_edition,C:white}^^#1#{} Mult,',
 					'Mult is {C:attention}scaled{} by the equation of',
@@ -882,7 +896,7 @@ return {
 				}
 			},
 			j_ocstobal_spkawk_slop = {
-				name = {'Sparky','{C:ocstobal_legendplus,s:0.7}The Ever Changing Soul{}'},
+				name = { 'Sparky', '{C:ocstobal_legendplus,s:0.7}The Ever Changing Soul{}' },
 				text = {
 					'Gives {C:attention}2 to 10{}',
 					'{C:dark_edition}Hypermult{} and {C:dark_edition}Hyperchips{}',
@@ -890,14 +904,14 @@ return {
 				}
 			},
 			j_ocstobal_spkawk = {
-				name = {'Sparky','{C:ocstobal_legendplus,s:0.7}The Ever Changing Soul{}'},
+				name = { 'Sparky', '{C:ocstobal_legendplus,s:0.7}The Ever Changing Soul{}' },
 				text = {
 					"Randomly gives between {C:attention}1.1 to 4{} {X:legendary,C:white}^Mult&Chips{}",
 					"{C:green}1 in 2{} chance to apply {X:dark_edition,C:white}^^Mult&Chips{} instead"
 				}
 			},
 			j_ocstobal_brokenseraph = {
-				name = {'Broken Seraph',"{C:red,s:0.7}Shattered by Recluse's Power{}"},
+				name = { 'Broken Seraph', "{C:red,s:0.7}Shattered by Recluse's Power{}" },
 				text = {
 					'Applies {X:red,C:white}X#1#{} Mult',
 					'Scored cards {C:red}Decrease{} {X:red,C:white}XMult{} by {X:red,C:white}X0.1{}',
@@ -922,7 +936,7 @@ return {
 				}
 			},
 			j_ocstobal_astro = {
-				name = {'Astro','{s:0.7,C:blue}No. 1 Astro Novalite Hater{}'},
+				name = { 'Astro', '{s:0.7,C:blue}No. 1 Astro Novalite Hater{}' },
 				text = {
 					'Applies {X:blue,C:white}^^#1#{} Chips',
 					'{X:blue,C:white}^^Chips{} increases by +1 when',
@@ -933,7 +947,7 @@ return {
 				}
 			},
 			j_ocstobal_solstro = {
-				name = {"Astronomical Duo","{s:0.7,C:blue}\"Solstro\"{}"},
+				name = { "Astronomical Duo", "{s:0.7,C:blue}\"Solstro\"{}" },
 				text = {
 					{
 						"Gains {X:blue,C:white}X#2#{} Chips when",
@@ -946,7 +960,7 @@ return {
 				}
 			},
 			j_ocstobal_astro_balance = {
-				name = {'Astro','{s:0.7,C:blue}No. 1 Astro Novalite Hater{}'},
+				name = { 'Astro', '{s:0.7,C:blue}No. 1 Astro Novalite Hater{}' },
 				text = {
 					'Applies {X:blue,C:white}X#1#{} Chips',
 					'Gains {X:blue,C:white}X1{} Chips when a',
@@ -989,7 +1003,7 @@ return {
 				}
 			},
 			j_ocstobal_moddingchat = {
-				name = {"modding-chat","{s:0.7}Indirect References{}"},
+				name = { "modding-chat", "{s:0.7}Indirect References{}" },
 				text = {
 					{
 						"Gains {X:red,C:white}X1{} Mult for",
@@ -1009,7 +1023,7 @@ return {
 				}
 			},
 			j_ocstobal_mask = {
-				name = {"The Mask","{s:0.7}Silent Judgement{}"},
+				name = { "The Mask", "{s:0.7}Silent Judgement{}" },
 				text = {
 					"On blind select,",
 					"{C:attention}+1{} Joker slot.",
@@ -1041,7 +1055,7 @@ return {
 				} --very original idea, iso!
 			},
 			j_ocstobal_yatta = {
-				name = {'Yatta','{s:0.7,C:legendary}The Candy Lover{}'},
+				name = { 'Yatta', '{s:0.7,C:legendary}The Candy Lover{}' },
 				text = {
 					"Creates 2 {C:dark_edition}Negative{}",
 					"{C:spectral}Spectral{} cards when",
@@ -1058,7 +1072,7 @@ return {
 				}
 			},
 			j_ocstobal_dw_astro = { --BEHAVE, STARSPACE ASTRO!
-				name = {"Astro Novalite","{s:0.7,E:1}The Divorced{}"},
+				name = { "Astro Novalite", "{s:0.7,E:1}The Divorced{}" },
 				text = {
 					{
 						"Adds {C:blue}X#2#{} of your current",
@@ -1074,7 +1088,7 @@ return {
 				}
 			},
 			j_ocstobal_xeno = {
-				name = {"Xeno","{C:blue,s:0.7}Friend of Solinium{}"},
+				name = { "Xeno", "{C:blue,s:0.7}Friend of Solinium{}" },
 				text = {
 					{
 						"This joker gains {X:blue,C:white}X0.25{} Chips",
@@ -1193,7 +1207,7 @@ return {
 				}
 			},
 			j_ocstobal_obscene_joke_oh_no = {
-				name = {"Seraph's Backfired Joke","{s:0.6,C:red}Blunder reaction.{}"},
+				name = { "Seraph's Backfired Joke", "{s:0.6,C:red}Blunder reaction.{}" },
 				text = {
 					{
 						"Creates {C:red}ALL{} {C:ocstobal_ust}Embodiments of Hatred{}",
@@ -1397,7 +1411,7 @@ return {
 				}
 			},
 			j_ocstobal_pk_ground = {
-				name = {"PK Ground","{s:0.7,C:red}Strongest PK Move, Ever.{}"},
+				name = { "PK Ground", "{s:0.7,C:red}Strongest PK Move, Ever.{}" },
 				text = {
 					{
 						"Adds {C:legendary}15%{} of {C:attention}score requirement{}",
@@ -1434,7 +1448,7 @@ return {
 				}
 			},
 			j_ocstobal_reclusivevessel = {
-				name = {"{C:ocstobal_legendplus}Reclusive Vessel{}","{s:0.7,C:red}The Ultimate Threat{}"},
+				name = { "{C:ocstobal_legendplus}Reclusive Vessel{}", "{s:0.7,C:red}The Ultimate Threat{}" },
 				text = {
 					{
 						"Scoring a card causes {C:ocstobal_nightmare_purple}The Vessel{} gain {X:legendary,C:white}X1{} Mult and Chips",
@@ -1496,14 +1510,14 @@ return {
 					"{s:0.65,C:ocstobal_iso_grad,E:1}The Creator of the Mod!{}"
 				},
 				text = {
-						"{C:attention}Retriggers{} all {C:attention}Cards and Jokers{}",
-						"once for every {C:attention}Joker currently held{}",
-						"Reduces {C:attention}Blind requirement{} by {X:dark_edition,C:white}(Req^0.6)/2{}",
-						"All cards are {C:attention}immune{} to {C:red}debuffs{}",
-						"{X:ocstobal_iso_grad,C:white}^^^1.02{} Chips and Mult {C:attention}before and during{} scoring",
-						"Some {c:attention}loaded mods{} may buff {C:ocstobal_iso_grad}Isotypical...{}",
-						"{C:iso_dark_purple,E:1}The Gal who made the mod herself, now in joker form!{}",
-						"{C:iso_light_purple,s:0.85,E:1}\"#1#\"{}"
+					"{C:attention}Retriggers{} all {C:attention}Cards and Jokers{}",
+					"once for every {C:attention}Joker currently held{}",
+					"Reduces {C:attention}Blind requirement{} by {X:dark_edition,C:white}(Req^0.6)/2{}",
+					"All cards are {C:attention}immune{} to {C:red}debuffs{}",
+					"{X:ocstobal_iso_grad,C:white}^^^1.02{} Chips and Mult {C:attention}before and during{} scoring",
+					"Some {c:attention}loaded mods{} may buff {C:ocstobal_iso_grad}Isotypical...{}",
+					"{C:iso_dark_purple,E:1}The Gal who made the mod herself, now in joker form!{}",
+					"{C:iso_light_purple,s:0.85,E:1}\"#1#\"{}"
 				}
 			},
 			j_ocstobal_steelwire_stage_1 = {
@@ -1594,13 +1608,13 @@ return {
 					"{C:dark_edition,E:1,s:0.6}Yeah, revolutionary I know.{}"
 				}
 			},
-			j_ocstobal_baneofhate = {
-				name = "Banished Hatreds",
+			j_ocstobal_hatred_hunter = {
+				name = "Hunter of Hatreds",
 				text = {
 					{
-					"Applies buffs for each {C:iso_crimson}Hatred{}",
-					"that has been {C:red}destroyed{} by",
-					"the {C:ocstobal_sewh}Eternal Dagger{}"
+						"Applies buffs for each {C:iso_crimson}Hatred{}",
+						"that has been {C:red}destroyed{} by",
+						"the {C:ocstobal_sewh}Eternal Dagger{}"
 					}
 				}
 			}
@@ -1776,7 +1790,36 @@ return {
 					"Gives a free",
 					"{C:attention}Junkyard Pack Beta{}"
 				}
-			}
+			},
+			tag_ocstobal_terminus_tag = {
+				name = "Terminus Tag",
+				text = {
+					"Shop has a {C:red}full price{}",
+					"{C:ocstobal_terminus_global}Terminus Joker{}",
+					"{C:inactive,s:0.7}Tag bloat???{}"
+				}
+			},
+			tag_ocstobal_every_fucking_pack = {
+				name = "Every Fucking Pack In The Mod",
+				text = {
+					"Gives {C:attention}every{} Isotypical's Junkyard",
+					"{C:attention}Booster Pack{}"
+				}
+			}, --may not be used ever
+			tag_ocstobal_exrare_tag = {
+				name = "Ex. Rare Tag",
+				text = {
+					"Shop has an",
+					"{C:iso_exrare}Ex. Rare{} Joker",
+				}
+			},
+			tag_ocstobal_legend_tag = {
+				name = "Legendary Tag",
+				text = {
+					"Shop has a",
+					"{C:legendary}Legendary{} Joker",
+				}
+			},
 		},
 		Tarot = {},
 		Voucher = {},
@@ -1856,6 +1899,13 @@ return {
 			k_ocstobal_solinium_quote1 = "\"Meow!\"",
 			k_ocstobal_solinium_quote2 = "\"mrrp mrrowww :3\"", -- :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3
 			k_ocstobal_solinium_quote3 = "\"Petey the cat? Oh, nonono. I'm NOT associated with HIM.\"",
+
+			k_ocstobal_soliniumangy_quote_1 = "\"Euck! Get him away!\"",
+			k_ocstobal_soliniumangy_quote_2 = "*hissing*",
+			k_ocstobal_soliniumangy_quote_3 = "You annoying little..!",
+			k_ocstobal_soliniumangy_quote_4 = "I don't like Dog Man, get him out!",
+			k_ocstobal_soliniumangy_quote_5 = "He keeps affiliating me with Petey..!",
+			k_ocstobal_soliniumangy_quote_6 = "*aggresive hissing*",
 
 			k_ocstobal_soliniumscared_quote1 = "\"AAAAAAAAAAHHHHHHHHHHHHHHHHHHH\"",
 			k_ocstobal_soliniumscared_quote2 = "\"GET HIM AWAY FROM ME!!!!!!\"",

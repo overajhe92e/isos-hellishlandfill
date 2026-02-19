@@ -19,6 +19,7 @@ PINK = HEX("FFAAD9"),
 ISO_LIGHT_PURPLE = HEX("df9aff"),
 ISO_DARK_PURPLE = HEX("cf69ff"),
 ISO_CRIMSON = HEX("870000"),
+ISO_EX_RARE = HEX("ff00a7"),
 """
 match_indent = true
 
@@ -38,5 +39,6 @@ pink = G.C.PINK,
 iso_light_purple = G.C.ISO_LIGHT_PURPLE,
 iso_dark_purple = G.C.ISO_DARK_PURPLE,
 iso_crimson = G.C.ISO_CRIMSON,
+iso_exrare = G.C.ISO_EX_RARE,
 """
 match_indent = true
