@@ -351,7 +351,7 @@ SMODS.Joker {
                 next(SMODS.find_card("j_ocstobal_Oxy")) and next(SMODS.find_card("j_ocstobal_sparky")) and
                 next(SMODS.find_card("j_ocstobal_solinium")) and "j_ocstobal_obscene_joke_oh_no"
                 or next(SMODS.find_card("j_ocstobal_Oxy")) and "j_ocstobal_obscene_joke_oxidyze"
-                or next(SMODS.find_card("j_ocstobal_solinium")) and not next(SMODS.find_card("j_ocstobal_Oxy")) and not next(SMODS.find_card("j_ocstobal_sparky")) "j_ocstobal_obscene_joke_solinium"
+                or next(SMODS.find_card("j_ocstobal_solinium")) and not next(SMODS.find_card("j_ocstobal_Oxy")) and not next(SMODS.find_card("j_ocstobal_sparky")) and "j_ocstobal_obscene_joke_solinium"
                 or next(SMODS.find_card("j_ocstobal_sparky")) and not next(SMODS.find_card("j_ocstobal_Oxy")) and "j_ocstobal_obscene_joke_sparky"
 
         }

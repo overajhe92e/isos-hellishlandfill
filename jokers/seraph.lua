@@ -405,7 +405,7 @@ SMODS.Joker {
         end
     end,
     calculate = function(self, card, context)
-        if context.ending_shop then
+        if context.modify_ante then
             G.GAME.round_resets.blind_choices.Small = G.omega_blinds()
             G.GAME.round_resets.blind_choices.Big = G.omega_blinds()
             G.GAME.round_resets.blind_choices.Boss = G.omega_blinds()

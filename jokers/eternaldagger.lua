@@ -38,8 +38,10 @@ SMODS.Joker { --Eternal Dagger
                         end
                     end
 
-                    if target_joker and target_joker.ability.ocstobal_fuck_no == false then
-
+                    if target_joker then
+                        if target_joker.ability.ocstobal_fuck_no then
+                            return false
+                        else
                             if target_joker.ability.eternal then
                                 target_joker.ability.eternal = nil
                             end
@@ -54,7 +56,7 @@ SMODS.Joker { --Eternal Dagger
                                 end
                             }))
                             card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, { message = "Eradicated.", colour = G.C.RED })
-
+                        end
                     end
                     return true
                 end

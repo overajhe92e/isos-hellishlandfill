@@ -346,14 +346,15 @@ return {
 				},
 			},
 			j_ocstobal_oxi_alt_quotes = {
-				name = "Oxidyze",
+				name = {"Oxidyze","{C:red,s:0.6}Unwanted Visitor{}"},
 				text = {
 					'Copies the Ability of the joker',
 					'to the left and right of this character.',
 					'{C:red}Doubles blind size.{}',
 					'{C:red,s:0.9}#2#{}',
-					'{X:red,C:white}Dissonance:{} Steel cards are debuffed in hand',
+					'{X:red,C:white}Dissonance:{} {C:attention}Steel{} cards are {C:red}debuffed{} in hand',
 					'during scoring if {C:pastel_yellow}O{}{C:pink}x{}y is present',
+					'{C:red}1 in 6 chance to destroy Oxy at the end of the round.{}',
 					'{C:dark_edition,s:0.9}Origin : No origin?{}',
 					'{s:0.8,C:dark_edition}Character by Isotypical{}'
 				},
@@ -1918,7 +1919,7 @@ return {
 			k_ocstobal_oxy_quote_alt_1 = "WHO ARE YOU?!",
 			k_ocstobal_oxy_quote_alt_2 = "YOU FRAUD!",
 			k_ocstobal_oxy_quote_alt_3 = "Iso, get her away from me!",
-			k_ocstobal_oxy_quote_alt_4 = "I'm the real Oxy- I MEAN Oxidyze, not her!",
+			k_ocstobal_oxy_quote_alt_4 = "Fraud, FRAUD!",
 			k_ocstobal_oxy_quote_alt_5 = "I AM NOT A \"BNUUY\"!",
 			k_ocstobal_oxy_quote_alt_6 = "Seraph is probably laughing his ass off, and I'm actually gonna kill him.",
 
