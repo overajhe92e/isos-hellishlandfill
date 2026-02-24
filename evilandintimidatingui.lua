@@ -576,7 +576,7 @@ function sphlvls(buttonname)
 						nodes = {
 							{
 								n = G.UIT.R,
-								config = { align = 'cm', padding = 0, colour = G.C.CLEAR, minw = 10 },
+								config = { align = 'cm', padding = 0, colour = G.C.CLEAR, minw = 8 },
 								nodes = {
 									{ n = G.UIT.T, config = { text = "Seraph's Levelling System", scale = 0.6, colour = G.C.EDITION, align = 'cl', vert = true } },
 									{
@@ -646,91 +646,91 @@ function sphlvls(buttonname)
 								n = G.UIT.R,
 								config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 								nodes = {
-									{ n = G.UIT.T, config = { text = "ACTIVE ABILITIES", scale = 0.6, colour = G.C.EDITION, align = 'm' } }
+									{ n = G.UIT.T, config = { text = "Upgrading", scale = 0.6, colour = G.C.EDITION, align = 'm' } }
 								}
 							},
 							{
 								n = G.UIT.R,
 								config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 								nodes = {
-									{ n = G.UIT.T, config = { text = "LVL 5: Seraph will now score chips per scored cards.", scale = 0.3, colour = G.C.GREEN, align = 'm' } }
+									{ n = G.UIT.T, config = { text = "XMult upgrade button here", scale = 0.3, colour = G.C.GREEN, align = 'm' } }
 								}
 							},
 							{
 								n = G.UIT.R,
 								config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 								nodes = {
-									{ n = G.UIT.T, config = { text = "LVL 10: Seraph's 1 in 3 chance is guaranteed.", scale = 0.3, colour = G.C.GREEN, align = 'm' } }
+									{ n = G.UIT.T, config = { text = "Disable self-destruction upgrade here", scale = 0.3, colour = G.C.GREEN, align = 'm' } }
 								}
 							},
 							{
 								n = G.UIT.R,
 								config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 								nodes = {
-									{ n = G.UIT.T, config = { text = "Seraph will no longer have a chance to self-destruct beyond Ante 8.", scale = 0.3, colour = G.C.GREEN, align = 'm' } }
+									{ n = G.UIT.T, config = { text = "Unlock +Chips", scale = 0.3, colour = G.C.GREEN, align = 'm' } }
 								}
 							},
 							{
 								n = G.UIT.R,
 								config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 								nodes = {
-									{ n = G.UIT.T, config = { text = "LV 100: XChips are applied per scored card.", scale = 0.3, colour = G.C.GREEN, align = 'm' } }
+									{ n = G.UIT.T, config = { text = "Unlock XChips", scale = 0.3, colour = G.C.GREEN, align = 'm' } }
 								}
 							},
 							{
 								n = G.UIT.R,
 								config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 								nodes = {
-									{ n = G.UIT.T, config = { text = "------", scale = 0.4, colour = G.C.FILTER, align = 'm' } }
+									{ n = G.UIT.T, config = { text = "Upgrade XChips", scale = 0.4, colour = G.C.FILTER, align = 'm' } }
 								}
 							},
 							{
 								n = G.UIT.R,
 								config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 								nodes = {
-									{ n = G.UIT.T, config = { text = "LV 400: EMult is applied per scored card.", scale = 0.3, colour = G.C.FILTER, align = 'm' } }
+									{ n = G.UIT.T, config = { text = "Unlock EChip+Mult", scale = 0.3, colour = G.C.FILTER, align = 'm' } }
 								}
 							},
 							{
 								n = G.UIT.R,
 								config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 								nodes = {
-									{ n = G.UIT.T, config = { text = "LV 1,000: EEMult is applied per scored card.", scale = 0.3, colour = G.C.FILTER, align = 'm' } }
+									{ n = G.UIT.T, config = { text = "Unlock EEChip+Mult (1,000 VP?)", scale = 0.3, colour = G.C.FILTER, align = 'm' } }
 								}
 							},
 							{
 								n = G.UIT.R,
 								config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 								nodes = {
-									{ n = G.UIT.T, config = { text = "------", scale = 0.4, colour = G.C.DARK_EDITION, align = 'm' } }
+									{ n = G.UIT.T, config = { text = "Unlock EEEChip+Mult", scale = 0.4, colour = G.C.DARK_EDITION, align = 'm' } }
 								}
 							},
 							{
 								n = G.UIT.R,
 								config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 								nodes = {
-									{ n = G.UIT.T, config = { text = "LV: 10,000: EEEMult is applied per scored card.", scale = 0.3, colour = G.C.DARK_EDITION, align = 'm' } }
+									{ n = G.UIT.T, config = { text = "Unlock Hyperop", scale = 0.3, colour = G.C.DARK_EDITION, align = 'm' } }
 								}
 							},
 							{
 								n = G.UIT.R,
 								config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 								nodes = {
-									{ n = G.UIT.T, config = { text = "LV: 100,000: Hypermult and Hyperchips are applied per scored card.", scale = 0.3, colour = G.C.DARK_EDITION, align = 'm' } }
+									{ n = G.UIT.T, config = { text = "Upg. Operator | Hyp.Chip+Mult", scale = 0.3, colour = G.C.DARK_EDITION, align = 'm' } }
 								}
 							},
 							{
 								n = G.UIT.R,
 								config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 								nodes = {
-									{ n = G.UIT.T, config = { text = "LV: 1,000,000: Hyperoperator scales on level up.", scale = 0.3, colour = G.C.DARK_EDITION, align = 'm' } }
+									{ n = G.UIT.T, config = { text = "Upg. Point gain", scale = 0.3, colour = G.C.DARK_EDITION, align = 'm' } }
 								}
 							},
 							{
 								n = G.UIT.R,
 								config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
 								nodes = {
-									{ n = G.UIT.T, config = { text = "LV: 1,000,000,000: cavenfish", scale = 0.25, colour = G.C.DARK_EDITION, align = 'm' } }
+									{ n = G.UIT.T, config = { text = "give cavenfish", scale = 0.25, colour = G.C.DARK_EDITION, align = 'm' } }
 								}
 							},
 						}

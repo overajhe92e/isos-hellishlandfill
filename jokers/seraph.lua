@@ -12,24 +12,49 @@ local ocstobal_all_origins = {
     ' Poppy Playtime',              --used to be a dragon
     ' Smiling Critters',            -- read above
     ' Hypixel Skyblock',            --"voidgloom seraph" boss lmfao
+    ' ERROR'
 }
 
 local originquestion = {
-    'ORIGIN ',
-    'Origin ',
-    'OriGIN ',
-    'oRIGIN ',
-    'OrIgIn ',
-    'OriGIn ',
-    'orIGIN ',
-    'oRiGIn ',
-    'oRigiN '
+    "Origin ",
+    "Origin? ",
+    "???",
+    "nil"
 }
 
 local operators = {
     ":",
     ";"
 }
+
+if G.GAME then --here i go
+    G.GAME.ISO_Seraph_Upgrades = {}
+end
+
+--[[
+
+    Seraph's upgrade tree is gonna fucking kill me i swear to god
+    
+    There are going to be upgrades for all of his abilities, and unlocks for his abilities.
+
+    ---
+        Planned Unlocks:
+        Unlock +Chips, +Mult, XChips, EChips+Mult, EEChips+Mult, and so on up until Hyperchip+Mult
+    ---
+        Planned Upgrades:
+        Disable Self Destruct
+        Upgrade +Chips, +Mult, XChips, XMult... and so on up until Hyperchip+Mult
+        Upgrade Hyperoperator (very fucking expensive)
+        Upgrade Point Gain
+    ---
+        Points are gained by selecting blinds, defeating boss blinds, and rarely gained by scoring cards.
+    ---
+        Unlocking EChipMult changes his sprite to the "locked tf in" sprite
+        Unlocking EEChipMult changes his sprite to the "Angel of the Void" sprite
+        Unlocking Hyp.ChipMult changes his sprite to the "Final" Sprite
+    ---
+    
+]]
 
 SMODS.Joker { --Seraph
     key = "seraph",
@@ -337,7 +362,7 @@ SMODS.Joker { --Seraph
             end
         end
         if context.setting_blind then
-            if G.GAME.round_resets.ante >= 8 and card.ability.extra.upgrade < 10 then
+            if G.GAME.round_resets.ante >= 8 and G.GAME.ISO_Seraph_Upgrades.no_self_destruct == false then
                 if SMODS.pseudorandom_probability(card, 'group_0_5a1e6a25', 1, card.ability.extra.odds2, 'j_ocstobal_seraph') then
                     SMODS.calculate_effect({
                         func = function()
