@@ -164,19 +164,19 @@ grah()
 
 local function all_checks()
     if next(SMODS.find_mod("jen")) then
-        POLTERWORX = true
+        ISO_POLTERWORX = true
     end
     if next(SMODS.find_mod("Cryptid")) then
-        Cryptshit = true
+        ISO_Cryptshit = true
     end
     if next(SMODS.find_mod("starspace")) then
-        Starspace = true
+        ISO_Starspace = true
     end
     if next(SMODS.find_mod("Yahimod")) then
-        Yahamouse = true
+        ISO_Yahamouse = true
     end
     if next(SMODS.find_mod("bdash")) then
-        BDash = true
+        ISO_BDash = true
     end
 end
 

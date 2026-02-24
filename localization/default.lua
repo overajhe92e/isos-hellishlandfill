@@ -1634,6 +1634,28 @@ return {
 						"the {C:ocstobal_sewh}Eternal Dagger{}"
 					}
 				}
+			},
+			j_ocstobal_neveragain = {
+				name = "???",
+				text = {"..?"}
+			},
+			j_ocstobal_neveragain_clicked = {
+				name = "{C:red}NEVER. AGAIN.{}",
+				text = {
+					"{X:default,C:white}X0{} Mult"
+				}
+			},
+			j_ocstobal_a_fucking_gun = {
+				name = "Astro's Gun",
+				text = {
+					"{C:red,s:1.3}Only works if you have Astro!{}",
+					"This joker gains {X:blue,C:white}^0.1{} Chips for",
+					"every {C:blue}Astro Novalite{} owned",
+					"If there are more than {C:attention}3{} {C:blue}Astro Novalites{},",
+					"This joker will instead gain {X:dark_edition,C:white}^^0.1{} Chips",
+					"{C:red}Destroys all Astro Novalites{}",
+					"{C:inactive,s:0.7}This is just a G-19..?{}"
+				}
 			}
 		},
 		Other = {

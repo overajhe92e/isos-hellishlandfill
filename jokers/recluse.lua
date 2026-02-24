@@ -126,22 +126,9 @@ SMODS.Joker { --Recluse
             multnchip = 0
         }
     },
-    -- loc_txt = {
-    --     ['name'] = 'Recluse',
-    --     ['text'] = {
-    --         [1] = 'Destroys a {C:attention}Random Joker,{}',
-    --         [2] = 'then adds {C:money}x66{} the amount of it\'s value to +{C:blue}Chips{}',
-    --         [3] = '( Currently +{C:blue}#1#{} )',
-    --         [4] = '{C:blue,s:0.8}\"Can\'t believe I got myself sealed away...\"{}',
-    --         [5] = '{C:dark_edition,E:1,s:0.7}Origin: Some Fuckass Spanish Monster Drawing Assignment{}'
-    --     },
-    --     ['unlock'] = {
-    --         [1] = 'Unlocked by default.'
-    --     }
-    -- },
     pos = {
-        x = 5,
-        y = 0
+        x = 4,
+        y = 2
     },
     display_size = {
         w = 71 * 1,
@@ -151,10 +138,10 @@ SMODS.Joker { --Recluse
     rarity = 2,
     blueprint_compat = true,
     eternal_compat = true,
-    atlas = 'CustomJokers',
+    atlas = 'other_ocs',
     soul_pos = {
-        x = 6,
-        y = 0
+        x = 5,
+        y = 2
     },
     pools = {["ocstob"] = true,["all_junk"] = true},
 

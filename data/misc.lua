@@ -246,84 +246,12 @@ SMODS.ObjectType({
 })
 
 SMODS.Atlas {
-	key = 'diansuvulkarch',
-	px = 34,
-	py = 34,
-	path = 'MORIYA I THOUGHT YOU WERE ENLIGHTENED.png',
-	atlas_table = 'ANIMATION_ATLAS',
-	frames = 1
-}
-
-SMODS.Atlas {
 	key = 'omegarush',
 	px = 34,
 	py = 34,
 	path = 'omegarush.png',
 	atlas_table = 'ANIMATION_ATLAS',
 	frames = 35
-}
-
-SMODS.Atlas {
-	key = 'BLACKKNIFE',
-	px = 34,
-	py = 34,
-	path = 'corruptknife.png',
-	atlas_table = 'ANIMATION_ATLAS',
-	frames = 16
-}
-
-SMODS.Atlas {
-	key = 'UNFAIRSCALE',
-	px = 34,
-	py = 34,
-	path = 'unfairscale.png',
-	atlas_table = 'ANIMATION_ATLAS',
-	frames = 16
-}
-
-SMODS.Atlas {
-	key = 'HELPME',
-	px = 34,
-	py = 34,
-	path = 'helpme.png',
-	atlas_table = 'ANIMATION_ATLAS',
-	frames = 16
-}
-
-SMODS.Atlas {
-	key = 'reclusebl',
-	px = 34,
-	py = 34,
-	path = 'fearx2.png',
-	atlas_table = 'ANIMATION_ATLAS',
-	frames = 1
-}
-
-SMODS.Atlas {
-	key = 'shyblind',
-	px = 34,
-	py = 34,
-	path = 'shyblind.png',
-	atlas_table = 'ANIMATION_ATLAS',
-	frames = 22
-}
-
-SMODS.Atlas {
-	key = 'knifeblind',
-	px = 34,
-	py = 34,
-	path = 'knifeblind.png',
-	atlas_table = 'ANIMATION_ATLAS',
-	frames = 1
-}
-
-SMODS.Atlas {
-	key = 'burnteyes',
-	px = 34,
-	py = 34,
-	path = 'lankybossblind.png',
-	atlas_table = 'ANIMATION_ATLAS',
-	frames = 18
 }
 
 SMODS.Atlas {
@@ -356,15 +284,6 @@ SMODS.Atlas {
 	py = 95,
 	path = 'other_ocs.png',
 	atlas_table = 'ASSET_ATLAS'
-}
-
-SMODS.Atlas {
-	key = 'solblind',
-	px = 34,
-	py = 34,
-	path = 'solblind.png',
-	atlas_table = 'ANIMATION_ATLAS',
-	frames = 24
 }
 
 SMODS.Atlas {
@@ -426,21 +345,12 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
-	key = 'THEDROPLET',
+	key = 'junkyardblinds',
 	px = 34,
 	py = 34,
-	path = 'corruptoxyblind.png',
+	path = "junkyardblinds.png",
 	atlas_table = 'ANIMATION_ATLAS',
-	frames = 19
-}
-
-SMODS.Atlas {
-	key = 'UNSHY',
-	px = 34,
-	py = 34,
-	path = 'corruptspkblind.png',
-	atlas_table = 'ANIMATION_ATLAS',
-	frames = 36
+	frames = 21
 }
 
 SMODS.Atlas {
@@ -499,15 +409,6 @@ SMODS.Atlas {
 	path = "Giygas Is Fucking Dying.png",
 	atlas_table = "ANIMATION_ATLAS",
 	frames = 16
-}
-
-SMODS.Atlas {
-	key = 'oxyblindatlas',
-	px = 34,
-	py = 34,
-	path = "oxyblind.png",
-	atlas_table = "ANIMATION_ATLAS",
-	frames = 24
 }
 
 SMODS.Atlas {

@@ -15,8 +15,10 @@ SMODS.Joker {
         G.jokers.config.card_limit = G.jokers.config.card_limit - 3
     end,
     calculate = function(self, card, context)
-        if context.after and not context.blueprint then
-            if G.GAME.chips >= to_big(1e308) then
+        if context.after and not context.blueprint then 
+            local c = hand_chips
+            local m = mult
+            if c*m >= 1e308 then
                 forceGameover()
             end
         end
@@ -66,8 +68,10 @@ SMODS.Joker {
                 message = 'Scaled Down!'
             }
         end
-        if context.after and not context.blueprint then
-            if G.GAME.chips >= to_big(1e308) then
+        if context.after and not context.blueprint then 
+            local c = hand_chips
+            local m = mult
+            if c*m >= 1e308 then
                 forceGameover()
             end
         end

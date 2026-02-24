@@ -206,8 +206,12 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
+        local solinium = nil
+        for i = 1, #G.jokers.cards do
+            
+        end
         if context.individual and context.cardarea == G.play then
-            if next(SMODS.find_card("j_ocstobal_solinium")) then
+            if solinium == true then
                 if context.other_card:is_suit(card.ability.extra.suit_1) and not context.blueprint then
                     card.ability.extra.chips = card.ability.extra.chips + 0.25
                     return {
@@ -352,19 +356,19 @@ SMODS.Joker {
     pos = { x = 2, y = 2 },
     soul_pos = { x = 3, y = 2 },
     loc_vars = function(self, info_queue, card)
-        if POLTERWORX == true then
+        if ISO_POLTERWORX == true then
             info_queue[#info_queue + 1] = { set = "Other", key = "ocstobal_pwx", vars = { localize("k_ocstobal_pwx_N") } }
         end
-        if Starspace == true then
+        if ISO_Starspace == true then
             info_queue[#info_queue + 1] = { set = "Other", key = "ocstobal_starspace" }
         end
-        if Cryptshit == true then
+        if ISO_Cryptshit == true then
             info_queue[#info_queue + 1] = { set = "Other", key = "ocstobal_crypt" }
         end
-        if Yahamouse == true then
+        if ISO_Yahamouse == true then
             info_queue[#info_queue + 1] = { set = "Other", key = "ocstobal_yahimod" }
         end
-        if BDash == true then
+        if ISO_BDash == true then
             info_queue[#info_queue + 1] = { set = "Other", key = "ocstobal_baladash" }
         end
         return {

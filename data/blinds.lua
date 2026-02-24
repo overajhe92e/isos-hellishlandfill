@@ -70,8 +70,8 @@ end
 SMODS.Blind {
 	key = 'rng',
 	name = 'rng',
-	atlas = 'rngatlas',
-	pos = { x = 0, y = 0 },
+	atlas = 'junkyardblinds',
+	pos = { x = 0, y = 5 },
 	mult = math.random(0.5, 4),
 	dollars = math.random(5, 8),
 	boss = { min = 1 },
@@ -108,7 +108,7 @@ SMODS.Blind {
 SMODS.Blind {
 	key = 'unstable',
 	name = 'unstable',
-	atlas = 'unstable',
+	-- atlas = 'unstable',
 	pos = { x = 0, y = 0 },
 	mult = 0,
 	dollars = 0,
@@ -190,8 +190,8 @@ SMODS.Blind {
 SMODS.Blind {
 	key = 'diansu',
 	name = 'diansu',
-	atlas = 'diansuvulkarch',
-	pos = { x = 0, y = 0 },
+	atlas = 'junkyardblinds',
+	pos = { x = 0, y = 7 },
 	mult = 0.00001,
 	dollars = 1,
 	boss = { min = 1 },
@@ -248,7 +248,7 @@ SMODS.Sound {
 		if G.GAME.omegarush == nil then
 			return false
 		elseif G.GAME.omegarush >= 1 and not G.GAME.reclusive_vessel == true and not copyright_free == true then
-			return true
+			return true, 1e101
 		end
 	end
 }
@@ -309,7 +309,8 @@ SMODS.Blind {
 	mult = 2,
 	dollars = 5,
 	boss = { min = 1 },
-	atlas = 'oxyblindatlas',
+	atlas = 'junkyardblinds',
+	pos = { x = 0, y = 2 },
 	boss_colour = HEX('fc6203'),
 	setting_blind = function()
 		G.GAME.round_resets.lost = false
@@ -370,7 +371,7 @@ SMODS.Blind {
 SMODS.Blind {
 	key = 'spkblind',
 	name = 'spkblind',
-	atlas = 'shyblind',
+	atlas = 'junkyardblinds',
 	pos = { x = 0, y = 0 },
 	mult = 1,
 	dollars = 3,
@@ -418,19 +419,13 @@ SMODS.Blind {
 SMODS.Blind {
 	key = 'recluseblind',
 	name = 'recluseblind',
-	atlas = 'reclusebl',
-	pos = { x = 0, y = 0 },
+	atlas = 'junkyardblinds',
+	pos = { x = 0, y = 4 },
 	mult = 66,
 	dollars = 13,
 	boss = { min = 1 },
 	boss_colour = HEX('000000'),
-	debuff = {
-		akyrs_cannot_be_skipped = true,
-		akyrs_cannot_be_disabled = true,
-		akyrs_cannot_be_rerolled = true,
-		akyrs_cannot_be_overridden = true,
-		akyrs_blind_difficulty = "master",
-	},
+	debuff = {},
 	ignore_showdown_check = true,
 
 	in_pool = function(self)
@@ -493,8 +488,8 @@ SMODS.Blind {
 SMODS.Blind {
 	key = 'sphblind',
 	name = 'sphblind',
-	atlas = 'knifeblind',
-	pos = { x = 0, y = 0 },
+	atlas = 'junkyardblinds',
+	pos = { x = 0, y = 1 },
 	mult = 1.25,
 	dollars = 6,
 	boss_colour = HEX('ffffff'),
@@ -561,8 +556,8 @@ SMODS.Blind {
 SMODS.Blind {
 	key = 'solblind',
 	name = 'solblind',
-	atlas = 'solblind',
-	pos = { x = 0, y = 0 },
+	atlas = 'junkyardblinds',
+	pos = { x = 0, y = 3 },
 	mult = 1,
 	dollars = 8,
 	boss_colour = HEX('5fcde4'),
@@ -635,6 +630,8 @@ SMODS.Blind {
 	},
 	boss_colour = HEX('ffffff'),
 	ignore_showdown_check = true,
+	atlas = 'junkyardblinds',
+	pos = { x = 0, y = 6 },
 
 	set_blind = function(self)
 		if G.GAME.rushenabled == nil then
@@ -662,7 +659,7 @@ SMODS.Blind {
 		omega_blind = true
 	},
 	boss_colour = HEX('000000'),
-	atlas = 'omegarush',
+	-- atlas = 'omegarush',
 	pos = { x = 0, y = 0 },
 	ignore_showdown_check = true,
 
@@ -698,7 +695,7 @@ SMODS.Blind { --Seraph_Omega
 		omega_blind = true
 	},
 	boss_colour = HEX('000000'),
-	atlas = 'BLACKKNIFE',
+	-- atlas = 'BLACKKNIFE',
 	pos = { x = 0, y = 0 },
 	ignore_showdown_check = true,
 
@@ -745,7 +742,7 @@ SMODS.Blind { --Solinium_Omega
 		omega_blind = true
 	},
 	boss_colour = HEX('000000'),
-	atlas = 'UNFAIRSCALE',
+	-- atlas = 'UNFAIRSCALE',
 	pos = { x = 0, y = 0 },
 	ignore_showdown_check = true,
 
@@ -792,7 +789,7 @@ SMODS.Blind { --Oxy_Omega
 		omega_blind = true
 	},
 	boss_colour = HEX('000000'),
-	atlas = 'THEDROPLET',
+	-- atlas = 'THEDROPLET',
 	pos = { x = 0, y = 0 },
 	ignore_showdown_check = true,
 
@@ -842,7 +839,7 @@ SMODS.Blind { --Sparky_Omega
 		omega_blind = true
 	},
 	boss_colour = HEX('000000'),
-	atlas = 'UNSHY',
+	-- atlas = 'UNSHY',
 	pos = { x = 0, y = 0 },
 	ignore_showdown_check = true,
 
@@ -884,7 +881,7 @@ SMODS.Sound {
 	volume = 1,
 	select_music_track = function()
 		if G.GAME.blind and G.GAME.blind.name == 'giygas' then
-			return true
+			return true, 10
 		end
 	end
 }
@@ -894,7 +891,7 @@ SMODS.Blind {
 	name = 'giygas',
 	mult = 666,
 	money = 10,
-	atlas = 'giegueblind',
+	-- atlas = 'giegueblind',
 	boss_colour = HEX('ff0000'),
 	boss = { min = 32 },
 
@@ -925,7 +922,7 @@ SMODS.Blind {
 	key = 'starman_super',
 	mult = 1.5,
 	money = 7,
-	atlas = 'starman',
+	-- atlas = 'starman',
 	boss_colour = HEX('ccb046'),
 	boss = { min = 2 },
 	calculate = function(self, card, context)

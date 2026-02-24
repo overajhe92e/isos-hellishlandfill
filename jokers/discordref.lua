@@ -68,3 +68,24 @@ SMODS.Joker {
         end
     end
 }
+
+SMODS.Joker {
+    key = "neveragain",
+    cost = 1,
+    rarity = 1,
+    jf = true,
+    loc_vars = function(self,info_queue,card)
+        return {
+            key = G.ISO_jf == true and "j_ocstobal_neveragain_clicked" or nil
+        }
+    end,
+}
+
+SMODS.Joker {
+    key = "a_fucking_gun",
+    cost = 20,
+    rarity = 3,
+    atlas = "other_jokers",
+    pos = {x=1,y=3},
+    soul_pos = {x=2,y=3}
+}

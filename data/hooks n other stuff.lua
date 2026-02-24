@@ -267,6 +267,25 @@ function Card:highlight(is_highlighted)
             },
         }
     }
+    jf = {
+        n = G.UIT.ROOT,
+        config = { padding = 0, colour = G.C.CLEAR },
+        nodes = {
+            {
+                n = G.UIT.C,
+                config = { minw = 1, minh = 1, padding = 0.1, align = 'cm', colour = G.C.CLEAR },
+                nodes = {
+                    {
+                        n = G.UIT.R,
+                        config = { minw = 1, minh = 0.5, padding = 0.01, align = 'cl', colour = G.C.CLEAR, button = 'ISO_jf_troll', r = 0.1 },
+                        nodes = {
+                            UIBox_button { label = { "???" }, scale = 0.4, minw = 1.3, minh = 0.7, colour = G.C.RED, r = 0.1, button = 'ISO_jf_troll' }
+                        }
+                    }
+                }
+            },
+        }
+    }
     if self.highlighted and self.config.center.psi_lifeup == true and not self.ability.extra.to_copy then
         self.children.lifeup = UIBox({
             definition = lifeup,
@@ -294,6 +313,20 @@ function Card:highlight(is_highlighted)
     elseif self.children.love and not self.highlighted and self.config.center.pk_love == true then
         self.children.love:remove()
         self.children.love = nil
+    end
+    if self.highlighted and self.config.center.jf == true --[[and not self.ability.extra.to_copy]] then
+        self.children.jf = UIBox({
+            definition = jf,
+            config = {
+                parent = self,
+                align = 'cm',
+                offset = { x = 0, y = 1.5 },
+                colour = G.C.CLEAR
+            }
+        })
+    elseif self.children.jf and not self.highlighted and self.config.center.jf == true then
+        self.children.jf:remove()
+        self.children.jf = nil
     end
 end
 
@@ -352,4 +385,11 @@ end
 function TERMINUS_GIVER_9000()
     print("cheaty hehehehehe")
     SMODS.add_card{ set = "Joker", rarity = 'ocstobal_beyondexotic' }
+end
+
+function G.FUNCS.ISO_jf_troll()
+    love.system.openURL("https://jokerforge.jaydchw.com/")
+    G.PROFILES[G.SETTINGS.profile].ISO_jf = true
+    G.ISO_jf = true
+	G:save_settings()
 end
