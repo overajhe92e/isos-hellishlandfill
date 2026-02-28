@@ -1,0 +1,53 @@
+[manifest]
+version = "0.0.1"
+dump_lua = true
+priority = 1000
+
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+pattern = "G.GAME.blind_on_deck = 'Small'"
+position = "at"
+payload = "G.GAME.blind_on_deck = ISO_UTIL.iso_lackofbigblind and 'Boss' or 'Big' or 'Small'"
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+pattern = "G.GAME.blind_on_deck = 'Big'"
+position = "at"
+payload = "G.GAME.blind_on_deck = G.GAME.iso_lackofbigblind and 'Boss' or 'Big' or 'Small'"
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "functions/UI_definitions.lua"
+pattern = "G.GAME.blind_on_deck = 'Small'"
+position = "at"
+payload = "G.GAME.blind_on_deck = G.GAME.iso_lackofbigblind and 'Boss' or 'Big' or 'Small'"
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "functions/UI_definitions.lua"
+pattern = "G.GAME.blind_on_deck = 'Big'"
+position = "at"
+payload = "G.GAME.blind_on_deck = G.GAME.iso_lackofbigblind and 'Boss' or 'Big' or 'Small'"
+match_indent = true
+
+
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+pattern = "G.GAME.round_resets.blind_states.Small = 'Upcoming'"
+position = "at"
+payload = "G.GAME.round_resets.blind_states.Small = G.GAME.iso_lackofbigblind and 'Hide' or 'Upcoming'"
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+pattern = "G.GAME.round_resets.blind_states.Big = 'Upcoming'"
+position = "at"
+payload = "G.GAME.round_resets.blind_states.Big = G.GAME.iso_lackofbigblind and 'Hide' or 'Upcoming'"
+match_indent = true

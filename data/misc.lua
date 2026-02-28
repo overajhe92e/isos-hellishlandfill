@@ -2,6 +2,9 @@ SMODS.Sound({ key = "swoonstart", path = "swoonstart.ogg" })
 SMODS.Sound({ key = "swoonend", path = "swoonend.ogg" })
 
 --any organized modder is cry when they see this shit
+if not ISO_UTIL then
+	ISO_UTIL = {}
+end
 
 local win_width = love.graphics.getWidth() / 1920
 local win_height = love.graphics.getHeight() / 1080
@@ -496,11 +499,11 @@ SMODS.Sound {
 			steel = steel + 1
 		end
 		if G.GAME then
-			if G.GAME.reclusive_vessel == true and not copyright_free == true then 
-				return true 
+			if G.GAME.reclusive_vessel == true and not copyright_free == true then
+				return true
 			elseif steel >= 200 then
 				return G.GAME.evil_steel == true and 1e99
-			else 
+			else
 				return false
 			end
 		end
@@ -615,7 +618,3 @@ SMODS.Shader {
 	key = 'fluorescent',
 	path = 'fluorescent.fs'
 }
-
-if G.GAME then
-	G.GAME.omegarush = 0 --prevents crash
-end

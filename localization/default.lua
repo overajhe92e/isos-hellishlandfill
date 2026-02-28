@@ -1460,9 +1460,9 @@ return {
 				name = "Reroll Abuse",
 				text = {
 					"Shop rerolls are {C:attention}free{}",
-					"Every reroll makes {C:red}ALL{} items",
-					"more {C:attention}Expensive{} to buy",
-					"{C:inactive}+1$ per reroll{}"
+					"When a card is bought, {C:red}lose{} dollars to",
+					"{C:red}The number of rerolls{} this ante",
+					"{C:inactive}Rerolls: #1#{}"
 				}
 			},
 			j_ocstobal_garble_of_doom_and_despair = {
@@ -1613,6 +1613,31 @@ return {
 					"every {C:blue}Astro Novalite{} owned.",
 					"Currently {X:blue,C:white}^#1#{} and {X:dark_edition,C:white}^^#2#{}",
 					"{C:inactive,s:0.8}GOODBYE, FRAUD! - Astro{}"
+				}
+			},
+			j_ocstobal_ocksie = {
+				name = {"{C:pastel_yellow}O{}{C:pink}x{}y","{C:pastel_yellow,s:0.7}the bnuuy{}"},
+				text = {
+					"{C:attention}Steel{} cards are retriggered {C:attention}#1#{} times",
+					"Scoring a {C:attention}Steel{} card adds {C:attention}+1{} Retrigger",
+					"{C:inactive,s:0.85}No Iso, I'm not adding quotes for her. --Oxidyze{}",
+					"{C:dark_edition,s:0.8}Original Character by : ocksie{}"
+				}
+			},
+			j_ocstobal_actual_bunny = {
+				name = "Bunny",
+				text = {
+					"+33 Mult"
+				}
+			},
+			j_ocstobal_score_converter = {
+				name = "Catalyctic Score Converter",
+				text = {
+					"At the end of the round",
+					"{C:attention}Score{} is converted to {C:money}dollars{}",
+					"with the equation of",
+					"{X:dark_edition,C:white,s:1.3}ceil(log(n)){}",
+					"{C:inactive,s:0.7}n = Score{}"
 				}
 			}
 		},

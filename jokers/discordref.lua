@@ -4,7 +4,7 @@ SMODS.Joker {
     rarity = 2,
     config = {
         extra = {
-            other_ocs = 3
+            other_ocs = 4
         }
     },
     atlas = 'other_jokers',

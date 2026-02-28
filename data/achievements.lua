@@ -21,7 +21,7 @@
 SMODS.Achievement {
 	key = 'ach_defeatedrecluse',
 	loc_txt = {
-		name = 'Recluse\'s Vessel',
+		name = 'Recluse\'s Old Vessel',
 		description = {
 			'...something weird happened after...',
 			'...comfronting Sparky.'
@@ -42,7 +42,7 @@ SMODS.Achievement {
 	loc_txt = {
 		name = 'The Unstable Blind',
 		description = {
-			'YOU SHOULD HAVE LISTENED TO IT.'
+			'Uh ohh.'
 		}
 	},
 	bypass_all_unlocked = true,
@@ -107,7 +107,7 @@ SMODS.Achievement {
 	hidden_name = true,
 	
 	unlock_condition = function(self, args)
-		if args.type == "drhouse" then
+		if args.type == "iso_honse" then
 			return true
 		end
 	end

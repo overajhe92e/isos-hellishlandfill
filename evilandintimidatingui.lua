@@ -582,13 +582,14 @@ function sphlvls(buttonname)
 									{
 										n = G.UIT.C,
 										config = { align = 'cm', padding = 0, colour = G.C.CLEAR, minw = 10 },
-										nodes = { {
-											n = G.UIT.R,
-											config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
-											nodes = {
-												{ n = G.UIT.T, config = { text = "The most SCUFFED system in it's code!", scale = 0.4, colour = G.C.UI.TEXT_INACTIVE, align = 'cm' } }
-											}
-										},
+										nodes = {
+											{
+												n = G.UIT.R,
+												config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },
+												nodes = {
+													{ n = G.UIT.T, config = { text = "The most SCUFFED system in it's code!", scale = 0.4, colour = G.C.UI.TEXT_INACTIVE, align = 'cm' } }
+												}
+											},
 											{
 												n = G.UIT.R,
 												config = { align = 'm', padding = 0.1, colour = G.C.CLEAR },

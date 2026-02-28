@@ -92,7 +92,6 @@ SMODS.Joker {
     },
 
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { set = "Other", key = "ocstobal_placeholder" }
         return {
             vars = { card.ability.extra.chips },
             key = G.current_isomode < 2 and "j_ocstobal_astro_balance" or G.current_isomode >= 2 and "j_ocstobal_astro"
@@ -202,7 +201,6 @@ SMODS.Joker {
     pools = { ["ocstob"] = true, ["all_junk"] = true },
     pronouns = "they_them",
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { set = "Other", key = "ocstobal_placeholder" }
         return {
             vars = { card.ability.extra.chips, card.ability.extra.mult }
         }
@@ -330,6 +328,7 @@ SMODS.Joker {
     pronouns = 'he_him',
 
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { set = "Other", key = "ocstobal_placeholder" }
         return { vars = { card.ability.extra.xmult } }
     end,
 
@@ -388,7 +387,8 @@ SMODS.Joker {
             }
         end
         if context.joker_main and not context.joker_retrigger then
-            if Yahamouse == true then
+            if ISO_Yahamouse == true then
+                check_for_unlock({ type = "iso_honse" })
                 for i = 1, #G.play.cards do
                     G.play.cards[i]:set_seal("yahimod_horse_seal", true, true)
                     play_sound("yahimod_horse", 1, 10)
