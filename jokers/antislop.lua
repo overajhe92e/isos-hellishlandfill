@@ -1,3 +1,15 @@
+local function murphed()
+	G.E_MANAGER:add_event(Event({
+		trigger = 'immediate',
+		locking = false,
+		delay = 0,
+		func = function()
+			check_for_unlock({ type = "ach_murphy" })
+			return true
+		end,
+	}))
+end
+
 SMODS.Joker {
     key = 'antislopinator',
     cost = 1,
@@ -19,6 +31,7 @@ SMODS.Joker {
             local c = hand_chips
             local m = mult
             if c*m >= 1e308 then
+                murphed()
                 forceGameover()
             end
         end

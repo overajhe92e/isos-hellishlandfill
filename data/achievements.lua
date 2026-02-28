@@ -21,7 +21,7 @@
 SMODS.Achievement {
 	key = 'ach_defeatedrecluse',
 	loc_txt = {
-		name = 'Recluse\'s Vessel',
+		name = 'Recluse\'s Old Vessel',
 		description = {
 			'...something weird happened after...',
 			'...comfronting Sparky.'
@@ -42,7 +42,7 @@ SMODS.Achievement {
 	loc_txt = {
 		name = 'The Unstable Blind',
 		description = {
-			'YOU SHOULD HAVE LISTENED TO IT.'
+			'Yikes.'
 		}
 	},
 	bypass_all_unlocked = true,
@@ -58,7 +58,7 @@ SMODS.Achievement {
 SMODS.Achievement {
 	key = 'ach_toomuch',
 	loc_txt = {
-		name = 'Maailmanloppupiste',
+		name = 'it.',
 		description = {
 			'What have you done to them...',
 			'What have you DONE?!',
@@ -80,9 +80,7 @@ SMODS.Achievement {
 	loc_txt = {
 		name = 'jumpscar',
 		description = {
-			'Experience the 1 in 100 chance',
-			'for something to happen on',
-			'Instability'
+			'Get burgered, IDIOT.',
 		}
 	},
 	bypass_all_unlocked = true,
@@ -108,6 +106,25 @@ SMODS.Achievement {
 	
 	unlock_condition = function(self, args)
 		if args.type == "drhouse" then
+			return true
+		end
+	end
+}
+
+SMODS.Achievement {
+	key = 'ach_murphy',
+	loc_txt = {
+		name = 'Murphy\'d',
+		description = {
+			'Die from Anti-Numberslop-inator',
+			'{C:inactive,s:0.7}Thank you!{}'
+		}
+	},
+	bypass_all_unlocked = true,
+	hidden_name = false,
+	
+	unlock_condition = function(self, args)
+		if args.type == "murphyed" then
 			return true
 		end
 	end
