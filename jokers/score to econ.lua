@@ -5,5 +5,6 @@ SMODS.Joker {
     calc_dollar_bonus = function(self,card)
         return math.ceil(math.log(G.GAME.chips))
     end,
+    atlas = "placeholder"
 }
 --It's that easy.
