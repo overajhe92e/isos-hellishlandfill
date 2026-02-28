@@ -249,8 +249,11 @@ SMODS.Joker { --oh no
     },
 
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.hypmult }, key = G.current_isomode < 2 and "j_ocstobal_solawk" or
-        G.current_isomode >= 2 and "j_ocstobal_solawk_slop" }
+        return {
+            vars = { card.ability.extra.hypmult },
+            key = G.current_isomode < 2 and "j_ocstobal_solawk" or
+                G.current_isomode >= 2 and "j_ocstobal_solawk_slop"
+        }
     end,
 
     calculate = function(self, card, context)
@@ -290,9 +293,13 @@ SMODS.Joker {
     },
     no_collection = true,
     loc_vars = function(self, info_queue, card)
-        local numerator_1, denominator_1 = SMODS.get_probability_vars(card, 1, card.ability.extra.probably,'j_ocstobal_pk_ground')
-        return { vars = { numerator_1, denominator_1 }, key = G.current_isomode < 2 and "j_ocstobal_spkawk" or
-        G.current_isomode >= 2 and "j_ocstobal_spkawk_slop" }
+        local numerator_1, denominator_1 = SMODS.get_probability_vars(card, 1, card.ability.extra.probably,
+            'j_ocstobal_pk_ground')
+        return {
+            vars = { numerator_1, denominator_1 },
+            key = G.current_isomode < 2 and "j_ocstobal_spkawk" or
+                G.current_isomode >= 2 and "j_ocstobal_spkawk_slop"
+        }
     end,
     calculate = function(self, card, context)
         if context.joker_main and G.current_isomode >= 3 then
@@ -316,6 +323,13 @@ SMODS.Joker {
     end
 }
 
+local function create_all_hate()
+    SMODS.add_card { key = 'j_ocstobal_oxhatred' }
+    SMODS.add_card { key = 'j_ocstobal_sparkhatred' }
+    SMODS.add_card { key = 'j_ocstobal_solhatred' }
+    SMODS.add_card { key = 'j_ocstobal_somethingevil' }
+end
+
 SMODS.Joker {
     key = 'obscene_joke',
     rarity = 1,
@@ -328,10 +342,7 @@ SMODS.Joker {
     pos = { x = 4, y = 1 },
     add_to_deck = function(self, card)
         if next(SMODS.find_card("j_ocstobal_Oxy")) and next(SMODS.find_card("j_ocstobal_solinium")) and next(SMODS.find_card("j_ocstobal_sparky")) then
-            SMODS.add_card { key = 'j_ocstobal_oxhatred' }
-            SMODS.add_card { key = 'j_ocstobal_sparkhatred' }
-            SMODS.add_card { key = 'j_ocstobal_solhatred' }
-            SMODS.add_card { key = 'j_ocstobal_somethingevil' }
+            create_all_hate()
             SMODS.destroy_cards(card, nil, nil, true)
             SMODS.destroy_cards(SMODS.find_card("j_ocstobal_seraph"), nil, nil, true)
         elseif next(SMODS.find_card("j_ocstobal_Oxy")) then
@@ -351,8 +362,12 @@ SMODS.Joker {
                 next(SMODS.find_card("j_ocstobal_Oxy")) and next(SMODS.find_card("j_ocstobal_sparky")) and
                 next(SMODS.find_card("j_ocstobal_solinium")) and "j_ocstobal_obscene_joke_oh_no"
                 or next(SMODS.find_card("j_ocstobal_Oxy")) and "j_ocstobal_obscene_joke_oxidyze"
-                or next(SMODS.find_card("j_ocstobal_solinium")) and not next(SMODS.find_card("j_ocstobal_Oxy")) and not next(SMODS.find_card("j_ocstobal_sparky")) and "j_ocstobal_obscene_joke_solinium"
-                or next(SMODS.find_card("j_ocstobal_sparky")) and not next(SMODS.find_card("j_ocstobal_Oxy")) and "j_ocstobal_obscene_joke_sparky"
+                or
+                next(SMODS.find_card("j_ocstobal_solinium")) and not next(SMODS.find_card("j_ocstobal_Oxy")) and
+                not next(SMODS.find_card("j_ocstobal_sparky")) and "j_ocstobal_obscene_joke_solinium"
+                or
+                next(SMODS.find_card("j_ocstobal_sparky")) and not next(SMODS.find_card("j_ocstobal_Oxy")) and
+                "j_ocstobal_obscene_joke_sparky"
 
         }
     end,
@@ -362,8 +377,8 @@ SMODS.Joker {
     key = "hatred_hunter",
     cost = 10,
     rarity = 3,
-    loc_vars = function(self,info_queue,card)
+    loc_vars = function(self, info_queue, card)
     end,
-    calculate = function(self,card,context)
+    calculate = function(self, card, context)
     end
 }

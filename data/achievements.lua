@@ -42,7 +42,7 @@ SMODS.Achievement {
 	loc_txt = {
 		name = 'The Unstable Blind',
 		description = {
-			'Yikes.'
+			'Uh ohh.'
 		}
 	},
 	bypass_all_unlocked = true,
@@ -105,7 +105,7 @@ SMODS.Achievement {
 	hidden_name = true,
 	
 	unlock_condition = function(self, args)
-		if args.type == "drhouse" then
+		if args.type == "iso_honse" then
 			return true
 		end
 	end

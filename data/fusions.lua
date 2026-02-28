@@ -73,3 +73,13 @@ FusionJokers.fusions:register_fusion {
 	result_joker = "j_ocstobal_solstro",
 	cost = 15
 }
+FusionJokers.fusions:register_fusion {
+	jokers = {
+		{ name = "j_ocstobal_myself" },
+		{ name = "j_ocstobal_astro" },
+		{ name = "j_ocstobal_crystal" },
+		{ name = "j_ocstobal_moddingchat" }
+	},
+	result_joker = "j_ocstobal_starspacechat",
+	cost = 6969
+}

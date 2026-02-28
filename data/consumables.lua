@@ -62,7 +62,10 @@ SMODS.Consumable {
     use = function(self, card, area, copier)
         local deletable_jokers = {}
         for _, joker in pairs(G.jokers.cards) do
-            if SMODS.is_eternal(joker,card) then card.ability.eternal = nil end
+            if SMODS.is_eternal(joker,card) then 
+                card.ability.eternal = nil 
+                card.ability.Alphaeternal = nil 
+            end
             deletable_jokers[#deletable_jokers + 1] = joker
         end
         local _first_dissolve = nil

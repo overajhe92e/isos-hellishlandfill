@@ -2,7 +2,8 @@ SMODS.Joker { --Oxy (Oxidyze)
     key = "Oxy",
     config = {
         extra = {
-            blind_size = 2
+            clash_win = 3,
+            clash_denom = 6
         }
     },
     pos = {
@@ -46,15 +47,21 @@ SMODS.Joker { --Oxy (Oxidyze)
 
     calculate = function(self, card, context)
         if context.setting_blind then
-            return {
+            G.E_MANAGER:add_event(Event({
+                trigger = 'after',
+                delay = 0.06 * G.SETTINGS.GAMESPEED,
+                blockable = false,
+                blocking = false,
                 func = function()
-                    card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil,
-                        { message = "X" .. tostring(card.ability.extra.blind_size) .. " Blind Size", colour = G.C.GREEN })
-                    G.GAME.blind.chips = G.GAME.blind.chips * card.ability.extra.blind_size
-                    G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
-                    G.HUD_blind:recalculate()
+                    play_sound('tarot2', 0.76, 0.4)
                     return true
                 end
+            }))
+            play_sound('tarot2', 1, 2)
+            G.GAME.blind.chips = math.floor(G.GAME.blind.chips * 2)
+            G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
+            return {
+                message = "X2 Blind Size"
             }
         end
         --original code by nh6574
@@ -133,8 +140,8 @@ SMODS.Joker {
         }
     },
     atlas = "other_ocs",
-    pos = { x = 4, y = 1 },
-    soul_pos = { x = 5, y = 1 },
+    pos = { x = 6, y = 1 },
+    soul_pos = { x = 7, y = 1 }, --NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
     blueprint_compat = true,
 
     loc_vars = function(self, info_queue, center)
@@ -152,15 +159,21 @@ SMODS.Joker {
 
     calculate = function(self, card, context)
         if context.setting_blind then
-            return {
+            G.E_MANAGER:add_event(Event({
+                trigger = 'after',
+                delay = 0.06 * G.SETTINGS.GAMESPEED,
+                blockable = false,
+                blocking = false,
                 func = function()
-                    card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil,
-                        { message = "X" .. tostring(card.ability.extra.blind_size) .. " Blind Size", colour = G.C.GREEN })
-                    G.GAME.blind.chips = G.GAME.blind.chips * card.ability.extra.blind_size
-                    G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
-                    G.HUD_blind:recalculate()
+                    play_sound('tarot2', 0.76, 0.4)
                     return true
                 end
+            }))
+            play_sound('tarot2', 1, 2)
+            G.GAME.blind.chips = math.floor(G.GAME.blind.chips * 4)
+            G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
+            return {
+                message = "X4 Blind Size"
             }
         end
         local left_effect, right_effect, right_effect_ex, left_effect_ex = nil, nil, nil, nil

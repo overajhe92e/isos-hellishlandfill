@@ -111,25 +111,25 @@ SMODS.Joker {
                     message = 'Upgraded!'
                 }
             end
-            if context.setting_blind and next(SMODS.find_card("j_ocstobal_dw_astro")) then
-                SMODS.destroy_cards(SMODS.find_card('j_ocstobal_dw_astro'), nil)
-                card.ability.extra.chips = card.ability.extra.chips ^ 18
-                return {
-                    message = "GET OUT!"
-                }
-            elseif context.setting_blind and next(SMODS.find_card("j_dw_astro")) and not next(SMODS.find_mod("dw")) and not starspace_mod == true then
-                SMODS.destroy_cards(SMODS.find_card('j_dw_astro'), nil)
-                card.ability.extra.chips = card.ability.extra.chips ^ 9
-                return {
-                    message = "GET OUT!"
-                }
-            elseif context.setting_blind and next(SMODS.find_card("j_jen_astro")) then
-                SMODS.destroy_cards(SMODS.find_card('j_jen_astro'), nil)
-                card.ability.extra.chips = card.ability.extra.chips ^ 36
-                return {
-                    message = "GET OUT!"
-                }
-            end
+            -- if context.setting_blind and next(SMODS.find_card("j_ocstobal_dw_astro")) then
+            --     SMODS.destroy_cards(SMODS.find_card('j_ocstobal_dw_astro'), nil)
+            --     card.ability.extra.chips = card.ability.extra.chips ^ 18
+            --     return {
+            --         message = "GET OUT!"
+            --     }
+            -- elseif context.setting_blind and next(SMODS.find_card("j_dw_astro")) and not next(SMODS.find_mod("dw")) and not starspace_mod == true then
+            --     SMODS.destroy_cards(SMODS.find_card('j_dw_astro'), nil)
+            --     card.ability.extra.chips = card.ability.extra.chips ^ 9
+            --     return {
+            --         message = "GET OUT!"
+            --     }
+            -- elseif context.setting_blind and next(SMODS.find_card("j_jen_astro")) then
+            --     SMODS.destroy_cards(SMODS.find_card('j_jen_astro'), nil)
+            --     card.ability.extra.chips = card.ability.extra.chips ^ 36
+            --     return {
+            --         message = "GET OUT!"
+            --     }
+            -- end
         elseif G.current_isomode < 2 then
             if context.joker_main then
                 return {
@@ -142,13 +142,13 @@ SMODS.Joker {
                     message = 'Upgraded!'
                 }
             end
-            if context.setting_blind and next(SMODS.find_card("j_ocstobal_dw_astro")) then
-                SMODS.destroy_cards(SMODS.find_card('j_ocstobal_dw_astro'), nil)
-                card.ability.extra.chips = card.ability.extra.chips * 16
-                return {
-                    message = "GET OUT!"
-                }
-            end
+            -- if context.setting_blind and next(SMODS.find_card("j_ocstobal_dw_astro")) then
+            --     SMODS.destroy_cards(SMODS.find_card('j_ocstobal_dw_astro'), nil)
+            --     card.ability.extra.chips = card.ability.extra.chips * 16
+            --     return {
+            --         message = "GET OUT!"
+            --     }
+            -- end
         end
     end
 }
@@ -207,8 +207,8 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         local solinium = nil
-        for i = 1, #G.jokers.cards do
-            
+        if next(SMODS.find_card("j_ocstobal_solinium")) then
+            solinium = true
         end
         if context.individual and context.cardarea == G.play then
             if solinium == true then
@@ -328,6 +328,7 @@ SMODS.Joker {
     pronouns = 'he_him',
 
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { set = "Other", key = "ocstobal_placeholder" }
         return { vars = { card.ability.extra.xmult } }
     end,
 
@@ -386,7 +387,8 @@ SMODS.Joker {
             }
         end
         if context.joker_main and not context.joker_retrigger then
-            if Yahamouse == true then
+            if ISO_Yahamouse == true then
+                check_for_unlock({ type = "iso_honse" })
                 for i = 1, #G.play.cards do
                     G.play.cards[i]:set_seal("yahimod_horse_seal", true, true)
                     play_sound("yahimod_horse", 1, 10)

@@ -379,16 +379,15 @@ return {
 				}
 			},
 			j_ocstobal_seraph = {
-				name = { "Seraph", "{s:0.7,C:green}To Gamble or Not{}" },
+				name = { "Seraph", "{s:0.7,C:green}Incremental Hell{}" },
 				text = {
 					{
 						'{C:green}#5# in #6#{} chance to apply {X:red,C:white}X#11#{} Mult',
 						'for every scored card.',
 						'On Ante 8 and beyond, {C:green}#7# in #8#{} chance to replace self.',
-						'{C:inactive}(Unless Disabled by LV 10 Ability){}',
+						'{C:inactive}(Unless Disabled by Upgrade){}',
 						'{C:blue,s:0.9}#1#{}',
-						'{C:dark_edition,s:1.2}EXP: #9# / 10{}',
-						'{C:dark_edition,s:1.2}LV: #10#{}',
+						'{C:dark_edition,s:1.2}SP: #9#{}',
 					},
 					{
 						-- '{s:1.5,C:dark_edition,E:1}Overflow XP{}',
@@ -396,8 +395,6 @@ return {
 						-- 'This is done when you have a joker that retriggers scored cards, and Seraph triggers multiple times.',
 						-- 'Overshoot XP only exists because my coding is {C:red}actually dogshit.{}',
 						-- THIS WAS BEFORE I LEARNT REPEAT .. UNTIL EXISTED SHUT UP
-						'{C:dark_edition,E:1,s:1.2}Current Stats{}',
-						'{X:red,C:white}X#11#{} Mult, {C:blue}+#12#{} Chips',
 					}
 				}
 			},
@@ -405,14 +402,9 @@ return {
 				name = { "{C:ocstobal_legendplus}The Voidgloom Seraph{}", "{s:0.7,C:legendary}Extensive Power{}" },
 				text = {
 					{
-						'{C:red,s:0.9}"#2#"{}',
-						'{C:dark_edition,s:1.2}EXP: #9# / 10{}',
-						'{C:dark_edition,s:1.2}LV: #10#{}',
+						'{C:red,s:0.9}#2#{}',
+						'{C:dark_edition,s:1.2}SP: #9#{}',
 					},
-					{
-						'{C:dark_edition,E:1,s:1.2}Current Stats{}',
-						'{X:red,C:white}X#11#{} Mult, {C:blue}+#12#{} Chips, {X:blue,C:white}X#14#{} Chips',
-					}
 				}
 			},
 			j_ocstobal_seraph_maxedbalanced = {
@@ -420,13 +412,8 @@ return {
 				text = {
 					{
 						'{C:red,s:0.9}#1#{}',
-						'{C:dark_edition,s:1.2}EXP: MAXED{}',
-						'{C:dark_edition,s:1.2}LV: 100{}',
+						'{C:dark_edition,s:1.2}SP: #9#{}',
 					},
-					{
-						'{C:dark_edition,E:1,s:1.2}Current Stats{}',
-						'{X:red,C:white}X#11#{} Mult, {C:blue}+#12#{} Chips, {X:blue,C:white}X#14#{} Chips',
-					}
 				}
 			},
 			j_ocstobal_seraph_lv300 = {
@@ -434,13 +421,8 @@ return {
 				text = {
 					{
 						'{C:ocstobal_ust,s:0.9}#3#{}',
-						'{C:dark_edition,s:1.2}EXP: #9# / 10{}',
-						'{C:dark_edition,s:1.2}LV: #10#{}',
+						'{C:dark_edition,s:1.2}SP: #9#{}',
 					},
-					{
-						'{C:dark_edition,E:1,s:1.2}Current Stats{}',
-						'{X:red,C:white}X#11#{} Mult, {C:blue}+#12#{} Chips, {X:blue,C:white}X#14#{} Chips, {X:dark_edition,C:default,E:1}^#13#{} {C:dark_edition,E:1}EMult{}',
-					}
 				}
 			},
 			j_ocstobal_seraph_lv1000 = {
@@ -448,61 +430,37 @@ return {
 				text = {
 					{
 						'{C:ocstobal_finalrgb,s:0.9}#4#{}',
-						'{C:dark_edition,s:1.2}EXP: #9# / 10{}',
-						'{C:dark_edition,s:1.2}LV: #10#{}',
+						'{C:dark_edition,s:1.2}SP: #9#{}',
 						'{C:inactive}"Jesus fucking christ how unbalanced is your oc"{}',
 						'{C:inactive}"Very." -Isotypical{}'
 					},
-					{
-						'{C:dark_edition,E:1,s:1.2}Current Stats{}',
-						'{X:red,C:white}X#11#{} Mult, {C:blue}+#12#{} Chips, {X:blue,C:white}X#14#{} Chips,',
-						'{X:dark_edition,C:white,E:1}^#13#{} EMult, {X:dark_edition,C:white}^^#15#{} EEMult'
-					}
 				}
 			},
 			j_ocstobal_seraph_lv10k = {
-				name = "{C:ocstobal_finalrgb}I can put anything here because I doubt you guys are that crazy{}",
+				name = "{C:ocstobal_finalrgb}Seraph... Voidgloom?{}",
 				text = {
 					{
-						'{C:dark_edition,s:1.35}EXP: #9# / 10{}',
-						'{C:dark_edition,s:1.35}LV: #10#{}'
+						'{C:dark_edition,s:1.35}SP: #9#{}',
 					},
-					{
-						'{C:dark_edition,E:1,s:1.2}Stats{}',
-						'{X:red,C:white}X#11#{} Mult, {C:blue}+#12#{} Chips, {X:blue,C:white}X#14#{} Chips, {X:dark_edition,C:white,E:1}^#13#{} {C:dark_edition,E:1}EMult{}',
-						'{X:dark_edition,C:white}^^#15#{} EEMult, {X:ocstobal_sewh,C:white}^^^#16#{} EEEMult'
-					}
 				}
 			},
 			j_ocstobal_seraph_lv100k = {
 				name = "{C:ocstobal_finalrgb}Serafinentyhjyys{}",
 				text = {
 					{
-						'{C:dark_edition,s:1.35}EXP: #9# / 10{}',
-						'{C:dark_edition,s:1.35}LV: #10#{}'
+						'{C:dark_edition,s:1.35}SP: #9#{}',
 					},
-					{
-						'{C:dark_edition,E:1,s:1.2}Stats{}',
-						'{X:red,C:white}X#11#{} Mult, {C:blue}+#12#{} Chips, {X:blue,C:white}X#14#{} Chips, {X:dark_edition,C:white,E:1}^#13#{} EMult',
-						'{X:dark_edition,C:white}^^#15#{} EEMult, {X:dark_edition,C:white}^^^#16#{}, {X:ocstobal_sewh,C:white}^^^^#17#{} Hypermult'
-					}
 				}
 			},
 			j_ocstobal_seraph_lv1m = {
 				name = "{C:ocstobal_finalrgb}calm the fuck down bro{}",
 				text = {
 					{
-						'{C:dark_edition,s:1.35}EXP: #9# / 10{}',
-						'{C:dark_edition,s:1.35}LV: #10#{}'
+						'{C:dark_edition,s:1.35}SP: #9#{}',
 					},
 					{
 						'{C:inactive}"Honest to god I think you\'re using Cryptid to get here now"{}'
 					},
-					{
-						'{C:dark_edition,E:1,s:1.2}Stats{}',
-						'{X:red,C:white}X#11#{} Mult, {C:blue}+#12#{} Chips, {X:blue,C:white}X#14#{} Chips, {X:dark_edition,C:white,E:1}^#13#{} EMult',
-						'{X:dark_edition,C:white}^^#15#{} EEMult, {X:dark_edition,C:white}^^^#16#{}, {X:ocstobal_sewh}(#18#)#17#{} Hypermult',
-					}
 				}
 			},
 			j_ocstobal_seraph_why = {
@@ -512,9 +470,8 @@ return {
 					'if you used cryptid to get this far then wow you\'re lazy',
 					'but if you didn\'t...',
 					'how and {s:1.3}why{} the fuck did you get here',
-					'urgh, anyways here\'s your current level and xp i guess',
-					'{C:dark_edition,s:1.35}EXP: #9# / 10{}',
-					'{C:dark_edition,s:1.35}LV: #10#{}',
+					'urgh, anyways here\'s your current SP i guess',
+					'{C:dark_edition,s:1.35}SP: #9#{}',
 					'oh and also for your reward, here\'s a cat laughing at you',
 					'{s:3,C:ocstobal_sewh}go outside.{}'
 				}
@@ -1503,9 +1460,9 @@ return {
 				name = "Reroll Abuse",
 				text = {
 					"Shop rerolls are {C:attention}free{}",
-					"Every reroll makes {C:red}ALL{} items",
-					"more {C:attention}Expensive{} to buy",
-					"{C:inactive}+1$ per reroll{}"
+					"When a card is bought, {C:red}lose{} dollars to",
+					"{C:red}The number of rerolls{} this ante",
+					"{C:inactive}Rerolls: #1#{}"
 				}
 			},
 			j_ocstobal_garble_of_doom_and_despair = {
@@ -1649,12 +1606,38 @@ return {
 				name = "Astro's Gun",
 				text = {
 					"{C:red,s:1.3}Only works if you have Astro!{}",
-					"This joker gains {X:blue,C:white}^0.1{} Chips for",
-					"every {C:blue}Astro Novalite{} owned",
-					"If there are more than {C:attention}3{} {C:blue}Astro Novalites{},",
-					"This joker will instead gain {X:dark_edition,C:white}^^0.1{} Chips",
-					"{C:red}Destroys all Astro Novalites{}",
-					"{C:inactive,s:0.7}This is just a G-19..?{}"
+					"On {C:attention}blind select{}, {C:red}destroys{} all {C:blue}Astro Novalites{}",
+					"and gains {X:blue,C:white}^0.1{} Chips for every {C:blue}Astro Novalite{} owned",
+					"If you have more than {C:attention}3{} {C:blue}Astro Novalites{}",
+					"this joker will also gain {X:dark_edition,C:white}^^0.1{} Chips for",
+					"every {C:blue}Astro Novalite{} owned.",
+					"Currently {X:blue,C:white}^#1#{} and {X:dark_edition,C:white}^^#2#{}",
+					"{C:inactive,s:0.8}GOODBYE, FRAUD! - Astro{}"
+				}
+			},
+			j_ocstobal_ocksie = {
+				name = {"{C:pastel_yellow}O{}{C:pink}x{}y","{C:pastel_yellow,s:0.7}the bnuuy{}"},
+				text = {
+					"{C:attention}Steel{} cards are retriggered {C:attention}#1#{} times",
+					"Scoring a {C:attention}Steel{} card adds {C:attention}+1{} Retrigger",
+					"{C:inactive,s:0.85}No Iso, I'm not adding quotes for her. --Oxidyze{}",
+					"{C:dark_edition,s:0.8}Original Character by : ocksie{}"
+				}
+			},
+			j_ocstobal_actual_bunny = {
+				name = "Bunny",
+				text = {
+					"+33 Mult"
+				}
+			},
+			j_ocstobal_score_converter = {
+				name = "Catalyctic Score Converter",
+				text = {
+					"At the end of the round",
+					"{C:attention}Score{} is converted to {C:money}dollars{}",
+					"with the equation of",
+					"{X:dark_edition,C:white,s:1.3}ceil(log(n)){}",
+					"{C:inactive,s:0.7}n = Score{}"
 				}
 			}
 		},
@@ -1802,6 +1785,13 @@ return {
 					"{C:attention}Retriggers{} self {C:attention}#1#{} times",
 					"Joker gains {C:attention}+1{} Mult and Operator when {C:attention}triggered{}",
 					"Currently {X:ocstobal_finalrgb,C:white}#4##2##5##3#{} Mult"
+				}
+			},
+			ocstobal_placeholder = {
+				name = "Need to Rework / Placeholder Art",
+				text = {
+					"Art may change in future updates!",
+					"I don't know what else to say here, so..."
 				}
 			}
 		},

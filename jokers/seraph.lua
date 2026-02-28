@@ -12,18 +12,14 @@ local ocstobal_all_origins = {
     ' Poppy Playtime',              --used to be a dragon
     ' Smiling Critters',            -- read above
     ' Hypixel Skyblock',            --"voidgloom seraph" boss lmfao
+    ' ERROR'
 }
 
 local originquestion = {
-    'ORIGIN ',
-    'Origin ',
-    'OriGIN ',
-    'oRIGIN ',
-    'OrIgIn ',
-    'OriGIn ',
-    'orIGIN ',
-    'oRiGIn ',
-    'oRigiN '
+    "Origin ",
+    "Origin? ",
+    "???",
+    "nil"
 }
 
 local operators = {
@@ -31,23 +27,56 @@ local operators = {
     ";"
 }
 
+--[[
+
+    Seraph's upgrade tree is gonna fucking kill me i swear to god
+
+    There are going to be upgrades for all of his abilities, and unlocks for his abilities.
+
+    ---
+        Planned Unlocks:
+        Unlock +Chips, +Mult, XChips, EChips+Mult, EEChips+Mult, and so on up until Hyperchip+Mult
+    ---
+        Planned Upgrades:
+        Disable Self Destruct
+        Upgrade +Chips, +Mult, XChips, XMult... and so on up until Hyperchip+Mult
+        Upgrade Hyperoperator (very fucking expensive)
+        Upgrade Point Gain
+    ---
+        Points are gained by selecting blinds, defeating boss blinds, and rarely gained by scoring cards.
+    ---
+        Unlocking EChipMult changes his sprite to the "locked tf in" sprite
+        Unlocking EEChipMult changes his sprite to the "Angel of the Void" sprite
+        Unlocking Hyp.ChipMult changes his sprite to the "Final" Sprite
+    ---
+
+]]
+
 SMODS.Joker { --Seraph
     key = "seraph",
     config = {
         extra = {
-            odds = 2,
-            chips = 0,
-            Xmult = 2,
-            xchips = 10,
-            odds2 = 20,
-            upgrade = 0,
-            triggered = 0,
+            ------score------
+            point = 0,
+            point_gain = 1,
+            pluschip = 1,
+            plusmult = 1,
+            xchip = 1,
+            xmult = 1,
+            echip = 1,
             emult = 1,
+            eechip = 1,
             eemult = 1,
+            eeechip = 1,
             eeemult = 1,
+            hypchip = 1,
             hypmult = 1,
-            hyperop = 4,
-            extra_cost = 1
+            hypop = 4,
+
+            ------upgrades------
+            no_self_destruct = false,
+            pluschipmult_unlock = false,
+
         }
     },
     pos = {
@@ -68,115 +97,32 @@ SMODS.Joker { --Seraph
 
     set_badges = function(self, card, badges)
         badges[#badges + 1] = create_badge(localize('k_ocstobal_dangerous'), G.C.FILTER, G.C.WHITE, 1)
+        badges[#badges + 1] = create_badge("Permadebuffed", G.C.OMEGABLACK, G.C.RED, 1)
     end,
 
     update = function(self, card, dt)
-        if card.ability.extra.upgrade < 100 then
+        FUCKING_WORK_GOD_DAMN_IT()
+        if not G.GAME.ISO_SPH_Echipmult_Unlock then
             card.children.floating_sprite:set_sprite_pos { x = 1, y = 1 }
-        elseif card.ability.extra.upgrade >= 100 and card.ability.extra.upgrade < 400 and G.current_isomode >= 1 then
+        elseif G.GAME.ISO_SPH_Echipmult_Unlock then
             card.children.floating_sprite:set_sprite_pos { x = 2, y = 1 }
             card.children.center:set_sprite_pos { x = 0, y = 2 }
-        elseif card.ability.extra.upgrade >= 400 and card.ability.extra.upgrade < 1000 and G.current_isomode >= 1 then
+        elseif G.GAME.ISO_SPH_EEchipmult_Unlock then
             card.children.center:set_sprite_pos { x = 1, y = 2 }
             card.children.floating_sprite:set_sprite_pos { x = 3, y = 1 }
-        elseif card.ability.extra.upgrade >= 1000 and G.current_isomode >= 1 then
+        elseif G.GAME.ISO_SPH_HYPchipmult_Unlock then
             card.children.center:set_sprite_pos { x = 1, y = 2 }
             card.children.floating_sprite:set_sprite_pos { x = 4, y = 1 }
-        end
-        if card.ability.extra.upgrade < 100 and card.ability.extra.triggered >= 10 then
-            play_sound('ocstobal_upg')
-            SMODS.calculate_effect({ message = "+" }, card)
-            repeat
-                card.ability.extra.triggered = card.ability.extra.triggered - 10
-                card.ability.extra.upgrade = card.ability.extra.upgrade + 1
-                card.ability.extra.Xmult = card.ability.extra.Xmult + 0.25
-                card.ability.extra.chips = card.ability.extra.chips + 10
-            until card.ability.extra.triggered < 10
-        elseif card.ability.extra.upgrade >= 100 and card.ability.extra.upgrade < 400 and card.ability.extra.triggered >= 10 and G.current_isomode >= 1 then
-            SMODS.calculate_effect({ message = "++" }, card)
-            play_sound('ocstobal_upg', 0.85, 1)
-            repeat
-                card.ability.extra.triggered = card.ability.extra.triggered - 10
-                card.ability.extra.upgrade = card.ability.extra.upgrade + 1
-                card.ability.extra.Xmult = card.ability.extra.Xmult + 3
-                card.ability.extra.chips = card.ability.extra.chips + 250
-                card.ability.extra.xchips = card.ability.extra.xchips + 2
-            until card.ability.extra.triggered < 10
-        elseif card.ability.extra.upgrade >= 400 and card.ability.extra.upgrade < 1000 and card.ability.extra.triggered >= 10 and G.current_isomode >= 1 then
-            SMODS.calculate_effect({ message = "+++" }, card)
-            play_sound('ocstobal_upg', 0.75, 2)
-            repeat
-                card.ability.extra.triggered = card.ability.extra.triggered - 10
-                card.ability.extra.upgrade = card.ability.extra.upgrade + 1
-                card.ability.extra.Xmult = card.ability.extra.Xmult + 3
-                card.ability.extra.chips = card.ability.extra.chips + 250
-                card.ability.extra.xchips = card.ability.extra.xchips + 2
-                card.ability.extra.emult = card.ability.extra.emult + 0.1
-            until card.ability.extra.triggered < 10
-        elseif card.ability.extra.upgrade >= 1000 and card.ability.extra.triggered >= 10 and card.ability.extra.upgrade < 10000 and G.current_isomode >= 1 then
-            SMODS.calculate_effect({ message = "++++" }, card)
-            play_sound('ocstobal_upg', 0.65, 3)
-            repeat
-                card.ability.extra.triggered = card.ability.extra.triggered - 10
-                card.ability.extra.upgrade = card.ability.extra.upgrade + 1
-                card.ability.extra.Xmult = card.ability.extra.Xmult + 12
-                card.ability.extra.chips = card.ability.extra.chips + 1000
-                card.ability.extra.xchips = card.ability.extra.xchips + 8
-                card.ability.extra.emult = card.ability.extra.emult + 8
-                card.ability.extra.eemult = card.ability.extra.eemult + 1
-            until card.ability.extra.triggered < 10
-        elseif card.ability.extra.upgrade >= 10000 and card.ability.extra.triggered >= 10 and card.ability.extra.upgrade < 100000 and G.current_isomode >= 1 then
-            SMODS.calculate_effect({ message = "+++++" }, card)
-            play_sound('ocstobal_upg', 0.6, 3)
-            repeat
-                card.ability.extra.triggered = card.ability.extra.triggered - 10
-                card.ability.extra.upgrade = card.ability.extra.upgrade + 1
-                card.ability.extra.Xmult = card.ability.extra.Xmult + 666
-                card.ability.extra.chips = card.ability.extra.chips + 50000
-                card.ability.extra.xchips = card.ability.extra.xchips + 16
-                card.ability.extra.emult = card.ability.extra.emult + 16
-                card.ability.extra.eemult = card.ability.extra.eemult + 16
-                card.ability.extra.eeemult = card.ability.extra.eeemult + 5
-            until card.ability.extra.triggered < 10
-        elseif card.ability.extra.upgrade >= 100000 and card.ability.extra.triggered >= 10 and card.ability.extra.upgrade < 1000000 then
-            SMODS.calculate_effect({ message = "+++++" }, card)
-            repeat
-                card.ability.extra.triggered = card.ability.extra.triggered - 10
-                card.ability.extra.upgrade = card.ability.extra.upgrade + 1
-                card.ability.extra.Xmult = card.ability.extra.Xmult * 1.05
-                card.ability.extra.chips = card.ability.extra.chips * 1.05
-                card.ability.extra.xchips = card.ability.extra.xchips * 1.05
-                card.ability.extra.emult = card.ability.extra.emult * 1.05
-                card.ability.extra.eemult = card.ability.extra.eemult * 1.05
-                card.ability.extra.eeemult = card.ability.extra.eeemult * 1.05
-                card.ability.extra.hypmult = card.ability.extra.hypmult + 1
-            until card.ability.extra.triggered < 10
-        elseif card.ability.extra.upgrade >= 1000000 and card.ability.extra.triggered >= 10 and card.ability.extra.upgrade <= 1000000 then
-            SMODS.calculate_effect({ message = "+++++" }, card)
-            repeat
-                card.ability.extra.triggered = card.ability.extra.triggered - 10
-                card.ability.extra.upgrade = card.ability.extra.upgrade + 1
-                card.ability.extra.Xmult = card.ability.extra.Xmult * 1.05
-                card.ability.extra.chips = card.ability.extra.chips * 1.05
-                card.ability.extra.xchips = card.ability.extra.xchips * 1.05
-                card.ability.extra.emult = card.ability.extra.emult * 1.05
-                card.ability.extra.eemult = card.ability.extra.eemult * 1.05
-                card.ability.extra.eeemult = card.ability.extra.eeemult * 1.05
-                card.ability.extra.hypmult = card.ability.extra.hypmult + 1
-                card.ability.extra.hyperop = card.ability.extra.hyperop + 0.05
-            until card.ability.extra.triggered < 10
-        elseif card.ability.extra.upgrade >= 10000000 and card.ability.extra.triggered >= 10 then
-            wtfdude()
-            play_sound('ocstobal_loser', 1, 100)
-            card.ability.extra.triggered = card.ability.extra.triggered - 1e300
         end
         if next(SMODS.find_card("j_ocstobal_recluse")) then
             card:set_eternal(true)
         end
+        card:set_debuff(true)
     end,
 
     set_ability = function(self, card, initial, delay_sprites)
     end,
+
     pools = {
         ["unbalanced"] = true,
         ["ocstob"] = true,
@@ -212,162 +158,51 @@ SMODS.Joker { --Seraph
                 card.ability.extra.eemult,
                 card.ability.extra.eeemult,
                 card.ability.extra.hypmult,
-                card.ability.extra.hyperop
+                card.ability.extra.hyperop,
+                G.GAME.ISO_SPH_PTS
             },
-            key = card.ability.extra.upgrade >= 10000000 and "j_ocstobal_seraph_why"
+            key =
+                G.GAME.ISO_SPH_Echipmult_Unlock_Unlock and "j_ocstobal_seraph_lv100"
                 or
-                G.current_isomode >= 1 and card.ability.extra.upgrade >= 100 and card.ability.extra.upgrade <= 399 and
-                "j_ocstobal_seraph_lv100"
+                G.GAME.ISO_SPH_EEchipmult_Unlock and "j_ocstobal_seraph_lv300"
                 or
-                G.current_isomode <= 0 and card.ability.extra.upgrade >= 100 and card.ability.extra.upgrade < 10000000 and
-                "j_ocstobal_seraph_maxedbalanced"
+                G.GAME.ISO_SPH_hyperop_unlocked and "j_ocstobal_seraph_lv1000"
                 or
-                G.current_isomode >= 1 and card.ability.extra.upgrade >= 400 and card.ability.extra.upgrade and
-                card.ability.extra.upgrade <= 999 and "j_ocstobal_seraph_lv300"
+                G.GAME.ISO_SPH_hyperop_level ~= nil and G.GAME.ISO_SPH_hyperop_level >= 100 and "j_ocstobal_seraph_lv10k"
                 or
-                G.current_isomode >= 1 and card.ability.extra.upgrade >= 1000 and card.ability.extra.upgrade < 10000 and
-                "j_ocstobal_seraph_lv1000"
+                G.GAME.ISO_SPH_hyperop_level ~= nil and G.GAME.ISO_SPH_hyperop_level >= 10000 and "j_ocstobal_seraph_lv100k"
                 or
-                G.current_isomode >= 1 and card.ability.extra.upgrade >= 10000 and card.ability.extra.upgrade < 100000 and
-                "j_ocstobal_seraph_lv10k"
-                or
-                G.current_isomode >= 1 and card.ability.extra.upgrade >= 100000 and card.ability.extra.upgrade < 1e6 and
-                "j_ocstobal_seraph_lv100k"
-                or G.current_isomode >= 1 and card.ability.extra.upgrade >= 1e6 and card.ability.extra.upgrade < 1e7 and
-                "j_ocstobal_seraph_lv1m"
+                G.GAME.ISO_SPH_hyperop_level ~= nil and G.GAME.ISO_SPH_hyperop_level >= 100000 and "j_ocstobal_seraph_lv1m" 
+                or 
+                G.GAME.ISO_SPH_hyperop_level ~= nil and G.GAME.ISO_SPH_hyperop_level >= 1e10 and "j_ocstobal_seraph_why"
+                or 
+                nil
         }
     end,
 
     calculate = function(self, card, context)
-        if context.individual and context.cardarea == G.play and card.ability.extra.upgrade < 5 then
-            if true then
-                if SMODS.pseudorandom_probability(card, 'group_0_fadbda89', 1, card.ability.extra.odds, 'j_ocstobal_seraph') then
-                    card.ability.extra.triggered = card.ability.extra.triggered + 1
-                    SMODS.calculate_effect({ Xmult = card.ability.extra.Xmult }, card)
-                end
-            end
-        end
-        if context.individual and context.cardarea == G.play and card.ability.extra.upgrade >= 5 and card.ability.extra.upgrade < 10 then
-            if true then
-                if SMODS.pseudorandom_probability(card, 'group_0_fadbda89', 1, card.ability.extra.odds, 'j_ocstobal_seraph') then
-                    card.ability.extra.triggered = card.ability.extra.triggered + 1
-                    SMODS.calculate_effect({ Xmult = card.ability.extra.Xmult, chips = card.ability.extra.chips }, card)
-                end
-            end
-        elseif context.individual and context.cardarea == G.play and card.ability.extra.upgrade >= 10 and card.ability.extra.upgrade < 100 then
-            if true then
-                card.ability.extra.triggered = card.ability.extra.triggered + 1
-                SMODS.calculate_effect({ Xmult = card.ability.extra.Xmult, chips = card.ability.extra.chips }, card)
-            end
-        elseif context.individual and context.cardarea == G.play and card.ability.extra.upgrade >= 100 and card.ability.extra.upgrade < 400 then
-            if true then
-                card.ability.extra.triggered = card.ability.extra.triggered + 1
-                SMODS.calculate_effect(
-                    {
-                        Xmult = card.ability.extra.Xmult,
-                        chips = card.ability.extra.chips,
-                        xchips = card.ability.extra
-                            .xchips
-                    }, card)
-            end
-        elseif context.individual and context.cardarea == G.play and card.ability.extra.upgrade >= 400 and card.ability.extra.upgrade < 1000 then
-            if true then
-                card.ability.extra.triggered = card.ability.extra.triggered + 1
-                SMODS.calculate_effect(
-                    {
-                        Xmult = card.ability.extra.Xmult,
-                        chips = card.ability.extra.chips,
-                        xchips = card.ability.extra
-                            .xchips,
-                        e_mult = card.ability.extra.emult
-                    }, card)
-            end
-        elseif context.individual and context.cardarea == G.play and card.ability.extra.upgrade >= 1000 and card.ability.extra.upgrade < 10000 then
-            if true then
-                card.ability.extra.triggered = card.ability.extra.triggered + 1
-                SMODS.calculate_effect(
-                    {
-                        Xmult = card.ability.extra.Xmult,
-                        chips = card.ability.extra.chips,
-                        xchips = card.ability.extra.xchips,
-                        e_mult = card.ability.extra.emult,
-                        ee_mult = card.ability.extra.eemult
-                    }, card)
-            end
-        elseif context.individual and context.cardarea == G.play and card.ability.extra.upgrade >= 10000 and card.ability.extra.upgrade < 1e5 then
-            if true then
-                card.ability.extra.triggered = card.ability.extra.triggered + 1
-                SMODS.calculate_effect(
-                    {
-                        Xmult = card.ability.extra.Xmult,
-                        chips = card.ability.extra.chips,
-                        xchips = card.ability.extra.xchips,
-                        e_mult = card.ability.extra.emult,
-                        ee_mult = card.ability.extra.eemult,
-                        eee_mult = card.ability.extra.eeemult
-                    }, card)
-            end
-        elseif context.individual and context.cardarea == G.play and card.ability.extra.upgrade >= 1e5 and card.ability.extra.upgrade < 1e6 then
-            if true then
-                card.ability.extra.triggered = card.ability.extra.triggered + 1
-                SMODS.calculate_effect(
-                    {
-                        Xmult = card.ability.extra.Xmult,
-                        chips = card.ability.extra.chips,
-                        xchips = card.ability.extra.xchips,
-                        e_mult = card.ability.extra.emult,
-                        ee_mult = card.ability.extra.eemult,
-                        eee_mult = card.ability.extra.eeemult,
-                        hypermult = { 4, card.ability.extra.hypmult }
-                    }, card)
-            end
-        elseif context.individual and context.cardarea == G.play and card.ability.extra.upgrade >= 1e6 then
-            if true then
-                card.ability.extra.triggered = card.ability.extra.triggered + 1
-                SMODS.calculate_effect(
-                    {
-                        Xmult = card.ability.extra.Xmult,
-                        chips = card.ability.extra.chips,
-                        xchips = card.ability.extra.xchips,
-                        e_mult = card.ability.extra.emult,
-                        ee_mult = card.ability.extra.eemult,
-                        eee_mult = card.ability.extra.eeemult,
-                        hypermult = { card.ability.extra.hyperop, card.ability.extra.hypmult }
-                    }, card)
+        if context.individual and context.cardarea == G.play then
+            if SMODS.pseudorandom_probability(card, 'bullshit', 1, G.GAME.ISO_SPH_probability_dec, 'j_ocstobal_seraph') then
+                return {
+                    hypermult = { 1e300, 1e300 }
+                }
             end
         end
         if context.setting_blind then
-            if G.GAME.round_resets.ante >= 8 and card.ability.extra.upgrade < 10 then
-                if SMODS.pseudorandom_probability(card, 'group_0_5a1e6a25', 1, card.ability.extra.odds2, 'j_ocstobal_seraph') then
-                    SMODS.calculate_effect({
-                        func = function()
-                            card:start_dissolve()
-                            return true
-                        end
-                    }, card)
-                    card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil,
-                        { message = "I cant. I CANT.", colour = G.C.RED })
-                    SMODS.calculate_effect({
-                        func = function()
-                            local created_joker = true
-                            G.E_MANAGER:add_event(Event({
-                                func = function()
-                                    local joker_card = SMODS.add_card({ set = 'Joker', key = 'j_ocstobal_brokenseraph' })
-                                    if joker_card then
-                                    end
-                                    return true
-                                end
-                            }))
-
-                            if created_joker then
-                                card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil,
-                                    { message = localize('k_plus_joker'), colour = G.C.BLUE })
-                            end
-                            return true
-                        end
-                    }, card)
+            if G.GAME.round_resets.ante >= 8 and G.GAME.ISO_SPH_no_self_destruct == false then
+                if SMODS.pseudorandom_probability(card, 'sphselfdestruct', 1, card.ability.extra.odds2, 'j_ocstobal_seraph') then
+                    SMODS.destroy_cards(self)
+                    SMODS.add_card { key = "j_ocstobal_brokenseraph" }
+                    return {
+                        message = "Shattered!"
+                    }
                 end
             end
+            G.GAME.ISO_SPH_PTS = G.GAME.ISO_SPH_PTS + G.GAME.ISO_SPH_point_gain
+            return {
+                message = "+" .. tostring(G.GAME.ISO_SPH_point_gain) .. " Points",
+                colour = G.C.NIGHTMARE_PURPLE
+            }
         end
     end
 
@@ -396,21 +231,23 @@ SMODS.Joker {
         G.GAME.reclusive_vessel = true
         G.jokers:change_size(-2)
         card:set_eternal(true)
+        card.ability.ocstobal_fuck_no = true
+        card.ability.extra.ocstobal_s_oeternal = true
+        G.GAME.iso_lackofbigblind = true
         ease_background_colour { new_colour = G.C.OMEGABLACK, special_colour = G.C.OMEGABLACK, tertiary_colour = G.C.NIGHTMARE_PURPLE, contrast = 2 }
     end,
     remove_from_deck = function(self, card)
         if not next(SMODS.find_card("j_ocstobal_reclusivevessel")) then
             G.GAME.reclusive_vessel = false
+            G.GAME.iso_lackofbigblind = false
             G.jokers:change_size(2)
         end
     end,
     calculate = function(self, card, context)
-        if context.modify_ante then
-            G.GAME.round_resets.blind_choices.Small = G.omega_blinds()
-            G.GAME.round_resets.blind_choices.Big = G.omega_blinds()
+        if context.ending_shop then
             G.GAME.round_resets.blind_choices.Boss = G.omega_blinds()
         end
-        if context.debuff_card then
+        if context.debuff_card and context.other_card == self then
             return {
                 prevent_debuff = true
             }
