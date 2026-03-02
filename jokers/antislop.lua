@@ -29,8 +29,8 @@ SMODS.Joker {
     calculate = function(self, card, context)
         if context.after and not context.blueprint then 
             local c = hand_chips
-            local m = mult
-            if c*m >= 1e308 then
+            local mult = mult
+            if c*mult >= 1e308 then
                 murphed()
                 forceGameover()
             end

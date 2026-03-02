@@ -44,3 +44,11 @@ SMODS.Joker { --Sparky
         end
     end
 }
+
+SMODS.Joker {
+    key = 'lesbian',
+    cost = 1,
+    rarity = 1,
+    atlas = "other_jokers",
+    pos = {x=4,y=3}
+}

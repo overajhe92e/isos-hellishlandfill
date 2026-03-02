@@ -346,7 +346,7 @@ return {
 				},
 			},
 			j_ocstobal_oxi_alt_quotes = {
-				name = {"Oxidyze","{C:red,s:0.6}Unwanted Visitor{}"},
+				name = { "Oxidyze", "{C:red,s:0.6}Unwanted Visitor{}" },
 				text = {
 					'Copies the Ability of the joker',
 					'to the left and right of this character.',
@@ -1594,7 +1594,7 @@ return {
 			},
 			j_ocstobal_neveragain = {
 				name = "???",
-				text = {"..?"}
+				text = { "..?" }
 			},
 			j_ocstobal_neveragain_clicked = {
 				name = "{C:red}NEVER. AGAIN.{}",
@@ -1616,7 +1616,7 @@ return {
 				}
 			},
 			j_ocstobal_ocksie = {
-				name = {"{C:pastel_yellow}O{}{C:pink}x{}y","{C:pastel_yellow,s:0.7}the bnuuy{}"},
+				name = { "{C:pastel_yellow}O{}{C:pink}x{}y", "{C:pastel_yellow,s:0.7}the bnuuy{}" },
 				text = {
 					"{C:attention}Steel{} cards are retriggered {C:attention}#1#{} times",
 					"Scoring a {C:attention}Steel{} card adds {C:attention}+1{} Retrigger",
@@ -1638,6 +1638,19 @@ return {
 					"with the equation of",
 					"{X:dark_edition,C:white,s:1.3}ceil(log(n)){}",
 					"{C:inactive,s:0.7}n = Score{}"
+				}
+			},
+			j_ocstobal_lesbian = {
+				name = "Lesbian Thoughts",
+				text = {
+					{
+						"Gains {X:red,C:white}X0.1{} Mult for every",
+						"{C:attention}Queen{} in the deck"
+					},
+					{
+						"Applies {X:red,C:white}XMult{} if played hand ",
+						"contains {C:attention}2 or more Queens{}"
+					}
 				}
 			}
 		},

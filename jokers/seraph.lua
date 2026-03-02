@@ -101,7 +101,6 @@ SMODS.Joker { --Seraph
     end,
 
     update = function(self, card, dt)
-        FUCKING_WORK_GOD_DAMN_IT()
         if not G.GAME.ISO_SPH_Echipmult_Unlock then
             card.children.floating_sprite:set_sprite_pos { x = 1, y = 1 }
         elseif G.GAME.ISO_SPH_Echipmult_Unlock then

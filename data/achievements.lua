@@ -117,14 +117,13 @@ SMODS.Achievement {
 		name = 'Murphy\'d',
 		description = {
 			'Die from Anti-Numberslop-inator',
-			'{C:inactive,s:0.7}Thank you!{}'
 		}
 	},
 	bypass_all_unlocked = true,
 	hidden_name = false,
 	
 	unlock_condition = function(self, args)
-		if args.type == "murphyed" then
+		if args.type == "ach_murphy" then
 			return true
 		end
 	end
