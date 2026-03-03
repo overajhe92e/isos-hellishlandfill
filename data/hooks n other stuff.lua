@@ -13,9 +13,10 @@ function Game:update(dt)
         if fucking_hell_mate >= 200 then
             G.GAME.evil_steel = true
             ease_background_colour { new_colour = G.C.OMEGABLACK, special_colour = G.C.ISO_CRIMSON, contrast = 2 }
+        elseif G.GAME.iso_starspace_horny_hour == true then
+            ease_background_colour { new_colour = G.C.OMEGABLACK, special_colour = G.C.ISO_CRIMSON, contrast = 2 }
         else
             G.GAME.evil_steel = false
-            ease_background_colour {}
         end
     end
 end

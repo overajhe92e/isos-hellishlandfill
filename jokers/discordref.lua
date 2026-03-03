@@ -12,6 +12,10 @@ SMODS.Joker {
     pos = { x = 3, y = 0 },
 
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = G.P_CENTERS.j_ocstobal_ocksie
+        info_queue[#info_queue + 1] = G.P_CENTERS.j_ocstobal_crystal
+        info_queue[#info_queue + 1] = G.P_CENTERS.j_ocstobal_astro
+        info_queue[#info_queue + 1] = G.P_CENTERS.j_ocstobal_candycane
         return {
             vars = {
                 card.ability.extra.other_ocs
@@ -79,6 +83,15 @@ SMODS.Joker {
             key = G.ISO_jf == true and "j_ocstobal_neveragain_clicked" or nil
         }
     end,
+    calculate = function(self,card,context)
+        if G.ISO_jf == true then
+            if context.joker_main then
+                return {
+                    xmult = 0
+                }
+            end
+        end
+    end
 }
 
 SMODS.Joker {
@@ -145,6 +158,55 @@ SMODS.Joker {
                     message = "Nope!"
                 }
             end
+        end
+    end
+}
+
+SMODS.Joker {
+    key = 'freak_gang_vc',
+    cost = 1e200,
+    rarity = "ocstobal_omega",
+    config = {
+        extra = {
+            retrig = 1337,
+            mult = 2,
+            hyperop = 2
+        }
+    },
+    atlas = 'other_jokers',
+    pools = { ["ocstob"] = false, ["all_junk"] = false },
+    pos = { x = 0, y = 3 },
+
+    add_to_deck = function(self,from_debuff,card)
+        G.GAME.iso_starspace_horny_hour = true
+    end,
+
+    remove_from_deck = function(self,from_debuff,card)
+        G.GAME.iso_starspace_horny_hour = false
+    end,
+
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { set = "Other", key = "ocstobal_actual_horror", vars = { card.ability.extra.retrig, card.ability.extra.hyperop, card.ability.extra.mult, "{", "}" } }
+        return {
+            vars = {
+                card.ability.extra.mult, card.ability.extra.hyperop, card.ability.extra.retrig, "{", "}", "#",
+            }
+        }
+    end,
+
+    calculate = function(self, card, context)
+        if context.joker_main then
+            card.ability.extra.hyperop = card.ability.extra.hyperop * 1.01
+            card.ability.extra.mult = card.ability.extra.mult * 1.01
+            return {
+                hypermult = { card.ability.extra.hyperop, card.ability.extra.mult }
+            }
+        end
+        if context.retrigger_joker_check and context.other_card == card then
+            return {
+                remove_default_message = true,
+                repetitions = card.ability.extra.retrig
+            }
         end
     end
 }

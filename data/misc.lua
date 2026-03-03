@@ -478,6 +478,10 @@ SMODS.Sound {
 -- )
 --only use when shader testing
 
+SMODS.DynaTextEffect {
+	key = "iso_tremble",
+}
+
 SMODS.Sound {
 	key = 'music_ocean',
 	path = "music_ocean.ogg",
@@ -503,6 +507,8 @@ SMODS.Sound {
 				return true
 			elseif steel >= 200 then
 				return G.GAME.evil_steel == true and 1e99
+			elseif G.GAME.iso_starspace_horny_hour == true then
+				return true and 1e99
 			else
 				return false
 			end

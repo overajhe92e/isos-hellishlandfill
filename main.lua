@@ -42,6 +42,11 @@ if not ISO_EXT then
     ISO_EXT = {}
 end
 
+SMODS.current_mod.menu_cards = function()
+	return {
+		{key = 'j_ocstobal_myself'}
+	}
+end
 
 -- G.C.DARKENED = HEX("000000")
 -- G.C.LIGHT = HEX("ffffff")

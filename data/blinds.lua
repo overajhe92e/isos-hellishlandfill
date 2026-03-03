@@ -198,8 +198,8 @@ SMODS.Blind {
 	loc_txt = {
 		name = 'Diansu Vulkarch',
 		text = {
-			'Run, that\'s all you CAN do!',
-			'*clair de lune*'
+			'Run, that\'s all you {C:red,s:1.2}CAN{} do!',
+			'{E:1,s:0.7,C:inactive}*clair de lune*{}'
 		}
 	},
 	boss_colour = HEX('078500'),

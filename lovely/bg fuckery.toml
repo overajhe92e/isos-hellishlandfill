@@ -47,14 +47,14 @@ elseif G.GAME.reclusive_vessel == true then
 '''
 match_indent = true
 
-# reclusive bg
+# steelwire / starspace gc
 [[patches]]
 [patches.pattern]
 target = "functions/common_events.lua"
 pattern = '''elseif blindname == 'Small Blind' or blindname == 'Big Blind' or blindname == '' then'''
 position = "before"
 payload = '''
-elseif G.GAME.evil_steel == true then
+elseif G.GAME.evil_steel == true or G.GAME.iso_starspace_horny_hour == true then
     ease_background_colour{new_colour = G.C.OMEGABLACK, special_colour = G.C.ISO_CRIMSON, tertiary_colour = G.C.RED, contrast = 2}
 '''
 match_indent = true

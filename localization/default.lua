@@ -166,29 +166,29 @@ return {
 				name = 'Destabilization',
 				text = {
 					'On blind select, defeat',
-					'an Omega version of',
+					'an {C:red,E:1}Omega{} version of',
 					'a blind.'
 				}
 			},
 			bl_ocstobal_rng = {
 				name = 'SMODS.Blind(key=rng)',
 				text = {
-					'Blind Size and Reward is randomized',
+					'Blind Size and Reward is {C:ocstobal_iso_grad,E:1}randomized{}',
 					'when the game restarts.',
 				}
 			},
 			bl_ocstobal_bossrush = {
 				name = "Boss Rush",
 				text = {
-					'Defeat The Knife,',
-					'Oxidization,',
+					'Defeat The Knife',
+					'Oxidization',
 					'and The Scalae'
 				}
 			},
 			bl_ocstobal_bossrushomega = {
 				name = "Kuolemankiire",
 				text = {
-					'Defeat ALL Iso. Junkyard',
+					'Defeat {C:red}ALL{} Iso. Junkyard',
 					'blinds. Includes special',
 					'blind variants.'
 				}
@@ -204,7 +204,7 @@ return {
 				text = {
 					'Playing a hand modifies',
 					'Blind Requirement by',
-					'(x*(log(x^3)^2))*3'
+					'{X:default,C:red,s:1.2}(x*(log(x^3)^2))*3{}'
 				}
 			},
 			bl_ocstobal_THESCALE = {
@@ -212,7 +212,7 @@ return {
 				text = {
 					"Playing a hand modifies",
 					"Blind requirement by",
-					"x^1.25"
+					"{X:default,C:red,s:1.2}x^1.25{}"
 				}
 			},
 			bl_ocstobal_THEDROPLET = {
@@ -220,7 +220,7 @@ return {
 				text = {
 					"All jokers are debuffed.",
 					"Blind Requirement is modified by",
-					"(log(x)*x) / x^0.5",
+					"{X:iso_crimson,C:white,s:1.2}(log(x)*x) / x^0.5{}",
 					"upon playing a hand."
 				}
 			},
@@ -894,7 +894,7 @@ return {
 				}
 			},
 			j_ocstobal_astro = {
-				name = { 'Astro', '{s:0.7,C:blue}No. 1 Astro Novalite Hater{}' },
+				name = { 'Astro', '{s:0.6,C:blue}The No. 1 Astro Novalite Hater{}' },
 				text = {
 					'Applies {X:blue,C:white}^^#1#{} Chips',
 					'{X:blue,C:white}^^Chips{} increases by +1 when',
@@ -1449,7 +1449,7 @@ return {
 				}
 			},
 			j_ocstobal_candycane = { -- for fucks sake
-				name = "Sappy",
+				name = {"Sappy","{C:attention,s:0.7}The Honey Blob{}"},
 				text = {
 					"Scored {C:diamonds}Diamonds{} permanently gain",
 					"{X:red,C:white}X0.1{} {C:attention}Held in hand{} Mult",
@@ -1481,7 +1481,7 @@ return {
 			j_ocstobal_myself = {
 				name = {
 					"{C:ocstobal_iso_grad,E:1}Isotypical{}",
-					"{s:0.65,C:ocstobal_iso_grad,E:1}The Creator of the Mod!{}"
+					"{s:0.65,C:ocstobal_iso_grad,E:1,u:ocstobal_iso_grad}The Creator of the Mod!{}"
 				},
 				text = {
 					"{C:attention}Retriggers{} all {C:attention}Cards and Jokers{}",
@@ -1652,6 +1652,12 @@ return {
 						"contains {C:attention}2 or more Queens{}"
 					}
 				}
+			},
+			j_ocstobal_freak_gang_vc = {
+				name = "Starspace \"Freak Gang\" GC",
+				text = {
+					"{C:ocstobal_ust,s:2}??????{}"
+				}
 			}
 		},
 		Other = {
@@ -1806,6 +1812,15 @@ return {
 					"Art may change in future updates!",
 					"I don't know what else to say here, so..."
 				}
+			},
+			ocstobal_actual_horror = {
+				name = "HORROR",
+				text = {
+					"{C:attention}Retriggers{} self {C:attention}#1#{} times",
+					"{C:red}Hyperoperator and Mult{} is multiplied",
+					"by {C:red}1.01{} when triggered",
+					"Currently {X:ocstobal_ust,C:white}#4##2##5##3#{} Mult"
+				}
 			}
 		},
 		Planet = {},
@@ -1878,14 +1893,14 @@ return {
 				name = 'Soul of Malice',
 				text = {
 					"{C:ocstobal_ust,s:3,E:1}??????{}",
+					"{X:red,C:white,s:1.5}x3{} {s:1.5}Ante{}",
 					"{C:inactive,s:0.7}Destroys all jokers, including Eternals. Does not destroy Omegaeternals.{}"
 				}
 			},
 			c_ocstobal_isocalls = {
 				name = "The Calling",
 				text = {
-					"Summons {C:ocstobal_iso_grad}Isotypical{} Herself.",
-					"{C:red}Destroys ALL Jokers, Including Eternal AND Omegaeternal!{}"
+					"Summons {C:ocstobal_iso_grad,E:1}Isotypical{} Herself.",
 				}
 			}
 		},
@@ -2122,7 +2137,7 @@ return {
 			ocstobal_recl_losses_2 = { "skill issue" },
 			ocstobal_recl_losses_3 = { "L" },
 
-			--ocksie- i mean oxidyze
+			--ocksie- i mean Oxidyze
 			ocstobal_oxi_wins_1 = { "Not bad, not bad." },
 			ocstobal_oxi_wins_2 = { "Nicely done. Almost perfect, even." },
 			ocstobal_oxi_wins_3 = { "Yet another win to the player." },

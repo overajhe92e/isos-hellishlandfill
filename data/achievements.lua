@@ -120,7 +120,7 @@ SMODS.Achievement {
 		}
 	},
 	bypass_all_unlocked = true,
-	hidden_name = false,
+	hidden_name = true,
 	
 	unlock_condition = function(self, args)
 		if args.type == "ach_murphy" then

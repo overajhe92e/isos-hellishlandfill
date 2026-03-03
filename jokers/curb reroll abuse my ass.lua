@@ -23,13 +23,16 @@ SMODS.Joker {
         SMODS.change_free_rerolls(math.huge)
     end,
     remove_from_deck = function(self, card, from_debuff)
-        SMODS.change_free_rerolls(math.huge)
+        SMODS.change_free_rerolls(-math.huge)
+        if card.ability.extra.scale > 0 then
+            G.GAME.dollars = (G.GAME.dollars or 0) - (card.ability.extra.scale*2)
+        end
     end,
     calculate = function(self, card, context)
-        if context.reroll_shop then
+        if context.reroll_shop and not context.blueprint then
             card.ability.extra.scale = card.ability.extra.scale + 1
         end
-        if context.buying_card then
+        if context.buying_card and not context.blueprint then
             if card.ability.extra.scale > 0 then
                 G.GAME.dollar_buffer = (G.GAME.dollar_buffer or 0) - card.ability.extra.scale
                 return {
@@ -45,7 +48,7 @@ SMODS.Joker {
                 }
             end
         end
-        if context.ante_change then
+        if context.ante_change and not context.blueprint then
             if context.ante_end then
                 card.ability.extra.scale = 0
                 return {

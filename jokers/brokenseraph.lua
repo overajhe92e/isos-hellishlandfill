@@ -7,8 +7,8 @@ SMODS.Joker { --Broken Seraph
         }
     },
     pos = {
-        x = 0,
-        y = 0
+        x = 4,
+        y = 2
     },
     display_size = {
         w = 71 * 1,
@@ -17,10 +17,10 @@ SMODS.Joker { --Broken Seraph
     cost = 6,
     rarity = 'ocstobal_cursed',
     blueprint_compat = true,
-    atlas = 'CustomJokers',
+    atlas = 'triple_s',
     soul_pos = {
-        x = 1,
-        y = 0
+        x = 5,
+        y = 2
     },
     in_pool = function(self, args)
         return false
