@@ -24,12 +24,12 @@ SMODS.Joker { --Sparky
     unlocked = true,
     discovered = false,
     atlas = 'triple_s',
-    pools = {["ocstob"] = true,["all_junk"] = true},
+    pools = { ["ocstob"] = true, ["all_junk"] = true },
 
     loc_vars = function(self, info_queue, center)
         return {
             vars = { localize('k_ocstobal_sparky_quote' .. pseudorandom("seed", 1, 4)) },
-            key = pseudorandom("closeenough",1,10) == 1 and "j_ocstobal_sparky_alt"
+            key = pseudorandom("closeenough", 1, 10) == 1 and "j_ocstobal_sparky_alt"
         }
     end,
 
@@ -50,5 +50,36 @@ SMODS.Joker {
     cost = 1,
     rarity = 1,
     atlas = "other_jokers",
-    pos = {x=4,y=3}
+    pos = { x = 4, y = 3 },
+    config = {
+        extra = {
+            m = 0.1
+        }
+    },
+    loc_vars = function(self, info_queue, card)
+        local queens = 0
+        if G.playing_cards then
+            for _, cards in ipairs(G.playing_cards) do
+                if cards:get_id() == 12 then
+                    queens = queens + 1
+                end
+            end
+        end
+        return {
+            vars = { 1 + card.ability.extra.m * queens, card.ability.extra.m }
+        }
+    end,
+    calculate = function(self, card, context)
+        if context.joker_main then
+            local queens = 0
+            for _, cards in ipairs(G.playing_cards) do
+                if cards:get_id() == 12 then
+                    queens = queens + 1
+                end
+            end
+            return {
+                xmult = 1 + card.ability.extra.m * queens
+            }
+        end
+    end
 }

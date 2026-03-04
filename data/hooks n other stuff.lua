@@ -82,7 +82,7 @@ local abbornegative = G.P_CENTERS.e_negative.get_weight
 G.P_CENTERS.e_negative.get_weight = function(self)
     local weight = abbornegative(self)
     for _, abbie in ipairs(SMODS.find_card("j_ocstobal_abbie")) do
-        weight = weight * (3.124 * 3)
+        weight = weight * abbie
     end
     return weight
 end
@@ -313,7 +313,6 @@ end
 
 function G.FUNCS.ISO_jf_troll()
     love.system.openURL("https://jokerforge.jaydchw.com/")
-    G.PROFILES[G.SETTINGS.profile].ISO_jf = true
     G.ISO_jf = true
 	G:save_settings()
 end

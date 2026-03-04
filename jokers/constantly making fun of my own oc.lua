@@ -1,8 +1,11 @@
-local ocksie_jokers = {
-    "j_ocstobal_ocksie",
-    "j_jen_oxy",
-    "j_bunny_oxy"
-}
+local function ocksie_check()
+    local ocksie = { "j_ocstobal_ocksie", "j_jen_oxy", "j_bunny_oxy" }
+    for k, v in ipairs(ocksie) do
+        if next(SMODS.find_card(v)) then
+            return true
+        end
+    end
+end
 
 SMODS.Joker { --Oxy (Oxidyze)
     key = "Oxy",
@@ -35,11 +38,12 @@ SMODS.Joker { --Oxy (Oxidyze)
     loc_vars = function(self, info_queue, center)
         return {
             vars = { localize('k_ocstobal_oxy_quote' .. pseudorandom("seed", 1, 13)), localize('k_ocstobal_oxy_quote_alt_' .. pseudorandom("couldn't hold back huh", 1, 6)) },
-            key = ISO_pwx_detected == true and "j_ocstobal_oxi_pwx" or
-                next(SMODS.find_card("j_jen_oxy")) and "j_ocstobal_oxi_alt_quotes"
-                or pseudorandom("h", 1, 6) == 1 and "j_ocstobal_oxi_oldname"      --here we go again
+            key =
+                ocksie_check() and "j_ocstobal_oxi_alt_quotes"
+                or pseudorandom("h", 1, 6) == 1 and "j_ocstobal_oxi_oldname" --here we go again
                 or pseudorandom("b", 1, 12) == 1 and
-                "j_ocstobal_oxi_get_trolled_lmfao"                                --1 in 12 chance to be named to "ocksie"
+                "j_ocstobal_oxi_get_trolled_lmfao"                           --1 in 12 chance to be named to "ocksie"
+                or ISO_POLTERWORX == true and "j_ocstobal_oxi_pwx"
         }
     end,
 
@@ -54,41 +58,44 @@ SMODS.Joker { --Oxy (Oxidyze)
 
     calculate = function(self, card, context)
         if context.setting_blind then
-                G.E_MANAGER:add_event(Event({
-                    trigger = 'after',
-                    delay = 0.06 * G.SETTINGS.GAMESPEED,
-                    blockable = false,
-                    blocking = false,
-                    func = function()
-                        play_sound('tarot2', 0.76, 0.4)
-                        return true
-                    end
-                }))
-                play_sound('tarot2', 1, 2)
-                G.GAME.blind.chips = math.floor(G.GAME.blind.chips * 2)
-                G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
-                return {
-                    message = "X2 Blind Size"
-                }
+            G.E_MANAGER:add_event(Event({
+                trigger = 'after',
+                delay = 0.06 * G.SETTINGS.GAMESPEED,
+                blockable = false,
+                blocking = false,
+                func = function()
+                    play_sound('tarot2', 0.76, 0.4)
+                    return true
+                end
+            }))
+            play_sound('tarot2', 1, 2)
+            G.GAME.blind.chips = math.floor(G.GAME.blind.chips * 2)
+            G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
+            return {
+                message = "X2 Blind Size"
+            }
         end
         --original code by nh6574
         if not G.jokers then return nil end
 
         local left_effect, right_effect = nil, nil
+        local okcsie = { "j_ocstobal_ocksie", "j_jen_oxy", "j_bunny_oxy" }
 
         for i = 1, #G.jokers.cards do
-            if G.jokers.cards[i] == card then
-                local left_joker = G.jokers.cards[i - 1]
-                local right_joker = G.jokers.cards[i + 1]
+            for k, v in ipairs(okcsie) do
+                if G.jokers.cards[i] == card then
+                    local left_joker = G.jokers.cards[i - 1]
+                    local right_joker = G.jokers.cards[i + 1]
 
-                if left_joker and left_joker ~= card and left_joker.config.center.blueprint_compat and left_joker.config.center.key ~= "j_ocstobal_ocksie" then
-                    left_effect = SMODS.blueprint_effect(card, left_joker, context)
-                end
+                    if left_joker and left_joker ~= card and left_joker.config.center.blueprint_compat and left_joker.config.center.key ~= okcsie then
+                        left_effect = SMODS.blueprint_effect(card, left_joker, context)
+                    end
 
-                if right_joker and right_joker ~= card and right_joker.config.center.blueprint_compat and right_joker.config.center.key ~= "j_ocstobal_ocksie" then
-                    right_effect = SMODS.blueprint_effect(card, right_joker, context)
+                    if right_joker and right_joker ~= card and right_joker.config.center.blueprint_compat and right_joker.config.center.key ~= okcsie then
+                        right_effect = SMODS.blueprint_effect(card, right_joker, context)
+                    end
+                    break
                 end
-                break
             end
         end
 

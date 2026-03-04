@@ -1644,19 +1644,23 @@ return {
 				name = "Lesbian Thoughts",
 				text = {
 					{
-						"Gains {X:red,C:white}X0.1{} Mult for every",
-						"{C:attention}Queen{} in the deck"
+						"Gains {X:red,C:white}X#2#{} Mult for every",
+						"{C:attention}Queen{} in the deck",
+						"{C:inactive}Currently{} {X:red,C:white}X#1#{} {C:inactive}Mult{}"
 					},
 					{
 						"Applies {X:red,C:white}XMult{} if played hand ",
 						"contains {C:attention}2 or more Queens{}"
+					},
+					{
+						"{C:red}I know what you are, Sparky Elle.{}"
 					}
 				}
 			},
 			j_ocstobal_freak_gang_vc = {
 				name = "Starspace \"Freak Gang\" GC",
 				text = {
-					"{C:ocstobal_ust,s:2}??????{}"
+					"{C:ocstobal_ust,s:0.8,E:1}Completely Annihilates ANY balance that was in this mod..{}"
 				}
 			}
 		},
