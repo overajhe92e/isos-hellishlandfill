@@ -393,26 +393,38 @@ SMODS.Joker {
         }
     },
     atlas = "other_jokers",
-    pos = {x=5,y=3},
+    pos = { x = 5, y = 3 },
     immutable = true,
-    loc_vars = function(self,info_queue,card)
+    loc_vars = function(self, info_queue, card)
         return {
             vars = {
                 card.ability.extra.played
             }
         }
     end,
-    calculate = function(self,card,context)
+    remove_from_deck = function(self, card, from_debuff)
+        if card.ability.extra.played >= 999 and card.ability.extra.played < 1000 then
+            G.E_MANAGER:add_event(Event({
+                trigger = "after",
+                delay = 1 * G.SETTINGS.GAMESPEED,
+                func = function()
+                    check_for_unlock({ type = "ach_WHYTHEFUCK" })
+                    return true
+                end
+            }))
+        end
+    end,
+    calculate = function(self, card, context)
         if context.press_play and not context.blueprint and not context.retrigger_joker then
             card.ability.extra.played = card.ability.extra.played + 1
             return {
-                message = tostring(card.ability.extra.played).."333"
+                message = tostring(card.ability.extra.played) .. " / 1000"
             }
         end
         if context.joker_main then
-            if card.ability.extra.played >= 333 then
+            if card.ability.extra.played >= 1000 then
                 return {
-                    hypermult = {4,4444}
+                    hypermult = { 4, 4444 }
                 }
             end
         end

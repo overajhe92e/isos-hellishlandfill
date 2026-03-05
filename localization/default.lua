@@ -1675,17 +1675,25 @@ return {
 				name = "So called Free thinkers when..",
 				text = {
 					"{C:inactive}..happy house run{}",
-					"{X:ocstobal_ust,C:white}^^^^4,444{} Mult after",
-					"playing {C:attention}333{} Hands",
-					"{C:inactive}Currently #1#/333{}"
+					"{X:ocstobal_sewh,C:white}^^^^4,444{} Mult after",
+					"playing {C:attention}1000{} Hands",
+					"{C:inactive}Currently #1#/1000{}"
 				}
 			},
 			j_ocstobal_overscore_award_hands = {
-				name = "OVERSCORE to Hands",
+				name = "Overscore to Hands",
 				text = {
 					"{C:blue}+#1#{} hands on {C:attention}Blind Select{}",
-					"Scoring over {X:dark_edition}n^1.5{} of the Blind Req.",
-					"adds {C:blue}+#2#{} extra hand on blind select"
+					"Scoring over {X:dark_edition,C:white}n^1.5{} of the Blind Req.",
+					"adds {C:blue}+#2#{} extra hand{C:inactive}(s){} on blind select",
+					"{C:inactive}Maximum of +5 hands{}"
+				}
+			},
+			j_ocstobal_overscore_detriment = {
+				name = "Do not Overscore",
+				text = {
+					"Scoring over {X:dark_edition,C:white}^2{} of Blind Req.",
+					"Instantly spawns an {E:1,C:ocstobal_ust}Omega Blind{}"
 				}
 			}
 		},
