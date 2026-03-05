@@ -57,6 +57,15 @@ SMODS.Joker { --Oxy (Oxidyze)
 
 
     calculate = function(self, card, context)
+        if context.individual then
+            if ocksie_check() then
+                for _, c in ipairs(G.hand) do
+                    if context.other_card.ability.name == 'Steel Card' then
+                        c:set_debuff(true)
+                    end
+                end
+            end
+        end
         if context.setting_blind then
             G.E_MANAGER:add_event(Event({
                 trigger = 'after',
@@ -79,19 +88,19 @@ SMODS.Joker { --Oxy (Oxidyze)
         if not G.jokers then return nil end
 
         local left_effect, right_effect = nil, nil
-        local okcsie = { "j_ocstobal_ocksie", "j_jen_oxy", "j_bunny_oxy" }
+        local bnuuy = { "j_ocstobal_ocksie", "j_jen_oxy", "j_bunny_oxy" }
 
         for i = 1, #G.jokers.cards do
-            for k, v in ipairs(okcsie) do
+            for k, v in ipairs(bnuuy) do
                 if G.jokers.cards[i] == card then
                     local left_joker = G.jokers.cards[i - 1]
                     local right_joker = G.jokers.cards[i + 1]
 
-                    if left_joker and left_joker ~= card and left_joker.config.center.blueprint_compat and left_joker.config.center.key ~= okcsie then
+                    if left_joker and left_joker ~= card and left_joker.config.center.blueprint_compat and left_joker.config.center.key ~= v then
                         left_effect = SMODS.blueprint_effect(card, left_joker, context)
                     end
 
-                    if right_joker and right_joker ~= card and right_joker.config.center.blueprint_compat and right_joker.config.center.key ~= okcsie then
+                    if right_joker and right_joker ~= card and right_joker.config.center.blueprint_compat and right_joker.config.center.key ~= v then
                         right_effect = SMODS.blueprint_effect(card, right_joker, context)
                     end
                     break

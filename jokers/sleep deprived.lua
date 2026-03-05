@@ -1,0 +1,17 @@
+-- SMODS.ScreenShader {
+--     key = 'tired',
+--     path = "sleepdeprived.fs",
+--     should_apply = function(self)
+--         if next(SMODS.find_card("j_ocstobal_sleep_deprived")) then
+--             return true
+--         end
+--     end
+-- }
+
+SMODS.Joker {
+    key = "sleep_deprived",
+    rarity = "ocstobal_cursed",
+    cost = 0,
+    calculate = function(self,card,context)
+    end
+}

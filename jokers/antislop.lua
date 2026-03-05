@@ -19,8 +19,22 @@ SMODS.Joker {
             local c = hand_chips
             local mult = mult
             if c*mult >= 1e308 then
-                check_for_unlock({ type = "ach_murphy" })
-                forceGameover()
+                G.E_MANAGER:add_event(Event({
+                    trigger = "after",
+                    delay = 1 * G.SETTINGS.GAMESPEED,
+                    func = function()
+                        check_for_unlock({ type = "ach_murphy" })
+                        return true
+                    end
+                }))
+                G.E_MANAGER:add_event(Event({
+                    trigger = "after",
+                    delay = 1 * G.SETTINGS.GAMESPEED,
+                    func = function()
+                        forceGameover()
+                        return true
+                    end
+                }))
             end
         end
     end

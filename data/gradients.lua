@@ -13,6 +13,13 @@ SMODS.Gradient {
 }
 
 SMODS.Gradient {
+	key = 'blue_ust',
+	colours = { HEX('000000'), HEX('429bf5') },
+	cycle = 4,
+	interpolation = 'trig'
+}
+
+SMODS.Gradient {
 	key = 'sewh',
 	colours = { HEX('fffd7a'), HEX('8eff7d'), HEX('69c8ff'), HEX('b773ff') },
 	cycle = 3,

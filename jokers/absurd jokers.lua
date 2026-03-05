@@ -382,3 +382,39 @@ SMODS.Joker {
     calculate = function(self, card, context)
     end
 }
+
+SMODS.Joker {
+    key = "freethinker",
+    cost = 1,
+    rarity = 1,
+    config = {
+        extra = {
+            played = 0
+        }
+    },
+    atlas = "other_jokers",
+    pos = {x=5,y=3},
+    immutable = true,
+    loc_vars = function(self,info_queue,card)
+        return {
+            vars = {
+                card.ability.extra.played
+            }
+        }
+    end,
+    calculate = function(self,card,context)
+        if context.press_play and not context.blueprint and not context.retrigger_joker then
+            card.ability.extra.played = card.ability.extra.played + 1
+            return {
+                message = tostring(card.ability.extra.played).."333"
+            }
+        end
+        if context.joker_main then
+            if card.ability.extra.played >= 333 then
+                return {
+                    hypermult = {4,4444}
+                }
+            end
+        end
+    end
+}

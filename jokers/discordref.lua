@@ -170,7 +170,8 @@ SMODS.Joker {
         extra = {
             retrig = 1337,
             mult = 2,
-            hyperop = 2
+            hyperop = 2,
+            chip = 2
         }
     },
     atlas = 'other_jokers',
@@ -189,7 +190,7 @@ SMODS.Joker {
         info_queue[#info_queue + 1] = { set = "Other", key = "ocstobal_actual_horror", vars = { card.ability.extra.retrig, card.ability.extra.hyperop, card.ability.extra.mult, "{", "}" } }
         return {
             vars = {
-                card.ability.extra.mult, card.ability.extra.hyperop, card.ability.extra.retrig, "{", "}", "#",
+                card.ability.extra.mult, card.ability.extra.hyperop, card.ability.extra.retrig, "{", "}", "#"
             }
         }
     end,
@@ -199,6 +200,9 @@ SMODS.Joker {
             card.ability.extra.hyperop = card.ability.extra.hyperop * 1.01
             card.ability.extra.mult = card.ability.extra.mult * 1.01
             return {
+                chips = 2,
+                mult = 2,
+                hyperchips = {card.ability.extra.hyperop, card.ability.extra.mult},
                 hypermult = { card.ability.extra.hyperop, card.ability.extra.mult }
             }
         end

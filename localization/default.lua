@@ -311,14 +311,14 @@ return {
 				},
 			},
 			j_ocstobal_oxi_pwx = {
-				name = "Oxidyze",
+				name = {"{C:ocstobal_oxi_gradient}Oxidyze{}","{s:0.7,C:money}The Perfectionist..?{}"},
 				text = {
 					'Copies the Ability of the joker',
 					'to the left and right of this character.',
 					'{C:red}Doubles blind size.{}',
 					'{C:blue,s:0.9}#1#{}',
 					'{X:red,C:white}Dissonance:{} Steel cards held in hand',
-					'are {C:red}debuffed{} during scoring if {C:pastel_yellow,X:default}O{}{C:pink,X:default}x{}{X:default,C:white}y{} is {C:attention}present{}',
+					'are {C:red}debuffed{} during scoring if {C:pastel_yellow}O{}{C:pink}x{}y is {C:attention}present{}',
 					'{C:dark_edition,s:0.9}Origin : No origin?{}',
 					'{s:0.8,C:dark_edition}Character by Isotypical{}'
 				}
@@ -354,7 +354,6 @@ return {
 					'{C:red,s:0.9}#2#{}',
 					'{X:red,C:white}Dissonance:{} {C:attention}Steel{} cards are {C:red}debuffed{} in hand',
 					'during scoring if {C:pastel_yellow}O{}{C:pink}x{}y is present',
-					'{C:red}1 in 6 chance to destroy Oxy at the end of the round.{}',
 					'{C:dark_edition,s:0.9}Origin : No origin?{}',
 					'{s:0.8,C:dark_edition}Character by Isotypical{}'
 				},
@@ -965,7 +964,7 @@ return {
 				text = {
 					{
 						"Gains {X:red,C:white}X1{} Mult for",
-						"every {C:attention}Non-Isotypical{} OC",
+						"every {C:attention}Non-Isotypical{} OC in the mod",
 						"{C:inactive}Currently{} {X:red,C:white}X#1#{} {C:inactive}Mult{}"
 					},
 					{
@@ -1621,7 +1620,7 @@ return {
 					"{C:attention}Steel{} cards are retriggered {C:attention}#1#{} times",
 					"Scoring a {C:attention}Steel{} card adds {C:attention}+1{} Retrigger",
 					"{C:inactive,s:0.85}No Iso, I'm not adding quotes for her. --Oxidyze{}",
-					"{C:dark_edition,s:0.8}Original Character by : ocksie{}"
+					"{C:dark_edition,s:0.8,E:1}Original Character by : ocksie{}"
 				}
 			},
 			j_ocstobal_actual_bunny = {
@@ -1660,7 +1659,33 @@ return {
 			j_ocstobal_freak_gang_vc = {
 				name = "Starspace \"Freak Gang\" GC",
 				text = {
-					"{C:ocstobal_ust,s:0.8,E:1}Completely Annihilates ANY balance that was in this mod..{}"
+					"{C:ocstobal_ust,E:1}Completely Annihilates ANY sort of balance{}",
+					"{C:ocstobal_ust,E:1}that was left in this mod{}"
+				}
+			},
+			j_ocstobal_sleep_deprived = {
+				name = "Sleep Deprivation",
+				text = {
+					"Screen is significantly darker",
+					"{C:red}1 in 4{} chance for {X:default,C:white}=0{} Chips",
+					"{C:red}Debuffs all jokers{} if not in {C:attention}rightmost slot{}"
+				}
+			},
+			j_ocstobal_freethinker = {
+				name = "So called Free thinkers when..",
+				text = {
+					"{C:inactive}..happy house run{}",
+					"{X:ocstobal_ust,C:white}^^^^4,444{} Mult after",
+					"playing {C:attention}333{} Hands",
+					"{C:inactive}Currently #1#/333{}"
+				}
+			},
+			j_ocstobal_overscore_award_hands = {
+				name = "OVERSCORE to Hands",
+				text = {
+					"{C:blue}+#1#{} hands on {C:attention}Blind Select{}",
+					"Scoring over {X:dark_edition}n^1.5{} of the Blind Req.",
+					"adds {C:blue}+#2#{} extra hand on blind select"
 				}
 			}
 		},
@@ -1820,10 +1845,11 @@ return {
 			ocstobal_actual_horror = {
 				name = "HORROR",
 				text = {
+					"{C:red}+2{} Mult and {C:blue}+2{} Chips",
 					"{C:attention}Retriggers{} self {C:attention}#1#{} times",
 					"{C:red}Hyperoperator and Mult{} is multiplied",
 					"by {C:red}1.01{} when triggered",
-					"Currently {X:ocstobal_ust,C:white}#4##2##5##3#{} Mult"
+					"{X:ocstobal_ust,C:white}#4##2##5##3#{} Mult {X:ocstobal_blue_ust,C:white}#4##2##5##3#{} Chips"
 				}
 			}
 		},
