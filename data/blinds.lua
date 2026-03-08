@@ -192,7 +192,7 @@ SMODS.Blind {
 	name = 'diansu',
 	atlas = 'junkyardblinds',
 	pos = { x = 0, y = 7 },
-	mult = 0.00001,
+	mult = 0.1,
 	dollars = 1,
 	boss = { min = 1 },
 	loc_txt = {

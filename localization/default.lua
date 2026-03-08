@@ -311,7 +311,7 @@ return {
 				},
 			},
 			j_ocstobal_oxi_pwx = {
-				name = {"{C:ocstobal_oxi_gradient}Oxidyze{}","{s:0.7,C:money}The Perfectionist..?{}"},
+				name = { "{C:ocstobal_oxi_gradient}Oxidyze{}", "{s:0.7,C:money}The Perfectionist..?{}" },
 				text = {
 					'Copies the Ability of the joker',
 					'to the left and right of this character.',
@@ -887,9 +887,10 @@ return {
 			j_ocstobal_oxywaterdroplet = {
 				name = 'Mysterious Symbol',
 				text = {
-					'{C:inactive}It emits power.{} {X:red,C:white}X2{} {C:inactive}Mult...{}',
-					'{C:inactive}You can\'t shake off the feeling...{}',
-					'{C:inactive}That this is important to someone.{}'
+					"{X:red,C:white}X#1#{} Mult",
+					"{X:red,C:white}+X0.1{} Mult on Blind Select",
+					"{X:red,C:white}+X0.2{} Mult when copied",
+					"{C:inactive,s:0.7}Blueprint, Brainstorm,{} {C:ocstobal_oxi_gradient,E:1,s:0.7}Oxidyze,{} {C:inactive,s:0.7}etc.{}"
 				}
 			},
 			j_ocstobal_astro = {
@@ -1045,7 +1046,7 @@ return {
 				}
 			},
 			j_ocstobal_dw_astro = { --BEHAVE, STARSPACE ASTRO!
-				name = { "Astro Novalite", "{s:0.7,E:1}The Divorced{}" },
+				name = { "Astro Novalite", "{C:blue,s:0.7,E:1}The Sleeper{} {s:0.7,E:1,C:inactive}(agent){}" },
 				text = {
 					{
 						"Adds {C:blue}X#2#{} of your current",
@@ -1448,7 +1449,7 @@ return {
 				}
 			},
 			j_ocstobal_candycane = { -- for fucks sake
-				name = {"Sappy","{C:attention,s:0.7}The Honey Blob{}"},
+				name = { "Sappy", "{C:attention,s:0.7}The Honey Blob{}" },
 				text = {
 					"Scored {C:diamonds}Diamonds{} permanently gain",
 					"{X:red,C:white}X0.1{} {C:attention}Held in hand{} Mult",
@@ -1488,6 +1489,10 @@ return {
 					"Reduces {C:attention}Blind requirement{} by {X:dark_edition,C:white}(Req^0.6)/2{}",
 					"All cards are {C:attention}immune{} to {C:red}debuffs{}",
 					"{X:ocstobal_iso_grad,C:white}^^^1.02{} Chips and Mult {C:attention}before and during{} scoring",
+					"At the end of the ante, Sets {E:1,C:ocstobal_iso_grad}ChipMult Operator{} to the equation of",
+					"{X:ocstobal_iso_grad,C:white,s:1.3}(J(sin(a)+1)*10)^0.5{}",
+					"{C:attention}J = Jokers, a = Ante, rounded up{}",
+					"{C:inactive}Changes to #3# next Ante{}",
 					"Some {c:attention}loaded mods{} may buff {C:ocstobal_iso_grad}Isotypical...{}",
 					"{C:iso_dark_purple,E:1}The Gal who made the mod herself, now in joker form!{}",
 					"{C:iso_light_purple,s:0.85,E:1}\"#1#\"{}"
@@ -1619,7 +1624,7 @@ return {
 				text = {
 					"{C:attention}Steel{} cards are retriggered {C:attention}#1#{} times",
 					"Scoring a {C:attention}Steel{} card adds {C:attention}+1{} Retrigger",
-					"{C:inactive,s:0.85}No Iso, I'm not adding quotes for her. --Oxidyze{}",
+					"{C:blue,s:0.9,E:1}#2#{}",
 					"{C:dark_edition,s:0.8,E:1}Original Character by : ocksie{}"
 				}
 			},
@@ -1635,8 +1640,8 @@ return {
 					"At the end of the round",
 					"{C:attention}Score{} is converted to {C:money}dollars{}",
 					"with the equation of",
-					"{X:dark_edition,C:white,s:1.3}ceil(log(n)){}",
-					"{C:inactive,s:0.7}n = Score{}"
+					"{X:dark_edition,C:white,s:1.3}log10(n){}",
+					"{C:inactive,s:0.7}n = Score, rounded down{}"
 				}
 			},
 			j_ocstobal_lesbian = {
@@ -1680,13 +1685,16 @@ return {
 					"{C:inactive}Currently #1#/1000{}"
 				}
 			},
-			j_ocstobal_overscore_award_hands = {
-				name = "Overscore to Hands",
+			j_ocstobal_OVERSCORE = {
+				name = "// OVERSCORE //",
 				text = {
 					"{C:blue}+#1#{} hands on {C:attention}Blind Select{}",
-					"Scoring over {X:dark_edition,C:white}n^1.5{} of the Blind Req.",
-					"adds {C:blue}+#2#{} extra hand{C:inactive}(s){} on blind select",
-					"{C:inactive}Maximum of +5 hands{}"
+					"Scoring over {X:dark_edition,C:white}X2{} of the Blind Req.",
+					"Adds the following to this joker:",
+					"{C:blue}+1 Hand, +10 Chips{}",
+					"{C:red}+1 Discard, +5 Mult",
+					"{X:tarot,C:white}X0.1{} Chips and Mult",
+					"Multiplies Overscore Requirement by {X:default,C:red}^1.1{}"
 				}
 			},
 			j_ocstobal_overscore_detriment = {
@@ -1694,6 +1702,16 @@ return {
 				text = {
 					"Scoring over {X:dark_edition,C:white}^2{} of Blind Req.",
 					"Instantly spawns an {E:1,C:ocstobal_ust}Omega Blind{}"
+				}
+			},
+			j_ocstobal_full_stop_fixer = {
+				name = {
+					"Full-Stop Office Fixer",
+					"{E:1,C:iso_dark_purple,s:0.7}Isotypical{}"
+				},
+				text = {
+					"For a Grade 9 Fixer,",
+					"She can really hit her shots."
 				}
 			}
 		},
@@ -1938,7 +1956,10 @@ return {
 			c_ocstobal_isocalls = {
 				name = "The Calling",
 				text = {
-					"Summons {C:ocstobal_iso_grad,E:1}Isotypical{} Herself.",
+					"Must have at least {C:money}1e50{} Dollars,",
+					"Be past {C:attention}Ante 10{}, and must have",
+					"{C:green}Sparky{}, {C:iso_exrare}Oxidyze{} {C:inactive,s:0.7}(or Seraph){}, and {C:legendary}Solinium{}",
+					"to Summon {C:ocstobal_iso_grad,E:1}Isotypical{} Herself.",
 				}
 			}
 		},
@@ -1991,15 +2012,11 @@ return {
 			k_ocstobal_oxy_quote10 = "\"Recluse? Isn't that the word for Isolation? ...they're a threat??\"",
 			k_ocstobal_oxy_quote11 =
 			"\"I know how many quotes I have, I know what's happening internally. This is k_ocstobal_oxy_quote11.\"",
-			k_ocstobal_oxy_quote_12 = "I'll say it, Isotypical is a moron.",
-			k_ocstobal_oxy_quote_13 = "I dislike Isotypical a LOT.",
+			k_ocstobal_oxy_quote12 = "I'll say it, Isotypical is a moron.",
+			k_ocstobal_oxy_quote13 = "I dislike Isotypical a LOT.",
 
-			k_ocstobal_oxy_quote_alt_1 = "WHO ARE YOU?!",
-			k_ocstobal_oxy_quote_alt_2 = "YOU FRAUD!",
-			k_ocstobal_oxy_quote_alt_3 = "Iso, get her away from me!",
-			k_ocstobal_oxy_quote_alt_4 = "Fraud, FRAUD!",
-			k_ocstobal_oxy_quote_alt_5 = "I AM NOT A \"BNUUY\"!",
-			k_ocstobal_oxy_quote_alt_6 = "Seraph is probably laughing his ass off, and I'm actually gonna kill him.",
+			k_ocstobal_oxy_quote_alt_1 = "WHO THE FUCK ARE YOU?!",
+			k_ocstobal_oxy_quote_alt_2 = "This is a fraud, I'm real!",
 
 			k_ocstobal_solinium_quote1 = "\"Meow!\"",
 			k_ocstobal_solinium_quote2 = "\"mrrp mrrowww :3\"", -- :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3
@@ -2051,10 +2068,13 @@ return {
 			k_ocstobal_seraph_final_quote5 = "You really spent this much time getting me here?",
 			k_ocstobal_seraph_final_quote6 = "quit the dialogue bro",
 
-			k_ocstobal_seraphbroken_quote1 = "\"kgh...\"",
-			k_ocstobal_seraphbroken_quote2 = "\"please help...\"",
-			k_ocstobal_seraphbroken_quote3 = "\"what did i do wrong..?\"",
-			k_ocstobal_seraphbroken_quote4 = "\"...recluse...\"",
+			k_ocstobal_seraphbroken_quote1 = "\"...\"",
+			k_ocstobal_seraphbroken_quote2 = "\"..?\"",
+			k_ocstobal_seraphbroken_quote3 = "\"..!\"",
+			k_ocstobal_seraphbroken_quote4 = "He can't speak.",
+			k_ocstobal_seraphbroken_quote5 = "Weeps can be heard from him.",
+			k_ocstobal_seraphbroken_quote6 = "A pathetic shell that this thing is now.",
+			k_ocstobal_seraphbroken_quote7 = "Nobody will remember him.", --seraph said a 67 joke and got fucking curb stomped by oxdiyze, sparky, solinium, AND recluse. how tf do you fuck up that badly
 
 			k_ocstobal_recluse_quote1 = "\"There's no way those two can kill me.\"",
 			k_ocstobal_recluse_quote2 = "\"LET ME OUT OF THIS CARD!\"",                          --hey 4th wall breaker here get yo ass back into my joker slots
@@ -2108,6 +2128,9 @@ return {
 			k_ocstobal_me_pwx_hyperop_above25000_1 = "calm the fuck down holy shit",
 			k_ocstobal_me_pwx_hyperop_above25000_2 = "THAT'S ENOUGH ARROWS!!!!",
 			k_ocstobal_me_pwx_hyperop_above25000_3 = "IS YOUR PC OKAY???",
+
+			k_ocstobal_ocksie_quote_1 = "\"We all cut close...\"", --fuck you oxidyze im adding it myself
+			k_ocstobal_ocksie_quote_2 = "bnuuy",
 
 			k_ocstobal_save = 'Saved by Life Crystal',
 

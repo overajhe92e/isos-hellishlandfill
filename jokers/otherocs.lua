@@ -348,6 +348,18 @@ SMODS.Joker {
     end
 }
 
+local d = SMODS.Gradient({
+    key = 'trasnc',
+    colours = {
+        HEX('49ff40'),
+        HEX('40b9ff'),
+        HEX('b357ff'),
+        HEX('fff875'),
+    },
+    interpolation = 'linear',
+    cycle = 7
+})
+
 SMODS.Joker {
     key = "myself",
     name = "isotypical",
@@ -372,9 +384,29 @@ SMODS.Joker {
         if ISO_BDash == true then
             info_queue[#info_queue + 1] = { set = "Other", key = "ocstobal_baladash" }
         end
-        return {
-            vars = { localize("k_ocstobal_me_" .. pseudorandom("myself", 1, 16)), localize("k_ocstobal_me_overscore_" .. pseudorandom("myself", 1, 6)) },
-        }
+        if G.GAME then
+            if not G.jokers then
+                return {
+                    vars = { localize("k_ocstobal_me_" .. pseudorandom("myself", 1, 16)), localize("k_ocstobal_me_overscore_" .. pseudorandom("myself", 1, 6)), "0" },
+                }
+            else
+                return {
+                    vars = { localize("k_ocstobal_me_" .. pseudorandom("myself", 1, 16)), localize("k_ocstobal_me_overscore_" .. pseudorandom("myself", 1, 6)), (math.ceil(((#G.jokers.cards * (math.sin(G.GAME.round_resets.ante) + 1)) * 10) ^ 0.5) or 0) },
+                }
+            end
+        end
+    end,
+    blueprint_compat = false,
+    add_to_deck = function(self, from_debuff, card)
+        SMODS.set_scoring_calculation('talisman_hyper')
+        ease_background_colour { new_colour = G.C.ISO_LIGHT_PURPLE, special_colour = G.C.ISO_DARK_PURPLE, contrast = 2 }
+        G.GAME.has_isotypical = true
+    end,
+    remove_from_deck = function(self, from_debuff, card)
+        if not next(SMODS.find_card("j_ocstobal_myself")) then
+            SMODS.set_scoring_calculation('multiply')
+            G.GAME.has_isotypical = false
+        end
     end,
     calculate = function(self, card, context)
         if context.initial_scoring_step and not context.joker_retrigger then
@@ -443,6 +475,13 @@ SMODS.Joker {
         if context.debuff_card and not context.blueprint then
             return {
                 prevent_debuff = true
+            }
+        end
+        if context.ante_change and not context.blueprint then
+            G.GAME.hyper_operator = math.ceil(((#G.jokers.cards * (math.sin(G.GAME.round_resets.ante) + 1)) * 10) ^ 0.5)
+            return {
+                message = "Hyperoperation Change!",
+                colour = G.C.ISO_LIGHT_PURPLE
             }
         end
     end

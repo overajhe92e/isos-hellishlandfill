@@ -37,7 +37,7 @@ SMODS.Joker { --Oxy (Oxidyze)
 
     loc_vars = function(self, info_queue, center)
         return {
-            vars = { localize('k_ocstobal_oxy_quote' .. pseudorandom("seed", 1, 13)), localize('k_ocstobal_oxy_quote_alt_' .. pseudorandom("couldn't hold back huh", 1, 6)) },
+            vars = { localize('k_ocstobal_oxy_quote' .. pseudorandom("seed", 1, 13)), localize('k_ocstobal_oxy_quote_alt_' .. pseudorandom("couldn't hold back huh", 1, 2)) },
             key =
                 ocksie_check() and "j_ocstobal_oxi_alt_quotes"
                 or pseudorandom("h", 1, 6) == 1 and "j_ocstobal_oxi_oldname" --here we go again
@@ -220,11 +220,35 @@ SMODS.Joker {
     pos = { x = 2, y = 1 },
     soul_pos = { x = 3, y = 1 },
     blueprint_compat = true,
+    config = {
+        extra = {
+            mult = 1
+        }
+    },
+    loc_vars = function(self,info_queue,card)
+        return {
+            vars = {
+                card.ability.extra.mult
+            }
+        }
+    end,
 
     calculate = function(self, card, context)
         if context.joker_main then
             return {
-                xmult = 2
+                xmult = card.ability.extra.mult
+            }
+        end
+        if context.setting_blind then
+            card.ability.extra.mult = card.ability.extra.mult + 0.1
+            return {
+                message = "+X0.1 Mult"
+            }
+        end
+        if context.initial_scoring_step and context.blueprint then
+            card.ability.extra.mult = card.ability.extra.mult + 0.2
+            return {
+                message = "+X0.2 Mult"
             }
         end
     end

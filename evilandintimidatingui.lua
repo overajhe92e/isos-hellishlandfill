@@ -459,21 +459,21 @@ SMODS.current_mod.extra_tabs = function()
 							n = G.UIT.R,
 							config = { minw = 3, minh = 1, colour = G.C.CLEAR, padding = 0.01, align = 'tm' },
 							nodes = {
-								{ n = G.UIT.T, config = { text = 'Credits', colour = G.C.DARK_EDITION, scale = 1 } },
+								{ n = G.UIT.T, config = { text = '-', colour = G.C.DARK_EDITION, scale = 1 } },
 							}
 						},
 						{
 							n = G.UIT.R,
 							config = { minw = 3, minh = 1, colour = G.C.CLEAR, padding = 0.01, align = 'tm' },
 							nodes = {
-								{ n = G.UIT.T, config = { text = 'Artwork Credits to', colour = G.C.WHITE, scale = 0.6 } },
+								{ n = G.UIT.T, config = { text = '-', colour = G.C.WHITE, scale = 0.6 } },
 							}
 						},
 						{
 							n = G.UIT.R,
 							config = { minw = 3, minh = 1, colour = G.C.CLEAR, padding = 0.01, align = 'tm' },
 							nodes = {
-								{ n = G.UIT.T, config = { text = 'Astro (@silly_goober_0nthewall), For drawing Crystal', colour = G.C.DARK_EDITION, scale = 0.5 } }
+								{ n = G.UIT.T, config = { text = '-', colour = G.C.DARK_EDITION, scale = 0.5 } }
 							}
 						}
 					}

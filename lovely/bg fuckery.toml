@@ -30,7 +30,7 @@ target = "functions/common_events.lua"
 pattern = '''elseif blindname == 'Small Blind' or blindname == 'Big Blind' or blindname == '' then'''
 position = "before"
 payload = '''
-elseif G.GAME.omegarush == 1 then
+elseif G.GAME.omegarush == 1 and G.GAME.has_isotypical ~= true then
     ease_background_colour{new_colour = G.C.OMEGAWHITE, special_colour = G.C.OMEGABLACK, tertiary_colour = G.C.BLACK, contrast = 3}
 '''
 match_indent = true
@@ -42,7 +42,7 @@ target = "functions/common_events.lua"
 pattern = '''elseif blindname == 'Small Blind' or blindname == 'Big Blind' or blindname == '' then'''
 position = "before"
 payload = '''
-elseif G.GAME.reclusive_vessel == true then
+elseif G.GAME.reclusive_vessel == true and G.GAME.has_isotypical ~= true  then
     ease_background_colour{new_colour = G.C.OMEGABLACK, special_colour = G.C.OMEGABLACK, tertiary_colour = G.C.NIGHTMARE_PURPLE, contrast = 2}
 '''
 match_indent = true
@@ -54,7 +54,18 @@ target = "functions/common_events.lua"
 pattern = '''elseif blindname == 'Small Blind' or blindname == 'Big Blind' or blindname == '' then'''
 position = "before"
 payload = '''
-elseif G.GAME.evil_steel == true or G.GAME.iso_starspace_horny_hour == true then
+elseif G.GAME.evil_steel == true or G.GAME.iso_starspace_horny_hour == true and G.GAME.has_isotypical ~= true then
     ease_background_colour{new_colour = G.C.OMEGABLACK, special_colour = G.C.ISO_CRIMSON, tertiary_colour = G.C.RED, contrast = 2}
+'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+pattern = '''elseif blindname == 'Small Blind' or blindname == 'Big Blind' or blindname == '' then'''
+position = "before"
+payload = '''
+elseif G.GAME.has_isotypical then
+    ease_background_colour{new_colour = G.C.ISO_LIGHT_PURPLE, special_colour = G.C.ISO_DARK_PURPLE, contrast = 2}
 '''
 match_indent = true

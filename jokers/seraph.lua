@@ -128,6 +128,10 @@ SMODS.Joker { --Seraph
         ["all_junk"] = true
     },
 
+    in_pool = function()
+        return false
+    end,
+
     loc_vars = function(self, info_queue, card)
         local new_numerator, new_denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds,
             'j_ocstobal_seraph')
@@ -197,7 +201,7 @@ SMODS.Joker { --Seraph
                     }
                 end
             end
-            G.GAME.ISO_SPH_PTS = G.GAME.ISO_SPH_PTS + G.GAME.ISO_SPH_point_gain
+            card.ability.extra.point = card.ability.extra.point + card.ability.extra.point_gain
             return {
                 message = "+" .. tostring(G.GAME.ISO_SPH_point_gain) .. " Points",
                 colour = G.C.NIGHTMARE_PURPLE

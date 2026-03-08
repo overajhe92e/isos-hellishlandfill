@@ -1,5 +1,5 @@
 SMODS.Joker {
-    key = "overscore_award_hands",
+    key = "OVERSCORE",
     rarity = 3,
     cost = 12,
     config = {

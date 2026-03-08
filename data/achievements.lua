@@ -31,13 +31,15 @@ SMODS.Achievement {
 	loc_txt = {
 		name = 'Recluse\'s Old Vessel',
 		description = {
-			'"What do you mean Sparky is Recluse\'s Vessel?"',
+			'Sparky is Recluse\'s Vessel?',
+			'You\'re kidding, right?'
 		}
 	},
 	bypass_all_unlocked = true,
 	hidden_name = true,
 	atlas = "isoach",
 	pos = { x = 1, y = 0 },
+	hidden_pos = { x = 0, y = 2 },
 
 	unlock_condition = function(self, args)
 		if args.type == "ach_defeatedrecluse" then
@@ -58,6 +60,9 @@ SMODS.Achievement {
 	},
 	bypass_all_unlocked = true,
 	hidden_name = true,
+	atlas = "isoach",
+	pos = { x = 3, y = 0 },
+	hidden_pos = { x = 0, y = 2 },
 
 	unlock_condition = function(self, args)
 		if args.type == "ach_serious_dedication" then
@@ -80,6 +85,7 @@ SMODS.Achievement {
 	hidden_name = true,
 	atlas = "isoach",
 	pos = { x = 0, y = 1 },
+	hidden_pos = { x = 0, y = 2 },
 
 	unlock_condition = function(self, args)
 		if args.type == "ach_WHYTHEFUCK" then
@@ -100,6 +106,7 @@ SMODS.Achievement {
 	hidden_name = true,
 	atlas = "isoach",
 	pos = { x = 0, y = 0 },
+	hidden_pos = { x = 0, y = 2 },
 
 	unlock_condition = function(self, args)
 		if args.type == "ach_burgr" then
@@ -120,6 +127,7 @@ SMODS.Achievement {
 	hidden_name = true,
 	atlas = "isoach",
 	pos = { x = 2, y = 0 },
+	hidden_pos = { x = 0, y = 2 },
 
 	unlock_condition = function(self, args)
 		if args.type == "iso_honse" then
@@ -140,6 +148,7 @@ SMODS.Achievement {
 	hidden_name = true,
 	atlas = "isoach",
 	pos = { x = 1, y = 0 },
+	hidden_pos = { x = 0, y = 2 },
 
 	unlock_condition = function(self, args)
 		if args.type == "ach_murphy" then
@@ -162,6 +171,7 @@ SMODS.Achievement {
 	hidden_name = true,
 	atlas = "isoach",
 	pos = { x = 0, y = 1 },
+	hidden_pos = { x = 0, y = 2 },
 
 	unlock_condition = function(self, args)
 		local evil = 0
@@ -190,6 +200,7 @@ SMODS.Achievement {
 	hidden_name = true,
 	atlas = "isoach",
 	pos = { x = 3, y = 0 },
+	hidden_pos = { x = 0, y = 2 },
 
 	unlock_condition = function(self, args)
 		if G.GAME then
@@ -213,6 +224,7 @@ SMODS.Achievement {
 	},
 	atlas = "isoach",
 	pos = { x = 3, y = 1 },
+	hidden_pos = { x = 0, y = 2 },
 	bypass_all_unlocked = true,
 	hidden_name = false,
 	hidden_text = true,
@@ -238,6 +250,7 @@ SMODS.Achievement {
 	},
 	atlas = "isoach",
 	pos = { x = 1, y = 0 },
+	hidden_pos = { x = 0, y = 2 },
 	bypass_all_unlocked = true,
 	hidden_name = false,
 	hidden_text = true,
@@ -245,6 +258,30 @@ SMODS.Achievement {
 	unlock_condition = function(self, args)
 		if args.type == "ach_divorc" then
 			return true
+		end
+	end
+}
+
+SMODS.Achievement {
+	key = 'ach_the_divorce_was_bad',
+	loc_txt = {
+		name = 'The Creator Herself!',
+		description = {
+			'Obtain Isotypical',
+		}
+	},
+	atlas = "isoach",
+	pos = { x = 0, y = 1 },
+	hidden_pos = { x = 0, y = 2 },
+	bypass_all_unlocked = true,
+	hidden_name = true,
+	hidden_text = true,
+
+	unlock_condition = function(self, args)
+		if G.jokers then
+			if next(SMODS.find_card("j_ocstobal_myself")) then
+				return true
+			end
 		end
 	end
 }

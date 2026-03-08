@@ -10,7 +10,7 @@ SMODS.Joker { --HER.
         }
     },
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.retrig } }
+        return { vars = { card.ability.extra.retrig, localize('k_ocstobal_ocksie_quote_' .. pseudorandom("seed", 1, 2)), } }
     end,
     atlas = "other_ocs",
     pos = { x = 4, y = 1 },

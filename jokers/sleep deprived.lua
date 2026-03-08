@@ -8,10 +8,10 @@
 --     end
 -- }
 
-SMODS.Joker {
-    key = "sleep_deprived",
-    rarity = "ocstobal_cursed",
-    cost = 0,
-    calculate = function(self,card,context)
-    end
-}
+-- SMODS.Joker {
+--     key = "sleep_deprived",
+--     rarity = "ocstobal_cursed",
+--     cost = 0,
+--     calculate = function(self,card,context)
+--     end
+-- }

@@ -20,47 +20,55 @@ SMODS.Joker { --Eternal Dagger
     },
 
     calculate = function(self, card, context)
-        if context.setting_blind then
-            return {
-                func = function()
-                    local my_pos = nil
-                    for i = 1, #G.jokers.cards do
-                        if G.jokers.cards[i] == card then
-                            my_pos = i
-                            break
-                        end
-                    end
-                    local target_joker = nil
-                    if my_pos and my_pos < #G.jokers.cards then
-                        local joker = G.jokers.cards[my_pos + 1]
-                        if true and not joker.getting_sliced then
-                            target_joker = joker
-                        end
-                    end
-
-                    if target_joker then
-                        if target_joker.ability.ocstobal_fuck_no then
-                            return false
-                        else
-                            if target_joker.ability.eternal then
-                                target_joker.ability.eternal = nil
-                            end
-                            if target_joker.ability.ocstobal_aeternal then
-                                target_joker.ability.ocstobal_aeternal = nil
-                            end
-                            target_joker.getting_sliced = true
-                            G.E_MANAGER:add_event(Event({
-                                func = function()
-                                    target_joker:start_dissolve({ G.C.RED }, nil, 1.6)
-                                    return true
-                                end
-                            }))
-                            card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, { message = "Eradicated.", colour = G.C.RED })
-                        end
-                    end
-                    return true
+        if context.setting_blind and not context.blueprint then
+            local my_pos = nil
+            local haters = { "j_ocstobal_oxhatred", "j_ocstobal_sparkhatred", "j_ocstobal_solhatred" }
+            for i = 1, #G.jokers.cards do
+                if G.jokers.cards[i] == card then
+                    my_pos = i
+                    break
                 end
-            }
+            end
+            if my_pos and G.jokers.cards[my_pos + 1] and G.jokers.cards[my_pos+1] ~= card.ability.ocstobal_fuck_no and not G.jokers.cards[my_pos + 1].getting_sliced then
+                for _, v in ipairs(haters) do
+                    local sliced_card = G.jokers.cards[my_pos + 1]
+                    if sliced_card == v then
+                        sliced_card.getting_sliced = true
+                        G.GAME.joker_buffer = G.GAME.joker_buffer - 1
+                        G.E_MANAGER:add_event(Event({
+                            func = function()
+                                G.GAME.joker_buffer = 0
+                                card:juice_up(0.8, 0.8)
+                                sliced_card:start_dissolve({ HEX("000000") }, nil, 1.6)
+                                play_sound('slice1', 0.96 + math.random() * 0.08)
+                                return true
+                            end
+                        }))
+                        return {
+                            message = "Annihilated.",
+                            colour = G.C.OMEGABLACK,
+                            no_juice = true
+                        }
+                    else
+                        sliced_card.getting_sliced = true
+                        G.GAME.joker_buffer = G.GAME.joker_buffer - 1
+                        G.E_MANAGER:add_event(Event({
+                            func = function()
+                                G.GAME.joker_buffer = 0
+                                card:juice_up(0.8, 0.8)
+                                sliced_card:start_dissolve({ HEX("57ecab") }, nil, 1.6)
+                                play_sound('slice1', 0.96 + math.random() * 0.08)
+                                return true
+                            end
+                        }))
+                        return {
+                            message = "Destroyed!",
+                            colour = G.C.RED,
+                            no_juice = true
+                        }
+                    end
+                end
+            end
         end
     end
 }

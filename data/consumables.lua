@@ -55,16 +55,16 @@ SMODS.Consumable {
     soul_set = 'Spectral',
     soul_rate = 0.01,
     atlas = "needle",
-    pos = {x=1,y=0},
+    pos = { x = 1, y = 0 },
     can_use = function(self, card)
         return true
     end,
     use = function(self, card, area, copier)
         local deletable_jokers = {}
         for _, joker in pairs(G.jokers.cards) do
-            if SMODS.is_eternal(joker,card) then 
-                card.ability.eternal = nil 
-                card.ability.Alphaeternal = nil 
+            if SMODS.is_eternal(joker, card) then
+                card.ability.eternal = nil
+                card.ability.Alphaeternal = nil
             end
             deletable_jokers[#deletable_jokers + 1] = joker
         end
@@ -106,39 +106,58 @@ SMODS.Consumable {
     soul_set = 'Spectral',
     soul_rate = 0.002,
     atlas = "needle",
-    pos = {x=2,y=0},
+    pos = { x = 2, y = 0 },
     can_use = function(self, card)
         return true
     end,
     use = function(self, card, area, copier)
-        local deletable_jokers = {}
-        for _, joker in pairs(G.jokers.cards) do
-            if SMODS.is_eternal(joker,card) then card.ability.eternal = nil end
-            deletable_jokers[#deletable_jokers + 1] = joker
-        end
-        local _first_dissolve = nil
-        G.E_MANAGER:add_event(Event({
-            trigger = 'before',
-            delay = 0.75,
-            func = function()
-                for _, joker in pairs(deletable_jokers) do
-                    joker:start_dissolve(nil, _first_dissolve)
-                    _first_dissolve = true
-                end
-                return true
+        local used_card = copier or card
+        if
+            G.GAME.dollars >= 1e50 and
+            G.GAME.round_resets.ante > 10 and
+            next(SMODS.find_card("j_ocstobal_sparky")) and
+            (next(SMODS.find_card("j_ocstobal_Oxy")) or next(SMODS.find_card("j_ocstobal_Seraph")))
+            and next(SMODS.find_card("j_ocstobal_solinium"))
+        then
+            local deletable_jokers = {}
+            for _, joker in pairs(G.jokers.cards) do
+                if SMODS.is_eternal(joker, card) then card.ability.eternal = nil end
+                deletable_jokers[#deletable_jokers + 1] = joker
             end
-        }))
-        G.E_MANAGER:add_event(Event({
-            trigger = "after",
-            delay = 0.4,
-            func = function()
-                play_sound("ocstobal_franklin")
-                SMODS.add_card({ key = 'j_ocstobal_myself' })
-                card:juice_up(0.3, 0.5)
-                return true
-            end,
-        }))
-        delay(0.6)
+            local _first_dissolve = nil
+            G.E_MANAGER:add_event(Event({
+                trigger = 'before',
+                delay = 0.75,
+                func = function()
+                    for _, joker in pairs(deletable_jokers) do
+                        joker:start_dissolve(nil, _first_dissolve)
+                        _first_dissolve = true
+                    end
+                    return true
+                end
+            }))
+            G.E_MANAGER:add_event(Event({
+                trigger = "after",
+                delay = 0.4,
+                func = function()
+                    play_sound("ocstobal_franklin")
+                    SMODS.add_card({ key = 'j_ocstobal_myself' })
+                    card:juice_up(0.3, 0.5)
+                    return true
+                end,
+            }))
+            delay(0.6)
+        else
+            G.E_MANAGER:add_event(Event({
+                trigger = "after",
+                delay = 0.4,
+                func = function()
+                    card_eval_status_text(used_card, 'extra', nil, nil, nil, { message = "Nope!", colour = G.C.RED })
+                    SMODS.add_card({ key = "c_ocstobal_isocalls" })
+                    return true
+                end,
+            }))
+        end
     end,
     draw = function(self, card, layer)
         if (layer == 'card' or layer == 'both') and card.sprite_facing == 'front' then

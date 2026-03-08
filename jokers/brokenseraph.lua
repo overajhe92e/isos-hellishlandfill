@@ -30,7 +30,7 @@ SMODS.Joker { --Broken Seraph
     },
 
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.multchip, localize('k_ocstobal_seraphbroken_quote' .. pseudorandom("seed", 1, 4)) } }
+        return { vars = { card.ability.extra.multchip, localize('k_ocstobal_seraphbroken_quote' .. pseudorandom("seed", 1, 7)) } }
     end,
 
     calculate = function(self, card, context)
