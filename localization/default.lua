@@ -1688,13 +1688,19 @@ return {
 			j_ocstobal_OVERSCORE = {
 				name = "// OVERSCORE //",
 				text = {
-					"{C:blue}+#1#{} hands on {C:attention}Blind Select{}",
-					"Scoring over {X:dark_edition,C:white}X2{} of the Blind Req.",
-					"Adds the following to this joker:",
-					"{C:blue}+1 Hand, +10 Chips{}",
-					"{C:red}+1 Discard, +5 Mult",
-					"{X:tarot,C:white}X0.1{} Chips and Mult",
-					"Multiplies Overscore Requirement by {X:default,C:red}^1.1{}"
+					{
+						"{C:blue}+#1#{} Hands and {C:red}+#2#{} Discards on {C:attention}Blind Select{}",
+						"{C:blue}+#3#{} Chips and {C:red}+#4#{} Mult",
+						"{X:tarot,C:white}X#5#{} Chips and Mult"
+					},
+					{
+						"Scoring over {X:dark_edition,C:white}X#6#{} of the Blind Req.",
+						"Adds the following to this joker:",
+						"{C:blue}+1 Hand, +10 Chips{}",
+						"{C:red}+1 Discard, +5 Mult",
+						"{X:tarot,C:white}X0.1{} Chips and Mult",
+						"Multiplies Overscore Requirement by {X:default,C:red}^1.1{}"
+					}
 				}
 			},
 			j_ocstobal_overscore_detriment = {
@@ -1710,8 +1716,21 @@ return {
 					"{E:1,C:iso_dark_purple,s:0.7}Isotypical{}"
 				},
 				text = {
-					"For a Grade 9 Fixer,",
-					"She can really hit her shots."
+					{
+						"On {C:attention}blind select{}, shuffles between",
+						"{C:attention}3 different skills{} with different abilities",
+						"{C:inactive}Some abilities are more common than others{}",
+						"{C:red}Destroys self{} if this joker has",
+						"{C:red}0 Ammo{} and {C:red}0 Atelier Logic Ammo{}",
+						"{C:attention}Ammo{} : {C:attention}#1#{}",
+						"{C:dark_edition,E:1}Atelier Logic Ammo{} : {C:attention}#2#{}",
+						"{C:attention}Poise Count{} : {C:attention}#3#{} | {C:attention}Poise Potency{} : {C:attention}#4#{}"
+					},
+					{
+						"{C:attention}Ability 1{} : {C:attention}#5#{}",
+						"{C:attention}Ability 2{} : {C:attention}#6#{}",
+						"{C:attention}Currently Using Ability #7#{}"
+					}
 				}
 			}
 		},
@@ -1876,6 +1895,29 @@ return {
 					"{C:red}Hyperoperator and Mult{} is multiplied",
 					"by {C:red}1.01{} when triggered",
 					"{X:ocstobal_ust,C:white}#4##2##5##3#{} Mult {X:ocstobal_blue_ust,C:white}#4##2##5##3#{} Chips"
+				}
+			},
+			ocstobal_full_stop_1 = {
+				name = "Return Fire",
+				text = {
+					"{X:blue,C:white}X1.5{} Chips",
+					"Retriggers self {C:attention}2{} times",
+					"{C:attention}Uses 1 Ammo{}"
+				}
+			},
+			ocstobal_full_stop_2 = {
+				name = "Headshot",
+				text = {
+					"{C:green}(Potency) in 20{} {X:dark_edition,C:white}^(1.1*(COUNT/5)){} Mult",
+					"Otherwise, {X:red,C:white}X2{} Mult",
+					"{C:attention}Uses 1 Ammo{}"
+				}
+			},
+			ocstobal_full_stop_3 = {
+				name = "Goin' for Bullseye",
+				text = {
+					"{X:dark_edition,C:white}^^1.2{} Chips and Mult",
+					"{C:red}Uses 1 Atelier Logic Ammo{}"
 				}
 			}
 		},

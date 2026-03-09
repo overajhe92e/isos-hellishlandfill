@@ -5,13 +5,23 @@ SMODS.Joker {
     config = {
         extra = {
             hand = 1,
-            over_gain = 1,
+            discard = 1,
+            chip = 10,
+            mult = 5,
+            ch_mu = 1,
+            req = 2
         }
     },
+    atlas = "other_jokers",
+    pos = {
+        x = 6,
+        y = 3
+    },
     loc_vars = function(self,info_queue,card)
+        local c = card.ability.extra
         return {
             vars = {
-                card.ability.extra.hand, card.ability.extra.over_gain
+                c.hand, c.discard, c.chip, c.mult, c.ch_mu, c.req
             }
         }
     end,
