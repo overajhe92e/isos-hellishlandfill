@@ -1,13 +1,13 @@
 {
   "id": "ocstobalatro",
-  "name": "Iso Junkyard",
+  "name": "Isotypical's Junkyard",
   "author": [
     "Isotypical"
   ],
-  "description": "A really, really messy and chaotic mod, containing stuff I just wanted to throw in.",
+  "description": "500 unknown game references and oc jokes.",
   "prefix": "ocstobal",
   "main_file": "main.lua",
-  "version": "0.4.1b",
+  "version": "0.5.0",
   "priority": 0,
   "badge_colour": "000000",
   "badge_text_colour": "FF0000",

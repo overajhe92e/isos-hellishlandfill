@@ -134,8 +134,8 @@ SMODS.Rarity {
     end
 }
 
-local the = SMODS.Gradient({
-    key = 'trasnc',
+local term = SMODS.Gradient({
+    key = 'temrin',
     colours = {
         HEX('49ff40'),
         HEX('40b9ff'),
@@ -152,7 +152,7 @@ SMODS.Rarity {
         ["Joker"] = true
     },
     default_weight = 0,
-    badge_colour = the,
+    badge_colour = term,
     loc_txt = {
         name = "Terminus"
     },

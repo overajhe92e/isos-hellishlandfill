@@ -953,3 +953,21 @@ SMODS.Blind {
 		end
 	end
 }
+
+SMODS.Blind {
+	key = "oxidyze_bnuuy_hate",
+	mult = 2,
+	money = 5,
+	boss_colour = HEX("ff822f"),
+	boss = { min = 1 },
+	
+	calculate = function(self,card,context)
+		if not blind.disabled then
+			if context.debuff_card and context.debuff_card.area == G.jokers then
+				for k, v in ipairs(G.jokers.cards) do
+					
+				end
+			end
+		end
+	end
+}
