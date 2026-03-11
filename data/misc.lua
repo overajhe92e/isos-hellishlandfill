@@ -27,7 +27,7 @@ function love.draw()
 	if G.swoon and (G.swoon > 0) then
 		if ocstobal.swoon == nil then ocstobal.swoon = FuckingImage("SWOON.png") end
 		love.graphics.setColor(0, 0.5, 1, 1)
-		love.graphics.draw(ocstobal.swoon, 0, 0, 0, 1.45, 1.65)
+		love.graphics.draw(ocstobal.swoon, 0 * win_width * 1.8, 0 * win_height * 2, 0, win_width * 2.5, win_height * 2.4)
 	end
 
 	if G.laugher and (G.laugher > 0) then
@@ -415,6 +415,15 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
+	key = 'crossmod_blinds',
+	px = 34,
+	py = 34,
+	path = "crossmod_blinds.png",
+	atlas_table = "ANIMATION_ATLAS",
+	frames = 21
+}
+
+SMODS.Atlas {
 	key = 'thevessel_blind',
 	px = 34,
 	py = 34,
@@ -557,37 +566,27 @@ function ocstobal_custom_video(name, buttonname)
 	return t
 end
 
--- SMODS.Keybind {
--- 	key_pressed = "l",
--- 	action = function(self)
--- 		G.E_MANAGER:add_event(Event({
--- 			func = function()
--- 				play_sound("ocstobal_loser")
--- 				G.laugher = 1
--- 				--love.load()
--- 				--function love.draw()
--- 				--love.graphics.draw(death, -100, 0, 0, 1.5, 1.25)
--- 				--love.graphics.setColor(1, 1, 1)
--- 				--end
--- 				--love.draw() -- "The failed code goes crazy"
--- 				return true
--- 			end
--- 		}))
--- 		G.E_MANAGER:add_event(Event({
--- 			trigger = "after",
--- 			delay = 6,
--- 			func = function()
--- 				function DestroyThatFuckingImageForGodsSake()
--- 					G.laugher = 0
--- 				end
-
--- 				DestroyThatFuckingImageForGodsSake()
--- 				return true
--- 			end
--- 		}))
--- 	end
-
--- }
+SMODS.Keybind { --makes my life easier
+	key_pressed = "l",
+	action = function(self)
+		G.E_MANAGER:add_event(Event({
+			func = function()
+				play_sound("ocstobal_swoonstart")
+				G.swoon = 1
+				return true
+			end
+		}))
+		G.E_MANAGER:add_event(Event({
+			trigger = "after",
+			delay = 2 * G.SETTINGS.GAMESPEED,
+			func = function()
+				play_sound("ocstobal_swoonend")
+				G.swoon = 0
+				return true
+			end
+		}))
+	end
+}
 
 function burger()
 	G.E_MANAGER:add_event(Event({

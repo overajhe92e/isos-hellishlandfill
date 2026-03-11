@@ -4,16 +4,16 @@ SMODS.Joker {
     rarity = 1,
     config = { hands_left = 100 },
     atlas = 'sugar',
-    pos = {x=0,y=1},
-    soul_pos = {x=0,y=0},
+    pos = { x = 0, y = 1 },
+    soul_pos = { x = 0, y = 0 },
     blueprint_compat = true,
-    pools = {["ocstob"] = true,["all_junk"] = true},
-    
-    loc_vars = function(self,info_queue,card)
-        return { vars = { card.ability.hands_left }}
+    pools = { ["ocstob"] = true, ["all_junk"] = true },
+
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.hands_left } }
     end,
 
-    calculate = function(self,card,context)
+    calculate = function(self, card, context)
         if context.joker_main and context.cardarea == G.jokers then
             return {
                 mult = 50,
@@ -22,9 +22,14 @@ SMODS.Joker {
         end
         if context.after and not context.blueprint then
             if card.ability.hands_left - 1 <= 0 then
-                -- SMODS.destroy_cards(card, nil, nil, true)
-                card:set_ability("j_ocstobal_sugarcrash")
-                card:set_cost(-10)
+                G.E_MANAGER:add_event(Event({
+                    trigger = "immediate",
+                    func = function()
+                        SMODS.calculate_effect({ effect = { message = "Crash!", colour = G.C.OMEGABLACK } })
+                        card:set_ability("j_ocstobal_sugarcrash")
+                        return true
+                    end
+                }))
                 return {
                     message = 'Crash!',
                     colour = G.C.FILTER
@@ -46,18 +51,18 @@ SMODS.Joker {
     config = { hands_left = 10 },
     rarity = 2,
     atlas = 'sugar',
-    pos = {x=1,y=1},
-    soul_pos = {x=1,y=0},
+    pos = { x = 1, y = 1 },
+    soul_pos = { x = 1, y = 0 },
     blueprint_compat = true,
-    pools = {["ocstob"] = true,["all_junk"] = true},
+    pools = { ["ocstob"] = true, ["all_junk"] = true },
 
-    loc_vars = function(self,info_queue,card)
-        return { vars = { card.ability.hands_left }}
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.hands_left } }
     end,
 
-    calculate = function(self,card,context)
+    calculate = function(self, card, context)
         if context.setting_blind then
-             G.E_MANAGER:add_event(Event({
+            G.E_MANAGER:add_event(Event({
                 trigger = 'after',
                 delay = 0.06 * G.SETTINGS.GAMESPEED,
                 blockable = false,
@@ -68,7 +73,7 @@ SMODS.Joker {
                 end
             }))
             play_sound('tarot2', 1, 2)
-            G.GAME.blind.chips = math.floor(G.GAME.blind.chips * (1/2))
+            G.GAME.blind.chips = math.floor(G.GAME.blind.chips * (1 / 2))
             G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
         end
         if context.joker_main and context.cardarea == G.jokers then
@@ -79,9 +84,14 @@ SMODS.Joker {
         end
         if context.after and not context.blueprint then
             if card.ability.hands_left - 1 <= 0 then
-                -- SMODS.destroy_cards(card, nil, nil, true)
-                card:set_ability("j_ocstobal_sugarcrash")
-                card:set_cost(-10)
+                G.E_MANAGER:add_event(Event({
+                    trigger = "immediate",
+                    func = function()
+                        SMODS.calculate_effect({ effect = { message = "Crash!", colour = G.C.OMEGABLACK } })
+                        card:set_ability("j_ocstobal_sugarcrash")
+                        return true
+                    end
+                }))
                 return {
                     message = 'Crash!',
                     colour = G.C.FILTER
@@ -103,18 +113,18 @@ SMODS.Joker {
     config = { hands_left = 1 },
     rarity = 3,
     atlas = 'sugar',
-    pos = {x=2,y=1},
-    soul_pos = {x=2,y=0},
+    pos = { x = 2, y = 1 },
+    soul_pos = { x = 2, y = 0 },
     blueprint_compat = true,
-    pools = {["ocstob"] = true,["all_junk"] = true},
+    pools = { ["ocstob"] = true, ["all_junk"] = true },
 
-    loc_vars = function(self,info_queue,card)
-        return { vars = { card.ability.hands_left }}
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.hands_left } }
     end,
 
-    calculate = function(self,card,context)
+    calculate = function(self, card, context)
         if context.setting_blind then
-             G.E_MANAGER:add_event(Event({
+            G.E_MANAGER:add_event(Event({
                 trigger = 'after',
                 delay = 0.06 * G.SETTINGS.GAMESPEED,
                 blockable = false,
@@ -125,7 +135,7 @@ SMODS.Joker {
                 end
             }))
             play_sound('tarot2', 1, 2)
-            G.GAME.blind.chips = math.floor(G.GAME.blind.chips * (1/8))
+            G.GAME.blind.chips = math.floor(G.GAME.blind.chips * (1 / 8))
             G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
         end
         if context.joker_main and context.cardarea == G.jokers then
@@ -136,9 +146,14 @@ SMODS.Joker {
         end
         if context.after and not context.blueprint then
             if card.ability.hands_left - 1 <= 0 then
-                -- SMODS.destroy_cards(card, nil, nil, true)
-                card:set_ability("j_ocstobal_sugarcrash")
-                card:set_cost(-10)
+                G.E_MANAGER:add_event(Event({
+                    trigger = "immediate",
+                    func = function()
+                        SMODS.calculate_effect({ effect = { message = "Crash!", colour = G.C.OMEGABLACK } })
+                        card:set_ability("j_ocstobal_sugarcrash")
+                        return true
+                    end
+                }))
                 return {
                     message = 'Crash!',
                     colour = G.C.FILTER
@@ -160,18 +175,18 @@ SMODS.Joker {
     config = { hands_left = 5 },
     atlas = 'sugar',
     rarity = "ocstobal_cursed",
-    pos = {x=3,y=1},
-    soul_pos = {x=3,y=0},
+    pos = { x = 3, y = 1 },
+    soul_pos = { x = 3, y = 0 },
     blueprint_compat = false,
     pools = {
         ["all_junk"] = true
     },
 
-    loc_vars = function(self,info_queue,card)
-        return { vars = { card.ability.hands_left }}
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.hands_left } }
     end,
 
-    calculate = function(self,card,context)
+    calculate = function(self, card, context)
         if context.joker_main and context.cardarea == G.jokers and not context.blueprint then
             return {
                 xmult = 0.5,

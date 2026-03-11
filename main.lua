@@ -184,6 +184,9 @@ local function all_checks()
     if next(SMODS.find_mod("bdash")) then
         ISO_BDash = true
     end
+    if next(SMODS.find_mod("bunny")) then
+        ISO_bnuuy = true
+    end
 end
 
 all_checks()

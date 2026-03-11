@@ -15,6 +15,7 @@ SMODS.Joker { --HER.
     atlas = "other_ocs",
     pos = { x = 4, y = 1 },
     soul_pos = { x = 5, y = 1 },
+    bunny = true,
     calculate = function(self, card, context)
         if context.repetition and context.cardarea == G.hand then
             if context.other_card.ability.name == 'Steel Card' then

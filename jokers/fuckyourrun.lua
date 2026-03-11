@@ -24,7 +24,7 @@ SMODS.Joker {
     pools = {
         ["all_junk"] = true
     },
-    loc_vars = function(self,info_queue,card)
+    loc_vars = function(self, info_queue, card)
         return {
             vars = {
                 card.ability.extra.chipmult,
@@ -83,7 +83,7 @@ SMODS.Joker {
     pools = {
         ["all_junk"] = true
     },
-    loc_vars = function(self,info_queue,card)
+    loc_vars = function(self, info_queue, card)
         return {
             vars = {
                 card.ability.extra.chipmult,
@@ -142,7 +142,7 @@ SMODS.Joker {
     in_pool = function()
         return false
     end,
-    loc_vars = function(self,info_queue,card)
+    loc_vars = function(self, info_queue, card)
         return {
             vars = {
                 card.ability.extra.blindsize,
@@ -273,6 +273,35 @@ SMODS.Joker {
                     return true
                 end
             }
+        end
+    end
+}
+
+SMODS.Joker {
+    key = "nike",
+    cost = 1,
+    rarity = "ocstobal_absolute_curse",
+    no_collection = true,
+    calculate = function(self, card, context)
+        if context.setting_blind then
+            G.E_MANAGER:add_event(Event({
+                trigger = "immediate",
+                func = function()
+                    play_sound("ocstobal_swoonstart")
+                    G.swoon = 1
+                    return true
+                end
+            }))
+            G.E_MANAGER:add_event(Event({
+                trigger = "after",
+                delay = 2.5 * G.SETTINGS.GAMESPEED,
+                func = function()
+                    play_sound("ocstobal_swoonend")
+                    forceGameover()
+                    G.swoon = 0
+                    return true
+                end
+            }))
         end
     end
 }

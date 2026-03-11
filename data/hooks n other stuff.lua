@@ -87,11 +87,107 @@ G.P_CENTERS.e_negative.get_weight = function(self)
     return weight
 end
 
+local function fsfixer(card)
+    return UIBox {
+        definition = {
+            n = G.UIT.ROOT,
+            config = {
+                colour = G.C.CLEAR
+            },
+            nodes = {
+                {
+                    n = G.UIT.C,
+                    config = {
+                        align = 'cm',
+                        padding = 0.15,
+                        r = 0.08,
+                        hover = true,
+                        shadow = true,
+                        colour = G.C.MULT,               -- color of the button background
+                        button = 'ocstobal_fsfixerswap', -- function in G.FUNCS that will run when this button is clicked
+                        func = 'ocstobal_fsfixer_gen',   -- function in G.FUNCS that will run every frame this button exists (optional)
+                        ref_table = card,
+                    },
+                    nodes = {
+                        {
+                            n = G.UIT.R,
+                            nodes = {
+                                {
+                                    n = G.UIT.T,
+                                    config = {
+                                        text = "Change",
+                                        colour = G.C.UI.TEXT_LIGHT, -- color of the button text
+                                        scale = 0.4,
+                                    }
+                                },
+                                {
+                                    n = G.UIT.B,
+                                    config = {
+                                        w = 0.1,
+                                        h = 0.4
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        config = {
+            align = 'cm', -- position relative to the card, meaning "center left". Follow the SMODS UI guide for more alignment options
+            major = card,
+            parent = card,
+            offset = { x = 0, y = 1.5 } -- depends on the alignment you want, without an offset the button will look as if floating next to the card, instead of behind it
+        }
+    }
+end
+
+
+G.FUNCS.ocstobal_fsfixerswap = function(e)
+    local card = e.config.ref_table
+    local c = card.ability.extra
+    if c.using == 1 then
+        c.using = 2
+    elseif c.using == 2 then
+        c.using = 1
+    end
+end
+
+-- Will run every frame while the button exists
+G.FUNCS.ocstobal_fsfixer_gen = function(e)
+    local card = e.config.ref_table
+
+    local can_use = true -- can be any condition you want
+
+    -- Removes the button when the card can't be used, otherwise makes it use the previously defined button click
+    e.config.button = can_use and 'ocstobal_fsfixerswap' or nil
+    -- Changes the color of the button depending on whether it can be used or not
+    e.config.colour = can_use and G.C.MULT or G.C.UI.BACKGROUND_INACTIVE
+end
+
+SMODS.DrawStep {
+    key = 'fsfixer',
+    order = -30, -- before the Card is drawn
+    func = function(card, layer)
+        if card.children.ocstobal_fsfixerswap then
+            card.children.ocstobal_fsfixerswap:draw()
+        end
+    end
+}
+
+SMODS.draw_ignore_keys.ocstobal_fsfixerswap = true
 
 pkLOOOVE = Card.highlight
 function Card:highlight(is_highlighted)
+    if is_highlighted and self.config.center.key == "j_ocstobal_full_stop_fixer" then
+        self.children.modprefix_my_button = fsfixer(self)
+    elseif self.children.modprefix_my_button then
+        self.children.modprefix_my_button:remove()
+        self.children.modprefix_my_button = nil
+    end
+
     pkLOOOVE(self, is_highlighted)
-    asc = {
+    local asc = {
         n = G.UIT.ROOT,
         config = { padding = 0, colour = G.C.CLEAR },
         nodes = {
@@ -124,7 +220,7 @@ function Card:highlight(is_highlighted)
             },
         }
     }
-    lifeup = {
+    local lifeup = {
         n = G.UIT.ROOT,
         config = { padding = 0, colour = G.C.CLEAR },
         nodes = {
@@ -171,7 +267,7 @@ function Card:highlight(is_highlighted)
             },
         }
     }
-    jf = {
+    local jf = {
         n = G.UIT.ROOT,
         config = { padding = 0, colour = G.C.CLEAR },
         nodes = {
@@ -190,7 +286,7 @@ function Card:highlight(is_highlighted)
             },
         }
     }
-    sph = {
+    local sph = {
         n = G.UIT.ROOT,
         config = { padding = 0, colour = G.C.CLEAR },
         nodes = {
@@ -209,7 +305,7 @@ function Card:highlight(is_highlighted)
             },
         }
     }
-    ocksied = {
+    local ocksied = {
         n = G.UIT.ROOT,
         config = { padding = 0, colour = G.C.CLEAR },
         nodes = {
@@ -221,7 +317,7 @@ function Card:highlight(is_highlighted)
                         n = G.UIT.R,
                         config = { minw = 1, minh = 0.8, padding = 0.01, align = 'cl', colour = G.C.CLEAR, button = 'kill_oxid', r = 0.1 },
                         nodes = {
-                            UIBox_button { label = { "Kill Oxidyze" }, scale = 0.6, minw = 1.3, minh = 0.7, colour = G.C.PINK, r = 0.1 }
+                            UIBox_button { label = { "Kill Oxidyze" }, scale = 0.6, minw = 1.5, minh = 1, colour = G.C.PINK, r = 0.1 }
                         }
                     }
                 }
@@ -286,7 +382,7 @@ function Card:highlight(is_highlighted)
     end
     if self.highlighted and next(SMODS.find_card("j_ocstobal_Oxy")) and self.config.center.key == "j_ocstobal_ocksie" and not self.ability.extra.to_copy then
         self.children.lifeup = UIBox({
-            definition = sph,
+            definition = ocksied,
             config = {
                 parent = self,
                 align = 'cm',
@@ -334,7 +430,7 @@ end
 
 G.FUNCS.iso_kill_oxi = function(e)
     local c = e.config.ref_table
-    SMODS.calculate_effect({ message = "Murder!", sound = "ocstobal_gore5" }, card)
+    SMODS.calculate_effect({ message = "Murder!", sound = "ocstobal_gore5" }, c)
 end
 
 function G.FUNCS.seraphmenu()
@@ -346,11 +442,11 @@ end
 
 function TERMINUS_GIVER_9000()
     print("cheaty hehehehehe")
-    SMODS.add_card{ set = "Joker", rarity = 'ocstobal_beyondexotic' }
+    SMODS.add_card { set = "Joker", rarity = 'ocstobal_beyondexotic' }
 end
 
 function G.FUNCS.ISO_jf_troll()
     love.system.openURL("https://jokerforge.jaydchw.com/")
     G.ISO_jf = true
-	G:save_settings()
+    G:save_settings()
 end

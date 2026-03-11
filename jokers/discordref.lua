@@ -137,10 +137,22 @@ SMODS.Joker {
                         message = "Nothing to shoot!"
                     }
                 elseif fraudcount > 0 then
-                    SMODS.destroy_cards(SMODS.find_card("j_ocstobal_dw_astro"))
-                    return {
-                        message = "BANG!!!"
-                    }
+                    G.E_MANAGER:add_event(Event({
+                        trigger = "immediate",
+                        func = function()
+                            card:juice_up(0.1)
+                            return true
+                        end
+                    }))
+                    G.E_MANAGER:add_event(Event({
+                        trigger = "after",
+                        delay = 1 * G.SETTINGS.GAMESPEED,
+                        func = function()
+                            SMODS.destroy_cards(SMODS.find_card("j_ocstobal_dw_astro"))
+                            SMODS.calculate_effect({ message = "BANG!!!" })
+                            return true
+                        end
+                    }))
                 end
             end
             if context.initial_scoring_step then

@@ -956,16 +956,20 @@ SMODS.Blind {
 
 SMODS.Blind {
 	key = "oxidyze_bnuuy_hate",
-	mult = 2,
+	mult = 2.5,
 	money = 5,
 	boss_colour = HEX("ff822f"),
-	boss = { min = 1 },
+	boss = { min = 2 },
+	atlas = "crossmod_blinds",
+	pos = {x=0,y=0},
 	
-	calculate = function(self,card,context)
+	calculate = function(self,blind,context)
 		if not blind.disabled then
 			if context.debuff_card and context.debuff_card.area == G.jokers then
 				for k, v in ipairs(G.jokers.cards) do
-					
+					if v.config.center and v.config.center.bunny then
+						v:set_debuff(true)
+					end
 				end
 			end
 		end

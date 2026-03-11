@@ -318,6 +318,15 @@ return {
 					'{s:0.8,C:dark_edition}Character by Isotypical{}'
 				},
 			},
+			j_ocstobal_nike = {
+				name = { "Nike Logo", "{C:inactive,s:0.7}...of doom and despair{}"},
+				text = {
+					"{C:red,s:2}Instantly Fucking Die{} on blind selection",
+					"{C:inactive,s:0.6}And get an achievement...{}",
+					"It's {C:red}YOUR{} fault for picking this up!",
+					"AND It's unobtainable without force spawning!"
+				}
+			},
 			j_ocstobal_oxi_pwx = {
 				name = { "{C:ocstobal_oxi_gradient}Oxidyze{}", "{s:0.7,C:money}The Perfectionist..?{}" },
 				text = {
@@ -1926,7 +1935,7 @@ return {
 				name = "Return Fire",
 				text = {
 					"{X:blue,C:white}X1.5{} Chips",
-					"Gain 1 {C:attention}Poise{}",
+					"Gain 1 {C:attention}Poise Potency{}",
 					"Retriggers self {C:attention}2{} times",
 					"{C:attention}Uses 1 Ammo{}"
 				}
@@ -1934,7 +1943,8 @@ return {
 			ocstobal_full_stop_2 = {
 				name = "Headshot",
 				text = {
-					"{C:green}(Potency) in 20{} {X:dark_edition,C:white}^(1.1*(COUNT/5)){} Mult",
+					"Gain {C:attention}3 Poise Potency{} and {C:attention}2 Poise Count{}",
+					"{C:green}(Potency) in 20{} {X:dark_edition,C:white}^1+(COUNT/5){} Mult",
 					"Otherwise, {X:red,C:white}X2{} Mult",
 					"{C:attention}Uses 1 Ammo{}"
 				}
@@ -1942,6 +1952,7 @@ return {
 			ocstobal_full_stop_3a = {
 				name = "Goin' for Bullseye",
 				text = {
+					"Gain {C:attention}5 Poise Potency{}",
 					"{X:dark_edition,C:white}^1.1{} Chips and Mult",
 					"{C:attention}Uses 1 Ammo{}"
 				}
@@ -1949,8 +1960,9 @@ return {
 			ocstobal_full_stop_3b = {
 				name = "AL-HV Pulverisation Round",
 				text = {
-					"{C:inactive}Only activated if you have Atelier Ammo{}",
-					"{X:dark_edition,C:white}^^1.1{} Chips and Mult",
+					"{C:inactive,s:0.7}Replaces Bullseye if you have Atelier-Logic Ammo{}",
+					"Gain {C:attention}5 Poise Potency{}",
+					"{X:dark_edition,C:white}^^1.2{} Chips and Mult",
 					"{C:red}Uses 1 Atelier Logic Ammo{}"
 				}
 			}
