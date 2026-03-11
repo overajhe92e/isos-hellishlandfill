@@ -12,11 +12,16 @@ SMODS.Joker {
     },
     immutable = true,
     LIMBUS_COMPANY = true,
+    atlas = "other_jokers",
+    pos = {
+        x = 7, y = 3
+    },
     loc_vars = function(self, info_queue, card)
         local c = card.ability.extra
         info_queue[#info_queue + 1] = { set = "Other", key = "ocstobal_full_stop_1" }
         info_queue[#info_queue + 1] = { set = "Other", key = "ocstobal_full_stop_2" }
-        info_queue[#info_queue + 1] = { set = "Other", key = "ocstobal_full_stop_3" }
+        info_queue[#info_queue + 1] = { set = "Other", key = "ocstobal_full_stop_3a" }
+        info_queue[#info_queue + 1] = { set = "Other", key = "ocstobal_full_stop_3b" }
         local ability_1 = nil
         local ability_2 = nil
         local using = 1
@@ -32,21 +37,29 @@ SMODS.Joker {
         local ability_2 = nil
         local using = 1
         if context.setting_blind and not context.blueprint then
-            pseudorandom("abil",1,6)
-            pseudorandom("abil_b",1,6)
+            pseudorandom("abil", 1, 6)
+            pseudorandom("abil_b", 1, 6)
             if pseudoseed("abil") <= 3 then
                 ability_1 = "ret_fire"
             elseif pseudoseed("abil") >= 4 and pseudoseed("abil") <= 5 then
                 ability_1 = "heads"
             elseif pseudoseed("abil") == 6 then
-                ability_1 = "bulls"
+                if c.atelier > 0 then
+                    ability_1 = "hv"
+                else
+                    ability_1 = "bulls"
+                end
             end
             if pseudoseed("abil_b") <= 3 then
                 ability_2 = "ret_fire"
             elseif pseudoseed("abil_b") >= 4 and pseudoseed("abil") <= 5 then
                 ability_2 = "heads"
             elseif pseudoseed("abil_b") == 6 then
-                ability_2 = "bulls"
+                if c.atelier > 0 then
+                    ability_2 = "hv"
+                else
+                    ability_2 = "bulls"
+                end
             end
             return {
                 message = "Ability Change!",
@@ -73,6 +86,8 @@ SMODS.Joker {
                     return {
                         message = "lmao no"
                     }
+                elseif ability_1 == "hv" then
+
                 end
             elseif using == 2 then
                 if ability_2 == "ret_fire" then
@@ -93,6 +108,8 @@ SMODS.Joker {
                     return {
                         message = "lmao no"
                     }
+                elseif ability_2 == "hv" then
+
                 end
             end
         end
@@ -110,7 +127,7 @@ SMODS.Joker {
             poise_potency = 0
         }
     },
-    loc_vars = function(self,info_queue,card)
+    loc_vars = function(self, info_queue, card)
         local c = card.ability.extra
         return {
             vars = {
@@ -118,6 +135,6 @@ SMODS.Joker {
             }
         }
     end,
-    calculate = function(self,card,context)
+    calculate = function(self, card, context)
     end
 }

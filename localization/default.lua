@@ -1732,6 +1732,23 @@ return {
 						"{C:attention}Currently Using Ability #7#{}"
 					}
 				}
+			},
+			j_ocstobal_poise = {
+				name = "Poise",
+				text = {
+					"{C:green}[When Scoring Cards]{}",
+					"Gain {X:blue,C:white}X0.05{} Chips,",
+					"{C:red}Fixed{} {C:green}1 in 2{} Chance to gain Poise Potency instead",
+					"{C:blue}[On Use]{}",
+					"Consume all {X:blue,C:white}XChip{} and {C:attention}Poise Potency{}",
+					"and gain {C:money}Money{} equal to the cube root of (XChip x Poise Potency)"
+				}
+			},
+			j_ocstobal_nil = {
+				name = "???",
+				text = {
+					""
+				}
 			}
 		},
 		Other = {
@@ -1901,6 +1918,7 @@ return {
 				name = "Return Fire",
 				text = {
 					"{X:blue,C:white}X1.5{} Chips",
+					"Gain 1 {C:attention}Poise{}",
 					"Retriggers self {C:attention}2{} times",
 					"{C:attention}Uses 1 Ammo{}"
 				}
@@ -1913,10 +1931,18 @@ return {
 					"{C:attention}Uses 1 Ammo{}"
 				}
 			},
-			ocstobal_full_stop_3 = {
+			ocstobal_full_stop_3a = {
 				name = "Goin' for Bullseye",
 				text = {
-					"{X:dark_edition,C:white}^^1.2{} Chips and Mult",
+					"{X:dark_edition,C:white}^1.1{} Chips and Mult",
+					"{C:attention}Uses 1 Ammo{}"
+				}
+			},
+			ocstobal_full_stop_3b = {
+				name = "AL-HV Pulverisation Round",
+				text = {
+					"{C:inactive}Only activated if you have Atelier Ammo{}",
+					"{X:dark_edition,C:white}^^1.1{} Chips and Mult",
 					"{C:red}Uses 1 Atelier Logic Ammo{}"
 				}
 			}

@@ -263,7 +263,7 @@ SMODS.Achievement {
 }
 
 SMODS.Achievement {
-	key = 'ach_the_divorce_was_bad',
+	key = 'ach_iso',
 	loc_txt = {
 		name = 'The Creator Herself!',
 		description = {
@@ -283,5 +283,26 @@ SMODS.Achievement {
 				return true
 			end
 		end
+	end
+}
+
+SMODS.Achievement {
+	key = 'ach_jf',
+	loc_txt = {
+		name = 'Are you serious?',
+		description = {
+			'Figure out what',
+			'that joker does.'
+		}
+	},
+	atlas = "isoach",
+	pos = { x = 0, y = 0 },
+	hidden_pos = { x = 0, y = 2 },
+	bypass_all_unlocked = true,
+	hidden_name = true,
+	hidden_text = true,
+
+	unlock_condition = function(self, args)
+		if G.ISO_jf == true then return true end
 	end
 }
