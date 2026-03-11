@@ -15,6 +15,7 @@ SMODS.Joker { --Oxy (Oxidyze)
             clash_denom = 6
         }
     },
+    bunny = true,
     pos = {
         x = 2,
         y = 1

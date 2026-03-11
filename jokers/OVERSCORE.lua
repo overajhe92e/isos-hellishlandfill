@@ -26,10 +26,18 @@ SMODS.Joker {
         }
     end,
     calcualte = function(self,card,context)
+        local c = card.ability.extra
         if context.setting_blind then
-            return {
-                message = "PLACEHOLDER"
-            }
+            G.E_MANAGER:add_event(Event({
+                func = function()
+                    ease_discard(c.discard)
+                    ease_hands_played(c.hand)
+                    SMODS.calculate_effect(
+                        { message = "+"..tostring(c.hand).."Hands & +"..tostring(c.discard).." Discards" })
+                    return true
+                end
+            }))
+            return nil, true -- This is for Joker retrigger purposes
         end
     end
 }

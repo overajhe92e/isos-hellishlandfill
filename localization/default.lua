@@ -133,6 +133,14 @@ return {
 					'are debuffed.'
 				}
 			},
+			bl_ocstobal_oxidyze_bnuuy_hate = {
+				name = "The Hater",
+				text = {
+					"{C:red}I take control now.{}",
+					"All {C:pastel_yellow}Bunny{} Jokers are",
+					"{C:iso_crimson}PERMANENTLY{} Debuffed."
+				}
+			},
 			bl_ocstobal_THEWALLex = {
 				name = "The Big Fucking Wall",
 				text = {

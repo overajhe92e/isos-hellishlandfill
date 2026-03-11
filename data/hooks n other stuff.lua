@@ -202,7 +202,26 @@ function Card:highlight(is_highlighted)
                         n = G.UIT.R,
                         config = { minw = 1, minh = 0.5, padding = 0.01, align = 'cl', colour = G.C.CLEAR, button = 'seraphmenu', r = 0.1 },
                         nodes = {
-                            UIBox_button { label = { "UPG" }, scale = 0.4, minw = 1.3, minh = 0.7, colour = G.C.RED, r = 0.1, button = 'ISO_jf_troll' }
+                            UIBox_button { label = { "UPG" }, scale = 0.4, minw = 1.3, minh = 0.7, colour = G.C.NIGHTMARE_PURPLE, r = 0.1 }
+                        }
+                    }
+                }
+            },
+        }
+    }
+    ocksied = {
+        n = G.UIT.ROOT,
+        config = { padding = 0, colour = G.C.CLEAR },
+        nodes = {
+            {
+                n = G.UIT.C,
+                config = { minw = 1, minh = 1, padding = 0.1, align = 'cm', colour = G.C.CLEAR },
+                nodes = {
+                    {
+                        n = G.UIT.R,
+                        config = { minw = 1, minh = 0.8, padding = 0.01, align = 'cl', colour = G.C.CLEAR, button = 'kill_oxid', r = 0.1 },
+                        nodes = {
+                            UIBox_button { label = { "Kill Oxidyze" }, scale = 0.6, minw = 1.3, minh = 0.7, colour = G.C.PINK, r = 0.1 }
                         }
                     }
                 }
@@ -265,6 +284,20 @@ function Card:highlight(is_highlighted)
         self.children.lifeup:remove()
         self.children.lifeup = nil
     end
+    if self.highlighted and next(SMODS.find_card("j_ocstobal_Oxy")) and self.config.center.key == "j_ocstobal_ocksie" and not self.ability.extra.to_copy then
+        self.children.lifeup = UIBox({
+            definition = sph,
+            config = {
+                parent = self,
+                align = 'cm',
+                offset = { x = -1.5, y = 0 },
+                colour = G.C.CLEAR
+            }
+        })
+    elseif self.children.lifeup and not self.highlighted and self.config.center.key == "j_ocstobal_seraph" then
+        self.children.lifeup:remove()
+        self.children.lifeup = nil
+    end
 end
 
 function G.FUNCS.store()
@@ -297,6 +330,11 @@ G.FUNCS.iso_lf_alpha = function(e)
         e.ability.extra.pp = e.ability.extra.pp - 5
         SMODS.calculate_effect({ message = "restore hands" }, card)
     end
+end
+
+G.FUNCS.iso_kill_oxi = function(e)
+    local c = e.config.ref_table
+    SMODS.calculate_effect({ message = "Murder!", sound = "ocstobal_gore5" }, card)
 end
 
 function G.FUNCS.seraphmenu()

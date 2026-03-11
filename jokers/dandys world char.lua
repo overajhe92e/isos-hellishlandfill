@@ -112,7 +112,7 @@ SMODS.Joker {
 --     atlas = 'dw',
 --     pos = { x = 0, y = 1 },
 --     soul_pos = { x = 1, y = 1 },
--- }
+-- } die
 
 SMODS.Joker {
     key = 'dw_astro',
