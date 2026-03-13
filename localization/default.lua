@@ -1681,8 +1681,8 @@ return {
 			j_ocstobal_freak_gang_vc = {
 				name = "Starspace \"Freak Gang\" GC",
 				text = {
-					"{C:ocstobal_ust,E:1}Completely Annihilates ANY sort of balance{}",
-					"{C:ocstobal_ust,E:1}that was left in this mod{}"
+					"{C:ocstobal_ust}Completely Annihilates ANY sort of balance{}",
+					"{C:ocstobal_ust}that was left in this mod{}"
 				}
 			},
 			j_ocstobal_sleep_deprived = {
@@ -1740,7 +1740,7 @@ return {
 						"{C:red}Destroys self{} if this joker has",
 						"{C:red}0 Ammo{} and {C:red}0 Atelier Logic Ammo{}",
 						"{C:attention}Ammo{} : {C:attention}#1#{}",
-						"{C:dark_edition,E:1}Atelier Logic Ammo{} : {C:attention}#2#{}",
+						"{C:dark_edition,E:ocstobal_wavy}Atelier Logic Ammo{} : {C:attention}#2#{}",
 						"{C:attention}Poise Count{} : {C:attention}#3#{} | {C:attention}Poise Potency{} : {C:attention}#4#{}"
 					},
 					{
