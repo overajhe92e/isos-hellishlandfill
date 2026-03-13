@@ -6,7 +6,7 @@ SMODS.Joker {
     pos = { x = 0, y = 0 },
     soul_pos = { x = 1, y = 0 },
     blueprint_compat = true,
-    pools = {["ocstob"] = true},
+    pools = { ["ocstob"] = true, ["dandy"] = true },
 
     loc_vars = function(self, info_queue, card)
         return { vars = { localize('k_ocstobal_shrimpo_quote' .. pseudorandom("seed", 1, 3)) } }
@@ -33,7 +33,8 @@ SMODS.Joker {
     soul_pos = { x = 1, y = 1 },
     blueprint_compat = true,
     pools = {
-        ["all_junk"] = true
+        ["all_junk"] = true,
+        ["dandy"] = true
     },
 
     loc_vars = function(self, info_queue, card)
@@ -74,7 +75,7 @@ SMODS.Joker {
     end,
     blueprint_compat = true,
     no_collection = true,
-    pools = {["ocstob"] = true},
+    pools = { ["ocstob"] = true, ["dandy"] = true },
 
     calculate = function(self, card, context)
         if context.end_of_round and context.game_over == false and context.main_eval and context.beat_boss then
@@ -126,12 +127,12 @@ SMODS.Joker {
             multi = 1
         }
     },
-    pools = {["ocstob"] = true},
+    pools = { ["ocstob"] = true, ["dandy"] = true },
     blueprint_compat = true,
     loc_vars = function(self, info_queue, card)
         local planets_used = 0
         for k, v in pairs(G.GAME.consumeable_usage) do if v.set == 'Planet' then planets_used = planets_used + 1 end end
-        return { vars = { card.ability.extra.multi, (planets_used+1) } }
+        return { vars = { card.ability.extra.multi, (planets_used + 1) } }
     end,
     calculate = function(self, card, context)
         if context.setting_blind then
@@ -144,7 +145,7 @@ SMODS.Joker {
                     ease_discard(G.GAME.current_round.discards_left * (planets_used + 1))
                     ease_hands_played(G.GAME.current_round.hands_left * (planets_used + 1))
                     SMODS.calculate_effect(
-                        { message = '+X' .. tostring(planets_used+1) .. ' Hands & Discards' },
+                        { message = '+X' .. tostring(planets_used + 1) .. ' Hands & Discards' },
                         context.blueprint_card or card)
                     return true
                 end

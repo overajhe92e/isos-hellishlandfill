@@ -20,10 +20,10 @@ SMODS.Joker {
         }
     end,
     add_to_deck = function(self, card, from_debuff)
-        SMODS.change_free_rerolls(math.huge)
+        SMODS.change_free_rerolls(1e300)
     end,
     remove_from_deck = function(self, card, from_debuff)
-        SMODS.change_free_rerolls(-math.huge)
+        SMODS.change_free_rerolls(-1e300)
         if card.ability.extra.scale > 0 then
             G.GAME.dollars = (G.GAME.dollars or 0) - (card.ability.extra.scale*2)
         end

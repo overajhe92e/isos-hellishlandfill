@@ -27,7 +27,8 @@ function love.draw()
 	if G.swoon and (G.swoon > 0) then
 		if ocstobal.swoon == nil then ocstobal.swoon = FuckingImage("SWOON.png") end
 		love.graphics.setColor(0, 0.5, 1, 1)
-		love.graphics.draw(ocstobal.swoon, 0 * win_width * 1.8, 0 * win_height * 2, 0, win_width * 2.5, win_height * 2.4)
+		love.graphics.draw(ocstobal.swoon, 0 * win_width * 0.5, 0 * win_height * 0.5, 0, win_width * 2.2,
+			win_height * 2.1)
 	end
 
 	if G.laugher and (G.laugher > 0) then
@@ -73,6 +74,33 @@ end
 function forceGameover()
 	G.STATE = G.STATES.GAME_OVER
 	G.STATE_COMPLETE = false
+end
+
+function ISO_getfuckedlmfao()
+	G.E_MANAGER:add_event(Event({
+		trigger = "immediate",
+		func = function()
+			play_sound("ocstobal_swoonstart")
+			G.swoon = 1
+			return true
+		end
+	}))
+	G.E_MANAGER:add_event(Event({
+		trigger = "after",
+		delay = 2.3 * G.SETTINGS.GAMESPEED,
+		func = function()
+			play_sound("ocstobal_swoonend")
+			G.swoon = 0
+			return true
+		end
+	}))
+	G.E_MANAGER:add_event(Event({
+		trigger = "immediate",
+		func = function()
+			SMODS.destroy_cards(SMODS.find_card("j_ocstobal_dw_astro"),true,true,true)
+			return true
+		end
+	}))
 end
 
 -- misc atlas stuff

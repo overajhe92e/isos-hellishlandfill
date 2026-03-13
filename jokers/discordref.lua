@@ -83,7 +83,7 @@ SMODS.Joker {
             key = G.ISO_jf == true and "j_ocstobal_neveragain_clicked" or nil
         }
     end,
-    calculate = function(self,card,context)
+    calculate = function(self, card, context)
         if G.ISO_jf == true then
             if context.joker_main then
                 return {
@@ -144,15 +144,19 @@ SMODS.Joker {
                             return true
                         end
                     }))
-                    G.E_MANAGER:add_event(Event({
-                        trigger = "after",
-                        delay = 1 * G.SETTINGS.GAMESPEED,
-                        func = function()
-                            SMODS.destroy_cards(SMODS.find_card("j_ocstobal_dw_astro"))
-                            SMODS.calculate_effect({ message = "BANG!!!" })
-                            return true
-                        end
-                    }))
+                    if SMODS.pseudorandom_probability(card, "ohgod", 1, 1, "j_ocstobal_a_fucking_gun", true) then
+                        ISO_getfuckedlmfao()
+                    else
+                        G.E_MANAGER:add_event(Event({
+                            trigger = "after",
+                            delay = 1 * G.SETTINGS.GAMESPEED,
+                            func = function()
+                                SMODS.destroy_cards(SMODS.find_card("j_ocstobal_dw_astro"))
+                                SMODS.calculate_effect({ message = "BANG!!!" }, card)
+                                return true
+                            end
+                        }))
+                    end
                 end
             end
             if context.initial_scoring_step then
@@ -190,11 +194,11 @@ SMODS.Joker {
     pools = { ["ocstob"] = false, ["all_junk"] = false },
     pos = { x = 0, y = 3 },
 
-    add_to_deck = function(self,from_debuff,card)
+    add_to_deck = function(self, from_debuff, card)
         G.GAME.iso_starspace_horny_hour = true
     end,
 
-    remove_from_deck = function(self,from_debuff,card)
+    remove_from_deck = function(self, from_debuff, card)
         G.GAME.iso_starspace_horny_hour = false
     end,
 
@@ -214,7 +218,7 @@ SMODS.Joker {
             return {
                 chips = 2,
                 mult = 2,
-                hyperchips = {card.ability.extra.hyperop, card.ability.extra.mult},
+                hyperchips = { card.ability.extra.hyperop, card.ability.extra.mult },
                 hypermult = { card.ability.extra.hyperop, card.ability.extra.mult }
             }
         end

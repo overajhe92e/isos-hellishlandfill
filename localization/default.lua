@@ -742,8 +742,9 @@ return {
 			j_ocstobal_ichor = {
 				name = 'Ichor',
 				text = {
-					'Gives {C:money}$8{} Dollars',
-					'at the end of the round.'
+					'Gives {C:money}$#2#{} Dollars',
+					'at the end of the round.',
+					"{C:inactive}( Base Dollars = #1# ){}"
 				}
 			},
 			j_ocstobal_antislopinator = {
