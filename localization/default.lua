@@ -319,7 +319,7 @@ return {
 				},
 			},
 			j_ocstobal_nike = {
-				name = { "Nike Logo", "{C:inactive,s:0.7}...of doom and despair{}"},
+				name = { "Nike Logo", "{C:inactive,s:0.7}...of doom and despair{}" },
 				text = {
 					"{C:red,s:2}Instantly Fucking Die{} on blind selection",
 					"{C:inactive,s:0.6}And get an achievement...{}",
@@ -1766,6 +1766,27 @@ return {
 				name = "???",
 				text = {
 					""
+				}
+			},
+			j_ocstobal_eight_melodies = {
+				name = "Eight Melodies",
+				text = {
+					{
+						"After {C:attention}8{} Rounds, instantly",
+						"defeat the next {C:attention}3 blinds{}",
+						"{C:inactive}Currently #1#/8 Rounds{}"
+					},
+					{
+						"{s:0.7,C:inactive}Take a melody... Simple as can be...",
+						"{s:0.7,C:inactive}Give it some words and... Sweet harmony...",
+						"{s:0.7,C:inactive}Raise your voices... All day long now,",
+						"{s:0.7,C:inactive}love grows strong now... Sing a melody of",
+						"{s:0.7,C:inactive}Love, oh love."
+					},
+					{
+						"{C:dark_edition,s:0.8}Origin : Earthbound Beginnings / Mother 1{}",
+						"{C:dark_edition,s:0.8}Ability Reference : Asylum Rejects{}"
+					}
 				}
 			}
 		},
