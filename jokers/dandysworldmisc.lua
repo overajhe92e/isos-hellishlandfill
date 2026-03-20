@@ -9,33 +9,41 @@ SMODS.Joker {
     },
     atlas = 'dw',
     pos = { x = 0, y = 2 },
-    pools = { 
+    pools = {
         ["ocstob"] = true,
-        ["all_junk"] = true 
+        ["all_junk"] = true
     },
-    loc_vars = function(self,info_queue,card)
+    loc_vars = function(self, info_queue, card)
         local c = card.ability.extra
         local d = c.dollars
         local dw = 0
-        for k,v in ipairs(G.jokers.cards) do
-            if v.config.center and v.config.center.pools.dandy then
-                dw = dw+1
+        if G.jokers then
+            for k, v in ipairs(G.jokers.cards) do
+                if v.config.center.pools and v.config.center.pools.dandy then
+                    dw = dw + 1
+                end
             end
-        end
-        return {
-            vars = {
-                d, (d*dw+1)
+            return {
+                vars = {
+                    d, (d * (dw + 1))
+                }
             }
-        }
+        else
+            return {
+                vars = {
+                    d, (d * (dw + 1))
+                }
+            }
+        end
     end,
     calc_dollar_bonus = function(self, card)
         local dw = 0
         for k, v in ipairs(G.jokers.cards) do
             if v.config.center and v.config.center.pools.dandy then
-                dw = dw+1
+                dw = dw + 1
             end
         end
-        return card.ability.extra.dollars * (dw+1)
+        return card.ability.extra.dollars * (dw + 1)
     end
 }
 

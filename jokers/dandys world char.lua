@@ -57,7 +57,7 @@ SMODS.Joker {
             G.GAME.blind.chips = math.floor(G.GAME.blind.chips ^ 0.75)
             G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
             return {
-                message = 'I hate you...'
+                message = '...'
             }
         end
     end
@@ -74,7 +74,6 @@ SMODS.Joker {
         return { vars = { localize('k_ocstobal_yatta_quote' .. pseudorandom("seed", 1, 4)) } }
     end,
     blueprint_compat = true,
-    no_collection = true,
     pools = { ["ocstob"] = true, ["dandy"] = true },
 
     calculate = function(self, card, context)

@@ -30,3 +30,9 @@ SMODS.Joker {
         end
     end
 }
+
+SMODS.Joker {
+    key = "eight_melodies",
+    rarity = 4,
+    cost = 35
+}

@@ -134,7 +134,7 @@ local function fsfixer(card)
             }
         },
         config = {
-            align = 'cm', -- position relative to the card, meaning "center left". Follow the SMODS UI guide for more alignment options
+            align = 'cm', 
             major = card,
             parent = card,
             offset = { x = 0, y = 1.5 } -- depends on the alignment you want, without an offset the button will look as if floating next to the card, instead of behind it
