@@ -328,7 +328,7 @@ return {
 				},
 			},
 			j_ocstobal_nike = {
-				name = { "Nike Logo", "{C:inactive,s:0.7}...of doom and despair{}"},
+				name = { "Nike Logo", "{C:inactive,s:0.7}...of doom and despair{}" },
 				text = {
 					"{C:red,s:2}Instantly Fucking Die{} on blind selection",
 					"{C:inactive,s:0.6}And get an achievement...{}",
@@ -1779,6 +1779,27 @@ return {
 				text = {
 					""
 				}
+			},
+			j_ocstobal_eight_melodies = {
+				name = "Eight Melodies",
+				text = {
+					{
+						"After {C:attention}8{} Rounds, instantly",
+						"defeat the next {C:attention}3 blinds{}",
+						"{C:inactive}Currently #1#/8 Rounds{}"
+					},
+					{
+						"{s:0.7,C:inactive}Take a melody... Simple as can be...",
+						"{s:0.7,C:inactive}Give it some words and... Sweet harmony...",
+						"{s:0.7,C:inactive}Raise your voices... All day long now,",
+						"{s:0.7,C:inactive}love grows strong now... Sing a melody of",
+						"{s:0.7,C:inactive}Love, oh love."
+					},
+					{
+						"{C:dark_edition,s:0.8}Origin : Earthbound Beginnings / Mother 1{}",
+						"{C:dark_edition,s:0.8}Ability Reference : Asylum Rejects{}"
+					}
+				}
 			}
 		},
 		Other = {
@@ -2191,23 +2212,22 @@ return {
 			k_ocstobal_solinium_extra1 = "Origin: Dog Man",
 			k_ocstobal_solinium_extra2 = "Yes, you read that right.",
 
-			k_ocstobal_voidinstlose_varthingy = "{100}100", --used to prevent the {100} from being hidden, unused lmfao
 			k_ocstobal_pwx_N = "{N}N",
 
 			k_ocstobal_shrimpo_quote1 = "I HATE THIS MOD!",
 			k_ocstobal_shrimpo_quote2 = "I HATE YOU!",
 			k_ocstobal_shrimpo_quote3 = "I HATE EVERYTHING!",
 
-			k_ocstobal_yatta_quote1 = "I hide my candy in vents, and you won't find them!!!",
-			k_ocstobal_yatta_quote2 = "HAHAHAHAHA!!!",
-			k_ocstobal_yatta_quote3 = "HIIII!!!",
-			k_ocstobal_yatta_quote4 = "I LOVE CANDY!!!",
+			k_ocstobal_yatta_quote1 = "AHAHAHAaaa... Thought of something funny!",
+			k_ocstobal_yatta_quote2 = "PHEW! Good thing my tail hasn't been TANGLED!",
+			k_ocstobal_yatta_quote3 = "Did I drop candy ANYWHERE in the elevator?",
+			k_ocstobal_yatta_quote4 = "BRING ME ANOTHER!!! More blinds... MORE!!",
 
 			k_ocstobal_me_1 = "oh, hi...",
 			k_ocstobal_me_2 = "i'm so sleepy, i want to sleep...",
 			k_ocstobal_me_3 = "making this mod is fun and unfun at the same time",
 			k_ocstobal_me_4 = "i am the eeper",
-			k_ocstobal_me_5 = "MEOWWWWWWWWWWW",
+			k_ocstobal_me_5 = "meoWWWWWWWWWWWW",
 			k_ocstobal_me_6 = "most un-subtle self insert ever",
 			k_ocstobal_me_7 = "no.1 freak, not really.",
 			k_ocstobal_me_8 = "play my mod!!!",
@@ -2217,7 +2237,7 @@ return {
 			k_ocstobal_me_12 = "i am indirectly responsible for solstro being a thing.",
 			k_ocstobal_me_13 = "uhhh... nyaaa~",
 			k_ocstobal_me_14 = "i guess i can help out..?",
-			k_ocstobal_me_15 = "are the other terminus' not good enough?",
+			k_ocstobal_me_15 = "i take game balance \"seriously\"",
 			k_ocstobal_me_16 = "500 e's in your score",
 
 			k_ocstobal_me_overscore_1 = "what the fuck",

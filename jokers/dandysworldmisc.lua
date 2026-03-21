@@ -19,19 +19,19 @@ SMODS.Joker {
         local dw = 0
         if G.jokers then
             for k, v in ipairs(G.jokers.cards) do
-                if v.config.center and v.config.center.pools.dandy then
+                if v.config.center.pools and v.config.center.pools.dandy then
                     dw = dw + 1
                 end
             end
             return {
                 vars = {
-                    d, (d * dw + 1)
+                    d, (d * (dw + 1))
                 }
             }
         else
             return {
                 vars = {
-                    d, d
+                    d, (d * (dw + 1))
                 }
             }
         end

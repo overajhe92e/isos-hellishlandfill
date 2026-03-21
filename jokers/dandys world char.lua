@@ -57,7 +57,7 @@ SMODS.Joker {
             G.GAME.blind.chips = math.floor(G.GAME.blind.chips ^ 0.75)
             G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
             return {
-                message = 'I hate you...'
+                message = '...'
             }
         end
     end
