@@ -18,6 +18,7 @@ SMODS.Joker {
         x = 7, y = 3
     },
     blueprint_compat = false,
+    iso_retriggerable = false,
     loc_vars = function(self, info_queue, card)
         local c = card.ability.extra
         info_queue[#info_queue + 1] = { set = "Other", key = "ocstobal_full_stop_1" }

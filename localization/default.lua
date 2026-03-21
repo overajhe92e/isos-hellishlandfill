@@ -1753,13 +1753,19 @@ return {
 						"{C:red}Destroys self{} if this joker has",
 						"{C:red}0 Ammo{} and {C:red}0 Atelier Logic Ammo{}",
 						"{C:attention}Ammo{} : {C:attention}#1#{}",
-						"{C:dark_edition,E:ocstobal_wavy}Atelier Logic Ammo{} : {C:attention}#2#{}",
-						"{C:attention}Poise Count{} : {C:attention}#3#{} | {C:attention}Poise Potency{} : {C:attention}#4#{}"
+						"{C:dark_edition,E:2}Atelier Logic Ammo{} : {C:attention}#2#{}",
+						"{C:attention}Poise Count{} : {C:attention}#3#{} | {C:attention}Poise Potency{} : {C:attention}#4#{}",
 					},
 					{
 						"{C:attention}Ability 1{} : {C:attention}#5#{}",
 						"{C:attention}Ability 2{} : {C:attention}#6#{}",
 						"{C:attention}Currently Using Ability #7#{}"
+					},
+					{
+						"{C:inactive,s:0.8}Alright Isotypical, we need to build up Poise for the-{}",
+						"{C:red,s:0.8}NOT NOW, CLOCKHEAD!{}",
+						"{C:red,s:0.8}I SEE AN UNATTENDED GNOME UP AHEAD!{}",
+						"{C:red,s:1.2}USING ATELIER LOGIC AMMO{}"
 					}
 				}
 			},
