@@ -3,9 +3,9 @@ SMODS.Joker { --Sparky
     config = {
         extra = {
             chips_min = 1,
-            chips_max = 111,
+            chips_max = 75,
             mult_min = 1,
-            mult_max = 111
+            mult_max = 35
         }
     },
     pos = {
@@ -36,9 +36,9 @@ SMODS.Joker { --Sparky
     calculate = function(self, card, context)
         if context.cardarea == G.jokers and context.joker_main then
             return {
-                chips = pseudorandom('chips_56647474', card.ability.extra.chips_min, card.ability.extra.chips_max),
+                chips = pseudorandom('c', card.ability.extra.chips_min, card.ability.extra.chips_max),
                 extra = {
-                    mult = pseudorandom('mult_6e0a705c', card.ability.extra.mult_min, card.ability.extra.mult_max)
+                    mult = pseudorandom('m', card.ability.extra.mult_min, card.ability.extra.mult_max)
                 }
             }
         end

@@ -16,7 +16,7 @@ SMODS.Joker {
     calculate = function(self, card, context)
         if context.joker_main and context.cardarea == G.jokers then
             return {
-                mult = 50,
+                mult = 10,
                 chips = 50
             }
         end

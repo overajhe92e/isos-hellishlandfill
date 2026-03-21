@@ -262,6 +262,15 @@ return {
 				text = {
 					"..?"
 				}
+			},
+			bl_ocstobal_ricardo = {
+				name = "The Big Brother",
+				text = {
+					"First hand must score over {C:attention}50%{}",
+					"of requirement, otherwise",
+					"{C:red}Doubled blind size{} and",
+					"25% Jokers are {C:red}debuffed{}"
+				}
 			}
 		},
 		Edition = {
@@ -742,8 +751,11 @@ return {
 			j_ocstobal_ichor = {
 				name = 'Ichor',
 				text = {
-					'Gives {C:money}$#2#{} Dollars',
-					'at the end of the round.',
+					'{C:money}$#2#{} Dollars at the ',
+					'{C:attention}end of the round{}',
+					"Dollar gain is {C:attention}multiplied{} by",
+					"the number of {C:dark_edition}Dandy's World{} Jokers",
+					"that are currently owned",
 					"{C:inactive}( Base Dollars = #1# ){}"
 				}
 			},

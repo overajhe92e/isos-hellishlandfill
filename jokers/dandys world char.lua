@@ -74,7 +74,6 @@ SMODS.Joker {
         return { vars = { localize('k_ocstobal_yatta_quote' .. pseudorandom("seed", 1, 4)) } }
     end,
     blueprint_compat = true,
-    no_collection = true,
     pools = { ["ocstob"] = true, ["dandy"] = true },
 
     calculate = function(self, card, context)

@@ -91,7 +91,7 @@ SMODS.Joker {
                 colour = G.C.RED
             }
         end
-        if context.joker_main then
+        if context.joker_main and not context.blueprint then
             if using == 1 then
                 if G.GAME.ISO_Ability_A == "ret_fire" then
                     c.poise_potency = c.poise_potency + 1
@@ -155,12 +155,28 @@ SMODS.Joker {
         end
         if context.after and not context.blueprint then
             if using == 1 then
-                if G.GAME.ISO_Ability_A == "" then
-
+                if G.GAME.ISO_Ability_A == "bulls" then
+                    c.poise_count = c.poise_count + 2
+                    return {
+                        message = "+2 Poise Count"
+                    }
+                elseif G.GAME.ISO_Ability_A == "hv" then
+                    c.poise_count = c.poise_count + 2
+                    return {
+                        message = "+2 Poise Count"
+                    }
                 end
             elseif using == 2 then
-                if G.GAME.ISO_Ability_B == "" then
-
+                if G.GAME.ISO_Ability_B == "bulls" then
+                    c.poise_count = c.poise_count + 2
+                    return {
+                        message = "+2 Poise Count"
+                    }
+                elseif G.GAME.ISO_Ability_B == "hv" then
+                    c.poise_count = c.poise_count + 2
+                    return {
+                        message = "+2 Poise Count"
+                    }
                 end
             end
         end

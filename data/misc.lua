@@ -269,6 +269,16 @@ SMODS.ObjectType({
 })
 
 SMODS.ObjectType({
+	key = "dandy",
+	default = "j_ocstobal_dw_astro",
+	cards = {},
+	inject = function(self)
+		SMODS.ObjectType.inject(self)
+		self:inject_card(G.P_CENTERS.j_lucky_cat)
+	end,
+})
+
+SMODS.ObjectType({
 	key = "wire",
 	default = "j_ocstobal_steelwire",
 	cards = {
@@ -329,6 +339,12 @@ SMODS.Sound {
 	key = "weird",
 	path = "superweirdsound.ogg",
 	pitch = 15
+}
+
+SMODS.Sound {
+	key = "gore5",
+	path = "gore5.ogg",
+	pitch = 1
 }
 
 SMODS.Sound {

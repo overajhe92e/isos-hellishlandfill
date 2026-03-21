@@ -137,7 +137,7 @@ SMODS.Back {
 	pos = { x = 5, y = 0 },
 	unlocked = false,
 	loc_vars = function(self, info_queue, back)
-		return { key = unik_detect == true and self.key.."_unik" or nil }
+		return { key = ISO_unik == true and self.key.."_unik" or nil }
 	end,
 	apply = function(self, back)
 		if not unik_detect then
