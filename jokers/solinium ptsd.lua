@@ -38,3 +38,12 @@ SMODS.Joker {
         end
     end
 }
+
+SMODS.Joker {
+    key = "petey",
+    cost = 12,
+    rarity = 3,
+    atlas = "other_jokers",
+    pos = {x=6,y=1},
+    soul_pos = {x=7,y=1},
+}
