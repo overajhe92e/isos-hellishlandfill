@@ -62,7 +62,7 @@ SMODS.Joker {
     calculate = function(self, card, context)
         local c = card.ability.extra
         local using = c.using
-        if context.setting_blind and not context.blueprint then
+        if context.setting_blind and not context.blueprint and not context.retrigger_joker then
             local a = math.random(1,6)
             local b = math.random(1,6)
             if a <= 3 then
@@ -154,7 +154,7 @@ SMODS.Joker {
                 end
             end
         end
-        if context.after and not context.blueprint then
+        if context.after and not context.blueprint and not context.joker_retrigger then
             if using == 1 then
                 if G.GAME.ISO_Ability_A == "bulls" then
                     c.poise_count = c.poise_count + 2
@@ -216,4 +216,22 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
     end
+}
+
+SMODS.Joker {
+    key = "don_quixote",
+    cost = 100,
+    rarity = 1,
+    atlas = "other_jokers",
+    pos = {x=8,y=0},
+    soul_pos = {x=9,y=0}
+}
+
+SMODS.Joker {
+    key = "clockhead",
+    cost = 10,
+    rarity = 3,
+    atlas = "other_jokers",
+    pos = {x=8,y=1},
+    soul_pos = {x=9,y=1}
 }

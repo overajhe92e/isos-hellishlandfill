@@ -715,7 +715,7 @@ return {
 			j_ocstobal_normalsugar = {
 				name = 'Sugar Rush',
 				text = {
-					'Gives {C:blue}+50{} Chips and {C:red}+50{} Mult',
+					'Gives {C:blue}+50{} Chips and {C:red}+10{} Mult',
 					'Playing 100 hands creates a {C:red}Sugar Crash{}',
 					'{C:inactive}[ Currently #1# hands left ]{}'
 				}
@@ -1616,6 +1616,21 @@ return {
 					"{C:dark_edition,E:1,s:0.6}Yeah, revolutionary I know.{}"
 				}
 			},
+			j_ocstobal_petey = {
+				name = "Petey The Cat",
+				text = {
+					"Mothering Heights eh?",
+					"Wuthering Heights... wait",
+					"{C:iso_dark_purple}OH, ROUND AND ROUND WE GO{}",
+					"{C:iso_dark_purple}HOLDING ONTO PAIN{}",
+					"{C:iso_dark_purple}DRIVEN BY OUR EGOS{}",
+					"{C:iso_dark_purple}FEELINGS (Feelings) UNTOLD{}",
+					"{C:iso_dark_purple}SPINNING OUR OWWWN{}",
+					"{C:iso_dark_purple}VERSIONS OF THE PAST{}",
+					"{C:iso_dark_purple}THAT YOU COULD NEVER KNOW{}",
+					"{C:iso_dark_purple}CAUSE I KNOW-{}"
+				}
+			},
 			j_ocstobal_hatred_hunter = {
 				name = "Hunter of Hatreds",
 				text = {
@@ -1805,6 +1820,23 @@ return {
 						"{C:dark_edition,s:0.8}Origin : Earthbound Beginnings / Mother 1{}",
 						"{C:dark_edition,s:0.8}Ability Reference : Asylum Rejects{}"
 					}
+				}
+			},
+			j_ocstobal_don_quixote = {
+				name = {
+					"Don Quixote",
+					"{C:attention,s:0.7}THE CREATURE{}"
+				},
+				text = {
+					"{E:ocstobal_shake,C:attention}MANAGER ESQUIRE!!!!!!{}"
+				}
+			},
+			j_ocstobal_clockhead = {
+				name = {"Dante", "{s:0.7}\"Clockhead\"{}"},
+				text = {
+					"Select 1 Ability using {C:attention}Durante{}",
+					"Re-usable after {C:attention}2 Antes{}",
+					"Currently inactive"
 				}
 			}
 		},
