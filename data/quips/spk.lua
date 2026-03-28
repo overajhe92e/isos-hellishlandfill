@@ -10,7 +10,7 @@ ISO_EXT.spk_losses = {
     "A-aw..."
 }
 
-for i = 1, #ISO_EXT.sph_wins do
+for i = 1, #ISO_EXT.spk_wins do
     SMODS.JimboQuip {
         key = "spk_wins_" .. i,
         type = 'win',
@@ -25,7 +25,7 @@ for i = 1, #ISO_EXT.sph_wins do
     }
 end
 
-for i = 1, #ISO_EXT.sph_losses do
+for i = 1, #ISO_EXT.spk_losses do
     SMODS.JimboQuip {
         key = "spk_losses_" .. i,
         type = 'loss',
