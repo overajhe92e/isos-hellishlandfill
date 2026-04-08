@@ -76,7 +76,7 @@ return {
 					'{C:attention}Win Ante{} is Ante {C:attention}16{}'
 				},
 				unlock = {
-					'Defeat {C:ocstobal_ust}Omega Boss Rush{}',
+					'Defeat {C:ocstobal_ust}Hyperfusion{}',
 					'on {C:ocstobal_nightmare_purple}Cruelty Stake{}'
 				}
 			},
@@ -186,25 +186,19 @@ return {
 				}
 			},
 			bl_ocstobal_bossrush = {
-				name = "Boss Rush",
+				name = "Fused Blind",
 				text = {
-					'Defeat The Knife',
-					'Oxidization',
-					'and The Scalae'
+					'Applies The Knife,',
+					'Oxidzation, and',
+					'The Scalae\'s effects'
 				}
 			},
 			bl_ocstobal_bossrushomega = {
 				name = "Kuolemankiire",
 				text = {
-					'Defeat {C:red}ALL{} Iso. Junkyard',
-					'blinds. Includes special',
-					'blind variants.'
-				}
-			},
-			bl_ocstobal_bossrushend = {
-				name = "Boss Rush",
-				text = {
-					'Defeat this blind to win!'
+					'Merges {C:red}every{} Junkyard',
+					'Blind effects into one.',
+					'{C:inactive,s:0.7}Excluding Pisarakipua{}'
 				}
 			},
 			bl_ocstobal_BLACKKNIFE = {
@@ -275,26 +269,11 @@ return {
 		},
 		Edition = {
 			e_ocstobal_hidden1 = {
-				name = 'Hate',
+				name = 'EVIL ASS red',
 				text = {
-					'-1 Joker Slot',
-					'"Isn\'t this just Positive?"',
-					'{C:red}"SHUT UP."{}'
+					'-1 Joker Slot.',
 				}
 			},
-			e_ocstobal_hidden2 = {
-				name = 'Evil',
-				text = {
-					'-1 Joker Slot',
-					'Many more debuffs here yeah'
-				}
-			},
-			e_ocstobal_darkfoil = {
-				name = 'Darkened Foil',
-				text = {
-					'{X:ocstobal_sewh,C:chips}^^2{} Chips'
-				}
-			}
 		},
 		Enhanced = {
 			m_ocstobal_du238 = {
@@ -326,6 +305,12 @@ return {
 					'{C:dark_edition,s:0.9}Origin : No origin?{}',
 					'{s:0.8,C:dark_edition}Character by Isotypical{}'
 				},
+			},
+			j_ocstobal_nitra = {
+				name = {"???"},
+				text = {
+					"SHE'S DEAD, OXIDYZE."
+				}
 			},
 			j_ocstobal_nike = {
 				name = { "Nike Logo", "{C:inactive,s:0.7}...of doom and despair{}" },
