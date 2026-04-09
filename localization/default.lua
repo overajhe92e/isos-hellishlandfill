@@ -489,8 +489,8 @@ return {
 			j_ocstobal_sparky = {
 				name = { "Sparky", "{s:0.7,C:blue}Too Timid and Shy{}" },
 				text = {
-					'Randomly gives between {C:blue}+1 and +111{} Chips,',
-					'and randomly gives between {C:red}+1 and +111{} mult.',
+					'Randomly gives between {C:blue}+#2# and +#3#{} Chips,',
+					'and randomly gives between {C:red}+#4# and +#5#{} mult.',
 					'{C:blue,s:0.9}#1#{}',
 					'{C:dark_edition,s:0.9}Origin: Fundamental Paper Education{}'
 				}
@@ -499,8 +499,8 @@ return {
 			j_ocstobal_sparky_alt = {
 				name = "Close enough, welcome back FPE Abbie",
 				text = {
-					'Randomly gives between {C:blue}+1 and +111{} Chips,',
-					'and randomly gives between {C:red}+1 and +111{} mult.',
+					'Randomly gives between {C:blue}+#2# and +#3#{} Chips,',
+					'and randomly gives between {C:red}+#4# and +#5#{} mult.',
 					'{C:blue,s:0.9}#1#{}',
 					'{C:dark_edition,s:0.9}Origin: Fundamental Paper Education{}'
 				}
@@ -988,22 +988,6 @@ return {
 					}
 				}
 			},
-			j_ocstobal_starspacechat = {
-				name = { "Starspace VC", "{s:0.7,C:red}Uh oh.{}" },
-				text = {
-					{
-						"{C:legendary}if{} {C:blue}context{}.{C:green}joker_main{} {C:legendary}then{}",
-						"{C:blue}card{}.{C:green}ability{}.{C:green}extra{}.{C:green}hyperop{} + {C:green}1{}",
-						"{C:blue}card{}.{C:green}ability{}.{C:green}extra{}.{C:green}mult{} + {C:green}1{}",
-						"{C:legendary}return #4#{} {C:green}hypermult{} = {C:blue}#4#{} {C:blue}card{}.{C:green}ability{}.{C:green}extra{}.{C:green}hyperop{}, {C:blue}card{}.{C:green}ability{}.{C:green}extra{}.{C:green}mult{} {C:blue}#5#{} {C:legendary}#5# end end{}",
-					},
-					{
-						"{C:legendary}if {C:blue}context{}.{C:green}retrigger_joker_check{} and {C:blue}context{}.{C:green}other_joker{} == {C:blue}card{} {C:legendary}then{}",
-						"{C:blue}local holy_shit{} = #6#{C:blue}DISCORD{}.{C:green}SERVERS{}.{C:green}STARSPACE{}.{C:green}VC{}.{C:green}rule_2_breaks{}",
-						"{C:legendary}return #4#{} {C:green}repetitions{} = {C:blue}holy_shit{} {C:legendary}#5# end{}",
-					}
-				}
-			},
 			j_ocstobal_ripoff = {
 				name = "Epävakaaelämänmuoto",
 				text = {
@@ -1031,7 +1015,7 @@ return {
 				name = "Claire",
 				text = {
 					"{C:blue}+31{} Chips",
-					"{C:inactive,s:0.8}One of the worst jokers in the mod.{}"
+					"{C:inactive,s:0.8}The WORST Joker in the mod.{}"
 				}
 			},
 			j_ocstobal_oxydeceit = {
@@ -1606,24 +1590,9 @@ return {
 				text = {
 					"Mothering Heights eh?",
 					"Wuthering Heights... wait",
-					"{C:iso_dark_purple}OH, ROUND AND ROUND WE GO{}",
-					"{C:iso_dark_purple}HOLDING ONTO PAIN{}",
-					"{C:iso_dark_purple}DRIVEN BY OUR EGOS{}",
-					"{C:iso_dark_purple}FEELINGS (Feelings) UNTOLD{}",
-					"{C:iso_dark_purple}SPINNING OUR OWWWN{}",
-					"{C:iso_dark_purple}VERSIONS OF THE PAST{}",
-					"{C:iso_dark_purple}THAT YOU COULD NEVER KNOW{}",
-					"{C:iso_dark_purple}CAUSE I KNOW-{}"
-				}
-			},
-			j_ocstobal_hatred_hunter = {
-				name = "Hunter of Hatreds",
-				text = {
-					{
-						"Applies buffs for each {C:iso_crimson}Hatred{}",
-						"that has been {C:red}destroyed{} by",
-						"the {C:ocstobal_sewh}Eternal Dagger{}"
-					}
+					"{C:iso_dark_purple}I could be the reason why{}",
+					"{C:iso_dark_purple}You were able to be kind{}",
+					"{C:iso_dark_purple}And the hearts we held so tight won't stay broke- AAA{}",
 				}
 			},
 			j_ocstobal_neveragain = {
@@ -1689,13 +1658,6 @@ return {
 					{
 						"{C:red}I know what you are, Sparky Elle.{}"
 					}
-				}
-			},
-			j_ocstobal_freak_gang_vc = {
-				name = "Starspace \"Freak Gang\" GC",
-				text = {
-					"{C:ocstobal_ust}Completely Annihilates ANY sort of balance{}",
-					"{C:ocstobal_ust}that was left in this mod{}"
 				}
 			},
 			j_ocstobal_sleep_deprived = {

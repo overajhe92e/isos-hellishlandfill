@@ -374,16 +374,6 @@ SMODS.Joker {
 }
 
 SMODS.Joker {
-    key = "hatred_hunter",
-    cost = 10,
-    rarity = 3,
-    loc_vars = function(self, info_queue, card)
-    end,
-    calculate = function(self, card, context)
-    end
-}
-
-SMODS.Joker {
     key = "freethinker",
     cost = 1,
     rarity = 1,

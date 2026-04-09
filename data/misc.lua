@@ -653,15 +653,6 @@ SMODS.current_mod.optional_features = {
 		deck = true
 	}
 }
--- how much morefluff
-function pk_love(joker)
-	if joker.config.center.pk_love == true then
-		return true
-	elseif type(joker.config.center.pk_love) == "function" then
-		return joker.config.center.pk_love(joker)
-	end
-	return false
-end
 
 SMODS.Shader {
 	key = 'fluorescent',

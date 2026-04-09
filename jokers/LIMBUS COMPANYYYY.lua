@@ -235,3 +235,16 @@ SMODS.Joker {
     pos = {x=8,y=1},
     soul_pos = {x=9,y=1}
 }
+
+--[[
+    dantehhh
+    Keter / Pigrita : Remove Small Blind for 1 Ante, Halve Blind Size on blind select
+    Binah / Superbia : Create a random Legendary Joker that destroys self at the end of the round
+    Chesed / Morositas : Sets Blind Size and Dollars to the Avg. of all 3, Chip-Mult Balance is enabled for Current Ante
+    Gebura / Ira : Jokers become Undebuffable, And are retriggered once
+    Tiphreth : ?
+    Yesod : ?
+    Neztach : ?
+    Hod : ?
+    Makluth : Joker Rarity weights become equal...?
+]]

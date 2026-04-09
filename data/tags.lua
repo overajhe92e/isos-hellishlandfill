@@ -97,6 +97,13 @@ SMODS.Tag {
             end
         end
     end,
+    in_pool = function()
+        if next(SMODS.find_mod("altid")) then
+            return false
+        else
+            return true
+        end
+    end
 }
 
 SMODS.Tag {

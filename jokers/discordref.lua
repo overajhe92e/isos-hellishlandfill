@@ -33,47 +33,6 @@ SMODS.Joker {
 }
 
 SMODS.Joker {
-    key = 'starspacechat',
-    cost = 5000,
-    rarity = "ocstobal_omega",
-    config = {
-        extra = {
-            retrig = 1000,
-            mult = 2,
-            hyperop = 2
-        }
-    },
-    atlas = 'other_jokers',
-    pools = { ["ocstob"] = false, ["all_junk"] = false },
-    pos = { x = 0, y = 3 },
-
-    loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { set = "Other", key = "ocstobal_98percent", vars = { card.ability.extra.retrig, card.ability.extra.hyperop, card.ability.extra.mult, "{", "}" } }
-        return {
-            vars = {
-                card.ability.extra.mult, card.ability.extra.hyperop, card.ability.extra.retrig, "{", "}", "#",
-            }
-        }
-    end,
-
-    calculate = function(self, card, context)
-        if context.joker_main then
-            card.ability.extra.hyperop = card.ability.extra.hyperop + 1
-            card.ability.extra.mult = card.ability.extra.mult + 1
-            return {
-                hypermult = { card.ability.extra.hyperop, card.ability.extra.mult }
-            }
-        end
-        if context.retrigger_joker_check and context.other_card == card then
-            return {
-                remove_default_message = true,
-                repetitions = card.ability.extra.retrig
-            }
-        end
-    end
-}
-
-SMODS.Joker {
     key = "neveragain",
     cost = 1,
     rarity = 1,
@@ -174,59 +133,6 @@ SMODS.Joker {
                     message = "Nope!"
                 }
             end
-        end
-    end
-}
-
-SMODS.Joker {
-    key = 'freak_gang_vc',
-    cost = 1e200,
-    rarity = "ocstobal_omega",
-    config = {
-        extra = {
-            retrig = 1337,
-            mult = 2,
-            hyperop = 2,
-            chip = 2
-        }
-    },
-    atlas = 'other_jokers',
-    pools = { ["ocstob"] = false, ["all_junk"] = false },
-    pos = { x = 0, y = 3 },
-
-    add_to_deck = function(self, from_debuff, card)
-        G.GAME.iso_starspace_horny_hour = true
-    end,
-
-    remove_from_deck = function(self, from_debuff, card)
-        G.GAME.iso_starspace_horny_hour = false
-    end,
-
-    loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { set = "Other", key = "ocstobal_actual_horror", vars = { card.ability.extra.retrig, card.ability.extra.hyperop, card.ability.extra.mult, "{", "}" } }
-        return {
-            vars = {
-                card.ability.extra.mult, card.ability.extra.hyperop, card.ability.extra.retrig, "{", "}", "#"
-            }
-        }
-    end,
-
-    calculate = function(self, card, context)
-        if context.joker_main then
-            card.ability.extra.hyperop = card.ability.extra.hyperop * 1.01
-            card.ability.extra.mult = card.ability.extra.mult * 1.01
-            return {
-                chips = 2,
-                mult = 2,
-                hyperchips = { card.ability.extra.hyperop, card.ability.extra.mult },
-                hypermult = { card.ability.extra.hyperop, card.ability.extra.mult }
-            }
-        end
-        if context.retrigger_joker_check and context.other_card == card then
-            return {
-                remove_default_message = true,
-                repetitions = card.ability.extra.retrig
-            }
         end
     end
 }
