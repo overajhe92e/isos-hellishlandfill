@@ -130,33 +130,6 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
-	key = 'impossible',
-	px = 34,
-	py = 34,
-	path = 'omegainf.png',
-	atlas_table = 'ANIMATION_ATLAS',
-	frames = 15
-}
-
-SMODS.Atlas {
-	key = 'rngatlas',
-	px = 34,
-	py = 34,
-	path = 'rng.png',
-	atlas_table = 'ANIMATION_ATLAS',
-	frames = 12
-}
-
-SMODS.Atlas {
-	key = 'unstable',
-	px = 34,
-	py = 34,
-	path = 'PRAY.png',
-	atlas_table = 'ANIMATION_ATLAS',
-	frames = 24
-}
-
-SMODS.Atlas {
 	key = 'pklove',
 	px = 71,
 	py = 95,
@@ -287,23 +260,6 @@ SMODS.ObjectType({
 })
 
 SMODS.Atlas {
-	key = 'omegarush',
-	px = 34,
-	py = 34,
-	path = 'omegarush.png',
-	atlas_table = 'ANIMATION_ATLAS',
-	frames = 35
-}
-
-SMODS.Atlas {
-	key = 'friedshrimp',
-	px = 71,
-	py = 95,
-	path = 'SHRIMPO.png',
-	atlas_table = 'ASSET_ATLAS'
-}
-
-SMODS.Atlas {
 	key = 'dw',
 	px = 71,
 	py = 95,
@@ -383,29 +339,12 @@ SMODS.Sound {
 }
 
 SMODS.Atlas {
-	key = 'omegarush',
-	px = 34,
-	py = 34,
-	path = 'omegarush.png',
-	atlas_table = 'ANIMATION_ATLAS',
-	frames = 35
-}
-
-SMODS.Atlas {
 	key = 'junkyardblinds',
 	px = 34,
 	py = 34,
 	path = "junkyardblinds.png",
 	atlas_table = 'ANIMATION_ATLAS',
 	frames = 21
-}
-
-SMODS.Atlas {
-	key = 'spkawk_classic',
-	px = 71,
-	py = 95,
-	path = 'clsspkawk.png',
-	atlas_table = 'ASSET_ATLAS'
 }
 
 SMODS.Atlas {
@@ -433,29 +372,11 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
-	key = 'starman',
-	px = 34,
-	py = 34,
-	path = 'starman.png',
-	atlas_table = 'ANIMATION_ATLAS',
-	frames = 24
-}
-
-SMODS.Atlas {
 	key = "placeholder",
 	px = 71,
 	py = 95,
 	path = "placeholder.png",
 	atlas_table = 'ASSET_ATLAS'
-}
-
-SMODS.Atlas {
-	key = 'giegueblind',
-	px = 34,
-	py = 34,
-	path = "Giygas Is Fucking Dying.png",
-	atlas_table = "ANIMATION_ATLAS",
-	frames = 16
 }
 
 SMODS.Atlas {
