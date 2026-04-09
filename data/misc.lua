@@ -382,6 +382,18 @@ SMODS.Sound {
 	pitch = 1
 }
 
+SMODS.Sound {
+	key = "manager_esquire",
+	path = "manager_esquire.ogg",
+	pitch = 1
+}
+
+SMODS.Sound {
+	key = "ONWARD_ROCHINATE",
+	path = "onward_rochinate.ogg",
+	pitch = 1
+}
+
 SMODS.Atlas {
 	key = 'omegarush',
 	px = 34,
