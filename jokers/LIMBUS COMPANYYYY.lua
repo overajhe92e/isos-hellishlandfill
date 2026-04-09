@@ -235,7 +235,6 @@ SMODS.Joker {
     pos = {x=8,y=1},
     soul_pos = {x=9,y=1}
 }
-
 --[[
     dantehhh
     Keter / Pigrita : Remove Small Blind for 1 Ante, Halve Blind Size on blind select
