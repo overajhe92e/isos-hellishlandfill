@@ -1,12 +1,10 @@
 SMODS.Joker { --HER.
     key = "ocksie",
-    rarity = 3,
+    rarity = 'ocstobal_epic',
     cost = 1,
     config = {
         extra = {
             retrig = 1,
-            clash_win = 3,
-            clash_denom = 6
         }
     },
     loc_vars = function(self, info_queue, card)

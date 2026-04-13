@@ -76,7 +76,7 @@ return {
 					'{C:attention}Win Ante{} is Ante {C:attention}16{}'
 				},
 				unlock = {
-					'Defeat {C:ocstobal_ust}Omega Boss Rush{}',
+					'Defeat {C:ocstobal_ust}Hyperfusion{}',
 					'on {C:ocstobal_nightmare_purple}Cruelty Stake{}'
 				}
 			},
@@ -186,25 +186,19 @@ return {
 				}
 			},
 			bl_ocstobal_bossrush = {
-				name = "Boss Rush",
+				name = "Fused Blind",
 				text = {
-					'Defeat The Knife',
-					'Oxidization',
-					'and The Scalae'
+					'Applies The Knife,',
+					'Oxidzation, and',
+					'The Scalae\'s effects'
 				}
 			},
 			bl_ocstobal_bossrushomega = {
 				name = "Kuolemankiire",
 				text = {
-					'Defeat {C:red}ALL{} Iso. Junkyard',
-					'blinds. Includes special',
-					'blind variants.'
-				}
-			},
-			bl_ocstobal_bossrushend = {
-				name = "Boss Rush",
-				text = {
-					'Defeat this blind to win!'
+					'Merges {C:red}every{} Junkyard',
+					'Blind effects into one.',
+					'{C:inactive,s:0.7}Excluding Pisarakipua{}'
 				}
 			},
 			bl_ocstobal_BLACKKNIFE = {
@@ -275,26 +269,11 @@ return {
 		},
 		Edition = {
 			e_ocstobal_hidden1 = {
-				name = 'Hate',
+				name = 'EVIL ASS red',
 				text = {
-					'-1 Joker Slot',
-					'"Isn\'t this just Positive?"',
-					'{C:red}"SHUT UP."{}'
+					'-1 Joker Slot.',
 				}
 			},
-			e_ocstobal_hidden2 = {
-				name = 'Evil',
-				text = {
-					'-1 Joker Slot',
-					'Many more debuffs here yeah'
-				}
-			},
-			e_ocstobal_darkfoil = {
-				name = 'Darkened Foil',
-				text = {
-					'{X:ocstobal_sewh,C:chips}^^2{} Chips'
-				}
-			}
 		},
 		Enhanced = {
 			m_ocstobal_du238 = {
@@ -326,6 +305,12 @@ return {
 					'{C:dark_edition,s:0.9}Origin : No origin?{}',
 					'{s:0.8,C:dark_edition}Character by Isotypical{}'
 				},
+			},
+			j_ocstobal_nitra = {
+				name = {"???"},
+				text = {
+					"SHE'S DEAD, OXIDYZE."
+				}
 			},
 			j_ocstobal_nike = {
 				name = { "Nike Logo", "{C:inactive,s:0.7}...of doom and despair{}" },
@@ -504,8 +489,8 @@ return {
 			j_ocstobal_sparky = {
 				name = { "Sparky", "{s:0.7,C:blue}Too Timid and Shy{}" },
 				text = {
-					'Randomly gives between {C:blue}+1 and +111{} Chips,',
-					'and randomly gives between {C:red}+1 and +111{} mult.',
+					'Randomly gives between {C:blue}+#2# and +#3#{} Chips,',
+					'and randomly gives between {C:red}+#4# and +#5#{} mult.',
 					'{C:blue,s:0.9}#1#{}',
 					'{C:dark_edition,s:0.9}Origin: Fundamental Paper Education{}'
 				}
@@ -514,8 +499,8 @@ return {
 			j_ocstobal_sparky_alt = {
 				name = "Close enough, welcome back FPE Abbie",
 				text = {
-					'Randomly gives between {C:blue}+1 and +111{} Chips,',
-					'and randomly gives between {C:red}+1 and +111{} mult.',
+					'Randomly gives between {C:blue}+#2# and +#3#{} Chips,',
+					'and randomly gives between {C:red}+#4# and +#5#{} mult.',
 					'{C:blue,s:0.9}#1#{}',
 					'{C:dark_edition,s:0.9}Origin: Fundamental Paper Education{}'
 				}
@@ -1000,22 +985,6 @@ return {
 					}
 				}
 			},
-			j_ocstobal_starspacechat = {
-				name = { "Starspace VC", "{s:0.7,C:red}Uh oh.{}" },
-				text = {
-					{
-						"{C:legendary}if{} {C:blue}context{}.{C:green}joker_main{} {C:legendary}then{}",
-						"{C:blue}card{}.{C:green}ability{}.{C:green}extra{}.{C:green}hyperop{} + {C:green}1{}",
-						"{C:blue}card{}.{C:green}ability{}.{C:green}extra{}.{C:green}mult{} + {C:green}1{}",
-						"{C:legendary}return #4#{} {C:green}hypermult{} = {C:blue}#4#{} {C:blue}card{}.{C:green}ability{}.{C:green}extra{}.{C:green}hyperop{}, {C:blue}card{}.{C:green}ability{}.{C:green}extra{}.{C:green}mult{} {C:blue}#5#{} {C:legendary}#5# end end{}",
-					},
-					{
-						"{C:legendary}if {C:blue}context{}.{C:green}retrigger_joker_check{} and {C:blue}context{}.{C:green}other_joker{} == {C:blue}card{} {C:legendary}then{}",
-						"{C:blue}local holy_shit{} = #6#{C:blue}DISCORD{}.{C:green}SERVERS{}.{C:green}STARSPACE{}.{C:green}VC{}.{C:green}rule_2_breaks{}",
-						"{C:legendary}return #4#{} {C:green}repetitions{} = {C:blue}holy_shit{} {C:legendary}#5# end{}",
-					}
-				}
-			},
 			j_ocstobal_ripoff = {
 				name = "Epävakaaelämänmuoto",
 				text = {
@@ -1043,7 +1012,7 @@ return {
 				name = "Claire",
 				text = {
 					"{C:blue}+31{} Chips",
-					"{C:inactive,s:0.8}One of the worst jokers in the mod.{}"
+					"{C:inactive,s:0.8}The WORST Joker in the mod.{}"
 				}
 			},
 			j_ocstobal_oxydeceit = {
@@ -1618,24 +1587,9 @@ return {
 				text = {
 					"Mothering Heights eh?",
 					"Wuthering Heights... wait",
-					"{C:iso_dark_purple}OH, ROUND AND ROUND WE GO{}",
-					"{C:iso_dark_purple}HOLDING ONTO PAIN{}",
-					"{C:iso_dark_purple}DRIVEN BY OUR EGOS{}",
-					"{C:iso_dark_purple}FEELINGS (Feelings) UNTOLD{}",
-					"{C:iso_dark_purple}SPINNING OUR OWWWN{}",
-					"{C:iso_dark_purple}VERSIONS OF THE PAST{}",
-					"{C:iso_dark_purple}THAT YOU COULD NEVER KNOW{}",
-					"{C:iso_dark_purple}CAUSE I KNOW-{}"
-				}
-			},
-			j_ocstobal_hatred_hunter = {
-				name = "Hunter of Hatreds",
-				text = {
-					{
-						"Applies buffs for each {C:iso_crimson}Hatred{}",
-						"that has been {C:red}destroyed{} by",
-						"the {C:ocstobal_sewh}Eternal Dagger{}"
-					}
+					"{C:iso_dark_purple}I could be the reason why{}",
+					"{C:iso_dark_purple}You were able to be kind{}",
+					"{C:iso_dark_purple}And the hearts we held so tight won't stay broke- AAA{}",
 				}
 			},
 			j_ocstobal_neveragain = {
@@ -1701,13 +1655,6 @@ return {
 					{
 						"{C:red}I know what you are, Sparky Elle.{}"
 					}
-				}
-			},
-			j_ocstobal_freak_gang_vc = {
-				name = "Starspace \"Freak Gang\" GC",
-				text = {
-					"{C:ocstobal_ust}Completely Annihilates ANY sort of balance{}",
-					"{C:ocstobal_ust}that was left in this mod{}"
 				}
 			},
 			j_ocstobal_sleep_deprived = {

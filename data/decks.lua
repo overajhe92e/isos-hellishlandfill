@@ -49,25 +49,25 @@ SMODS.Back {
 -- 	end
 -- }
 
-SMODS.Back {
-	key = "extremepain",
-	atlas = 'decks',
-	pos = { x = 4, y = 0 },
-	config = { jokers = { 'j_ocstobal_somethingevil' }, ante_scaling = 0.25, joker_slot = 1 },
-	unlocked = false,
-	loc_vars = function(self, info_queue, back)
-		return {
-			vars = { localize { type = 'name_text', key = 'j_ocstobal_somethingevil', set = 'jokers' } },
-			self
-				.config.jokers[1],
-			self.config.joker_slot,
-			self.config.ante_scaling
-		}
-	end,
-	check_for_unlock = function(self, args)
-		return args.type == 'win_stake' and get_deck_win_stake() >= 1
-	end
-}
+-- SMODS.Back {
+-- 	key = "extremepain",
+-- 	atlas = 'decks',
+-- 	pos = { x = 4, y = 0 },
+-- 	config = { jokers = { 'j_ocstobal_somethingevil' }, ante_scaling = 0.25, joker_slot = 1 },
+-- 	unlocked = false,
+-- 	loc_vars = function(self, info_queue, back)
+-- 		return {
+-- 			vars = { localize { type = 'name_text', key = 'j_ocstobal_somethingevil', set = 'jokers' } },
+-- 			self
+-- 				.config.jokers[1],
+-- 			self.config.joker_slot,
+-- 			self.config.ante_scaling
+-- 		}
+-- 	end,
+-- 	check_for_unlock = function(self, args)
+-- 		return args.type == 'win_stake' and get_deck_win_stake() >= 1
+-- 	end
+-- }
 
 SMODS.Back {
 	key = "copycat",

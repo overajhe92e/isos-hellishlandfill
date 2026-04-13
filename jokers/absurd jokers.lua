@@ -140,31 +140,32 @@ SMODS.Joker { --so you know polterwor
 --     cost = 1e307,
 --     no_collection = true
 -- }
-SMODS.Joker { --right before getting aio joker
-    key = 'ripoff',
-    rarity = 'ocstobal_beyondexotic',
-    cost = 2000,
-    atlas = 'CustomJokers',
-    pos = { x = 9, y = 1 },
-    soul_pos = {
-        x = 0, y = 2
-    },
-    blueprint_compat = true,
-    no_collection = true,
-    pools = {
-        ["fucking_absurd"] = true,
-        ["all_junk"] = true
-    },
 
-    calculate = function(self, card, context)
-        if context.joker_main then
-            return {
-                hypermult = { 4, 2 },
-                eechips = 2
-            }
-        end
-    end
-}
+-- SMODS.Joker {
+--     key = 'ripoff',
+--     rarity = 'ocstobal_beyondexotic',
+--     cost = 2000,
+--     atlas = 'CustomJokers',
+--     pos = { x = 9, y = 1 },
+--     soul_pos = {
+--         x = 0, y = 2
+--     },
+--     blueprint_compat = true,
+--     no_collection = true,
+--     pools = {
+--         ["fucking_absurd"] = true,
+--         ["all_junk"] = true
+--     },
+
+--     calculate = function(self, card, context)
+--         if context.joker_main then
+--             return {
+--                 hypermult = { 4, 2 },
+--                 eechips = 2
+--             }
+--         end
+--     end
+--}
 
 SMODS.Joker { --terminus go brrrrt
     key = 'sphawk',
@@ -371,16 +372,6 @@ SMODS.Joker {
 
         }
     end,
-}
-
-SMODS.Joker {
-    key = "hatred_hunter",
-    cost = 10,
-    rarity = 3,
-    loc_vars = function(self, info_queue, card)
-    end,
-    calculate = function(self, card, context)
-    end
 }
 
 SMODS.Joker {

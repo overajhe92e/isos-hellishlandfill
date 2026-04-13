@@ -18,17 +18,13 @@ SMODS.Joker { --Sparky
     },
     cost = 9,
     rarity = 2,
-    blueprint_compat = true,
-    eternal_compat = true,
-    perishable_compat = true,
-    unlocked = true,
-    discovered = false,
     atlas = 'triple_s',
     pools = { ["ocstob"] = true, ["all_junk"] = true },
 
-    loc_vars = function(self, info_queue, center)
+    loc_vars = function(self, info_queue, card)
+        local c = card.ability.extra
         return {
-            vars = { localize('k_ocstobal_sparky_quote' .. pseudorandom("seed", 1, 4)) },
+            vars = { localize('k_ocstobal_sparky_quote' .. pseudorandom("seed", 1, 4)), c.chips_min, c.chips_max, c.mult_min, c.mult_max },
             key = pseudorandom("closeenough", 1, 10) == 1 and "j_ocstobal_sparky_alt"
         }
     end,

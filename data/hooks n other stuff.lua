@@ -142,6 +142,62 @@ local function fsfixer(card)
     }
 end
 
+local function killHIM(card)
+    return UIBox {
+        definition = {
+            n = G.UIT.ROOT,
+            config = {
+                colour = G.C.CLEAR
+            },
+            nodes = {
+                {
+                    n = G.UIT.C,
+                    config = {
+                        align = 'cm',
+                        padding = 0.15,
+                        r = 0.08,
+                        hover = true,
+                        shadow = true,
+                        colour = HEX("FFAAD9"),               -- color of the button background
+                        button = 'ocstobal_KILL', -- function in G.FUNCS that will run when this button is clicked
+                        func = 'ocstobal_KILLHIM',   -- function in G.FUNCS that will run every frame this button exists (optional)
+                        ref_table = card,
+                    },
+                    nodes = {
+                        {
+                            n = G.UIT.R,
+                            nodes = {
+                                {
+                                    n = G.UIT.T,
+                                    config = {
+                                        text = "Kill Oxidyze",
+                                        colour = G.C.UI.TEXT_LIGHT, -- color of the button text
+                                        scale = 0.4,
+                                        align = 'cm'
+                                    }
+                                },
+                                {
+                                    n = G.UIT.B,
+                                    config = {
+                                        w = 0.1,
+                                        h = 0.4
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        config = {
+            align = 'cm', 
+            major = card,
+            parent = card,
+            offset = { x = 0, y = 1.5 } -- depends on the alignment you want, without an offset the button will look as if floating next to the card, instead of behind it
+        }
+    }
+end
+
 
 G.FUNCS.ocstobal_fsfixerswap = function(e)
     local card = e.config.ref_table
@@ -175,15 +231,64 @@ SMODS.DrawStep {
     end
 }
 
+G.FUNCS.ocstobal_KILL = function(e)
+    local card = e.config.ref_table
+    local c = card.ability.extra
+    c.retrig = math.floor(c.retrig * 1.5)
+    SMODS.calculate_effect({ message = ":3" }, card)
+    G.E_MANAGER:add_event(Event({
+        trigger = 'after',
+        delay = 1 * G.SETTINGS.GAMESPEED,
+        func = function()
+            SMODS.destroy_cards(SMODS.find_card("j_ocstobal_Oxy"))
+            play_sound("ocstobal_gore5",1,1)
+            return true
+        end
+    }))
+end
+
+-- Will run every frame while the button exists
+G.FUNCS.ocstobal_KILLHIM = function(e)
+    local card = e.config.ref_table
+
+    local can_use = false -- can be any condition you want
+
+    if next(SMODS.find_card("j_ocstobal_Oxy")) then
+        can_use = true
+    end
+
+    -- Removes the button when the card can't be used, otherwise makes it use the previously defined button click
+    e.config.button = can_use and 'ocstobal_KILL' or nil
+    -- Changes the color of the button depending on whether it can be used or not
+    e.config.colour = can_use and G.C.MULT or G.C.UI.BACKGROUND_INACTIVE
+end
+
+SMODS.DrawStep {
+    key = 'oxidyzedies',
+    order = -30, -- before the Card is drawn
+    func = function(card, layer)
+        if card.children.ocstobal_KILL then
+            card.children.ocstobal_KILL:draw()
+        end
+    end
+}
+
 SMODS.draw_ignore_keys.ocstobal_fsfixerswap = true
+SMODS.draw_ignore_keys.ocstobal_KILL = true
 
 pkLOOOVE = Card.highlight
 function Card:highlight(is_highlighted)
     if is_highlighted and self.config.center.key == "j_ocstobal_full_stop_fixer" then
-        self.children.modprefix_my_button = fsfixer(self)
-    elseif self.children.modprefix_my_button then
-        self.children.modprefix_my_button:remove()
-        self.children.modprefix_my_button = nil
+        self.children.ocstobal_KILL = fsfixer(self)
+    elseif self.children.ocstobal_KILL then
+        self.children.ocstobal_KILL:remove()
+        self.children.ocstobal_KILL = nil
+    end
+    if is_highlighted and self.config.center.key == "j_ocstobal_ocksie" then
+        self.children.ocstobal_KILL = killHIM(self)
+    elseif self.children.ocstobal_KILL then
+        self.children.ocstobal_KILL:remove()
+        self.children.ocstobal_KILL = nil
     end
 
     pkLOOOVE(self, is_highlighted)
@@ -380,20 +485,20 @@ function Card:highlight(is_highlighted)
         self.children.lifeup:remove()
         self.children.lifeup = nil
     end
-    if self.highlighted and next(SMODS.find_card("j_ocstobal_Oxy")) and self.config.center.key == "j_ocstobal_ocksie" and not self.ability.extra.to_copy then
-        self.children.lifeup = UIBox({
-            definition = ocksied,
-            config = {
-                parent = self,
-                align = 'cm',
-                offset = { x = -1.5, y = 0 },
-                colour = G.C.CLEAR
-            }
-        })
-    elseif self.children.lifeup and not self.highlighted and self.config.center.key == "j_ocstobal_seraph" then
-        self.children.lifeup:remove()
-        self.children.lifeup = nil
-    end
+    -- if self.highlighted and next(SMODS.find_card("j_ocstobal_Oxy")) and self.config.center.key == "j_ocstobal_ocksie" and not self.ability.extra.to_copy then
+    --     self.children.lifeup = UIBox({
+    --         definition = ocksied,
+    --         config = {
+    --             parent = self,
+    --             align = 'cm',
+    --             offset = { x = -1.5, y = 0 },
+    --             colour = G.C.CLEAR
+    --         }
+    --     })
+    -- elseif self.children.lifeup and not self.highlighted and self.config.center.key == "j_ocstobal_seraph" then
+    --     self.children.lifeup:remove()
+    --     self.children.lifeup = nil
+    -- end
 end
 
 function G.FUNCS.store()
@@ -426,11 +531,6 @@ G.FUNCS.iso_lf_alpha = function(e)
         e.ability.extra.pp = e.ability.extra.pp - 5
         SMODS.calculate_effect({ message = "restore hands" }, card)
     end
-end
-
-G.FUNCS.iso_kill_oxi = function(e)
-    local c = e.config.ref_table
-    SMODS.calculate_effect({ message = "Murder!", sound = "ocstobal_gore5" }, c)
 end
 
 function G.FUNCS.seraphmenu()

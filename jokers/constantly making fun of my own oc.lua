@@ -262,7 +262,7 @@ SMODS.Joker {
 --     blueprint_compat = true,
 --     config = {
 --         extra = {
---             blind_size = 8
+--             blind_size = 2
 --         }
 --     },
 --     no_collection = true,
@@ -272,11 +272,11 @@ SMODS.Joker {
 --             return {
 --                 func = function()
 --                     card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil,
---                         { message = "X" .. tostring(card.ability.extra.blind_size) .. " Blind Size", colour = G.C.GREEN })
---                     G.GAME.blind.chips = G.GAME.blind.chips * card.ability.extra.blind_size
+--                         { message = "^" .. tostring(card.ability.extra.blind_size) .. " Blind Size", colour = G.C.GREEN })
+--                     G.GAME.blind.chips = G.GAME.blind.chips ^ card.ability.extra.blind_size
 --                     G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
 --                     G.HUD_blind:recalculate()
---                     return true
+--                     return true -- :3
 --                 end
 --             }
 --         end
@@ -340,4 +340,4 @@ SMODS.Joker {
 --             return nil
 --         end
 --     end
--- }
+-- } --Very original idea, Iso!
