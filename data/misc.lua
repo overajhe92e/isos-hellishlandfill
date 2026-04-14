@@ -52,11 +52,7 @@ function love.draw()
 	--It's that easy. -also Doctor4t
 end
 
---is that yaha mouse
-
-if next(SMODS.find_mod("unik")) then
-	unik_detect = true
-end
+--is that yaha mous
 
 local mod_path = "" .. SMODS.current_mod.path
 ocstobal.path = mod_path
@@ -531,39 +527,27 @@ function ocstobal_custom_video(name, buttonname)
 	return t
 end
 
-SMODS.Keybind { --makes my life easier
-	key_pressed = "l",
-	action = function(self)
-		G.E_MANAGER:add_event(Event({
-			func = function()
-				play_sound("ocstobal_swoonstart")
-				G.swoon = 1
-				return true
-			end
-		}))
-		G.E_MANAGER:add_event(Event({
-			trigger = "after",
-			delay = 2 * G.SETTINGS.GAMESPEED,
-			func = function()
-				play_sound("ocstobal_swoonend")
-				G.swoon = 0
-				return true
-			end
-		}))
-	end
-}
-
-function burger()
-	G.E_MANAGER:add_event(Event({
-		trigger = 'immediate',
-		locking = false,
-		delay = 0,
-		func = function()
-			check_for_unlock({ type = "ach_burgr" })
-			return true
-		end,
-	}))
-end
+-- SMODS.Keybind { --makes my life easier
+-- 	key_pressed = "l",
+-- 	action = function(self)
+-- 		G.E_MANAGER:add_event(Event({
+-- 			func = function()
+-- 				play_sound("ocstobal_swoonstart")
+-- 				G.swoon = 1
+-- 				return true
+-- 			end
+-- 		}))
+-- 		G.E_MANAGER:add_event(Event({
+-- 			trigger = "after",
+-- 			delay = 2 * G.SETTINGS.GAMESPEED,
+-- 			func = function()
+-- 				play_sound("ocstobal_swoonend")
+-- 				G.swoon = 0
+-- 				return true
+-- 			end
+-- 		}))
+-- 	end
+-- }
 
 --burg
 

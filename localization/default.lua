@@ -306,6 +306,17 @@ return {
 					'{s:0.8,C:dark_edition}Character by Isotypical{}'
 				},
 			},
+			j_ocstobal_a_certain_oxidyze = {
+				name = {
+					"{C:ocstobal_oxi_gradient}Oxidyze..?{}",
+					"{C:red,s:0.7}The Red Tear{}"
+				},
+				text = {
+					"{C:inactive}\"okay he's racist against bunnies\"{}",
+					"{C:inactive}\"but he's not RACIST racist against bunnies unlike before\"{}",
+					"{C:inactive}- Isotypical, March 14th 2026{}"
+				}
+			},
 			j_ocstobal_nitra = {
 				name = {"???"},
 				text = {

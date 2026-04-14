@@ -38,7 +38,7 @@ SMODS.Joker {
         if context.end_of_round and context.main_eval then
             G.GAME.hypnosis = false
             if card.ability.extra.dura <= 0 then
-                --destroys self
+                SMODS.destroy_cards(card)
             end
         end
     end,
@@ -81,7 +81,7 @@ SMODS.Joker {
         }
     end,
     calculate = function(self, card, context)
-        if context.joker_main then
+        if context.initial_scoring_step then
             if SMODS.pseudorandom_probability(card, 'thefunny', 1, card.ability.extra.probability, 'j_ocstobal_pk_ground') then
                 G.GAME.chips = G.GAME.chips + math.floor(((G.GAME.blind.chips / 100)*90))
                 return {

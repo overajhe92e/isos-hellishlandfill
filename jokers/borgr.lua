@@ -1,3 +1,15 @@
+local function burger()
+	G.E_MANAGER:add_event(Event({
+		trigger = 'immediate',
+		locking = false,
+		delay = 0,
+		func = function()
+			check_for_unlock({ type = "ach_burgr" })
+			return true
+		end,
+	}))
+end
+
 SMODS.Joker {
     key = 'burgr',
     cost = 10,

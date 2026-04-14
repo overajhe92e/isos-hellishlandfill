@@ -245,5 +245,6 @@ SMODS.Joker {
     Yesod : ?
     Neztach : ?
     Hod : ?
-    Makluth : Joker Rarity weights become equal...?
+    Makluth (Unstable) : Joker Rarity weights become equal, BUT all bought jokers are perishable
+    Makluth (Stable) : Joker Rarity weights become equal
 ]]

@@ -255,6 +255,15 @@ SMODS.Joker {
     end
 }
 
+SMODS.Joker {
+    key = "a_certain_oxidyze",
+    cost = 20,
+    rarity = 4,
+    atlas = "other_ocs",
+    pos = { x=6,y=0 },
+    soul_pos = { x=7, y=0 }, --AGAIN???
+}
+
 -- SMODS.Joker {
 --     key = 'oxydeceit',
 --     rarity = "ocstobal_deceptionlegendary",
