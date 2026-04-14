@@ -29,10 +29,10 @@ SMODS.Joker { --Eternal Dagger
                     break
                 end
             end
-            if my_pos and G.jokers.cards[my_pos + 1] and G.jokers.cards[my_pos+1] ~= card.ability.ocstobal_fuck_no and not G.jokers.cards[my_pos + 1].getting_sliced then
+            if my_pos and G.jokers.cards[my_pos + 1] and G.jokers.cards[my_pos+1].ability.ocstobal_fuck_no and not G.jokers.cards[my_pos + 1].getting_sliced then
                 for _, v in ipairs(haters) do
                     local sliced_card = G.jokers.cards[my_pos + 1]
-                    if sliced_card == v then
+                    if sliced_card.config.center.key == v then
                         sliced_card.getting_sliced = true
                         G.GAME.joker_buffer = G.GAME.joker_buffer - 1
                         G.E_MANAGER:add_event(Event({

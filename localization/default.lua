@@ -648,10 +648,7 @@ return {
 			j_ocstobal_somethingevil = {
 				name = { '{C:ocstobal_sewh}Something Evil{}', '{C:inactive,s:0.7}...will happen.{}' },
 				text = {
-					'Combines {C:red}ALL{} the {C:ocstobal_sewh}negative effects{}',
-					'of every joker in Isotypical\'s Junkyard',
-					'Amplifies {C:red}ALL{} {C:ocstobal_sewh,E:1}negative effects.{}',
-					'{C:inactive,s:0.8}Does not include crossmod content{}'
+					"-1e100[100]1e100 Mult... for now."
 				}
 			},
 			j_ocstobal_eternaldagger = {
@@ -1790,11 +1787,29 @@ return {
 				}
 			},
 			j_ocstobal_clockhead = {
-				name = {"Dante", "{s:0.7}\"Clockhead\"{}"},
+				name = { "Dante", "{s:0.7}\"Clockhead\"{}" },
 				text = {
 					"Select 1 Ability using {C:attention}Durante{}",
 					"Re-usable after {C:attention}2 Antes{}",
 					"Currently inactive"
+				}
+			},
+			j_ocstobal_prescript = {
+				name = {
+					"Prescript [Device]"
+				},
+				text = {
+					{
+						"Complete a random {C:dark_edition}Prescript{}",
+						"on {C:attention}Blind selection{}",
+						"{C:red}Failure{} to complete the {C:dark_edition}Prescript{}",
+						"{C:red}will Octuple next blind requirement{}",
+						"On {C:dark_edition}Prescript{} Completion, Gain 1 {C:attention}Procreation{}"
+					},
+					{
+						"{C:attention}Current Prescript{}",
+						"nil"
+					}
 				}
 			}
 		},

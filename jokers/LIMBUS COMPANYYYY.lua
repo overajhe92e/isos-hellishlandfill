@@ -63,8 +63,8 @@ SMODS.Joker {
         local c = card.ability.extra
         local using = c.using
         if context.setting_blind and not context.blueprint and not context.retrigger_joker then
-            local a = math.random(1,6)
-            local b = math.random(1,6)
+            local a = math.random(1, 6)
+            local b = math.random(1, 6)
             if a <= 3 then
                 G.GAME.ISO_Ability_A = "ret_fire"
             elseif a >= 4 and a <= 5 then
@@ -102,7 +102,7 @@ SMODS.Joker {
                 elseif G.GAME.ISO_Ability_A == "heads" then
                     if SMODS.pseudorandom_probability(card, "poise", c.poise_potency, 20, "j_ocstobal_full_stop_fixer", true) then
                         return {
-                            emult = 1+(c.poise_count/5)
+                            emult = 1 + (c.poise_count / 5)
                         }
                     else
                         return {
@@ -223,8 +223,18 @@ SMODS.Joker {
     cost = 100,
     rarity = 1,
     atlas = "other_jokers",
-    pos = {x=8,y=0},
-    soul_pos = {x=9,y=0}
+    pos = { x = 8, y = 0 },
+    soul_pos = { x = 9, y = 0 },
+    add_to_deck = function(self,card,from_debuff)
+        play_sound("ocstobal_manager_esquire",1,1)
+    end,
+    calculate = function(self,card,context)
+        if context.joker_main then
+            return {
+                hypermult = {1e300,1e300}
+            }
+        end
+    end
 }
 
 SMODS.Joker {
@@ -245,6 +255,5 @@ SMODS.Joker {
     Yesod : ?
     Neztach : ?
     Hod : ?
-    Makluth (Unstable) : Joker Rarity weights become equal, BUT all bought jokers are perishable
-    Makluth (Stable) : Joker Rarity weights become equal
+    Makluth : Joker Rarity weights become equal...?
 ]]
