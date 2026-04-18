@@ -31,7 +31,7 @@ SMODS.Enhancement {
         end
         if context.main_scoring and context.cardarea == G.play then
             card.should_destroy = false
-            if SMODS.pseudorandom_probability(card, 'group_0_89ad0c58', 1, card.ability.extra.odds, 'm_ocstobal') then
+            if SMODS.pseudorandom_probability(card, 'group_0_89ad0c58', 1, card.ability.extra.odds, 'm_iso') then
                 card.glass_trigger = true
             card.should_destroy = true
             end

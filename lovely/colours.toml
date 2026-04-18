@@ -29,11 +29,11 @@ target = "functions/misc_functions.lua"
 pattern = "dark_edition = G.C.DARK_EDITION,"
 position = "after"
 payload = """
-ocstobal_omegablack = G.C.OMEGABLACK,
-ocstobal_omegared = G.C.OMEGARED,
-ocstobal_omegawhite = G.C.OMEGAWHITE,
-ocstobal_nightmare_blue = G.C.NIGHTMARE_BLUE,
-ocstobal_nightmare_purple = G.C.NIGHTMARE_PURPLE,
+iso_omegablack = G.C.OMEGABLACK,
+iso_omegared = G.C.OMEGARED,
+iso_omegawhite = G.C.OMEGAWHITE,
+iso_nightmare_blue = G.C.NIGHTMARE_BLUE,
+iso_nightmare_purple = G.C.NIGHTMARE_PURPLE,
 pastel_yellow = G.C.PASTEL_YELLOW,
 pink = G.C.PINK,
 iso_light_purple = G.C.ISO_LIGHT_PURPLE,

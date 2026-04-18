@@ -13,7 +13,7 @@ for i = 1, #ISO_EXT.recl_wins do
         key = "recl_wins_" .. i,
         type = 'win',
         extra = {
-            center = 'j_ocstobal_recluse',
+            center = 'j_iso_recluse',
             particle_colours = {
                 G.C.NIGHTMARE_PURPLE,
                 G.C.NIGHTMARE_PURPLE,
@@ -28,7 +28,7 @@ for i = 1, #ISO_EXT.recl_losses do
         key = "recl_losses_" .. i,
         type = 'loss',
         extra = {
-            center = 'j_ocstobal_recluse',
+            center = 'j_iso_recluse',
             particle_colours = {
                 G.C.NIGHTMARE_PURPLE,
                 G.C.NIGHTMARE_PURPLE,

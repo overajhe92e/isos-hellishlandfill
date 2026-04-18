@@ -50,7 +50,7 @@ function G.FUNCS.verybad()
 	G.PROFILES[G.SETTINGS.profile].current_isomode = 2
 	G.current_isomode = 2
 	G:save_settings()
-	play_sound('ocstobal_straddle')
+	play_sound('iso_straddle')
 end
 
 function eeriestuff()
@@ -315,9 +315,9 @@ end
 function G.FUNCS.enabling()
 	if G.enabledsecret == false then
 		G.enabledsecret = true
-		play_sound("ocstobal_ominous", 0.8, 3)
+		play_sound("iso_ominous", 0.8, 3)
 	else
-		play_sound("ocstobal_incorrect", 1, 1)
+		play_sound("iso_incorrect", 1, 1)
 	end
 end
 
@@ -331,7 +331,7 @@ end
 function G.FUNCS.proceed()
 	G.PROFILES[G.SETTINGS.profile].current_isomode = 666
 	G.silence = 1
-	play_sound('ocstobal_ominousworse', 1, 1)
+	play_sound('iso_ominousworse', 1, 1)
 	G.E_MANAGER:add_event(Event({
 		trigger = "after",
 		delay = 10,
@@ -349,7 +349,7 @@ function G.FUNCS.supersecret()
 			definition = thewarning("Exit"),
 			config = { no_esc = true }
 		}
-		play_sound('ocstobal_ME', 1, 2)
+		play_sound('iso_ME', 1, 2)
 		G.SETTINGS.SOUND.music_volume = 0
 		G.silence = 1
 		G.SETTINGS.GAMESPEED = 1
@@ -368,10 +368,10 @@ end
 function G.FUNCS.turnback()
 	if G.enabledsecret == true then
 		G.enabledsecret = false
-		play_sound('ocstobal_ominouscancel', 1, 1)
+		play_sound('iso_ominouscancel', 1, 1)
 		G.SETTINGS.SOUND.music_volume = 100
 	else
-		play_sound("ocstobal_incorrect", 1, 1)
+		play_sound("iso_incorrect", 1, 1)
 	end
 end
 
@@ -634,7 +634,7 @@ function sphlvls(buttonname)
 											}, }
 									},
 
-									-- { n = G.UIT.O, config = { object = Card({ card = 'j_ocstobal_seraph' }), align = 'cm', hover = true}}
+									-- { n = G.UIT.O, config = { object = Card({ card = 'j_iso_seraph' }), align = 'cm', hover = true}}
 								},
 							},
 						}

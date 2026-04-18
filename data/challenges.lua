@@ -80,7 +80,7 @@ SMODS.Challenge {
                 'p_buffoon_normal_1', 'p_buffoon_normal_2', 'p_buffoon_jumbo_1', 'p_buffoon_mega_1',
             }
             },
-			{ id = 'j_ocstobal_eternaldagger' }
+			{ id = 'j_iso_eternaldagger' }
         },
         banned_tags = {
             { id = 'tag_uncommon' },
@@ -103,7 +103,7 @@ SMODS.Challenge {
 SMODS.Challenge {
 	key = 'hunger',
 	jokers = { 
-		{ id = 'j_ocstobal_recluse', eternal = true, pinned = true }
+		{ id = 'j_iso_recluse', eternal = true, pinned = true }
 	},
 	rules = {
 		custom = {
@@ -118,7 +118,7 @@ SMODS.Challenge {
             { id = 'bl_final_leaf', type = 'blind' },
         },
 		banned_cards = {
-            { id = 'j_ocstobal_eternaldagger' },
+            { id = 'j_iso_eternaldagger' },
         },
 	}
 }
@@ -127,7 +127,7 @@ SMODS.Challenge {
 	key = 'rapidgrowth',
 	jokers = { 
 		{ id = 'j_blueprint', eternal = true, pinned = true},
-		{ id = 'j_ocstobal_evilantislopinator', eternal = true }
+		{ id = 'j_iso_evilantislopinator', eternal = true }
 	},
 	rules = {
 		custom = {
@@ -136,7 +136,7 @@ SMODS.Challenge {
 	},
 	restrictions = {
 		banned_cards = {
-			{ id = 'j_ocstobal_eternaldagger' }
+			{ id = 'j_iso_eternaldagger' }
 		}
 	}
 }
@@ -144,7 +144,7 @@ SMODS.Challenge {
 SMODS.Challenge {
 	key = 'do_or_die',
 	jokers = {
-		{ id = 'j_ocstobal_seraph', eternal = true },
+		{ id = 'j_iso_seraph', eternal = true },
 		{ id = 'j_oops', eternal = true }
 	},
 	rules = {

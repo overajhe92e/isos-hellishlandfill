@@ -6,37 +6,13 @@ SMODS.Atlas({
     atlas_table = "ASSET_ATLAS"
 })
 
-SMODS.Atlas({
-    key = "CustomBoosters",
-    path = "CustomBoosters.png",
-    px = 71,
-    py = 95,
-    atlas_table = "ASSET_ATLAS"
-})
-
-SMODS.Atlas({
-    key = "CustomEnhancements",
-    path = "CustomEnhancements.png",
-    px = 71,
-    py = 95,
-    atlas_table = "ASSET_ATLAS"
-})
-
-SMODS.Atlas({
-    key = "CustomSeals",
-    path = "CustomSeals.png",
-    px = 71,
-    py = 95,
-    atlas_table = "ASSET_ATLAS"
-})
-
 if not ISO_EXT then
     ISO_EXT = {}
 end
 
 SMODS.current_mod.menu_cards = function()
 	return {
-		{key = 'j_ocstobal_myself'}
+		{key = 'j_iso_myself'}
 	}
 end
 
@@ -64,12 +40,6 @@ end
 -- 		})
 -- 	return ret
 -- end
-
-local NFS = require("nativefs")
-if not next(SMODS.find_mod("Talisman")) then
-    to_big = to_big or function(a) return a end
-    lenient_bignum = lenient_bignum or function(a) return a end
-end
 
 local function load_jokers_folder()
     local mod_path = SMODS.current_mod.path

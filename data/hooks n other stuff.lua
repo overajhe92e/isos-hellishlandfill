@@ -1,12 +1,12 @@
-if not ocstobal then
-    ocstobal = {}
+if not iso then
+    iso = {}
 end
 
 local upd = Game.update
 function Game:update(dt)
     upd(self, dt)
     local fucking_hell_mate = 0
-    for _, steelwirecount in ipairs(SMODS.find_card("j_ocstobal_steelwire")) do
+    for _, steelwirecount in ipairs(SMODS.find_card("j_iso_steelwire")) do
         fucking_hell_mate = fucking_hell_mate + 1
     end
     if G.GAME then
@@ -23,9 +23,9 @@ end
 
 local check_for_buy_space_ref = G.FUNCS.check_for_buy_space
 G.FUNCS.check_for_buy_space = function(card)
-    if card.config.center.key == "j_ocstobal_antislopinator" then
+    if card.config.center.key == "j_iso_antislopinator" then
         return true
-    elseif card.config.center.key == "j_ocstobal_steelwire" then
+    elseif card.config.center.key == "j_iso_steelwire" then
         return true
     end
     return check_for_buy_space_ref(card)
@@ -33,7 +33,7 @@ end
 --oo oo bypass slots hook oo
 
 --copied from entropy since i have no fucking idea what im doing
-function ocstobal.nextboss()
+function iso.nextboss()
     G.STATE = 1
     G.STATE_COMPLETE = false
     local remove_temp = {}
@@ -81,7 +81,7 @@ end
 local abbornegative = G.P_CENTERS.e_negative.get_weight
 G.P_CENTERS.e_negative.get_weight = function(self)
     local weight = abbornegative(self)
-    for _, abbie in ipairs(SMODS.find_card("j_ocstobal_abbie")) do
+    for _, abbie in ipairs(SMODS.find_card("j_iso_abbie")) do
         weight = weight * 3.1
     end
     return weight
@@ -89,7 +89,7 @@ end
 
 function TERMINUS_GIVER_9000()
     print("cheaty hehehehehe")
-    SMODS.add_card { set = "Joker", rarity = 'ocstobal_beyondexotic' }
+    SMODS.add_card { set = "Joker", rarity = 'iso_beyondexotic' }
 end
 
 function G.FUNCS.ISO_jf_troll()

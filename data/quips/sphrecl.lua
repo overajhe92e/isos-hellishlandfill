@@ -10,7 +10,7 @@ for i = 1, #ISO_EXT.fuck_you do
         key = "sphrecl_losses_" .. i,
         type = 'loss',
         extra = {
-            center = 'j_ocstobal_reclusivevessel',
+            center = 'j_iso_reclusivevessel',
             particle_colours = {
                 G.C.NIGHTMARE_PURPLE,
                 G.C.NIGHTMARE_PURPLE,
@@ -18,7 +18,7 @@ for i = 1, #ISO_EXT.fuck_you do
             }
         },
         filter = function(self, type)
-            if next(SMODS.find_card("j_ocstobal_reclusivevessel")) then
+            if next(SMODS.find_card("j_iso_reclusivevessel")) then
                 return true, { weight = 100 }
             end
         end
