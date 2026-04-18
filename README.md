@@ -1,4 +1,5 @@
-# Isotypical's Junkyard
+# Hellish Landfill
+(Isotypical's Junkyard Classic)
 "The Balatro Mod of all time"
 
 Adds 20+ New Jokers,
