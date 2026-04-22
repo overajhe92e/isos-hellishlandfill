@@ -64,9 +64,9 @@ SMODS.Blind {
 		if context.modify_hand then
 			for i = 1, #G.jokers.cards do
 				if G.jokers.cards[i].config.center.original_mod == SMODS.Mods["isoatro"] then
-					if SMODS.pseudorandom_probability(card, "iso_unstable", 1, 100) then
+					if SMODS.pseudorandom_probability(card, "fizz_unstable", 1, 100) then
 						G.burger = 1
-						play_sound("iso_jumpscare", 1, 1)
+						play_sound("fizz_jumpscare", 1, 1)
 						G.E_MANAGER:add_event(Event({
 							trigger = 'after',
 							delay = 3 * G.SETTINGS.GAMESPEED,
@@ -89,13 +89,13 @@ SMODS.Blind {
 		local randomized = pseudorandom("ubc", 1, 4)
 		local unstable_blind_choice = nil
 		if randomized == 1 then
-			unstable_blind_choice = "bl_iso_THESCALE"
+			unstable_blind_choice = "bl_fizz_THESCALE"
 		elseif randomized == 2 then
-			unstable_blind_choice = "bl_iso_BLACKKNIFE"
+			unstable_blind_choice = "bl_fizz_BLACKKNIFE"
 		elseif randomized == 3 then
-			unstable_blind_choice = "bl_iso_UNSHY"
+			unstable_blind_choice = "bl_fizz_UNSHY"
 		elseif randomized == 4 then
-			unstable_blind_choice = "bl_iso_THEDROPLET"
+			unstable_blind_choice = "bl_fizz_THEDROPLET"
 		end
 		G.GAME.blind:set_blind(G.P_BLINDS[tostring(unstable_blind_choice)])
 	end,
@@ -128,7 +128,7 @@ SMODS.Blind {
 
 	defeat = function(self)
 		G.FUNCS.overlay_menu {
-			definition = iso_custom_video("diansumeme", "oceanan scum"),
+			definition = fizz_custom_video("diansumeme", "oceanan scum"),
 			config = { no_esc = true }
 		}
 	end
@@ -189,7 +189,7 @@ SMODS.Sound {
 				return true
 			end
 		end
-		if G.GAME.round_resets.blind_choices == 'bl_iso_bossrushomega' and not G.GAME.reclusive_vessel == true then
+		if G.GAME.round_resets.blind_choices == 'bl_fizz_bossrushomega' and not G.GAME.reclusive_vessel == true then
 			G.GAME.omegarush_choice = true
 			return true
 		end
@@ -258,7 +258,7 @@ SMODS.Blind {
 
 	defeat = function(self)
 		reclcheck = true
-		play_sound('iso_ominous', 0.8, 1)
+		play_sound('fizz_ominous', 0.8, 1)
 	end
 }
 
@@ -279,7 +279,7 @@ SMODS.Blind {
 	end,
 
 	set_blind = function(self)
-		G.GAME.iso_sol_ptsd = true
+		G.GAME.fizz_sol_ptsd = true
 	end,
 
 	calculate = function(self, blind, context)
@@ -304,8 +304,8 @@ SMODS.Blind {
 
 	defeat = function(self)
 		reclcheck = false
-		G.GAME.iso_sol_ptsd = false
-		play_sound('iso_ominouscancel', 1, 2)
+		G.GAME.fizz_sol_ptsd = false
+		play_sound('fizz_ominouscancel', 1, 2)
 		recluseach()
 	end
 }
@@ -533,7 +533,7 @@ SMODS.Blind {
 	end,
 	defeat = function(self)
 		if SMODS.pseudorandom_probability(card, "SOK", 1, 128) then
-			SMODS.add_card { key = "j_iso_sword_of_kings" }
+			SMODS.add_card { key = "j_fizz_sword_of_kings" }
 		end
 	end
 }
@@ -621,7 +621,7 @@ SMODS.Blind { -- MY HAIR COUPOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
 						trigger = 'after',
 						delay = 6 * G.SETTINGS.GAMESPEED,
 						func = function()
-							play_sound("iso_gore5")
+							play_sound("fizz_gore5")
 							G.GAME.ISO_ricardo_MY_HAIR_COUPONS = true
 							G.GAME.blind.chips = G.GAME.blind.chips * 2
 							G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
@@ -629,7 +629,7 @@ SMODS.Blind { -- MY HAIR COUPOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
 						end
 					}))
 				elseif G.GAME.chips > G.GAME.blind.chips * 2 and G.GAME.ISO_ricardo_stagger == false then
-					play_sound("iso_gore5")
+					play_sound("fizz_gore5")
 					G.GAME.ISO_ricardo_stagger = true
 				end
 			end

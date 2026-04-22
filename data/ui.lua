@@ -15,8 +15,8 @@ local function fsfixer(card)
                         hover = true,
                         shadow = true,
                         colour = G.C.MULT,               -- color of the button background
-                        button = 'iso_fsfixerswap', -- function in G.FUNCS that will run when this button is clicked
-                        func = 'iso_fsfixer_gen',   -- function in G.FUNCS that will run every frame this button exists (optional)
+                        button = 'fizz_fsfixerswap', -- function in G.FUNCS that will run when this button is clicked
+                        func = 'fizz_fsfixer_gen',   -- function in G.FUNCS that will run every frame this button exists (optional)
                         ref_table = card,
                     },
                     nodes = {
@@ -70,8 +70,8 @@ local function killHIM(card)
                         hover = true,
                         shadow = true,
                         colour = HEX("FFAAD9"),               -- color of the button background
-                        button = 'iso_KILL', -- function in G.FUNCS that will run when this button is clicked
-                        func = 'iso_KILLHIM',   -- function in G.FUNCS that will run every frame this button exists (optional)
+                        button = 'fizz_KILL', -- function in G.FUNCS that will run when this button is clicked
+                        func = 'fizz_KILLHIM',   -- function in G.FUNCS that will run every frame this button exists (optional)
                         ref_table = card,
                     },
                     nodes = {
@@ -110,7 +110,7 @@ local function killHIM(card)
 end
 
 
-G.FUNCS.iso_fsfixerswap = function(e)
+G.FUNCS.fizz_fsfixerswap = function(e)
     local card = e.config.ref_table
     local c = card.ability.extra
     if c.using == 1 then
@@ -121,13 +121,13 @@ G.FUNCS.iso_fsfixerswap = function(e)
 end
 
 -- Will run every frame while the button exists
-G.FUNCS.iso_fsfixer_gen = function(e)
+G.FUNCS.fizz_fsfixer_gen = function(e)
     local card = e.config.ref_table
 
     local can_use = true -- can be any condition you want
 
     -- Removes the button when the card can't be used, otherwise makes it use the previously defined button click
-    e.config.button = can_use and 'iso_fsfixerswap' or nil
+    e.config.button = can_use and 'fizz_fsfixerswap' or nil
     -- Changes the color of the button depending on whether it can be used or not
     e.config.colour = can_use and G.C.MULT or G.C.UI.BACKGROUND_INACTIVE
 end
@@ -136,13 +136,13 @@ SMODS.DrawStep {
     key = 'fsfixer',
     order = -30, -- before the Card is drawn
     func = function(card, layer)
-        if card.children.iso_fsfixerswap then
-            card.children.iso_fsfixerswap:draw()
+        if card.children.fizz_fsfixerswap then
+            card.children.fizz_fsfixerswap:draw()
         end
     end
 }
 
-G.FUNCS.iso_KILL = function(e)
+G.FUNCS.fizz_KILL = function(e)
     local card = e.config.ref_table
     local c = card.ability.extra
     c.retrig = math.floor(c.retrig * 1.5)
@@ -151,25 +151,25 @@ G.FUNCS.iso_KILL = function(e)
         trigger = 'after',
         delay = 1 * G.SETTINGS.GAMESPEED,
         func = function()
-            SMODS.destroy_cards(SMODS.find_card("j_iso_Oxy"))
-            play_sound("iso_gore5",1,1)
+            SMODS.destroy_cards(SMODS.find_card("j_fizz_Oxy"))
+            play_sound("fizz_gore5",1,1)
             return true
         end
     }))
 end
 
 -- Will run every frame while the button exists
-G.FUNCS.iso_KILLHIM = function(e)
+G.FUNCS.fizz_KILLHIM = function(e)
     local card = e.config.ref_table
 
     local can_use = false -- can be any condition you want
 
-    if next(SMODS.find_card("j_iso_Oxy")) then
+    if next(SMODS.find_card("j_fizz_Oxy")) then
         can_use = true
     end
 
     -- Removes the button when the card can't be used, otherwise makes it use the previously defined button click
-    e.config.button = can_use and 'iso_KILL' or nil
+    e.config.button = can_use and 'fizz_KILL' or nil
     -- Changes the color of the button depending on whether it can be used or not
     e.config.colour = can_use and G.C.MULT or G.C.UI.BACKGROUND_INACTIVE
 end
@@ -178,28 +178,28 @@ SMODS.DrawStep {
     key = 'oxidyzedies',
     order = -30, -- before the Card is drawn
     func = function(card, layer)
-        if card.children.iso_KILL then
-            card.children.iso_KILL:draw()
+        if card.children.fizz_KILL then
+            card.children.fizz_KILL:draw()
         end
     end
 }
 
-SMODS.draw_ignore_keys.iso_fsfixerswap = true
-SMODS.draw_ignore_keys.iso_KILL = true
+SMODS.draw_ignore_keys.fizz_fsfixerswap = true
+SMODS.draw_ignore_keys.fizz_KILL = true
 
 pkLOOOVE = Card.highlight
 function Card:highlight(is_highlighted)
-    if is_highlighted and self.config.center.key == "j_iso_full_stop_fixer" then
-        self.children.iso_KILL = fsfixer(self)
-    elseif self.children.iso_KILL then
-        self.children.iso_KILL:remove()
-        self.children.iso_KILL = nil
+    if is_highlighted and self.config.center.key == "j_fizz_full_stop_fixer" then
+        self.children.fizz_KILL = fsfixer(self)
+    elseif self.children.fizz_KILL then
+        self.children.fizz_KILL:remove()
+        self.children.fizz_KILL = nil
     end
-    if is_highlighted and self.config.center.key == "j_iso_ocksie" then
-        self.children.iso_KILL = killHIM(self)
-    elseif self.children.iso_KILL then
-        self.children.iso_KILL:remove()
-        self.children.iso_KILL = nil
+    if is_highlighted and self.config.center.key == "j_fizz_ocksie" then
+        self.children.fizz_KILL = killHIM(self)
+    elseif self.children.fizz_KILL then
+        self.children.fizz_KILL:remove()
+        self.children.fizz_KILL = nil
     end
 
     pkLOOOVE(self, is_highlighted)
@@ -246,9 +246,9 @@ function Card:highlight(is_highlighted)
                 nodes = {
                     {
                         n = G.UIT.R,
-                        config = { minw = 1, minh = 0.5, padding = 0.01, align = 'cl', colour = G.C.CLEAR, button = 'iso_lf_alpha', r = 0.1 },
+                        config = { minw = 1, minh = 0.5, padding = 0.01, align = 'cl', colour = G.C.CLEAR, button = 'fizz_lf_alpha', r = 0.1 },
                         nodes = {
-                            UIBox_button { label = { "Alpha" }, scale = 0.3, minw = 1.3, minh = 0.7, colour = G.C.GREEN, r = 0.1, button = 'iso_lf_alpha' }
+                            UIBox_button { label = { "Alpha" }, scale = 0.3, minw = 1.3, minh = 0.7, colour = G.C.GREEN, r = 0.1, button = 'fizz_lf_alpha' }
                         }
                     },
                     {
@@ -274,9 +274,9 @@ function Card:highlight(is_highlighted)
                     },
                     {
                         n = G.UIT.R,
-                        config = { minw = 1, minh = 0.5, padding = 0.01, align = 'cl', colour = G.C.CLEAR, button = 'iso_swap', r = 0.1 },
+                        config = { minw = 1, minh = 0.5, padding = 0.01, align = 'cl', colour = G.C.CLEAR, button = 'fizz_swap', r = 0.1 },
                         nodes = {
-                            UIBox_button { label = { "Swap" }, scale = 0.3, minw = 1.3, minh = 0.7, colour = G.C.GREEN, r = 0.1, button = 'iso_swap' }
+                            UIBox_button { label = { "Swap" }, scale = 0.3, minw = 1.3, minh = 0.7, colour = G.C.GREEN, r = 0.1, button = 'fizz_swap' }
                         }
                     },
                 }
@@ -363,7 +363,7 @@ function Card:highlight(is_highlighted)
         self.children.jf:remove()
         self.children.jf = nil
     end
-    if self.highlighted and self.config.center.key == "j_iso_seraph" and not self.ability.extra.to_copy then
+    if self.highlighted and self.config.center.key == "j_fizz_seraph" and not self.ability.extra.to_copy then
         self.children.lifeup = UIBox({
             definition = sph,
             config = {
@@ -373,7 +373,7 @@ function Card:highlight(is_highlighted)
                 colour = G.C.CLEAR
             }
         })
-    elseif self.children.lifeup and not self.highlighted and self.config.center.key == "j_iso_seraph" then
+    elseif self.children.lifeup and not self.highlighted and self.config.center.key == "j_fizz_seraph" then
         self.children.lifeup:remove()
         self.children.lifeup = nil
     end
@@ -391,7 +391,7 @@ function G.FUNCS.release()
     G.GAME.pk_love_ability = "Unleashing"
 end
 
-G.FUNCS.iso_swap = function(e)
+G.FUNCS.fizz_swap = function(e)
     local card = e.config.ref_table
     if card.ability.extra.recovering == "Discards" then
         G.GAME.recovering = "Hands"
@@ -400,7 +400,7 @@ G.FUNCS.iso_swap = function(e)
     end
 end
 
-G.FUNCS.iso_lf_alpha = function(e)
+G.FUNCS.fizz_lf_alpha = function(e)
     local card = e.config.ref_table
     if e.ability.extra.recovering == "Hands" then
         e.ability.extra.pp = e.ability.extra.pp - 5

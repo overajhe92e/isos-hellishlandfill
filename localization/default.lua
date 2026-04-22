@@ -1,23 +1,11 @@
 return {
 	descriptions = {
 		Back = {
-			b_iso_extremepain = {
-				name = "Something Evil Will Happen in This Deck",
-				text = {
-					'Start with {C:iso_sewh,T:j_iso_somethingevil}Something Evil{}',
-					'{C:attention}+1 Joker slot.{}',
-					'{C:red}X0.25 Blind Size{}',
-					'{C:inactive}"grief... :trol:"{}'
-				},
-				unlock = {
-					'Win a run.'
-				}
-			},
-			b_iso_copycat = {
+			b_fizz_copycat = {
 				name = "Copycat Deck",
 				text = {
 					'Start off with',
-					'{C:blue,T:j_iso_crystal}Crystal{} and {C:attention,T:j_iso_Oxy}Oxidyze{}'
+					'{C:blue,T:j_fizz_crystal}Crystal{} and {C:attention,T:j_fizz_Oxy}Oxidyze{}'
 				},
 				unlock = {
 					'Win a run with any deck',
@@ -25,7 +13,7 @@ return {
 					'{C:money}Gold Stake{}'
 				}
 			},
-			b_iso_looksinside = {
+			b_fizz_looksinside = {
 				name = ">new balatro mod",
 				text = {
 					'>looks inside',
@@ -37,67 +25,15 @@ return {
 					'Win a run.'
 				}
 			},
-			b_iso_ocs = {
-				name = "The Trio",
-				text = {
-					'Start off with',
-					'{C:green}Sparky{}, {C:red}Seraph{}, and {C:legendary}Solinium{}',
-					'{C:iso_legendplus}X50{} Blind Size'
-				},
-				unlock = {
-					'Win a run on at least',
-					'{C:money}Gold Stake{}'
-				}
-			},
-			b_iso_aio = {
-				name = "Singularity of the Junkyard",
-				text = {
-					'Upon defeating a {C:attention}Boss Blind{},',
-					'{C:green}1 in 2{} chance to give a random',
-					'{C:attention}Isotypical\'s Junkyard{} Joker.',
-					'{C:inactive,s:0.8}( Bypasses Joker slots ){}',
-					'{C:inactive,s:0.8}( Can give Unbalanced+ Jokers ){}'
-				},
-				unlock = {
-					'Defeat the {C:iso_finalrgb}Final Stake.{}'
-				}
-			},
-			b_iso_reallyfuckingunbalanced = {
-				name = "Isotypical's Almanac",
-				text = {
-					'Wait, this is supposed to be a config option!"'
-				}
-			},
-			b_iso_overpoweredjokers = {
-				name = "Trasncended Deck",
-				text = {
-					'Start off with a random',
-					'{C:iso_sewh}Terminus{} Joker.',
-					'{C:attention}Win Ante{} is Ante {C:attention}16{}'
-				},
-				unlock = {
-					'Defeat {C:iso_ust}Hyperfusion{}',
-					'on {C:iso_nightmare_purple}Cruelty Stake{}'
-				}
-			},
-			b_iso_overpoweredjokers_unik = {
-				name = "Transcended Challenge",
-				text = {
-					'Start off with {C:attention}3{} random',
-					'{C:iso_sewh}Terminus{} Jokers.',
-					'{C:attention}Win Ante{} is Ante {C:red}100{}',
-					"{C:iso_nightmare_purple,s:1.5,E:1}Good luck!{}"
-				}
-			}
 		},
 		Blind = {
-			bl_iso_spkblind = {
+			bl_fizz_spkblind = {
 				name = "The Shyness",
 				text = {
 					'Does... nothing?',
 				}
 			},
-			bl_iso_recluseblind = {
+			bl_fizz_recluseblind = {
 				name = "The Eyes",
 				text = {
 					'Applies Most Isotypical\'s Junkyard',
@@ -105,56 +41,56 @@ return {
 					'(Excluding some blinds)'
 				}
 			},
-			bl_iso_sphblind = {
+			bl_fizz_sphblind = {
 				name = "The Knife",
 				text = {
 					'Adds 1/3rd of blind size to self',
 					'Everytime you play a hand.'
 				}
 			},
-			bl_iso_sharkblind = {
+			bl_fizz_sharkblind = {
 				name = "The Shark",
 				text = {
 					'1 in 4 cards in Deck',
 					'become marked.'
 				}
 			},
-			bl_iso_solblind = {
+			bl_fizz_solblind = {
 				name = "The Scalae",
 				text = {
 					'Playing a hand multiplies',
 					'Blind size by 1.25x'
 				}
 			},
-			bl_iso_oxyblind = {
+			bl_fizz_oxyblind = {
 				name = "Oxidization",
 				text = {
 					'Jokers that Copy abilities',
 					'are debuffed.'
 				}
 			},
-			bl_iso_oxidyze_bnuuy_hate = {
+			bl_fizz_oxidyze_bnuuy_hate = {
 				name = "The Hater",
 				text = {
 					"{C:red}I take control now.{}",
 					"All {C:pastel_yellow}Bunny{} Jokers are",
-					"{C:iso_crimson}PERMANENTLY{} Debuffed."
+					"{C:fizz_crimson}PERMANENTLY{} Debuffed."
 				}
 			},
-			bl_iso_THEWALLex = {
+			bl_fizz_THEWALLex = {
 				name = "The Big Fucking Wall",
 				text = {
 					'Jesus fucking christ'
 				}
 			},
-			bl_iso_solblindawk = {
+			bl_fizz_solblindawk = {
 				name = "Solinium's Scale",
 				text = {
 					"Every hand played multiplies",
 					"blind size by ^1.5"
 				}
 			},
-			bl_iso_lankyohfuckinghellbox = {
+			bl_fizz_lankyohfuckinghellbox = {
 				name = "Burning Eyes",
 				text = {
 					'Watch an hour long',
@@ -162,7 +98,7 @@ return {
 					'Video is unskippable.'
 				}
 			},
-			bl_iso_cringeasf = {
+			bl_fizz_cringeasf = {
 				name = 'Psychological Warfare',
 				text = {
 					'If defeated with flame effects,',
@@ -170,7 +106,7 @@ return {
 					'Video cannot be disabled.'
 				}
 			},
-			bl_iso_unstable = {
+			bl_fizz_unstable = {
 				name = 'Destabilization',
 				text = {
 					'On blind select, defeat',
@@ -178,14 +114,14 @@ return {
 					'a blind.'
 				}
 			},
-			bl_iso_rng = {
+			bl_fizz_rng = {
 				name = 'SMODS.Blind(key=rng)',
 				text = {
-					'Blind Size and Reward is {C:iso_iso_grad,E:1}randomized{}',
+					'Blind Size and Reward is {C:fizz_fizz_grad,E:1}randomized{}',
 					'when the game restarts.',
 				}
 			},
-			bl_iso_bossrush = {
+			bl_fizz_bossrush = {
 				name = "Fused Blind",
 				text = {
 					'Applies The Knife,',
@@ -193,7 +129,7 @@ return {
 					'The Scalae\'s effects'
 				}
 			},
-			bl_iso_bossrushomega = {
+			bl_fizz_bossrushomega = {
 				name = "Kuolemankiire",
 				text = {
 					'Merges {C:red}every{} Junkyard',
@@ -201,7 +137,7 @@ return {
 					'{C:inactive,s:0.7}Excluding Pisarakipua{}'
 				}
 			},
-			bl_iso_BLACKKNIFE = {
+			bl_fizz_BLACKKNIFE = {
 				name = "Mustunutveitsi",
 				text = {
 					'Playing a hand modifies',
@@ -209,7 +145,7 @@ return {
 					'{X:default,C:red,s:1.2}(x*(log(x^3)^2))*3{}'
 				}
 			},
-			bl_iso_THESCALE = {
+			bl_fizz_THESCALE = {
 				name = "Vääryydenasteikko",
 				text = {
 					"Playing a hand modifies",
@@ -217,16 +153,16 @@ return {
 					"{X:default,C:red,s:1.2}x^1.25{}"
 				}
 			},
-			bl_iso_THEDROPLET = {
+			bl_fizz_THEDROPLET = {
 				name = "Pisarakipua",
 				text = {
 					"All jokers are debuffed.",
 					"Blind Requirement is modified by",
-					"{X:iso_crimson,C:white,s:1.2}(log(x)*x) / x^0.5{}",
+					"{X:fizz_crimson,C:white,s:1.2}(log(x)*x) / x^0.5{}",
 					"upon playing a hand."
 				}
 			},
-			bl_iso_UNSHY = {
+			bl_fizz_UNSHY = {
 				name = "Särkynythiljaisuus",
 				text = {
 					"Chips and Mult are",
@@ -234,7 +170,7 @@ return {
 					"after scoring."
 				}
 			},
-			bl_iso_giygas = {
+			bl_fizz_giygas = {
 				name = "Giygas",
 				text = {
 					"You cannot comprehend",
@@ -242,7 +178,7 @@ return {
 					"ability!"
 				}
 			},
-			bl_iso_starman_super = {
+			bl_fizz_starman_super = {
 				name = "Starman Super",
 				text = {
 					"Score is multiplied by X0.7",
@@ -251,13 +187,13 @@ return {
 					"Sword of Kings"
 				}
 			},
-			bl_iso_thyvessel = {
+			bl_fizz_thyvessel = {
 				name = "Reclusive Vessel",
 				text = {
 					"..?"
 				}
 			},
-			bl_iso_ricardo = {
+			bl_fizz_ricardo = {
 				name = "The Big Brother",
 				text = {
 					"First hand must score over {C:attention}50%{}",
@@ -268,7 +204,7 @@ return {
 			}
 		},
 		Edition = {
-			e_iso_hidden1 = {
+			e_fizz_hidden1 = {
 				name = 'EVIL ASS red',
 				text = {
 					'-1 Joker Slot.',
@@ -276,7 +212,7 @@ return {
 			},
 		},
 		Enhanced = {
-			m_iso_du238 = {
+			m_fizz_du238 = {
 				name = "Depleted U238",
 				text = {
 					'{X:red,C:white}X2.5{} Mult and',
@@ -284,7 +220,7 @@ return {
 					'when held in hand'
 				}
 			},
-			m_iso_irradiated = {
+			m_fizz_irradiated = {
 				name = "Irradiated",
 				text = {
 					'{X:black,C:white}X0.9{} Mult and Chips',
@@ -295,8 +231,8 @@ return {
 			}
 		},
 		Joker = {
-			j_iso_Oxy = {
-				name = { "{C:iso_oxi_gradient}Oxidyze{}", "{s:0.7,C:money}The Perfectionist{}" },
+			j_fizz_Oxy = {
+				name = { "{C:fizz_oxi_gradient}Oxidyze{}", "{s:0.7,C:money}The Perfectionist{}" },
 				text = {
 					'Copies the Ability of the joker',
 					'to the left and right of this character.',
@@ -306,9 +242,9 @@ return {
 					'{s:0.8,C:dark_edition}Character by Isotypical{}'
 				},
 			},
-			j_iso_a_certain_oxidyze = {
+			j_fizz_a_certain_oxidyze = {
 				name = {
-					"{C:iso_oxi_gradient}Oxidyze..?{}",
+					"{C:fizz_oxi_gradient}Oxidyze..?{}",
 					"{C:red,s:0.7}The Red Tear{}"
 				},
 				text = {
@@ -317,13 +253,13 @@ return {
 					"{C:inactive}- Isotypical, March 14th 2026{}"
 				}
 			},
-			j_iso_nitra = {
+			j_fizz_nitra = {
 				name = {"???"},
 				text = {
 					"SHE'S DEAD, OXIDYZE."
 				}
 			},
-			j_iso_nike = {
+			j_fizz_nike = {
 				name = { "Nike Logo", "{C:inactive,s:0.7}...of doom and despair{}" },
 				text = {
 					"{C:red,s:2}Instantly Fucking Die{} on blind selection",
@@ -332,8 +268,8 @@ return {
 					"AND It's unobtainable without force spawning!"
 				}
 			},
-			j_iso_oxi_pwx = {
-				name = { "{C:iso_oxi_gradient}Oxidyze{}", "{s:0.7,C:money}The Perfectionist..?{}" },
+			j_fizz_oxi_pwx = {
+				name = { "{C:fizz_oxi_gradient}Oxidyze{}", "{s:0.7,C:money}The Perfectionist..?{}" },
 				text = {
 					'Copies the Ability of the joker',
 					'to the left and right of this character.',
@@ -345,8 +281,8 @@ return {
 					'{s:0.8,C:dark_edition}Character by Isotypical{}'
 				}
 			},
-			j_iso_oxi_oldname = {
-				name = { "{C:iso_oxi_gradient}Oxy{}", "{s:0.7,C:money}The Perfectionist{}" },
+			j_fizz_oxi_oldname = {
+				name = { "{C:fizz_oxi_gradient}Oxy{}", "{s:0.7,C:money}The Perfectionist{}" },
 				text = {
 					'Copies the Ability of the joker',
 					'to the left and right of this character.',
@@ -356,7 +292,7 @@ return {
 					'{s:0.8,C:dark_edition}Character by Isotypical{}'
 				},
 			},
-			j_iso_oxi_get_trolled_lmfao = {
+			j_fizz_oxi_get_trolled_lmfao = {
 				name = { "\"{C:pastel_yellow}oc{}{C:pink}ks{}ie\"", "{C:pastel_yellow,s:0.7}trolled,{} {C:pink,s:0.7}lmfao{}" },
 				text = {
 					'Copies the Ability of the joker',
@@ -367,7 +303,7 @@ return {
 					'{s:0.8,C:dark_edition}Character by Isotypical{}'
 				},
 			},
-			j_iso_oxi_alt_quotes = {
+			j_fizz_oxi_alt_quotes = {
 				name = { "Oxidyze", "{C:red,s:0.6}Unwanted Visitor{}" },
 				text = {
 					'Copies the Ability of the joker',
@@ -380,7 +316,7 @@ return {
 					'{s:0.8,C:dark_edition}Character by Isotypical{}'
 				},
 			},
-			j_iso_fakeseraph = {
+			j_fizz_fakeseraph = {
 				name = "Seraph..?",
 				text = {
 					{
@@ -399,7 +335,7 @@ return {
 					}
 				}
 			},
-			j_iso_seraph = {
+			j_fizz_seraph = {
 				name = { "Seraph", "{s:0.7,C:green}Incremental Hell{}" },
 				text = {
 					{
@@ -419,8 +355,8 @@ return {
 					}
 				}
 			},
-			j_iso_seraph_lv100 = {
-				name = { "{C:iso_legendplus}The Voidgloom Seraph{}", "{s:0.7,C:legendary}Extensive Power{}" },
+			j_fizz_seraph_lv100 = {
+				name = { "{C:fizz_legendplus}The Voidgloom Seraph{}", "{s:0.7,C:legendary}Extensive Power{}" },
 				text = {
 					{
 						'{C:red,s:0.9}#2#{}',
@@ -428,8 +364,8 @@ return {
 					},
 				}
 			},
-			j_iso_seraph_maxedbalanced = {
-				name = { "{C:iso_legendplus}Voidgloom Seraph{}", "{s:0.7,E:1,C:green}Maximum Power{}" },
+			j_fizz_seraph_maxedbalanced = {
+				name = { "{C:fizz_legendplus}Voidgloom Seraph{}", "{s:0.7,E:1,C:green}Maximum Power{}" },
 				text = {
 					{
 						'{C:red,s:0.9}#1#{}',
@@ -437,44 +373,44 @@ return {
 					},
 				}
 			},
-			j_iso_seraph_lv300 = {
-				name = { "{C:iso_sewh,E:1}Seraph Voidgloom{}", "{C:dark_edition,s:0.7}Harbringer of the Void{}" },
+			j_fizz_seraph_lv300 = {
+				name = { "{C:fizz_sewh,E:1}Seraph Voidgloom{}", "{C:dark_edition,s:0.7}Harbringer of the Void{}" },
 				text = {
 					{
-						'{C:iso_ust,s:0.9}#3#{}',
+						'{C:fizz_ust,s:0.9}#3#{}',
 						'{C:dark_edition,s:1.2}SP: #9#{}',
 					},
 				}
 			},
-			j_iso_seraph_lv1000 = {
-				name = { "{C:iso_finalrgb}The Final Seraph{}", "{s:0.7,E:1}An End Never in Sight{}" },
+			j_fizz_seraph_lv1000 = {
+				name = { "{C:fizz_finalrgb}The Final Seraph{}", "{s:0.7,E:1}An End Never in Sight{}" },
 				text = {
 					{
-						'{C:iso_finalrgb,s:0.9}#4#{}',
+						'{C:fizz_finalrgb,s:0.9}#4#{}',
 						'{C:dark_edition,s:1.2}SP: #9#{}',
 						'{C:inactive}"Jesus fucking christ how unbalanced is your oc"{}',
 						'{C:inactive}"Very." -Isotypical{}'
 					},
 				}
 			},
-			j_iso_seraph_lv10k = {
-				name = "{C:iso_finalrgb}Seraph... Voidgloom?{}",
+			j_fizz_seraph_lv10k = {
+				name = "{C:fizz_finalrgb}Seraph... Voidgloom?{}",
 				text = {
 					{
 						'{C:dark_edition,s:1.35}SP: #9#{}',
 					},
 				}
 			},
-			j_iso_seraph_lv100k = {
-				name = "{C:iso_finalrgb}Serafinentyhjyys{}",
+			j_fizz_seraph_lv100k = {
+				name = "{C:fizz_finalrgb}Serafinentyhjyys{}",
 				text = {
 					{
 						'{C:dark_edition,s:1.35}SP: #9#{}',
 					},
 				}
 			},
-			j_iso_seraph_lv1m = {
-				name = "{C:iso_finalrgb}calm the fuck down bro{}",
+			j_fizz_seraph_lv1m = {
+				name = "{C:fizz_finalrgb}calm the fuck down bro{}",
 				text = {
 					{
 						'{C:dark_edition,s:1.35}SP: #9#{}',
@@ -484,7 +420,7 @@ return {
 					},
 				}
 			},
-			j_iso_seraph_why = {
+			j_fizz_seraph_why = {
 				name = "okay bro",
 				text = {
 					'why are you like this',
@@ -494,10 +430,10 @@ return {
 					'urgh, anyways here\'s your current SP i guess',
 					'{C:dark_edition,s:1.35}SP: #9#{}',
 					'oh and also for your reward, here\'s a cat laughing at you',
-					'{s:3,C:iso_sewh}go outside.{}'
+					'{s:3,C:fizz_sewh}go outside.{}'
 				}
 			},
-			j_iso_sparky = {
+			j_fizz_sparky = {
 				name = { "Sparky", "{s:0.7,C:blue}Too Timid and Shy{}" },
 				text = {
 					'Randomly gives between {C:blue}+#2# and +#3#{} Chips,',
@@ -507,7 +443,7 @@ return {
 				}
 			},
 
-			j_iso_sparky_alt = {
+			j_fizz_sparky_alt = {
 				name = "Close enough, welcome back FPE Abbie",
 				text = {
 					'Randomly gives between {C:blue}+#2# and +#3#{} Chips,',
@@ -516,7 +452,7 @@ return {
 					'{C:dark_edition,s:0.9}Origin: Fundamental Paper Education{}'
 				}
 			},
-			j_iso_sparkynt = {
+			j_fizz_sparkynt = {
 				name = { "Sparky", "{s:0.7,C:red}\"Sacrifices must be made.\"{}" },
 				text = {
 					'On blind select, {C:attention}destroys a random joker{}',
@@ -525,7 +461,7 @@ return {
 					'( Currently {X:tarot,C:white}X#1#{} Mult and Chips )'
 				}
 			},
-			j_iso_sparkynt_alt = {
+			j_fizz_sparkynt_alt = {
 				name = "Emo Girl",
 				text = {
 					'On blind select, {C:attention}destroys a random joker{}',
@@ -534,7 +470,7 @@ return {
 					'( Currently {X:tarot,C:white}X#1#{} Mult and Chips )'
 				}
 			},
-			j_iso_solinium = {
+			j_fizz_solinium = {
 				name = { "Solinium", "{s:0.7,C:blue}The Curious Cat{}" },
 				text = {
 					'{X:mult,C:white}X#1#{} Mult, upon blind selection,',
@@ -547,7 +483,7 @@ return {
 
 				}
 			},
-			j_iso_soliniumscared = {
+			j_fizz_soliniumscared = {
 				name = { "Solinium", "{s:0.7,C:red}Petrified by Fear{}" },
 				text = {
 					'{X:mult,C:white}X#1#{} Mult, upon blind selection,',
@@ -560,7 +496,7 @@ return {
 
 				}
 			},
-			j_iso_soliniumangy = {
+			j_fizz_soliniumangy = {
 				name = { "Solinium", "{s:0.7,C:red}Unhappy Reunion{}" },
 				text = {
 					'{X:mult,C:white}X#1#{} Mult, upon blind selection,',
@@ -573,7 +509,7 @@ return {
 
 				}
 			},
-			j_iso_burgr = {
+			j_fizz_burgr = {
 				name = "The Burger",
 				text = {
 					"An {C:red,s:1.1}EVIL{} aura emanates from",
@@ -582,19 +518,19 @@ return {
 					"{C:inactive,s:0.7}on Blind select{}"
 				}
 			},
-			j_iso_voidinstlose = {
+			j_fizz_voidinstlose = {
 				name = "The Absolute Void",
 				text = {
-					'{X:iso_ust,C:iso_eyeshatteringblue}#1#{} Mult and Chips...',
+					'{X:fizz_ust,C:fizz_eyeshatteringblue}#1#{} Mult and Chips...',
 					'And..?'
 				}
 			},
-			j_iso_oxhatred = {
-				name = "{C:iso_ust}Oxidyze's Embodiment of Hatred{}",
+			j_fizz_oxhatred = {
+				name = "{C:fizz_ust}Oxidyze's Embodiment of Hatred{}",
 				text = {
 					{
 						'{C:red}Debuffs ALL Jokers{} on the right of this joker',
-						'{X:iso_omegablack,C:red}^#1#{} Chips and Mult',
+						'{X:fizz_omegablack,C:red}^#1#{} Chips and Mult',
 						'{C:attention}+10{} Hand Size while owned'
 					},
 					{
@@ -604,11 +540,11 @@ return {
 					}
 				}
 			},
-			j_iso_sparkhatred = {
-				name = "{C:iso_ust}Sparky's Embodiment of Hatred{}",
+			j_fizz_sparkhatred = {
+				name = "{C:fizz_ust}Sparky's Embodiment of Hatred{}",
 				text = {
 					{
-						'{X:iso_omegablack,C:red}^#1#{} Mult and Chips',
+						'{X:fizz_omegablack,C:red}^#1#{} Mult and Chips',
 						'{C:attention}+6{} Hand Size'
 					},
 					{
@@ -617,11 +553,11 @@ return {
 					}
 				}
 			},
-			j_iso_solhatred = {
-				name = "{C:iso_ust}Solinium's Embodiment of Hatred{}",
+			j_fizz_solhatred = {
+				name = "{C:fizz_ust}Solinium's Embodiment of Hatred{}",
 				text = {
 					{
-						'{X:iso_omegablack,C:red}^#1#{} Blind Size',
+						'{X:fizz_omegablack,C:red}^#1#{} Blind Size',
 						'{C:attention}+2{} Hand Size',
 						'{C:inactive}Scalae...{}'
 					},
@@ -631,12 +567,12 @@ return {
 					}
 				}
 			},
-			j_iso_overpoweredgaming = {
+			j_fizz_overpoweredgaming = {
 				text = {
 					'FUCK YEAH WE LOVE ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^100'
 				}
 			},
-			j_iso_recluse = {
+			j_fizz_recluse = {
 				name = { 'Recluse', '{s:0.7,C:red}Destroyer of Universes{}' },
 				text = {
 					'On blind select, {C:red}destroys a random joker{},',
@@ -645,21 +581,21 @@ return {
 					'{C:blue,s:0.9}#1#{}'
 				}
 			},
-			j_iso_somethingevil = {
-				name = { '{C:iso_sewh}Something Evil{}', '{C:inactive,s:0.7}...will happen.{}' },
+			j_fizz_somethingevil = {
+				name = { '{C:fizz_sewh}Something Evil{}', '{C:inactive,s:0.7}...will happen.{}' },
 				text = {
 					"-1e100[100]1e100 Mult... for now."
 				}
 			},
-			j_iso_eternaldagger = {
+			j_fizz_eternaldagger = {
 				name = { 'The Eternal Dagger', "{s:0.6,C:red}Eternal Joker's worst nightmare{}" },
 				text = {
 					'Destroys the joker on the right',
 					'of this joker.',
-					'{C:iso_sewh}Can bypass Eternal{}'
+					'{C:fizz_sewh}Can bypass Eternal{}'
 				}
 			},
-			j_iso_tigersharksparky = {
+			j_fizz_tigersharksparky = {
 				name = { 'Sparky', '{s:0.7}The Tiger Shark{}' },
 				text = {
 					'Scored Cards apply',
@@ -671,14 +607,14 @@ return {
 
 				}
 			},
-			j_iso_abbie = {
+			j_fizz_abbie = {
 				name = 'Abbie',
 				text = {
 					'{C:inactive}Does Something.{}',
 					'{C:dark_edition,s:0.8}Origin : Fundamental Paper Education{}'
 				}
 			},
-			j_iso_abbie_alt = {
+			j_fizz_abbie_alt = {
 				name = { 'Math Failure & Miss Circle Victim', '{s:0.45}fuckin loser lmfaooo{}' },
 				text = {
 					'{C:inactive}Does Something.{}',
@@ -686,7 +622,7 @@ return {
 					'{C:inactive,s:0.5}It may be related to an edition rate...{}'
 				}
 			},
-			j_iso_shrimpo = {
+			j_fizz_shrimpo = {
 				name = 'Shrimpo',
 				text = {
 					'{C:red}Aggressively Beats up a blind{}',
@@ -697,7 +633,7 @@ return {
 					'{C:inactive,s:0.4}- Isotypical{}'
 				}
 			},
-			j_iso_twistedshrimpo = {
+			j_fizz_twistedshrimpo = {
 				name = 'Twisted Shrimpo',
 				text = {
 					'{C:red}Nearly murders a blind.{}',
@@ -705,7 +641,7 @@ return {
 					'{C:dark_edition,s:0.8}Origin : Dandy\'s World{}'
 				}
 			},
-			j_iso_normalsugar = {
+			j_fizz_normalsugar = {
 				name = 'Sugar Rush',
 				text = {
 					'Gives {C:blue}+50{} Chips and {C:red}+10{} Mult',
@@ -713,26 +649,26 @@ return {
 					'{C:inactive}[ Currently #1# hands left ]{}'
 				}
 			},
-			j_iso_hypersugar = {
+			j_fizz_hypersugar = {
 				name = 'Hyper Sugar Rush',
 				text = {
 					'Gives {X:blue,C:white}X2.5{} Chips and {X:red,C:white}X3{} Mult.',
 					'Blind size {C:attention}reduced{} in half.',
-					'Playing 10 hands creates a {C:iso_ust}Sugar Crash{}',
+					'Playing 10 hands creates a {C:fizz_ust}Sugar Crash{}',
 					'{C:inactive}[ Currently #1# hands left ]{}'
 				}
 			},
-			j_iso_demonicsugar = {
+			j_fizz_demonicsugar = {
 				name = 'Demonic Sugar Rush',
 				text = {
 					'{X:blue,C:white}^1.1{} Chips and {X:red,C:white}^1.2{} Mult.',
 					'Blind size {C:red}reduced heavily{} {C:inactive}1/8th original size{}',
-					'Playing 1 hand creates a {C:iso_ust}Sugar Crash{}',
+					'Playing 1 hand creates a {C:fizz_ust}Sugar Crash{}',
 					'{C:inactive}[ Currently #1# hands left ]{}',
 					'{C:inactive}Why did I put a counter here? Oh right, consistency.{}'
 				}
 			},
-			j_iso_sugarcrash = {
+			j_fizz_sugarcrash = {
 				name = 'Sugar Crash',
 				text = {
 					'{C:red}Doubles blind size{}, Chip and Mult',
@@ -741,7 +677,7 @@ return {
 					'{C:inactive}[ Currently #1# hands left ]{}'
 				}
 			},
-			j_iso_ichor = {
+			j_fizz_ichor = {
 				name = 'Ichor',
 				text = {
 					'{C:money}$#2#{} Dollars at the ',
@@ -752,7 +688,7 @@ return {
 					"{C:inactive}( Base Dollars = #1# ){}"
 				}
 			},
-			j_iso_antislopinator = {
+			j_fizz_antislopinator = {
 				name = { 'Anti-Number Slop-inator', '{s:0.6,C:red}"I HATE NUMBERSLOP!!!"{}' },
 				text = {
 					'{C:attention}+3{} Joker slots',
@@ -760,12 +696,12 @@ return {
 					'{C:red}instantly die{}'
 				}
 			},
-			j_iso_evilantislopinator = {
+			j_fizz_evilantislopinator = {
 				name = 'Fatal Exponentiation',
 				text = {
 					{
 						'{C:default}If your score is above 1e308,{}',
-						'{C:iso_ust,s:2}Die.{}',
+						'{C:fizz_ust,s:2}Die.{}',
 						'{X:dark_edition,C:white}^#1#{} Mult',
 					},
 					{
@@ -781,7 +717,7 @@ return {
 					}
 				}
 			},
-			j_iso_crystal = {
+			j_fizz_crystal = {
 				name = { 'Crystal', '{C:blue,s:0.7}The Inventor Cat{}' },
 				text = {
 					'Copies the ability of {C:attention}3 jokers{}',
@@ -792,38 +728,38 @@ return {
 					'{C:dark_edition,E:1,s:0.8}Origin : Starspace{}' --go check out the mod it's peak
 				}
 			},
-			j_iso_toomuch = {
-				name = '{C:iso_sewh}jimbob{}',
+			j_fizz_toomuch = {
+				name = '{C:fizz_sewh}jimbob{}',
 				text = {
-					"{X:iso_finalrgb,C:iso_ust}^^^^4{} Mult and Chips.",
-					"What did you expect from {C:iso_almanacblue}Almanac mode{}, fuckin {C:red}nothing??{}"
+					"{X:fizz_finalrgb,C:fizz_ust}^^^^4{} Mult and Chips.",
+					"What did you expect from {C:fizz_almanacblue}Almanac mode{}, fuckin {C:red}nothing??{}"
 				}
 			},
-			j_iso_jokertoendalljokers = {
-				name = { '{C:iso_finalrgb}Avaritia{}', '{C:iso_finalrgb,s:0.7}The Ultimate Joker.{}' },
+			j_fizz_jokertoendalljokers = {
+				name = { '{C:fizz_finalrgb}Avaritia{}', '{C:fizz_finalrgb,s:0.7}The Ultimate Joker.{}' },
 				text = {
-					'{C:iso_finalrgb}The Joker to end all Jokers...{}',
+					'{C:fizz_finalrgb}The Joker to end all Jokers...{}',
 					'{C:blue}+999,999{}{C:red},999,999{} Mult and Chips',
 					'{X:tarot,C:white}X99,999,999,999{} Mult and Chips',
 					'{X:dark_edition,C:white}^9,999,999,999{} Mult and Chips',
 					'{X:edition,C:white}^^999,999,999{} Mult and Chips',
-					'{X:iso_legendplus,C:white}^^^99,999,999{} Mult and Chips',
-					'{X:iso_finalrgb,C:white,s:1.6}^^^^^^^^^^9,999,999{} Mult and Chips'
+					'{X:fizz_legendplus,C:white}^^^99,999,999{} Mult and Chips',
+					'{X:fizz_finalrgb,C:white,s:1.6}^^^^^^^^^^9,999,999{} Mult and Chips'
 				}
 			},
-			j_iso_cpuoverload = {
-				name = '{C:iso_sewh,E:1}The (actual, ACTUAL) Final Boss of Your CPU{}',
+			j_fizz_cpuoverload = {
+				name = '{C:fizz_sewh,E:1}The (actual, ACTUAL) Final Boss of Your CPU{}',
 				text = {
-					'{C:iso_ust,s:6}Don\'t use this.{}'
+					'{C:fizz_ust,s:6}Don\'t use this.{}'
 				}
 			},
-			j_iso_sphawkclassic = {
-				name = '{C:inactive}(Classic){} Seraph, the {C:iso_legendplus}Angel of the Void{}',
+			j_fizz_sphawkclassic = {
+				name = '{C:inactive}(Classic){} Seraph, the {C:fizz_legendplus}Angel of the Void{}',
 				text = {
 					'{X:tarot,C:white}^666{} Mult and Chips' --LMFAOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
 				}
 			},
-			j_iso_sphawk_slop = {
+			j_fizz_sphawk_slop = {
 				name = { 'Seraph', '{C:dark_edition,s:0.8}The Eternal Void{}' },
 				text = {
 					'{X:dark_edition,C:white}(#3#)#1#{} Hypermult,',
@@ -832,7 +768,7 @@ return {
 					'{C:dark_edition,s:2.5,E:1}:3{}'
 				}
 			},
-			j_iso_sphawk = {
+			j_fizz_sphawk = {
 				name = { 'Seraph', '{C:dark_edition,s:0.8}The Eternal Void{}' },
 				text = {
 					'{X:dark_edition,C:white}^^#1#{} Mult,',
@@ -842,15 +778,15 @@ return {
 					'{C:dark_edition,s:2.5,E:1}:3{}'
 				}
 			},
-			j_iso_solawkclassic = {
-				name = '{C:inactive}(Classic){} Solinium, the {C:iso_ust}Omnipotent One{}',
+			j_fizz_solawkclassic = {
+				name = '{C:inactive}(Classic){} Solinium, the {C:fizz_ust}Omnipotent One{}',
 				text = {
 					'Gives two {C:dark_edition}Negative Soul and Black Hole{}',
 					'{C:dark_edition}Spectral Cards{} on Blind select,',
 					'{X:dark_edition,C:white}^^2{} Mult and Chips'
 				}
 			},
-			j_iso_solawk_slop = {
+			j_fizz_solawk_slop = {
 				name = { 'Solinium', '{C:red,s:0.7,E:1}The Absolute Threat{}' },
 				text = {
 					'{X:dark_edition,C:white}^^^^#1#{} Mult,',
@@ -859,7 +795,7 @@ return {
 					'Stops scaling at 1e300.'
 				}
 			},
-			j_iso_solawk = {
+			j_fizz_solawk = {
 				name = { 'Solinium', '{C:red,s:0.7,E:1}The Absolute Threat{}' },
 				text = {
 					'{X:dark_edition,C:white}^^#1#{} Mult,',
@@ -868,29 +804,29 @@ return {
 					'on {C:attention}Blind Select{}'
 				}
 			},
-			j_iso_spkawkclassic = {
-				name = '{C:inactive}(Classic){} Sparky, the {C:iso_sewh}Eye of all Seeing{}',
+			j_fizz_spkawkclassic = {
+				name = '{C:inactive}(Classic){} Sparky, the {C:fizz_sewh}Eye of all Seeing{}',
 				text = {
 					'{X:no,C:red,s:1.3}^^^3{} Chips,',
 					'{X:dark,C:attention}^0.7{} Mult'
 				}
 			},
-			j_iso_spkawk_slop = {
-				name = { 'Sparky', '{C:iso_legendplus,s:0.7}The Ever Changing Soul{}' },
+			j_fizz_spkawk_slop = {
+				name = { 'Sparky', '{C:fizz_legendplus,s:0.7}The Ever Changing Soul{}' },
 				text = {
 					'Gives {C:attention}2 to 10{}',
 					'{C:dark_edition}Hypermult{} and {C:dark_edition}Hyperchips{}',
 					'{C:dark_edition}Hyperoperator{} is also random from 2-5.'
 				}
 			},
-			j_iso_spkawk = {
-				name = { 'Sparky', '{C:iso_legendplus,s:0.7}The Ever Changing Soul{}' },
+			j_fizz_spkawk = {
+				name = { 'Sparky', '{C:fizz_legendplus,s:0.7}The Ever Changing Soul{}' },
 				text = {
 					"Randomly gives between {C:attention}1.1 to 4{} {X:legendary,C:white}^Mult&Chips{}",
 					"{C:green}#1# in #2#{} chance to apply {X:dark_edition,C:white}^^Mult&Chips{} instead"
 				}
 			},
-			j_iso_brokenseraph = {
+			j_fizz_brokenseraph = {
 				name = { 'Broken Seraph', "{C:red,s:0.7}Shattered by Recluse's Power{}" },
 				text = {
 					'Applies {X:red,C:white}X#1#{} Mult',
@@ -899,24 +835,24 @@ return {
 					'{C:red}#2#{}'
 				}
 			},
-			j_iso_oxyemp = {
-				name = '{C:iso_sewh}Oxidyzation{}',
+			j_fizz_oxyemp = {
+				name = '{C:fizz_sewh}Oxidyzation{}',
 				text = {
 					'Copies the ability of {C:attention}two{}',
 					'{C:attention}jokers{} on the {C:blue}left{} and {C:red}right{} of this joker.',
-					'{C:iso_ust}Quadruples Blind Size.{}'
+					'{C:fizz_ust}Quadruples Blind Size.{}'
 				}
 			},
-			j_iso_oxywaterdroplet = {
+			j_fizz_oxywaterdroplet = {
 				name = 'Mysterious Symbol',
 				text = {
 					"{X:red,C:white}X#1#{} Mult",
 					"{X:red,C:white}+X0.1{} Mult on Blind Select",
 					"{X:red,C:white}+X0.2{} Mult when copied",
-					"{C:inactive,s:0.7}Blueprint, Brainstorm,{} {C:iso_oxi_gradient,E:1,s:0.7}Oxidyze,{} {C:inactive,s:0.7}etc.{}"
+					"{C:inactive,s:0.7}Blueprint, Brainstorm,{} {C:fizz_oxi_gradient,E:1,s:0.7}Oxidyze,{} {C:inactive,s:0.7}etc.{}"
 				}
 			},
-			j_iso_astro = {
+			j_fizz_astro = {
 				name = { 'Astro', '{s:0.6,C:blue}The No. 1 Astro Novalite Hater{}' },
 				text = {
 					'Applies {X:blue,C:white}^^#1#{} Chips',
@@ -927,7 +863,7 @@ return {
 					'{C:dark_edition,E:1,s:0.8}Origin : Starspace{}' --go check out the mod it's peak
 				}
 			},
-			j_iso_solstro = {
+			j_fizz_solstro = {
 				name = { "Astronomical Duo", "{s:0.7,C:blue}\"Solstro\"{}" },
 				text = {
 					{
@@ -940,7 +876,7 @@ return {
 					},
 				}
 			},
-			j_iso_astro_balance = {
+			j_fizz_astro_balance = {
 				name = { 'Astro', '{s:0.7,C:blue}No. 1 Astro Novalite Hater{}' },
 				text = {
 					'Applies {X:blue,C:white}X#1#{} Chips',
@@ -951,13 +887,13 @@ return {
 					'{C:dark_edition,E:1,s:0.8}Origin : Starspace{}' --go check out the mod it's peak
 				}
 			},
-			j_iso_malicesyringe = {
+			j_fizz_malicesyringe = {
 				name = 'Malice Syringe',
 				text = {
 					'{X:black,C:white}X0.85{} Mult and Chips, {C:red}but..?{}'
 				}
 			},
-			j_iso_lifecrystal = {
+			j_fizz_lifecrystal = {
 				name = 'Life Crystal',
 				text = {
 					'{C:attention}Prevents{} Game Over,',
@@ -966,7 +902,7 @@ return {
 					'{C:inactive}Current Durability: #1#/3{}'
 				}
 			},
-			j_iso_steelgaming = {
+			j_fizz_steelgaming = {
 				name = 'Steel Gaming',
 				text = {
 					'Played steel cards',
@@ -974,7 +910,7 @@ return {
 					'{C:inactive}"Hey, I think I\'ve seen this one before!"{}'
 				}
 			},
-			j_iso_crateinacrate = {
+			j_fizz_crateinacrate = {
 				name = 'Crate in a Crate in a Crate in a Crate in a',
 				text = {
 					'{X:red,C:white}^1{} Mult,',
@@ -983,7 +919,7 @@ return {
 					'{C:inactive}"The classic way of solving storage!"{}'
 				}
 			},
-			j_iso_moddingchat = {
+			j_fizz_moddingchat = {
 				name = { "modding-chat", "{s:0.7}Indirect References{}" },
 				text = {
 					{
@@ -996,14 +932,14 @@ return {
 					}
 				}
 			},
-			j_iso_ripoff = {
+			j_fizz_ripoff = {
 				name = "Epävakaaelämänmuoto",
 				text = {
 					'{X:dark_edition,C:white}^^^^4{} Mult and {X:dark_edition,C:white}^^2{} Chips...',
 					'{C:inactive}And..?{}'
 				}
 			},
-			j_iso_mask = {
+			j_fizz_mask = {
 				name = { "The Mask", "{s:0.7}Silent Judgement{}" },
 				text = {
 					"On blind select,",
@@ -1011,7 +947,7 @@ return {
 					"{C:inactive}...{}"
 				}
 			},
-			j_iso_lana = {
+			j_fizz_lana = {
 				name = "Lana",
 				text = {
 					"Gives {C:red}+11{} Mult,",
@@ -1019,15 +955,15 @@ return {
 					"Abbie is present."
 				}
 			},
-			j_iso_claire = {
+			j_fizz_claire = {
 				name = "Claire",
 				text = {
 					"{C:blue}+31{} Chips",
 					"{C:inactive,s:0.8}The WORST Joker in the mod.{}"
 				}
 			},
-			j_iso_oxydeceit = {
-				name = "{C:iso_deceitful}Oxidyzation{}",
+			j_fizz_oxydeceit = {
+				name = "{C:fizz_deceitful}Oxidyzation{}",
 				text = {
 					"Copies {C:attention}3 jokers{} from",
 					"the left and right of this \"joker\"",
@@ -1035,7 +971,7 @@ return {
 					"{C:inactive,s:0.8}No, it will not retrigger itself!{}"
 				} --very original idea, iso!
 			},
-			j_iso_yatta = {
+			j_fizz_yatta = {
 				name = { 'Yatta', '{s:0.7,C:legendary}The Candy Lover{}' },
 				text = {
 					"Creates 2 {C:dark_edition}Negative{}",
@@ -1045,14 +981,14 @@ return {
 					'{C:dark_edition,s:0.8}Origin : Dandy\'s World{}'
 				}
 			},
-			j_iso_gourdy = {
+			j_fizz_gourdy = {
 				name = 'Gourdy Holloway',
 				text = {
 					"{C:red}No ability as of now!{}",
 					"{C:dark_edition,s:0.8}Origin : Dandy\'s World{}"
 				}
 			},
-			j_iso_dw_astro = { --BEHAVE, STARSPACE ASTRO!
+			j_fizz_dw_astro = { --BEHAVE, STARSPACE ASTRO!
 				name = { "Astro Novalite", "{C:blue,s:0.7,E:1}The Sleeper{} {s:0.7,E:1,C:inactive}(agent){}" },
 				text = {
 					{
@@ -1068,7 +1004,7 @@ return {
 					}
 				}
 			},
-			j_iso_xeno = {
+			j_fizz_xeno = {
 				name = { "Xeno", "{C:blue,s:0.7}Friend of Solinium{}" },
 				text = {
 					{
@@ -1090,7 +1026,7 @@ return {
 					}
 				}
 			},
-			j_iso_xeno_gmarble = {
+			j_fizz_xeno_gmarble = {
 				name = "Xeno",
 				text = {
 					{
@@ -1103,7 +1039,7 @@ return {
 					}
 				}
 			},
-			j_iso_sword_of_kings = { -- ONE IN WHAT NOW
+			j_fizz_sword_of_kings = { -- ONE IN WHAT NOW
 				name = "Sword of Kings",
 				text = {
 					"Fixed {C:green}2 in 5{} chance to instantly",
@@ -1111,7 +1047,7 @@ return {
 					"Otherwise, {X:red,C:white}X3{} Mult"
 				}
 			},
-			j_iso_divinedominance = {
+			j_fizz_divinedominance = {
 				name = "Divine Dominance",
 				text = {
 					"After 7 Rounds, {C:red}Destroys{} and",
@@ -1120,7 +1056,7 @@ return {
 					"will give {X:dark_edition,C:white}^1.5{} Mult"
 				}
 			},
-			j_iso_winsweep = { -- you can only have one wind charge
+			j_fizz_winsweep = { -- you can only have one wind charge
 				name = "WinSweep",
 				text = {
 					"You can only have",
@@ -1128,13 +1064,13 @@ return {
 					"{C:inactive,s:0.75}Discarding a card sets score to Blind Requirement{}"
 				}
 			},
-			j_iso_lesser_divinity = {
+			j_fizz_lesser_divinity = {
 				name = "Lesser Divinity",
 				text = {
 					"noxintrus.wmv"
 				}
 			},
-			j_iso_obscene_joke = {
+			j_fizz_obscene_joke = {
 				name = "Your Absurd Joke",
 				text = {
 					{
@@ -1149,7 +1085,7 @@ return {
 
 				}
 			},
-			j_iso_obscene_joke_oxidyze = {
+			j_fizz_obscene_joke_oxidyze = {
 				name = "Oxidyze's Absurd Joke",
 				text = {
 					{
@@ -1158,11 +1094,11 @@ return {
 					{
 						"{C:red}SERAPH. FUCKING. VOIDGLOOM.{}",
 						"{C:red}STOP. CALLING. ME.{} {X:pastel_yellow}OC{}{X:pink}KS{}{X:black,C:white}IE{}",
-						"{C:iso_nightmare_purple}hi{} {X:pastel_yellow,C:iso_nightmare_purple}oc{}{X:pink,C:iso_nightmare_purple}ks{}{X:default,C:white}ie{}"
+						"{C:fizz_nightmare_purple}hi{} {X:pastel_yellow,C:fizz_nightmare_purple}oc{}{X:pink,C:fizz_nightmare_purple}ks{}{X:default,C:white}ie{}"
 					},
 				}
 			},
-			j_iso_obscene_joke_sparky = {
+			j_fizz_obscene_joke_sparky = {
 				name = "Sparky's Absurd Joke",
 				text = {
 					{
@@ -1171,11 +1107,11 @@ return {
 					{
 						"{C:red}STOP MENTIONING HIS DEATH!!{}",
 						"{C:red}PLEASE, STOP MENTIONING ABBIE'S DEATH!!{}",
-						"{C:iso_nightmare_purple}abbie died on march 1st, 2024.{}"
+						"{C:fizz_nightmare_purple}abbie died on march 1st, 2024.{}"
 					}
 				}
 			},
-			j_iso_obscene_joke_solinium = {
+			j_fizz_obscene_joke_solinium = {
 				name = "Solinium's Absurd Joke",
 				text = {
 					{
@@ -1183,45 +1119,45 @@ return {
 					},
 					{
 						"{C:red}If I hear you say that one more ti-{}",
-						"{C:iso_nightmare_purple}SOLINIUM LIKES BEING PET!!!!!!{}"
+						"{C:fizz_nightmare_purple}SOLINIUM LIKES BEING PET!!!!!!{}"
 					}
 				}
 			},
-			j_iso_obscene_joke_oh_no = {
+			j_fizz_obscene_joke_oh_no = {
 				name = { "Seraph's Backfired Joke", "{s:0.6,C:red}Blunder reaction.{}" },
 				text = {
 					{
-						"Creates {C:red}ALL{} {C:iso_ust}Embodiments of Hatred{}",
-						"creates {C:iso_sewh}Something Evil{},",
+						"Creates {C:red}ALL{} {C:fizz_ust}Embodiments of Hatred{}",
+						"creates {C:fizz_sewh}Something Evil{},",
 						"and {C:red}Destroys{} Seraph",
 						"{C:red}Do not pick up.{}"
 					},
 					{
-						"{C:iso_nightmare_purple}H-hey..! This was all a joke!{}",
-						"{C:iso_nightmare_purple}W-wait! WAIT- I'M SORRY! I'M SORRY!{}"
+						"{C:fizz_nightmare_purple}H-hey..! This was all a joke!{}",
+						"{C:fizz_nightmare_purple}W-wait! WAIT- I'M SORRY! I'M SORRY!{}"
 					}
 				}
 			},
-			j_iso_porky = {
+			j_fizz_porky = {
 				name = "Porky",
 				text = {
 					"That monster had a name?"
 				}
 			},
-			j_iso_giygas = {
+			j_fizz_giygas = {
 				name = "Giygas",
 				text = {
 					"Ness..."
 				}
 			},
-			j_iso_fancy_purse = {
+			j_fizz_fancy_purse = {
 				name = "Fancy Purse",
 				text = {
 					"Gives {C:money}$100{} at",
 					"the end of a round{C:inactive}..?{}"
 				}
 			},
-			j_iso_pk_love_a = {
+			j_fizz_pk_love_a = {
 				name = "PK Love Alpha",
 				text = {
 					{
@@ -1246,7 +1182,7 @@ return {
 					},
 				}
 			},
-			j_iso_pk_love_b = {
+			j_fizz_pk_love_b = {
 				name = "PK Love Beta",
 				text = {
 					{
@@ -1271,7 +1207,7 @@ return {
 					},
 				}
 			},
-			j_iso_pk_love_g = {
+			j_fizz_pk_love_g = {
 				name = "PK Love Gamma",
 				text = {
 					{
@@ -1296,7 +1232,7 @@ return {
 					},
 				}
 			},
-			j_iso_pk_love_o = {
+			j_fizz_pk_love_o = {
 				name = "PK Love Omega",
 				text = {
 					{
@@ -1324,7 +1260,7 @@ return {
 					}
 				}
 			},
-			j_iso_pk_love_test = {
+			j_fizz_pk_love_test = {
 				name = "PK Love TEST",
 				text = {
 					{
@@ -1339,7 +1275,7 @@ return {
 					},
 				}
 			},
-			j_iso_psi_lifeup = {
+			j_fizz_psi_lifeup = {
 				name = "PSI Lifeup",
 				text = {
 					{
@@ -1366,21 +1302,21 @@ return {
 					}
 				}
 			},
-			j_iso_solinium_PWX = {
+			j_fizz_solinium_PWX = {
 				name = "Solinium (PWX)",
 				text = {
 					"poor cat's gonna go through hell",
 					"Sprite changes when \"the garbl\" is near"
 				}
 			},
-			j_iso_absolutely_safe_capsule = {
+			j_fizz_absolutely_safe_capsule = {
 				name = "Absolutely Safe Capsule",
 				text = {
 					"Prevents Gameovers",
 					"{C:inactive}But in turn, you can't win either.{}"
 				}
 			}, -- might not be used
-			j_iso_pk_flash = {
+			j_fizz_pk_flash = {
 				name = "PK Flash",
 				text = {
 					{
@@ -1391,7 +1327,7 @@ return {
 					}
 				}
 			},
-			j_iso_pk_ground = {
+			j_fizz_pk_ground = {
 				name = { "PK Ground", "{s:0.7,C:red}Strongest PK Move, Ever.{}" },
 				text = {
 					{
@@ -1402,7 +1338,7 @@ return {
 					}
 				}
 			},
-			j_iso_psi_hypnosis = {
+			j_fizz_psi_hypnosis = {
 				name = "PSI Hypnosis",
 				text = {
 					{
@@ -1411,7 +1347,7 @@ return {
 					}
 				}
 			},
-			j_iso_psi_paralysis = {
+			j_fizz_psi_paralysis = {
 				name = "PSI Paralysis",
 				text = {
 					{
@@ -1420,7 +1356,7 @@ return {
 					}
 				}
 			},
-			j_iso_psi_brainshock = {
+			j_fizz_psi_brainshock = {
 				name = "PSI Brainshock",
 				text = {
 					{
@@ -1428,13 +1364,13 @@ return {
 					}
 				}
 			},
-			j_iso_reclusivevessel = {
-				name = { "{C:iso_legendplus}Reclusive Vessel{}", "{s:0.7,C:red}The Ultimate Threat{}" },
+			j_fizz_reclusivevessel = {
+				name = { "{C:fizz_legendplus}Reclusive Vessel{}", "{s:0.7,C:red}The Ultimate Threat{}" },
 				text = {
 					{
-						"Scoring a card causes {C:iso_nightmare_purple}The Vessel{} gain {X:legendary,C:white}X1{} Mult and Chips",
-						"{C:iso_nightmare_purple}The Vessel{} will also scale {X:iso_legendplus,C:white}EMult+Chips{} by {X:dark_edition,C:white}^0.01{}",
-						"{C:iso_nightmare_purple}The Vessel{} will {C:red}destroy{} a random joker on {C:attention}Blind Select{},",
+						"Scoring a card causes {C:fizz_nightmare_purple}The Vessel{} gain {X:legendary,C:white}X1{} Mult and Chips",
+						"{C:fizz_nightmare_purple}The Vessel{} will also scale {X:fizz_legendplus,C:white}EMult+Chips{} by {X:dark_edition,C:white}^0.01{}",
+						"{C:fizz_nightmare_purple}The Vessel{} will {C:red}destroy{} a random joker on {C:attention}Blind Select{},",
 						"and then adds {X:money,C:white}X10{} times it's sell value to {X:legendary,C:white}XChip+Mult{}",
 						"and {X:money,C:white}X1{} times it's sell value to {X:legendary,C:white}EChip+Mult{}",
 					},
@@ -1450,12 +1386,12 @@ return {
 					-- 	"That thing had a {C:attention}NAME?!{}",
 					-- 	"Hah, HAHAHAHAA!!",
 					-- 	"It's such a shame, such SUCH a shame they {C:red}sold their soul{}",
-					-- 	"to little ol' {C:iso_nightmare_purple}Recluse{}, just to save some stupid {C:blue}Cat's{} PITIFUL life!"
+					-- 	"to little ol' {C:fizz_nightmare_purple}Recluse{}, just to save some stupid {C:blue}Cat's{} PITIFUL life!"
 					-- }
 
 				}
 			},
-			j_iso_candycane = { -- for fucks sake
+			j_fizz_candycane = { -- for fucks sake
 				name = { "Sappy", "{C:attention,s:0.7}The Honey Blob{}" },
 				text = {
 					"Scored {C:diamonds}Diamonds{} permanently gain",
@@ -1463,7 +1399,7 @@ return {
 					"{C:blue,s:0.8,E:1}Original Character by: Candycane{}"
 				}
 			},
-			j_iso_reroll_abuse = {
+			j_fizz_reroll_abuse = {
 				name = "Reroll Abuse",
 				text = {
 					"Shop rerolls are {C:attention}free{}",
@@ -1472,7 +1408,7 @@ return {
 					"{C:inactive}Rerolls: #1#{}"
 				}
 			},
-			j_iso_garble_of_doom_and_despair = {
+			j_fizz_garble_of_doom_and_despair = {
 				name = "the garbl",
 				text = {
 					"{C:attention}Certain Jokers{} will have",
@@ -1485,27 +1421,27 @@ return {
 					"{C:inactive}Oxidyze took mortal damage! Oxidyze took mortal damage!{}"
 				}
 			},
-			j_iso_myself = {
+			j_fizz_myself = {
 				name = {
-					"{C:iso_iso_grad,E:1}Isotypical{}",
-					"{s:0.65,C:iso_iso_grad,E:1,u:iso_iso_grad}The Creator of the Mod!{}"
+					"{C:fizz_fizz_grad,E:1}Isotypical{}",
+					"{s:0.65,C:fizz_fizz_grad,E:1,u:fizz_fizz_grad}The Creator of the Mod!{}"
 				},
 				text = {
 					"{C:attention}Retriggers{} all {C:attention}Cards and Jokers{}",
 					"once for every {C:attention}Joker currently held{}",
 					"Reduces {C:attention}Blind requirement{} by {X:dark_edition,C:white}(Req^0.6)/2{}",
 					"All cards are {C:attention}immune{} to {C:red}debuffs{}",
-					"{X:iso_iso_grad,C:white}^^^1.02{} Chips and Mult {C:attention}before and during{} scoring",
-					"At the end of the ante, Sets {E:1,C:iso_iso_grad}ChipMult Operator{} to the equation of",
-					"{X:iso_iso_grad,C:white,s:1.3}(J(sin(a)+1)*10)^0.5{}",
+					"{X:fizz_fizz_grad,C:white}^^^1.02{} Chips and Mult {C:attention}before and during{} scoring",
+					"At the end of the ante, Sets {E:1,C:fizz_fizz_grad}ChipMult Operator{} to the equation of",
+					"{X:fizz_fizz_grad,C:white,s:1.3}(J(sin(a)+1)*10)^0.5{}",
 					"{C:attention}J = Jokers, a = Ante, rounded up{}",
 					"{C:inactive}Changes to #3# next Ante{}",
-					"Some {c:attention}loaded mods{} may buff {C:iso_iso_grad}Isotypical...{}",
-					"{C:iso_dark_purple,E:1}The Gal who made the mod herself, now in joker form!{}",
-					"{C:iso_light_purple,s:0.85,E:1}\"#1#\"{}"
+					"Some {c:attention}loaded mods{} may buff {C:fizz_fizz_grad}Isotypical...{}",
+					"{C:fizz_dark_purple,E:1}The Gal who made the mod herself, now in joker form!{}",
+					"{C:fizz_light_purple,s:0.85,E:1}\"#1#\"{}"
 				}
 			},
-			j_iso_steelwire_stage_1 = {
+			j_fizz_steelwire_stage_1 = {
 				name = "Steelwire",
 				text = {
 					"{C:inactive}A strong aura emits from the Steelwire.{}",
@@ -1513,7 +1449,7 @@ return {
 					"{C:inactive,s:0.8}There's #1# of them now.{}"
 				}
 			},
-			j_iso_steelwire_stage_2 = {
+			j_fizz_steelwire_stage_2 = {
 				name = "Steelwire",
 				text = {
 					"{C:inactive}A strong aura emits from the Steelwire.{}",
@@ -1521,7 +1457,7 @@ return {
 					"{C:inactive,s:0.8}There's #1# of them now.{}"
 				}
 			},
-			j_iso_steelwire_stage_3 = {
+			j_fizz_steelwire_stage_3 = {
 				name = "Steelwire",
 				text = {
 					"{C:inactive}A strong aura emits from the Steelwire.{}",
@@ -1530,7 +1466,7 @@ return {
 					"{C:inactive,s:0.8}There's #1# of them now.{}"
 				}
 			},
-			j_iso_steelwire_stage_4 = {
+			j_fizz_steelwire_stage_4 = {
 				name = "Steelwire",
 				text = {
 					"{C:inactive}A strong aura emits from the Steelwire.{}",
@@ -1539,7 +1475,7 @@ return {
 					"{C:inactive,s:0.8}There's #1# of them now.{}"
 				}
 			},
-			j_iso_steelwire_stage_5 = {
+			j_fizz_steelwire_stage_5 = {
 				name = "Steelwire",
 				text = {
 					"{C:inactive}A strong aura emits from the Steelwire.{}",
@@ -1547,7 +1483,7 @@ return {
 					"{C:inactive,s:0.8}There's #1# of them now.{}"
 				}
 			},
-			j_iso_steelwire_stage_6 = {
+			j_fizz_steelwire_stage_6 = {
 				name = "Steelwire",
 				text = {
 					"{C:inactive}A strong aura emits from the Steelwire.{}",
@@ -1556,7 +1492,7 @@ return {
 					"{C:inactive,s:0.8}There's #1# of them now.{}"
 				}
 			},
-			j_iso_steelwire_stage_7 = {
+			j_fizz_steelwire_stage_7 = {
 				name = "Steelwire",
 				text = {
 					"{C:inactive}A strong aura emits from the Steelwire.{}",
@@ -1565,7 +1501,7 @@ return {
 					"{C:inactive,s:0.8}There's #1# of them now.{}"
 				}
 			},
-			j_iso_steelwire_stage_8 = {
+			j_fizz_steelwire_stage_8 = {
 				name = "{C:dark_edition}Steelwire{}",
 				text = {
 					"{C:dark_edition,E:1}An extremely strong aura emits from the Steelwire.{}",
@@ -1573,17 +1509,17 @@ return {
 					"{C:inactive,s:0.8}There's #1# of them now.{}"
 				}
 			},
-			j_iso_steelwire_stage_final = {
-				name = "{C:iso_ust}Steelwire{}",
+			j_fizz_steelwire_stage_final = {
+				name = "{C:fizz_ust}Steelwire{}",
 				text = {
 					"{C:inactive,s:0.8}There's #1# of them now.{}",
-					"{C:iso_crimson,s:0.7,E:1}The Steelwire grows ever more powerful.{}",
-					"{C:iso_crimson,s:0.7,E:1}It's clearly strong.{}",
-					"{X:iso_ust,C:white}(#2#)#1#{} Mult",
+					"{C:fizz_crimson,s:0.7,E:1}The Steelwire grows ever more powerful.{}",
+					"{C:fizz_crimson,s:0.7,E:1}It's clearly strong.{}",
+					"{X:fizz_ust,C:white}(#2#)#1#{} Mult",
 					"{C:attention}Retriggers{} self {C:attention}#3#{} times"
 				}
 			},
-			j_iso_dogman = {
+			j_fizz_dogman = {
 				name = "Dog Man",
 				text = {
 					"{C:legendary}+#2#{} Chips and Mult",
@@ -1593,27 +1529,27 @@ return {
 					"{C:dark_edition,E:1,s:0.6}Yeah, revolutionary I know.{}"
 				}
 			},
-			j_iso_petey = {
+			j_fizz_petey = {
 				name = "Petey The Cat",
 				text = {
 					"Mothering Heights eh?",
 					"Wuthering Heights... wait",
-					"{C:iso_dark_purple}I could be the reason why{}",
-					"{C:iso_dark_purple}You were able to be kind{}",
-					"{C:iso_dark_purple}And the hearts we held so tight won't stay broke- AAA{}",
+					"{C:fizz_dark_purple}I could be the reason why{}",
+					"{C:fizz_dark_purple}You were able to be kind{}",
+					"{C:fizz_dark_purple}And the hearts we held so tight won't stay broke- AAA{}",
 				}
 			},
-			j_iso_neveragain = {
+			j_fizz_neveragain = {
 				name = "???",
 				text = { "..?" }
 			},
-			j_iso_neveragain_clicked = {
+			j_fizz_neveragain_clicked = {
 				name = "{C:red}NEVER. AGAIN.{}",
 				text = {
 					"{X:default,C:white}X0{} Mult"
 				}
 			},
-			j_iso_a_fucking_gun = {
+			j_fizz_a_fucking_gun = {
 				name = "Astro's Gun",
 				text = {
 					"{C:red,s:1.3}Only works if you have Astro!{}",
@@ -1626,7 +1562,7 @@ return {
 					"{C:inactive,s:0.8}GOODBYE, FRAUD! - Astro{}"
 				}
 			},
-			j_iso_ocksie = {
+			j_fizz_ocksie = {
 				name = { "{C:pastel_yellow}O{}{C:pink}x{}y", "{C:pastel_yellow,s:0.7}the bnuuy{}" },
 				text = {
 					"{C:attention}Steel{} cards are retriggered {C:attention}#1#{} times",
@@ -1635,13 +1571,13 @@ return {
 					"{C:dark_edition,s:0.8,E:1}Original Character by : ocksie{}"
 				}
 			},
-			j_iso_actual_bunny = {
+			j_fizz_actual_bunny = {
 				name = "Bunny",
 				text = {
 					"+33 Mult"
 				}
 			},
-			j_iso_score_converter = {
+			j_fizz_score_converter = {
 				name = "Catalyctic Score Converter",
 				text = {
 					"At the end of the round",
@@ -1651,7 +1587,7 @@ return {
 					"{C:inactive,s:0.7}n = Score, rounded down{}"
 				}
 			},
-			j_iso_lesbian = {
+			j_fizz_lesbian = {
 				name = "Lesbian Thoughts",
 				text = {
 					{
@@ -1668,7 +1604,7 @@ return {
 					}
 				}
 			},
-			j_iso_sleep_deprived = {
+			j_fizz_sleep_deprived = {
 				name = "Sleep Deprivation",
 				text = {
 					"Screen is significantly darker",
@@ -1676,16 +1612,16 @@ return {
 					"{C:red}Debuffs all jokers{} if not in {C:attention}rightmost slot{}"
 				}
 			},
-			j_iso_freethinker = {
+			j_fizz_freethinker = {
 				name = "So called Free thinkers when..",
 				text = {
 					"{C:inactive}..happy house run{}",
-					"{X:iso_sewh,C:white}^^^^4,444{} Mult after",
+					"{X:fizz_sewh,C:white}^^^^4,444{} Mult after",
 					"playing {C:attention}1000{} Hands",
 					"{C:inactive}Currently #1#/1000{}"
 				}
 			},
-			j_iso_OVERSCORE = {
+			j_fizz_OVERSCORE = {
 				name = "// OVERSCORE //",
 				text = {
 					{
@@ -1703,17 +1639,17 @@ return {
 					}
 				}
 			},
-			j_iso_overscore_detriment = {
+			j_fizz_overscore_detriment = {
 				name = "Do not Overscore",
 				text = {
 					"Scoring over {X:dark_edition,C:white}^2{} of Blind Req.",
-					"Instantly spawns an {E:1,C:iso_ust}Omega Blind{}"
+					"Instantly spawns an {E:1,C:fizz_ust}Omega Blind{}"
 				}
 			},
-			j_iso_full_stop_fixer = {
+			j_fizz_full_stop_fixer = {
 				name = {
 					"Full-Stop Office Fixer",
-					"{E:1,C:iso_dark_purple,s:0.7}Isotypical{}"
+					"{E:1,C:fizz_dark_purple,s:0.7}Isotypical{}"
 				},
 				text = {
 					{
@@ -1739,7 +1675,7 @@ return {
 					}
 				}
 			},
-			j_iso_poise = {
+			j_fizz_poise = {
 				name = "Poise",
 				text = {
 					"{C:green}[When Scoring Cards]{}",
@@ -1750,13 +1686,13 @@ return {
 					"and gain {C:money}Money{} equal to the cube root of (XChip x Poise Potency)"
 				}
 			},
-			j_iso_nil = {
+			j_fizz_nil = {
 				name = "???",
 				text = {
 					""
 				}
 			},
-			j_iso_eight_melodies = {
+			j_fizz_eight_melodies = {
 				name = "Eight Melodies",
 				text = {
 					{
@@ -1777,16 +1713,16 @@ return {
 					}
 				}
 			},
-			j_iso_don_quixote = {
+			j_fizz_don_quixote = {
 				name = {
 					"Don Quixote",
 					"{C:attention,s:0.7}THE CREATURE{}"
 				},
 				text = {
-					"{E:iso_shake,C:attention}MANAGER ESQUIRE!!!!!!{}"
+					"{E:fizz_shake,C:attention}MANAGER ESQUIRE!!!!!!{}"
 				}
 			},
-			j_iso_clockhead = {
+			j_fizz_clockhead = {
 				name = { "Dante", "{s:0.7}\"Clockhead\"{}" },
 				text = {
 					"Select 1 Ability using {C:attention}Durante{}",
@@ -1794,7 +1730,7 @@ return {
 					"Currently inactive"
 				}
 			},
-			j_iso_prescript = {
+			j_fizz_prescript = {
 				name = {
 					"Prescript [Device]"
 				},
@@ -1814,14 +1750,14 @@ return {
 			}
 		},
 		Other = {
-			iso_recluses_eye_seal = {
+			fizz_recluses_eye_seal = {
 				name = "Recluse's Eye",
 				text = {
 					'Retriggers this',
 					'card {C:attention}2{} times.'
 				}
 			},
-			iso_reclusedownside = {
+			fizz_reclusedownside = {
 				name = "Recluse's Downside",
 				text = {
 					'{C:red}Destroy{} a random joker',
@@ -1829,20 +1765,20 @@ return {
 					'Chip count decrements instead.'
 				}
 			},
-			iso_sharkdownside = {
+			fizz_sharkdownside = {
 				name = "TSHRK!Sparky's Downside",
 				text = {
 					'{C:green}1 in 6{} chance for scored card',
 					'to get {C:red}eaten{} {C:inactive}(Destroyed){}'
 				}
 			},
-			iso_oxydownside = {
+			fizz_oxydownside = {
 				name = "Oxidyze's Downside",
 				text = {
 					'{X:red,C:white}X2{} Blind Size'
 				}
 			},
-			iso_mercymult = {
+			fizz_mercymult = {
 				name = "Mercy EMult",
 				text = {
 					"On blind select,",
@@ -1852,45 +1788,45 @@ return {
 					--"{C:inactive,s:0.75}If there are no jokers present, you'll still get the EMult.{}"
 				}
 			},
-			iso_scared = {
+			fizz_scared = {
 				name = "Please don't",
 				text = {
 					'{C:inactive}Don\'t... pick this up.{}',
 					'{C:inactive}Please.{}'
 				}
 			},
-			iso_evil = {
+			fizz_evil = {
 				name = "Evil Spawns",
 				text = {
 					"All shop jokers are now {C:red}EVIL{}"
 				}
 			},
-			iso_omega_blinds = {
+			fizz_omega_blinds = {
 				name = "Omega Rushin",
 				text = {
 					"Boss blinds are always {C:red}Omega{}"
 				}
 			},
-			iso_good_luck = {
+			fizz_good_luck = {
 				name = "???",
 				text = {
 					"Evil."
 				}
 			},
-			iso_pwx = {
-				name = "{C:iso_almanacblue}POLTERWORX's{} Modification",
+			fizz_pwx = {
+				name = "{C:fizz_almanacblue}POLTERWORX's{} Modification",
 				text = {
-					"{X:iso_iso_grad,C:white}#1#{} Chips and Mult",
+					"{X:fizz_fizz_grad,C:white}#1#{} Chips and Mult",
 					"{C:attention}N{} = {C:attention}Current number{} of {C:attention}Jokers{}"
 				} --What did you expect?
 			},
-			iso_crypt = {
+			fizz_crypt = {
 				name = "Cryptid's Modification",
 				text = {
 					"{X:legendary,C:white}X2{} {C:attention}Hand Size{} and {C:attention}Card Selection Limit{}"
 				} --idk
 			},
-			iso_starspace = {
+			fizz_starspace = {
 				name = "Starspace's Modification",
 				text = {
 					"{C:green}1 in 6{} chance to create a {C:blue}Galactic{} Joker on",
@@ -1902,7 +1838,7 @@ return {
 					"{C:red,s:1.5}NOT IMPLEMENTED!{}"
 				} --tetratio
 			},
-			iso_baladash = {
+			fizz_baladash = {
 				name = "Balatro Dash's Modification",
 				text = {
 					"Saves you from death when",
@@ -1910,39 +1846,39 @@ return {
 					"On death, {C:red}Destroys{} a random level"
 				} --attempt 2
 			},
-			iso_degen = {
+			fizz_degen = {
 				name = "Degeneracy's Modification",
 				text = {
 					"Soon!"
 				}
 			},
-			iso_neonflame = {
+			fizz_neonflame = {
 				name = "Neonflame's Modification",
 				text = {
 					"Soon!"
 				}
 			},
-			iso_yahimod = {
+			fizz_yahimod = {
 				name = "Yahimod's Modification",
 				text = {
 					"{C:red,E:1,s:1.5}HORSES EVERYWHERE!!!{}"
 				}
 			},
-			iso_busted_buffoons = {
+			fizz_busted_buffoons = {
 				name = "Busted Buffoon's Modification",
 				text = {
 					"A lot of fucking Joker Slots"
 				}
 			},
-			iso_aeternal = {
+			fizz_aeternal = {
 				name = "Alphaeternal",
 				text = {
 					"Cannot be sold",
 					"or Destroyed normally",
-					"Can be destroyed by {C:iso_sewh}Eternal Dagger{}"
+					"Can be destroyed by {C:fizz_sewh}Eternal Dagger{}"
 				} --cant be stopped by stuff like lockpick
 			},
-			iso_oeternal = {
+			fizz_oeternal = {
 				name = "Omegaeternal",
 				text = {
 					"Cannot be sold",
@@ -1951,32 +1887,32 @@ return {
 					"{C:inactive,s:0.7}shut up about debugplus{}"
 				}
 			},
-			iso_98percent = {
+			fizz_98percent = {
 				name = "I cant read code",
 				text = {
 					"{C:attention}Retriggers{} self {C:attention}#1#{} times",
 					"Joker gains {C:attention}+1{} Mult and Operator when {C:attention}triggered{}",
-					"Currently {X:iso_finalrgb,C:white}#4##2##5##3#{} Mult"
+					"Currently {X:fizz_finalrgb,C:white}#4##2##5##3#{} Mult"
 				}
 			},
-			iso_placeholder = {
+			fizz_placeholder = {
 				name = "Need to Rework / Placeholder Art",
 				text = {
 					"Art may change in future updates!",
 					"I don't know what else to say here, so..."
 				}
 			},
-			iso_actual_horror = {
+			fizz_actual_horror = {
 				name = "HORROR",
 				text = {
 					"{C:red}+2{} Mult and {C:blue}+2{} Chips",
 					"{C:attention}Retriggers{} self {C:attention}#1#{} times",
 					"{C:red}Hyperoperator and Mult{} is multiplied",
 					"by {C:red}1.01{} when triggered",
-					"{X:iso_ust,C:white}#4##2##5##3#{} Mult {X:iso_blue_ust,C:white}#4##2##5##3#{} Chips"
+					"{X:fizz_ust,C:white}#4##2##5##3#{} Mult {X:fizz_blue_ust,C:white}#4##2##5##3#{} Chips"
 				}
 			},
-			iso_full_stop_1 = {
+			fizz_full_stop_1 = {
 				name = "Return Fire",
 				text = {
 					"{X:blue,C:white}X1.5{} Chips",
@@ -1985,7 +1921,7 @@ return {
 					"{C:attention}Uses 1 Ammo{}"
 				}
 			},
-			iso_full_stop_2 = {
+			fizz_full_stop_2 = {
 				name = "Headshot",
 				text = {
 					"Gain {C:attention}3 Poise Potency{} and {C:attention}2 Poise Count{}",
@@ -1994,7 +1930,7 @@ return {
 					"{C:attention}Uses 1 Ammo{}"
 				}
 			},
-			iso_full_stop_3a = {
+			fizz_full_stop_3a = {
 				name = "Goin' for Bullseye",
 				text = {
 					"Gain {C:attention}5 Poise Potency{}",
@@ -2002,7 +1938,7 @@ return {
 					"{C:attention}Uses 1 Ammo{}"
 				}
 			},
-			iso_full_stop_3b = {
+			fizz_full_stop_3b = {
 				name = "AL-HV Pulverisation Round",
 				text = {
 					"{C:inactive,s:0.7}Replaces Bullseye if you have Atelier-Logic Ammo{}",
@@ -2015,7 +1951,7 @@ return {
 		Planet = {},
 		Spectral = {},
 		Stake = {
-			stake_iso_singularity = {
+			stake_fizz_singularity = {
 				name = 'Cruelty Stake',
 				text = {
 					'{C:attention}Big blind no longer gives money{}',
@@ -2023,51 +1959,51 @@ return {
 					'{s:0.7}Applies all previous stakes{}'
 				}
 			},
-			stake_iso_finale = {
+			stake_fizz_finale = {
 				name = "The Final Stake",
 				text = {
-					'{C:iso_legendplus}Showdown blinds{} appear every {C:red}4 Antes{}',
+					'{C:fizz_legendplus}Showdown blinds{} appear every {C:red}4 Antes{}',
 					'{C:dark_edition}Win Requirement{} is {C:attention}multiplied by X1.5{}',
 					'{C:inactive,s:0.7}(Ante is rounded up){}',
 					'Previous stakes effects are {C:attention}Amplified{}',
 					'{s:0.7,C:inactive}Except Blue Stake because it\'s god fucking awful,{}',
 					'{s:0.7,C:inactive}Start off with 6 discards instead, and +2 hands.{}',
-					'{C:attention}Unbalanced Mode{} Jokers and {C:iso_almanacblue}Absurd{} Jokers',
+					'{C:attention}Unbalanced Mode{} Jokers and {C:fizz_almanacblue}Absurd{} Jokers',
 					'Are {C:red}Permanently{} Debuffed'
 				}
 			} -- unused
 		},
 		Tag = {
-			tag_iso_junktag = {
+			tag_fizz_junktag = {
 				name = "Junk Tag",
 				text = {
 					"Gives a free",
 					"{C:attention}Junkyard Pack Beta{}"
 				}
 			},
-			tag_iso_terminus_tag = {
+			tag_fizz_terminus_tag = {
 				name = "Terminus Tag",
 				text = {
 					"Shop has a {C:red}full price{}",
-					"{C:iso_terminus_global}Terminus Joker{}",
+					"{C:fizz_terminus_global}Terminus Joker{}",
 					"{C:inactive,s:0.7}Tag bloat???{}"
 				}
 			},
-			tag_iso_every_fucking_pack = {
+			tag_fizz_every_fucking_pack = {
 				name = "Every Fucking Pack In The Mod",
 				text = {
 					"Gives {C:attention}every{} Isotypical's Junkyard",
 					"{C:attention}Booster Pack{}"
 				}
 			}, --may not be used ever
-			tag_iso_exrare_tag = {
+			tag_fizz_exrare_tag = {
 				name = "Ex. Rare Tag",
 				text = {
 					"Shop has an",
-					"{C:iso_exrare}Ex. Rare{} Joker",
+					"{C:fizz_exrare}Ex. Rare{} Joker",
 				}
 			},
-			tag_iso_legend_tag = {
+			tag_fizz_legend_tag = {
 				name = "Legendary Tag",
 				text = {
 					"Shop has a",
@@ -2077,27 +2013,27 @@ return {
 		},
 		Tarot = {},
 		Voucher = {},
-		iso_Aleph = {
-			c_iso_thesoulex = {
+		fizz_Aleph = {
+			c_fizz_thesoulex = {
 				name = 'Soul of Malice',
 				text = {
-					"{C:iso_ust,s:3,E:1}??????{}",
+					"{C:fizz_ust,s:3,E:1}??????{}",
 					"{X:red,C:white,s:1.5}x3{} {s:1.5}Ante{}",
 					"{C:inactive,s:0.7}Destroys all jokers, including Eternals. Does not destroy Omegaeternals.{}"
 				}
 			},
-			c_iso_isocalls = {
+			c_fizz_isocalls = {
 				name = "The Calling",
 				text = {
 					"Must have at least {C:money}1e50{} Dollars,",
 					"Be past {C:attention}Ante 10{}, and must have",
-					"{C:green}Sparky{}, {C:iso_exrare}Oxidyze{} {C:inactive,s:0.7}(or Seraph){}, and {C:legendary}Solinium{}",
-					"to Summon {C:iso_iso_grad,E:1}Isotypical{} Herself.",
+					"{C:green}Sparky{}, {C:fizz_exrare}Oxidyze{} {C:inactive,s:0.7}(or Seraph){}, and {C:legendary}Solinium{}",
+					"to Summon {C:fizz_fizz_grad,E:1}Isotypical{} Herself.",
 				}
 			}
 		},
-		iso_others = {
-			c_iso_needle = {
+		fizz_others = {
+			c_fizz_needle = {
 				name = "Draconic Needle",
 				text = {
 					"Gives {C:attention}PK Love{}",
@@ -2112,18 +2048,18 @@ return {
 		achievement_names = {},
 		blind_states = {},
 		challenge_names = {
-			c_iso_hunger = "Recluse's Greed",
-			c_iso_wee_gaming = "Wee.", --wee
-			c_iso_rapidgrowth = "Death by Exponentiation",
-			c_iso_fuckyou = "AND THE CROWD GOES MILD",
-			c_iso_do_or_die = "Seraph's Gamble"
+			c_fizz_hunger = "Recluse's Greed",
+			c_fizz_wee_gaming = "Wee.", --wee
+			c_fizz_rapidgrowth = "Death by Exponentiation",
+			c_fizz_fuckyou = "AND THE CROWD GOES MILD",
+			c_fizz_do_or_die = "Seraph's Gamble"
 		},
 		collabs = {},
 		dictionary = {
 
-			k_iso_Aleph_cards = "Aleph Cards",
-			k_iso_Aleph = "Aleph",
-			k_iso_omega = "Omega",
+			k_fizz_Aleph_cards = "Aleph Cards",
+			k_fizz_Aleph = "Aleph",
+			k_fizz_omega = "Omega",
 
 			fuckyou = "YOU KNOW WHAT, FUCK YOU.", --lankybox blind / fake void joker
 			sphlvl = "Seraph Level Increased",
@@ -2133,211 +2069,211 @@ return {
 			sphbeyond = "...",
 			sphwhy = "what the fuck dude go outside",
 
-			k_iso_oxy_quote1 = "\"New name, yay.\"",
-			k_iso_oxy_quote2 = "\"What do you MEAN my ability isn't unique?!\"",
-			k_iso_oxy_quote3 = "\"SERAPH FOR THE LAST TIME, STOP CALLING ME OCKSIE.\"",   --seraph loves pissing off oxy (because he's not part of the trio)
-			k_iso_oxy_quote4 = "\"Seraph. Fucking. Voidgloom. Most annoying person I've met!\"",
-			k_iso_oxy_quote5 = "\"I'm gonna kill Seraph if he calls me 'ocksie' ONE MORE TIME.\"", --part of the "seraph pisses off oxy" trilogy
-			k_iso_oxy_quote6 = "\"...Fundamental Paper Education? What's so fundamental about paper?\"",
-			k_iso_oxy_quote7 = "\"Do I have an origin? No.\"",
-			k_iso_oxy_quote8 = "\"Who is Solinium, again?\"",
-			k_iso_oxy_quote9 = "\"Sparky? What kind of name is that? An electrical issue?\"",
-			k_iso_oxy_quote10 = "\"Recluse? Isn't that the word for Isolation? ...they're a threat??\"",
-			k_iso_oxy_quote11 =
-			"\"I know how many quotes I have, I know what's happening internally. This is k_iso_oxy_quote11.\"",
-			k_iso_oxy_quote12 = "I'll say it, Isotypical is a moron.",
-			k_iso_oxy_quote13 = "I dislike Isotypical a LOT.",
+			k_fizz_oxy_quote1 = "\"New name, yay.\"",
+			k_fizz_oxy_quote2 = "\"What do you MEAN my ability isn't unique?!\"",
+			k_fizz_oxy_quote3 = "\"SERAPH FOR THE LAST TIME, STOP CALLING ME OCKSIE.\"",   --seraph loves pissing off oxy (because he's not part of the trio)
+			k_fizz_oxy_quote4 = "\"Seraph. Fucking. Voidgloom. Most annoying person I've met!\"",
+			k_fizz_oxy_quote5 = "\"I'm gonna kill Seraph if he calls me 'ocksie' ONE MORE TIME.\"", --part of the "seraph pisses off oxy" trilogy
+			k_fizz_oxy_quote6 = "\"...Fundamental Paper Education? What's so fundamental about paper?\"",
+			k_fizz_oxy_quote7 = "\"Do I have an origin? No.\"",
+			k_fizz_oxy_quote8 = "\"Who is Solinium, again?\"",
+			k_fizz_oxy_quote9 = "\"Sparky? What kind of name is that? An electrical issue?\"",
+			k_fizz_oxy_quote10 = "\"Recluse? Isn't that the word for Isolation? ...they're a threat??\"",
+			k_fizz_oxy_quote11 =
+			"\"I know how many quotes I have, I know what's happening internally. This is k_fizz_oxy_quote11.\"",
+			k_fizz_oxy_quote12 = "I'll say it, Isotypical is a moron.",
+			k_fizz_oxy_quote13 = "I dislike Isotypical a LOT.",
 
-			k_iso_oxy_quote_alt_1 = "WHO THE FUCK ARE YOU?!",
-			k_iso_oxy_quote_alt_2 = "This is a fraud, I'm real!",
+			k_fizz_oxy_quote_alt_1 = "WHO THE FUCK ARE YOU?!",
+			k_fizz_oxy_quote_alt_2 = "This is a fraud, I'm real!",
 
-			k_iso_solinium_quote1 = "\"Meow!\"",
-			k_iso_solinium_quote2 = "\"mrrp mrrowww :3\"", -- :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3
-			k_iso_solinium_quote3 = "\"Petey the cat? Oh, nonono. I'm NOT associated with HIM.\"",
+			k_fizz_solinium_quote1 = "\"Meow!\"",
+			k_fizz_solinium_quote2 = "\"mrrp mrrowww :3\"", -- :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3
+			k_fizz_solinium_quote3 = "\"Petey the cat? Oh, nonono. I'm NOT associated with HIM.\"",
 
-			k_iso_soliniumangy_quote_1 = "\"Euck! Get him away!\"",
-			k_iso_soliniumangy_quote_2 = "*hissing*",
-			k_iso_soliniumangy_quote_3 = "You annoying little..!",
-			k_iso_soliniumangy_quote_4 = "I don't like Dog Man, get him out!",
-			k_iso_soliniumangy_quote_5 = "He keeps affiliating me with Petey..!",
-			k_iso_soliniumangy_quote_6 = "*aggresive hissing*",
+			k_fizz_soliniumangy_quote_1 = "\"Euck! Get him away!\"",
+			k_fizz_soliniumangy_quote_2 = "*hissing*",
+			k_fizz_soliniumangy_quote_3 = "You annoying little..!",
+			k_fizz_soliniumangy_quote_4 = "I don't like Dog Man, get him out!",
+			k_fizz_soliniumangy_quote_5 = "He keeps affiliating me with Petey..!",
+			k_fizz_soliniumangy_quote_6 = "*aggresive hissing*",
 
-			k_iso_soliniumscared_quote1 = "\"AAAAAAAAAAHHHHHHHHHHHHHHHHHHH\"",
-			k_iso_soliniumscared_quote2 = "\"GET HIM AWAY FROM ME!!!!!!\"",
+			k_fizz_soliniumscared_quote1 = "\"AAAAAAAAAAHHHHHHHHHHHHHHHHHHH\"",
+			k_fizz_soliniumscared_quote2 = "\"GET HIM AWAY FROM ME!!!!!!\"",
 
-			k_iso_sparky_quote1 = "\"AAAAHHHHHHHHH\"",
-			k_iso_sparky_quote2 = "\"W-What do you mean Abbie is dead?! A-AND LANA!?\"",
-			k_iso_sparky_quote3 = "\"O-Oh, hi...\"",
-			k_iso_sparky_quote4 =
+			k_fizz_sparky_quote1 = "\"AAAAHHHHHHHHH\"",
+			k_fizz_sparky_quote2 = "\"W-What do you mean Abbie is dead?! A-AND LANA!?\"",
+			k_fizz_sparky_quote3 = "\"O-Oh, hi...\"",
+			k_fizz_sparky_quote4 =
 			"\"I LOVE ABBIE SO MUCH I LOVE ABBIE SO MUCH I LOVE ABBIE SO MUCH\"", --i cant tell if she loves abbie
 
-			k_iso_seraph_quote1 = "\"INTO THE VOID YOU GO!!!\"",    -- AND THATS THE BALL GAME
-			k_iso_seraph_quote2 = "\"It's so fun messing with Sparky at times...\"",
-			k_iso_seraph_quote3 = "\"I don't have a knife in my head, what are you on?\"",
-			k_iso_seraph_quote4 = "\"HEY 'OCKSIE'!!! LOOK OVER HERE!!!\"", --"holy shit ocksie reference"
-			k_iso_seraph_quote5 = "\"Solinium likes being pet, but he doesn't like admitting it!\"",
+			k_fizz_seraph_quote1 = "\"INTO THE VOID YOU GO!!!\"",    -- AND THATS THE BALL GAME
+			k_fizz_seraph_quote2 = "\"It's so fun messing with Sparky at times...\"",
+			k_fizz_seraph_quote3 = "\"I don't have a knife in my head, what are you on?\"",
+			k_fizz_seraph_quote4 = "\"HEY 'OCKSIE'!!! LOOK OVER HERE!!!\"", --"holy shit ocksie reference"
+			k_fizz_seraph_quote5 = "\"Solinium likes being pet, but he doesn't like admitting it!\"",
 
-			k_iso_seraph_oxyoxidyze_1 = "LMFAOOOOOOOOOOO",
-			k_iso_seraph_oxyoxidyze_2 = "HEY, HEY OXIDYZE, I THINK YOU GOT A TWIN!",
-			k_iso_seraph_oxyoxidyze_3 = "THAT'S SO FUNNY, I CAN'T STOP LAUGHING!",
-			k_iso_seraph_oxyoxidyze_4 = "YOU CAN'T DENY IT NOW!",
+			k_fizz_seraph_oxyoxidyze_1 = "LMFAOOOOOOOOOOO",
+			k_fizz_seraph_oxyoxidyze_2 = "HEY, HEY OXIDYZE, I THINK YOU GOT A TWIN!",
+			k_fizz_seraph_oxyoxidyze_3 = "THAT'S SO FUNNY, I CAN'T STOP LAUGHING!",
+			k_fizz_seraph_oxyoxidyze_4 = "YOU CAN'T DENY IT NOW!",
 
-			k_iso_seraph_lv100_quote1 = "\"Why do you THINK I would stop there?\"",
-			k_iso_seraph_lv100_quote2 = "\"I just grow more and more powerful!\"",
-			k_iso_seraph_lv100_quote3 = "\"Ha... HAHAHAHA!!!\"",
-			k_iso_seraph_lv100_quote4 = "\"I CAN'T STOP NOW!!\"",
-			k_iso_seraph_lv100_quote5 = "\"Destruction, that's what I crave...\"",
+			k_fizz_seraph_lv100_quote1 = "\"Why do you THINK I would stop there?\"",
+			k_fizz_seraph_lv100_quote2 = "\"I just grow more and more powerful!\"",
+			k_fizz_seraph_lv100_quote3 = "\"Ha... HAHAHAHA!!!\"",
+			k_fizz_seraph_lv100_quote4 = "\"I CAN'T STOP NOW!!\"",
+			k_fizz_seraph_lv100_quote5 = "\"Destruction, that's what I crave...\"",
 
-			k_iso_seraph_lv300_quote1 = "\"HahahahAAAAAAA...\"",
-			k_iso_seraph_lv300_quote2 = "\"DON'T EVEN TRY ME.\"",
-			k_iso_seraph_lv300_quote3 = "\"IT'S JUST STARTING NOW!\"",
-			k_iso_seraph_lv300_quote4 = "\"OH HOW FUNNY IT IS, BEING STRONGER THAN ANYTHING!\"",
-			k_iso_seraph_lv300_quote5 = "\"I can't be stopped. I CAN'T BE STOPPED!!\"",
+			k_fizz_seraph_lv300_quote1 = "\"HahahahAAAAAAA...\"",
+			k_fizz_seraph_lv300_quote2 = "\"DON'T EVEN TRY ME.\"",
+			k_fizz_seraph_lv300_quote3 = "\"IT'S JUST STARTING NOW!\"",
+			k_fizz_seraph_lv300_quote4 = "\"OH HOW FUNNY IT IS, BEING STRONGER THAN ANYTHING!\"",
+			k_fizz_seraph_lv300_quote5 = "\"I can't be stopped. I CAN'T BE STOPPED!!\"",
 
-			k_iso_seraph_final_quote1 = "...",
-			k_iso_seraph_final_quote2 = "That's it..?",
-			k_iso_seraph_final_quote3 = "There's nothing else to do.",
-			k_iso_seraph_final_quote4 = "I'm bored.",
-			k_iso_seraph_final_quote5 = "You really spent this much time getting me here?",
-			k_iso_seraph_final_quote6 = "quit the dialogue bro",
+			k_fizz_seraph_final_quote1 = "...",
+			k_fizz_seraph_final_quote2 = "That's it..?",
+			k_fizz_seraph_final_quote3 = "There's nothing else to do.",
+			k_fizz_seraph_final_quote4 = "I'm bored.",
+			k_fizz_seraph_final_quote5 = "You really spent this much time getting me here?",
+			k_fizz_seraph_final_quote6 = "quit the dialogue bro",
 
-			k_iso_seraphbroken_quote1 = "\"...\"",
-			k_iso_seraphbroken_quote2 = "\"..?\"",
-			k_iso_seraphbroken_quote3 = "\"..!\"",
-			k_iso_seraphbroken_quote4 = "He can't speak.",
-			k_iso_seraphbroken_quote5 = "Weeps can be heard from him.",
-			k_iso_seraphbroken_quote6 = "A pathetic shell that this thing is now.",
-			k_iso_seraphbroken_quote7 = "Nobody will remember him.", --seraph said a 67 joke and got fucking curb stomped by oxdiyze, sparky, solinium, AND recluse. how tf do you fuck up that badly
+			k_fizz_seraphbroken_quote1 = "\"...\"",
+			k_fizz_seraphbroken_quote2 = "\"..?\"",
+			k_fizz_seraphbroken_quote3 = "\"..!\"",
+			k_fizz_seraphbroken_quote4 = "He can't speak.",
+			k_fizz_seraphbroken_quote5 = "Weeps can be heard from him.",
+			k_fizz_seraphbroken_quote6 = "A pathetic shell that this thing is now.",
+			k_fizz_seraphbroken_quote7 = "Nobody will remember him.", --seraph said a 67 joke and got fucking curb stomped by oxdiyze, sparky, solinium, AND recluse. how tf do you fuck up that badly
 
-			k_iso_recluse_quote1 = "\"There's no way those two can kill me.\"",
-			k_iso_recluse_quote2 = "\"LET ME OUT OF THIS CARD!\"",                          --hey 4th wall breaker here get yo ass back into my joker slots
-			k_iso_recluse_quote3 = "\"I hate Solinium. There, I'm being blunt.\"",
-			k_iso_recluse_quote4 = "\"Sparky? My old go-to vessel? Why are we talking about her?\"", -- ok sukuna get back to being dead
-			k_iso_recluse_quote5 = "\"Seraph... yuck. Thinks he's so grand on everything.\"",
-			k_iso_recluse_quote6 = "\"I want to watch the multiverse burn in a sub-zero flame.\"", --lore accurate
-			k_iso_recluse_quote7 = "\"Seven...\"",
-			k_iso_recluse_quote8 = "\"PLASMA DECKS STRONGEST UNIT YEAHHHHHH\"",
-			k_iso_recluse_quote9 = "\"Seraph's next.\"",
-			k_iso_recluse_quote10 = "\"CAN GUD STOP SELLING ME FOR ONCE??\"",
+			k_fizz_recluse_quote1 = "\"There's no way those two can kill me.\"",
+			k_fizz_recluse_quote2 = "\"LET ME OUT OF THIS CARD!\"",                          --hey 4th wall breaker here get yo ass back into my joker slots
+			k_fizz_recluse_quote3 = "\"I hate Solinium. There, I'm being blunt.\"",
+			k_fizz_recluse_quote4 = "\"Sparky? My old go-to vessel? Why are we talking about her?\"", -- ok sukuna get back to being dead
+			k_fizz_recluse_quote5 = "\"Seraph... yuck. Thinks he's so grand on everything.\"",
+			k_fizz_recluse_quote6 = "\"I want to watch the multiverse burn in a sub-zero flame.\"", --lore accurate
+			k_fizz_recluse_quote7 = "\"Seven...\"",
+			k_fizz_recluse_quote8 = "\"PLASMA DECKS STRONGEST UNIT YEAHHHHHH\"",
+			k_fizz_recluse_quote9 = "\"Seraph's next.\"",
+			k_fizz_recluse_quote10 = "\"CAN GUD STOP SELLING ME FOR ONCE??\"",
 
-			k_iso_solinium_extra1 = "Origin: Dog Man",
-			k_iso_solinium_extra2 = "Yes, you read that right.",
+			k_fizz_solinium_extra1 = "Origin: Dog Man",
+			k_fizz_solinium_extra2 = "Yes, you read that right.",
 
-			k_iso_pwx_N = "{N}N",
+			k_fizz_pwx_N = "{N}N",
 
-			k_iso_shrimpo_quote1 = "I HATE THIS MOD!",
-			k_iso_shrimpo_quote2 = "I HATE YOU!",
-			k_iso_shrimpo_quote3 = "I HATE EVERYTHING!",
+			k_fizz_shrimpo_quote1 = "I HATE THIS MOD!",
+			k_fizz_shrimpo_quote2 = "I HATE YOU!",
+			k_fizz_shrimpo_quote3 = "I HATE EVERYTHING!",
 
-			k_iso_yatta_quote1 = "AHAHAHAaaa... Thought of something funny!",
-			k_iso_yatta_quote2 = "PHEW! Good thing my tail hasn't been TANGLED!",
-			k_iso_yatta_quote3 = "Did I drop candy ANYWHERE in the elevator?",
-			k_iso_yatta_quote4 = "BRING ME ANOTHER!!! More blinds... MORE!!",
+			k_fizz_yatta_quote1 = "AHAHAHAaaa... Thought of something funny!",
+			k_fizz_yatta_quote2 = "PHEW! Good thing my tail hasn't been TANGLED!",
+			k_fizz_yatta_quote3 = "Did I drop candy ANYWHERE in the elevator?",
+			k_fizz_yatta_quote4 = "BRING ME ANOTHER!!! More blinds... MORE!!",
 
-			k_iso_me_1 = "oh, hi...",
-			k_iso_me_2 = "i'm so sleepy, i want to sleep...",
-			k_iso_me_3 = "making this mod is fun and unfun at the same time",
-			k_iso_me_4 = "i am the eeper",
-			k_iso_me_5 = "meoWWWWWWWWWWWW",
-			k_iso_me_6 = "most un-subtle self insert ever",
-			k_iso_me_7 = "no.1 freak, not really.",
-			k_iso_me_8 = "play my mod!!!",
-			k_iso_me_9 = "polterworx is NOT kill???",
-			k_iso_me_10 = "fireice, astro, gud, crystal, all my friends are cool!",
-			k_iso_me_11 = "pisstro incident 2025",
-			k_iso_me_12 = "i am indirectly responsible for solstro being a thing.",
-			k_iso_me_13 = "uhhh... nyaaa~",
-			k_iso_me_14 = "i guess i can help out..?",
-			k_iso_me_15 = "i take game balance \"seriously\"",
-			k_iso_me_16 = "500 e's in your score",
+			k_fizz_me_1 = "oh, hi...",
+			k_fizz_me_2 = "i'm so sleepy, i want to sleep...",
+			k_fizz_me_3 = "making this mod is fun and unfun at the same time",
+			k_fizz_me_4 = "i am the eeper",
+			k_fizz_me_5 = "meoWWWWWWWWWWWW",
+			k_fizz_me_6 = "most un-subtle self insert ever",
+			k_fizz_me_7 = "no.1 freak, not really.",
+			k_fizz_me_8 = "play my mod!!!",
+			k_fizz_me_9 = "polterworx is NOT kill???",
+			k_fizz_me_10 = "fireice, astro, gud, crystal, all my friends are cool!",
+			k_fizz_me_11 = "pisstro incident 2025",
+			k_fizz_me_12 = "i am indirectly responsible for solstro being a thing.",
+			k_fizz_me_13 = "uhhh... nyaaa~",
+			k_fizz_me_14 = "i guess i can help out..?",
+			k_fizz_me_15 = "i take game balance \"seriously\"",
+			k_fizz_me_16 = "500 e's in your score",
 
-			k_iso_me_overscore_1 = "what the fuck",
-			k_iso_me_overscore_2 = "alright that's enough E's.",
-			k_iso_me_overscore_3 = "calm down.",
-			k_iso_me_overscore_4 = "you won already, holy.",
-			k_iso_me_overscore_5 = "okay",
+			k_fizz_me_overscore_1 = "what the fuck",
+			k_fizz_me_overscore_2 = "alright that's enough E's.",
+			k_fizz_me_overscore_3 = "calm down.",
+			k_fizz_me_overscore_4 = "you won already, holy.",
+			k_fizz_me_overscore_5 = "okay",
 
-			k_iso_me_pwx_hyperop_above25000_1 = "calm the fuck down holy shit",
-			k_iso_me_pwx_hyperop_above25000_2 = "THAT'S ENOUGH ARROWS!!!!",
-			k_iso_me_pwx_hyperop_above25000_3 = "IS YOUR PC OKAY???",
+			k_fizz_me_pwx_hyperop_above25000_1 = "calm the fuck down holy shit",
+			k_fizz_me_pwx_hyperop_above25000_2 = "THAT'S ENOUGH ARROWS!!!!",
+			k_fizz_me_pwx_hyperop_above25000_3 = "IS YOUR PC OKAY???",
 
-			k_iso_ocksie_quote_1 = "\"We all cut close...\"", --fuck you oxidyze im adding it myself
-			k_iso_ocksie_quote_2 = "bnuuy",
+			k_fizz_ocksie_quote_1 = "\"We all cut close...\"", --fuck you oxidyze im adding it myself
+			k_fizz_ocksie_quote_2 = "bnuuy",
 
-			k_iso_save = 'Saved by Life Crystal',
+			k_fizz_save = 'Saved by Life Crystal',
 
-			k_iso_unbalanced = 'Unbalanced',
-			k_iso_verybad = 'Extremely Unbalanced',
+			k_fizz_unbalanced = 'Unbalanced',
+			k_fizz_verybad = 'Extremely Unbalanced',
 
-			k_iso_dangerous = 'Unstable Behaviour',
+			k_fizz_dangerous = 'Unstable Behaviour',
 
-			k_iso_veryunstable = 'Extremely Unstable',
+			k_fizz_veryunstable = 'Extremely Unstable',
 
 			k_ocsotbal_falseorigin = 'No Origin',
 
-			k_iso_deceptionlegendary = 'Oxidyze\'s Legendary'
+			k_fizz_deceptionlegendary = 'Oxidyze\'s Legendary'
 
 		},
 		high_scores = {},
 		labels = {
-			iso_deceptionlegendary = 'Oxidyze\'s Legendary',
-			iso_Aleph = "Aleph",
-			iso_omega = "Omega"
+			fizz_deceptionlegendary = 'Oxidyze\'s Legendary',
+			fizz_Aleph = "Aleph",
+			fizz_omega = "Omega"
 		},
 		poker_hand_descriptions = {},
 		poker_hands = {},
 		quips = {
 
 			--Reclusive Vessel
-			iso_sphrecl_loss_1 = { "Fucking...", "{C:red,s:1.5}HOW.{}" },
-			iso_sphrecl_loss_2 = { "HOW DID YOU EVEN {C:red}DIE???{}" },
-			iso_sphrecl_loss_3 = { "Recluse is right,", "You {C:red}DO{} have a {C:red}skill issue!{}" },
-			iso_sphrecl_loss_4 = { "I gave you {C:red}so much power,{}", "Just to watch you fail horribly.", "{C:iso_dark_purple}You disappoint me, a lot.{}" },
+			fizz_sphrecl_loss_1 = { "Fucking...", "{C:red,s:1.5}HOW.{}" },
+			fizz_sphrecl_loss_2 = { "HOW DID YOU EVEN {C:red}DIE???{}" },
+			fizz_sphrecl_loss_3 = { "Recluse is right,", "You {C:red}DO{} have a {C:red}skill issue!{}" },
+			fizz_sphrecl_loss_4 = { "I gave you {C:red}so much power,{}", "Just to watch you fail horribly.", "{C:fizz_dark_purple}You disappoint me, a lot.{}" },
 
 			--Seraph V.Glm
-			iso_sph_wins_1 = { "Could have won faster with me." },
-			iso_sph_wins_2 = { "Pff, you can do better than that." },
-			iso_sph_wins_3 = { "Nice, I guess." },
-			iso_sph_wins_4 = { "Neat, you won." },
+			fizz_sph_wins_1 = { "Could have won faster with me." },
+			fizz_sph_wins_2 = { "Pff, you can do better than that." },
+			fizz_sph_wins_3 = { "Nice, I guess." },
+			fizz_sph_wins_4 = { "Neat, you won." },
 
-			iso_sph_losses_1 = { "Get good, lmao." },
-			iso_sph_losses_2 = { "Amazing loss, buddy!" },
-			iso_sph_losses_3 = { "WOWWW. Skill issue." },
-			iso_sph_losses_4 = { "Could have won if you got me." },
+			fizz_sph_losses_1 = { "Get good, lmao." },
+			fizz_sph_losses_2 = { "Amazing loss, buddy!" },
+			fizz_sph_losses_3 = { "WOWWW. Skill issue." },
+			fizz_sph_losses_4 = { "Could have won if you got me." },
 
 			--Sparky Elle
-			iso_spk_wins_1 = { "WE WON?!!" },
-			iso_spk_wins_2 = { "YIPEE!!!" },
-			iso_spk_wins_3 = { "YAYY!!! WE WON!!!" },
+			fizz_spk_wins_1 = { "WE WON?!!" },
+			fizz_spk_wins_2 = { "YIPEE!!!" },
+			fizz_spk_wins_3 = { "YAYY!!! WE WON!!!" },
 
-			iso_spk_losses_1 = { "I-I... huh..?!" },
-			iso_spk_losses_2 = { "O-oh... I guess next time...", },
-			iso_spk_losses_3 = { "A-aw..." },
+			fizz_spk_losses_1 = { "I-I... huh..?!" },
+			fizz_spk_losses_2 = { "O-oh... I guess next time...", },
+			fizz_spk_losses_3 = { "A-aw..." },
 
 			--Solinium Isotope
-			iso_sol_wins_1 = { "Congrats on winning!" },
-			iso_sol_wins_2 = { "Niceee! Keep it up!" },
-			iso_sol_wins_3 = { "A successful experiment, if I were to say!" },
+			fizz_sol_wins_1 = { "Congrats on winning!" },
+			fizz_sol_wins_2 = { "Niceee! Keep it up!" },
+			fizz_sol_wins_3 = { "A successful experiment, if I were to say!" },
 
-			iso_sol_losses_1 = { "...oh." },
-			iso_sol_losses_2 = { "IT'S GONE WRONG!!!" },
-			iso_sol_losses_3 = { "Yikes, YIKES!" },
+			fizz_sol_losses_1 = { "...oh." },
+			fizz_sol_losses_2 = { "IT'S GONE WRONG!!!" },
+			fizz_sol_losses_3 = { "Yikes, YIKES!" },
 
 			--fuck you recluse
-			iso_recl_wins_1 = { "damn, was hoping you'd lose." },
+			fizz_recl_wins_1 = { "damn, was hoping you'd lose." },
 
-			iso_recl_losses_1 = { "git gud lmao" },
-			iso_recl_losses_2 = { "skill issue" },
-			iso_recl_losses_3 = { "L" },
+			fizz_recl_losses_1 = { "git gud lmao" },
+			fizz_recl_losses_2 = { "skill issue" },
+			fizz_recl_losses_3 = { "L" },
 
 			--ocksie- i mean Oxidyze
-			iso_oxi_wins_1 = { "Not bad, not bad." },
-			iso_oxi_wins_2 = { "Nicely done. Almost perfect, even." },
-			iso_oxi_wins_3 = { "Yet another win to the player." },
+			fizz_oxi_wins_1 = { "Not bad, not bad." },
+			fizz_oxi_wins_2 = { "Nicely done. Almost perfect, even." },
+			fizz_oxi_wins_3 = { "Yet another win to the player." },
 
-			iso_oxi_losses_1 = { "blame isotypical." },
-			iso_oxi_losses_2 = { "Bruh." },
-			iso_oxi_losses_3 = { "Isotypical caused this to happen!" }
+			fizz_oxi_losses_1 = { "blame isotypical." },
+			fizz_oxi_losses_2 = { "Bruh." },
+			fizz_oxi_losses_3 = { "Isotypical caused this to happen!" }
 
 		},
 		ranks = {},
@@ -2345,7 +2281,7 @@ return {
 		suits_singular = {},
 		tutorial = {},
 		v_dictionary = {
-			a_iso_deathinbound = {
+			a_fizz_deathinbound = {
 				'If you have an Isotypical\'s Junkyard Joker,',
 				'Upon playing a hand, die.'
 			},

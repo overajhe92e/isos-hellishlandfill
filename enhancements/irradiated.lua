@@ -18,7 +18,7 @@ SMODS.Enhancement {
             card.ability.decayfactor = card.ability.decayfactor - 1
         end
         if context.cardarea == G.hand and card.ability.decayfactor <= 0 and context.after then
-            card:set_ability('m_iso_du238')
+            card:set_ability('m_fizz_du238')
             return {
                 message = "Decayed!"
             }
