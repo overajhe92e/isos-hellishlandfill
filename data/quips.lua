@@ -1,7 +1,7 @@
 -- -- SMODS.JimboQuip({
 -- --     key = 'vessel_lose_1',
 -- --     extra = {
--- --         center = 'j_ocstobal_reclusivevessel',
+-- --         center = 'j_iso_reclusivevessel',
 -- --         particle_colours = {
 -- --             G.C.NIGHTMARE_PURPLE,
 -- --             G.C.NIGHTMARE_PURPLE,
@@ -10,7 +10,7 @@
 -- --     },
 -- --     filter = function(self, type)
 -- --         if type == 'loss' then
--- --             if next(SMODS.find_card("j_ocstobal_reclusivevessel")) then
+-- --             if next(SMODS.find_card("j_iso_reclusivevessel")) then
 -- --                 return true, { weight = 25 }
 -- --             end
 -- --         end
@@ -20,7 +20,7 @@
 -- -- SMODS.JimboQuip({
 -- --     key = 'vessel_lose_2',
 -- --     extra = {
--- --         center = 'j_ocstobal_reclusivevessel',
+-- --         center = 'j_iso_reclusivevessel',
 -- --         particle_colours = {
 -- --             G.C.NIGHTMARE_PURPLE,
 -- --             G.C.NIGHTMARE_PURPLE,
@@ -29,7 +29,7 @@
 -- --     },
 -- --     filter = function(self, type)
 -- --         if type == 'loss' then
--- --             if next(SMODS.find_card("j_ocstobal_reclusivevessel")) then
+-- --             if next(SMODS.find_card("j_iso_reclusivevessel")) then
 -- --                 return true, { weight = 25 }
 -- --             end
 -- --         end
@@ -40,7 +40,7 @@
 -- -- SMODS.JimboQuip({
 -- --     key = 'vessel_lose_3',
 -- --     extra = {
--- --         center = 'j_ocstobal_reclusivevessel',
+-- --         center = 'j_iso_reclusivevessel',
 -- --         particle_colours = {
 -- --             G.C.NIGHTMARE_PURPLE,
 -- --             G.C.NIGHTMARE_PURPLE,
@@ -49,7 +49,7 @@
 -- --     },
 -- --     filter = function(self, type)
 -- --         if type == 'loss' then
--- --             if next(SMODS.find_card("j_ocstobal_reclusivevessel")) then
+-- --             if next(SMODS.find_card("j_iso_reclusivevessel")) then
 -- --                 return true, { weight = 25 }
 -- --             end
 -- --         end
@@ -60,7 +60,7 @@
 -- -- SMODS.JimboQuip({
 -- --     key = 'vessel_lose_4',
 -- --     extra = {
--- --         center = 'j_ocstobal_reclusivevessel',
+-- --         center = 'j_iso_reclusivevessel',
 -- --         particle_colours = {
 -- --             G.C.NIGHTMARE_PURPLE,
 -- --             G.C.NIGHTMARE_PURPLE,
@@ -69,7 +69,7 @@
 -- --     },
 -- --     filter = function(self, type)
 -- --         if type == 'loss' then
--- --             if next(SMODS.find_card("j_ocstobal_reclusivevessel")) then
+-- --             if next(SMODS.find_card("j_iso_reclusivevessel")) then
 -- --                 return true, { weight = 25 }
 -- --             end
 -- --         end
@@ -79,7 +79,7 @@
 -- SMODS.JimboQuip({
 --     key = 'recluse_lose_1',
 --     extra = {
---         center = 'j_ocstobal_recluse',
+--         center = 'j_iso_recluse',
 --         particle_colours = {
 --             G.C.NIGHTMARE_PURPLE,
 --             G.C.NIGHTMARE_PURPLE,
@@ -96,7 +96,7 @@
 -- SMODS.JimboQuip({
 --     key = 'solinium_win',
 --     extra = {
---         center = 'j_ocstobal_solinium',
+--         center = 'j_iso_solinium',
 --         particle_colours = {
 --             G.C.BLUE,
 --             G.C.BLUE,
@@ -113,7 +113,7 @@
 -- SMODS.JimboQuip({
 --     key = 'sparky_win',
 --     extra = {
---         center = 'j_ocstobal_sparky',
+--         center = 'j_iso_sparky',
 --         particle_colours = {
 --             G.C.BLUE,
 --             G.C.BLUE,
@@ -130,7 +130,7 @@
 -- SMODS.JimboQuip({
 --     key = 'seraph_win',
 --     extra = {
---         center = 'j_ocstobal_seraph',
+--         center = 'j_iso_seraph',
 --         particle_colours = {
 --             G.C.BLUE,
 --             G.C.BLUE,
@@ -147,7 +147,7 @@
 -- SMODS.JimboQuip({
 --     key = 'oxidyze_win',
 --     extra = {
---         center = 'j_ocstobal_Oxy',
+--         center = 'j_iso_Oxy',
 --         particle_colours = {
 --             G.C.BLUE,
 --             G.C.BLUE,

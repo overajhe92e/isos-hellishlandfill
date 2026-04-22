@@ -1,5 +1,5 @@
 function unbalancedstuff()
-    if ocstobal.configbs.unbalanced_mode == true then
+    if iso.configbs.unbalanced_mode == true then
         return true
     else
         return false
@@ -7,7 +7,7 @@ function unbalancedstuff()
 end
 
 function almanacstuff()
-    if ocstobal.configbs.very_unbalanced_mode == true and ocstobal.configbs.very_unbalanced_mode == true then
+    if iso.configbs.very_unbalanced_mode == true and iso.configbs.very_unbalanced_mode == true then
         return true
     else
         return false

@@ -4,7 +4,7 @@ SMODS.Booster {
         name = "Junkyard Pack Alpha",
         text = {
             "Choose {C:attention}#1#{} of {C:attention}#2#{} Iso. Junkyard Jokers",
-            "Does not include {C:ocstobal_finalrgb}Terminus{}, {C:ocstobal_ust}Cursed{}, or {C:attention}Unique{} Jokers",
+            "Does not include {C:iso_finalrgb}Terminus{}, {C:iso_ust}Cursed{}, or {C:attention}Unique{} Jokers",
         },
         group_name = "Garbage"
     },
@@ -56,7 +56,7 @@ SMODS.Booster {
         name = "Junkyard Pack Sigma",
         text = {
             "Choose {C:attention}#1#{} of {C:attention}#2#{} Iso. Junkyard Jokers",
-            "Does not include {C:ocstobal_finalrgb}Terminus{}, {C:ocstobal_ust}Cursed{}, or {C:attention}Unique{} Jokers",
+            "Does not include {C:iso_finalrgb}Terminus{}, {C:iso_ust}Cursed{}, or {C:attention}Unique{} Jokers",
         },
         group_name = "Junk"
     },
@@ -108,7 +108,7 @@ SMODS.Booster {
         name = "Junkyard Pack Beta",
         text = {
             "Choose {C:attention}#1#{} of {C:attention}#2#{} Iso. Junkyard Jokers",
-            "Does not include {C:ocstobal_finalrgb}Terminus{}, {C:ocstobal_ust}Cursed{}, or {C:attention}Unique{} Jokers",
+            "Does not include {C:iso_finalrgb}Terminus{}, {C:iso_ust}Cursed{}, or {C:attention}Unique{} Jokers",
         },
         group_name = "Junk"
     },
@@ -160,7 +160,7 @@ SMODS.Booster {
         name = "Junkyard Pack Gamma",
         text = {
             "Choose {C:attention}#1#{} of {C:attention}#2#{} Iso. Junkyard Jokers",
-            "Does not include {C:ocstobal_finalrgb}Terminus{}, {C:ocstobal_ust}Cursed{}, or {C:attention}Unique{} Jokers",
+            "Does not include {C:iso_finalrgb}Terminus{}, {C:iso_ust}Cursed{}, or {C:attention}Unique{} Jokers",
         },
         group_name = "Even more junk"
     },
@@ -212,7 +212,7 @@ SMODS.Booster {
         name = "Junkyard Pack Omega",
         text = {
             "Choose {C:attention}#1#{} of {C:attention}#2#{} Iso. Junkyard Jokers",
-            "{C:attention}Include{} {C:ocstobal_finalrgb}Terminus{}, {C:ocstobal_ust}Cursed{}, and/or {C:attention}Unique{} Jokers",
+            "{C:attention}Include{} {C:iso_finalrgb}Terminus{}, {C:iso_ust}Cursed{}, and/or {C:attention}Unique{} Jokers",
         },
         group_name = "Junkyard Pack"
     },

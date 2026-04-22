@@ -26,47 +26,6 @@
 if G.GAME then
 end
 
-function recluseach()
-	G.E_MANAGER:add_event(Event({
-		trigger = 'immediate',
-		locking = false,
-		delay = 0,
-		func = function()
-			check_for_unlock({ type = "ach_defeatedrecluse" })
-			return true
-		end,
-	}))
-end
-
-function omegarushdefeat()
-	G.E_MANAGER:add_event(Event({
-		trigger = 'immediate',
-		locking = false,
-		delay = 0,
-		func = function()
-			--print('omega defeated')
-			if SMODS.stake_from_index(G.GAME.stake) == "stake_ocstobal_singularity" then
-				--print('given deck access')
-				check_for_unlock({ type = "defeated_omega" })
-				return true
-			end
-			return true
-		end,
-	}))
-end
-
-function diedach()
-	G.E_MANAGER:add_event(Event({
-		trigger = 'immediate',
-		locking = false,
-		delay = 0,
-		func = function()
-			check_for_unlock({ type = "ach_unstableeye" })
-			return true
-		end,
-	}))
-end
-
 SMODS.Blind {
 	key = 'rng',
 	name = 'rng',
@@ -104,10 +63,10 @@ SMODS.Blind {
 	calculate = function(self, card, context)
 		if context.modify_hand then
 			for i = 1, #G.jokers.cards do
-				if G.jokers.cards[i].config.center.original_mod == SMODS.Mods["ocstobalatro"] then
-					if SMODS.pseudorandom_probability(card, "ocstobal_unstable", 1, 100) then
+				if G.jokers.cards[i].config.center.original_mod == SMODS.Mods["isoatro"] then
+					if SMODS.pseudorandom_probability(card, "iso_unstable", 1, 100) then
 						G.burger = 1
-						play_sound("ocstobal_jumpscare", 1, 1)
+						play_sound("iso_jumpscare", 1, 1)
 						G.E_MANAGER:add_event(Event({
 							trigger = 'after',
 							delay = 3 * G.SETTINGS.GAMESPEED,
@@ -130,13 +89,13 @@ SMODS.Blind {
 		local randomized = pseudorandom("ubc", 1, 4)
 		local unstable_blind_choice = nil
 		if randomized == 1 then
-			unstable_blind_choice = "bl_ocstobal_THESCALE"
+			unstable_blind_choice = "bl_iso_THESCALE"
 		elseif randomized == 2 then
-			unstable_blind_choice = "bl_ocstobal_BLACKKNIFE"
+			unstable_blind_choice = "bl_iso_BLACKKNIFE"
 		elseif randomized == 3 then
-			unstable_blind_choice = "bl_ocstobal_UNSHY"
+			unstable_blind_choice = "bl_iso_UNSHY"
 		elseif randomized == 4 then
-			unstable_blind_choice = "bl_ocstobal_THEDROPLET"
+			unstable_blind_choice = "bl_iso_THEDROPLET"
 		end
 		G.GAME.blind:set_blind(G.P_BLINDS[tostring(unstable_blind_choice)])
 	end,
@@ -169,7 +128,7 @@ SMODS.Blind {
 
 	defeat = function(self)
 		G.FUNCS.overlay_menu {
-			definition = ocstobal_custom_video("diansumeme", "oceanan scum"),
+			definition = iso_custom_video("diansumeme", "oceanan scum"),
 			config = { no_esc = true }
 		}
 	end
@@ -217,18 +176,6 @@ SMODS.Sound {
 	end
 }
 
--- SMODS.Sound {
--- 	key = "music_titanspawn",
--- 	path = "titanspawn.ogg",
--- 	pitch = 1,
--- 	volume = 1,
--- 	select_music_track = function()
--- 		if G.GAME.blind and not G.GAME.blind.disabled and G.GAME.blind.name == 'recluseblind' then
--- 			return true
--- 		end
--- 	end
--- }
-
 SMODS.Sound {
 	key = "music_berdlysnowgrave",
 	path = "berdly.ogg",
@@ -242,7 +189,7 @@ SMODS.Sound {
 				return true
 			end
 		end
-		if G.GAME.round_resets.blind_choices == 'bl_ocstobal_bossrushomega' and not G.GAME.reclusive_vessel == true then
+		if G.GAME.round_resets.blind_choices == 'bl_iso_bossrushomega' and not G.GAME.reclusive_vessel == true then
 			G.GAME.omegarush_choice = true
 			return true
 		end
@@ -257,7 +204,7 @@ SMODS.Sound {
 }
 
 SMODS.Blind {
-	key = 'oxyblind',
+	key = 'oxyblind', --NOT THAT
 	mult = 2,
 	dollars = 5,
 	boss = { min = 1 },
@@ -311,7 +258,7 @@ SMODS.Blind {
 
 	defeat = function(self)
 		reclcheck = true
-		play_sound('ocstobal_ominous', 0.8, 1)
+		play_sound('iso_ominous', 0.8, 1)
 	end
 }
 
@@ -358,7 +305,7 @@ SMODS.Blind {
 	defeat = function(self)
 		reclcheck = false
 		G.GAME.iso_sol_ptsd = false
-		play_sound('ocstobal_ominouscancel', 1, 2)
+		play_sound('iso_ominouscancel', 1, 2)
 		recluseach()
 	end
 }
@@ -556,7 +503,7 @@ SMODS.Blind {
 			G.GAME.round_resets.lost = true
 			G.E_MANAGER:add_event(Event({
 				func = function()
-					ocstobal.nextboss()
+					iso.nextboss()
 					G.GAME.blind:juice_up()
 					ease_hands_played(G.GAME.round_resets.hands - G.GAME.current_round.hands_left)
 					ease_discard(
@@ -586,7 +533,7 @@ SMODS.Blind {
 	end,
 	defeat = function(self)
 		if SMODS.pseudorandom_probability(card, "SOK", 1, 128) then
-			SMODS.add_card { key = "j_ocstobal_sword_of_kings" }
+			SMODS.add_card { key = "j_iso_sword_of_kings" }
 		end
 	end
 }
@@ -674,7 +621,7 @@ SMODS.Blind { -- MY HAIR COUPOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
 						trigger = 'after',
 						delay = 6 * G.SETTINGS.GAMESPEED,
 						func = function()
-							play_sound("ocstobal_gore5")
+							play_sound("iso_gore5")
 							G.GAME.ISO_ricardo_MY_HAIR_COUPONS = true
 							G.GAME.blind.chips = G.GAME.blind.chips * 2
 							G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
@@ -682,7 +629,7 @@ SMODS.Blind { -- MY HAIR COUPOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
 						end
 					}))
 				elseif G.GAME.chips > G.GAME.blind.chips * 2 and G.GAME.ISO_ricardo_stagger == false then
-					play_sound("ocstobal_gore5")
+					play_sound("iso_gore5")
 					G.GAME.ISO_ricardo_stagger = true
 				end
 			end

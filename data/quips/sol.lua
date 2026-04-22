@@ -15,7 +15,7 @@ for i = 1, #ISO_EXT.sol_wins do
         key = "sol_wins_" .. i,
         type = 'win',
         extra = {
-            center = 'j_ocstobal_solinium',
+            center = 'j_iso_solinium',
             particle_colours = {
                 G.C.NIGHTMARE_PURPLE,
                 G.C.NIGHTMARE_PURPLE,
@@ -30,7 +30,7 @@ for i = 1, #ISO_EXT.sol_losses do
         key = "sol_losses_" .. i,
         type = 'loss',
         extra = {
-            center = 'j_ocstobal_solinium',
+            center = 'j_iso_solinium',
             particle_colours = {
                 G.C.NIGHTMARE_PURPLE,
                 G.C.NIGHTMARE_PURPLE,

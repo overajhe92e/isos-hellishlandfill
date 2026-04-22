@@ -175,11 +175,11 @@ SMODS.Achievement {
 
 	unlock_condition = function(self, args)
 		local evil = 0
-		local evils = { "j_ocstobal_oxhatred", "j_ocstobal_solhatred", "j_ocstobal_sparkhatred" }
-		for _, sewh in ipairs(SMODS.find_card("j_ocstobal_somethingevil")) do
+		local evils = { "j_iso_oxhatred", "j_iso_solhatred", "j_iso_sparkhatred" }
+		for _, sewh in ipairs(SMODS.find_card("j_iso_somethingevil")) do
 			evil = evil + 1
 		end
-		if next(SMODS.find_card("j_ocstobal_oxhatred")) and next(SMODS.find_card("j_ocstobal_solhatred")) and next(SMODS.find_card("j_ocstobal_sparkhatred")) then
+		if next(SMODS.find_card("j_iso_oxhatred")) and next(SMODS.find_card("j_iso_solhatred")) and next(SMODS.find_card("j_iso_sparkhatred")) then
 			if evil >= 5 then
 				return true
 			end
@@ -279,7 +279,7 @@ SMODS.Achievement {
 
 	unlock_condition = function(self, args)
 		if G.jokers then
-			if next(SMODS.find_card("j_ocstobal_myself")) then
+			if next(SMODS.find_card("j_iso_myself")) then
 				return true
 			end
 		end

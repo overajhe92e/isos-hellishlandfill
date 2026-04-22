@@ -15,7 +15,7 @@ function love.draw()
 
 	--Just gonna...
 	function FuckingImage(fn)
-		local full_path = (ocstobal.path
+		local full_path = (iso.path
 			.. "image/" .. fn)
 		local file_data = assert(NFS.newFileData(full_path),
 			("Missing Image! Are you sure you loaded it, or named it correctly?"))
@@ -25,28 +25,28 @@ function love.draw()
 
 	--...Borrow, Some code. -Doctor4t
 	if G.swoon and (G.swoon > 0) then
-		if ocstobal.swoon == nil then ocstobal.swoon = FuckingImage("SWOON.png") end
+		if iso.swoon == nil then iso.swoon = FuckingImage("SWOON.png") end
 		love.graphics.setColor(0, 0.5, 1, 1)
-		love.graphics.draw(ocstobal.swoon, 0 * win_width * 0.5, 0 * win_height * 0.5, 0, win_width * 2.2,
+		love.graphics.draw(iso.swoon, 0 * win_width * 0.5, 0 * win_height * 0.5, 0, win_width * 2.2,
 			win_height * 2.1)
 	end
 
 	if G.laugher and (G.laugher > 0) then
-		if ocstobal.laugher == nil then ocstobal.laugher = FuckingImage("HAHAHAHAHAAAAAAAAAAAA.jpg") end
+		if iso.laugher == nil then iso.laugher = FuckingImage("HAHAHAHAHAAAAAAAAAAAA.jpg") end
 		love.graphics.setColor(1, 1, 1, 1)
-		love.graphics.draw(ocstobal.laugher, 0, 0, 0, 2.6, 1.65)
+		love.graphics.draw(iso.laugher, 0, 0, 0, 2.6, 1.65)
 	end
 
 	if G.silence and (G.silence > 0) then
-		if ocstobal.silence == nil then ocstobal.silence = FuckingImage("blackscreen.png") end
+		if iso.silence == nil then iso.silence = FuckingImage("blackscreen.png") end
 		love.graphics.setColor(1, 1, 1, 1)
-		love.graphics.draw(ocstobal.silence, 0, 0, 0, 3, 3)
+		love.graphics.draw(iso.silence, 0, 0, 0, 3, 3)
 	end
 
 	if G.burger and (G.burger > 0) then
-		if ocstobal.burger == nil then ocstobal.burger = FuckingImage("cheeseburger.png") end
+		if iso.burger == nil then iso.burger = FuckingImage("cheeseburger.png") end
 		love.graphics.setColor(1, 1, 1, 1)
-		love.graphics.draw(ocstobal.burger, 0 * win_width * 2, 0 * win_height * 2, 0, win_width * 2.5, win_height * 2.4)
+		love.graphics.draw(iso.burger, 0 * win_width * 2, 0 * win_height * 2, 0, win_width * 2.5, win_height * 2.4)
 	end
 
 	--It's that easy. -also Doctor4t
@@ -55,7 +55,7 @@ end
 --is that yaha mous
 
 local mod_path = "" .. SMODS.current_mod.path
-ocstobal.path = mod_path
+iso.path = mod_path
 
 function forceGameoverEvent()
 	G.E_MANAGER:add_event({
@@ -76,7 +76,7 @@ function ISO_getfuckedlmfao()
 	G.E_MANAGER:add_event(Event({
 		trigger = "immediate",
 		func = function()
-			play_sound("ocstobal_swoonstart")
+			play_sound("iso_swoonstart")
 			G.swoon = 1
 			return true
 		end
@@ -85,7 +85,7 @@ function ISO_getfuckedlmfao()
 		trigger = "after",
 		delay = 2.3 * G.SETTINGS.GAMESPEED,
 		func = function()
-			play_sound("ocstobal_swoonend")
+			play_sound("iso_swoonend")
 			G.swoon = 0
 			return true
 		end
@@ -93,7 +93,7 @@ function ISO_getfuckedlmfao()
 	G.E_MANAGER:add_event(Event({
 		trigger = "immediate",
 		func = function()
-			SMODS.destroy_cards(SMODS.find_card("j_ocstobal_dw_astro"),true,true,true)
+			SMODS.destroy_cards(SMODS.find_card("j_iso_dw_astro"),true,true,true)
 			return true
 		end
 	}))
@@ -173,9 +173,9 @@ SMODS.Atlas {
 
 SMODS.ObjectType({
 	key = "ocstob",
-	default = "j_ocstobal_solinium",
+	default = "j_iso_solinium",
 	cards = {
-		j_ocstobal_seraph = true
+		j_iso_seraph = true
 	},
 	inject = function(self)
 		SMODS.ObjectType.inject(self)
@@ -186,9 +186,9 @@ SMODS.ObjectType({
 	key = "copycats",
 	default = "j_blueprint",
 	cards = {
-		j_ocstobal_Oxy = true,
-		j_ocstobal_oxyemp = true,
-		j_ocstobal_crystal = true,
+		j_iso_Oxy = true,
+		j_iso_oxyemp = true,
+		j_iso_crystal = true,
 		j_blueprint = true,
 		j_brainstorm = true
 	},
@@ -200,7 +200,7 @@ SMODS.ObjectType({
 
 SMODS.ObjectType({
 	key = "unbalanced",
-	default = "j_ocstobal_oxyemp",
+	default = "j_iso_oxyemp",
 	cards = {
 	},
 	inject = function(self)
@@ -211,15 +211,15 @@ SMODS.ObjectType({
 
 SMODS.ObjectType({
 	key = "fucking_absurd",
-	default = "j_ocstobal_jokertoendalljokers",
+	default = "j_iso_jokertoendalljokers",
 	cards = {
-		j_ocstobal_spkawk = true,
-		j_ocstobal_sphawk = true,
-		j_ocstobal_solawk = true,
-		j_ocstobal_spkawkclassic = true,
-		j_ocstobal_solawkclassic = true,
-		j_ocstobal_sphawkclassic = true,
-		j_ocstobal_winsweep = true
+		j_iso_spkawk = true,
+		j_iso_sphawk = true,
+		j_iso_solawk = true,
+		j_iso_spkawkclassic = true,
+		j_iso_solawkclassic = true,
+		j_iso_sphawkclassic = true,
+		j_iso_winsweep = true
 	},
 	inject = function(self)
 		SMODS.ObjectType.inject(self)
@@ -229,7 +229,7 @@ SMODS.ObjectType({
 
 SMODS.ObjectType({
 	key = "all_junk",
-	default = "j_ocstobal_solinium",
+	default = "j_iso_solinium",
 	cards = {},
 	inject = function(self)
 		SMODS.ObjectType.inject(self)
@@ -239,7 +239,7 @@ SMODS.ObjectType({
 
 SMODS.ObjectType({
 	key = "dandy",
-	default = "j_ocstobal_dw_astro",
+	default = "j_iso_dw_astro",
 	cards = {},
 	inject = function(self)
 		SMODS.ObjectType.inject(self)
@@ -249,9 +249,9 @@ SMODS.ObjectType({
 
 SMODS.ObjectType({
 	key = "wire",
-	default = "j_ocstobal_steelwire",
+	default = "j_iso_steelwire",
 	cards = {
-		j_ocstobal_steelwire = true
+		j_iso_steelwire = true
 	},
 })
 
@@ -481,7 +481,7 @@ SMODS.Sound {
 	volume = 1,
 	select_music_track = function()
 		local steel = 0
-		for _, steelwirecount in ipairs(SMODS.find_card("j_ocstobal_steelwire")) do
+		for _, steelwirecount in ipairs(SMODS.find_card("j_iso_steelwire")) do
 			steel = steel + 1
 		end
 		if G.GAME then
@@ -511,14 +511,14 @@ SMODS.Sound {
 }
 
 loc_colour()
-G.ARGS.LOC_COLOURS.ocstobal_eyeshatteringblue = HEX('3df5ff')
-G.ARGS.LOC_COLOURS.ocstobal_almanacblue = HEX('0000ff')
+G.ARGS.LOC_COLOURS.iso_eyeshatteringblue = HEX('3df5ff')
+G.ARGS.LOC_COLOURS.iso_almanacblue = HEX('0000ff')
 
-ocstobal.configbs = SMODS.current_mod.config
+iso.configbs = SMODS.current_mod.config
 
 --diansu video
-function ocstobal_custom_video(name, buttonname)
-	local file_path = SMODS.Mods["ocstobalatro"].path .. "/resources/" .. name .. ".ogv"
+function iso_custom_video(name, buttonname)
+	local file_path = SMODS.Mods["isoatro"].path .. "/resources/" .. name .. ".ogv"
 	local file = NFS.read(file_path)
 	love.filesystem.write("diansumeme.ogv", file)
 	local video_file = love.graphics.newVideo('diansumeme.ogv')
@@ -544,7 +544,7 @@ end
 -- 	action = function(self)
 -- 		G.E_MANAGER:add_event(Event({
 -- 			func = function()
--- 				play_sound("ocstobal_swoonstart")
+-- 				play_sound("iso_swoonstart")
 -- 				G.swoon = 1
 -- 				return true
 -- 			end
@@ -553,7 +553,7 @@ end
 -- 			trigger = "after",
 -- 			delay = 2 * G.SETTINGS.GAMESPEED,
 -- 			func = function()
--- 				play_sound("ocstobal_swoonend")
+-- 				play_sound("iso_swoonend")
 -- 				G.swoon = 0
 -- 				return true
 -- 			end
