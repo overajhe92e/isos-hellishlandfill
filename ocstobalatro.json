@@ -5,7 +5,7 @@
     "Isotypical"
   ],
   "description": "Yeah I renamed the mod what about it",
-  "prefix": "iso",
+  "prefix": "fizz",
   "main_file": "main.lua",
   "version": "0.0.0-redo",
   "priority": 0,
