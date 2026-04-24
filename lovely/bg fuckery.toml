@@ -23,7 +23,7 @@ ease_background_colour{new_colour = G.C.OMEGARED, special_colour = G.C.OMEGABLAC
 match_indent = true
 
 
-# omegarush bg
+# iso bg
 [[patches]]
 [patches.pattern]
 target = "functions/common_events.lua"

@@ -20,6 +20,7 @@ ISO_LIGHT_PURPLE = HEX("df9aff"),
 ISO_DARK_PURPLE = HEX("cf69ff"),
 ISO_CRIMSON = HEX("870000"),
 ISO_EX_RARE = HEX("ff00a7"),
+ISO_INDEX_BLUE = HEX("86bada"),
 """
 match_indent = true
 
@@ -40,5 +41,6 @@ iso_light_purple = G.C.ISO_LIGHT_PURPLE,
 iso_dark_purple = G.C.ISO_DARK_PURPLE,
 iso_crimson = G.C.ISO_CRIMSON,
 iso_exrare = G.C.ISO_EX_RARE,
+iso_index_blue = G.C.ISO_INDEX_BLUE,
 """
 match_indent = true
