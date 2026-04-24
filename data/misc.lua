@@ -76,7 +76,7 @@ function ISO_getfuckedlmfao()
 	G.E_MANAGER:add_event(Event({
 		trigger = "immediate",
 		func = function()
-			play_sound("iso_swoonstart")
+			play_sound("fizz_swoonstart")
 			G.swoon = 1
 			return true
 		end
@@ -85,7 +85,7 @@ function ISO_getfuckedlmfao()
 		trigger = "after",
 		delay = 2.3 * G.SETTINGS.GAMESPEED,
 		func = function()
-			play_sound("iso_swoonend")
+			play_sound("fizz_swoonend")
 			G.swoon = 0
 			return true
 		end
@@ -93,7 +93,7 @@ function ISO_getfuckedlmfao()
 	G.E_MANAGER:add_event(Event({
 		trigger = "immediate",
 		func = function()
-			SMODS.destroy_cards(SMODS.find_card("j_iso_dw_astro"),true,true,true)
+			SMODS.destroy_cards(SMODS.find_card("j_fizz_dw_astro"),true,true,true)
 			return true
 		end
 	}))
@@ -173,9 +173,9 @@ SMODS.Atlas {
 
 SMODS.ObjectType({
 	key = "ocstob",
-	default = "j_iso_solinium",
+	default = "j_fizz_solinium",
 	cards = {
-		j_iso_seraph = true
+		j_fizz_seraph = true
 	},
 	inject = function(self)
 		SMODS.ObjectType.inject(self)
@@ -186,9 +186,9 @@ SMODS.ObjectType({
 	key = "copycats",
 	default = "j_blueprint",
 	cards = {
-		j_iso_Oxy = true,
-		j_iso_oxyemp = true,
-		j_iso_crystal = true,
+		j_fizz_Oxy = true,
+		j_fizz_oxyemp = true,
+		j_fizz_crystal = true,
 		j_blueprint = true,
 		j_brainstorm = true
 	},
@@ -200,7 +200,7 @@ SMODS.ObjectType({
 
 SMODS.ObjectType({
 	key = "unbalanced",
-	default = "j_iso_oxyemp",
+	default = "j_fizz_oxyemp",
 	cards = {
 	},
 	inject = function(self)
@@ -211,15 +211,15 @@ SMODS.ObjectType({
 
 SMODS.ObjectType({
 	key = "fucking_absurd",
-	default = "j_iso_jokertoendalljokers",
+	default = "j_fizz_jokertoendalljokers",
 	cards = {
-		j_iso_spkawk = true,
-		j_iso_sphawk = true,
-		j_iso_solawk = true,
-		j_iso_spkawkclassic = true,
-		j_iso_solawkclassic = true,
-		j_iso_sphawkclassic = true,
-		j_iso_winsweep = true
+		j_fizz_spkawk = true,
+		j_fizz_sphawk = true,
+		j_fizz_solawk = true,
+		j_fizz_spkawkclassic = true,
+		j_fizz_solawkclassic = true,
+		j_fizz_sphawkclassic = true,
+		j_fizz_winsweep = true
 	},
 	inject = function(self)
 		SMODS.ObjectType.inject(self)
@@ -229,7 +229,7 @@ SMODS.ObjectType({
 
 SMODS.ObjectType({
 	key = "all_junk",
-	default = "j_iso_solinium",
+	default = "j_fizz_solinium",
 	cards = {},
 	inject = function(self)
 		SMODS.ObjectType.inject(self)
@@ -239,7 +239,7 @@ SMODS.ObjectType({
 
 SMODS.ObjectType({
 	key = "dandy",
-	default = "j_iso_dw_astro",
+	default = "j_fizz_dw_astro",
 	cards = {},
 	inject = function(self)
 		SMODS.ObjectType.inject(self)
@@ -249,9 +249,9 @@ SMODS.ObjectType({
 
 SMODS.ObjectType({
 	key = "wire",
-	default = "j_iso_steelwire",
+	default = "j_fizz_steelwire",
 	cards = {
-		j_iso_steelwire = true
+		j_fizz_steelwire = true
 	},
 })
 
@@ -461,7 +461,7 @@ SMODS.Sound {
 --only use when shader testing
 
 SMODS.DynaTextEffect {
-	key = "iso_tremble",
+	key = "fizz_tremble",
 }
 
 SMODS.Sound {
@@ -481,7 +481,7 @@ SMODS.Sound {
 	volume = 1,
 	select_music_track = function()
 		local steel = 0
-		for _, steelwirecount in ipairs(SMODS.find_card("j_iso_steelwire")) do
+		for _, steelwirecount in ipairs(SMODS.find_card("j_fizz_steelwire")) do
 			steel = steel + 1
 		end
 		if G.GAME then
@@ -489,7 +489,7 @@ SMODS.Sound {
 				return true
 			elseif steel >= 200 then
 				return G.GAME.evil_steel == true and 1e99
-			elseif G.GAME.iso_starspace_horny_hour == true then
+			elseif G.GAME.fizz_starspace_horny_hour == true then
 				return true and 1e99
 			else
 				return false
@@ -511,13 +511,13 @@ SMODS.Sound {
 }
 
 loc_colour()
-G.ARGS.LOC_COLOURS.iso_eyeshatteringblue = HEX('3df5ff')
-G.ARGS.LOC_COLOURS.iso_almanacblue = HEX('0000ff')
+G.ARGS.LOC_COLOURS.fizz_eyeshatteringblue = HEX('3df5ff')
+G.ARGS.LOC_COLOURS.fizz_almanacblue = HEX('0000ff')
 
 iso.configbs = SMODS.current_mod.config
 
 --diansu video
-function iso_custom_video(name, buttonname)
+function fizz_custom_video(name, buttonname)
 	local file_path = SMODS.Mods["isoatro"].path .. "/resources/" .. name .. ".ogv"
 	local file = NFS.read(file_path)
 	love.filesystem.write("diansumeme.ogv", file)
@@ -544,7 +544,7 @@ end
 -- 	action = function(self)
 -- 		G.E_MANAGER:add_event(Event({
 -- 			func = function()
--- 				play_sound("iso_swoonstart")
+-- 				play_sound("fizz_swoonstart")
 -- 				G.swoon = 1
 -- 				return true
 -- 			end
@@ -553,7 +553,7 @@ end
 -- 			trigger = "after",
 -- 			delay = 2 * G.SETTINGS.GAMESPEED,
 -- 			func = function()
--- 				play_sound("iso_swoonend")
+-- 				play_sound("fizz_swoonend")
 -- 				G.swoon = 0
 -- 				return true
 -- 			end

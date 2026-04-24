@@ -17,7 +17,7 @@ for i = 1, #ISO_EXT.sph_wins do
         key = "sph_wins_" .. i,
         type = 'win',
         extra = {
-            center = 'j_iso_seraph',
+            center = 'j_fizz_seraph',
             particle_colours = {
                 G.C.NIGHTMARE_PURPLE,
                 G.C.NIGHTMARE_PURPLE,
@@ -32,7 +32,7 @@ for i = 1, #ISO_EXT.sph_losses do
         key = "sph_losses_" .. i,
         type = 'loss',
         extra = {
-            center = 'j_iso_seraph',
+            center = 'j_fizz_seraph',
             particle_colours = {
                 G.C.NIGHTMARE_PURPLE,
                 G.C.NIGHTMARE_PURPLE,

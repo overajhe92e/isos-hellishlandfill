@@ -12,7 +12,11 @@ end
 
 SMODS.current_mod.menu_cards = function()
 	return {
+<<<<<<< HEAD
 		{key = 'j_iso_iso'}
+=======
+		{key = 'j_perkeo'}
+>>>>>>> 17fbf5a8b65b6c5ea64d09376032a3e04cd08445
 	}
 end
 

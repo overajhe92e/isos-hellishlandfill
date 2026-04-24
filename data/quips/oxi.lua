@@ -15,7 +15,7 @@ for i = 1, #ISO_EXT.oxi_wins do
         key = "oxi_wins_" .. i,
         type = 'win',
         extra = {
-            center = 'j_iso_Oxy',
+            center = 'j_fizz_Oxy',
             particle_colours = {
                 G.C.RED,
                 G.C.BLUE,
@@ -30,7 +30,7 @@ for i = 1, #ISO_EXT.oxi_losses do
         key = "oxi_losses_" .. i,
         type = 'loss',
         extra = {
-            center = 'j_iso_Oxy',
+            center = 'j_fizz_Oxy',
             particle_colours = {
                 G.C.RED,
                 G.C.BLUE,

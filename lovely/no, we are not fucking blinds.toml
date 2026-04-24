@@ -8,7 +8,7 @@ priority = 1000
 target = "functions/common_events.lua"
 pattern = "G.GAME.blind_on_deck = 'Small'"
 position = "at"
-payload = "G.GAME.blind_on_deck = ISO_UTIL.iso_lackofbigblind and 'Boss' or 'Big' or 'Small'"
+payload = "G.GAME.blind_on_deck = ISO_UTIL.fizz_lackofbigblind and 'Boss' or 'Big' or 'Small'"
 match_indent = true
 
 [[patches]]
@@ -16,7 +16,7 @@ match_indent = true
 target = "functions/common_events.lua"
 pattern = "G.GAME.blind_on_deck = 'Big'"
 position = "at"
-payload = "G.GAME.blind_on_deck = G.GAME.iso_lackofbigblind and 'Boss' or 'Big' or 'Small'"
+payload = "G.GAME.blind_on_deck = G.GAME.fizz_lackofbigblind and 'Boss' or 'Big' or 'Small'"
 match_indent = true
 
 [[patches]]
@@ -24,7 +24,7 @@ match_indent = true
 target = "functions/UI_definitions.lua"
 pattern = "G.GAME.blind_on_deck = 'Small'"
 position = "at"
-payload = "G.GAME.blind_on_deck = G.GAME.iso_lackofbigblind and 'Boss' or 'Big' or 'Small'"
+payload = "G.GAME.blind_on_deck = G.GAME.fizz_lackofbigblind and 'Boss' or 'Big' or 'Small'"
 match_indent = true
 
 [[patches]]
@@ -32,7 +32,7 @@ match_indent = true
 target = "functions/UI_definitions.lua"
 pattern = "G.GAME.blind_on_deck = 'Big'"
 position = "at"
-payload = "G.GAME.blind_on_deck = G.GAME.iso_lackofbigblind and 'Boss' or 'Big' or 'Small'"
+payload = "G.GAME.blind_on_deck = G.GAME.fizz_lackofbigblind and 'Boss' or 'Big' or 'Small'"
 match_indent = true
 
 
@@ -41,7 +41,7 @@ match_indent = true
 target = "functions/common_events.lua"
 pattern = "G.GAME.round_resets.blind_states.Small = 'Upcoming'"
 position = "at"
-payload = "G.GAME.round_resets.blind_states.Small = G.GAME.iso_lackofbigblind and 'Hide' or 'Upcoming'"
+payload = "G.GAME.round_resets.blind_states.Small = G.GAME.fizz_lackofbigblind and 'Hide' or 'Upcoming'"
 match_indent = true
 
 [[patches]]
@@ -49,5 +49,5 @@ match_indent = true
 target = "functions/common_events.lua"
 pattern = "G.GAME.round_resets.blind_states.Big = 'Upcoming'"
 position = "at"
-payload = "G.GAME.round_resets.blind_states.Big = G.GAME.iso_lackofbigblind and 'Hide' or 'Upcoming'"
+payload = "G.GAME.round_resets.blind_states.Big = G.GAME.fizz_lackofbigblind and 'Hide' or 'Upcoming'"
 match_indent = true

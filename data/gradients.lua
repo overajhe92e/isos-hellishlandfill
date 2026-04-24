@@ -48,7 +48,7 @@ SMODS.Gradient {
 }
 
 SMODS.Gradient {
-	key = "iso_grad",
+	key = "fizz_grad",
 	colours = { HEX("df9aff"), HEX("cf69ff") },
 	interpolation = 'trig',
 	cycle = 2

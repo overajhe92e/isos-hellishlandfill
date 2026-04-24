@@ -15,7 +15,7 @@ for i = 1, #ISO_EXT.spk_wins do
         key = "spk_wins_" .. i,
         type = 'win',
         extra = {
-            center = 'j_iso_sparky',
+            center = 'j_fizz_sparky',
             particle_colours = {
                 G.C.NIGHTMARE_PURPLE,
                 G.C.NIGHTMARE_PURPLE,
@@ -30,7 +30,7 @@ for i = 1, #ISO_EXT.spk_losses do
         key = "spk_losses_" .. i,
         type = 'loss',
         extra = {
-            center = 'j_iso_sparky',
+            center = 'j_fizz_sparky',
             particle_colours = {
                 G.C.NIGHTMARE_PURPLE,
                 G.C.NIGHTMARE_PURPLE,

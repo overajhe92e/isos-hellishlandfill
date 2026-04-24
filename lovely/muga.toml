@@ -1,0 +1,19 @@
+[manifest]
+version = "0.0.0"
+dump_lua = true
+priority = 100
+
+# e asi g  e, er s  g y u
+[[patches]]
+[patches.pattern]
+target = 'functions/button_callbacks.lua'
+match_indent = true
+pattern = '''
+  G.GAME.chips_text = new_chips_text
+end'''
+position = 'after'
+payload = '''
+if G.GAME.iso_hide_score == true then
+  G.GAME.chips_text = "???"
+end
+'''

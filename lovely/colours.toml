@@ -30,17 +30,16 @@ target = "functions/misc_functions.lua"
 pattern = "dark_edition = G.C.DARK_EDITION,"
 position = "after"
 payload = """
-iso_omegablack = G.C.OMEGABLACK,
-iso_omegared = G.C.OMEGARED,
-iso_omegawhite = G.C.OMEGAWHITE,
-iso_nightmare_blue = G.C.NIGHTMARE_BLUE,
-iso_nightmare_purple = G.C.NIGHTMARE_PURPLE,
+fizz_omegablack = G.C.OMEGABLACK,
+fizz_omegared = G.C.OMEGARED,
+fizz_omegawhite = G.C.OMEGAWHITE,
+fizz_nightmare_blue = G.C.NIGHTMARE_BLUE,
+fizz_nightmare_purple = G.C.NIGHTMARE_PURPLE,
 pastel_yellow = G.C.PASTEL_YELLOW,
 pink = G.C.PINK,
-iso_light_purple = G.C.ISO_LIGHT_PURPLE,
-iso_dark_purple = G.C.ISO_DARK_PURPLE,
-iso_crimson = G.C.ISO_CRIMSON,
-iso_exrare = G.C.ISO_EX_RARE,
-iso_index_blue = G.C.ISO_INDEX_BLUE,
+fizz_light_purple = G.C.ISO_LIGHT_PURPLE,
+fizz_dark_purple = G.C.ISO_DARK_PURPLE,
+fizz_crimson = G.C.ISO_CRIMSON,
+fizz_exrare = G.C.ISO_EX_RARE,
 """
 match_indent = true

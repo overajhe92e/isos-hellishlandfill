@@ -17,7 +17,7 @@ elseif G.GAME.won and G.GAME.omegarush == nil then
 ease_background_colour{new_colour = G.C.BLIND.won, contrast = 1}
 elseif G.GAME.won and G.GAME.omegarush < 1 then
 ease_background_colour{new_colour = G.C.BLIND.won, contrast = 1}
-elseif G.GAME.round_resets.blind_choices.Boss == 'bl_iso_bossrushomega' then
+elseif G.GAME.round_resets.blind_choices.Boss == 'bl_fizz_bossrushomega' then
 ease_background_colour{new_colour = G.C.OMEGARED, special_colour = G.C.OMEGABLACK, contrast = 2}
 '''
 match_indent = true
@@ -54,7 +54,7 @@ target = "functions/common_events.lua"
 pattern = '''elseif blindname == 'Small Blind' or blindname == 'Big Blind' or blindname == '' then'''
 position = "before"
 payload = '''
-elseif G.GAME.evil_steel == true or G.GAME.iso_starspace_horny_hour == true and G.GAME.has_isotypical ~= true then
+elseif G.GAME.evil_steel == true or G.GAME.fizz_starspace_horny_hour == true and G.GAME.has_isotypical ~= true then
     ease_background_colour{new_colour = G.C.OMEGABLACK, special_colour = G.C.ISO_CRIMSON, tertiary_colour = G.C.RED, contrast = 2}
 '''
 match_indent = true

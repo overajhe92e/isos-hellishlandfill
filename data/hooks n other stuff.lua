@@ -6,14 +6,14 @@ local upd = Game.update
 function Game:update(dt)
     upd(self, dt)
     local fucking_hell_mate = 0
-    for _, steelwirecount in ipairs(SMODS.find_card("j_iso_steelwire")) do
+    for _, steelwirecount in ipairs(SMODS.find_card("j_fizz_steelwire")) do
         fucking_hell_mate = fucking_hell_mate + 1
     end
     if G.GAME then
         if fucking_hell_mate >= 200 then
             G.GAME.evil_steel = true
             ease_background_colour { new_colour = G.C.OMEGABLACK, special_colour = G.C.ISO_CRIMSON, contrast = 2 }
-        elseif G.GAME.iso_starspace_horny_hour == true then
+        elseif G.GAME.fizz_starspace_horny_hour == true then
             ease_background_colour { new_colour = G.C.OMEGABLACK, special_colour = G.C.ISO_CRIMSON, contrast = 2 }
         else
             G.GAME.evil_steel = false
@@ -23,9 +23,9 @@ end
 
 local check_for_buy_space_ref = G.FUNCS.check_for_buy_space
 G.FUNCS.check_for_buy_space = function(card)
-    if card.config.center.key == "j_iso_antislopinator" then
+    if card.config.center.key == "j_fizz_antislopinator" then
         return true
-    elseif card.config.center.key == "j_iso_steelwire" then
+    elseif card.config.center.key == "j_fizz_steelwire" then
         return true
     end
     return check_for_buy_space_ref(card)
@@ -81,7 +81,7 @@ end
 local abbornegative = G.P_CENTERS.e_negative.get_weight
 G.P_CENTERS.e_negative.get_weight = function(self)
     local weight = abbornegative(self)
-    for _, abbie in ipairs(SMODS.find_card("j_iso_abbie")) do
+    for _, abbie in ipairs(SMODS.find_card("j_fizz_abbie")) do
         weight = weight * 3.1
     end
     return weight
@@ -89,7 +89,7 @@ end
 
 function TERMINUS_GIVER_9000()
     print("cheaty hehehehehe")
-    SMODS.add_card { set = "Joker", rarity = 'iso_beyondexotic' }
+    SMODS.add_card { set = "Joker", rarity = 'fizz_beyondexotic' }
 end
 
 function G.FUNCS.ISO_jf_troll()

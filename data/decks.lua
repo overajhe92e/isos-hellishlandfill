@@ -2,7 +2,7 @@ SMODS.Back {
 	key = "ocs",
 	pos = { x = 0, y = 0 },
 	atlas = "decks",
-	config = { spectral_rate = 1, jokers = { 'j_iso_sparky', 'j_iso_seraph', 'j_iso_solinium' }, ante_scaling = 50 },
+	config = { spectral_rate = 1, jokers = { 'j_fizz_sparky', 'j_fizz_seraph', 'j_fizz_solinium' }, ante_scaling = 50 },
 	unlocked = false,
 	loc_vars = function(self, info_queue, back)
 		return { vars = { self.config.jokers[1] }, self.config.ante_scaling }
@@ -26,7 +26,7 @@ SMODS.Back {
 -- 	end,
 -- 	calculate = function(self, back, context)
 -- 		if context.end_of_round and context.game_over == false and context.main_eval and context.beat_boss then
--- 			if SMODS.pseudorandom_probability(back, 'iso_aio', 1, 2) then
+-- 			if SMODS.pseudorandom_probability(back, 'fizz_aio', 1, 2) then
 -- 				local jokers = {}
 -- 				for k, v in pairs(G.P_CENTERS) do
 -- 					if v.mod and v.mod.id == 'isoatro' then
@@ -53,11 +53,11 @@ SMODS.Back {
 -- 	key = "extremepain",
 -- 	atlas = 'decks',
 -- 	pos = { x = 4, y = 0 },
--- 	config = { jokers = { 'j_iso_somethingevil' }, ante_scaling = 0.25, joker_slot = 1 },
+-- 	config = { jokers = { 'j_fizz_somethingevil' }, ante_scaling = 0.25, joker_slot = 1 },
 -- 	unlocked = false,
 -- 	loc_vars = function(self, info_queue, back)
 -- 		return {
--- 			vars = { localize { type = 'name_text', key = 'j_iso_somethingevil', set = 'jokers' } },
+-- 			vars = { localize { type = 'name_text', key = 'j_fizz_somethingevil', set = 'jokers' } },
 -- 			self
 -- 				.config.jokers[1],
 -- 			self.config.joker_slot,
@@ -73,7 +73,7 @@ SMODS.Back {
 	key = "copycat",
 	atlas = "decks",
 	pos = { x = 3, y = 0 },
-	config = { jokers = { 'j_iso_Oxy', 'j_iso_crystal' } },
+	config = { jokers = { 'j_fizz_Oxy', 'j_fizz_crystal' } },
 	unlocked = false,
 	loc_vars = function(self, info_queue, back)
 		return { vars = { self.config.jokers[1] } }
@@ -94,7 +94,7 @@ SMODS.Back {
 	pos = { x = 1, y = 0 },
 	-- config = {
 	-- 	jokers = { 'j_photograph', 'j_hanging_chad' },
-	-- 	jokersalt = { 'j_iso_jokertoendalljokers' }
+	-- 	jokersalt = { 'j_fizz_jokertoendalljokers' }
 	-- },
 	unlocked = false,
 	-- loc_vars = function(self, info_queue, back)
@@ -109,10 +109,10 @@ SMODS.Back {
 	-- 	end
 	-- end,
 	apply = function(self, back)
-		if SMODS.pseudorandom_probability(back, 'iso_looksinside', 1, 6) and G.current_isomode ~= nil and G.current_isomode >= 2 then
+		if SMODS.pseudorandom_probability(back, 'fizz_looksinside', 1, 6) and G.current_isomode ~= nil and G.current_isomode >= 2 then
 			G.E_MANAGER:add_event(Event({
 				func = function()
-					SMODS.add_card { key = "j_iso_jokertoendalljokers" }
+					SMODS.add_card { key = "j_fizz_jokertoendalljokers" }
 					return true
 				end
 			}))
@@ -145,7 +145,7 @@ SMODS.Back {
 				func = function()
 					SMODS.add_card {
 						set = 'Joker',
-						rarity = 'iso_beyondexotic',
+						rarity = 'fizz_beyondexotic',
 					}
 					G.GAME.win_ante = 16
 					return true
@@ -156,15 +156,15 @@ SMODS.Back {
 				func = function()
 					SMODS.add_card {
 						set = 'Joker',
-						rarity = 'iso_beyondexotic',
+						rarity = 'fizz_beyondexotic',
 					}
 					SMODS.add_card {
 						set = 'Joker',
-						rarity = 'iso_beyondexotic',
+						rarity = 'fizz_beyondexotic',
 					}
 					SMODS.add_card {
 						set = 'Joker',
-						rarity = 'iso_beyondexotic',
+						rarity = 'fizz_beyondexotic',
 					}
 					G.GAME.win_ante = 100
 					return true
