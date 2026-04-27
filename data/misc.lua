@@ -264,6 +264,22 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
+	key = "CustomBoosters",
+	px = 71,
+	py = 95,
+	path = "CustomBoosters.png",
+	atlas_table = "ASSET_ATLAS"
+}
+
+SMODS.Atlas {
+	key = "CustomEnhancements",
+	px = 71,
+	py = 95,
+	path = "CustomEnhancements.png",
+	atlas_table = "ASSET_ATLAS"
+}
+
+SMODS.Atlas {
 	key = 'sugar',
 	px = 71,
 	py = 95,
@@ -518,7 +534,7 @@ iso.configbs = SMODS.current_mod.config
 
 --diansu video
 function fizz_custom_video(name, buttonname)
-	local file_path = SMODS.Mods["isoatro"].path .. "/resources/" .. name .. ".ogv"
+	local file_path = SMODS.Mods["disarray"].path .. "/resources/" .. name .. ".ogv"
 	local file = NFS.read(file_path)
 	love.filesystem.write("diansumeme.ogv", file)
 	local video_file = love.graphics.newVideo('diansumeme.ogv')

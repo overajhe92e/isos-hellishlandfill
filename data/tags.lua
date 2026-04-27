@@ -1,5 +1,5 @@
 SMODS.Tag {
-    key = "junktag",
+    key = "disarray_pack",
     min_ante = 1,
     atlas = 'junkyard_tags',
     pos = { x = 0, y = 0 },
@@ -11,7 +11,7 @@ SMODS.Tag {
             local lock = tag.ID
             G.CONTROLLER.locks[lock] = true
             tag:yep('+', G.C.SECONDARY_SET.Spectral, function()
-                local booster = SMODS.create_card { key = 'p_fizz_junkpack_b', area = G.play }
+                local booster = SMODS.create_card { key = 'p_fizz_disarray_a', area = G.play }
                 booster.T.x = G.play.T.x + G.play.T.w / 2 - G.CARD_W * 1.27 / 2
                 booster.T.y = G.play.T.y + G.play.T.h / 2 - G.CARD_H * 1.27 / 2
                 booster.T.w = G.CARD_W * 1.27
@@ -37,15 +37,15 @@ SMODS.Tag {
         if context.type == 'store_joker_create' then
             local term = { 0 }
             for _, joker in ipairs(G.jokers.cards) do
-                if joker.config.center.rarity == "fizz_beyondexotic" and not term[joker.config.center.key] then
+                if joker.config.center.rarity == "fizz_terminus" and not term[joker.config.center.key] then
                     term[1] = term[1] + 1
                     term[joker.config.center.key] = true
                 end
             end
-            if #G.P_JOKER_RARITY_POOLS["fizz_beyondexotic"] > term[1] then
+            if #G.P_JOKER_RARITY_POOLS["fizz_terminus"] > term[1] then
                 local card = SMODS.create_card {
                     set = "Joker",
-                    rarity = "fizz_beyondexotic",
+                    rarity = "fizz_terminus",
                     area = context.area,
                 }
                 create_shop_card_ui(card, 'Joker', context.area)
@@ -65,22 +65,22 @@ SMODS.Tag {
 }
 
 SMODS.Tag {
-    key = "exrare_tag",
+    key = "apoc_tag",
     atlas = 'junkyard_tags',
     pos = { x = 2, y = 0 },
     apply = function(self, tag, context)
         if context.type == 'store_joker_create' then
             local ep = { 0 }
             for _, joker in ipairs(G.jokers.cards) do
-                if joker.config.center.rarity == "fizz_beyondexotic" and not ep[joker.config.center.key] then
+                if joker.config.center.rarity == "fizz_apoc" and not ep[joker.config.center.key] then
                     ep[1] = ep[1] + 1
                     ep[joker.config.center.key] = true
                 end
             end
-            if #G.P_JOKER_RARITY_POOLS["fizz_beyondexotic"] > ep[1] then
+            if #G.P_JOKER_RARITY_POOLS["fizz_apoc"] > ep[1] then
                 local card = SMODS.create_card {
                     set = "Joker",
-                    rarity = "fizz_epic",
+                    rarity = "fizz_apoc",
                     area = context.area,
                 }
                 create_shop_card_ui(card, 'Joker', context.area)
@@ -111,6 +111,13 @@ SMODS.Tag {
     atlas = 'junkyard_tags',
     pos = { x = 3, y = 0 },
     apply = function(self, tag, context)
+        if context.type == 'round_start_bonus' then
+            tag:yep('!', G.C.FILTER, function()
+                return true
+            end)
+            G.GAME.blind.chips = G.GAME.blind.chips * 3
+            G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
+        end
         if context.type == 'store_joker_create' then
             local lgn = { 0 }
             for _, joker in ipairs(G.jokers.cards) do

@@ -1,5 +1,5 @@
 SMODS.Joker {
     key = "recluse",
-    rarity = "iso_terminus",
+    rarity = "fizz_terminus",
     cost = 50
 }

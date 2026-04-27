@@ -1,16 +1,16 @@
-SMODS.Back {
-	key = "ocs",
-	pos = { x = 0, y = 0 },
-	atlas = "decks",
-	config = { spectral_rate = 1, jokers = { 'j_fizz_sparky', 'j_fizz_seraph', 'j_fizz_solinium' }, ante_scaling = 50 },
-	unlocked = false,
-	loc_vars = function(self, info_queue, back)
-		return { vars = { self.config.jokers[1] }, self.config.ante_scaling }
-	end,
-	check_for_unlock = function(self, args)
-		return args.type == 'win_stake' and get_deck_win_stake() >= 8
-	end
-}
+-- SMODS.Back {
+-- 	key = "ocs",
+-- 	pos = { x = 0, y = 0 },
+-- 	atlas = "decks",
+-- 	config = { spectral_rate = 1, jokers = { 'j_fizz_sparky', 'j_fizz_seraph', 'j_fizz_solinium' }, ante_scaling = 50 },
+-- 	unlocked = false,
+-- 	loc_vars = function(self, info_queue, back)
+-- 		return { vars = { self.config.jokers[1] }, self.config.ante_scaling }
+-- 	end,
+-- 	check_for_unlock = function(self, args)
+-- 		return args.type == 'win_stake' and get_deck_win_stake() >= 8
+-- 	end
+-- }
 
 -- SMODS.Back {
 -- 	key = "aio",
@@ -69,110 +69,110 @@ SMODS.Back {
 -- 	end
 -- }
 
-SMODS.Back {
-	key = "copycat",
-	atlas = "decks",
-	pos = { x = 3, y = 0 },
-	config = { jokers = { 'j_fizz_Oxy', 'j_fizz_crystal' } },
-	unlocked = false,
-	loc_vars = function(self, info_queue, back)
-		return { vars = { self.config.jokers[1] } }
-	end,
-	check_for_unlock = function(self, args)
-		return args.type == 'win_stake' and get_deck_win_stake() >= 8
-	end
-}
+-- SMODS.Back {
+-- 	key = "copycat",
+-- 	atlas = "decks",
+-- 	pos = { x = 3, y = 0 },
+-- 	config = { jokers = { 'j_fizz_Oxy', 'j_fizz_crystal' } },
+-- 	unlocked = false,
+-- 	loc_vars = function(self, info_queue, back)
+-- 		return { vars = { self.config.jokers[1] } }
+-- 	end,
+-- 	check_for_unlock = function(self, args)
+-- 		return args.type == 'win_stake' and get_deck_win_stake() >= 8
+-- 	end
+-- }
 
 -- SMODS.Back {
 -- 	key = 'fakenaneinf',
 -- 	config = { jokers = { 'j_baron'}}
 -- }
 
-SMODS.Back {
-	key = 'looksinside',
-	atlas = 'decks',
-	pos = { x = 1, y = 0 },
-	-- config = {
-	-- 	jokers = { 'j_photograph', 'j_hanging_chad' },
-	-- 	jokersalt = { 'j_fizz_jokertoendalljokers' }
-	-- },
-	unlocked = false,
-	-- loc_vars = function(self, info_queue, back)
-	-- 	if pseudorandom("avaritiajumpscare",1,6) == 1 and iso.configbs.very_unbalanced_mode == true then
-	-- 		return {
-	-- 			vars = { self.config.jokersalt[1] }
-	-- 		}
-	-- 	else
-	-- 		return {
-	-- 			vars = { self.config.jokers[1] }
-	-- 		}
-	-- 	end
-	-- end,
-	apply = function(self, back)
-		if SMODS.pseudorandom_probability(back, 'fizz_looksinside', 1, 6) and G.current_isomode ~= nil and G.current_isomode >= 2 then
-			G.E_MANAGER:add_event(Event({
-				func = function()
-					SMODS.add_card { key = "j_fizz_jokertoendalljokers" }
-					return true
-				end
-			}))
-		else
-			G.E_MANAGER:add_event(Event({
-				func = function()
-					SMODS.add_card { key = "j_photograph" }
-					SMODS.add_card { key = "j_hanging_chad" }
-					return true
-				end
-			}))
-		end
-	end,
-	check_for_unlock = function(self, args)
-		return args.type == 'win_stake' and get_deck_win_stake() >= 1
-	end
-}
+-- SMODS.Back {
+-- 	key = 'looksinside',
+-- 	atlas = 'decks',
+-- 	pos = { x = 1, y = 0 },
+-- 	config = {
+-- 		jokers = { 'j_photograph', 'j_hanging_chad' },
+-- 		jokersalt = { 'j_fizz_jokertoendalljokers' }
+-- 	},
+-- 	unlocked = false,
+-- 	loc_vars = function(self, info_queue, back)
+-- 		if pseudorandom("avaritiajumpscare",1,6) == 1 and iso.configbs.very_unbalanced_mode == true then
+-- 			return {
+-- 				vars = { self.config.jokersalt[1] }
+-- 			}
+-- 		else
+-- 			return {
+-- 				vars = { self.config.jokers[1] }
+-- 			}
+-- 		end
+-- 	end,
+-- 	apply = function(self, back)
+-- 		if SMODS.pseudorandom_probability(back, 'fizz_looksinside', 1, 6) and G.current_isomode ~= nil and G.current_isomode >= 2 then
+-- 			G.E_MANAGER:add_event(Event({
+-- 				func = function()
+-- 					SMODS.add_card { key = "j_fizz_jokertoendalljokers" }
+-- 					return true
+-- 				end
+-- 			}))
+-- 		else
+-- 			G.E_MANAGER:add_event(Event({
+-- 				func = function()
+-- 					SMODS.add_card { key = "j_photograph" }
+-- 					SMODS.add_card { key = "j_hanging_chad" }
+-- 					return true
+-- 				end
+-- 			}))
+-- 		end
+-- 	end,
+-- 	check_for_unlock = function(self, args)
+-- 		return args.type == 'win_stake' and get_deck_win_stake() >= 1
+-- 	end
+-- }
 
-SMODS.Back {
-	key = 'overpoweredjokers',
-	atlas = 'decks',
-	pos = { x = 5, y = 0 },
-	unlocked = false,
-	loc_vars = function(self, info_queue, back)
-		return { key = ISO_unik == true and self.key.."_unik" or nil }
-	end,
-	apply = function(self, back)
-		if not unik_detect then
-			G.E_MANAGER:add_event(Event({
-				func = function()
-					SMODS.add_card {
-						set = 'Joker',
-						rarity = 'fizz_beyondexotic',
-					}
-					G.GAME.win_ante = 16
-					return true
-				end
-			}))
-		else
-			G.E_MANAGER:add_event(Event({
-				func = function()
-					SMODS.add_card {
-						set = 'Joker',
-						rarity = 'fizz_beyondexotic',
-					}
-					SMODS.add_card {
-						set = 'Joker',
-						rarity = 'fizz_beyondexotic',
-					}
-					SMODS.add_card {
-						set = 'Joker',
-						rarity = 'fizz_beyondexotic',
-					}
-					G.GAME.win_ante = 100
-					return true
-				end
-			}))
-		end
-	end,
-	check_for_unlock = function(self, args)
-		return args.type == 'defeated_omega'
-	end
-}
+-- SMODS.Back {
+-- 	key = 'overpoweredjokers',
+-- 	atlas = 'decks',
+-- 	pos = { x = 5, y = 0 },
+-- 	unlocked = false,
+-- 	loc_vars = function(self, info_queue, back)
+-- 		return { key = ISO_unik == true and self.key.."_unik" or nil }
+-- 	end,
+-- 	apply = function(self, back)
+-- 		if not unik_detect then
+-- 			G.E_MANAGER:add_event(Event({
+-- 				func = function()
+-- 					SMODS.add_card {
+-- 						set = 'Joker',
+-- 						rarity = 'fizz_beyondexotic',
+-- 					}
+-- 					G.GAME.win_ante = 16
+-- 					return true
+-- 				end
+-- 			}))
+-- 		else
+-- 			G.E_MANAGER:add_event(Event({
+-- 				func = function()
+-- 					SMODS.add_card {
+-- 						set = 'Joker',
+-- 						rarity = 'fizz_beyondexotic',
+-- 					}
+-- 					SMODS.add_card {
+-- 						set = 'Joker',
+-- 						rarity = 'fizz_beyondexotic',
+-- 					}
+-- 					SMODS.add_card {
+-- 						set = 'Joker',
+-- 						rarity = 'fizz_beyondexotic',
+-- 					}
+-- 					G.GAME.win_ante = 100
+-- 					return true
+-- 				end
+-- 			}))
+-- 		end
+-- 	end,
+-- 	check_for_unlock = function(self, args)
+-- 		return args.type == 'defeated_omega'
+-- 	end
+-- }

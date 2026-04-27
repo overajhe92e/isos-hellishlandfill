@@ -204,7 +204,7 @@ SMODS.Sound {
 }
 
 SMODS.Blind {
-	key = 'oxyblind', --NOT THAT
+	key = 'oxid', --NOT THAT
 	mult = 2,
 	dollars = 5,
 	boss = { min = 1 },
@@ -230,8 +230,7 @@ SMODS.Blind {
 local reclcheck = false
 
 SMODS.Blind {
-	key = 'spkblind',
-	name = 'spkblind',
+	key = 'spk',
 	atlas = 'junkyardblinds',
 	pos = { x = 0, y = 0 },
 	mult = 1,
@@ -263,8 +262,7 @@ SMODS.Blind {
 }
 
 SMODS.Blind {
-	key = 'recluseblind',
-	name = 'recluseblind',
+	key = 'recl',
 	atlas = 'junkyardblinds',
 	pos = { x = 0, y = 4 },
 	mult = 66,
@@ -311,8 +309,7 @@ SMODS.Blind {
 }
 
 SMODS.Blind {
-	key = 'sphblind',
-	name = 'sphblind',
+	key = 'sph',
 	atlas = 'junkyardblinds',
 	pos = { x = 0, y = 1 },
 	mult = 1.25,
@@ -339,8 +336,7 @@ SMODS.Blind {
 }
 
 SMODS.Blind {
-	key = 'solblind',
-	name = 'solblind',
+	key = 'sol',
 	atlas = 'junkyardblinds',
 	pos = { x = 0, y = 3 },
 	mult = 1,
@@ -367,7 +363,7 @@ SMODS.Blind {
 }
 
 SMODS.Blind { --Seraph_Omega
-	key = 'BLACKKNIFE',
+	key = 'sph_ex',
 	dollars = 10,
 	mult = 5,
 	boss = { min = 16 },
@@ -394,7 +390,7 @@ SMODS.Blind { --Seraph_Omega
 }
 
 SMODS.Blind { --Solinium_Omega
-	key = 'THESCALE',
+	key = 'sol_ex',
 	dollars = 10,
 	mult = 8,
 	boss = { min = 16 },
@@ -421,7 +417,7 @@ SMODS.Blind { --Solinium_Omega
 }
 
 SMODS.Blind { --Oxy_Omega
-	key = 'THEDROPLET',
+	key = 'oxid_ex',
 	dollars = 10,
 	mult = 0.05,
 	boss = { min = 16 },
@@ -451,7 +447,7 @@ SMODS.Blind { --Oxy_Omega
 }
 
 SMODS.Blind { --Sparky_Omega
-	key = 'UNSHY',
+	key = 'spk_ex',
 	dollars = 10,
 	mult = 100,
 	boss = { min = 16 },
@@ -474,88 +470,8 @@ SMODS.Blind { --Sparky_Omega
 	end
 }
 
-SMODS.Sound {
-	key = "music_giygas",
-	path = "mus_giygas.ogg",
-	pitch = 1,
-	volume = 1,
-	select_music_track = function()
-		if G.GAME.blind and G.GAME.blind.name == 'giygas' then
-			return true, 10
-		end
-	end
-}
-
 SMODS.Blind {
-	key = 'giygas',
-	name = 'giygas',
-	mult = 666,
-	money = 10,
-	-- atlas = 'giegueblind',
-	boss_colour = HEX('ff0000'),
-	boss = { min = 32 },
-
-	calculate = function(self, blind, context)
-		if to_big(G.GAME.chips) > to_big(G.GAME.blind.chips) and to_big(G.GAME.chips) < to_big(G.GAME.blind.chips) ^ 6.6 then
-			G.GAME.chips = 0
-			G.GAME.blind.chips = G.GAME.blind.chips * 10
-			G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
-			G.GAME.round_resets.lost = true
-			G.E_MANAGER:add_event(Event({
-				func = function()
-					iso.nextboss()
-					G.GAME.blind:juice_up()
-					ease_hands_played(G.GAME.round_resets.hands - G.GAME.current_round.hands_left)
-					ease_discard(
-						math.max(0, G.GAME.round_resets.discards + G.GAME.round_bonus.discards) -
-						G.GAME.current_round.discards_left
-					)
-					G.FUNCS.draw_from_discard_to_deck()
-					return true
-				end
-			}))
-		end
-	end
-}
-
-SMODS.Blind {
-	key = 'starman_super',
-	mult = 1.5,
-	money = 7,
-	-- atlas = 'starman',
-	boss_colour = HEX('ccb046'),
-	boss = { min = 2 },
-	calculate = function(self, card, context)
-		if context.final_scoring_step and context.cardarea == G.play then
-			G.GAME.chips = G.GAME.chips * 0.7
-			G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
-		end
-	end,
-	defeat = function(self)
-		if SMODS.pseudorandom_probability(card, "SOK", 1, 128) then
-			SMODS.add_card { key = "j_fizz_sword_of_kings" }
-		end
-	end
-}
-
-SMODS.Blind {
-	key = 'thyvessel',
-	mult = 32767,
-	money = 9,
-	atlas = 'thevessel_blind',
-	debuff = {
-		omega_blind = true
-	},
-	boss_colour = HEX('000000'),
-	boss = { min = 16 },
-	calculate = function(self, card, context)
-		if context.joker_main then
-		end
-	end
-}
-
-SMODS.Blind {
-	key = "oxidyze_bnuuy_hate",
+	key = "oxid_bunny",
 	mult = 2.5,
 	money = 5,
 	boss_colour = HEX("ff822f"),

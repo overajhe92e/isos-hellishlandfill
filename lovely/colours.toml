@@ -19,7 +19,7 @@ PINK = HEX("FFAAD9"),
 ISO_LIGHT_PURPLE = HEX("df9aff"),
 ISO_DARK_PURPLE = HEX("cf69ff"),
 ISO_CRIMSON = HEX("870000"),
-ISO_EX_RARE = HEX("ff00a7"),
+ISO_APOC = HEX("ffa852"),
 ISO_INDEX_BLUE = HEX("86bada"),
 """
 match_indent = true
@@ -40,6 +40,7 @@ pink = G.C.PINK,
 fizz_light_purple = G.C.ISO_LIGHT_PURPLE,
 fizz_dark_purple = G.C.ISO_DARK_PURPLE,
 fizz_crimson = G.C.ISO_CRIMSON,
-fizz_exrare = G.C.ISO_EX_RARE,
+fizz_apoc = G.C.ISO_APOC,
+fizz_index_blue = G.C.ISO_INDEX_BLUE,
 """
 match_indent = true

@@ -5,22 +5,119 @@ return {
 		Back = {
 		},
 		Blind = {
+			bl_fizz_ricardo = {
+				name = "The Middle Big Brother",
+				text = {
+					"MY HAIR COUPOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO"
+				}
+			},
+			bl_fizz_rng = {
+				name = "RNG",
+				text = {
+					"Base Mult is randomized from X0.5 to X4",
+					"Reward is randomized from $5 to $8",
+					"Changes on game restart"
+				}
+			},
+			bl_fizz_unstable = {
+				name = "Destabilization",
+				text = {
+					"If this blind is not defeated",
+					"within 2 Hands,",
+					"Fight an Omega Blind"
+				}
+			},
+			bl_fizz_diansu = {
+				name = "Diansu Vulkarch",
+				text = {
+					"Run, That's all you CAN do!"
+				}
+			},
+			bl_fizz_oxid = {
+				name = "Oxidyzation",
+				text = {
+					na
+				}
+			},
+			bl_fizz_spk = {
+				name = "The Shyness",
+				text = {
+					"-1 Chip on scoring",
+					"{C:inactive}And..?{}"
+				}
+			},
+			bl_fizz_recl = {
+				name = "The Eyes",
+				text = {
+					"EVIL"
+				}
+			},
+			bl_fizz_sph = {
+				name = "The Knife",
+				text = {
+					na
+				}
+			},
+			bl_fizz_sol = {
+				name = "The Scaling",
+				text = {
+					"Multiplies Blind size by",
+					"X1.25 when a hand is played"
+				}
+			},
+			bl_fizz_sph_ex = {
+				name = "The Knife EX",
+				text = {
+					"If first hand does not score over",
+					"50% of Blind Requirement,",
+					"Destroy a Random Joker",
+					"when a hand is played"
+				}
+			},
+			bl_fizz_sol_ex = {
+				name = "The Scaling EX",
+				text = {
+					"Rapidly Scales Blind Size",
+					"When a hand is played"
+				}
+			},
+			bl_fizz_oxid_ex = {
+				name = "Oxidyzation EX",
+				text = {
+					"Debuffs all Jokers",
+					"Reduces blind size with the equation",
+					"(???)"
+				}
+			},
+			bl_fizz_spk_ex = {
+				name = "The Shyness EX",
+				text = {
+					"^0.7 Chips and Mult",
+					"after Scoring finishes"
+				}
+			},
+			bl_fizz_oxid_bunny = {
+				name = "The Hater",
+				text = {
+					"Debuffs all Bunny Jokers"
+				}
+			}
 		},
 		Edition = {
 		},
 		Enhanced = {
 		},
 		Joker = {
-			j_iso_iso = {
+			j_fizz_iso = {
 				name = {
-					"{C:iso_light_purple}Isotypical{}"
+					"{C:fizz_light_purple}Isotypical{}"
 				},
 				text = {
 					"Back to the drawing board!",
 					na
 				}
 			},
-			j_iso_astro_s = {
+			j_fizz_astro_s = {
 				name = {
 					"Astro"
 				},
@@ -28,7 +125,7 @@ return {
 					na
 				}
 			},
-			j_iso_astro_n = {
+			j_fizz_astro_n = {
 				name = {
 					"Astro Novalite",
 				},
@@ -36,7 +133,7 @@ return {
 					na
 				}
 			},
-			j_iso_seraph = {
+			j_fizz_seraph = {
 				name = {
 					"Seraph V.Gloom"
 				},
@@ -44,7 +141,7 @@ return {
 					na
 				}
 			},
-			j_iso_maxie = { -- Original Character by Maxie
+			j_fizz_maxie = { -- Original Character by Maxie
 				name = {
 					"Maxie"
 				},
@@ -54,7 +151,7 @@ return {
 					"{C:inactive}Ignores Blank Voucher{}"
 				}
 			},
-			j_iso_oxidyze = { -- LMAOOOOOOOOOOOOOOOO
+			j_fizz_oxidyze = { -- LMAOOOOOOOOOOOOOOOO
 				name = {
 					"Oxidyze",
 					"{s:0.7,C:red}The Most Bullied OC out there{}"
@@ -64,26 +161,28 @@ return {
 					"to the {C:attention}Left{} and {C:attention}Right{} of this Joker"
 				}
 			},
-			j_iso_oxy = { -- Original Character by ocksie
+			j_fizz_oxy = { -- Original Character by ocksie
 				name = {
 					"{C:pastel_yellow}O{}{C:pink}x{}y"
 				},
 				text = { 
-					"Retriggers {C:attention}Steel Cards{} #1# Times",
-					"Scoring Steel Card adds {C:attention}+1{} Retrigger",
+					"Retriggers {C:attention}Steel Cards #2#+#1#{} Times",
+					"Scoring {C:attention}Steel Cards{} adds {C:attention}+1{} Extra Retrigger",
+					"Resets extra retriggers at the end of the round",
+					"{C:inactive}( Currently #3# total retriggers ){}"
 				}
 			},
-			j_iso_a_certain_oxidyze = { -- Deal +65% Damage to < Fragile Bunnies >
+			j_fizz_a_certain_oxidyze = { -- Deal +65% Damage to < Fragile Bunnies >
 				name = {
 					"The Crimson Teardrop",
 					"{s:0.7}Oxidyze{}"
 				},
 				text = {
 					na,
-					"{C:inactive}\"The Smoke was Blue...\"{}",
+					"{C:red}\"HE'S USING 5 MANG\"{}",
 				}
 			},
-			j_iso_recluse = {
+			j_fizz_recluse = {
 				name = {
 					"Living Malice - Recluse"
 				},
@@ -91,20 +190,20 @@ return {
 					na
 				}
 			},
-			j_iso_prescript = {
+			j_fizz_prescript = {
 				name = {
-					"{C:iso_index_blue}The Index{}",
+					"{C:fizz_index_blue}The Index{}",
 					"{s:0.9}Prescripts{}"
 				},
 				text = {
 					{
-						"Complete a random {C:iso_index_blue}Prescript{} at",
+						"Complete a random {C:fizz_index_blue}Prescript{} at",
 						"the {C:attention}Start of an Ante{}",
 						"At the {C:attention}End of an Ante{},",
 						"Gains {X:default,C:white}X0.1{} Blind Requirement for",
-						"every failed {C:iso_index_blue}Prescript{}",
+						"every failed {C:fizz_index_blue}Prescript{}",
 						"Gains either {C:blue}+Chips{}, {C:red}+Mult{}, {X:blue,C:white}XChips{}, or {X:red,C:white}XMult{}",
-						"for every cleared {C:iso_index_blue}Prescript{}"
+						"for every cleared {C:fizz_index_blue}Prescript{}"
 					},
 					{
 						"Current Prescripts",
@@ -116,7 +215,7 @@ return {
 					}
 				}
 			},
-			j_iso_dogman = {
+			j_fizz_dogman = {
 				name = {
 					"Dog Man"
 				},
@@ -124,19 +223,19 @@ return {
 					na
 				}
 			},
-			j_iso_crystal = {
+			j_fizz_crystal = {
 				name = {
 					"Crystal Saphe"
 				},
 				text = {
-					"Create a {C:iso_dark_purple}Phantom{} Copy",
+					"Create a {C:fizz_dark_purple}Phantom{} Copy",
 					"of a random Joker"
 				}
 			},
-			j_iso_rien = {
+			j_fizz_rien = {
 				name = {
 					"The Oracle's Proxy",
-					"{C:iso_index_blue,s:0.7}Rien{}"
+					"{C:fizz_index_blue,s:0.7}Rien{}"
 				},
 				text = {
 					"Hermes must REALLY like Roland."
@@ -150,40 +249,33 @@ return {
 		Stake = {
 		},
 		Tag = {
-			tag_iso_junktag = {
-				name = "Junk Tag",
+			tag_fizz_junktag = {
+				name = "Disarray Pack Tag",
 				text = {
 					"Gives a free",
-					"{C:attention}Junkyard Pack Beta{}"
+					"{C:attention}Disarray Pack{}"
 				}
 			},
-			tag_iso_terminus_tag = {
+			tag_fizz_terminus_tag = {
 				name = "Terminus Tag",
 				text = {
-					"Shop has a {C:red}full price{}",
-					"{C:iso_terminus_global}Terminus Joker{}",
-					"{C:inactive,s:0.7}Tag bloat???{}"
+					"Shop has a",
+					"{C:fizz_terminus_global}Terminus Joker{}",
 				}
 			},
-			tag_iso_every_fucking_pack = {
-				name = "Every Fucking Pack In The Mod",
-				text = {
-					"Gives {C:attention}every{} Isotypical's Junkyard",
-					"{C:attention}Booster Pack{}"
-				}
-			}, --may not be used ever
-			tag_iso_exrare_tag = {
-				name = "Ex. Rare Tag",
+			tag_fizz_apoc_tag = {
+				name = "Apocryphal Tag",
 				text = {
 					"Shop has an",
-					"{C:iso_exrare}Ex. Rare{} Joker",
+					"{C:iso_apoc}Apocryphal{} Joker",
 				}
 			},
-			tag_iso_legend_tag = {
+			tag_fizz_legend_tag = {
 				name = "Legendary Tag",
 				text = {
 					"Shop has a",
 					"{C:legendary}Legendary{} Joker",
+					"{X:default,C:white}X2{} Blind Size"
 				}
 			},
 		},
@@ -199,21 +291,21 @@ return {
 		collabs = {},
 		dictionary = {
 
-			k_iso_Aleph_cards = "Aleph Cards",
-			k_iso_Aleph = "Aleph",
-			k_iso_omega = "Omega",
-			k_iso_apoc = "Apocryphal",
-			k_iso_terminus = "Terminus",
+			k_fizz_Aleph_cards = "Aleph Cards",
+			k_fizz_Aleph = "Aleph",
+			k_fizz_omega = "Omega",
+			k_fizz_apoc = "Apocryphal",
+			k_fizz_terminus = "Terminus",
 			
 		},
 		high_scores = {},
 		labels = {
 
-			iso_deceptionlegendary = 'Oxidyze\'s Legendary',
-			iso_Aleph = "Aleph",
-			iso_omega = "Omega",
-			iso_apoc = "Apocryphal",
-			iso_terminus = "Terminus",
+			fizz_deceptionlegendary = 'Oxidyze\'s Legendary',
+			fizz_Aleph = "Aleph",
+			fizz_omega = "Omega",
+			fizz_apoc = "Apocryphal",
+			fizz_terminus = "Terminus",
 
 		},
 		poker_hand_descriptions = {},
@@ -221,55 +313,55 @@ return {
 		quips = {
 
 			--Reclusive Vessel
-			iso_sphrecl_loss_1 = { "Fucking...", "{C:red,s:1.5}HOW.{}" },
-			iso_sphrecl_loss_2 = { "HOW DID YOU EVEN {C:red}DIE???{}" },
-			iso_sphrecl_loss_3 = { "Recluse is right,", "You {C:red}DO{} have a {C:red}skill issue!{}" },
-			iso_sphrecl_loss_4 = { "I gave you {C:red}so much power,{}", "Just to watch you fail horribly.", "{C:iso_dark_purple}You disappoint me, a lot.{}" },
+			fizz_sphrecl_loss_1 = { "Fucking...", "{C:red,s:1.5}HOW.{}" },
+			fizz_sphrecl_loss_2 = { "HOW DID YOU EVEN {C:red}DIE???{}" },
+			fizz_sphrecl_loss_3 = { "Recluse is right,", "You {C:red}DO{} have a {C:red}skill issue!{}" },
+			fizz_sphrecl_loss_4 = { "I gave you {C:red}so much power,{}", "Just to watch you fail horribly.", "{C:fizz_dark_purple}You disappoint me, a lot.{}" },
 
 			--Seraph V.Glm
-			iso_sph_wins_1 = { "Could have won faster with me." },
-			iso_sph_wins_2 = { "Pff, you can do better than that." },
-			iso_sph_wins_3 = { "Nice, I guess." },
-			iso_sph_wins_4 = { "Neat, you won." },
+			fizz_sph_wins_1 = { "Could have won faster with me." },
+			fizz_sph_wins_2 = { "Pff, you can do better than that." },
+			fizz_sph_wins_3 = { "Nice, I guess." },
+			fizz_sph_wins_4 = { "Neat, you won." },
 
-			iso_sph_losses_1 = { "Get good, lmao." },
-			iso_sph_losses_2 = { "Amazing loss, buddy!" },
-			iso_sph_losses_3 = { "WOWWW. Skill issue." },
-			iso_sph_losses_4 = { "Could have won if you got me." },
+			fizz_sph_losses_1 = { "Get good, lmao." },
+			fizz_sph_losses_2 = { "Amazing loss, buddy!" },
+			fizz_sph_losses_3 = { "WOWWW. Skill issue." },
+			fizz_sph_losses_4 = { "Could have won if you got me." },
 
 			--Sparky Elle
-			iso_spk_wins_1 = { "WE WON?!!" },
-			iso_spk_wins_2 = { "YIPEE!!!" },
-			iso_spk_wins_3 = { "YAYY!!! WE WON!!!" },
+			fizz_spk_wins_1 = { "WE WON?!!" },
+			fizz_spk_wins_2 = { "YIPEE!!!" },
+			fizz_spk_wins_3 = { "YAYY!!! WE WON!!!" },
 
-			iso_spk_losses_1 = { "I-I... huh..?!" },
-			iso_spk_losses_2 = { "O-oh... I guess next time...", },
-			iso_spk_losses_3 = { "A-aw..." },
+			fizz_spk_losses_1 = { "I-I... huh..?!" },
+			fizz_spk_losses_2 = { "O-oh... I guess next time...", },
+			fizz_spk_losses_3 = { "A-aw..." },
 
 			--Solinium Isotope
-			iso_sol_wins_1 = { "Congrats on winning!" },
-			iso_sol_wins_2 = { "Niceee! Keep it up!" },
-			iso_sol_wins_3 = { "A successful experiment, if I were to say!" },
+			fizz_sol_wins_1 = { "Congrats on winning!" },
+			fizz_sol_wins_2 = { "Niceee! Keep it up!" },
+			fizz_sol_wins_3 = { "A successful experiment, if I were to say!" },
 
-			iso_sol_losses_1 = { "...oh." },
-			iso_sol_losses_2 = { "IT'S GONE WRONG!!!" },
-			iso_sol_losses_3 = { "Yikes, YIKES!" },
+			fizz_sol_losses_1 = { "...oh." },
+			fizz_sol_losses_2 = { "IT'S GONE WRONG!!!" },
+			fizz_sol_losses_3 = { "Yikes, YIKES!" },
 
 			--fuck you recluse
-			iso_recl_wins_1 = { "damn, was hoping you'd lose." },
+			fizz_recl_wins_1 = { "damn, was hoping you'd lose." },
 
-			iso_recl_losses_1 = { "git gud lmao" },
-			iso_recl_losses_2 = { "skill issue" },
-			iso_recl_losses_3 = { "L" },
+			fizz_recl_losses_1 = { "git gud lmao" },
+			fizz_recl_losses_2 = { "skill issue" },
+			fizz_recl_losses_3 = { "L" },
 
 			--ocksie- i mean Oxidyze
-			iso_oxi_wins_1 = { "Not bad, not bad." },
-			iso_oxi_wins_2 = { "Nicely done. Almost perfect, even." },
-			iso_oxi_wins_3 = { "Yet another win to the player." },
+			fizz_oxi_wins_1 = { "Not bad, not bad." },
+			fizz_oxi_wins_2 = { "Nicely done. Almost perfect, even." },
+			fizz_oxi_wins_3 = { "Yet another win to the player." },
 
-			iso_oxi_losses_1 = { "..." },
-			iso_oxi_losses_2 = { "...how?" },
-			iso_oxi_losses_3 = { "This isn't ideal." }
+			fizz_oxi_losses_1 = { "..." },
+			fizz_oxi_losses_2 = { "...how?" },
+			fizz_oxi_losses_3 = { "This isn't ideal." }
 
 		},
 		ranks = {},
