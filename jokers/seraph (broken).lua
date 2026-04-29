@@ -1,5 +1,5 @@
 SMODS.Joker {
-    key = "seraph_vglm",
+    key = "broken_seraph",
     rarity = 3,
     cost = 10
 }

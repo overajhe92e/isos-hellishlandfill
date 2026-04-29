@@ -54,13 +54,6 @@ local function fsfixer(card)
 end
 
 local function killHIM(card)
-    local kill = function()
-        if next(SMODS.find_card("j_fizz_maxie")) then
-            return "Obliterate Oxidyze"
-        else
-            return "Kill Oxidyze"
-        end
-    end
     return UIBox {
         definition = {
             n = G.UIT.ROOT,
@@ -88,7 +81,7 @@ local function killHIM(card)
                                 {
                                     n = G.UIT.T,
                                     config = {
-                                        text = tostring(kill),
+                                        text = "Kill Oxidyze",
                                         colour = G.C.UI.TEXT_LIGHT, -- color of the button text
                                         scale = 0.4,
                                         align = 'cm'
@@ -157,12 +150,12 @@ G.FUNCS.fizz_KILL = function(e)
     else
         c.base_retrig = c.base_retrig + 1
     end
-    SMODS.calculate_effect({ message = ":3" }, card)
+    SMODS.calculate_effect({ message = "Murder!" }, card)
     G.E_MANAGER:add_event(Event({
         trigger = 'after',
         delay = 1 * G.SETTINGS.GAMESPEED,
         func = function()
-            SMODS.destroy_cards(SMODS.find_card("j_fizz_Oxy"))
+            SMODS.destroy_cards(SMODS.find_card("j_fizz_oxidyze"))
             play_sound("fizz_gore5",1,1)
             return true
         end

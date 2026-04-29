@@ -37,7 +37,7 @@ SMODS.Gradient {
 	key = 'deceitful',
 	colours = { HEX('2272fb'), HEX('1ffef5') },
 	interpolation = 'linear',
-	cycle = '5'
+	cycle = 5
 }
 
 SMODS.Gradient {
@@ -48,7 +48,7 @@ SMODS.Gradient {
 }
 
 SMODS.Gradient {
-	key = "fizz_grad",
+	key = "isot_grad",
 	colours = { HEX("df9aff"), HEX("cf69ff") },
 	interpolation = 'trig',
 	cycle = 2

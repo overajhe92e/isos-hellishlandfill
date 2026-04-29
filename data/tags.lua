@@ -112,11 +112,15 @@ SMODS.Tag {
     pos = { x = 3, y = 0 },
     apply = function(self, tag, context)
         if context.type == 'round_start_bonus' then
-            tag:yep('!', G.C.FILTER, function()
+            if SMODS.pseudorandom_probability(tag,"luck",1,4,nil,true) then
+                tag:yep("!!", G.C.RED, function()
                 return true
-            end)
-            G.GAME.blind.chips = G.GAME.blind.chips * 3
+                end)
+                G.GAME.blind.chips = G.GAME.blind.chips * 4
             G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
+            else
+                return false
+            end
         end
         if context.type == 'store_joker_create' then
             local lgn = { 0 }

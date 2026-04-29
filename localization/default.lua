@@ -1,4 +1,6 @@
 local na = "{C:red}No Effect{}"
+local nc = "{C:red}No code!{}"
+local nf = "{C:red}Missing Art!{}"
 
 return {
 	descriptions = {
@@ -8,7 +10,9 @@ return {
 			bl_fizz_ricardo = {
 				name = "The Middle Big Brother",
 				text = {
-					"MY HAIR COUPOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO"
+					"MY HAIR COUPOOOOOOOO",
+					"OOOOOOOOOOOOOOOOOOOO",
+					"OOOOOOOOOOOOOOOONS!!"
 				}
 			},
 			bl_fizz_rng = {
@@ -128,9 +132,13 @@ return {
 			j_fizz_astro_n = {
 				name = {
 					"Astro Novalite",
+					"{C:blue,s:0.7}The Sleeper{}"
 				},
 				text = {
-					na
+					"When a {C:planet}Planet{} card is used",
+					"Level up {C:legendary}all hands{} to the number",
+					"of Unique {C:planet}Planet{} cards used this run",
+					"{C:inactive}(Currently +#1# Levels){}"
 				}
 			},
 			j_fizz_seraph = {
@@ -147,14 +155,15 @@ return {
 				},
 				text = {
 					"Redeeming {C:attention}Vouchers{} reduces all",
-					"shop item Costs by {C:attention}-1{}",
-					"{C:inactive}Ignores Blank Voucher{}"
+					"shop item Costs by {C:attention}1%{}",
+					"{C:inactive}Ignores Blank Voucher{}",
+					"{C:inactive}Current Discount: #2#%{}"
 				}
 			},
 			j_fizz_oxidyze = { -- LMAOOOOOOOOOOOOOOOO
 				name = {
 					"Oxidyze",
-					"{s:0.7,C:red}The Most Bullied OC out there{}"
+					"{s:0.7,C:red}The Perfect Punching Bag{}"
 				},
 				text = {
 					"Copies the ability of {C:attention}Jokers{}",
@@ -165,7 +174,7 @@ return {
 				name = {
 					"{C:pastel_yellow}O{}{C:pink}x{}y"
 				},
-				text = { 
+				text = {
 					"Retriggers {C:attention}Steel Cards #2#+#1#{} Times",
 					"Scoring {C:attention}Steel Cards{} adds {C:attention}+1{} Extra Retrigger",
 					"Resets extra retriggers at the end of the round",
@@ -179,6 +188,7 @@ return {
 				},
 				text = {
 					na,
+					nc,
 					"{C:red}\"HE'S USING 5 MANG\"{}",
 				}
 			},
@@ -208,7 +218,37 @@ return {
 					{
 						"Current Prescripts",
 						"#6#",
-						"#7#", --ARAYA SHUT UP
+						"#7#", --[[
+						
+                                l
+               .     .      .   f. +  '  :.
+            cY/U<"c]prjzn$Qkd[._J# #JCW#|$&
+           C$JaW<$$@]$$<$$$$LC$*u$`MCr$$QQ$h
+          -fu/|Jc$@-*%#)qx$$\M$Wu$.UL_a (cO
+              <   .    .   .!f. uq    [  [v
+              ^                          [
+              ]
+              ]  "         '    ] !!
+              _ ;\   t    :Q      &,
+               "wz,[BvUCCC$wCCCJ|nb'
+              `!*p   !#$$$$$$#`{    hQ      '
+               !$$$B ?M8$$$$$$$$$z0^8Q
+                $$l  xW$$$$$$$$B{ >h${
+                J$Xd$$$$$$$$$$$$$$$$${    l  ."
+                n$$$$$$$$$$$$$$$$$$$$!         !
+                I$$$$$$uYB$Bq >$$$$$$l    ^
+                ,*$$$$$L+    <h$$$$$f     a
+                ;Mvq@$$$$$$$$$$$$B]a     ia
+                 B ;;! _*$$$$$$$@.       ia
+                        h$$$$$$$_        ia  '
+          O)            n$$$$$$j  ,      ia  ^
+          OC          1_ b$$$$J    f:    )a   x
+          Ow    ^ <x{.   ;8$$u     .     /a
+          ($    . !a"^bj0{|$_      X`    0O     :
+          _8~     '.q_lu!   >]aUX        B]       <
+                    %'        Q(         :
+
+						]]
 						"#8#",
 						"{X:default,C:white}X#1#{} Blind Req., {C:blue}+#2#{} Chips, {C:red}+#3#{} Mult,",
 						"{X:blue,C:white}X#4#{} Chips, {X:red,C:white}X#5#{} Mult"
@@ -239,6 +279,75 @@ return {
 				},
 				text = {
 					"Hermes must REALLY like Roland."
+				}
+			},
+			j_fizz_muga = {
+				name = {
+					"Muga"
+				},
+				text = {
+					"{X:red,C:white}X2.5{} Mult {C:red}but...{}",
+					"Score and Hand Calculation is {C:red}hidden{}"
+				}
+			},
+			j_fizz_oxidyze_scythe = {
+				name = {
+					"{C:fizz_oxi_gradient}Weeping Blood{}",
+					"{C:red,s:0.65}The Crimson Teardrop's Scythe{}"
+				},
+				text = {
+					na
+				}
+			},
+			j_fizz_stellae = {
+				name = {
+					"{C:fizz_isot_grad}Stellae{}",
+					"{C:fizz_isot_grad,s:0.65}The Purple Slumber's Scythe{}"
+				},
+				text = {
+					na
+				}
+			},
+			j_fizz_oxidyze_SB = {
+				name = {
+					"{C:red}Skullbuster{}",
+					"{C:red,s:0.65}The Crimson Teardrop's Hammer{}"
+				},
+				text = {
+					na, nc
+				}
+			},
+			j_fizz_sparky = {
+				name = "Sparky",
+				text = {
+					na, nc
+				}
+			},
+			j_fizz_seraph_vglm = {
+				name = "Seraph V.Glm",
+				text = {
+					na, nc
+				}
+			},
+			j_fizz_broken_seraph = {
+				name = "Broken Seraph",
+				text = {
+					na, nc
+				}
+			},
+			j_fizz_solinium = {
+				name = "Solinium",
+				text = {
+					na, nc
+				}
+			},
+			j_fizz_xeno = {
+				name = "Xeno",
+				text = {
+					"If played hand contains a",
+					"{C:hearts}Heart{} and a {C:spades}Spade{}",
+					"{C:legendary}Balance{} Chips and Mult",
+					nc
 				}
 			}
 		},
@@ -275,7 +384,8 @@ return {
 				text = {
 					"Shop has a",
 					"{C:legendary}Legendary{} Joker",
-					"{X:default,C:white}X2{} Blind Size"
+					"{C:green}1 in 4{} Chance for ",
+					"{X:default,C:red}X4{} Blind Size instead"
 				}
 			},
 		},
@@ -296,7 +406,7 @@ return {
 			k_fizz_omega = "Omega",
 			k_fizz_apoc = "Apocryphal",
 			k_fizz_terminus = "Terminus",
-			
+
 		},
 		high_scores = {},
 		labels = {

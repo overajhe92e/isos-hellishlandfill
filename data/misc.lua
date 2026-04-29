@@ -118,10 +118,10 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
-	key = 'other_jokers',
+	key = 'commonrare',
 	px = 71,
 	py = 95,
-	path = 'other_jokers.png',
+	path = 'commons-rares.png',
 	atlas_table = 'ASSET_ATLAS'
 }
 
@@ -199,35 +199,6 @@ SMODS.ObjectType({
 })
 
 SMODS.ObjectType({
-	key = "unbalanced",
-	default = "j_fizz_oxyemp",
-	cards = {
-	},
-	inject = function(self)
-		SMODS.ObjectType.inject(self)
-		self:inject_card(G.P_CENTERS.j_lucky_cat)
-	end,
-})
-
-SMODS.ObjectType({
-	key = "fucking_absurd",
-	default = "j_fizz_jokertoendalljokers",
-	cards = {
-		j_fizz_spkawk = true,
-		j_fizz_sphawk = true,
-		j_fizz_solawk = true,
-		j_fizz_spkawkclassic = true,
-		j_fizz_solawkclassic = true,
-		j_fizz_sphawkclassic = true,
-		j_fizz_winsweep = true
-	},
-	inject = function(self)
-		SMODS.ObjectType.inject(self)
-		self:inject_card(G.P_CENTERS.j_lucky_cat)
-	end,
-})
-
-SMODS.ObjectType({
 	key = "all_junk",
 	default = "j_fizz_solinium",
 	cards = {},
@@ -245,14 +216,6 @@ SMODS.ObjectType({
 		SMODS.ObjectType.inject(self)
 		self:inject_card(G.P_CENTERS.j_lucky_cat)
 	end,
-})
-
-SMODS.ObjectType({
-	key = "wire",
-	default = "j_fizz_steelwire",
-	cards = {
-		j_fizz_steelwire = true
-	},
 })
 
 SMODS.Atlas {
@@ -288,10 +251,10 @@ SMODS.Atlas {
 }
 
 SMODS.Atlas {
-	key = 'other_ocs',
+	key = 'apocleg',
 	px = 71,
 	py = 95,
-	path = 'other_ocs.png',
+	path = 'apoc-legend.png',
 	atlas_table = 'ASSET_ATLAS'
 }
 

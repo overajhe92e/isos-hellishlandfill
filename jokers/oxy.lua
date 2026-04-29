@@ -2,14 +2,14 @@ SMODS.Joker { --Original Character by ocksie
     key = "oxy",
     rarity = "fizz_apoc",
     cost = 16,
-    atlas = "other_ocs",
+    atlas = "apocleg",
     pos = {
-        x = 4,
-        y = 1
+        x = 0,
+        y = 0
     },
     soul_pos = {
-        x = 5,
-        y = 1
+        x = 1,
+        y = 0
     },
     config = {
         extra = {
@@ -43,7 +43,7 @@ SMODS.Joker { --Original Character by ocksie
             end
         end
         if context.end_of_round and context.main_eval and context.game_over == false then
-            c.retrig = 1
+            c.retrig = 0
             return {
                 message = "Reset!",
                 colour = G.C.PINK,
